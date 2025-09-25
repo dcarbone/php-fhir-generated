@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -40,8 +40,7 @@ trait XMLSerializationOptionsTrait
     }
 
     /**
-     * Set the location a particular field's value must be placed when serializing this type to XML.  Each type has
-     * a limited number of fields that may be serialized to XML
+     * Set the location a particular field's value must be placed when serializing this type to XML.
      *
      * @param string $field Name of field on this type.
      * @throws \DomainException

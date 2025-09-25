@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2387,6 +2387,13 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
                                            null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIRExplanationOfBenefitAddItem)) {
             throw new \RuntimeException(sprintf(
@@ -2402,7 +2409,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_ITEM_SEQUENCE)
             || property_exists($decoded, self::FIELD_ITEM_SEQUENCE_EXT)) {
             $vals = (array)($decoded->itemSequence ?? []);
-            $exts = (array)($decoded->FIELD_ITEM_SEQUENCE_EXT ?? []);
+            $exts = (array)($decoded->_itemSequence ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2419,7 +2426,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_DETAIL_SEQUENCE)
             || property_exists($decoded, self::FIELD_DETAIL_SEQUENCE_EXT)) {
             $vals = (array)($decoded->detailSequence ?? []);
-            $exts = (array)($decoded->FIELD_DETAIL_SEQUENCE_EXT ?? []);
+            $exts = (array)($decoded->_detailSequence ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2436,7 +2443,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_SUB_DETAIL_SEQUENCE)
             || property_exists($decoded, self::FIELD_SUB_DETAIL_SEQUENCE_EXT)) {
             $vals = (array)($decoded->subDetailSequence ?? []);
-            $exts = (array)($decoded->FIELD_SUB_DETAIL_SEQUENCE_EXT ?? []);
+            $exts = (array)($decoded->_subDetailSequence ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2619,7 +2626,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_NOTE_NUMBER)
             || property_exists($decoded, self::FIELD_NOTE_NUMBER_EXT)) {
             $vals = (array)($decoded->noteNumber ?? []);
-            $exts = (array)($decoded->FIELD_NOTE_NUMBER_EXT ?? []);
+            $exts = (array)($decoded->_noteNumber ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

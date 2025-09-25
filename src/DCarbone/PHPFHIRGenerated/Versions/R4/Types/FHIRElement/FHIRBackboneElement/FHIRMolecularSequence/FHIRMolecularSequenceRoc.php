@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -929,6 +929,13 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                                            null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIRMolecularSequenceRoc)) {
             throw new \RuntimeException(sprintf(
@@ -944,7 +951,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_SCORE)
             || property_exists($decoded, self::FIELD_SCORE_EXT)) {
             $vals = (array)($decoded->score ?? []);
-            $exts = (array)($decoded->FIELD_SCORE_EXT ?? []);
+            $exts = (array)($decoded->_score ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -961,7 +968,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_NUM_TP)
             || property_exists($decoded, self::FIELD_NUM_TP_EXT)) {
             $vals = (array)($decoded->numTP ?? []);
-            $exts = (array)($decoded->FIELD_NUM_TP_EXT ?? []);
+            $exts = (array)($decoded->_numTP ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -978,7 +985,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_NUM_FP)
             || property_exists($decoded, self::FIELD_NUM_FP_EXT)) {
             $vals = (array)($decoded->numFP ?? []);
-            $exts = (array)($decoded->FIELD_NUM_FP_EXT ?? []);
+            $exts = (array)($decoded->_numFP ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -995,7 +1002,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_NUM_FN)
             || property_exists($decoded, self::FIELD_NUM_FN_EXT)) {
             $vals = (array)($decoded->numFN ?? []);
-            $exts = (array)($decoded->FIELD_NUM_FN_EXT ?? []);
+            $exts = (array)($decoded->_numFN ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1012,7 +1019,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_PRECISION)
             || property_exists($decoded, self::FIELD_PRECISION_EXT)) {
             $vals = (array)($decoded->precision ?? []);
-            $exts = (array)($decoded->FIELD_PRECISION_EXT ?? []);
+            $exts = (array)($decoded->_precision ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1029,7 +1036,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_SENSITIVITY)
             || property_exists($decoded, self::FIELD_SENSITIVITY_EXT)) {
             $vals = (array)($decoded->sensitivity ?? []);
-            $exts = (array)($decoded->FIELD_SENSITIVITY_EXT ?? []);
+            $exts = (array)($decoded->_sensitivity ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1046,7 +1053,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_F_MEASURE)
             || property_exists($decoded, self::FIELD_F_MEASURE_EXT)) {
             $vals = (array)($decoded->fMeasure ?? []);
-            $exts = (array)($decoded->FIELD_F_MEASURE_EXT ?? []);
+            $exts = (array)($decoded->_fMeasure ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

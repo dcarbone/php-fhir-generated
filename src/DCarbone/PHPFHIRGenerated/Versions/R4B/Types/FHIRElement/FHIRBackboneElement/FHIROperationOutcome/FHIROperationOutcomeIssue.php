@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -745,6 +745,13 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
                                            null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIROperationOutcomeIssue)) {
             throw new \RuntimeException(sprintf(
@@ -791,7 +798,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_LOCATION)
             || property_exists($decoded, self::FIELD_LOCATION_EXT)) {
             $vals = (array)($decoded->location ?? []);
-            $exts = (array)($decoded->FIELD_LOCATION_EXT ?? []);
+            $exts = (array)($decoded->_location ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -808,7 +815,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_EXPRESSION)
             || property_exists($decoded, self::FIELD_EXPRESSION_EXT)) {
             $vals = (array)($decoded->expression ?? []);
-            $exts = (array)($decoded->FIELD_EXPRESSION_EXT ?? []);
+            $exts = (array)($decoded->_expression ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,6 +107,54 @@ class FHIRImmunizationTest extends TestCase
     {
         $type = new FHIRImmunization();
         $this->assertEquals('Immunization', $type->_getFHIRTypeName());
+    }
+
+    function testCanUnserializeExtendedFields()
+    {
+        $json = new \stdClass();
+        $json->_id = new \stdClass();
+        $json->_id->extension = new \stdClass();
+        $json->_id->extension->url = "http://foobar";
+        $json->_id->extension->valueString = "foobar";
+        $type = FHIRImmunization::jsonUnserialize($json);
+
+        $extensions = $type->getId()->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+
+        $this->assertEquals($json->_id->extension->url, $extension->getUrl());
+        $this->assertEquals($json->_id->extension->valueString, $extension->getValueString());
+    }
+
+    public function testCanExecuteValidations()
+    {
+        $type = new FHIRImmunization();
+        $errs = $type->_getValidationErrors();
+        $this->assertIsArray($errs);
+    }
+
+    public function testCanJsonUnmarshalWithCorrectResourceType()
+    {
+        $dec = new \stdClass();
+        $dec->resourceType = 'Immunization';
+        $resource = FHIRImmunization::jsonUnserialize(decoded: $dec);
+        $this->assertInstanceOf(FHIRImmunization::class, $resource);
+    }
+
+    public function testCanJsonUnmarshalWithNoResourceType()
+    {
+        $dec = new \stdClass();
+        $resource = FHIRImmunization::jsonUnserialize(decoded: $dec);
+        $this->assertInstanceOf(FHIRImmunization::class, $resource);
+    }
+
+    public function testJsonUnmarshalThrowsExceptionWithWrongResourceType()
+    {
+        $this->expectException(\DomainException::class);
+
+        $dec = new \stdClass();
+        $dec->resourceType = 'NotAResource';
+        FHIRImmunization::jsonUnserialize(decoded: $dec);
     }
 
     public function testCanTranscodeBundleJSON()
@@ -233,12 +281,5 @@ class FHIRImmunizationTest extends TestCase
         }
         $xw = $bundle->xmlSerialize(config: $this->_version->getConfig()->getSerializeConfig());
         $this->assertXmlStringEqualsXmlString($rc->getResp(), $xw->outputMemory());
-    }
-
-    public function testCanExecuteValidations()
-    {
-        $type = new FHIRImmunization();
-        $errs = $type->_getValidationErrors();
-        $this->assertIsArray($errs);
     }
 }

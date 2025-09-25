@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,10 +72,51 @@ class FHIRBundleTest extends TestCase
         $this->assertEquals('Bundle', $type->_getFHIRTypeName());
     }
 
+    function testCanUnserializeExtendedFields()
+    {
+        $json = new \stdClass();
+        $json->_id = new \stdClass();
+        $json->_id->extension = new \stdClass();
+        $json->_id->extension->url = "http://foobar";
+        $json->_id->extension->valueString = "foobar";
+        $type = FHIRBundle::jsonUnserialize($json);
+
+        $extensions = $type->getId()->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+
+        $this->assertEquals($json->_id->extension->url, $extension->getUrl());
+        $this->assertEquals($json->_id->extension->valueString, $extension->getValueString());
+    }
+
     public function testCanExecuteValidations()
     {
         $type = new FHIRBundle();
         $errs = $type->_getValidationErrors();
         $this->assertIsArray($errs);
+    }
+
+    public function testCanJsonUnmarshalWithCorrectResourceType()
+    {
+        $dec = new \stdClass();
+        $dec->resourceType = 'Bundle';
+        $resource = FHIRBundle::jsonUnserialize(decoded: $dec);
+        $this->assertInstanceOf(FHIRBundle::class, $resource);
+    }
+
+    public function testCanJsonUnmarshalWithNoResourceType()
+    {
+        $dec = new \stdClass();
+        $resource = FHIRBundle::jsonUnserialize(decoded: $dec);
+        $this->assertInstanceOf(FHIRBundle::class, $resource);
+    }
+
+    public function testJsonUnmarshalThrowsExceptionWithWrongResourceType()
+    {
+        $this->expectException(\DomainException::class);
+
+        $dec = new \stdClass();
+        $dec->resourceType = 'NotAResource';
+        FHIRBundle::jsonUnserialize(decoded: $dec);
     }
 }

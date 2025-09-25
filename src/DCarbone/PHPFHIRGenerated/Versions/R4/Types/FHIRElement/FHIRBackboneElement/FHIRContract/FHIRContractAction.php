@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2161,6 +2161,13 @@ class FHIRContractAction extends FHIRBackboneElement
                                            null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIRContractAction)) {
             throw new \RuntimeException(sprintf(
@@ -2209,7 +2216,7 @@ class FHIRContractAction extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_LINK_ID)
             || property_exists($decoded, self::FIELD_LINK_ID_EXT)) {
             $vals = (array)($decoded->linkId ?? []);
-            $exts = (array)($decoded->FIELD_LINK_ID_EXT ?? []);
+            $exts = (array)($decoded->_linkId ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2240,7 +2247,7 @@ class FHIRContractAction extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_CONTEXT_LINK_ID)
             || property_exists($decoded, self::FIELD_CONTEXT_LINK_ID_EXT)) {
             $vals = (array)($decoded->contextLinkId ?? []);
-            $exts = (array)($decoded->FIELD_CONTEXT_LINK_ID_EXT ?? []);
+            $exts = (array)($decoded->_contextLinkId ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2290,7 +2297,7 @@ class FHIRContractAction extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_REQUESTER_LINK_ID)
             || property_exists($decoded, self::FIELD_REQUESTER_LINK_ID_EXT)) {
             $vals = (array)($decoded->requesterLinkId ?? []);
-            $exts = (array)($decoded->FIELD_REQUESTER_LINK_ID_EXT ?? []);
+            $exts = (array)($decoded->_requesterLinkId ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2332,7 +2339,7 @@ class FHIRContractAction extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_PERFORMER_LINK_ID)
             || property_exists($decoded, self::FIELD_PERFORMER_LINK_ID_EXT)) {
             $vals = (array)($decoded->performerLinkId ?? []);
-            $exts = (array)($decoded->FIELD_PERFORMER_LINK_ID_EXT ?? []);
+            $exts = (array)($decoded->_performerLinkId ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2371,7 +2378,7 @@ class FHIRContractAction extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_REASON)
             || property_exists($decoded, self::FIELD_REASON_EXT)) {
             $vals = (array)($decoded->reason ?? []);
-            $exts = (array)($decoded->FIELD_REASON_EXT ?? []);
+            $exts = (array)($decoded->_reason ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2388,7 +2395,7 @@ class FHIRContractAction extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_REASON_LINK_ID)
             || property_exists($decoded, self::FIELD_REASON_LINK_ID_EXT)) {
             $vals = (array)($decoded->reasonLinkId ?? []);
-            $exts = (array)($decoded->FIELD_REASON_LINK_ID_EXT ?? []);
+            $exts = (array)($decoded->_reasonLinkId ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2416,7 +2423,7 @@ class FHIRContractAction extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_SECURITY_LABEL_NUMBER)
             || property_exists($decoded, self::FIELD_SECURITY_LABEL_NUMBER_EXT)) {
             $vals = (array)($decoded->securityLabelNumber ?? []);
-            $exts = (array)($decoded->FIELD_SECURITY_LABEL_NUMBER_EXT ?? []);
+            $exts = (array)($decoded->_securityLabelNumber ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

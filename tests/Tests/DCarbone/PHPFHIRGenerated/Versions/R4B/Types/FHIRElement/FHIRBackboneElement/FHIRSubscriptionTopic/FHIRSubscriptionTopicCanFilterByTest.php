@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBac
  * 
  */
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
 use PHPUnit\Framework\TestCase;
 
 class FHIRSubscriptionTopicCanFilterByTest extends TestCase
@@ -90,5 +91,28 @@ class FHIRSubscriptionTopicCanFilterByTest extends TestCase
     {
         $type = new FHIRSubscriptionTopicCanFilterBy();
         $this->assertEquals('SubscriptionTopic.CanFilterBy', $type->_getFHIRTypeName());
+    }
+
+    function testCanUnserializeExtensionsOfCollectionProperties()
+    {
+        $json = new \stdClass();
+
+        $ext = new \stdClass();
+        $ext->url = "http://foobar";
+        $ext->valueString = "foobar";
+        $extension = new \stdClass();
+        $extension->extension = [$ext];
+
+        $json->modifier = "null";
+        $json->_modifier = [$extension];
+
+        $version = new Version();
+        $type = FHIRSubscriptionTopicCanFilterBy::jsonUnserialize($json, $version->getConfig()->getUnserializeConfig());
+
+        $extensions = $type->getModifier()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
     }
 }

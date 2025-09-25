@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,6 +107,84 @@ class FHIRProcessRequestTest extends TestCase
     {
         $type = new FHIRProcessRequest();
         $this->assertEquals('ProcessRequest', $type->_getFHIRTypeName());
+    }
+
+    function testCanUnserializeExtensionsOfCollectionProperties()
+    {
+        $json = new \stdClass();
+
+        $ext = new \stdClass();
+        $ext->url = "http://foobar";
+        $ext->valueString = "foobar";
+        $extension = new \stdClass();
+        $extension->extension = [$ext];
+
+        $json->include = "null";
+        $json->_include = [$extension];
+        $json->exclude = "null";
+        $json->_exclude = [$extension];
+
+        $version = new Version();
+        $type = FHIRProcessRequest::jsonUnserialize($json, $version->getConfig()->getUnserializeConfig());
+
+        $extensions = $type->getInclude()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
+        $extensions = $type->getExclude()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
+    }
+
+    function testCanUnserializeExtendedFields()
+    {
+        $json = new \stdClass();
+        $json->_id = new \stdClass();
+        $json->_id->extension = new \stdClass();
+        $json->_id->extension->url = "http://foobar";
+        $json->_id->extension->valueString = "foobar";
+        $type = FHIRProcessRequest::jsonUnserialize($json);
+
+        $extensions = $type->getId()->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+
+        $this->assertEquals($json->_id->extension->url, $extension->getUrl());
+        $this->assertEquals($json->_id->extension->valueString, $extension->getValueString());
+    }
+
+    public function testCanExecuteValidations()
+    {
+        $type = new FHIRProcessRequest();
+        $errs = $type->_getValidationErrors();
+        $this->assertIsArray($errs);
+    }
+
+    public function testCanJsonUnmarshalWithCorrectResourceType()
+    {
+        $dec = new \stdClass();
+        $dec->resourceType = 'ProcessRequest';
+        $resource = FHIRProcessRequest::jsonUnserialize(decoded: $dec);
+        $this->assertInstanceOf(FHIRProcessRequest::class, $resource);
+    }
+
+    public function testCanJsonUnmarshalWithNoResourceType()
+    {
+        $dec = new \stdClass();
+        $resource = FHIRProcessRequest::jsonUnserialize(decoded: $dec);
+        $this->assertInstanceOf(FHIRProcessRequest::class, $resource);
+    }
+
+    public function testJsonUnmarshalThrowsExceptionWithWrongResourceType()
+    {
+        $this->expectException(\DomainException::class);
+
+        $dec = new \stdClass();
+        $dec->resourceType = 'NotAResource';
+        FHIRProcessRequest::jsonUnserialize(decoded: $dec);
     }
 
     public function testCanTranscodeBundleJSON()
@@ -233,12 +311,5 @@ class FHIRProcessRequestTest extends TestCase
         }
         $xw = $bundle->xmlSerialize(config: $this->_version->getConfig()->getSerializeConfig());
         $this->assertXmlStringEqualsXmlString($rc->getResp(), $xw->outputMemory());
-    }
-
-    public function testCanExecuteValidations()
-    {
-        $type = new FHIRProcessRequest();
-        $errs = $type->_getValidationErrors();
-        $this->assertIsArray($errs);
     }
 }

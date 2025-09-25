@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2557,6 +2557,13 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
                                            null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIRMessageDefinition)) {
             throw new \RuntimeException(sprintf(
@@ -2624,7 +2631,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
             || property_exists($decoded, self::FIELD_REPLACES)
             || property_exists($decoded, self::FIELD_REPLACES_EXT)) {
             $vals = (array)($decoded->replaces ?? []);
-            $exts = (array)($decoded->FIELD_REPLACES_EXT ?? []);
+            $exts = (array)($decoded->_replaces ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2738,7 +2745,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
             || property_exists($decoded, self::FIELD_PARENT)
             || property_exists($decoded, self::FIELD_PARENT_EXT)) {
             $vals = (array)($decoded->parent ?? []);
-            $exts = (array)($decoded->FIELD_PARENT_EXT ?? []);
+            $exts = (array)($decoded->_parent ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2808,7 +2815,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
             || property_exists($decoded, self::FIELD_GRAPH)
             || property_exists($decoded, self::FIELD_GRAPH_EXT)) {
             $vals = (array)($decoded->graph ?? []);
-            $exts = (array)($decoded->FIELD_GRAPH_EXT ?? []);
+            $exts = (array)($decoded->_graph ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -988,6 +988,13 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
                                            null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIRAppointmentRecurrenceTemplate)) {
             throw new \RuntimeException(sprintf(
@@ -1033,7 +1040,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE)
             || property_exists($decoded, self::FIELD_OCCURRENCE_DATE_EXT)) {
             $vals = (array)($decoded->occurrenceDate ?? []);
-            $exts = (array)($decoded->FIELD_OCCURRENCE_DATE_EXT ?? []);
+            $exts = (array)($decoded->_occurrenceDate ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1071,7 +1078,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_EXCLUDING_DATE)
             || property_exists($decoded, self::FIELD_EXCLUDING_DATE_EXT)) {
             $vals = (array)($decoded->excludingDate ?? []);
-            $exts = (array)($decoded->FIELD_EXCLUDING_DATE_EXT ?? []);
+            $exts = (array)($decoded->_excludingDate ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1088,7 +1095,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_EXCLUDING_RECURRENCE_ID)
             || property_exists($decoded, self::FIELD_EXCLUDING_RECURRENCE_ID_EXT)) {
             $vals = (array)($decoded->excludingRecurrenceId ?? []);
-            $exts = (array)($decoded->FIELD_EXCLUDING_RECURRENCE_ID_EXT ?? []);
+            $exts = (array)($decoded->_excludingRecurrenceId ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

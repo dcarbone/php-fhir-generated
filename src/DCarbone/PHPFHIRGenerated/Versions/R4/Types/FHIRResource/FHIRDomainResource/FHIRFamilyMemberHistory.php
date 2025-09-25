@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2353,6 +2353,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                                            null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIRFamilyMemberHistory)) {
             throw new \RuntimeException(sprintf(
@@ -2388,7 +2395,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || property_exists($decoded, self::FIELD_INSTANTIATES_CANONICAL)
             || property_exists($decoded, self::FIELD_INSTANTIATES_CANONICAL_EXT)) {
             $vals = (array)($decoded->instantiatesCanonical ?? []);
-            $exts = (array)($decoded->FIELD_INSTANTIATES_CANONICAL_EXT ?? []);
+            $exts = (array)($decoded->_instantiatesCanonical ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2405,7 +2412,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             || property_exists($decoded, self::FIELD_INSTANTIATES_URI)
             || property_exists($decoded, self::FIELD_INSTANTIATES_URI_EXT)) {
             $vals = (array)($decoded->instantiatesUri ?? []);
-            $exts = (array)($decoded->FIELD_INSTANTIATES_URI_EXT ?? []);
+            $exts = (array)($decoded->_instantiatesUri ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

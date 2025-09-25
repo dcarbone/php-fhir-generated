@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -821,6 +821,13 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                                            null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIRImplementationGuidePage)) {
             throw new \RuntimeException(sprintf(
@@ -860,7 +867,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_TYPE)
             || property_exists($decoded, self::FIELD_TYPE_EXT)) {
             $vals = (array)($decoded->type ?? []);
-            $exts = (array)($decoded->FIELD_TYPE_EXT ?? []);
+            $exts = (array)($decoded->_type ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -877,7 +884,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_PACKAGE)
             || property_exists($decoded, self::FIELD_PACKAGE_EXT)) {
             $vals = (array)($decoded->package ?? []);
-            $exts = (array)($decoded->FIELD_PACKAGE_EXT ?? []);
+            $exts = (array)($decoded->_package ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

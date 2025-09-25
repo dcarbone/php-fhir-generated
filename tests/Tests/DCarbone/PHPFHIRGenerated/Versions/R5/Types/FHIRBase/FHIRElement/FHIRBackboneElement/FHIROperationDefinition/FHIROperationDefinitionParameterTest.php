@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement
  * 
  */
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use PHPUnit\Framework\TestCase;
 
 class FHIROperationDefinitionParameterTest extends TestCase
@@ -90,5 +91,42 @@ class FHIROperationDefinitionParameterTest extends TestCase
     {
         $type = new FHIROperationDefinitionParameter();
         $this->assertEquals('OperationDefinition.Parameter', $type->_getFHIRTypeName());
+    }
+
+    function testCanUnserializeExtensionsOfCollectionProperties()
+    {
+        $json = new \stdClass();
+
+        $ext = new \stdClass();
+        $ext->url = "http://foobar";
+        $ext->valueString = "foobar";
+        $extension = new \stdClass();
+        $extension->extension = [$ext];
+
+        $json->scope = "null";
+        $json->_scope = [$extension];
+        $json->allowedType = "null";
+        $json->_allowedType = [$extension];
+        $json->targetProfile = "null";
+        $json->_targetProfile = [$extension];
+
+        $version = new Version();
+        $type = FHIROperationDefinitionParameter::jsonUnserialize($json, $version->getConfig()->getUnserializeConfig());
+
+        $extensions = $type->getScope()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
+        $extensions = $type->getAllowedType()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
+        $extensions = $type->getTargetProfile()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
     }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -3186,6 +3186,13 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
                                            null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIRCapabilityStatement)) {
             throw new \RuntimeException(sprintf(
@@ -3373,7 +3380,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || property_exists($decoded, self::FIELD_INSTANTIATES)
             || property_exists($decoded, self::FIELD_INSTANTIATES_EXT)) {
             $vals = (array)($decoded->instantiates ?? []);
-            $exts = (array)($decoded->FIELD_INSTANTIATES_EXT ?? []);
+            $exts = (array)($decoded->_instantiates ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -3390,7 +3397,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || property_exists($decoded, self::FIELD_IMPORTS)
             || property_exists($decoded, self::FIELD_IMPORTS_EXT)) {
             $vals = (array)($decoded->imports ?? []);
-            $exts = (array)($decoded->FIELD_IMPORTS_EXT ?? []);
+            $exts = (array)($decoded->_imports ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -3429,7 +3436,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || property_exists($decoded, self::FIELD_FORMAT)
             || property_exists($decoded, self::FIELD_FORMAT_EXT)) {
             $vals = (array)($decoded->format ?? []);
-            $exts = (array)($decoded->FIELD_FORMAT_EXT ?? []);
+            $exts = (array)($decoded->_format ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -3446,7 +3453,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || property_exists($decoded, self::FIELD_PATCH_FORMAT)
             || property_exists($decoded, self::FIELD_PATCH_FORMAT_EXT)) {
             $vals = (array)($decoded->patchFormat ?? []);
-            $exts = (array)($decoded->FIELD_PATCH_FORMAT_EXT ?? []);
+            $exts = (array)($decoded->_patchFormat ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -3463,7 +3470,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || property_exists($decoded, self::FIELD_ACCEPT_LANGUAGE)
             || property_exists($decoded, self::FIELD_ACCEPT_LANGUAGE_EXT)) {
             $vals = (array)($decoded->acceptLanguage ?? []);
-            $exts = (array)($decoded->FIELD_ACCEPT_LANGUAGE_EXT ?? []);
+            $exts = (array)($decoded->_acceptLanguage ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -3480,7 +3487,7 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements VersionCo
             || property_exists($decoded, self::FIELD_IMPLEMENTATION_GUIDE)
             || property_exists($decoded, self::FIELD_IMPLEMENTATION_GUIDE_EXT)) {
             $vals = (array)($decoded->implementationGuide ?? []);
-            $exts = (array)($decoded->FIELD_IMPLEMENTATION_GUIDE_EXT ?? []);
+            $exts = (array)($decoded->_implementationGuide ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

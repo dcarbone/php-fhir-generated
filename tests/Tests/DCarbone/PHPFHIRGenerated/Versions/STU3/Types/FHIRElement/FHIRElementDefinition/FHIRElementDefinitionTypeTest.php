@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIREl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,6 +62,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIREl
  * 
  */
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Version;
 use PHPUnit\Framework\TestCase;
 
 class FHIRElementDefinitionTypeTest extends TestCase
@@ -70,5 +71,28 @@ class FHIRElementDefinitionTypeTest extends TestCase
     {
         $type = new FHIRElementDefinitionType();
         $this->assertEquals('ElementDefinition.Type', $type->_getFHIRTypeName());
+    }
+
+    function testCanUnserializeExtensionsOfCollectionProperties()
+    {
+        $json = new \stdClass();
+
+        $ext = new \stdClass();
+        $ext->url = "http://foobar";
+        $ext->valueString = "foobar";
+        $extension = new \stdClass();
+        $extension->extension = [$ext];
+
+        $json->aggregation = "null";
+        $json->_aggregation = [$extension];
+
+        $version = new Version();
+        $type = FHIRElementDefinitionType::jsonUnserialize($json, $version->getConfig()->getUnserializeConfig());
+
+        $extensions = $type->getAggregation()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
     }
 }

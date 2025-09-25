@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,6 +82,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBac
  * 
  */
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAction;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
 use PHPUnit\Framework\TestCase;
 
 class FHIRContractActionTest extends TestCase
@@ -90,5 +91,70 @@ class FHIRContractActionTest extends TestCase
     {
         $type = new FHIRContractAction();
         $this->assertEquals('Contract.Action', $type->_getFHIRTypeName());
+    }
+
+    function testCanUnserializeExtensionsOfCollectionProperties()
+    {
+        $json = new \stdClass();
+
+        $ext = new \stdClass();
+        $ext->url = "http://foobar";
+        $ext->valueString = "foobar";
+        $extension = new \stdClass();
+        $extension->extension = [$ext];
+
+        $json->linkId = "null";
+        $json->_linkId = [$extension];
+        $json->contextLinkId = "null";
+        $json->_contextLinkId = [$extension];
+        $json->requesterLinkId = "null";
+        $json->_requesterLinkId = [$extension];
+        $json->performerLinkId = "null";
+        $json->_performerLinkId = [$extension];
+        $json->reason = "null";
+        $json->_reason = [$extension];
+        $json->reasonLinkId = "null";
+        $json->_reasonLinkId = [$extension];
+        $json->securityLabelNumber = "null";
+        $json->_securityLabelNumber = [$extension];
+
+        $version = new Version();
+        $type = FHIRContractAction::jsonUnserialize($json, $version->getConfig()->getUnserializeConfig());
+
+        $extensions = $type->getLinkId()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
+        $extensions = $type->getContextLinkId()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
+        $extensions = $type->getRequesterLinkId()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
+        $extensions = $type->getPerformerLinkId()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
+        $extensions = $type->getReason()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
+        $extensions = $type->getReasonLinkId()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
+        $extensions = $type->getSecurityLabelNumber()[0]->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+        $this->assertEquals("http://foobar", $extension->getUrl());
+        $this->assertEquals("foobar", $extension->getValueString());
     }
 }

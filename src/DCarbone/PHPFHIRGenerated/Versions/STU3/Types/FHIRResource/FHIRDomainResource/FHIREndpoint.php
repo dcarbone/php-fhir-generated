@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1230,6 +1230,13 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
                                            null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIREndpoint)) {
             throw new \RuntimeException(sprintf(
@@ -1324,7 +1331,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
             || property_exists($decoded, self::FIELD_PAYLOAD_MIME_TYPE)
             || property_exists($decoded, self::FIELD_PAYLOAD_MIME_TYPE_EXT)) {
             $vals = (array)($decoded->payloadMimeType ?? []);
-            $exts = (array)($decoded->FIELD_PAYLOAD_MIME_TYPE_EXT ?? []);
+            $exts = (array)($decoded->_payloadMimeType ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -1349,7 +1356,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
             || property_exists($decoded, self::FIELD_HEADER)
             || property_exists($decoded, self::FIELD_HEADER_EXT)) {
             $vals = (array)($decoded->header ?? []);
-            $exts = (array)($decoded->FIELD_HEADER_EXT ?? []);
+            $exts = (array)($decoded->_header ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

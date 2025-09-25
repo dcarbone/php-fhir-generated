@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,6 +127,54 @@ class FHIRListTest extends TestCase
     {
         $type = new FHIRList();
         $this->assertEquals('List', $type->_getFHIRTypeName());
+    }
+
+    function testCanUnserializeExtendedFields()
+    {
+        $json = new \stdClass();
+        $json->_id = new \stdClass();
+        $json->_id->extension = new \stdClass();
+        $json->_id->extension->url = "http://foobar";
+        $json->_id->extension->valueString = "foobar";
+        $type = FHIRList::jsonUnserialize($json);
+
+        $extensions = $type->getId()->getExtension();
+        $this->assertCount(1, $extensions);
+        $extension = $extensions[0];
+
+        $this->assertEquals($json->_id->extension->url, $extension->getUrl());
+        $this->assertEquals($json->_id->extension->valueString, $extension->getValueString());
+    }
+
+    public function testCanExecuteValidations()
+    {
+        $type = new FHIRList();
+        $errs = $type->_getValidationErrors();
+        $this->assertIsArray($errs);
+    }
+
+    public function testCanJsonUnmarshalWithCorrectResourceType()
+    {
+        $dec = new \stdClass();
+        $dec->resourceType = 'List';
+        $resource = FHIRList::jsonUnserialize(decoded: $dec);
+        $this->assertInstanceOf(FHIRList::class, $resource);
+    }
+
+    public function testCanJsonUnmarshalWithNoResourceType()
+    {
+        $dec = new \stdClass();
+        $resource = FHIRList::jsonUnserialize(decoded: $dec);
+        $this->assertInstanceOf(FHIRList::class, $resource);
+    }
+
+    public function testJsonUnmarshalThrowsExceptionWithWrongResourceType()
+    {
+        $this->expectException(\DomainException::class);
+
+        $dec = new \stdClass();
+        $dec->resourceType = 'NotAResource';
+        FHIRList::jsonUnserialize(decoded: $dec);
     }
 
     public function testCanTranscodeBundleJSON()
@@ -253,12 +301,5 @@ class FHIRListTest extends TestCase
         }
         $xw = $bundle->xmlSerialize(config: $this->_version->getConfig()->getSerializeConfig());
         $this->assertXmlStringEqualsXmlString($rc->getResp(), $xw->outputMemory());
-    }
-
-    public function testCanExecuteValidations()
-    {
-        $type = new FHIRList();
-        $errs = $type->_getValidationErrors();
-        $this->assertIsArray($errs);
     }
 }

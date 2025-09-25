@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2523,6 +2523,13 @@ class FHIRQuestionnaire extends FHIRMetadataResource implements VersionContained
                                            null|ResourceTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIRQuestionnaire)) {
             throw new \RuntimeException(sprintf(
@@ -2605,7 +2612,7 @@ class FHIRQuestionnaire extends FHIRMetadataResource implements VersionContained
             || property_exists($decoded, self::FIELD_DERIVED_FROM)
             || property_exists($decoded, self::FIELD_DERIVED_FROM_EXT)) {
             $vals = (array)($decoded->derivedFrom ?? []);
-            $exts = (array)($decoded->FIELD_DERIVED_FROM_EXT ?? []);
+            $exts = (array)($decoded->_derivedFrom ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -2638,7 +2645,7 @@ class FHIRQuestionnaire extends FHIRMetadataResource implements VersionContained
             || property_exists($decoded, self::FIELD_SUBJECT_TYPE)
             || property_exists($decoded, self::FIELD_SUBJECT_TYPE_EXT)) {
             $vals = (array)($decoded->subjectType ?? []);
-            $exts = (array)($decoded->FIELD_SUBJECT_TYPE_EXT ?? []);
+            $exts = (array)($decoded->_subjectType ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

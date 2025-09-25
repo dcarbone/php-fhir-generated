@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -16957,6 +16957,13 @@ class FHIRElementDefinition extends FHIRBackboneElement
                                            null|ElementTypeInterface $type = null): self
     {
         if (null === $type) {
+            if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
+                throw new \DomainException(sprintf(
+                    '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
+                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    $decoded->resourceType,
+                ));
+            }
             $type = new static();
         } else if (!($type instanceof FHIRElementDefinition)) {
             throw new \RuntimeException(sprintf(
@@ -16980,7 +16987,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_REPRESENTATION)
             || property_exists($decoded, self::FIELD_REPRESENTATION_EXT)) {
             $vals = (array)($decoded->representation ?? []);
-            $exts = (array)($decoded->FIELD_REPRESENTATION_EXT ?? []);
+            $exts = (array)($decoded->_representation ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -17071,7 +17078,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_ALIAS)
             || property_exists($decoded, self::FIELD_ALIAS_EXT)) {
             $vals = (array)($decoded->alias ?? []);
-            $exts = (array)($decoded->FIELD_ALIAS_EXT ?? []);
+            $exts = (array)($decoded->_alias ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {
@@ -18435,7 +18442,7 @@ class FHIRElementDefinition extends FHIRBackboneElement
             || property_exists($decoded, self::FIELD_CONDITION)
             || property_exists($decoded, self::FIELD_CONDITION_EXT)) {
             $vals = (array)($decoded->condition ?? []);
-            $exts = (array)($decoded->FIELD_CONDITION_EXT ?? []);
+            $exts = (array)($decoded->_condition ?? []);
             $valCnt = count($vals);
             $extCnt = count($exts);
             if ($extCnt > $valCnt) {

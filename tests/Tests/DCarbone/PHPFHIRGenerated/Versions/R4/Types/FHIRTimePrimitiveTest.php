@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: September 20th, 2025 13:35+0000
+ * Class creation date: September 25th, 2025 15:14+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,7 @@ class FHIRTimePrimitiveTest extends TestCase
         $type = new FHIRTimePrimitive();
         $this->assertEquals('time-primitive', $type->_getFHIRTypeName());
     }
+
     public function testCanConstructWithString()
     {
         $type = new FHIRTimePrimitive(value: 'randomstring');
@@ -92,7 +93,7 @@ class FHIRTimePrimitiveTest extends TestCase
         $this->assertEquals(\DCarbone\PHPFHIRGenerated\Versions\R4\Version::getFHIRVersion(), $type->_getFHIRVersion());
     }
 
-    public function testCanGetValueAsDateTime()
+    public function testCanSetValueWithDateTime()
     {
         $date = \DateTime::createFromFormat("Y-m-d\TH:i:sP", '2020-02-02T20:20:20+00:00');
         $type = new FHIRTimePrimitive(value: $date);
