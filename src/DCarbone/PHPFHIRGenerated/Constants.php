@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 6th, 2025 21:47+0000
+ * Class creation date: April 17th, 2026 14:19+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2025 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ namespace DCarbone\PHPFHIRGenerated;
 final class Constants
 {
     // PHPFHIR
-    public const CODE_GENERATION_DATE = 'November 6th, 2025 21:47+0000';
+    public const CODE_GENERATION_DATE = 'April 17th, 2026 14:19+0000';
 
     // Common
     public const JSON_FIELD_RESOURCE_TYPE = 'resourceType';

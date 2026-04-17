@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 6th, 2025 21:47+0000
+ * Class creation date: April 17th, 2026 14:19+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2025 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ class Client implements ClientInterface
     private const _BASE_CURL_OPTS = [
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_USERAGENT => 'php-fhir client (build: November 6th, 2025 21:47+0000;)',
+        CURLOPT_USERAGENT => 'php-fhir client (build: April 17th, 2026 14:19+0000;)',
     ];
 
     protected Config $_config;
@@ -130,7 +130,6 @@ class Client implements ClientInterface
         $rc->code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $rc->err = curl_error($ch);
         $rc->errno = curl_errno($ch);
-        curl_close($ch);
 
         if (0 === $rc->errno) {
             if ($parseResponseHeaders) {
