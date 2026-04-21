@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 17th, 2026 14:19+0000
+ * Class creation date: April 21st, 2026 03:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,8 +91,9 @@ class Version implements VersionInterface
 {
     public const NAME = 'R4B';
     public const FHIR_SEMANTIC_VERSION = 'v4.3.0';
-    public const FHIR_SHORT_VERSION = 'v4.3';
+    public const FHIR_SHORT_VERSION = '4.3';
     public const FHIR_VERSION_INTEGER = 43000000;
+    public const FHIR_PRE_RELEASE = NULL;
     public const FHIR_GENERATION_DATE = 'Sat, May 28, 2022 12:47+1000';
 
     private const _GENERATED_CONFIG = [];
@@ -138,10 +139,11 @@ class Version implements VersionInterface
     {
         if (!isset(self::$_fhirVersion)) {
             self::$_fhirVersion = new FHIRVersion(
-                self::NAME,
-                self::FHIR_SEMANTIC_VERSION,
-                self::FHIR_SHORT_VERSION,
-                self::FHIR_VERSION_INTEGER,
+                versionName: self::NAME,
+                fhirSemanticVersion: self::FHIR_SEMANTIC_VERSION,
+                fhirShortVersion: self::FHIR_SHORT_VERSION,
+                fhirVersionInteger: self::FHIR_VERSION_INTEGER,
+                fhirPreRelease: self::FHIR_PRE_RELEASE,
             );
         }
         return self::$_fhirVersion;
@@ -169,6 +171,22 @@ class Version implements VersionInterface
     public function getFHIRVersionInteger(): int
     {
         return self::FHIR_VERSION_INTEGER;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getFHIRPreRelease(): null|string
+    {
+        return self::FHIR_PRE_RELEASE;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFHIRPreRelease(): bool
+    {
+        return null !== self::FHIR_PRE_RELEASE;
     }
 
     /**

@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Mock;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 17th, 2026 14:19+0000
+ * Class creation date: April 21st, 2026 03:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -41,7 +41,8 @@ abstract class AbstractMockType implements TypeInterface
 
     public function __construct(string $name,
                                 string $versionName = self::DEFAULT_MOCK_VERSION_NAME,
-                                string $semanticVersion = self::DEFAULT_MOCK_SEMANTIC_VERSION)
+                                string $semanticVersion = self::DEFAULT_MOCK_SEMANTIC_VERSION,
+                                null|string $preRelease = null)
     {
         $this->_name = $name;
 
@@ -53,10 +54,11 @@ abstract class AbstractMockType implements TypeInterface
         };
 
         $this->_fhirVersion = new FHIRVersion(
-            $versionName,
-            $semanticVersion,
-            $shortVersion,
-            intval(sprintf("%'.-08s", str_replace(['v', '.'], '', $semanticVersion))),
+            versionName: $versionName,
+            fhirSemanticVersion: $semanticVersion,
+            fhirShortVersion: $shortVersion,
+            fhirVersionInteger: intval(sprintf("%'.-08s", str_replace(['v', '.'], '', $semanticVersion))),
+            fhirPreRelease: $preRelease,
         );
     }
 

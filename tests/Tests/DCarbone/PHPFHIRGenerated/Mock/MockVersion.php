@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Mock;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 17th, 2026 14:19+0000
+ * Class creation date: April 21st, 2026 03:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -37,6 +37,7 @@ class MockVersion implements VersionInterface
     public const FHIR_SEMANTIC_VERSION = 'v99.99.99';
     public const FHIR_SHORT_VERSION = 'v9.9';
     public const FHIR_VERSION_INTEGER = 999999999;
+    public const FHIR_PRE_RELEASE = null;
 
     private static FHIRVersion $_fhirVersion;
     private static VersionTypeMapInterface $_typeMap;
@@ -57,10 +58,11 @@ class MockVersion implements VersionInterface
     {
         if (!isset(self::$_fhirVersion)) {
             self::$_fhirVersion = new FHIRVersion(
-                self::NAME,
-                self::FHIR_SEMANTIC_VERSION,
-                self::FHIR_SHORT_VERSION,
-                self::FHIR_VERSION_INTEGER,
+                versionName: self::NAME,
+                fhirSemanticVersion: self::FHIR_SEMANTIC_VERSION,
+                fhirShortVersion: self::FHIR_SHORT_VERSION,
+                fhirVersionInteger: self::FHIR_VERSION_INTEGER,
+                fhirPreRelease: self::FHIR_PRE_RELEASE,
             );
         }
         return self::$_fhirVersion;
@@ -79,6 +81,16 @@ class MockVersion implements VersionInterface
     public function getFHIRVersionInteger(): int
     {
         return self::FHIR_VERSION_INTEGER;
+    }
+
+    public function getFHIRPreRelease(): null|string
+    {
+        return self::FHIR_PRE_RELEASE;
+    }
+
+    public function isFHIRPreRelease(): bool
+    {
+        return null !== self::FHIR_PRE_RELEASE;
     }
 
     public function getFHIRGenerationDate(): string

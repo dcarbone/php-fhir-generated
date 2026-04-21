@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 17th, 2026 14:19+0000
+ * Class creation date: April 21st, 2026 03:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -33,21 +33,25 @@ class FHIRVersion implements \JsonSerializable
     public const STU3_MIN_VERSION_INTEGER = 30000000;
     public const R4_MIN_VERSION_INTEGER = 40000000;
     public const R5_MIN_VERSION_INTEGER = 50000000;
+    public const R6_MIN_VERSION_INTEGER = 60000000;
 
     private string $_versionName;
     private string $_fhirSemanticVersion;
     private string $_fhirShortVersion;
     private int $_fhirVersionInteger;
+    private null|string $_fhirPreRelease;
 
     public function __construct(string $versionName,
                                 string $fhirSemanticVersion,
                                 string $fhirShortVersion,
-                                int $fhirVersionInteger)
+                                int $fhirVersionInteger,
+                                null|string $fhirPreRelease = null)
     {
         $this->_versionName = $versionName;
         $this->_fhirSemanticVersion = $fhirSemanticVersion;
         $this->_fhirShortVersion = $fhirShortVersion;
         $this->_fhirVersionInteger = $fhirVersionInteger;
+        $this->_fhirPreRelease = $fhirPreRelease;
     }
 
     public function getName(): string
@@ -70,6 +74,16 @@ class FHIRVersion implements \JsonSerializable
         return $this->_fhirVersionInteger;
     }
 
+    public function getFHIRPreRelease(): null|string
+    {
+        return $this->_fhirPreRelease;
+    }
+
+    public function isFHIRPreRelease(): bool
+    {
+        return null !== $this->_fhirPreRelease;
+    }
+
     public function jsonSerialize(): \stdClass
     {
         $out = new \stdClass();
@@ -77,6 +91,7 @@ class FHIRVersion implements \JsonSerializable
         $out->fhirSemanticVersion = $this->_fhirSemanticVersion;
         $out->fhirShortversion = $this->_fhirShortVersion;
         $out->fhirVersionInteger = $this->_fhirVersionInteger;
+        $out->fhirPreRelease = $this->_fhirPreRelease;
         return $out;
     }
 

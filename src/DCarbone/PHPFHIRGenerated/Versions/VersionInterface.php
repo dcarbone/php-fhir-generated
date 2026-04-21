@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 17th, 2026 14:19+0000
+ * Class creation date: April 21st, 2026 03:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,6 +64,21 @@ interface VersionInterface
      * @return int
      */
     public function getFHIRVersionInteger(): int;
+
+    /**
+     * Must return the pre-release identifier from the FHIR version string (e.g. 'ballot4'),
+     * or null when this is a GA release.
+     *
+     * @return null|string
+     */
+    public function getFHIRPreRelease(): null|string;
+
+    /**
+     * Must return true when the FHIR source version is a pre-release (e.g. a ballot build).
+     *
+     * @return bool
+     */
+    public function isFHIRPreRelease(): bool;
 
     /**
      * Must return the date this FHIR version's source was generated

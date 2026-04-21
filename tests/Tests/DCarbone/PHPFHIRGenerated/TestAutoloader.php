@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 17th, 2026 14:19+0000
+ * Class creation date: April 21st, 2026 03:50+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -34,6 +34,7 @@ abstract class TestAutoloader
         'Tests\DCarbone\PHPFHIRGenerated\Client\ClientTest' => __DIR__ . '/Client/ClientTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\TestAutoloader' => __DIR__ . '/TestAutoloader.php',
         'Tests\DCarbone\PHPFHIRGenerated\Versions\VersionConfigTest' => __DIR__ . '/Versions/VersionConfigTest.php',
+        'Tests\DCarbone\PHPFHIRGenerated\Versions\MockVersionTest' => __DIR__ . '/Versions/MockVersionTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Validation\ValidatorTest' => __DIR__ . '/Validation/ValidatorTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRuleTest' => __DIR__ . '/Validation/Rules/MinOccursRuleTest.php',
         'Tests\DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOnOfRuleTest' => __DIR__ . '/Validation/Rules/ValueOnOfRuleTest.php',
