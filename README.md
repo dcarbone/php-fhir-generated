@@ -130,6 +130,7 @@ Full documentation is available on the **[Wiki](https://github.com/dcarbone/php-
 - [Validation](https://github.com/dcarbone/php-fhir-generated/wiki/Validation) — Built-in and custom validation rules
 - [Type System](https://github.com/dcarbone/php-fhir-generated/wiki/Type-System) — Type hierarchy and interfaces
 - [Autoloading](https://github.com/dcarbone/php-fhir-generated/wiki/Autoloading) — Class loading with and without Composer
+- [Migrating from v2](https://github.com/dcarbone/php-fhir-generated/wiki/Migrating-from-v2) — Breaking changes and upgrade guide from the previous major version
 
 ## Related Projects
 
