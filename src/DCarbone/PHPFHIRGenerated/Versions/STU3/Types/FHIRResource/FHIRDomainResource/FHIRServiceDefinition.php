@@ -5,34 +5,34 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -41,7 +41,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -52,14 +52,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -205,7 +205,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * of the service definition. For more information see [Technical and Business
      * Versions](resource.html#versions).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -220,7 +220,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * Note that at least one identifier is required for non-experimental active
      * artifacts.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -236,7 +236,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -249,7 +249,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -260,7 +260,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * A short, descriptive, user-friendly title for the service definition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -270,7 +270,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * The status of this service definition. Enables tracking the life-cycle of the
      * content.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -282,7 +282,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -299,7 +299,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * the status code changes. In addition, it should change when the substantive
      * content of the service definition changes.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -311,7 +311,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * The name of the individual or organization that published the service
      * definition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -329,7 +329,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * A free text natural language description of the service definition from a
      * consumer's perspective.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -347,7 +347,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * Explaination of why this service definition is needed and why it has been
      * designed as it has.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -358,7 +358,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * A detailed description of how the module is used from a clinical perspective.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $usage;
@@ -371,7 +371,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $approvalDate;
@@ -384,7 +384,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastReviewDate;
@@ -396,7 +396,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * The period during which the service definition content was or is planned to be
      * in active use.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -412,7 +412,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate service definition instances.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext>
      */
     #[FHIRUsageContext]
     protected array $useContext;
@@ -425,7 +425,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * A legal or geographic region in which the service definition is intended to be
      * used.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $jurisdiction;
@@ -438,7 +438,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * Descriptive topics related to the module. Topics provide a high-level
      * categorization of the module that can be useful for filtering and searching.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $topic;
@@ -451,7 +451,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * A contributor to the content of the module, including authors, editors,
      * reviewers, and endorsers.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContributor> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContributor>
      */
     #[FHIRContributor]
     protected array $contributor;
@@ -463,7 +463,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $contact;
@@ -482,7 +482,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the service definition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -495,7 +495,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * Related resources such as additional documentation, justification, or
      * bibliographic references.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRelatedArtifact> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRelatedArtifact>
      */
     #[FHIRRelatedArtifact]
     protected array $relatedArtifact;
@@ -508,7 +508,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * used by consumers of the rule to determine how to integrate the rule into a
      * specific workflow.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTriggerDefinition> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTriggerDefinition>
      */
     #[FHIRTriggerDefinition]
     protected array $trigger;
@@ -521,7 +521,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      * Data requirements are a machine processable description of the data required by
      * the module in order to perform a successful evaluation.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement>
      */
     #[FHIRDataRequirement]
     protected array $dataRequirement;
@@ -532,7 +532,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
      *
      * A reference to the operation that is used to invoke this service.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $operationDefinition;
@@ -2046,9 +2046,9 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
         } else if (!($type instanceof FHIRServiceDefinition)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2537,7 +2537,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -2545,9 +2545,9 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
         } else if (!($type instanceof FHIRServiceDefinition)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2559,7 +2559,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements VersionContain
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->url)
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)

@@ -5,25 +5,25 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
@@ -44,15 +44,15 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *  * See the License for the specific language governing permissions and
  *  * limitations under the License.
  *  * #L%
- *  
- * 
- * 
+ *
+ *
+ *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -61,7 +61,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -72,14 +72,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Sun, Mar 26, 2023 15:21+1100 for FHIR v5.0.0
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -221,7 +221,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -230,7 +230,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * The current state of the adverse event or potential adverse event.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventStatus
      */
     #[FHIRAdverseEventStatus]
     protected FHIRAdverseEventStatus $status;
@@ -240,7 +240,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * Whether the event actually happened or was a near miss. Note that this is
      * independent of whether anyone was affected or harmed or how severely.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventActuality 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventActuality
      */
     #[FHIRAdverseEventActuality]
     protected FHIRAdverseEventActuality $actuality;
@@ -252,7 +252,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * The overall type of event, intended for search and filtering purposes.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $category;
@@ -265,7 +265,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * Specific event that occurred or that was averted, such as patient fall, wrong
      * organ removed, or wrong blood transfused.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -276,7 +276,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * This subject or group impacted by the event.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -287,7 +287,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * The Encounter associated with the start of the AdverseEvent.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -303,7 +303,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * The date (and perhaps time) when the adverse event occurred. (choose any one of
      * occurrence*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -315,7 +315,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * The date (and perhaps time) when the adverse event occurred. (choose any one of
      * occurrence*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -331,7 +331,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * The date (and perhaps time) when the adverse event occurred. (choose any one of
      * occurrence*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -346,7 +346,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $detected;
@@ -361,7 +361,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * The date on which the existence of the AdverseEvent was first recorded.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $recordedDate;
@@ -374,7 +374,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * such as hives due to the exposure to a substance (for example, a drug or a
      * chemical) or a broken leg as a result of the fall.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference>
      */
     #[FHIRReference]
     protected array $resultingEffect;
@@ -385,7 +385,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * The information about where the adverse event occurred.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $location;
@@ -397,7 +397,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * Assessment whether this event, or averted event, was of clinical importance.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $seriousness;
@@ -410,7 +410,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * Describes the type of outcome from the adverse event, such as resolved,
      * recovering, ongoing, resolved-with-sequelae, or fatal.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $outcome;
@@ -422,7 +422,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * Information on who recorded the adverse event. May be the patient or a
      * practitioner.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $recorder;
@@ -443,7 +443,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * Indicates who or what participated in the adverse event and how they were
      * involved.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventParticipant> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventParticipant>
      */
     #[FHIRAdverseEventParticipant]
     protected array $participant;
@@ -454,7 +454,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * The research study that the subject is enrolled in.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference>
      */
     #[FHIRReference]
     protected array $study;
@@ -466,7 +466,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * reported event matches any of the outcomes for the patient that are considered
      * by the study as known or likely.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $expectedInResearchStudy;
@@ -486,7 +486,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * Describes the entity that is suspected to have caused the adverse event.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity>
      */
     #[FHIRAdverseEventSuspectEntity]
     protected array $suspectEntity;
@@ -507,7 +507,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * The contributing factors suspected to have increased the probability or severity
      * of the adverse event.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventContributingFactor> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventContributingFactor>
      */
     #[FHIRAdverseEventContributingFactor]
     protected array $contributingFactor;
@@ -527,7 +527,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * Preventive actions that contributed to avoiding the adverse event.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventPreventiveAction> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventPreventiveAction>
      */
     #[FHIRAdverseEventPreventiveAction]
     protected array $preventiveAction;
@@ -548,7 +548,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * The ameliorating action taken after the adverse event occured in order to reduce
      * the extent of harm.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventMitigatingAction> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventMitigatingAction>
      */
     #[FHIRAdverseEventMitigatingAction]
     protected array $mitigatingAction;
@@ -568,7 +568,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * Supporting information relevant to the event.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSupportingInfo> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSupportingInfo>
      */
     #[FHIRAdverseEventSupportingInfo]
     protected array $supportingInfo;
@@ -581,7 +581,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * Comments made about the adverse event by the performer, subject or other
      * participants.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation>
      */
     #[FHIRAnnotation]
     protected array $note;
@@ -2285,9 +2285,9 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
         } else if (!($type instanceof FHIRAdverseEvent)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2685,7 +2685,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -2693,9 +2693,9 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
         } else if (!($type instanceof FHIRAdverseEvent)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2707,7 +2707,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
             if (is_object($decoded->identifier)) {
                 $vals = [$decoded->identifier];

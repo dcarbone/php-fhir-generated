@@ -5,25 +5,25 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
@@ -44,15 +44,15 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *  * See the License for the specific language governing permissions and
  *  * limitations under the License.
  *  * #L%
- *  
- * 
- * 
+ *
+ *
+ *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -61,7 +61,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -72,14 +72,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Sun, Mar 26, 2023 15:21+1100 for FHIR v5.0.0
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -193,7 +193,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * Business identifier for this dispensation.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -204,7 +204,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * The order or request that this dispense is fulfilling.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference>
      */
     #[FHIRReference]
     protected array $basedOn;
@@ -215,7 +215,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * The bigger event that this dispense is a part of.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference>
      */
     #[FHIRReference]
     protected array $partOf;
@@ -225,7 +225,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * A code specifying the state of the set of dispense events.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceDispenseStatusCodes 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceDispenseStatusCodes
      */
     #[FHIRDeviceDispenseStatusCodes]
     protected FHIRDeviceDispenseStatusCodes $status;
@@ -237,7 +237,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates the reason why a dispense was or was not performed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $statusReason;
@@ -249,7 +249,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates the type of device dispense.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $category;
@@ -263,7 +263,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * representing the details of the device or a simple attribute carrying a code
      * that identifies the device from a known list of devices.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $device;
@@ -274,7 +274,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * A link to a resource representing the person to whom the device is intended.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -287,7 +287,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * the device was delivered. This may be a patient or their caregiver, but some
      * cases exist where it can be a healthcare professional or a location.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $receiver;
@@ -298,7 +298,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * The encounter that establishes the context for this event.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -309,7 +309,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * Additional information that supports the device being dispensed.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference>
      */
     #[FHIRReference]
     protected array $supportingInformation;
@@ -319,7 +319,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates who or what performed the event.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDispense\FHIRDeviceDispensePerformer> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDispense\FHIRDeviceDispensePerformer>
      */
     #[FHIRDeviceDispensePerformer]
     protected array $performer;
@@ -330,7 +330,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * The principal physical location where the dispense was performed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $location;
@@ -342,7 +342,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates the type of dispensing event that is performed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -355,7 +355,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * The number of devices that have been dispensed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -370,7 +370,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * The time when the dispensed product was packaged and reviewed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $preparedDate;
@@ -386,7 +386,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * The time the dispensed product was made available to the patient or their
      * representative.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $whenHandedOver;
@@ -398,7 +398,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * Identification of the facility/location where the device was /should be shipped
      * to, as part of the dispense process.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $destination;
@@ -411,7 +411,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * Extra information about the dispense that could not be conveyed in the other
      * attributes.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation>
      */
     #[FHIRAnnotation]
     protected array $note;
@@ -426,7 +426,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      *
      * The full representation of the instructions.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $usageInstruction;
@@ -438,7 +438,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
      * A summary of the events of interest that have occurred, such as when the
      * dispense was verified.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference>
      */
     #[FHIRReference]
     protected array $eventHistory;
@@ -1634,9 +1634,9 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
         } else if (!($type instanceof FHIRDeviceDispense)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -1965,7 +1965,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -1973,9 +1973,9 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
         } else if (!($type instanceof FHIRDeviceDispense)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -1987,7 +1987,7 @@ class FHIRDeviceDispense extends FHIRDomainResource implements VersionContainedT
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
             if (is_object($decoded->identifier)) {
                 $vals = [$decoded->identifier];

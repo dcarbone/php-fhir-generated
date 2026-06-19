@@ -5,34 +5,34 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
  *   Copyright (c) 2011-2013, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -41,7 +41,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -52,8 +52,8 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 use DCarbone\PHPFHIRGenerated\Constants;
@@ -183,7 +183,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * referenced in a specification, model, design or an instance (should be globally
      * unique OID, UUID, or URI).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $identifier;
@@ -196,7 +196,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * This is an arbitrary value managed by the profile author manually and the value
      * should be a timestamp.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -206,7 +206,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * A free text natural language name identifying the conformance statement.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -216,7 +216,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * Name of Organization publishing this conformance statement.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -229,7 +229,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * Contacts for Organization relevant to this conformance statement. The contacts
      * may be a website, email, phone numbers, etc.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact>
      */
     #[FHIRContact]
     protected array $telecom;
@@ -242,7 +242,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * actual solution, for example as a formal expression of requirements as part of
      * an RFP.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -252,7 +252,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * The status of this conformance statement.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRConformanceStatementStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRConformanceStatementStatus
      */
     #[FHIRConformanceStatementStatus]
     protected FHIRConformanceStatementStatus $status;
@@ -264,7 +264,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -277,7 +277,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * The date when the conformance statement was published.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -290,7 +290,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * profile describes the capabilities of a particular software version, independent
      * of an installation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSoftware 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSoftware
      */
     #[FHIRConformanceSoftware]
     protected FHIRConformanceSoftware $software;
@@ -303,7 +303,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * conformance statement - i.e. a particular installation, rather than the
      * capabilities of a software program.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceImplementation 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceImplementation
      */
     #[FHIRConformanceImplementation]
     protected FHIRConformanceImplementation $implementation;
@@ -317,7 +317,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * The version of the FHIR specification on which this conformance statement is
      * based.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $fhirVersion;
@@ -328,7 +328,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * A flag that indicates whether the application accepts unknown elements as part
      * of a resource.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $acceptUnknown;
@@ -340,7 +340,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * A list of the formats supported by this implementation.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode>
      */
     #[FHIRCode]
     protected array $format;
@@ -355,7 +355,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      * find appropriate data. For a client, it means the system will search by this
      * profile and process data according to the guidance implicit in the profile.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference>
      */
     #[FHIRResourceReference]
     protected array $profile;
@@ -366,7 +366,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * A definition of the restful capabilities of the solution, if any.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest>
      */
     #[FHIRConformanceRest]
     protected array $rest;
@@ -377,7 +377,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * A description of the messaging capabilities of the solution.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging>
      */
     #[FHIRConformanceMessaging]
     protected array $messaging;
@@ -388,7 +388,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
      *
      * A document definition.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceDocument> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceDocument>
      */
     #[FHIRConformanceDocument]
     protected array $document;
@@ -1418,9 +1418,9 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
         } else if (!($type instanceof FHIRConformance)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -1790,7 +1790,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -1798,9 +1798,9 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
         } else if (!($type instanceof FHIRConformance)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -1812,7 +1812,7 @@ class FHIRConformance extends FHIRResource implements VersionContainedTypeInterf
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->identifier)
             || isset($decoded->_identifier)
             || property_exists($decoded, self::FIELD_IDENTIFIER)

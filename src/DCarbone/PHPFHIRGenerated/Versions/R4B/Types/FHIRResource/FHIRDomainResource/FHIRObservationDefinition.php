@@ -5,25 +5,25 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
@@ -44,15 +44,15 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *  * See the License for the specific language governing permissions and
  *  * limitations under the License.
  *  * #L%
- *  
- * 
- * 
+ *
+ *
+ *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -61,7 +61,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -72,14 +72,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Sat, May 28, 2022 12:47+1000 for FHIR v4.3.0
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -174,7 +174,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * A code that classifies the general type of observation.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $category;
@@ -187,7 +187,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -199,7 +199,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -209,7 +209,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRObservationDataType> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRObservationDataType>
      */
     #[FHIRObservationDataType]
     protected array $permittedDataType;
@@ -220,7 +220,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * Multiple results allowed for observations conforming to this
      * ObservationDefinition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $multipleResultsAllowed;
@@ -232,7 +232,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * The method or technique used to perform the observation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $method;
@@ -244,7 +244,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * The preferred name to be used when reporting the results of observations
      * conforming to this ObservationDefinition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $preferredReportName;
@@ -254,7 +254,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * Characteristics for quantitative results of this observation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
      */
     #[FHIRObservationDefinitionQuantitativeDetails]
     protected FHIRObservationDefinitionQuantitativeDetails $quantitativeDetails;
@@ -265,7 +265,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * Multiple ranges of results qualified by different contexts for ordinal or
      * continuous observations conforming to this ObservationDefinition.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval>
      */
     #[FHIRObservationDefinitionQualifiedInterval]
     protected array $qualifiedInterval;
@@ -277,7 +277,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * The set of valid coded results for the observations conforming to this
      * ObservationDefinition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $validCodedValueSet;
@@ -289,7 +289,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * The set of normal coded results for the observations conforming to this
      * ObservationDefinition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $normalCodedValueSet;
@@ -301,7 +301,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * The set of abnormal coded results for the observation conforming to this
      * ObservationDefinition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $abnormalCodedValueSet;
@@ -313,7 +313,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * The set of critical coded results for the observation conforming to this
      * ObservationDefinition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $criticalCodedValueSet;
@@ -1042,9 +1042,9 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         } else if (!($type instanceof FHIRObservationDefinition)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -1283,7 +1283,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -1291,9 +1291,9 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         } else if (!($type instanceof FHIRObservationDefinition)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -1305,7 +1305,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->category) || property_exists($decoded, self::FIELD_CATEGORY)) {
             if (is_object($decoded->category)) {
                 $vals = [$decoded->category];

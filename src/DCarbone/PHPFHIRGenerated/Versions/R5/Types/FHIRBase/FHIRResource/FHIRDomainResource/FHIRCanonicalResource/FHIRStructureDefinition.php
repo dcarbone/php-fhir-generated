@@ -5,25 +5,25 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
@@ -44,15 +44,15 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *  * See the License for the specific language governing permissions and
  *  * limitations under the License.
  *  * #L%
- *  
- * 
- * 
+ *
+ *
+ *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -61,7 +61,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -72,14 +72,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Sun, Mar 26, 2023 15:21+1100 for FHIR v5.0.0
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -264,7 +264,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * SHALL remain the same when the structure definition is stored on different
      * servers.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -278,7 +278,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * is represented in other formats, or referenced in a specification, model, design
      * or an instance.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -296,7 +296,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * is no managed version available, authors can consider using ISO date/time syntax
      * (e.g., '2023-01-01').
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -308,7 +308,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * Indicates the mechanism used to compare versions to determine which is more
      * current. (choose any one of versionAlgorithm*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -320,7 +320,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * Indicates the mechanism used to compare versions to determine which is more
      * current. (choose any one of versionAlgorithm*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -333,7 +333,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -344,7 +344,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * A short, descriptive, user-friendly title for the structure definition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -354,7 +354,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * The status of this structure definition. Enables tracking the life-cycle of the
      * content.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -366,7 +366,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -384,7 +384,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the structure definition changes.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -396,7 +396,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the structure definition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -408,7 +408,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $contact;
@@ -424,7 +424,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * A free text natural language description of the structure definition from a
      * consumer's perspective.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -442,7 +442,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * be used to assist with indexing and searching for appropriate structure
      * definition instances.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext>
      */
     #[FHIRUsageContext]
     protected array $useContext;
@@ -455,7 +455,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * A legal or geographic region in which the structure definition is intended to be
      * used.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $jurisdiction;
@@ -471,7 +471,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * Explanation of why this structure definition is needed and why it has been
      * designed as it has.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -489,7 +489,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * of the structure definition. The short copyright declaration (e.g. (c) '2015+
      * xyz organization' should be sent in the copyrightLabel element.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -502,7 +502,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $copyrightLabel;
@@ -515,7 +515,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * used to assist with indexing and searching of templates nby describing the use
      * of this structure definition, or the content it describes.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding>
      */
     #[FHIRCoding]
     protected array $keyword;
@@ -526,7 +526,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * - this is the formal version of the specification, without the revision number,
      * e.g. [publication].[major].[minor], which is 4.6.0. for this version.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRVersion 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRVersion
      */
     #[FHIRFHIRVersion]
     protected FHIRFHIRVersion $fhirVersion;
@@ -537,7 +537,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * An external specification that the content is mapped to.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping>
      */
     #[FHIRStructureDefinitionMapping]
     protected array $mapping;
@@ -546,7 +546,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Defines the kind of structure that this definition is describing.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureDefinitionKind 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureDefinitionKind
      */
     #[FHIRStructureDefinitionKind]
     protected FHIRStructureDefinitionKind $kind;
@@ -558,7 +558,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * whether the structure is not intended to be instantiated. For Resources and Data
      * types, abstract types will never be exchanged between systems.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $abstract;
@@ -571,7 +571,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * can be applied. For more guidance on using the 'context' element, see the
      * [defining extensions page](defining-extensions.html#context).
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContext> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContext>
      */
     #[FHIRStructureDefinitionContext]
     protected array $context;
@@ -583,7 +583,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * A set of rules as FHIRPath Invariants about when the extension can be used (e.g.
      * co-occurrence variants for the extension). All the rules must be true.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString>
      */
     #[FHIRString]
     protected array $contextInvariant;
@@ -601,7 +601,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed
      * in logical models, where they are required.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $type;
@@ -614,7 +614,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * An absolute URI that is the base structure from which this type is derived,
      * either by specialization or constraint.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $baseDefinition;
@@ -623,7 +623,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * How the type relates to the baseDefinition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTypeDerivationRule 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTypeDerivationRule
      */
     #[FHIRTypeDerivationRule]
     protected FHIRTypeDerivationRule $derivation;
@@ -635,7 +635,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * A snapshot view is expressed in a standalone form that can be used and
      * interpreted without considering the base StructureDefinition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
      */
     #[FHIRStructureDefinitionSnapshot]
     protected FHIRStructureDefinitionSnapshot $snapshot;
@@ -647,7 +647,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
      * A differential view is expressed relative to the base StructureDefinition - a
      * statement of differences that it applies.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
      */
     #[FHIRStructureDefinitionDifferential]
     protected FHIRStructureDefinitionDifferential $differential;
@@ -2351,9 +2351,9 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
         } else if (!($type instanceof FHIRStructureDefinition)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2940,7 +2940,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -2948,9 +2948,9 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
         } else if (!($type instanceof FHIRStructureDefinition)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2962,7 +2962,7 @@ class FHIRStructureDefinition extends FHIRCanonicalResource implements VersionCo
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->url)
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)

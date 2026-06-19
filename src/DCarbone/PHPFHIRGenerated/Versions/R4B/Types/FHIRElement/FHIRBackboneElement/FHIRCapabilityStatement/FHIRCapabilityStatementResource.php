@@ -5,25 +5,25 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
@@ -44,15 +44,15 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *  * See the License for the specific language governing permissions and
  *  * limitations under the License.
  *  * #L%
- *  
- * 
- * 
+ *
+ *
+ *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -61,7 +61,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -72,14 +72,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Sat, May 28, 2022 12:47+1000 for FHIR v4.3.0
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -189,7 +189,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A type of resource exposed via the restful interface.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType
      */
     #[FHIRResourceType]
     protected FHIRResourceType $type;
@@ -204,7 +204,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * other limitations. See further discussion in [Using
      * Profiles](profiling.html#profile-uses).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $profile;
@@ -222,7 +222,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * according to the guidance implicit in the profile. See further discussion in
      * [Using Profiles](profiling.html#profile-uses).
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical>
      */
     #[FHIRCanonical]
     protected array $supportedProfile;
@@ -237,7 +237,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * Additional information about the resource type used by the system.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $documentation;
@@ -249,7 +249,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * Identifies a restful operation supported by the solution.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction>
      */
     #[FHIRCapabilityStatementInteraction]
     protected array $interaction;
@@ -263,7 +263,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * supports all the versioning features, including using e-tags for version
      * integrity in the API.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceVersionPolicy 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceVersionPolicy
      */
     #[FHIRResourceVersionPolicy]
     protected FHIRResourceVersionPolicy $versioning;
@@ -274,7 +274,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $readHistory;
@@ -287,7 +287,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * is no existing resource). Allowing this operation means that the server allows
      * the client to create new identities on the server.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $updateCreate;
@@ -297,7 +297,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A flag that indicates that the server supports conditional create.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $conditionalCreate;
@@ -306,7 +306,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A code that indicates how the server supports conditional read.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalReadStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalReadStatus
      */
     #[FHIRConditionalReadStatus]
     protected FHIRConditionalReadStatus $conditionalRead;
@@ -316,7 +316,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A flag that indicates that the server supports conditional update.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $conditionalUpdate;
@@ -325,7 +325,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A code that indicates how the server supports conditional delete.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalDeleteStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalDeleteStatus
      */
     #[FHIRConditionalDeleteStatus]
     protected FHIRConditionalDeleteStatus $conditionalDelete;
@@ -334,7 +334,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A set of flags that defines how references are supported.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReferenceHandlingPolicy> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReferenceHandlingPolicy>
      */
     #[FHIRReferenceHandlingPolicy]
     protected array $referencePolicy;
@@ -345,7 +345,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A list of _include values supported by the server.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString>
      */
     #[FHIRString]
     protected array $searchInclude;
@@ -356,7 +356,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A list of _revinclude (reverse include) values supported by the server.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString>
      */
     #[FHIRString]
     protected array $searchRevInclude;
@@ -370,7 +370,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * references to ones defined in the specification, or additional ones defined
      * for/by the implementation.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam>
      */
     #[FHIRCapabilityStatementSearchParam]
     protected array $searchParam;
@@ -384,7 +384,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * their meaning and type. Consult the definition of the operation for details
      * about how to invoke the operation, and the parameters.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation>
      */
     #[FHIRCapabilityStatementOperation]
     protected array $operation;
@@ -1421,9 +1421,9 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         } else if (!($type instanceof FHIRCapabilityStatementResource)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         foreach ($element->children() as $ce) {
@@ -1739,7 +1739,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -1747,12 +1747,12 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         } else if (!($type instanceof FHIRCapabilityStatementResource)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->type)
             || isset($decoded->_type)
             || property_exists($decoded, self::FIELD_TYPE)

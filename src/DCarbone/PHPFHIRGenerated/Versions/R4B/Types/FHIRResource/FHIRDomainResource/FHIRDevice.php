@@ -5,25 +5,25 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
@@ -44,15 +44,15 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *  * See the License for the specific language governing permissions and
  *  * limitations under the License.
  *  * #L%
- *  
- * 
- * 
+ *
+ *
+ *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -61,7 +61,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -72,14 +72,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Sat, May 28, 2022 12:47+1000 for FHIR v4.3.0
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -205,7 +205,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * Unique instance identifiers assigned to a device by manufacturers other
      * organizations or owners.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -216,7 +216,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The reference to the definition for the device.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $definition;
@@ -230,7 +230,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it
      * could have been sold.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier>
      */
     #[FHIRDeviceUdiCarrier]
     protected array $udiCarrier;
@@ -239,7 +239,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Status of the Device availability.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFHIRDeviceStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFHIRDeviceStatus
      */
     #[FHIRFHIRDeviceStatus]
     protected FHIRFHIRDeviceStatus $status;
@@ -251,7 +251,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Reason for the dtatus of the Device availability.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $statusReason;
@@ -263,7 +263,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * The distinct identification string as required by regulation for a human cell,
      * tissue, or cellular and tissue-based product.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $distinctIdentifier;
@@ -274,7 +274,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * A name of the manufacturer.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $manufacturer;
@@ -288,7 +288,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The date and time when the device was manufactured.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $manufactureDate;
@@ -303,7 +303,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * The date and time beyond which this device is no longer valid or should not be
      * used (if applicable).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $expirationDate;
@@ -314,7 +314,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Lot number assigned by the manufacturer.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $lotNumber;
@@ -325,7 +325,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The serial number assigned by the organization when the device was manufactured.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $serialNumber;
@@ -339,7 +339,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * used when a person provides the name(s) or when the device represents one of the
      * names available from DeviceDefinition.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceDeviceName> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceDeviceName>
      */
     #[FHIRDeviceDeviceName]
     protected array $deviceName;
@@ -350,7 +350,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The manufacturer's model number for the device.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $modelNumber;
@@ -361,7 +361,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The part number or catalog number of the device.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $partNumber;
@@ -373,7 +373,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The kind or type of device.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -385,7 +385,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * The capabilities supported on a device, the standards to which the device
      * conforms for a particular purpose, and used for the communication.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceSpecialization> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceSpecialization>
      */
     #[FHIRDeviceSpecialization]
     protected array $specialization;
@@ -396,7 +396,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The actual design of the device or software version running on the device.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceVersion> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceVersion>
      */
     #[FHIRDeviceVersion]
     protected array $version;
@@ -408,7 +408,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * The actual configuration settings of a device as it actually operates, e.g.,
      * regulation status, time properties.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceProperty> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceProperty>
      */
     #[FHIRDeviceProperty]
     protected array $property;
@@ -419,7 +419,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * Patient information, If the device is affixed to a person.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -431,7 +431,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * An organization that is responsible for the provision and ongoing maintenance of
      * the device.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $owner;
@@ -444,7 +444,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * Contact details for an organization or a particular human that is responsible
      * for the device.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint>
      */
     #[FHIRContactPoint]
     protected array $contact;
@@ -455,7 +455,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The place where the device can be found.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $location;
@@ -466,7 +466,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * A network address on which the device may be contacted directly.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -479,7 +479,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * Descriptive information, usage information or implantation information that is
      * not captured in an existing element.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation>
      */
     #[FHIRAnnotation]
     protected array $note;
@@ -492,7 +492,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      * Provides additional safety characteristics about a medical device. For example
      * devices containing latex.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $safety;
@@ -503,7 +503,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
      *
      * The device that this device is attached to or is part of.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $parent;
@@ -1983,9 +1983,9 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
         } else if (!($type instanceof FHIRDevice)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2431,7 +2431,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -2439,9 +2439,9 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
         } else if (!($type instanceof FHIRDevice)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2453,7 +2453,7 @@ class FHIRDevice extends FHIRDomainResource implements VersionContainedTypeInter
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
             if (is_object($decoded->identifier)) {
                 $vals = [$decoded->identifier];

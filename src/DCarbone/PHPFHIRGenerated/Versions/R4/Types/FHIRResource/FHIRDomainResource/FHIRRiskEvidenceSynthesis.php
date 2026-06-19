@@ -5,34 +5,34 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -41,7 +41,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -52,14 +52,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -211,7 +211,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * reference. It SHALL remain the same when the risk evidence synthesis is stored
      * on different servers.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -225,7 +225,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * it is represented in other formats, or referenced in a specification, model,
      * design or an instance.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -241,7 +241,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * yyyymmdd) if a managed version is not available. There is also no expectation
      * that versions can be placed in a lexicographical sequence.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -254,7 +254,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -265,7 +265,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * A short, descriptive, user-friendly title for the risk evidence synthesis.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -275,7 +275,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * The status of this risk evidence synthesis. Enables tracking the life-cycle of
      * the content.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -292,7 +292,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * status code changes. In addition, it should change when the substantive content
      * of the risk evidence synthesis changes.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -304,7 +304,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * The name of the organization or individual that published the risk evidence
      * synthesis.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -316,7 +316,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $contact;
@@ -332,7 +332,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * A free text natural language description of the risk evidence synthesis from a
      * consumer's perspective.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -344,7 +344,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * A human-readable string to clarify or explain concepts about the resource.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation>
      */
     #[FHIRAnnotation]
     protected array $note;
@@ -362,7 +362,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * be used to assist with indexing and searching for appropriate risk evidence
      * synthesis instances.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext>
      */
     #[FHIRUsageContext]
     protected array $useContext;
@@ -375,7 +375,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * A legal or geographic region in which the risk evidence synthesis is intended to
      * be used.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $jurisdiction;
@@ -392,7 +392,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the risk evidence synthesis.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -405,7 +405,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $approvalDate;
@@ -418,7 +418,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastReviewDate;
@@ -430,7 +430,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * The period during which the risk evidence synthesis content was or is planned to
      * be in active use.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -444,7 +444,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * provide a high-level categorization grouping types of EffectEvidenceSynthesiss
      * that can be useful for filtering and searching.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $topic;
@@ -456,7 +456,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $author;
@@ -468,7 +468,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * An individual or organization primarily responsible for internal coherence of
      * the content.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $editor;
@@ -480,7 +480,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $reviewer;
@@ -492,7 +492,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $endorser;
@@ -505,7 +505,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact>
      */
     #[FHIRRelatedArtifact]
     protected array $relatedArtifact;
@@ -517,7 +517,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * Type of synthesis eg meta-analysis.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $synthesisType;
@@ -529,7 +529,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * Type of study eg randomized trial.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $studyType;
@@ -541,7 +541,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * A reference to a EvidenceVariable resource that defines the population for the
      * research.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $population;
@@ -553,7 +553,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * A reference to a EvidenceVariable resource that defines the exposure for the
      * research.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $exposure;
@@ -565,7 +565,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      * A reference to a EvidenceVariable resomece that defines the outcome for the
      * research.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $outcome;
@@ -576,7 +576,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * A description of the size of the sample involved in the synthesis.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize
      */
     #[FHIRRiskEvidenceSynthesisSampleSize]
     protected FHIRRiskEvidenceSynthesisSampleSize $sampleSize;
@@ -587,7 +587,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * The estimated risk of the outcome.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate
      */
     #[FHIRRiskEvidenceSynthesisRiskEstimate]
     protected FHIRRiskEvidenceSynthesisRiskEstimate $riskEstimate;
@@ -598,7 +598,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
      *
      * A description of the certainty of the risk estimate.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisCertainty> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisCertainty>
      */
     #[FHIRRiskEvidenceSynthesisCertainty]
     protected array $certainty;
@@ -2418,9 +2418,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         } else if (!($type instanceof FHIRRiskEvidenceSynthesis)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2918,7 +2918,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -2926,9 +2926,9 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
         } else if (!($type instanceof FHIRRiskEvidenceSynthesis)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2940,7 +2940,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements VersionCon
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->url)
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)

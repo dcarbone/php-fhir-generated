@@ -5,34 +5,34 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -41,7 +41,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -52,14 +52,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -180,7 +180,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -190,7 +190,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Identifies the workflow status of the assessment.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRClinicalImpressionStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRClinicalImpressionStatus
      */
     #[FHIRClinicalImpressionStatus]
     protected FHIRClinicalImpressionStatus $status;
@@ -202,7 +202,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Captures the reason for the current state of the ClinicalImpression.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $statusReason;
@@ -214,7 +214,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Categorizes the type of clinical assessment performed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -226,7 +226,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * A summary of the context and/or cause of the assessment - why / where it was
      * performed, and what patient events/status prompted it.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -237,7 +237,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * The patient or group of individuals assessed as part of this record.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -249,7 +249,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * The Encounter during which this ClinicalImpression was created or to which the
      * creation of this record is tightly associated.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -263,7 +263,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * The point in time or period over which the subject was assessed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $effectiveDateTime;
@@ -274,7 +274,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * The point in time or period over which the subject was assessed.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -288,7 +288,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Indicates when the documentation of the assessment was complete.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -299,7 +299,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * The clinician performing the assessment.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $assessor;
@@ -313,7 +313,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * or team) will make new assessments on an ongoing basis as new data arises or the
      * patient's conditions changes.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $previous;
@@ -324,7 +324,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * A list of the relevant problems/conditions for a patient.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     #[FHIRReference]
     protected array $problem;
@@ -343,7 +343,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * assessment process, or data previously generated and recorded that is pertinent
      * to the outcomes.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation>
      */
     #[FHIRClinicalImpressionInvestigation]
     protected array $investigation;
@@ -355,7 +355,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Reference to a specific published clinical protocol that was followed during
      * this assessment, and/or that provides evidence in support of the diagnosis.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri>
      */
     #[FHIRUri]
     protected array $protocol;
@@ -366,7 +366,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * A text summary of the investigations and the diagnosis.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $summary;
@@ -382,7 +382,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Specific findings or diagnoses that were considered likely or relevant to
      * ongoing treatment.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding>
      */
     #[FHIRClinicalImpressionFinding]
     protected array $finding;
@@ -394,7 +394,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Estimate of likely outcome.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $prognosisCodeableConcept;
@@ -405,7 +405,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * RiskAssessment expressing likely outcome.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     #[FHIRReference]
     protected array $prognosisReference;
@@ -416,7 +416,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Information supporting the clinical impression.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     #[FHIRReference]
     protected array $supportingInfo;
@@ -429,7 +429,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Commentary about the impression, typically recorded after the impression itself
      * was made, though supplemental notes by the original author could also appear.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation>
      */
     #[FHIRAnnotation]
     protected array $note;
@@ -1696,9 +1696,9 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
         } else if (!($type instanceof FHIRClinicalImpression)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2042,7 +2042,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -2050,9 +2050,9 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
         } else if (!($type instanceof FHIRClinicalImpression)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2064,7 +2064,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
             if (is_object($decoded->identifier)) {
                 $vals = [$decoded->identifier];

@@ -5,25 +5,25 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
@@ -44,15 +44,15 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  *  * See the License for the specific language governing permissions and
  *  * limitations under the License.
  *  * #L%
- *  
- * 
- * 
+ *
+ *
+ *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -61,7 +61,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -72,14 +72,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Sun, Mar 26, 2023 15:21+1100 for FHIR v5.0.0
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -624,7 +624,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource or extension.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -637,7 +637,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * with a representation of 'xmlAttr', no matter what FHIR serialization format is
      * used.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPropertyRepresentation> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPropertyRepresentation>
      */
     #[FHIRPropertyRepresentation]
     protected array $representation;
@@ -651,7 +651,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * specific set of constraints applied to this element, used to provide a name to
      * different slices of the same element.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $sliceName;
@@ -665,7 +665,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * might not be overriding a slice in an inherited profile, depending on the
      * sliceName.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $sliceIsConstraining;
@@ -678,7 +678,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * indicating its meaning or to use to prompt for the element in a user display or
      * form.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $label;
@@ -689,7 +689,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * A code that has the same meaning as the element in a particular terminology.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding>
      */
     #[FHIRCoding]
     protected array $code;
@@ -706,7 +706,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * that have the same path, until a shorter path occurs (the shorter path
      * terminates the set).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionSlicing 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionSlicing
      */
     #[FHIRElementDefinitionSlicing]
     protected FHIRElementDefinitionSlicing $slicing;
@@ -718,7 +718,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * A concise description of what this element means (e.g. for use in autogenerated
      * summaries).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $short;
@@ -738,7 +738,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * resource. (Note: The text you are reading is specified in
      * ElementDefinition.definition).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $definition;
@@ -755,7 +755,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * notes about how to use the data properly, exceptions to proper use, etc. (Note:
      * The text you are reading is specified in ElementDefinition.comment).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $comment;
@@ -772,7 +772,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * constraints exist as they do. This may be used to point to source materials or
      * specifications that drove the structure of this element.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $requirements;
@@ -783,7 +783,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * Identifies additional names by which this element might also be known.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString>
      */
     #[FHIRString]
     protected array $alias;
@@ -794,7 +794,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The minimum number of times this element SHALL appear in the instance.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $min;
@@ -805,7 +805,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The maximum number of times this element is permitted to appear in the instance.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $max;
@@ -822,7 +822,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * element definition may be different to the base definition. On the original
      * definition of the element, it will be same.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionBase 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionBase
      */
     #[FHIRElementDefinitionBase]
     protected FHIRElementDefinitionBase $base;
@@ -836,7 +836,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * rules that are in the ElementDefinition for the element, including definitions,
      * cardinality constraints, bindings, invariants etc.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $contentReference;
@@ -847,7 +847,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * The data type or resource that the value of this element is permitted to be.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionType> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionType>
      */
     #[FHIRElementDefinitionType]
     protected array $type;
@@ -860,7 +860,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $defaultValueBase64Binary;
@@ -872,7 +872,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $defaultValueBoolean;
@@ -886,7 +886,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $defaultValueCanonical;
@@ -900,7 +900,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $defaultValueCode;
@@ -914,7 +914,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $defaultValueDate;
@@ -931,7 +931,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $defaultValueDateTime;
@@ -945,7 +945,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $defaultValueDecimal;
@@ -961,7 +961,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $defaultValueId;
@@ -977,7 +977,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $defaultValueInstant;
@@ -990,7 +990,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $defaultValueInteger;
@@ -1003,7 +1003,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $defaultValueInteger64;
@@ -1020,7 +1020,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $defaultValueMarkdown;
@@ -1034,7 +1034,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid
      */
     #[FHIROid]
     protected FHIROid $defaultValueOid;
@@ -1047,7 +1047,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $defaultValuePositiveInt;
@@ -1060,7 +1060,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $defaultValueString;
@@ -1072,7 +1072,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $defaultValueTime;
@@ -1085,7 +1085,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $defaultValueUnsignedInt;
@@ -1098,7 +1098,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $defaultValueUri;
@@ -1111,7 +1111,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
      */
     #[FHIRUrl]
     protected FHIRUrl $defaultValueUrl;
@@ -1125,7 +1125,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid
      */
     #[FHIRUuid]
     protected FHIRUuid $defaultValueUuid;
@@ -1143,7 +1143,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $defaultValueAddress;
@@ -1156,7 +1156,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
     #[FHIRAge]
     protected FHIRAge $defaultValueAge;
@@ -1170,7 +1170,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $defaultValueAnnotation;
@@ -1183,7 +1183,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $defaultValueAttachment;
@@ -1197,7 +1197,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $defaultValueCodeableConcept;
@@ -1211,7 +1211,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $defaultValueCodeableReference;
@@ -1224,7 +1224,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $defaultValueCoding;
@@ -1238,7 +1238,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $defaultValueContactPoint;
@@ -1253,7 +1253,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
      */
     #[FHIRCount]
     protected FHIRCount $defaultValueCount;
@@ -1266,7 +1266,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance
      */
     #[FHIRDistance]
     protected FHIRDistance $defaultValueDistance;
@@ -1279,7 +1279,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $defaultValueDuration;
@@ -1294,7 +1294,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
      */
     #[FHIRHumanName]
     protected FHIRHumanName $defaultValueHumanName;
@@ -1308,7 +1308,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $defaultValueIdentifier;
@@ -1321,7 +1321,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $defaultValueMoney;
@@ -1334,7 +1334,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $defaultValuePeriod;
@@ -1349,7 +1349,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $defaultValueQuantity;
@@ -1362,7 +1362,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $defaultValueRange;
@@ -1376,7 +1376,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $defaultValueRatio;
@@ -1389,7 +1389,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $defaultValueRatioRange;
@@ -1402,7 +1402,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $defaultValueReference;
@@ -1416,7 +1416,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
      */
     #[FHIRSampledData]
     protected FHIRSampledData $defaultValueSampledData;
@@ -1433,7 +1433,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
      */
     #[FHIRSignature]
     protected FHIRSignature $defaultValueSignature;
@@ -1450,7 +1450,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $defaultValueTiming;
@@ -1463,7 +1463,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $defaultValueContactDetail;
@@ -1477,7 +1477,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $defaultValueDataRequirement;
@@ -1492,7 +1492,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     #[FHIRExpression]
     protected FHIRExpression $defaultValueExpression;
@@ -1507,7 +1507,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $defaultValueParameterDefinition;
@@ -1521,7 +1521,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $defaultValueRelatedArtifact;
@@ -1535,7 +1535,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $defaultValueTriggerDefinition;
@@ -1551,7 +1551,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $defaultValueUsageContext;
@@ -1564,7 +1564,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
      */
     #[FHIRAvailability]
     protected FHIRAvailability $defaultValueAvailability;
@@ -1578,7 +1578,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $defaultValueExtendedContactDetail;
@@ -1591,7 +1591,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage
      */
     #[FHIRDosage]
     protected FHIRDosage $defaultValueDosage;
@@ -1606,7 +1606,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * 'if not otherwise specified, the abstract is false'). (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta
      */
     #[FHIRMeta]
     protected FHIRMeta $defaultValueMeta;
@@ -1622,7 +1622,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * The Implicit meaning that is to be understood when this element is missing (e.g.
      * 'when this element is missing, the period is ongoing').
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $meaningWhenMissing;
@@ -1635,7 +1635,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * describes what that meaning is. If absent, it means that the order of the
      * element has no meaning.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $orderMeaning;
@@ -1650,7 +1650,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $fixedBase64Binary;
@@ -1664,7 +1664,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $fixedBoolean;
@@ -1680,7 +1680,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $fixedCanonical;
@@ -1696,7 +1696,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $fixedCode;
@@ -1712,7 +1712,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $fixedDate;
@@ -1731,7 +1731,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $fixedDateTime;
@@ -1747,7 +1747,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $fixedDecimal;
@@ -1765,7 +1765,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $fixedId;
@@ -1783,7 +1783,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $fixedInstant;
@@ -1798,7 +1798,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $fixedInteger;
@@ -1813,7 +1813,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $fixedInteger64;
@@ -1832,7 +1832,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $fixedMarkdown;
@@ -1848,7 +1848,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid
      */
     #[FHIROid]
     protected FHIROid $fixedOid;
@@ -1863,7 +1863,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $fixedPositiveInt;
@@ -1878,7 +1878,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $fixedString;
@@ -1892,7 +1892,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $fixedTime;
@@ -1907,7 +1907,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $fixedUnsignedInt;
@@ -1922,7 +1922,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $fixedUri;
@@ -1937,7 +1937,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
      */
     #[FHIRUrl]
     protected FHIRUrl $fixedUrl;
@@ -1953,7 +1953,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid
      */
     #[FHIRUuid]
     protected FHIRUuid $fixedUuid;
@@ -1973,7 +1973,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $fixedAddress;
@@ -1988,7 +1988,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
     #[FHIRAge]
     protected FHIRAge $fixedAge;
@@ -2004,7 +2004,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $fixedAnnotation;
@@ -2019,7 +2019,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $fixedAttachment;
@@ -2035,7 +2035,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $fixedCodeableConcept;
@@ -2051,7 +2051,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $fixedCodeableReference;
@@ -2066,7 +2066,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $fixedCoding;
@@ -2082,7 +2082,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $fixedContactPoint;
@@ -2099,7 +2099,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
      */
     #[FHIRCount]
     protected FHIRCount $fixedCount;
@@ -2114,7 +2114,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance
      */
     #[FHIRDistance]
     protected FHIRDistance $fixedDistance;
@@ -2129,7 +2129,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $fixedDuration;
@@ -2146,7 +2146,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
      */
     #[FHIRHumanName]
     protected FHIRHumanName $fixedHumanName;
@@ -2162,7 +2162,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $fixedIdentifier;
@@ -2177,7 +2177,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $fixedMoney;
@@ -2192,7 +2192,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $fixedPeriod;
@@ -2209,7 +2209,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $fixedQuantity;
@@ -2224,7 +2224,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $fixedRange;
@@ -2240,7 +2240,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $fixedRatio;
@@ -2255,7 +2255,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $fixedRatioRange;
@@ -2270,7 +2270,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $fixedReference;
@@ -2286,7 +2286,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
      */
     #[FHIRSampledData]
     protected FHIRSampledData $fixedSampledData;
@@ -2305,7 +2305,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
      */
     #[FHIRSignature]
     protected FHIRSignature $fixedSignature;
@@ -2324,7 +2324,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $fixedTiming;
@@ -2339,7 +2339,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $fixedContactDetail;
@@ -2355,7 +2355,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $fixedDataRequirement;
@@ -2372,7 +2372,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     #[FHIRExpression]
     protected FHIRExpression $fixedExpression;
@@ -2389,7 +2389,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $fixedParameterDefinition;
@@ -2405,7 +2405,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $fixedRelatedArtifact;
@@ -2421,7 +2421,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $fixedTriggerDefinition;
@@ -2439,7 +2439,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $fixedUsageContext;
@@ -2454,7 +2454,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
      */
     #[FHIRAvailability]
     protected FHIRAvailability $fixedAvailability;
@@ -2470,7 +2470,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $fixedExtendedContactDetail;
@@ -2485,7 +2485,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage
      */
     #[FHIRDosage]
     protected FHIRDosage $fixedDosage;
@@ -2502,7 +2502,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Missing elements/attributes must also be missing. (choose any one of the
      * elements, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta
      */
     #[FHIRMeta]
     protected FHIRMeta $fixedMeta;
@@ -2531,7 +2531,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $patternBase64Binary;
@@ -2559,7 +2559,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $patternBoolean;
@@ -2589,7 +2589,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $patternCanonical;
@@ -2619,7 +2619,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $patternCode;
@@ -2649,7 +2649,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $patternDate;
@@ -2682,7 +2682,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $patternDateTime;
@@ -2712,7 +2712,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $patternDecimal;
@@ -2744,7 +2744,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $patternId;
@@ -2776,7 +2776,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $patternInstant;
@@ -2805,7 +2805,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $patternInteger;
@@ -2834,7 +2834,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $patternInteger64;
@@ -2867,7 +2867,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $patternMarkdown;
@@ -2897,7 +2897,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid
      */
     #[FHIROid]
     protected FHIROid $patternOid;
@@ -2926,7 +2926,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $patternPositiveInt;
@@ -2955,7 +2955,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $patternString;
@@ -2983,7 +2983,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $patternTime;
@@ -3012,7 +3012,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $patternUnsignedInt;
@@ -3041,7 +3041,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $patternUri;
@@ -3070,7 +3070,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
      */
     #[FHIRUrl]
     protected FHIRUrl $patternUrl;
@@ -3100,7 +3100,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid
      */
     #[FHIRUuid]
     protected FHIRUuid $patternUuid;
@@ -3134,7 +3134,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $patternAddress;
@@ -3163,7 +3163,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
     #[FHIRAge]
     protected FHIRAge $patternAge;
@@ -3193,7 +3193,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $patternAnnotation;
@@ -3222,7 +3222,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $patternAttachment;
@@ -3252,7 +3252,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $patternCodeableConcept;
@@ -3282,7 +3282,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $patternCodeableReference;
@@ -3311,7 +3311,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $patternCoding;
@@ -3341,7 +3341,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $patternContactPoint;
@@ -3372,7 +3372,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
      */
     #[FHIRCount]
     protected FHIRCount $patternCount;
@@ -3401,7 +3401,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance
      */
     #[FHIRDistance]
     protected FHIRDistance $patternDistance;
@@ -3430,7 +3430,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $patternDuration;
@@ -3461,7 +3461,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
      */
     #[FHIRHumanName]
     protected FHIRHumanName $patternHumanName;
@@ -3491,7 +3491,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $patternIdentifier;
@@ -3520,7 +3520,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $patternMoney;
@@ -3549,7 +3549,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $patternPeriod;
@@ -3580,7 +3580,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $patternQuantity;
@@ -3609,7 +3609,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $patternRange;
@@ -3639,7 +3639,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $patternRatio;
@@ -3668,7 +3668,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $patternRatioRange;
@@ -3697,7 +3697,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patternReference;
@@ -3727,7 +3727,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
      */
     #[FHIRSampledData]
     protected FHIRSampledData $patternSampledData;
@@ -3760,7 +3760,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
      */
     #[FHIRSignature]
     protected FHIRSignature $patternSignature;
@@ -3793,7 +3793,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $patternTiming;
@@ -3822,7 +3822,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $patternContactDetail;
@@ -3852,7 +3852,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $patternDataRequirement;
@@ -3883,7 +3883,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     #[FHIRExpression]
     protected FHIRExpression $patternExpression;
@@ -3914,7 +3914,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $patternParameterDefinition;
@@ -3944,7 +3944,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $patternRelatedArtifact;
@@ -3974,7 +3974,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $patternTriggerDefinition;
@@ -4006,7 +4006,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $patternUsageContext;
@@ -4035,7 +4035,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
      */
     #[FHIRAvailability]
     protected FHIRAvailability $patternAvailability;
@@ -4065,7 +4065,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $patternExtendedContactDetail;
@@ -4094,7 +4094,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage
      */
     #[FHIRDosage]
     protected FHIRDosage $patternDosage;
@@ -4125,7 +4125,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * pattern usage and the effect it will have. (choose any one of the elements, but
      * only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta
      */
     #[FHIRMeta]
     protected FHIRMeta $patternMeta;
@@ -4137,7 +4137,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * A sample value for this element demonstrating the type of information that would
      * typically be found in the element.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionExample> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionExample>
      */
     #[FHIRElementDefinitionExample]
     protected array $example;
@@ -4151,7 +4151,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of minValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $minValueDate;
@@ -4168,7 +4168,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of minValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $minValueDateTime;
@@ -4184,7 +4184,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of minValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $minValueInstant;
@@ -4196,7 +4196,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of minValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $minValueTime;
@@ -4210,7 +4210,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of minValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $minValueDecimal;
@@ -4223,7 +4223,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of minValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $minValueInteger;
@@ -4236,7 +4236,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of minValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $minValueInteger64;
@@ -4249,7 +4249,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of minValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $minValuePositiveInt;
@@ -4262,7 +4262,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of minValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $minValueUnsignedInt;
@@ -4277,7 +4277,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of minValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $minValueQuantity;
@@ -4291,7 +4291,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of maxValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $maxValueDate;
@@ -4308,7 +4308,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of maxValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $maxValueDateTime;
@@ -4324,7 +4324,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of maxValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $maxValueInstant;
@@ -4336,7 +4336,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of maxValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $maxValueTime;
@@ -4350,7 +4350,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of maxValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $maxValueDecimal;
@@ -4363,7 +4363,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of maxValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $maxValueInteger;
@@ -4376,7 +4376,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of maxValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $maxValueInteger64;
@@ -4389,7 +4389,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of maxValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $maxValuePositiveInt;
@@ -4402,7 +4402,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of maxValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $maxValueUnsignedInt;
@@ -4417,7 +4417,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * allowed for the types date, dateTime, instant, time, decimal, integer, and
      * Quantity. (choose any one of maxValue*, but only one)
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $maxValueQuantity;
@@ -4432,7 +4432,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * primitive data types that have a string representation (see
      * [[[http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics]]]).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $maxLength;
@@ -4447,7 +4447,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * A reference to an invariant that may make additional statements about the
      * cardinality or value in the instance.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId>
      */
     #[FHIRId]
     protected array $condition;
@@ -4459,7 +4459,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Formal constraints such as co-occurrence and other constraints that can be
      * computationally evaluated within the context of the instance.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionConstraint> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionConstraint>
      */
     #[FHIRElementDefinitionConstraint]
     protected array $constraint;
@@ -4470,7 +4470,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Specifies for a primitive data type that the value of the data type cannot be
      * replaced by an extension.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $mustHaveValue;
@@ -4482,7 +4482,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      *
      * Specifies a list of extensions that can appear in place of a primitive value.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical>
      */
     #[FHIRCanonical]
     protected array $valueAlternatives;
@@ -4496,7 +4496,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * ignored and not supported. If false, whether to populate or use the data element
      * in any way is at the discretion of the implementation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $mustSupport;
@@ -4513,7 +4513,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * element in an extension definition, this indicates whether or not the extension
      * is a modifier extension.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $isModifier;
@@ -4525,7 +4525,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Explains how that element affects the interpretation of the resource or element
      * that contains it.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $isModifierReason;
@@ -4536,7 +4536,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Whether the element should be included if a client requests a search with the
      * parameter _summary=true.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $isSummary;
@@ -4548,7 +4548,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Binds to a value set if this element is coded (code, Coding, CodeableConcept,
      * Quantity), or the data types (string, uri).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionBinding 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionBinding
      */
     #[FHIRElementDefinitionBinding]
     protected FHIRElementDefinitionBinding $binding;
@@ -4560,7 +4560,7 @@ class FHIRElementDefinition extends FHIRBackboneType
      * Identifies a concept from an external specification that roughly corresponds to
      * this element.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionMapping> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionMapping>
      */
     #[FHIRElementDefinitionMapping]
     protected array $mapping;
@@ -16736,9 +16736,9 @@ class FHIRElementDefinition extends FHIRBackboneType
         } else if (!($type instanceof FHIRElementDefinition)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         foreach ($element->children() as $ce) {
@@ -19561,7 +19561,7 @@ class FHIRElementDefinition extends FHIRBackboneType
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -19569,12 +19569,12 @@ class FHIRElementDefinition extends FHIRBackboneType
         } else if (!($type instanceof FHIRElementDefinition)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->path)
             || isset($decoded->_path)
             || property_exists($decoded, self::FIELD_PATH)

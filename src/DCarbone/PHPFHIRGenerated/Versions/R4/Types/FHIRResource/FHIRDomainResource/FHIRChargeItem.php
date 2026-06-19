@@ -5,34 +5,34 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -41,7 +41,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -52,14 +52,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -194,7 +194,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Identifiers assigned to this event performer or other systems.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -206,7 +206,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * References the (external) source of pricing information, rules of application
      * for the code this ChargeItem uses.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri>
      */
     #[FHIRUri]
     protected array $definitionUri;
@@ -219,7 +219,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * References the source of pricing information, rules of application for the code
      * this ChargeItem uses.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical>
      */
     #[FHIRCanonical]
     protected array $definitionCanonical;
@@ -229,7 +229,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The current state of the ChargeItem.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRChargeItemStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRChargeItemStatus
      */
     #[FHIRChargeItemStatus]
     protected FHIRChargeItemStatus $status;
@@ -240,7 +240,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     #[FHIRReference]
     protected array $partOf;
@@ -252,7 +252,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A code that identifies the charge, like a billing code.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -263,7 +263,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The individual or set of individuals the action is being or was performed on.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -274,7 +274,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The encounter or episode of care that establishes the context for this event.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $context;
@@ -288,7 +288,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Date/time(s) or duration when the charged service was applied.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -299,7 +299,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Date/time(s) or duration when the charged service was applied.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -314,7 +314,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Date/time(s) or duration when the charged service was applied.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -327,7 +327,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicates who or what performed or participated in the charged service.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRChargeItem\FHIRChargeItemPerformer> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRChargeItem\FHIRChargeItemPerformer>
      */
     #[FHIRChargeItemPerformer]
     protected array $performer;
@@ -338,7 +338,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The organization requesting the service.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $performingOrganization;
@@ -349,7 +349,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The organization performing the service.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $requestingOrganization;
@@ -360,7 +360,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The financial cost center permits the tracking of charge attribution.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $costCenter;
@@ -373,7 +373,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Quantity of which the charge item has been serviced.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -385,7 +385,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The anatomical location where the related service has been applied.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $bodysite;
@@ -397,7 +397,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Factor overriding the factor determined by the rules associated with the code.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $factorOverride;
@@ -408,7 +408,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Total price of the charge overriding the list price associated with the code.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $priceOverride;
@@ -421,7 +421,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * overridden, this attribute can capture a text to indicate the reason for this
      * action.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $overrideReason;
@@ -432,7 +432,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The device, practitioner, etc. who entered the charge item.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $enterer;
@@ -446,7 +446,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Date the charge item was entered.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $enteredDate;
@@ -458,7 +458,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Describes why the event occurred in coded or textual form.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $reason;
@@ -469,7 +469,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicated the rendered service that caused this charge.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     #[FHIRReference]
     protected array $service;
@@ -481,7 +481,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * Identifies the device, food, drug or other product being charged either by type
      * code or reference to an instance.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $productReference;
@@ -494,7 +494,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * Identifies the device, food, drug or other product being charged either by type
      * code or reference to an instance.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $productCodeableConcept;
@@ -505,7 +505,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Account into which this ChargeItems belongs.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     #[FHIRReference]
     protected array $account;
@@ -517,7 +517,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Comments made about the event by the performer, subject or other participants.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation>
      */
     #[FHIRAnnotation]
     protected array $note;
@@ -528,7 +528,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Further information supporting this charge.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
      */
     #[FHIRReference]
     protected array $supportingInformation;
@@ -2156,9 +2156,9 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         } else if (!($type instanceof FHIRChargeItem)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2562,7 +2562,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -2570,9 +2570,9 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         } else if (!($type instanceof FHIRChargeItem)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -2584,7 +2584,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->identifier) || property_exists($decoded, self::FIELD_IDENTIFIER)) {
             if (is_object($decoded->identifier)) {
                 $vals = [$decoded->identifier];

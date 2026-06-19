@@ -5,34 +5,34 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -41,7 +41,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -52,14 +52,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -231,7 +231,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * published. The URL SHOULD include the major version of the measure. For more
      * information see [Technical and Business Versions](resource.html#versions).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -244,7 +244,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * in other formats, or referenced in a specification, model, design or an
      * instance.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -264,7 +264,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -277,7 +277,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * an identifier for the module by machine processing applications such as code
      * generation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -288,7 +288,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A short, descriptive, user-friendly title for the measure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -297,7 +297,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The status of this measure. Enables tracking the life-cycle of the content.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -309,7 +309,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * (or education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -326,7 +326,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * code changes. In addition, it should change when the substantive content of the
      * measure changes.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -337,7 +337,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The name of the individual or organization that published the measure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -355,7 +355,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A free text natural language description of the measure from a consumer's
      * perspective.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -373,7 +373,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Explaination of why this measure is needed and why it has been designed as it
      * has.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -384,7 +384,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A detailed description of how the measure is used from a clinical perspective.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $usage;
@@ -397,7 +397,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $approvalDate;
@@ -410,7 +410,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastReviewDate;
@@ -422,7 +422,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * The period during which the measure content was or is planned to be in active
      * use.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -438,7 +438,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate measure instances.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext>
      */
     #[FHIRUsageContext]
     protected array $useContext;
@@ -450,7 +450,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A legal or geographic region in which the measure is intended to be used.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $jurisdiction;
@@ -464,7 +464,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * high-level categorization of the type of the measure that can be useful for
      * filtering and searching.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $topic;
@@ -477,7 +477,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A contributor to the content of the measure, including authors, editors,
      * reviewers, and endorsers.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContributor> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContributor>
      */
     #[FHIRContributor]
     protected array $contributor;
@@ -489,7 +489,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $contact;
@@ -508,7 +508,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * statements are generally legal restrictions on the use and publishing of the
      * measure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -521,7 +521,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRelatedArtifact> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRelatedArtifact>
      */
     #[FHIRRelatedArtifact]
     protected array $relatedArtifact;
@@ -533,7 +533,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A reference to a Library resource containing the formal logic used by the
      * measure.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference>
      */
     #[FHIRReference]
     protected array $library;
@@ -551,7 +551,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Notices and disclaimers regarding the use of the measure, or related to
      * intellectual property (such as code systems) referenced by the measure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $disclaimer;
@@ -565,7 +565,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * proportion, ratio, continuous variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $scoring;
@@ -578,7 +578,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If this is a composite measure, the scoring method used to combine the component
      * measures to determine the composite score.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $compositeScoring;
@@ -591,7 +591,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $type;
@@ -604,7 +604,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * for the measure and how they may be accounted for when computing and reporting
      * measure results.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $riskAdjustment;
@@ -616,7 +616,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Describes how to combine the information calculated, based on logic in each of
      * several populations, into one summarized result.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $rateAggregation;
@@ -635,7 +635,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * statements pertaining to importance criterion: impact, gap in care, and
      * evidence.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $rationale;
@@ -653,7 +653,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Provides a summary of relevant clinical guidelines or other clinical
      * recommendations supporting the measure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $clinicalRecommendationStatement;
@@ -666,7 +666,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * (e.g., a higher score indicates better quality OR a lower score indicates better
      * quality OR quality is whthin a range).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $improvementNotation;
@@ -683,7 +683,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides a description of an individual term used within the measure.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown>
      */
     #[FHIRMarkdown]
     protected array $definition;
@@ -701,7 +701,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Additional guidance for the measure including how it can be used in a clinical
      * context, and the intent of the measure.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $guidance;
@@ -712,7 +712,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The measure set, e.g. Preventive Care and Screening.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $set;
@@ -721,7 +721,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A group of population criteria for the measure.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup>
      */
     #[FHIRMeasureGroup]
     protected array $group;
@@ -732,7 +732,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * name of a valid CQL expression within a referenced library, or a valid FHIR
      * Resource Path.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData>
      */
     #[FHIRMeasureSupplementalData]
     protected array $supplementalData;
@@ -2921,9 +2921,9 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
         } else if (!($type instanceof FHIRMeasure)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -3606,7 +3606,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -3614,9 +3614,9 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
         } else if (!($type instanceof FHIRMeasure)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -3628,7 +3628,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->url)
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)

@@ -5,25 +5,25 @@ namespace Tests\DCarbone\PHPFHIRGenerated;
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  */
 
 abstract class TestAutoloader
@@ -65,7 +65,7 @@ abstract class TestAutoloader
     public static function register(): bool
     {
         if (!self::$_registered) {
-            self::$_registered = spl_autoload_register(__CLASS__ . '::loadClass');
+            self::$_registered = spl_autoload_register(self::class . '::loadClass');
         }
         return self::$_registered;
     }
@@ -73,7 +73,7 @@ abstract class TestAutoloader
     public static function unregister(): bool
     {
         if (self::$_registered) {
-            if (spl_autoload_unregister(__CLASS__ . '::loadClass')) {
+            if (spl_autoload_unregister(self::class . '::loadClass')) {
                 self::$_registered = false;
                 return true;
             }

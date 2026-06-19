@@ -5,34 +5,34 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
  *   Copyright (c) 2011+, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -41,7 +41,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -52,14 +52,14 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
- * 
+ *
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
  *   any profiles that apply to the resources in order to make a conformant implementation.
- * 
+ *
  */
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -234,7 +234,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * reference. It SHALL remain the same when the research element definition is
      * stored on different servers.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -248,7 +248,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * when it is represented in other formats, or referenced in a specification,
      * model, design or an instance.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier>
      */
     #[FHIRIdentifier]
     protected array $identifier;
@@ -269,7 +269,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * specification. Note that a version is required for non-experimental active
      * artifacts.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -282,7 +282,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -293,7 +293,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      *
      * A short, descriptive, user-friendly title for the research element definition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -305,7 +305,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * The short title provides an alternate title for use in informal descriptive
      * contexts where the full, formal title is not necessary.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $shortTitle;
@@ -317,7 +317,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * An explanatory or alternate title for the ResearchElementDefinition giving
      * additional information about its content.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subtitle;
@@ -327,7 +327,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * The status of this research element definition. Enables tracking the life-cycle
      * of the content.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -339,7 +339,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * for testing purposes (or education/evaluation/marketing) and is not intended to
      * be used for genuine usage.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -353,7 +353,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * provided, a Patient subject is assumed, but the subject of the
      * ResearchElementDefinition can be anything.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectCodeableConcept;
@@ -366,7 +366,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * provided, a Patient subject is assumed, but the subject of the
      * ResearchElementDefinition can be anything.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subjectReference;
@@ -383,7 +383,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * change if the status code changes. In addition, it should change when the
      * substantive content of the research element definition changes.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -395,7 +395,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * The name of the organization or individual that published the research element
      * definition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -407,7 +407,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * Contact details to assist a user in finding and communicating with the
      * publisher.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $contact;
@@ -423,7 +423,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * A free text natural language description of the research element definition from
      * a consumer's perspective.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -434,7 +434,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      *
      * A human-readable string to clarify or explain concepts about the resource.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString>
      */
     #[FHIRString]
     protected array $comment;
@@ -452,7 +452,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * be used to assist with indexing and searching for appropriate research element
      * definition instances.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext>
      */
     #[FHIRUsageContext]
     protected array $useContext;
@@ -465,7 +465,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * A legal or geographic region in which the research element definition is
      * intended to be used.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $jurisdiction;
@@ -481,7 +481,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * Explanation of why this research element definition is needed and why it has
      * been designed as it has.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -493,7 +493,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * A detailed description, from a clinical perspective, of how the
      * ResearchElementDefinition is used.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $usage;
@@ -510,7 +510,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the research element definition.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -523,7 +523,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $approvalDate;
@@ -536,7 +536,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastReviewDate;
@@ -548,7 +548,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * The period during which the research element definition content was or is
      * planned to be in active use.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -562,7 +562,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * Topics provide a high-level categorization grouping types of
      * ResearchElementDefinitions that can be useful for filtering and searching.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept>
      */
     #[FHIRCodeableConcept]
     protected array $topic;
@@ -574,7 +574,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $author;
@@ -586,7 +586,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * An individual or organization primarily responsible for internal coherence of
      * the content.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $editor;
@@ -598,7 +598,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $reviewer;
@@ -610,7 +610,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail>
      */
     #[FHIRContactDetail]
     protected array $endorser;
@@ -623,7 +623,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact>
      */
     #[FHIRRelatedArtifact]
     protected array $relatedArtifact;
@@ -636,7 +636,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * A reference to a Library resource containing the formal logic used by the
      * ResearchElementDefinition.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical>
      */
     #[FHIRCanonical]
     protected array $library;
@@ -646,7 +646,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      *
      * The type of research element, a population, an exposure, or an outcome.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRResearchElementType 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRResearchElementType
      */
     #[FHIRResearchElementType]
     protected FHIRResearchElementType $type;
@@ -657,7 +657,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      *
      * The type of the outcome (e.g. Dichotomous, Continuous, or Descriptive).
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRVariableType 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRVariableType
      */
     #[FHIRVariableType]
     protected FHIRVariableType $variableType;
@@ -668,7 +668,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
      * A characteristic that defines the members of the research element. Multiple
      * characteristics are applied with "and" semantics.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRResearchElementDefinition\FHIRResearchElementDefinitionCharacteristic> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRResearchElementDefinition\FHIRResearchElementDefinitionCharacteristic>
      */
     #[FHIRResearchElementDefinitionCharacteristic]
     protected array $characteristic;
@@ -2705,9 +2705,9 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
         } else if (!($type instanceof FHIRResearchElementDefinition)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -3319,7 +3319,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -3327,9 +3327,9 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
         } else if (!($type instanceof FHIRResearchElementDefinition)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         if (null === $config) {
@@ -3341,7 +3341,7 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements Versio
                                 depth: $config->getJSONDecodeMaxDepth(),
                                 flags: $config->getJSONDecodeOpts());
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->url)
             || isset($decoded->_url)
             || property_exists($decoded, self::FIELD_URL)

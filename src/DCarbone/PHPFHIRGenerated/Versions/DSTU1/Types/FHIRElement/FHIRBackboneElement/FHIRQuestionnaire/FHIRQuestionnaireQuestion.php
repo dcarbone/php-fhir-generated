@@ -5,34 +5,34 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
- * 
- * Class creation date: April 21st, 2026 03:50+0000
- * 
+ *
+ * Class creation date: June 19th, 2026 14:32+0000
+ *
  * PHPFHIR Copyright:
- * 
+ *
  * Copyright 2016-2026 Daniel Carbone (daniel.p.carbone@gmail.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *        http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * FHIR Copyright Notice:
  *
  *   Copyright (c) 2011-2013, HL7, Inc.
  *   All rights reserved.
- * 
+ *
  *   Redistribution and use in source and binary forms, with or without modification,
  *   are permitted provided that the following conditions are met:
- * 
+ *
  *    * Redistributions of source code must retain the above copyright notice, this
  *      list of conditions and the following disclaimer.
  *    * Redistributions in binary form must reproduce the above copyright notice,
@@ -41,7 +41,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *    * Neither the name of HL7 nor the names of its contributors may be used to
  *      endorse or promote products derived from this software without specific
  *      prior written permission.
- * 
+ *
  *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
@@ -52,8 +52,8 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *   POSSIBILITY OF SUCH DAMAGE.
- * 
- * 
+ *
+ *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
@@ -232,7 +232,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Structured name for the question that identifies this question within the
      * Questionnaire or Group.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $name;
@@ -242,7 +242,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Text of the question as it is shown to the user.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -252,7 +252,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Single-valued answer to the question.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $answerDecimal;
@@ -262,7 +262,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Single-valued answer to the question.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $answerInteger;
@@ -272,7 +272,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Single-valued answer to the question.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $answerBoolean;
@@ -284,7 +284,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Single-valued answer to the question.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $answerDate;
@@ -294,7 +294,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Single-valued answer to the question.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $answerString;
@@ -307,7 +307,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Single-valued answer to the question.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $answerDateTime;
@@ -317,7 +317,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Single-valued answer to the question.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $answerInstant;
@@ -328,7 +328,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Selections made by the user from the list of options.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding>
      */
     #[FHIRCoding]
     protected array $choice;
@@ -339,7 +339,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Reference to a valueset containing the possible options.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $options;
@@ -349,7 +349,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $dataBoolean;
@@ -359,7 +359,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $dataInteger;
@@ -369,7 +369,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $dataDecimal;
@@ -379,7 +379,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $dataBase64Binary;
@@ -389,7 +389,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $dataInstant;
@@ -399,7 +399,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $dataString;
@@ -409,7 +409,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $dataUri;
@@ -421,7 +421,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $dataDate;
@@ -434,7 +434,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $dataDateTime;
@@ -446,7 +446,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $dataCode;
@@ -457,7 +457,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid
      */
     #[FHIROid]
     protected FHIROid $dataOid;
@@ -468,7 +468,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUuid 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUuid
      */
     #[FHIRUuid]
     protected FHIRUuid $dataUuid;
@@ -481,7 +481,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $dataId;
@@ -492,7 +492,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $dataAttachment;
@@ -503,7 +503,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $dataIdentifier;
@@ -515,7 +515,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $dataCodeableConcept;
@@ -526,7 +526,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $dataCoding;
@@ -539,7 +539,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $dataQuantity;
@@ -550,7 +550,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $dataRange;
@@ -561,7 +561,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $dataPeriod;
@@ -573,7 +573,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $dataRatio;
@@ -584,7 +584,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $dataResource;
@@ -596,7 +596,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData
      */
     #[FHIRSampledData]
     protected FHIRSampledData $dataSampledData;
@@ -607,7 +607,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName
      */
     #[FHIRHumanName]
     protected FHIRHumanName $dataHumanName;
@@ -619,7 +619,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $dataAddress;
@@ -631,7 +631,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact
      */
     #[FHIRContact]
     protected FHIRContact $dataContact;
@@ -643,7 +643,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Structured answer in the form of a FHIR Resource or datatype.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule
      */
     #[FHIRSchedule]
     protected FHIRSchedule $dataSchedule;
@@ -655,7 +655,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * information about the answer the author wishes to convey, but should not be used
      * to contain information that is part of the answer itself.
      *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString 
+     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $remarks;
@@ -668,7 +668,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Nested group, containing nested question for this question. The order of groups
      * within the question is relevant.
      *
-     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup> 
+     * @var iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup>
      */
     #[FHIRQuestionnaireGroup]
     protected array $group;
@@ -2422,9 +2422,9 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         } else if (!($type instanceof FHIRQuestionnaireQuestion)) {
             throw new \RuntimeException(sprintf(
                 '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
         foreach ($element->children() as $ce) {
@@ -3047,7 +3047,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
             if (isset($decoded->resourceType) && $decoded->resourceType !== static::FHIR_TYPE_NAME) {
                 throw new \DomainException(sprintf(
                     '%s::jsonUnserialize - Cannot unmarshal data for resource type "%s" into this type.',
-                    ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                    ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                     $decoded->resourceType,
                 ));
             }
@@ -3055,12 +3055,12 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         } else if (!($type instanceof FHIRQuestionnaireQuestion)) {
             throw new \RuntimeException(sprintf(
                 '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                ltrim(substr(self::class, (int)strrpos(self::class, '\\')), '\\'),
                 static::class,
-                get_class($type)
+                $type::class
             ));
         }
-        parent::jsonUnserialize($decoded, $config, $type); 
+        parent::jsonUnserialize($decoded, $config, $type);
         if (isset($decoded->name) || property_exists($decoded, self::FIELD_NAME)) {
             if (is_array($decoded->name)) {
                 $type->setName(FHIRCodeableConcept::jsonUnserialize(reset($decoded->name), $config));
