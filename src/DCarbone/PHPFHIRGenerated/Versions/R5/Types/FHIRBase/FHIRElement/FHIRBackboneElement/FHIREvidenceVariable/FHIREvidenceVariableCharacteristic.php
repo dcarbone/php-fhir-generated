@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -168,8 +168,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Label used for when a characteristic refers to another characteristic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $linkId;
@@ -184,8 +182,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * A short, natural language description of the characteristic that could be used
      * to communicate the criteria to an end-user.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -207,8 +203,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * When true, this characteristic is an exclusion criterion. In other words, not
      * matching this characteristic definition is equivalent to meeting this criterion.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $exclude;
@@ -218,8 +212,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the characteristic using a Reference.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $definitionReference;
@@ -230,8 +222,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Defines the characteristic using Canonical.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $definitionCanonical;
@@ -242,8 +232,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the characteristic using CodeableConcept.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $definitionCodeableConcept;
@@ -255,8 +243,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the characteristic using Expression.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     #[FHIRExpression]
     protected FHIRExpression $definitionExpression;
@@ -269,8 +255,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Defines the characteristic using id.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $definitionId;
@@ -279,8 +263,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * about.
      *
      * Defines the characteristic using both a type and value[x] elements.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue
      */
     #[FHIREvidenceVariableDefinitionByTypeAndValue]
     protected FHIREvidenceVariableDefinitionByTypeAndValue $definitionByTypeAndValue;
@@ -289,8 +271,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * about.
      *
      * Defines the characteristic as a combination of two or more characteristics.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination
      */
     #[FHIREvidenceVariableDefinitionByCombination]
     protected FHIREvidenceVariableDefinitionByCombination $definitionByCombination;
@@ -301,10 +281,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic. (choose any one of instances*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Number of occurrences meeting the characteristic.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $instancesQuantity;
@@ -313,10 +290,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic. (choose any one of instances*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Number of occurrences meeting the characteristic.
      */
     #[FHIRRange]
     protected FHIRRange $instancesRange;
@@ -327,10 +301,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met. (choose any one of duration*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Length of time in which the characteristic is met.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $durationQuantity;
@@ -339,10 +310,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met. (choose any one of duration*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Length of time in which the characteristic is met.
      */
     #[FHIRRange]
     protected FHIRRange $durationRange;
@@ -361,23 +329,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     /**
      * FHIREvidenceVariableCharacteristic Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $linkId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $exclude
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $definitionReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $definitionCanonical
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $definitionCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $definitionExpression
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $definitionId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue $definitionByTypeAndValue
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination $definitionByCombination
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $instancesRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $durationRange
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent> $timeFromEvent
      * @param null|string[] $fhirComments
      */
@@ -472,8 +425,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Label used for when a characteristic refers to another characteristic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getLinkId(): null|FHIRId
     {
@@ -489,9 +440,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Label used for when a characteristic refers to another characteristic.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $linkId
-     * @return static
      */
     public function setLinkId(null|string|FHIRIdPrimitive|FHIRId $linkId): self
     {
@@ -517,8 +465,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * A short, natural language description of the characteristic that could be used
      * to communicate the criteria to an end-user.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -536,9 +482,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * A short, natural language description of the characteristic that could be used
      * to communicate the criteria to an end-user.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -586,9 +529,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the characteristic.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -606,9 +546,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the characteristic.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -626,8 +563,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * When true, this characteristic is an exclusion criterion. In other words, not
      * matching this characteristic definition is equivalent to meeting this criterion.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getExclude(): null|FHIRBoolean
     {
@@ -640,9 +575,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      *
      * When true, this characteristic is an exclusion criterion. In other words, not
      * matching this characteristic definition is equivalent to meeting this criterion.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $exclude
-     * @return static
      */
     public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude): self
     {
@@ -663,8 +595,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the characteristic using a Reference.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getDefinitionReference(): null|FHIRReference
     {
@@ -677,9 +607,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the characteristic using a Reference.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $definitionReference
-     * @return static
      */
     public function setDefinitionReference(null|FHIRReference $definitionReference): self
     {
@@ -698,8 +625,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Defines the characteristic using Canonical.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getDefinitionCanonical(): null|FHIRCanonical
     {
@@ -713,9 +638,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Defines the characteristic using Canonical.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $definitionCanonical
-     * @return static
      */
     public function setDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical): self
     {
@@ -737,8 +659,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the characteristic using CodeableConcept.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getDefinitionCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -752,9 +672,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the characteristic using CodeableConcept.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $definitionCodeableConcept
-     * @return static
      */
     public function setDefinitionCodeableConcept(null|FHIRCodeableConcept $definitionCodeableConcept): self
     {
@@ -774,8 +691,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the characteristic using Expression.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     public function getDefinitionExpression(): null|FHIRExpression
     {
@@ -790,9 +705,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the characteristic using Expression.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $definitionExpression
-     * @return static
      */
     public function setDefinitionExpression(null|FHIRExpression $definitionExpression): self
     {
@@ -813,8 +725,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Defines the characteristic using id.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getDefinitionId(): null|FHIRId
     {
@@ -830,9 +740,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Defines the characteristic using id.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $definitionId
-     * @return static
      */
     public function setDefinitionId(null|string|FHIRIdPrimitive|FHIRId $definitionId): self
     {
@@ -852,8 +759,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * about.
      *
      * Defines the characteristic using both a type and value[x] elements.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue
      */
     public function getDefinitionByTypeAndValue(): null|FHIREvidenceVariableDefinitionByTypeAndValue
     {
@@ -865,9 +770,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * about.
      *
      * Defines the characteristic using both a type and value[x] elements.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue $definitionByTypeAndValue
-     * @return static
      */
     public function setDefinitionByTypeAndValue(null|FHIREvidenceVariableDefinitionByTypeAndValue $definitionByTypeAndValue): self
     {
@@ -884,8 +786,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * about.
      *
      * Defines the characteristic as a combination of two or more characteristics.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination
      */
     public function getDefinitionByCombination(): null|FHIREvidenceVariableDefinitionByCombination
     {
@@ -897,9 +797,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * about.
      *
      * Defines the characteristic as a combination of two or more characteristics.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination $definitionByCombination
-     * @return static
      */
     public function setDefinitionByCombination(null|FHIREvidenceVariableDefinitionByCombination $definitionByCombination): self
     {
@@ -918,10 +815,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic. (choose any one of instances*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Number of occurrences meeting the characteristic.
      */
     public function getInstancesQuantity(): null|FHIRQuantity
     {
@@ -935,11 +829,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic. (choose any one of instances*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $instancesQuantity
-     * @return static
+     * Number of occurrences meeting the characteristic.
      */
     public function setInstancesQuantity(null|FHIRQuantity $instancesQuantity): self
     {
@@ -956,10 +846,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic. (choose any one of instances*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Number of occurrences meeting the characteristic.
      */
     public function getInstancesRange(): null|FHIRRange
     {
@@ -971,11 +858,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Number of occurrences meeting the characteristic. (choose any one of instances*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $instancesRange
-     * @return static
+     * Number of occurrences meeting the characteristic.
      */
     public function setInstancesRange(null|FHIRRange $instancesRange): self
     {
@@ -994,10 +877,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met. (choose any one of duration*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Length of time in which the characteristic is met.
      */
     public function getDurationQuantity(): null|FHIRQuantity
     {
@@ -1011,11 +891,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met. (choose any one of duration*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $durationQuantity
-     * @return static
+     * Length of time in which the characteristic is met.
      */
     public function setDurationQuantity(null|FHIRQuantity $durationQuantity): self
     {
@@ -1032,10 +908,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met. (choose any one of duration*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Length of time in which the characteristic is met.
      */
     public function getDurationRange(): null|FHIRRange
     {
@@ -1047,11 +920,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Length of time in which the characteristic is met. (choose any one of duration*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $durationRange
-     * @return static
+     * Length of time in which the characteristic is met.
      */
     public function setDurationRange(null|FHIRRange $durationRange): self
     {
@@ -1092,9 +961,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * about.
      *
      * Timing in which the characteristic is determined.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent $timeFromEvent
-     * @return static
      */
     public function addTimeFromEvent(FHIREvidenceVariableTimeFromEvent $timeFromEvent): self
     {
@@ -1110,9 +976,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * about.
      *
      * Timing in which the characteristic is determined.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableTimeFromEvent ...$timeFromEvent
-     * @return static
      */
     public function setTimeFromEvent(FHIREvidenceVariableTimeFromEvent ...$timeFromEvent): self
     {
@@ -1126,10 +989,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1243,10 +1103,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1363,10 +1219,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

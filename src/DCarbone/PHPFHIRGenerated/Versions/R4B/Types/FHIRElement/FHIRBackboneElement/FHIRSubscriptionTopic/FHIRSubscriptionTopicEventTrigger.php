@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -152,8 +151,6 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      * SubscriptionTopic - for example, "Patient Admission, as defined in HL7v2 via
      * message ADT^A01". Multiple values are considered OR joined (e.g., matching any
      * single event listed).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -165,8 +162,6 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      *
      * A well-defined event which can be used to trigger notifications from the
      * SubscriptionTopic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $event;
@@ -181,8 +176,6 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      * maps to http://hl7.org/fhir/StructureDefinition/Patient. For more information,
      * see <a
      * href="elementdefinition-definitions.html#ElementDefinition.type.code">ElementDefinition.type.code</a>.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $resource;
@@ -191,11 +184,7 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
     /**
      * FHIRSubscriptionTopicEventTrigger Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $event
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $resource
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -241,8 +230,6 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      * SubscriptionTopic - for example, "Patient Admission, as defined in HL7v2 via
      * message ADT^A01". Multiple values are considered OR joined (e.g., matching any
      * single event listed).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -262,9 +249,6 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      * SubscriptionTopic - for example, "Patient Admission, as defined in HL7v2 via
      * message ADT^A01". Multiple values are considered OR joined (e.g., matching any
      * single event listed).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -287,8 +271,6 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      *
      * A well-defined event which can be used to trigger notifications from the
      * SubscriptionTopic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getEvent(): null|FHIRCodeableConcept
     {
@@ -303,9 +285,6 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      *
      * A well-defined event which can be used to trigger notifications from the
      * SubscriptionTopic.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $event
-     * @return static
      */
     public function setEvent(null|FHIRCodeableConcept $event): self
     {
@@ -328,8 +307,6 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      * maps to http://hl7.org/fhir/StructureDefinition/Patient. For more information,
      * see <a
      * href="elementdefinition-definitions.html#ElementDefinition.type.code">ElementDefinition.type.code</a>.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getResource(): null|FHIRUri
     {
@@ -347,9 +324,6 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
      * maps to http://hl7.org/fhir/StructureDefinition/Patient. For more information,
      * see <a
      * href="elementdefinition-definitions.html#ElementDefinition.type.code">ElementDefinition.type.code</a>.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $resource
-     * @return static
      */
     public function setResource(null|string|FHIRUriPrimitive|FHIRUri $resource): self
     {
@@ -366,10 +340,7 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicEventTrigger $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicEventTrigger
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -433,10 +404,6 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -469,10 +436,7 @@ class FHIRSubscriptionTopicEventTrigger extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicEventTrigger $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicEventTrigger
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

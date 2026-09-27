@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -140,8 +140,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of certainty.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -164,8 +162,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Aspect of certainty being rated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -176,8 +172,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Assessment or judgement of the aspect.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $rating;
@@ -187,8 +181,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Individual or group who did the rating.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $rater;
@@ -209,13 +201,8 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
     /**
      * FHIREvidenceCertainty Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $rating
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $rater
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceCertainty> $subcomponent
      * @param null|string[] $fhirComments
      */
@@ -267,8 +254,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of certainty.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -281,9 +266,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of certainty.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -331,9 +313,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -351,9 +330,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -372,8 +348,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Aspect of certainty being rated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -387,9 +361,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Aspect of certainty being rated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -408,8 +379,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Assessment or judgement of the aspect.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRating(): null|FHIRCodeableConcept
     {
@@ -423,9 +392,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Assessment or judgement of the aspect.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $rating
-     * @return static
      */
     public function setRating(null|FHIRCodeableConcept $rating): self
     {
@@ -443,8 +409,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Individual or group who did the rating.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getRater(): null|FHIRString
     {
@@ -457,9 +421,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Individual or group who did the rating.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $rater
-     * @return static
      */
     public function setRater(null|string|FHIRStringPrimitive|FHIRString $rater): self
     {
@@ -507,9 +468,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A domain or subdomain of certainty.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceCertainty $subcomponent
-     * @return static
      */
     public function addSubcomponent(FHIREvidenceCertainty $subcomponent): self
     {
@@ -527,9 +485,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A domain or subdomain of certainty.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceCertainty ...$subcomponent
-     * @return static
      */
     public function setSubcomponent(FHIREvidenceCertainty ...$subcomponent): self
     {
@@ -543,10 +498,7 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceCertainty $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceCertainty
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -616,10 +568,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -671,10 +619,7 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceCertainty $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceCertainty
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

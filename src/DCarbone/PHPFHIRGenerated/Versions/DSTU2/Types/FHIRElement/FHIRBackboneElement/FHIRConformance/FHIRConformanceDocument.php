@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -129,8 +128,6 @@ class FHIRConformanceDocument extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Mode of this document declaration - whether application is producer or consumer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDocumentMode
      */
     #[FHIRDocumentMode]
     protected FHIRDocumentMode $mode;
@@ -142,8 +139,6 @@ class FHIRConformanceDocument extends FHIRBackboneElement
      * A description of how the application supports or uses the specified document
      * profile. For example, when are documents created, what action is taken with
      * consumed documents, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $documentation;
@@ -153,8 +148,6 @@ class FHIRConformanceDocument extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A constraint on a resource used in the document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $profile;
@@ -163,11 +156,7 @@ class FHIRConformanceDocument extends FHIRBackboneElement
     /**
      * FHIRConformanceDocument Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDocumentModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDocumentMode $mode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $documentation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $profile
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -205,8 +194,6 @@ class FHIRConformanceDocument extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Mode of this document declaration - whether application is producer or consumer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDocumentMode
      */
     public function getMode(): null|FHIRDocumentMode
     {
@@ -218,9 +205,6 @@ class FHIRConformanceDocument extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Mode of this document declaration - whether application is producer or consumer.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDocumentModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDocumentMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRDocumentModeList|FHIRDocumentMode $mode): self
     {
@@ -243,8 +227,6 @@ class FHIRConformanceDocument extends FHIRBackboneElement
      * A description of how the application supports or uses the specified document
      * profile. For example, when are documents created, what action is taken with
      * consumed documents, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDocumentation(): null|FHIRString
     {
@@ -259,9 +241,6 @@ class FHIRConformanceDocument extends FHIRBackboneElement
      * A description of how the application supports or uses the specified document
      * profile. For example, when are documents created, what action is taken with
      * consumed documents, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -282,8 +261,6 @@ class FHIRConformanceDocument extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A constraint on a resource used in the document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getProfile(): null|FHIRReference
     {
@@ -296,9 +273,6 @@ class FHIRConformanceDocument extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A constraint on a resource used in the document.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $profile
-     * @return static
      */
     public function setProfile(null|FHIRReference $profile): self
     {
@@ -312,10 +286,7 @@ class FHIRConformanceDocument extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceDocument $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceDocument
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -379,10 +350,6 @@ class FHIRConformanceDocument extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -415,10 +382,7 @@ class FHIRConformanceDocument extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceDocument $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceDocument
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

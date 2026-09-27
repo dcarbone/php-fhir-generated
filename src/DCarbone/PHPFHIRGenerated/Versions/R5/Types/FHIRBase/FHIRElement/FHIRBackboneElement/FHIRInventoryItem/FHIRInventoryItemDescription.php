@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,8 +135,6 @@ class FHIRInventoryItemDescription extends FHIRBackboneElement
      * The language for the item description, when an item must be described in
      * different languages and those languages may be authoritative and not
      * translations of a 'main' language.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCommonLanguages
      */
     #[FHIRCommonLanguages]
     protected FHIRCommonLanguages $language;
@@ -146,8 +144,6 @@ class FHIRInventoryItemDescription extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -156,10 +152,7 @@ class FHIRInventoryItemDescription extends FHIRBackboneElement
     /**
      * FHIRInventoryItemDescription Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCommonLanguagesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCommonLanguages $language
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -195,8 +188,6 @@ class FHIRInventoryItemDescription extends FHIRBackboneElement
      * The language for the item description, when an item must be described in
      * different languages and those languages may be authoritative and not
      * translations of a 'main' language.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCommonLanguages
      */
     public function getLanguage(): null|FHIRCommonLanguages
     {
@@ -210,9 +201,6 @@ class FHIRInventoryItemDescription extends FHIRBackboneElement
      * The language for the item description, when an item must be described in
      * different languages and those languages may be authoritative and not
      * translations of a 'main' language.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCommonLanguagesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCommonLanguages $language
-     * @return static
      */
     public function setLanguage(null|string|FHIRCommonLanguagesEnum|FHIRCommonLanguages $language): self
     {
@@ -233,8 +221,6 @@ class FHIRInventoryItemDescription extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -247,9 +233,6 @@ class FHIRInventoryItemDescription extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the item.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -266,10 +249,7 @@ class FHIRInventoryItemDescription extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemDescription $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemDescription
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -331,10 +311,6 @@ class FHIRInventoryItemDescription extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -362,10 +338,7 @@ class FHIRInventoryItemDescription extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemDescription $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemDescription
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -111,7 +109,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceMetricCategoryEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceMetricOperationalStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive\FHIRColorCodesOrRGBEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -188,8 +185,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -201,8 +196,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Describes the unit that an observed value determined for this metric will have.
      * For example: Percent, Seconds, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unit;
@@ -212,8 +205,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the link to the Device. This is also known as a channel device.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $device;
@@ -222,8 +213,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Indicates current operational state of the device. For example: On, Off,
      * Standby, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricOperationalStatus
      */
     #[FHIRDeviceMetricOperationalStatus]
     protected FHIRDeviceMetricOperationalStatus $operationalStatus;
@@ -235,8 +224,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * practice, consider a Patient Monitor that has ECG/HR and Pleth; the metrics are
      * displayed in different characteristic colors, such as HR in blue, BP in green,
      * and PR and SpO2 in magenta.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRColorCodesOrRGB
      */
     #[FHIRColorCodesOrRGB]
     protected FHIRColorCodesOrRGB $color;
@@ -245,8 +232,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Indicates the category of the observation generation process. A DeviceMetric can
      * be for example a setting, measurement, or calculation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricCategory
      */
     #[FHIRDeviceMetricCategory]
     protected FHIRDeviceMetricCategory $category;
@@ -264,8 +249,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * distance (e.g. for a measuring wheel). The update period may be different than
      * the measurement frequency, if the device does not update the published observed
      * value with the same frequency as it was measured.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $measurementFrequency;
@@ -283,22 +266,10 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
     /* constructor.php:61 */
     /**
      * FHIRDeviceMetric Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $unit
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $device
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceMetricOperationalStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive\FHIRColorCodesOrRGBEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRColorCodesOrRGB $color
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceMetricCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricCategory $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measurementFrequency
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration> $calibration
      * @param null|string[] $fhirComments
      */
@@ -407,9 +378,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Instance identifiers assigned to a device, by the device or gateway software,
      * manufacturers, other organizations or owners. For example, handle ID.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -428,9 +396,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Instance identifiers assigned to a device, by the device or gateway software,
      * manufacturers, other organizations or owners. For example, handle ID.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -449,8 +414,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -464,9 +427,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -486,8 +446,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Describes the unit that an observed value determined for this metric will have.
      * For example: Percent, Seconds, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getUnit(): null|FHIRCodeableConcept
     {
@@ -502,9 +460,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Describes the unit that an observed value determined for this metric will have.
      * For example: Percent, Seconds, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $unit
-     * @return static
      */
     public function setUnit(null|FHIRCodeableConcept $unit): self
     {
@@ -522,8 +477,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the link to the Device. This is also known as a channel device.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getDevice(): null|FHIRReference
     {
@@ -536,9 +489,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the link to the Device. This is also known as a channel device.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $device
-     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -555,8 +505,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Indicates current operational state of the device. For example: On, Off,
      * Standby, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricOperationalStatus
      */
     public function getOperationalStatus(): null|FHIRDeviceMetricOperationalStatus
     {
@@ -568,9 +516,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Indicates current operational state of the device. For example: On, Off,
      * Standby, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceMetricOperationalStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
-     * @return static
      */
     public function setOperationalStatus(null|string|FHIRDeviceMetricOperationalStatusEnum|FHIRDeviceMetricOperationalStatus $operationalStatus): self
     {
@@ -593,8 +538,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * practice, consider a Patient Monitor that has ECG/HR and Pleth; the metrics are
      * displayed in different characteristic colors, such as HR in blue, BP in green,
      * and PR and SpO2 in magenta.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRColorCodesOrRGB
      */
     public function getColor(): null|FHIRColorCodesOrRGB
     {
@@ -609,9 +552,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * practice, consider a Patient Monitor that has ECG/HR and Pleth; the metrics are
      * displayed in different characteristic colors, such as HR in blue, BP in green,
      * and PR and SpO2 in magenta.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive\FHIRColorCodesOrRGBEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRColorCodesOrRGB $color
-     * @return static
      */
     public function setColor(null|string|FHIRColorCodesOrRGBEnum|FHIRColorCodesOrRGB $color): self
     {
@@ -631,8 +571,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Indicates the category of the observation generation process. A DeviceMetric can
      * be for example a setting, measurement, or calculation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricCategory
      */
     public function getCategory(): null|FHIRDeviceMetricCategory
     {
@@ -644,9 +582,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Indicates the category of the observation generation process. A DeviceMetric can
      * be for example a setting, measurement, or calculation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceMetricCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceMetricCategory $category
-     * @return static
      */
     public function setCategory(null|string|FHIRDeviceMetricCategoryEnum|FHIRDeviceMetricCategory $category): self
     {
@@ -675,8 +610,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * distance (e.g. for a measuring wheel). The update period may be different than
      * the measurement frequency, if the device does not update the published observed
      * value with the same frequency as it was measured.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getMeasurementFrequency(): null|FHIRQuantity
     {
@@ -697,9 +630,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * distance (e.g. for a measuring wheel). The update period may be different than
      * the measurement frequency, if the device does not update the published observed
      * value with the same frequency as it was measured.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $measurementFrequency
-     * @return static
      */
     public function setMeasurementFrequency(null|FHIRQuantity $measurementFrequency): self
     {
@@ -740,9 +670,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Describes the calibrations that have been performed or that are required to be
      * performed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration $calibration
-     * @return static
      */
     public function addCalibration(FHIRDeviceMetricCalibration $calibration): self
     {
@@ -758,9 +685,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      *
      * Describes the calibrations that have been performed or that are required to be
      * performed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration ...$calibration
-     * @return static
      */
     public function setCalibration(FHIRDeviceMetricCalibration ...$calibration): self
     {
@@ -774,10 +698,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDeviceMetric $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -897,11 +818,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -997,10 +913,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDeviceMetric $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

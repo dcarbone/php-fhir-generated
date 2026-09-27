@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -128,8 +127,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * A code - a text symbol - that uniquely identifies the concept within the code
      * system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -140,8 +137,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * A human readable string that is the recommended default way to present this
      * concept to a user.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $display;
@@ -154,8 +149,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * formal definitions required, because of the prevalence of legacy systems.
      * However, they are highly recommended, as without them there is no formal meaning
      * associated with the concept.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $definition;
@@ -200,11 +193,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     /**
      * FHIRCodeSystemConcept Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $display
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $definition
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation> $designation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1> $property
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept> $concept
@@ -260,8 +249,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * A code - a text symbol - that uniquely identifies the concept within the code
      * system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -276,9 +263,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * A code - a text symbol - that uniquely identifies the concept within the code
      * system.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -300,8 +284,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * A human readable string that is the recommended default way to present this
      * concept to a user.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDisplay(): null|FHIRString
     {
@@ -315,9 +297,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * A human readable string that is the recommended default way to present this
      * concept to a user.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $display
-     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -341,8 +320,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * formal definitions required, because of the prevalence of legacy systems.
      * However, they are highly recommended, as without them there is no formal meaning
      * associated with the concept.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDefinition(): null|FHIRString
     {
@@ -358,9 +335,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * formal definitions required, because of the prevalence of legacy systems.
      * However, they are highly recommended, as without them there is no formal meaning
      * associated with the concept.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $definition
-     * @return static
      */
     public function setDefinition(null|string|FHIRStringPrimitive|FHIRString $definition): self
     {
@@ -408,9 +382,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation $designation
-     * @return static
      */
     public function addDesignation(FHIRCodeSystemDesignation $designation): self
     {
@@ -428,9 +399,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation ...$designation
-     * @return static
      */
     public function setDesignation(FHIRCodeSystemDesignation ...$designation): self
     {
@@ -473,9 +441,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * part or all of its content.
      *
      * A property value for this concept.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1 $property
-     * @return static
      */
     public function addProperty(FHIRCodeSystemProperty1 $property): self
     {
@@ -492,9 +457,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * part or all of its content.
      *
      * A property value for this concept.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1 ...$property
-     * @return static
      */
     public function setProperty(FHIRCodeSystemProperty1 ...$property): self
     {
@@ -541,9 +503,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Defines children of a concept to produce a hierarchy of concepts. The nature of
      * the relationships is variable (is-a/contains/categorizes) - see
      * hierarchyMeaning.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept $concept
-     * @return static
      */
     public function addConcept(FHIRCodeSystemConcept $concept): self
     {
@@ -562,9 +521,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Defines children of a concept to produce a hierarchy of concepts. The nature of
      * the relationships is variable (is-a/contains/categorizes) - see
      * hierarchyMeaning.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept ...$concept
-     * @return static
      */
     public function setConcept(FHIRCodeSystemConcept ...$concept): self
     {
@@ -578,10 +534,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -659,10 +612,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -721,10 +670,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

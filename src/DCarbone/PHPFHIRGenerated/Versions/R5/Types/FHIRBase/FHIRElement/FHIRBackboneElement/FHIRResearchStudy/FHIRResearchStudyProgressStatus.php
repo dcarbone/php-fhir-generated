@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Label for status or state (e.g. recruitment status).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $state;
@@ -155,8 +152,6 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * An indication of whether or not the date is a known date when the state changed
      * or will change. A value of true indicates a known date. A value of false
      * indicates an estimated date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $actual;
@@ -166,8 +161,6 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date range.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -176,11 +169,7 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
     /**
      * FHIRResearchStudyProgressStatus Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $state
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $actual
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -220,8 +209,6 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Label for status or state (e.g. recruitment status).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getState(): null|FHIRCodeableConcept
     {
@@ -235,9 +222,6 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Label for status or state (e.g. recruitment status).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $state
-     * @return static
      */
     public function setState(null|FHIRCodeableConcept $state): self
     {
@@ -256,8 +240,6 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * An indication of whether or not the date is a known date when the state changed
      * or will change. A value of true indicates a known date. A value of false
      * indicates an estimated date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getActual(): null|FHIRBoolean
     {
@@ -271,9 +253,6 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * An indication of whether or not the date is a known date when the state changed
      * or will change. A value of true indicates a known date. A value of false
      * indicates an estimated date.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $actual
-     * @return static
      */
     public function setActual(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $actual): self
     {
@@ -294,8 +273,6 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date range.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -308,9 +285,6 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date range.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -324,10 +298,7 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyProgressStatus $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyProgressStatus
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -383,10 +354,6 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -414,10 +381,7 @@ class FHIRResearchStudyProgressStatus extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyProgressStatus $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyProgressStatus
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

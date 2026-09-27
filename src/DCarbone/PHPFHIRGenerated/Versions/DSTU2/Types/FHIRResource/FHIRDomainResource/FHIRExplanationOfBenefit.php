@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
@@ -85,7 +83,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
@@ -154,8 +151,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $request;
@@ -166,8 +161,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the Narrative, or extensions
      *
      * Transaction status: error, complete.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $outcome;
@@ -177,8 +170,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $disposition;
@@ -189,8 +180,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The version of the style of resource contents. This should be mapped to the
      * allowable profiles for this and supporting resources.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $ruleset;
@@ -201,8 +190,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $originalRuleset;
@@ -215,8 +202,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $created;
@@ -226,8 +211,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $organization;
@@ -237,8 +220,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $requestProvider;
@@ -248,8 +229,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $requestOrganization;
@@ -257,24 +236,10 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
     /* constructor.php:61 */
     /**
      * FHIRExplanationOfBenefit Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $request
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $outcome
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $disposition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $ruleset
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $originalRuleset
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $created
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $organization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $requestProvider
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $requestOrganization
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -382,9 +347,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -401,9 +363,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -421,8 +380,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getRequest(): null|FHIRReference
     {
@@ -435,9 +392,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $request
-     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -456,8 +410,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the Narrative, or extensions
      *
      * Transaction status: error, complete.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     public function getOutcome(): null|FHIRCode
     {
@@ -471,9 +423,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * the Narrative, or extensions
      *
      * Transaction status: error, complete.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $outcome
-     * @return static
      */
     public function setOutcome(null|string|FHIRCodePrimitive|FHIRCode $outcome): self
     {
@@ -494,8 +443,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDisposition(): null|FHIRString
     {
@@ -508,9 +455,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $disposition
-     * @return static
      */
     public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition): self
     {
@@ -532,8 +476,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The version of the style of resource contents. This should be mapped to the
      * allowable profiles for this and supporting resources.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getRuleset(): null|FHIRCoding
     {
@@ -547,9 +489,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The version of the style of resource contents. This should be mapped to the
      * allowable profiles for this and supporting resources.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $ruleset
-     * @return static
      */
     public function setRuleset(null|FHIRCoding $ruleset): self
     {
@@ -568,8 +507,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getOriginalRuleset(): null|FHIRCoding
     {
@@ -583,9 +520,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $originalRuleset
-     * @return static
      */
     public function setOriginalRuleset(null|FHIRCoding $originalRuleset): self
     {
@@ -606,8 +540,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getCreated(): null|FHIRDateTime
     {
@@ -623,9 +555,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $created
-     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -646,8 +575,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getOrganization(): null|FHIRReference
     {
@@ -660,9 +587,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $organization
-     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -680,8 +604,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getRequestProvider(): null|FHIRReference
     {
@@ -694,9 +616,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $requestProvider
-     * @return static
      */
     public function setRequestProvider(null|FHIRReference $requestProvider): self
     {
@@ -714,8 +633,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getRequestOrganization(): null|FHIRReference
     {
@@ -728,9 +645,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $requestOrganization
-     * @return static
      */
     public function setRequestOrganization(null|FHIRReference $requestOrganization): self
     {
@@ -744,10 +658,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRExplanationOfBenefit $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRExplanationOfBenefit
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -869,11 +780,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -972,10 +878,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRExplanationOfBenefit $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRExplanationOfBenefit
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -138,8 +137,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      *
      * A Person, Location/HealthcareService or Device that is participating in the
      * appointment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $actor;
@@ -150,8 +147,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * Is this participant required to be present at the meeting. This covers a
      * use-case where 2 doctors need to meet to discuss the results for a specific
      * patient, and the patient is not required to be present.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRParticipantRequired
      */
     #[FHIRParticipantRequired]
     protected FHIRParticipantRequired $required;
@@ -160,8 +155,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the actor.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRParticipationStatus
      */
     #[FHIRParticipationStatus]
     protected FHIRParticipationStatus $status;
@@ -170,12 +163,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
     /**
      * FHIRAppointmentParticipant Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $actor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRParticipantRequiredList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRParticipantRequired $required
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRParticipationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRParticipationStatus $status
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -245,9 +234,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -265,9 +251,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -286,8 +269,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      *
      * A Person, Location/HealthcareService or Device that is participating in the
      * appointment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getActor(): null|FHIRReference
     {
@@ -301,9 +282,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      *
      * A Person, Location/HealthcareService or Device that is participating in the
      * appointment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $actor
-     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -322,8 +300,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * Is this participant required to be present at the meeting. This covers a
      * use-case where 2 doctors need to meet to discuss the results for a specific
      * patient, and the patient is not required to be present.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRParticipantRequired
      */
     public function getRequired(): null|FHIRParticipantRequired
     {
@@ -337,9 +313,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * Is this participant required to be present at the meeting. This covers a
      * use-case where 2 doctors need to meet to discuss the results for a specific
      * patient, and the patient is not required to be present.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRParticipantRequiredList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRParticipantRequired $required
-     * @return static
      */
     public function setRequired(null|string|FHIRParticipantRequiredList|FHIRParticipantRequired $required): self
     {
@@ -359,8 +332,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the actor.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRParticipationStatus
      */
     public function getStatus(): null|FHIRParticipationStatus
     {
@@ -372,9 +343,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the actor.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRParticipationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRParticipationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRParticipationStatusList|FHIRParticipationStatus $status): self
     {
@@ -391,10 +359,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -460,10 +425,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -503,10 +464,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

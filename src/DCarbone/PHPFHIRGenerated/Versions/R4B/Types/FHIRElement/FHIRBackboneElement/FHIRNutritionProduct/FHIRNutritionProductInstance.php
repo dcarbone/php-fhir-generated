@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -143,8 +143,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The amount of items or instances that the resource considers, for instance when
      * referring to 2 identical units together.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -166,8 +164,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the batch or lot of the product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $lotNumber;
@@ -181,8 +177,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The time after which the product is no longer expected to be in proper
      * condition, or its use is not advised or not allowed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $expiry;
@@ -196,8 +190,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The time after which the product is no longer expected to be in proper
      * condition, or its use is not advised or not allowed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $useBy;
@@ -206,13 +198,8 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
     /**
      * FHIRNutritionProductInstance Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $lotNumber
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $expiry
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $useBy
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -262,8 +249,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The amount of items or instances that the resource considers, for instance when
      * referring to 2 identical units together.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -279,9 +264,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The amount of items or instances that the resource considers, for instance when
      * referring to 2 identical units together.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -326,9 +308,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier for the physical instance, typically a serial number.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -346,9 +325,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier for the physical instance, typically a serial number.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -366,8 +342,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the batch or lot of the product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getLotNumber(): null|FHIRString
     {
@@ -380,9 +354,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the batch or lot of the product.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $lotNumber
-     * @return static
      */
     public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber): self
     {
@@ -407,8 +378,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The time after which the product is no longer expected to be in proper
      * condition, or its use is not advised or not allowed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getExpiry(): null|FHIRDateTime
     {
@@ -425,9 +394,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The time after which the product is no longer expected to be in proper
      * condition, or its use is not advised or not allowed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $expiry
-     * @return static
      */
     public function setExpiry(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expiry): self
     {
@@ -452,8 +418,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The time after which the product is no longer expected to be in proper
      * condition, or its use is not advised or not allowed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getUseBy(): null|FHIRDateTime
     {
@@ -470,9 +434,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
      *
      * The time after which the product is no longer expected to be in proper
      * condition, or its use is not advised or not allowed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $useBy
-     * @return static
      */
     public function setUseBy(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $useBy): self
     {
@@ -489,10 +450,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -568,10 +526,6 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -621,10 +575,7 @@ class FHIRNutritionProductInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

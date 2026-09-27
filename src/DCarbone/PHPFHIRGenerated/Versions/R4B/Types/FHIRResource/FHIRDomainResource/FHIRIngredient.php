@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -109,7 +107,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStat
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
@@ -172,8 +169,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -181,8 +176,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this ingredient. Enables tracking the life-cycle of the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -205,8 +198,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A classification of the ingredient identifying its purpose within the product,
      * e.g. active, inactive.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
@@ -232,8 +223,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * of the substance, so if a reference to a SubstanceDefinition is used to decribe
      * that (rather than just a code), the allergen information should go there, not
      * here.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $allergenicIndicator;
@@ -254,8 +243,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * The substance that comprises this ingredient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientSubstance
      */
     #[FHIRIngredientSubstance]
     protected FHIRIngredientSubstance $substance;
@@ -263,22 +250,12 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
     /* constructor.php:61 */
     /**
      * FHIRIngredient Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $for
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $role
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $function
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $allergenicIndicator
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientManufacturer> $manufacturer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientSubstance $substance
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -356,8 +333,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -373,9 +348,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -391,8 +363,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this ingredient. Enables tracking the life-cycle of the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -403,9 +373,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this ingredient. Enables tracking the life-cycle of the content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -451,9 +418,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product which this ingredient is a constituent part of.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $for
-     * @return static
      */
     public function addFor(FHIRReference $for): self
     {
@@ -470,9 +434,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product which this ingredient is a constituent part of.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$for
-     * @return static
      */
     public function setFor(FHIRReference ...$for): self
     {
@@ -492,8 +453,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A classification of the ingredient identifying its purpose within the product,
      * e.g. active, inactive.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRole(): null|FHIRCodeableConcept
     {
@@ -508,9 +467,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A classification of the ingredient identifying its purpose within the product,
      * e.g. active, inactive.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -559,9 +515,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * A classification of the ingredient identifying its precise purpose(s) in the
      * drug product. This extends the Ingredient.role to add more detail. Example:
      * antioxidant, alkalizing agent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $function
-     * @return static
      */
     public function addFunction(FHIRCodeableConcept $function): self
     {
@@ -581,9 +534,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * A classification of the ingredient identifying its precise purpose(s) in the
      * drug product. This extends the Ingredient.role to add more detail. Example:
      * antioxidant, alkalizing agent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$function
-     * @return static
      */
     public function setFunction(FHIRCodeableConcept ...$function): self
     {
@@ -603,8 +553,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * of the substance, so if a reference to a SubstanceDefinition is used to decribe
      * that (rather than just a code), the allergen information should go there, not
      * here.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getAllergenicIndicator(): null|FHIRBoolean
     {
@@ -619,9 +567,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * of the substance, so if a reference to a SubstanceDefinition is used to decribe
      * that (rather than just a code), the allergen information should go there, not
      * here.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $allergenicIndicator
-     * @return static
      */
     public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator): self
     {
@@ -671,9 +616,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * Manufacturer(s) currently being used 3) Set of organisations allowed to
      * manufacture this ingredient for this product Users must be clear on the
      * application of context relevant to their use case.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientManufacturer $manufacturer
-     * @return static
      */
     public function addManufacturer(FHIRIngredientManufacturer $manufacturer): self
     {
@@ -692,9 +634,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * Manufacturer(s) currently being used 3) Set of organisations allowed to
      * manufacture this ingredient for this product Users must be clear on the
      * application of context relevant to their use case.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientManufacturer ...$manufacturer
-     * @return static
      */
     public function setManufacturer(FHIRIngredientManufacturer ...$manufacturer): self
     {
@@ -710,8 +649,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * The substance that comprises this ingredient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientSubstance
      */
     public function getSubstance(): null|FHIRIngredientSubstance
     {
@@ -722,9 +659,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * The substance that comprises this ingredient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientSubstance $substance
-     * @return static
      */
     public function setSubstance(null|FHIRIngredientSubstance $substance): self
     {
@@ -738,10 +672,7 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRIngredient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRIngredient
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -851,11 +782,6 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -943,10 +869,7 @@ class FHIRIngredient extends FHIRDomainResource implements VersionContainedTypeI
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRIngredient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRIngredient
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

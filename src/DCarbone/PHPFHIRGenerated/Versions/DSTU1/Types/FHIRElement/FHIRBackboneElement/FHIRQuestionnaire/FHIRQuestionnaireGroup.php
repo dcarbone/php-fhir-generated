@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -122,8 +122,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Structured name for a section of a predefined list of questions this
      * questionnaire is responding to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $name;
@@ -132,8 +130,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that is displayed above the contents of the group.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $header;
@@ -142,8 +138,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional text for the group, used for display purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -154,8 +148,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * More specific subject this section's answers are about, details the subject
      * given in Questionnaire.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $subject;
@@ -190,12 +182,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
     /**
      * FHIRQuestionnaireGroup Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $header
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup> $group
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion> $question
      * @param null|string[] $fhirComments
@@ -250,8 +237,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Structured name for a section of a predefined list of questions this
      * questionnaire is responding to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getName(): null|FHIRCodeableConcept
     {
@@ -266,9 +251,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Structured name for a section of a predefined list of questions this
      * questionnaire is responding to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $name
-     * @return static
      */
     public function setName(null|FHIRCodeableConcept $name): self
     {
@@ -285,8 +267,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that is displayed above the contents of the group.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getHeader(): null|FHIRString
     {
@@ -298,9 +278,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that is displayed above the contents of the group.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $header
-     * @return static
      */
     public function setHeader(null|string|FHIRStringPrimitive|FHIRString $header): self
     {
@@ -320,8 +297,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional text for the group, used for display purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -333,9 +308,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional text for the group, used for display purposes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -357,8 +329,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * More specific subject this section's answers are about, details the subject
      * given in Questionnaire.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getSubject(): null|FHIRResourceReference
     {
@@ -372,9 +342,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * More specific subject this section's answers are about, details the subject
      * given in Questionnaire.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -421,9 +388,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * A sub-group within a group. The ordering of groups within this group is
      * relevant.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup $group
-     * @return static
      */
     public function addGroup(FHIRQuestionnaireGroup $group): self
     {
@@ -442,9 +406,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * A sub-group within a group. The ordering of groups within this group is
      * relevant.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup ...$group
-     * @return static
      */
     public function setGroup(FHIRQuestionnaireGroup ...$group): self
     {
@@ -491,9 +452,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion $question
-     * @return static
      */
     public function addQuestion(FHIRQuestionnaireQuestion $question): self
     {
@@ -512,9 +470,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion ...$question
-     * @return static
      */
     public function setQuestion(FHIRQuestionnaireQuestion ...$question): self
     {
@@ -528,10 +483,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -601,10 +553,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -656,10 +604,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

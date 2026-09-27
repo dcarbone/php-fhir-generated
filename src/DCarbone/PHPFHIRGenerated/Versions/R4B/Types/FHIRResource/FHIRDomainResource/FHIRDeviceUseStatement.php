@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -110,7 +108,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
@@ -204,8 +201,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * A code representing the patient or other source's judgment about the state of
      * the device used that this statement is about. Generally this will be active or
      * completed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceUseStatementStatus
      */
     #[FHIRDeviceUseStatementStatus]
     protected FHIRDeviceUseStatementStatus $status;
@@ -215,8 +210,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who used the device.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -242,8 +235,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the device was used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $timingTiming;
@@ -253,8 +244,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the device was used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $timingPeriod;
@@ -267,8 +256,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How often the device was used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $timingDateTime;
@@ -281,8 +268,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the statement was made/recorded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $recordedOn;
@@ -292,8 +277,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who reported the device was being used by the patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $source;
@@ -303,8 +286,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the device used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $device;
@@ -339,8 +320,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * Indicates the anotomic location on the subject's body where the device was used
      * ( i.e. the target).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $bodySite;
@@ -362,28 +341,14 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
     /* constructor.php:61 */
     /**
      * FHIRDeviceUseStatement Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $basedOn
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceUseStatementStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceUseStatementStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $subject
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $derivedFrom
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $timingTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $timingDateTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $recordedOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $source
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $device
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $reasonCode
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $reasonReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $bodySite
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|string[] $fhirComments
      */
@@ -514,9 +479,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An external identifier for this statement such as an IRI.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -534,9 +496,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An external identifier for this statement such as an IRI.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -581,9 +540,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this
      * DeviceUseStatement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -601,9 +557,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this
      * DeviceUseStatement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -621,8 +574,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * A code representing the patient or other source's judgment about the state of
      * the device used that this statement is about. Generally this will be active or
      * completed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceUseStatementStatus
      */
     public function getStatus(): null|FHIRDeviceUseStatementStatus
     {
@@ -635,9 +586,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * A code representing the patient or other source's judgment about the state of
      * the device used that this statement is about. Generally this will be active or
      * completed.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceUseStatementStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceUseStatementStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRDeviceUseStatementStatusEnum|FHIRDeviceUseStatementStatus $status): self
     {
@@ -658,8 +606,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who used the device.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -672,9 +618,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who used the device.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -719,9 +662,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * Allows linking the DeviceUseStatement to the underlying Request, or to other
      * information that supports or is used to derive the DeviceUseStatement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $derivedFrom
-     * @return static
      */
     public function addDerivedFrom(FHIRReference $derivedFrom): self
     {
@@ -739,9 +679,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * Allows linking the DeviceUseStatement to the underlying Request, or to other
      * information that supports or is used to derive the DeviceUseStatement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$derivedFrom
-     * @return static
      */
     public function setDerivedFrom(FHIRReference ...$derivedFrom): self
     {
@@ -763,8 +700,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the device was used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     public function getTimingTiming(): null|FHIRTiming
     {
@@ -781,9 +716,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the device was used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $timingTiming
-     * @return static
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -801,8 +733,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the device was used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod(): null|FHIRPeriod
     {
@@ -815,9 +745,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the device was used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -838,8 +765,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How often the device was used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime(): null|FHIRDateTime
     {
@@ -855,9 +780,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How often the device was used.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $timingDateTime
-     * @return static
      */
     public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
@@ -881,8 +803,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the statement was made/recorded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getRecordedOn(): null|FHIRDateTime
     {
@@ -898,9 +818,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the statement was made/recorded.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $recordedOn
-     * @return static
      */
     public function setRecordedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedOn): self
     {
@@ -921,8 +838,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who reported the device was being used by the patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getSource(): null|FHIRReference
     {
@@ -935,9 +850,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who reported the device was being used by the patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $source
-     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -955,8 +867,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the device used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getDevice(): null|FHIRReference
     {
@@ -969,9 +879,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the device used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $device
-     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -1016,9 +923,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of the device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $reasonCode
-     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1036,9 +940,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of the device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$reasonCode
-     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1081,9 +982,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this DeviceUseStatement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $reasonReference
-     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1100,9 +998,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this DeviceUseStatement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$reasonReference
-     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1122,8 +1017,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * Indicates the anotomic location on the subject's body where the device was used
      * ( i.e. the target).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySite(): null|FHIRCodeableConcept
     {
@@ -1138,9 +1031,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      *
      * Indicates the anotomic location on the subject's body where the device was used
      * ( i.e. the target).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return static
      */
     public function setBodySite(null|FHIRCodeableConcept $bodySite): self
     {
@@ -1189,9 +1079,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * Details about the device statement that were not represented at all or
      * sufficiently in one of the attributes provided in a class. These may include for
      * example a comment, an instruction, or a note associated with the statement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1211,9 +1098,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * Details about the device statement that were not represented at all or
      * sufficiently in one of the attributes provided in a class. These may include for
      * example a comment, an instruction, or a note associated with the statement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1227,10 +1111,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1362,11 +1243,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1500,10 +1376,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

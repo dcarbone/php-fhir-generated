@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -142,8 +141,6 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to specify if two or more characteristics are combined with OR or AND.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCharacteristicCombination
      */
     #[FHIRCharacteristicCombination]
     protected FHIRCharacteristicCombination $code;
@@ -153,8 +150,6 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Provides the value of "n" when "at-least" or "at-most" codes are used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $threshold;
@@ -173,10 +168,7 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
     /**
      * FHIREvidenceVariableDefinitionByCombination Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCharacteristicCombinationEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCharacteristicCombination $code
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $threshold
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic> $characteristic
      * @param null|string[] $fhirComments
      */
@@ -214,8 +206,6 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to specify if two or more characteristics are combined with OR or AND.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCharacteristicCombination
      */
     public function getCode(): null|FHIRCharacteristicCombination
     {
@@ -226,9 +216,6 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to specify if two or more characteristics are combined with OR or AND.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCharacteristicCombinationEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCharacteristicCombination $code
-     * @return static
      */
     public function setCode(null|string|FHIRCharacteristicCombinationEnum|FHIRCharacteristicCombination $code): self
     {
@@ -249,8 +236,6 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Provides the value of "n" when "at-least" or "at-most" codes are used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getThreshold(): null|FHIRPositiveInt
     {
@@ -263,9 +248,6 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Provides the value of "n" when "at-least" or "at-most" codes are used.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $threshold
-     * @return static
      */
     public function setThreshold(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $threshold): self
     {
@@ -309,9 +291,6 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * about.
      *
      * A defining factor of the characteristic.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic $characteristic
-     * @return static
      */
     public function addCharacteristic(FHIREvidenceVariableCharacteristic $characteristic): self
     {
@@ -327,9 +306,6 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      * about.
      *
      * A defining factor of the characteristic.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic ...$characteristic
-     * @return static
      */
     public function setCharacteristic(FHIREvidenceVariableCharacteristic ...$characteristic): self
     {
@@ -343,10 +319,7 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -410,10 +383,6 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -448,10 +417,7 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByCombination
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

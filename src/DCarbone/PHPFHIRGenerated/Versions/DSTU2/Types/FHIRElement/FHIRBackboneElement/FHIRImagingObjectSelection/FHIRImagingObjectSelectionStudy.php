@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -139,8 +138,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Study instance UID of the SOP instances in the selection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIROid
      */
     #[FHIROid]
     protected FHIROid $uid;
@@ -151,8 +148,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      *
      * WADO-RS URL to retrieve the study. Note that this URL retrieves all SOP
      * instances of the study, not only those in the selection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -162,8 +157,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the Imaging Study in FHIR form.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $imagingStudy;
@@ -191,11 +184,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
     /**
      * FHIRImagingObjectSelectionStudy Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIROid $uid
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $url
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $imagingStudy
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries> $series
      * @param null|string[] $fhirComments
      */
@@ -240,8 +229,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Study instance UID of the SOP instances in the selection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIROid
      */
     public function getUid(): null|FHIROid
     {
@@ -255,9 +242,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Study instance UID of the SOP instances in the selection.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIROid $uid
-     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -279,8 +263,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      *
      * WADO-RS URL to retrieve the study. Note that this URL retrieves all SOP
      * instances of the study, not only those in the selection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -294,9 +276,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      *
      * WADO-RS URL to retrieve the study. Note that this URL retrieves all SOP
      * instances of the study, not only those in the selection.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -317,8 +296,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the Imaging Study in FHIR form.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getImagingStudy(): null|FHIRReference
     {
@@ -331,9 +308,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the Imaging Study in FHIR form.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $imagingStudy
-     * @return static
      */
     public function setImagingStudy(null|FHIRReference $imagingStudy): self
     {
@@ -392,9 +366,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      *
      * Series identity and locating information of the DICOM SOP instances in the
      * selection.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries $series
-     * @return static
      */
     public function addSeries(FHIRImagingObjectSelectionSeries $series): self
     {
@@ -419,9 +390,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
      *
      * Series identity and locating information of the DICOM SOP instances in the
      * selection.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries ...$series
-     * @return static
      */
     public function setSeries(FHIRImagingObjectSelectionSeries ...$series): self
     {
@@ -435,10 +403,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -504,10 +469,6 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -547,10 +508,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

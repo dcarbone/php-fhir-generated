@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -139,8 +139,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Estimated total number of participants to be enrolled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $targetNumber;
@@ -150,8 +148,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Actual total number of participants enrolled in study.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $actualNumber;
@@ -161,8 +157,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Inclusion and exclusion criteria.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $eligibility;
@@ -172,8 +166,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Group of participants who were enrolled in study.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $actualGroup;
@@ -182,12 +174,7 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
     /**
      * FHIRResearchStudyRecruitment Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $targetNumber
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $actualNumber
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $eligibility
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $actualGroup
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -230,8 +217,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Estimated total number of participants to be enrolled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     public function getTargetNumber(): null|FHIRUnsignedInt
     {
@@ -244,9 +229,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Estimated total number of participants to be enrolled.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $targetNumber
-     * @return static
      */
     public function setTargetNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $targetNumber): self
     {
@@ -267,8 +249,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Actual total number of participants enrolled in study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     public function getActualNumber(): null|FHIRUnsignedInt
     {
@@ -281,9 +261,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Actual total number of participants enrolled in study.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $actualNumber
-     * @return static
      */
     public function setActualNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $actualNumber): self
     {
@@ -304,8 +281,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Inclusion and exclusion criteria.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getEligibility(): null|FHIRReference
     {
@@ -318,9 +293,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Inclusion and exclusion criteria.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $eligibility
-     * @return static
      */
     public function setEligibility(null|FHIRReference $eligibility): self
     {
@@ -338,8 +310,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Group of participants who were enrolled in study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getActualGroup(): null|FHIRReference
     {
@@ -352,9 +322,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Group of participants who were enrolled in study.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $actualGroup
-     * @return static
      */
     public function setActualGroup(null|FHIRReference $actualGroup): self
     {
@@ -368,10 +335,7 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -437,10 +401,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -478,10 +438,7 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

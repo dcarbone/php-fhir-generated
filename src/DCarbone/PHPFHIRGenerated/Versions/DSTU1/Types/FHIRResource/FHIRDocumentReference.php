@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -196,8 +194,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * Document identifier as assigned by the source of the document. This identifier
      * is specific to this version of the document. This unique identifier may be used
      * elsewhere to identify this version of the document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $masterIdentifier;
@@ -222,8 +218,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * or healthcare practitioner), a device (I.e. machine) or even a group of subjects
      * (such as a document about a herd of farm animals, or a set of patients that
      * share a common exposure).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $subject;
@@ -235,8 +229,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Specifies the particular kind of document (e.g. Patient Summary, Discharge
      * Summary, Prescription, etc.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -248,8 +240,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * A categorization for the type of the document. This may be implied by or derived
      * from the code specified in the Document Type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $class;
@@ -271,8 +261,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $custodian;
@@ -282,8 +270,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * A reference to a domain or server that manages policies under which the document
      * is accessed and/or made available.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $policyManager;
@@ -293,8 +279,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which person or organization authenticates that this document is valid.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $authenticator;
@@ -306,8 +290,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $created;
@@ -316,8 +298,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document reference was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $indexed;
@@ -325,8 +305,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDocumentReferenceStatus
      */
     #[FHIRDocumentReferenceStatus]
     protected FHIRDocumentReferenceStatus $status;
@@ -337,8 +315,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the underlying document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $docStatus;
@@ -358,8 +334,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -382,8 +356,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * the Narrative, or extensions
      *
      * The primary language in which the source document is written.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $primaryLanguage;
@@ -394,8 +366,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * the Narrative, or extensions
      *
      * The mime type of the source document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $mimeType;
@@ -415,8 +385,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The size of the source document this reference refers to in bytes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $size;
@@ -425,8 +393,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A hash of the source document to ensure that changes have not occurred.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $hash;
@@ -435,8 +401,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A url at which the document can be accessed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $location;
@@ -444,8 +408,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * A reference to a document.
      *
      * A description of a service call that can be used to retrieve the document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceService
      */
     #[FHIRDocumentReferenceService]
     protected FHIRDocumentReferenceService $service;
@@ -453,8 +415,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * A reference to a document.
      *
      * The clinical context in which the document was prepared.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext
      */
     #[FHIRDocumentReferenceContext]
     protected FHIRDocumentReferenceContext $context;
@@ -462,36 +422,14 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
     /* constructor.php:61 */
     /**
      * FHIRDocumentReference Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $masterIdentifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $class
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $author
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $custodian
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $policyManager
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $authenticator
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $created
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant $indexed
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRDocumentReferenceStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDocumentReferenceStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $docStatus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo> $relatesTo
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $confidentiality
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $primaryLanguage
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $mimeType
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri> $format
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $size
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $hash
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $location
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceService $service
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext $context
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRCodePrimitive|FHIRCode $language = null,
@@ -628,8 +566,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * Document identifier as assigned by the source of the document. This identifier
      * is specific to this version of the document. This unique identifier may be used
      * elsewhere to identify this version of the document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     public function getMasterIdentifier(): null|FHIRIdentifier
     {
@@ -644,9 +580,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * Document identifier as assigned by the source of the document. This identifier
      * is specific to this version of the document. This unique identifier may be used
      * elsewhere to identify this version of the document.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $masterIdentifier
-     * @return static
      */
     public function setMasterIdentifier(null|FHIRIdentifier $masterIdentifier): self
     {
@@ -691,9 +624,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Other identifiers associated with the document, including version independent,
      * source record and workflow related identifiers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -711,9 +641,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Other identifiers associated with the document, including version independent,
      * source record and workflow related identifiers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -734,8 +661,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * or healthcare practitioner), a device (I.e. machine) or even a group of subjects
      * (such as a document about a herd of farm animals, or a set of patients that
      * share a common exposure).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getSubject(): null|FHIRResourceReference
     {
@@ -751,9 +676,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * or healthcare practitioner), a device (I.e. machine) or even a group of subjects
      * (such as a document about a herd of farm animals, or a set of patients that
      * share a common exposure).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -773,8 +695,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Specifies the particular kind of document (e.g. Patient Summary, Discharge
      * Summary, Prescription, etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -789,9 +709,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Specifies the particular kind of document (e.g. Patient Summary, Discharge
      * Summary, Prescription, etc.).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -811,8 +728,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * A categorization for the type of the document. This may be implied by or derived
      * from the code specified in the Document Type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getClass(): null|FHIRCodeableConcept
     {
@@ -827,9 +742,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * A categorization for the type of the document. This may be implied by or derived
      * from the code specified in the Document Type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $class
-     * @return static
      */
     public function setClass(null|FHIRCodeableConcept $class): self
     {
@@ -872,9 +784,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $author
-     * @return static
      */
     public function addAuthor(FHIRResourceReference $author): self
     {
@@ -891,9 +800,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$author
-     * @return static
      */
     public function setAuthor(FHIRResourceReference ...$author): self
     {
@@ -912,8 +818,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getCustodian(): null|FHIRResourceReference
     {
@@ -927,9 +831,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the document.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $custodian
-     * @return static
      */
     public function setCustodian(null|FHIRResourceReference $custodian): self
     {
@@ -947,8 +848,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * A reference to a domain or server that manages policies under which the document
      * is accessed and/or made available.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     public function getPolicyManager(): null|FHIRUri
     {
@@ -961,9 +860,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * A reference to a domain or server that manages policies under which the document
      * is accessed and/or made available.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $policyManager
-     * @return static
      */
     public function setPolicyManager(null|string|FHIRUriPrimitive|FHIRUri $policyManager): self
     {
@@ -984,8 +880,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which person or organization authenticates that this document is valid.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getAuthenticator(): null|FHIRResourceReference
     {
@@ -998,9 +892,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which person or organization authenticates that this document is valid.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $authenticator
-     * @return static
      */
     public function setAuthenticator(null|FHIRResourceReference $authenticator): self
     {
@@ -1020,8 +911,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getCreated(): null|FHIRDateTime
     {
@@ -1036,9 +925,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document was created.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $created
-     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -1058,8 +944,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document reference was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant
      */
     public function getIndexed(): null|FHIRInstant
     {
@@ -1071,9 +955,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document reference was created.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant $indexed
-     * @return static
      */
     public function setIndexed(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $indexed): self
     {
@@ -1092,8 +973,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDocumentReferenceStatus
      */
     public function getStatus(): null|FHIRDocumentReferenceStatus
     {
@@ -1104,9 +983,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRDocumentReferenceStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDocumentReferenceStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRDocumentReferenceStatusList|FHIRDocumentReferenceStatus $status): self
     {
@@ -1128,8 +1004,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the underlying document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDocStatus(): null|FHIRCodeableConcept
     {
@@ -1143,9 +1017,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the underlying document.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $docStatus
-     * @return static
      */
     public function setDocStatus(null|FHIRCodeableConcept $docStatus): self
     {
@@ -1186,9 +1057,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Relationships that this document has with other document references that already
      * exist.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo $relatesTo
-     * @return static
      */
     public function addRelatesTo(FHIRDocumentReferenceRelatesTo $relatesTo): self
     {
@@ -1204,9 +1072,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Relationships that this document has with other document references that already
      * exist.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo ...$relatesTo
-     * @return static
      */
     public function setRelatesTo(FHIRDocumentReferenceRelatesTo ...$relatesTo): self
     {
@@ -1224,8 +1089,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -1238,9 +1101,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1288,9 +1148,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying the level of confidentiality of the XDS Document.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $confidentiality
-     * @return static
      */
     public function addConfidentiality(FHIRCodeableConcept $confidentiality): self
     {
@@ -1308,9 +1165,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying the level of confidentiality of the XDS Document.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$confidentiality
-     * @return static
      */
     public function setConfidentiality(FHIRCodeableConcept ...$confidentiality): self
     {
@@ -1329,8 +1183,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * the Narrative, or extensions
      *
      * The primary language in which the source document is written.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getPrimaryLanguage(): null|FHIRCode
     {
@@ -1344,9 +1196,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * the Narrative, or extensions
      *
      * The primary language in which the source document is written.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $primaryLanguage
-     * @return static
      */
     public function setPrimaryLanguage(null|string|FHIRCodePrimitive|FHIRCode $primaryLanguage): self
     {
@@ -1368,8 +1217,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * the Narrative, or extensions
      *
      * The mime type of the source document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getMimeType(): null|FHIRCode
     {
@@ -1383,9 +1230,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * the Narrative, or extensions
      *
      * The mime type of the source document.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $mimeType
-     * @return static
      */
     public function setMimeType(null|string|FHIRCodePrimitive|FHIRCode $mimeType): self
     {
@@ -1431,9 +1275,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * An identifier that identifies that the format and content of the document
      * conforms to additional rules beyond the base format indicated in the mimeType.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $format
-     * @return static
      */
     public function addFormat(string|FHIRUriPrimitive|FHIRUri $format): self
     {
@@ -1453,9 +1294,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      *
      * An identifier that identifies that the format and content of the document
      * conforms to additional rules beyond the base format indicated in the mimeType.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri ...$format
-     * @return static
      */
     public function setFormat(string|FHIRUriPrimitive|FHIRUri ...$format): self
     {
@@ -1479,8 +1317,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The size of the source document this reference refers to in bytes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     public function getSize(): null|FHIRInteger
     {
@@ -1492,9 +1328,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The size of the source document this reference refers to in bytes.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $size
-     * @return static
      */
     public function setSize(null|string|float|FHIRIntegerPrimitive|FHIRInteger $size): self
     {
@@ -1514,8 +1347,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A hash of the source document to ensure that changes have not occurred.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getHash(): null|FHIRString
     {
@@ -1527,9 +1358,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A hash of the source document to ensure that changes have not occurred.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $hash
-     * @return static
      */
     public function setHash(null|string|FHIRStringPrimitive|FHIRString $hash): self
     {
@@ -1549,8 +1377,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A url at which the document can be accessed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     public function getLocation(): null|FHIRUri
     {
@@ -1562,9 +1388,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A url at which the document can be accessed.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $location
-     * @return static
      */
     public function setLocation(null|string|FHIRUriPrimitive|FHIRUri $location): self
     {
@@ -1583,8 +1406,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * A reference to a document.
      *
      * A description of a service call that can be used to retrieve the document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceService
      */
     public function getService(): null|FHIRDocumentReferenceService
     {
@@ -1595,9 +1416,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * A reference to a document.
      *
      * A description of a service call that can be used to retrieve the document.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceService $service
-     * @return static
      */
     public function setService(null|FHIRDocumentReferenceService $service): self
     {
@@ -1613,8 +1431,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * A reference to a document.
      *
      * The clinical context in which the document was prepared.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext
      */
     public function getContext(): null|FHIRDocumentReferenceContext
     {
@@ -1625,9 +1441,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
      * A reference to a document.
      *
      * The clinical context in which the document was prepared.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext $context
-     * @return static
      */
     public function setContext(null|FHIRDocumentReferenceContext $context): self
     {
@@ -1641,10 +1454,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDocumentReference $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDocumentReference
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1838,11 +1648,6 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2054,10 +1859,7 @@ class FHIRDocumentReference extends FHIRResource implements VersionContainedType
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDocumentReference $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDocumentReference
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -116,7 +114,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdministrativeGenderEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -188,8 +185,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this related person record is in active use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $active;
@@ -199,8 +194,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient this person is related to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -246,8 +239,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender
      */
     #[FHIRAdministrativeGender]
     protected FHIRAdministrativeGender $gender;
@@ -258,8 +249,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the related person was born.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $birthDate;
@@ -297,8 +286,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      *
      * The period of time during which this relationship is or was active. If there are
      * no dates defined, then the interval is unknown.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -318,25 +305,15 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
     /* constructor.php:61 */
     /**
      * FHIRRelatedPerson Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $active
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $relationship
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName> $name
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint> $telecom
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdministrativeGenderEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender $gender
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $birthDate
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress> $address
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment> $photo
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication> $communication
      * @param null|string[] $fhirComments
      */
@@ -455,9 +432,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -475,9 +449,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -494,8 +465,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this related person record is in active use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getActive(): null|FHIRBoolean
     {
@@ -507,9 +476,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this related person record is in active use.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $active
-     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -530,8 +496,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient this person is related to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -544,9 +508,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient this person is related to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -591,9 +552,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nature of the relationship between the related person and the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $relationship
-     * @return static
      */
     public function addRelationship(FHIRCodeableConcept $relationship): self
     {
@@ -611,9 +569,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nature of the relationship between the related person and the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$relationship
-     * @return static
      */
     public function setRelationship(FHIRCodeableConcept ...$relationship): self
     {
@@ -660,9 +615,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $name
-     * @return static
      */
     public function addName(FHIRHumanName $name): self
     {
@@ -681,9 +633,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName ...$name
-     * @return static
      */
     public function setName(FHIRHumanName ...$name): self
     {
@@ -728,9 +677,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $telecom
-     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -748,9 +694,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -767,8 +710,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender(): null|FHIRAdministrativeGender
     {
@@ -780,9 +721,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdministrativeGenderEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender $gender
-     * @return static
      */
     public function setGender(null|string|FHIRAdministrativeGenderEnum|FHIRAdministrativeGender $gender): self
     {
@@ -804,8 +742,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the related person was born.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     public function getBirthDate(): null|FHIRDate
     {
@@ -819,9 +755,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the related person was born.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $birthDate
-     * @return static
      */
     public function setBirthDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $birthDate): self
     {
@@ -877,9 +810,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address where the related person can be contacted or visited.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $address
-     * @return static
      */
     public function addAddress(FHIRAddress $address): self
     {
@@ -901,9 +831,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address where the related person can be contacted or visited.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress ...$address
-     * @return static
      */
     public function setAddress(FHIRAddress ...$address): self
     {
@@ -946,9 +873,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $photo
-     * @return static
      */
     public function addPhoto(FHIRAttachment $photo): self
     {
@@ -965,9 +889,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment ...$photo
-     * @return static
      */
     public function setPhoto(FHIRAttachment ...$photo): self
     {
@@ -986,8 +907,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      *
      * The period of time during which this relationship is or was active. If there are
      * no dates defined, then the interval is unknown.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -1001,9 +920,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      *
      * The period of time during which this relationship is or was active. If there are
      * no dates defined, then the interval is unknown.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -1048,9 +964,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      *
      * A language which may be used to communicate with the related person about the
      * patient's health.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication $communication
-     * @return static
      */
     public function addCommunication(FHIRRelatedPersonCommunication $communication): self
     {
@@ -1068,9 +981,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
      *
      * A language which may be used to communicate with the related person about the
      * patient's health.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRelatedPerson\FHIRRelatedPersonCommunication ...$communication
-     * @return static
      */
     public function setCommunication(FHIRRelatedPersonCommunication ...$communication): self
     {
@@ -1084,10 +994,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRRelatedPerson $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1213,11 +1120,6 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1338,10 +1240,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements VersionContainedTy
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRRelatedPerson $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

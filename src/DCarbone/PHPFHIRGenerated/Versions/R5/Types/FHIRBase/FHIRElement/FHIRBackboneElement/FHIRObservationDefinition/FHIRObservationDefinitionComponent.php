@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -140,8 +139,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what will be observed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -184,9 +181,7 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
     /**
      * FHIRObservationDefinitionComponent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationDataType> $permittedDataType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding> $permittedUnit
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue> $qualifiedValue
@@ -233,8 +228,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what will be observed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -248,9 +241,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what will be observed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -291,9 +281,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      *
      * The data types allowed for the value element of the instance of this component
      * observations.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationDataType $permittedDataType
-     * @return static
      */
     public function addPermittedDataType(string|FHIRObservationDataTypeEnum|FHIRObservationDataType $permittedDataType): self
     {
@@ -312,9 +299,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      *
      * The data types allowed for the value element of the instance of this component
      * observations.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationDataType ...$permittedDataType
-     * @return static
      */
     public function setPermittedDataType(string|FHIRObservationDataTypeEnum|FHIRObservationDataType ...$permittedDataType): self
     {
@@ -366,9 +350,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      *
      * Units allowed for the valueQuantity element in the instance observations
      * conforming to this ObservationDefinition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $permittedUnit
-     * @return static
      */
     public function addPermittedUnit(FHIRCoding $permittedUnit): self
     {
@@ -386,9 +367,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      *
      * Units allowed for the valueQuantity element in the instance observations
      * conforming to this ObservationDefinition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$permittedUnit
-     * @return static
      */
     public function setPermittedUnit(FHIRCoding ...$permittedUnit): self
     {
@@ -433,9 +411,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * A set of qualified values associated with a context and a set of conditions -
      * provides a range for quantitative and ordinal observations and a collection of
      * value sets for qualitative observations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue $qualifiedValue
-     * @return static
      */
     public function addQualifiedValue(FHIRObservationDefinitionQualifiedValue $qualifiedValue): self
     {
@@ -453,9 +428,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * A set of qualified values associated with a context and a set of conditions -
      * provides a range for quantitative and ordinal observations and a collection of
      * value sets for qualitative observations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue ...$qualifiedValue
-     * @return static
      */
     public function setQualifiedValue(FHIRObservationDefinitionQualifiedValue ...$qualifiedValue): self
     {
@@ -469,10 +441,7 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionComponent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -522,10 +491,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -559,10 +524,7 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionComponent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

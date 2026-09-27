@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -142,8 +141,6 @@ class FHIRImagingSelectionImageRegion2D extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the type of image region.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingSelectionDGraphicType
      */
     #[FHIRImagingSelectionDGraphicType]
     protected FHIRImagingSelectionDGraphicType $regionType;
@@ -169,9 +166,7 @@ class FHIRImagingSelectionImageRegion2D extends FHIRBackboneElement
     /**
      * FHIRImagingSelectionImageRegion2D Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImagingSelectionDGraphicTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingSelectionDGraphicType $regionType
      * @param null|iterable<string>|iterable<int>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal> $coordinate
      * @param null|string[] $fhirComments
      */
@@ -205,8 +200,6 @@ class FHIRImagingSelectionImageRegion2D extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the type of image region.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingSelectionDGraphicType
      */
     public function getRegionType(): null|FHIRImagingSelectionDGraphicType
     {
@@ -217,9 +210,6 @@ class FHIRImagingSelectionImageRegion2D extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the type of image region.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImagingSelectionDGraphicTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingSelectionDGraphicType $regionType
-     * @return static
      */
     public function setRegionType(null|string|FHIRImagingSelectionDGraphicTypeEnum|FHIRImagingSelectionDGraphicType $regionType): self
     {
@@ -277,9 +267,6 @@ class FHIRImagingSelectionImageRegion2D extends FHIRBackboneElement
      * BRHC of the TLHC pixel is 1.0\1.0, and the BRHC of the BRHC pixel is the number
      * of columns\rows in the image / frames. The values must be within the range 0\0
      * to the number of columns\rows in the image / frames.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $coordinate
-     * @return static
      */
     public function addCoordinate(string|int|float|FHIRDecimalPrimitive|FHIRDecimal $coordinate): self
     {
@@ -305,9 +292,6 @@ class FHIRImagingSelectionImageRegion2D extends FHIRBackboneElement
      * BRHC of the TLHC pixel is 1.0\1.0, and the BRHC of the BRHC pixel is the number
      * of columns\rows in the image / frames. The values must be within the range 0\0
      * to the number of columns\rows in the image / frames.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal ...$coordinate
-     * @return static
      */
     public function setCoordinate(string|int|float|FHIRDecimalPrimitive|FHIRDecimal ...$coordinate): self
     {
@@ -328,10 +312,7 @@ class FHIRImagingSelectionImageRegion2D extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion2D $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion2D
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -385,10 +366,6 @@ class FHIRImagingSelectionImageRegion2D extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -413,10 +390,7 @@ class FHIRImagingSelectionImageRegion2D extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion2D $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion2D
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

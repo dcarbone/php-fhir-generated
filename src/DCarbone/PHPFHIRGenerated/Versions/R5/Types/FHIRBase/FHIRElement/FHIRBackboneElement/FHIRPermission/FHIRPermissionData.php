@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -166,8 +166,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used when other data selection elements are insufficient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     #[FHIRExpression]
     protected FHIRExpression $expression;
@@ -176,12 +174,10 @@ class FHIRPermissionData extends FHIRBackboneElement
     /**
      * FHIRPermissionData Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionResource> $resource
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding> $security
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod> $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $expression
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -245,9 +241,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      * Permission resource holds access rules for a given data and context.
      *
      * Explicit FHIR Resource references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionResource $resource
-     * @return static
      */
     public function addResource(FHIRPermissionResource $resource): self
     {
@@ -262,9 +255,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      * Permission resource holds access rules for a given data and context.
      *
      * Explicit FHIR Resource references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionResource ...$resource
-     * @return static
      */
     public function setResource(FHIRPermissionResource ...$resource): self
     {
@@ -309,9 +299,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      *
      * The data in scope are those with the given codes present in that data
      * .meta.security element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $security
-     * @return static
      */
     public function addSecurity(FHIRCoding $security): self
     {
@@ -329,9 +316,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      *
      * The data in scope are those with the given codes present in that data
      * .meta.security element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$security
-     * @return static
      */
     public function setSecurity(FHIRCoding ...$security): self
     {
@@ -376,9 +360,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this rule.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function addPeriod(FHIRPeriod $period): self
     {
@@ -396,9 +377,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this rule.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod ...$period
-     * @return static
      */
     public function setPeriod(FHIRPeriod ...$period): self
     {
@@ -418,8 +396,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used when other data selection elements are insufficient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     public function getExpression(): null|FHIRExpression
     {
@@ -434,9 +410,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used when other data selection elements are insufficient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $expression
-     * @return static
      */
     public function setExpression(null|FHIRExpression $expression): self
     {
@@ -450,10 +423,7 @@ class FHIRPermissionData extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionData $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionData
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -503,10 +473,6 @@ class FHIRPermissionData extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -540,10 +506,7 @@ class FHIRPermissionData extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionData $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionData
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -30,9 +30,6 @@ interface ClientInterface
 {
     /**
      * Execute a single request against a FHIR server
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Client\Request $request
-     * @return \DCarbone\PHPFHIRGenerated\Client\Response
      */
     public function exec(Request $request): Response;
 }

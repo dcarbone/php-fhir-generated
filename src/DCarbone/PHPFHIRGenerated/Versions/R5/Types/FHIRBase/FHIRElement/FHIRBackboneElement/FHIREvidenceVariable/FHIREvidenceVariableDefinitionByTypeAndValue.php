@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -137,6 +136,24 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
         self::FIELD_TYPE => [
             MinOccursRule::NAME => 1,
         ],
+        self::FIELD_VALUE_CODEABLE_CONCEPT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_BOOLEAN => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_QUANTITY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_RANGE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_REFERENCE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_ID => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -153,8 +170,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the type of characteristic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -176,8 +191,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Device used for determining characteristic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $device;
@@ -187,10 +200,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * Defines the characteristic when paired with characteristic.type.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -198,10 +208,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * Defines the characteristic when paired with characteristic.type.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -212,10 +219,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Defines the characteristic when paired with characteristic.type.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -224,10 +228,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Defines the characteristic when paired with characteristic.type.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -236,10 +237,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Defines the characteristic when paired with characteristic.type.
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -251,10 +249,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
+     * Defines the characteristic when paired with characteristic.type.
      */
     #[FHIRId]
     protected FHIRId $valueId;
@@ -266,8 +261,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      *
      * Defines the reference point for comparison when valueQuantity or valueRange is
      * not compared to zero.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $offset;
@@ -276,18 +269,8 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
     /**
      * FHIREvidenceVariableDefinitionByTypeAndValue Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $method
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $device
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $valueId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $offset
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -355,8 +338,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the type of characteristic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -370,9 +351,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the type of characteristic.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -417,9 +395,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Method for how the characteristic value was determined.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $method
-     * @return static
      */
     public function addMethod(FHIRCodeableConcept $method): self
     {
@@ -437,9 +412,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Method for how the characteristic value was determined.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$method
-     * @return static
      */
     public function setMethod(FHIRCodeableConcept ...$method): self
     {
@@ -457,8 +429,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Device used for determining characteristic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getDevice(): null|FHIRReference
     {
@@ -471,9 +441,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Device used for determining characteristic.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $device
-     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -491,10 +458,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -507,11 +471,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -527,10 +487,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -541,11 +498,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -567,10 +520,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -584,11 +534,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -605,10 +551,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -620,11 +563,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @return static
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -641,10 +580,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -656,11 +592,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @return static
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -680,10 +612,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function getValueId(): null|FHIRId
     {
@@ -698,11 +627,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Defines the characteristic when paired with characteristic.type. (choose any one
-     * of value*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $valueId
-     * @return static
+     * Defines the characteristic when paired with characteristic.type.
      */
     public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
@@ -725,8 +650,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      *
      * Defines the reference point for comparison when valueQuantity or valueRange is
      * not compared to zero.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getOffset(): null|FHIRCodeableConcept
     {
@@ -741,9 +664,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
      *
      * Defines the reference point for comparison when valueQuantity or valueRange is
      * not compared to zero.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $offset
-     * @return static
      */
     public function setOffset(null|FHIRCodeableConcept $offset): self
     {
@@ -757,10 +677,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -838,10 +755,6 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -911,10 +824,7 @@ class FHIREvidenceVariableDefinitionByTypeAndValue extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableDefinitionByTypeAndValue
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

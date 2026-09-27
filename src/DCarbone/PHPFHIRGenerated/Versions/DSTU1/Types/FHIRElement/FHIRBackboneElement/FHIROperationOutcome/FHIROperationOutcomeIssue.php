@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -122,8 +121,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIssueSeverity
      */
     #[FHIRIssueSeverity]
     protected FHIRIssueSeverity $severity;
@@ -133,8 +130,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating the type of error, warning or information message.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $type;
@@ -143,8 +138,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional description of the issue.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $details;
@@ -165,11 +158,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     /**
      * FHIROperationOutcomeIssue Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRIssueSeverityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIssueSeverity $severity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $details
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString> $location
      * @param null|string[] $fhirComments
      */
@@ -212,8 +201,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIssueSeverity
      */
     public function getSeverity(): null|FHIRIssueSeverity
     {
@@ -225,9 +212,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRIssueSeverityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIssueSeverity $severity
-     * @return static
      */
     public function setSeverity(null|string|FHIRIssueSeverityList|FHIRIssueSeverity $severity): self
     {
@@ -248,8 +232,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating the type of error, warning or information message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding
      */
     public function getType(): null|FHIRCoding
     {
@@ -262,9 +244,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating the type of error, warning or information message.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $type
-     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -281,8 +260,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional description of the issue.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDetails(): null|FHIRString
     {
@@ -294,9 +271,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional description of the issue.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $details
-     * @return static
      */
     public function setDetails(null|string|FHIRStringPrimitive|FHIRString $details): self
     {
@@ -344,9 +318,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A simple XPath limited to element names, repetition indicators and the default
      * child access that identifies one of the elements in the resource that caused
      * this issue to be raised.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $location
-     * @return static
      */
     public function addLocation(string|FHIRStringPrimitive|FHIRString $location): self
     {
@@ -367,9 +338,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A simple XPath limited to element names, repetition indicators and the default
      * child access that identifies one of the elements in the resource that caused
      * this issue to be raised.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString ...$location
-     * @return static
      */
     public function setLocation(string|FHIRStringPrimitive|FHIRString ...$location): self
     {
@@ -390,10 +358,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -459,10 +424,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -502,10 +463,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

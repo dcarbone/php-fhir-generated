@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      *
      * Identifies a specific instance of the entity. The reference should be version
      * specific. This is allowed to be a Parameters resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $what;
@@ -150,8 +148,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code representing the role the entity played in the event being audited.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
@@ -173,8 +169,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The query parameters for a query-type entities.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $query;
@@ -207,12 +201,8 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     /**
      * FHIRAuditEventEntity Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $what
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $role
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $securityLabel
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $query
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail> $detail
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent> $agent
      * @param null|string[] $fhirComments
@@ -266,8 +256,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      *
      * Identifies a specific instance of the entity. The reference should be version
      * specific. This is allowed to be a Parameters resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getWhat(): null|FHIRReference
     {
@@ -281,9 +269,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      *
      * Identifies a specific instance of the entity. The reference should be version
      * specific. This is allowed to be a Parameters resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $what
-     * @return static
      */
     public function setWhat(null|FHIRReference $what): self
     {
@@ -302,8 +287,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code representing the role the entity played in the event being audited.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getRole(): null|FHIRCodeableConcept
     {
@@ -317,9 +300,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code representing the role the entity played in the event being audited.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $role
-     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -364,9 +344,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security labels for the identified entity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $securityLabel
-     * @return static
      */
     public function addSecurityLabel(FHIRCodeableConcept $securityLabel): self
     {
@@ -384,9 +361,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security labels for the identified entity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$securityLabel
-     * @return static
      */
     public function setSecurityLabel(FHIRCodeableConcept ...$securityLabel): self
     {
@@ -404,8 +378,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The query parameters for a query-type entities.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     public function getQuery(): null|FHIRBase64Binary
     {
@@ -418,9 +390,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The query parameters for a query-type entities.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $query
-     * @return static
      */
     public function setQuery(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $query): self
     {
@@ -464,9 +433,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * security, maintenance, and performance analysis.
      *
      * Tagged value pairs for conveying additional information about the entity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail $detail
-     * @return static
      */
     public function addDetail(FHIRAuditEventDetail $detail): self
     {
@@ -482,9 +448,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * security, maintenance, and performance analysis.
      *
      * Tagged value pairs for conveying additional information about the entity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail ...$detail
-     * @return static
      */
     public function setDetail(FHIRAuditEventDetail ...$detail): self
     {
@@ -533,9 +496,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * media (the entity) are used by an agent. For example when importing data from a
      * device, the device would be described in an entity, and the user importing data
      * from that media would be indicated as the entity.agent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent $agent
-     * @return static
      */
     public function addAgent(FHIRAuditEventAgent $agent): self
     {
@@ -555,9 +515,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * media (the entity) are used by an agent. For example when importing data from a
      * device, the device would be described in an entity, and the user importing data
      * from that media would be indicated as the entity.agent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent ...$agent
-     * @return static
      */
     public function setAgent(FHIRAuditEventAgent ...$agent): self
     {
@@ -571,10 +528,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -636,10 +590,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -688,10 +638,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

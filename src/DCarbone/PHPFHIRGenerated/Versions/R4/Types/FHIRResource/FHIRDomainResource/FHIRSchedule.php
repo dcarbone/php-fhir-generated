@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,7 +85,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
@@ -154,8 +151,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Whether this schedule record is in active use or should not be used (such as was
      * entered in error).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $active;
@@ -219,8 +214,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * planning horizon; the interval for which they are currently accepting
      * appointments. This does not define a "template" for planning outside these
      * dates.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $planningHorizon;
@@ -231,8 +224,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Comments on the availability to describe any extended information. Such as
      * custom constraints on the slots that may be associated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $comment;
@@ -240,22 +231,14 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
     /* constructor.php:61 */
     /**
      * FHIRSchedule Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $active
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $serviceCategory
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $serviceType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $specialty
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $actor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $planningHorizon
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $comment
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -357,9 +340,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External Ids for this item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -377,9 +357,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External Ids for this item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -397,8 +374,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Whether this schedule record is in active use or should not be used (such as was
      * entered in error).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getActive(): null|FHIRBoolean
     {
@@ -411,9 +386,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Whether this schedule record is in active use or should not be used (such as was
      * entered in error).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $active
-     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -463,9 +435,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A broad categorization of the service that is to be performed during this
      * appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $serviceCategory
-     * @return static
      */
     public function addServiceCategory(FHIRCodeableConcept $serviceCategory): self
     {
@@ -484,9 +453,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A broad categorization of the service that is to be performed during this
      * appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$serviceCategory
-     * @return static
      */
     public function setServiceCategory(FHIRCodeableConcept ...$serviceCategory): self
     {
@@ -531,9 +497,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $serviceType
-     * @return static
      */
     public function addServiceType(FHIRCodeableConcept $serviceType): self
     {
@@ -551,9 +514,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$serviceType
-     * @return static
      */
     public function setServiceType(FHIRCodeableConcept ...$serviceType): self
     {
@@ -600,9 +560,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $specialty
-     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -621,9 +578,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$specialty
-     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -668,9 +622,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Slots that reference this schedule resource provide the availability details to
      * these referenced resource(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $actor
-     * @return static
      */
     public function addActor(FHIRReference $actor): self
     {
@@ -688,9 +639,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Slots that reference this schedule resource provide the availability details to
      * these referenced resource(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$actor
-     * @return static
      */
     public function setActor(FHIRReference ...$actor): self
     {
@@ -712,8 +660,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * planning horizon; the interval for which they are currently accepting
      * appointments. This does not define a "template" for planning outside these
      * dates.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getPlanningHorizon(): null|FHIRPeriod
     {
@@ -730,9 +676,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      * planning horizon; the interval for which they are currently accepting
      * appointments. This does not define a "template" for planning outside these
      * dates.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $planningHorizon
-     * @return static
      */
     public function setPlanningHorizon(null|FHIRPeriod $planningHorizon): self
     {
@@ -751,8 +694,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Comments on the availability to describe any extended information. Such as
      * custom constraints on the slots that may be associated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getComment(): null|FHIRString
     {
@@ -766,9 +707,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Comments on the availability to describe any extended information. Such as
      * custom constraints on the slots that may be associated.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $comment
-     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -785,10 +723,7 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSchedule $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSchedule
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -898,11 +833,6 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -994,10 +924,7 @@ class FHIRSchedule extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSchedule $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSchedule
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

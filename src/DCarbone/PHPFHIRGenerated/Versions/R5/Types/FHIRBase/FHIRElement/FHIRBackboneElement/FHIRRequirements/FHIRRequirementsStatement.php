@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -173,8 +172,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Key that identifies this statement (unique within this resource).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $key;
@@ -184,8 +181,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short human usable label for this statement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $label;
@@ -205,8 +200,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * This boolean flag is set to true of the text of the requirement is conditional
      * on something e.g. it includes lanauage like 'if x then y'. This conditionality
      * flag is introduced for purposes of filtering and colour highlighting etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $conditionality;
@@ -220,8 +213,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The actual requirement for human consumption.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $requirement;
@@ -232,8 +223,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      *
      * Another statement on one of the requirements that this requirement clarifies or
      * restricts.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $derivedFrom;
@@ -243,8 +232,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A larger requirement that this requirement helps to refine and enable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $parent;
@@ -291,15 +278,8 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
     /**
      * FHIRRequirementsStatement Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $key
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $label
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRConformanceExpectationEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRConformanceExpectation> $conformance
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $conditionality
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $requirement
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $derivedFrom
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $parent
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl> $satisfiedBy
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl> $reference
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $source
@@ -372,8 +352,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Key that identifies this statement (unique within this resource).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getKey(): null|FHIRId
     {
@@ -389,9 +367,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Key that identifies this statement (unique within this resource).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $key
-     * @return static
      */
     public function setKey(null|string|FHIRIdPrimitive|FHIRId $key): self
     {
@@ -412,8 +387,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short human usable label for this statement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getLabel(): null|FHIRString
     {
@@ -426,9 +399,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short human usable label for this statement.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $label
-     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -470,9 +440,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short human usable label for this statement.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRConformanceExpectationEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRConformanceExpectation $conformance
-     * @return static
      */
     public function addConformance(string|FHIRConformanceExpectationEnum|FHIRConformanceExpectation $conformance): self
     {
@@ -490,9 +457,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short human usable label for this statement.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRConformanceExpectationEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRConformanceExpectation ...$conformance
-     * @return static
      */
     public function setConformance(string|FHIRConformanceExpectationEnum|FHIRConformanceExpectation ...$conformance): self
     {
@@ -518,8 +482,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * This boolean flag is set to true of the text of the requirement is conditional
      * on something e.g. it includes lanauage like 'if x then y'. This conditionality
      * flag is introduced for purposes of filtering and colour highlighting etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getConditionality(): null|FHIRBoolean
     {
@@ -533,9 +495,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * This boolean flag is set to true of the text of the requirement is conditional
      * on something e.g. it includes lanauage like 'if x then y'. This conditionality
      * flag is introduced for purposes of filtering and colour highlighting etc.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $conditionality
-     * @return static
      */
     public function setConditionality(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionality): self
     {
@@ -560,8 +519,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The actual requirement for human consumption.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getRequirement(): null|FHIRMarkdown
     {
@@ -578,9 +535,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The actual requirement for human consumption.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $requirement
-     * @return static
      */
     public function setRequirement(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $requirement): self
     {
@@ -602,8 +556,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      *
      * Another statement on one of the requirements that this requirement clarifies or
      * restricts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDerivedFrom(): null|FHIRString
     {
@@ -617,9 +569,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      *
      * Another statement on one of the requirements that this requirement clarifies or
      * restricts.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $derivedFrom
-     * @return static
      */
     public function setDerivedFrom(null|string|FHIRStringPrimitive|FHIRString $derivedFrom): self
     {
@@ -640,8 +589,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A larger requirement that this requirement helps to refine and enable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getParent(): null|FHIRString
     {
@@ -654,9 +601,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A larger requirement that this requirement helps to refine and enable.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $parent
-     * @return static
      */
     public function setParent(null|string|FHIRStringPrimitive|FHIRString $parent): self
     {
@@ -706,9 +650,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * A reference to another artifact that satisfies this requirement. This could be a
      * Profile, extension, or an element in one of those, or a CapabilityStatement,
      * OperationDefinition, SearchParameter, CodeSystem(/code), ValueSet, Libary etc.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $satisfiedBy
-     * @return static
      */
     public function addSatisfiedBy(string|FHIRUrlPrimitive|FHIRUrl $satisfiedBy): self
     {
@@ -730,9 +671,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * A reference to another artifact that satisfies this requirement. This could be a
      * Profile, extension, or an element in one of those, or a CapabilityStatement,
      * OperationDefinition, SearchParameter, CodeSystem(/code), ValueSet, Libary etc.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl ...$satisfiedBy
-     * @return static
      */
     public function setSatisfiedBy(string|FHIRUrlPrimitive|FHIRUrl ...$satisfiedBy): self
     {
@@ -786,9 +724,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * A reference to another artifact that created this requirement. This could be a
      * Profile, etc., or external regulation, or business requirements expressed
      * elsewhere.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $reference
-     * @return static
      */
     public function addReference(string|FHIRUrlPrimitive|FHIRUrl $reference): self
     {
@@ -810,9 +745,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * A reference to another artifact that created this requirement. This could be a
      * Profile, etc., or external regulation, or business requirements expressed
      * elsewhere.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl ...$reference
-     * @return static
      */
     public function setReference(string|FHIRUrlPrimitive|FHIRUrl ...$reference): self
     {
@@ -864,9 +796,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      *
      * Who asked for this statement to be a requirement. By default, it's assumed that
      * the publisher knows who it is if it matters.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $source
-     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -884,9 +813,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      *
      * Who asked for this statement to be a requirement. By default, it's assumed that
      * the publisher knows who it is if it matters.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$source
-     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {
@@ -900,10 +826,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequirements\FHIRRequirementsStatement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequirements\FHIRRequirementsStatement
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1013,10 +936,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1112,10 +1031,7 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequirements\FHIRRequirementsStatement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequirements\FHIRRequirementsStatement
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

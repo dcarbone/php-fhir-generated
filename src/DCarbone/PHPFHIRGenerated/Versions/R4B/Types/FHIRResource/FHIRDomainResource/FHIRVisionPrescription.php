@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -107,7 +105,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
@@ -189,8 +186,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     #[FHIRFinancialResourceStatusCodes]
     protected FHIRFinancialResourceStatusCodes $status;
@@ -203,8 +198,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $created;
@@ -214,8 +207,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource reference to the person to whom the vision prescription applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -227,8 +218,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * A reference to a resource that identifies the particular occurrence of contact
      * between patient and health care provider during which the prescription was
      * issued.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -241,8 +230,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the prescription was written.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $dateWritten;
@@ -252,8 +239,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for authorizing the prescription.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $prescriber;
@@ -272,21 +257,10 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
     /* constructor.php:61 */
     /**
      * FHIRVisionPrescription Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFinancialResourceStatusCodes $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $created
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $patient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $encounter
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $dateWritten
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $prescriber
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification> $lensSpecification
      * @param null|string[] $fhirComments
      */
@@ -389,9 +363,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this vision prescription.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -409,9 +380,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this vision prescription.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -427,8 +395,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus(): null|FHIRFinancialResourceStatusCodes
     {
@@ -439,9 +405,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFinancialResourceStatusCodes $status
-     * @return static
      */
     public function setStatus(null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status): self
     {
@@ -465,8 +428,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getCreated(): null|FHIRDateTime
     {
@@ -482,9 +443,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $created
-     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -505,8 +463,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource reference to the person to whom the vision prescription applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -519,9 +475,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource reference to the person to whom the vision prescription applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -541,8 +494,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * A reference to a resource that identifies the particular occurrence of contact
      * between patient and health care provider during which the prescription was
      * issued.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -557,9 +508,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * A reference to a resource that identifies the particular occurrence of contact
      * between patient and health care provider during which the prescription was
      * issued.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -580,8 +528,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the prescription was written.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getDateWritten(): null|FHIRDateTime
     {
@@ -597,9 +543,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the prescription was written.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $dateWritten
-     * @return static
      */
     public function setDateWritten(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateWritten): self
     {
@@ -620,8 +563,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for authorizing the prescription.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getPrescriber(): null|FHIRReference
     {
@@ -634,9 +575,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for authorizing the prescription.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $prescriber
-     * @return static
      */
     public function setPrescriber(null|FHIRReference $prescriber): self
     {
@@ -679,9 +617,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      *
      * Contain the details of the individual lens specifications and serves as the
      * authorization for the fullfillment by certified professionals.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification $lensSpecification
-     * @return static
      */
     public function addLensSpecification(FHIRVisionPrescriptionLensSpecification $lensSpecification): self
     {
@@ -698,9 +633,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
      *
      * Contain the details of the individual lens specifications and serves as the
      * authorization for the fullfillment by certified professionals.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification ...$lensSpecification
-     * @return static
      */
     public function setLensSpecification(FHIRVisionPrescriptionLensSpecification ...$lensSpecification): self
     {
@@ -714,10 +646,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRVisionPrescription $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRVisionPrescription
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -835,11 +764,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -930,10 +854,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRVisionPrescription $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRVisionPrescription
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -168,7 +167,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUuidPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
@@ -307,8 +305,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the parameter (reference to the operation definition).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -317,10 +313,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
@@ -328,10 +321,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -341,10 +331,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $valueCanonical;
@@ -354,10 +341,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRCode]
     protected FHIRCode $valueCode;
@@ -367,10 +351,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -383,10 +364,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -396,10 +374,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -411,10 +386,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRId]
     protected FHIRId $valueId;
@@ -426,10 +398,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * below. UTC offset is always required
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRInstant]
     protected FHIRInstant $valueInstant;
@@ -438,10 +407,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -450,10 +416,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * Typically this is used for record counters (e.g. database keys)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $valueInteger64;
@@ -466,10 +429,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $valueMarkdown;
@@ -479,10 +439,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIROid]
     protected FHIROid $valueOid;
@@ -491,10 +448,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $valuePositiveInt;
@@ -503,10 +457,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -514,10 +465,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -526,10 +474,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $valueUnsignedInt;
@@ -538,10 +483,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -550,10 +492,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRUrl]
     protected FHIRUrl $valueUrl;
@@ -563,10 +502,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRUuid]
     protected FHIRUuid $valueUuid;
@@ -580,10 +516,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRAddress]
     protected FHIRAddress $valueAddress;
@@ -592,10 +525,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRAge]
     protected FHIRAge $valueAge;
@@ -605,10 +535,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $valueAnnotation;
@@ -617,10 +544,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -630,10 +554,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -643,10 +564,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $valueCodeableReference;
@@ -655,10 +573,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -668,10 +583,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $valueContactPoint;
@@ -682,10 +594,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRCount]
     protected FHIRCount $valueCount;
@@ -694,10 +603,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRDistance]
     protected FHIRDistance $valueDistance;
@@ -706,10 +612,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRDuration]
     protected FHIRDuration $valueDuration;
@@ -720,10 +623,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRHumanName]
     protected FHIRHumanName $valueHumanName;
@@ -733,10 +633,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $valueIdentifier;
@@ -745,10 +642,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRMoney]
     protected FHIRMoney $valueMoney;
@@ -757,10 +651,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -771,10 +662,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -783,10 +671,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -796,10 +681,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRRatio]
     protected FHIRRatio $valueRatio;
@@ -808,10 +690,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $valueRatioRange;
@@ -820,10 +699,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -833,10 +709,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
@@ -849,10 +722,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRSignature]
     protected FHIRSignature $valueSignature;
@@ -865,10 +735,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRTiming]
     protected FHIRTiming $valueTiming;
@@ -877,10 +744,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $valueContactDetail;
@@ -890,10 +754,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $valueDataRequirement;
@@ -904,10 +765,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRExpression]
     protected FHIRExpression $valueExpression;
@@ -918,10 +776,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $valueParameterDefinition;
@@ -931,10 +786,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $valueRelatedArtifact;
@@ -944,10 +796,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $valueTriggerDefinition;
@@ -959,10 +808,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $valueUsageContext;
@@ -971,10 +817,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRAvailability]
     protected FHIRAvailability $valueAvailability;
@@ -984,10 +827,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $valueExtendedContactDetail;
@@ -996,10 +836,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRDosage]
     protected FHIRDosage $valueDosage;
@@ -1010,19 +847,12 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta
+     * Conveys the content if the parameter is a data type.
      */
     #[FHIRMeta]
     protected FHIRMeta $valueMeta;
     /**
-     * (choose any one of the elements, but only one)
-     *
      * Conveys the content if the parameter is a whole resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface
      */
     #[FHIRResourceContainer]
     protected VersionContainedTypeInterface $resource;
@@ -1042,64 +872,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
     /**
      * FHIRParametersParameter Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueCanonical
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $valueCode
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $valueDecimal
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $valueId
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $valueInstant
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $valueInteger64
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $valueMarkdown
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid $valueOid
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $valuePositiveInt
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $valueTime
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $valueUrl
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid $valueUuid
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $valueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $valueAge
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $valueAnnotation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $valueCodeableReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $valueContactPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount $valueCount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance $valueDistance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $valueHumanName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $valueIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $valueMoney
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $valueRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $valueRatioRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData $valueSampledData
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature $valueSignature
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $valueTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $valueContactDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement $valueDataRequirement
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $valueExpression
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition $valueParameterDefinition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $valueRelatedArtifact
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition $valueTriggerDefinition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $valueUsageContext
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability $valueAvailability
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $valueExtendedContactDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage $valueDosage
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $valueMeta
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $resource
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter> $part
      * @param null|string[] $fhirComments
      */
@@ -1355,8 +1128,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the parameter (reference to the operation definition).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -1369,9 +1140,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the parameter (reference to the operation definition).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1391,10 +1159,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueBase64Binary(): null|FHIRBase64Binary
     {
@@ -1406,11 +1171,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -1429,10 +1190,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -1443,11 +1201,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -1468,10 +1222,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueCanonical(): null|FHIRCanonical
     {
@@ -1484,11 +1235,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueCanonical
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueCanonical): self
     {
@@ -1509,10 +1256,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueCode(): null|FHIRCode
     {
@@ -1525,11 +1269,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $valueCode
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -1550,10 +1290,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -1566,11 +1303,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -1594,10 +1327,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -1613,11 +1343,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -1638,10 +1364,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -1654,11 +1377,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $valueDecimal
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -1681,10 +1400,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueId(): null|FHIRId
     {
@@ -1699,11 +1415,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $valueId
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
@@ -1726,10 +1438,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * below. UTC offset is always required
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueInstant(): null|FHIRInstant
     {
@@ -1744,11 +1453,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * below. UTC offset is always required
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $valueInstant
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $valueInstant): self
     {
@@ -1768,10 +1473,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -1783,11 +1485,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -1807,10 +1505,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * Typically this is used for record counters (e.g. database keys)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueInteger64(): null|FHIRInteger64
     {
@@ -1822,11 +1517,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * Typically this is used for record counters (e.g. database keys)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $valueInteger64
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueInteger64(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $valueInteger64): self
     {
@@ -1850,10 +1541,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueMarkdown(): null|FHIRMarkdown
     {
@@ -1869,11 +1557,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $valueMarkdown
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $valueMarkdown): self
     {
@@ -1894,10 +1578,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueOid(): null|FHIROid
     {
@@ -1910,11 +1591,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid $valueOid
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueOid(null|string|FHIROidPrimitive|FHIROid $valueOid): self
     {
@@ -1934,10 +1611,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
+     * Conveys the content if the parameter is a data type.
      */
     public function getValuePositiveInt(): null|FHIRPositiveInt
     {
@@ -1949,11 +1623,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $valuePositiveInt
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $valuePositiveInt): self
     {
@@ -1973,10 +1643,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueString(): null|FHIRString
     {
@@ -1988,11 +1655,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -2011,10 +1674,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -2025,11 +1685,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $valueTime
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -2049,10 +1705,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -2064,11 +1717,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $valueUnsignedInt): self
     {
@@ -2088,10 +1737,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -2103,11 +1749,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -2127,10 +1769,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueUrl(): null|FHIRUrl
     {
@@ -2142,11 +1781,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $valueUrl
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueUrl(null|string|FHIRUrlPrimitive|FHIRUrl $valueUrl): self
     {
@@ -2167,10 +1802,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueUuid(): null|FHIRUuid
     {
@@ -2183,11 +1815,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid $valueUuid
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueUuid(null|string|FHIRUuidPrimitive|FHIRUuid $valueUuid): self
     {
@@ -2212,10 +1840,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueAddress(): null|FHIRAddress
     {
@@ -2232,11 +1857,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $valueAddress
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueAddress(null|FHIRAddress $valueAddress): self
     {
@@ -2253,10 +1874,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueAge(): null|FHIRAge
     {
@@ -2268,11 +1886,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $valueAge
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueAge(null|FHIRAge $valueAge): self
     {
@@ -2290,10 +1904,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueAnnotation(): null|FHIRAnnotation
     {
@@ -2306,11 +1917,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $valueAnnotation
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueAnnotation(null|FHIRAnnotation $valueAnnotation): self
     {
@@ -2327,10 +1934,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -2342,11 +1946,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -2364,10 +1964,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -2380,11 +1977,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -2402,10 +1995,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueCodeableReference(): null|FHIRCodeableReference
     {
@@ -2418,11 +2008,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $valueCodeableReference
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueCodeableReference(null|FHIRCodeableReference $valueCodeableReference): self
     {
@@ -2439,10 +2025,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -2454,11 +2037,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -2476,10 +2055,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueContactPoint(): null|FHIRContactPoint
     {
@@ -2492,11 +2068,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $valueContactPoint
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueContactPoint(null|FHIRContactPoint $valueContactPoint): self
     {
@@ -2515,10 +2087,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueCount(): null|FHIRCount
     {
@@ -2532,11 +2101,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount $valueCount
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueCount(null|FHIRCount $valueCount): self
     {
@@ -2553,10 +2118,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueDistance(): null|FHIRDistance
     {
@@ -2568,11 +2130,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance $valueDistance
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueDistance(null|FHIRDistance $valueDistance): self
     {
@@ -2589,10 +2147,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueDuration(): null|FHIRDuration
     {
@@ -2604,11 +2159,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
@@ -2627,10 +2178,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueHumanName(): null|FHIRHumanName
     {
@@ -2644,11 +2192,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $valueHumanName
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueHumanName(null|FHIRHumanName $valueHumanName): self
     {
@@ -2666,10 +2210,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueIdentifier(): null|FHIRIdentifier
     {
@@ -2682,11 +2223,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $valueIdentifier
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
@@ -2703,10 +2240,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueMoney(): null|FHIRMoney
     {
@@ -2718,11 +2252,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $valueMoney
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueMoney(null|FHIRMoney $valueMoney): self
     {
@@ -2739,10 +2269,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * Conveys the content if the parameter is a data type.
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -2754,11 +2281,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -2777,10 +2300,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -2794,11 +2314,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -2815,10 +2331,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -2830,11 +2343,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -2852,10 +2361,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueRatio(): null|FHIRRatio
     {
@@ -2868,11 +2374,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $valueRatio
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -2889,10 +2391,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueRatioRange(): null|FHIRRatioRange
     {
@@ -2904,11 +2403,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $valueRatioRange
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueRatioRange(null|FHIRRatioRange $valueRatioRange): self
     {
@@ -2925,10 +2420,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -2940,11 +2432,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -2962,10 +2450,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueSampledData(): null|FHIRSampledData
     {
@@ -2978,11 +2463,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData $valueSampledData
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -3003,10 +2484,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueSignature(): null|FHIRSignature
     {
@@ -3022,11 +2500,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature $valueSignature
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueSignature(null|FHIRSignature $valueSignature): self
     {
@@ -3047,10 +2521,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueTiming(): null|FHIRTiming
     {
@@ -3066,11 +2537,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $valueTiming
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueTiming(null|FHIRTiming $valueTiming): self
     {
@@ -3087,10 +2554,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueContactDetail(): null|FHIRContactDetail
     {
@@ -3102,11 +2566,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $valueContactDetail
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueContactDetail(null|FHIRContactDetail $valueContactDetail): self
     {
@@ -3124,10 +2584,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueDataRequirement(): null|FHIRDataRequirement
     {
@@ -3140,11 +2597,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement $valueDataRequirement
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueDataRequirement(null|FHIRDataRequirement $valueDataRequirement): self
     {
@@ -3163,10 +2616,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueExpression(): null|FHIRExpression
     {
@@ -3180,11 +2630,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $valueExpression
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueExpression(null|FHIRExpression $valueExpression): self
     {
@@ -3203,10 +2649,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueParameterDefinition(): null|FHIRParameterDefinition
     {
@@ -3220,11 +2663,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition $valueParameterDefinition
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueParameterDefinition(null|FHIRParameterDefinition $valueParameterDefinition): self
     {
@@ -3242,10 +2681,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueRelatedArtifact(): null|FHIRRelatedArtifact
     {
@@ -3258,11 +2694,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $valueRelatedArtifact
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueRelatedArtifact(null|FHIRRelatedArtifact $valueRelatedArtifact): self
     {
@@ -3280,10 +2712,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueTriggerDefinition(): null|FHIRTriggerDefinition
     {
@@ -3296,11 +2725,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition $valueTriggerDefinition
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueTriggerDefinition(null|FHIRTriggerDefinition $valueTriggerDefinition): self
     {
@@ -3320,10 +2745,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueUsageContext(): null|FHIRUsageContext
     {
@@ -3338,11 +2760,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $valueUsageContext
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueUsageContext(null|FHIRUsageContext $valueUsageContext): self
     {
@@ -3359,10 +2777,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueAvailability(): null|FHIRAvailability
     {
@@ -3374,11 +2789,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability $valueAvailability
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueAvailability(null|FHIRAvailability $valueAvailability): self
     {
@@ -3396,10 +2807,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueExtendedContactDetail(): null|FHIRExtendedContactDetail
     {
@@ -3412,11 +2820,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $valueExtendedContactDetail
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueExtendedContactDetail(null|FHIRExtendedContactDetail $valueExtendedContactDetail): self
     {
@@ -3433,10 +2837,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueDosage(): null|FHIRDosage
     {
@@ -3448,11 +2849,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage $valueDosage
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueDosage(null|FHIRDosage $valueDosage): self
     {
@@ -3471,10 +2868,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta
+     * Conveys the content if the parameter is a data type.
      */
     public function getValueMeta(): null|FHIRMeta
     {
@@ -3488,11 +2882,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Conveys the content if the parameter is a data type. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $valueMeta
-     * @return static
+     * Conveys the content if the parameter is a data type.
      */
     public function setValueMeta(null|FHIRMeta $valueMeta): self
     {
@@ -3505,11 +2895,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
     }
 
     /**
-     * (choose any one of the elements, but only one)
-     *
      * Conveys the content if the parameter is a whole resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface
      */
     public function getResource(): null|VersionContainedTypeInterface
     {
@@ -3517,12 +2903,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
     }
 
     /**
-     * (choose any one of the elements, but only one)
-     *
      * Conveys the content if the parameter is a whole resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $resource
-     * @return static
      */
     public function setResource(null|FHIRResourceContainer|VersionContainedTypeInterface $resource): self
     {
@@ -3568,9 +2949,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * not persisted or allowed to be referenced by other resources.
      *
      * A named part of a multi-part parameter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter $part
-     * @return static
      */
     public function addPart(FHIRParametersParameter $part): self
     {
@@ -3587,9 +2965,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * not persisted or allowed to be referenced by other resources.
      *
      * A named part of a multi-part parameter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter ...$part
-     * @return static
      */
     public function setPart(FHIRParametersParameter ...$part): self
     {
@@ -3603,10 +2978,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -3934,10 +3306,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -4339,10 +3707,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

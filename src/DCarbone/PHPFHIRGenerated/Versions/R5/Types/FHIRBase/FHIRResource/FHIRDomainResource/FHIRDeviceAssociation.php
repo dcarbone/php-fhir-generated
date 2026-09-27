@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -106,7 +104,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -171,8 +168,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the devices associated with the patient or group.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $device;
@@ -195,8 +190,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the state of the Device association.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -219,8 +212,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      *
      * The individual, group of individuals or device that the device is on or
      * associated with.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -230,8 +221,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Current anatomical location of the device in/on subject.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $bodyStructure;
@@ -241,8 +230,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Begin and end dates and times for the device association.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -259,22 +246,12 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
     /* constructor.php:61 */
     /**
      * FHIRDeviceAssociation Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $device
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $statusReason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $bodyStructure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceAssociation\FHIRDeviceAssociationOperation> $operation
      * @param null|string[] $fhirComments
      */
@@ -381,9 +358,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Instance identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -401,9 +375,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Instance identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -421,8 +392,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the devices associated with the patient or group.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getDevice(): null|FHIRReference
     {
@@ -435,9 +404,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the devices associated with the patient or group.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $device
-     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -482,9 +448,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the relationship between the device and subject.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -502,9 +465,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the relationship between the device and subject.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -523,8 +483,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the state of the Device association.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -538,9 +496,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the state of the Device association.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -585,9 +540,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reasons given for the current association status.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $statusReason
-     * @return static
      */
     public function addStatusReason(FHIRCodeableConcept $statusReason): self
     {
@@ -605,9 +557,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reasons given for the current association status.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$statusReason
-     * @return static
      */
     public function setStatusReason(FHIRCodeableConcept ...$statusReason): self
     {
@@ -626,8 +575,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      *
      * The individual, group of individuals or device that the device is on or
      * associated with.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -641,9 +588,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      *
      * The individual, group of individuals or device that the device is on or
      * associated with.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -661,8 +605,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Current anatomical location of the device in/on subject.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getBodyStructure(): null|FHIRReference
     {
@@ -675,9 +617,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Current anatomical location of the device in/on subject.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $bodyStructure
-     * @return static
      */
     public function setBodyStructure(null|FHIRReference $bodyStructure): self
     {
@@ -695,8 +634,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Begin and end dates and times for the device association.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -709,9 +646,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Begin and end dates and times for the device association.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -750,9 +684,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * A record of association or dissociation of a device with a patient.
      *
      * The details about the device when it is in use to describe its operation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceAssociation\FHIRDeviceAssociationOperation $operation
-     * @return static
      */
     public function addOperation(FHIRDeviceAssociationOperation $operation): self
     {
@@ -767,9 +698,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
      * A record of association or dissociation of a device with a patient.
      *
      * The details about the device when it is in use to describe its operation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceAssociation\FHIRDeviceAssociationOperation ...$operation
-     * @return static
      */
     public function setOperation(FHIRDeviceAssociationOperation ...$operation): self
     {
@@ -783,10 +711,7 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDeviceAssociation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDeviceAssociation
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -882,11 +807,6 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -971,10 +891,7 @@ class FHIRDeviceAssociation extends FHIRDomainResource implements VersionContain
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDeviceAssociation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRDeviceAssociation
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

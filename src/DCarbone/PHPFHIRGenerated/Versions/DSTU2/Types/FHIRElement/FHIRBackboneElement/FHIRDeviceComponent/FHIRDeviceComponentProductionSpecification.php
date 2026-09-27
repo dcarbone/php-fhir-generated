@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -120,8 +120,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      *
      * Describes the specification type, such as, serial number, part number, hardware
      * revision, software revision, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $specType;
@@ -133,8 +131,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * Describes the internal component unique identification. This is a provision for
      * manufacture specific standard components using a private OID. 11073-10101 has a
      * partition for private OID semantic that the manufacture can make use of.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $componentId;
@@ -144,8 +140,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the printable string defining the component.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $productionSpec;
@@ -154,11 +148,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     /**
      * FHIRDeviceComponentProductionSpecification Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $specType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $componentId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $productionSpec
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -199,8 +189,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      *
      * Describes the specification type, such as, serial number, part number, hardware
      * revision, software revision, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSpecType(): null|FHIRCodeableConcept
     {
@@ -215,9 +203,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      *
      * Describes the specification type, such as, serial number, part number, hardware
      * revision, software revision, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $specType
-     * @return static
      */
     public function setSpecType(null|FHIRCodeableConcept $specType): self
     {
@@ -237,8 +222,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * Describes the internal component unique identification. This is a provision for
      * manufacture specific standard components using a private OID. 11073-10101 has a
      * partition for private OID semantic that the manufacture can make use of.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     public function getComponentId(): null|FHIRIdentifier
     {
@@ -253,9 +236,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * Describes the internal component unique identification. This is a provision for
      * manufacture specific standard components using a private OID. 11073-10101 has a
      * partition for private OID semantic that the manufacture can make use of.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $componentId
-     * @return static
      */
     public function setComponentId(null|FHIRIdentifier $componentId): self
     {
@@ -273,8 +253,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the printable string defining the component.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getProductionSpec(): null|FHIRString
     {
@@ -287,9 +265,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the printable string defining the component.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $productionSpec
-     * @return static
      */
     public function setProductionSpec(null|string|FHIRStringPrimitive|FHIRString $productionSpec): self
     {
@@ -306,10 +281,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -365,10 +337,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -396,10 +364,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

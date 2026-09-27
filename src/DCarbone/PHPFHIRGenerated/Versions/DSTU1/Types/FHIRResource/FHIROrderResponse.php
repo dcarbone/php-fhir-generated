@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -153,8 +151,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the order that this is in response to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $request;
@@ -166,8 +162,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time at which this order response was made (created/posted).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -177,8 +171,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization, or device credited with making the response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $who;
@@ -190,8 +182,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $authorityCodeableConcept;
@@ -202,8 +192,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $authorityResource;
@@ -212,8 +200,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What this response says about the status of the original order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROrderOutcomeStatus
      */
     #[FHIROrderOutcomeStatus]
     protected FHIROrderOutcomeStatus $code;
@@ -223,8 +209,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      *
      * Additional description about the response - e.g. a text description provided by
      * a human user when making decisions about the order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -245,20 +229,10 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
     /* constructor.php:61 */
     /**
      * FHIROrderResponse Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $request
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $who
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $authorityCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $authorityResource
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIROrderOutcomeStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROrderOutcomeStatus $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $fulfillment
      * @param null|string[] $fhirComments
      */
@@ -363,9 +337,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * Identifiers assigned to this order. The identifiers are usually assigned by the
      * system responding to the order, but they may be provided or added to by other
      * systems.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -384,9 +355,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * Identifiers assigned to this order. The identifiers are usually assigned by the
      * system responding to the order, but they may be provided or added to by other
      * systems.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -404,8 +372,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the order that this is in response to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getRequest(): null|FHIRResourceReference
     {
@@ -418,9 +384,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the order that this is in response to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $request
-     * @return static
      */
     public function setRequest(null|FHIRResourceReference $request): self
     {
@@ -440,8 +403,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time at which this order response was made (created/posted).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -456,9 +417,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time at which this order response was made (created/posted).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -479,8 +437,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization, or device credited with making the response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getWho(): null|FHIRResourceReference
     {
@@ -493,9 +449,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization, or device credited with making the response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $who
-     * @return static
      */
     public function setWho(null|FHIRResourceReference $who): self
     {
@@ -515,8 +468,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAuthorityCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -531,9 +482,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $authorityCodeableConcept
-     * @return static
      */
     public function setAuthorityCodeableConcept(null|FHIRCodeableConcept $authorityCodeableConcept): self
     {
@@ -552,8 +500,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getAuthorityResource(): null|FHIRResourceReference
     {
@@ -567,9 +513,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $authorityResource
-     * @return static
      */
     public function setAuthorityResource(null|FHIRResourceReference $authorityResource): self
     {
@@ -586,8 +529,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What this response says about the status of the original order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROrderOutcomeStatus
      */
     public function getCode(): null|FHIROrderOutcomeStatus
     {
@@ -599,9 +540,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What this response says about the status of the original order.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIROrderOutcomeStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROrderOutcomeStatus $code
-     * @return static
      */
     public function setCode(null|string|FHIROrderOutcomeStatusList|FHIROrderOutcomeStatus $code): self
     {
@@ -622,8 +560,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      *
      * Additional description about the response - e.g. a text description provided by
      * a human user when making decisions about the order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -636,9 +572,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      *
      * Additional description about the response - e.g. a text description provided by
      * a human user when making decisions about the order.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -688,9 +621,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * Links to resources that provide details of the outcome of performing the order.
      * E.g. Diagnostic Reports in a response that is made to an order that referenced a
      * diagnostic order.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $fulfillment
-     * @return static
      */
     public function addFulfillment(FHIRResourceReference $fulfillment): self
     {
@@ -709,9 +639,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
      * Links to resources that provide details of the outcome of performing the order.
      * E.g. Diagnostic Reports in a response that is made to an order that referenced a
      * diagnostic order.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$fulfillment
-     * @return static
      */
     public function setFulfillment(FHIRResourceReference ...$fulfillment): self
     {
@@ -725,10 +652,7 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIROrderResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIROrderResponse
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -836,11 +760,6 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -936,10 +855,7 @@ class FHIROrderResponse extends FHIRResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIROrderResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIROrderResponse
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

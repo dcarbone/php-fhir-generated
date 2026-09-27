@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -161,8 +160,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $reference;
@@ -184,8 +181,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A human assigned name for the resource. All resources SHOULD have a name, but
      * the name may be extracted from the resource (e.g. ValueSet.name).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -200,8 +195,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A description of the reason that a resource has been included in the
      * implementation guide.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -210,8 +203,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates the resource is an example instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $isExample;
@@ -236,8 +227,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Reference to the id of the grouping this resource appears in.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $groupingId;
@@ -246,15 +235,9 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
     /**
      * FHIRImplementationGuideResource Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $reference
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFHIRVersionEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRVersion> $fhirVersion
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $isExample
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical> $profile
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $groupingId
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -309,8 +292,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getReference(): null|FHIRReference
     {
@@ -323,9 +304,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $reference
-     * @return static
      */
     public function setReference(null|FHIRReference $reference): self
     {
@@ -368,9 +346,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * Indicates the FHIR Version(s) this artifact is intended to apply to. If no
      * versions are specified, the resource is assumed to apply to all the versions
      * stated in ImplementationGuide.fhirVersion.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFHIRVersionEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRVersion $fhirVersion
-     * @return static
      */
     public function addFhirVersion(string|FHIRFHIRVersionEnum|FHIRFHIRVersion $fhirVersion): self
     {
@@ -390,9 +365,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * Indicates the FHIR Version(s) this artifact is intended to apply to. If no
      * versions are specified, the resource is assumed to apply to all the versions
      * stated in ImplementationGuide.fhirVersion.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFHIRVersionEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRVersion ...$fhirVersion
-     * @return static
      */
     public function setFhirVersion(string|FHIRFHIRVersionEnum|FHIRFHIRVersion ...$fhirVersion): self
     {
@@ -418,8 +390,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A human assigned name for the resource. All resources SHOULD have a name, but
      * the name may be extracted from the resource (e.g. ValueSet.name).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -433,9 +403,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A human assigned name for the resource. All resources SHOULD have a name, but
      * the name may be extracted from the resource (e.g. ValueSet.name).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -461,8 +428,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A description of the reason that a resource has been included in the
      * implementation guide.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -480,9 +445,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A description of the reason that a resource has been included in the
      * implementation guide.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -502,8 +464,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates the resource is an example instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getIsExample(): null|FHIRBoolean
     {
@@ -515,9 +475,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates the resource is an example instance.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $isExample
-     * @return static
      */
     public function setIsExample(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isExample): self
     {
@@ -565,9 +522,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * If present, indicates profile(s) the instance is valid against.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $profile
-     * @return static
      */
     public function addProfile(string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -588,9 +542,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * If present, indicates profile(s) the instance is valid against.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$profile
-     * @return static
      */
     public function setProfile(string|FHIRCanonicalPrimitive|FHIRCanonical ...$profile): self
     {
@@ -618,8 +569,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Reference to the id of the grouping this resource appears in.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getGroupingId(): null|FHIRId
     {
@@ -635,9 +584,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Reference to the id of the grouping this resource appears in.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $groupingId
-     * @return static
      */
     public function setGroupingId(null|string|FHIRIdPrimitive|FHIRId $groupingId): self
     {
@@ -654,10 +600,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -745,10 +688,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -815,10 +754,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

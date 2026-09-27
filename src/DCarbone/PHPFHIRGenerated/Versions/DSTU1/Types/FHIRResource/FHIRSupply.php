@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
@@ -125,8 +123,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $kind;
@@ -136,8 +132,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this supply request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -146,8 +140,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSupplyStatus
      */
     #[FHIRSupplyStatus]
     protected FHIRSupplyStatus $status;
@@ -157,8 +149,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is requested to be supplied.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $orderedItem;
@@ -168,8 +158,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the ordered item is for.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $patient;
@@ -187,17 +175,9 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
     /* constructor.php:61 */
     /**
      * FHIRSupply Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $kind
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSupplyStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSupplyStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $orderedItem
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $patient
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSupply\FHIRSupplyDispense> $dispense
      * @param null|string[] $fhirComments
      */
@@ -263,8 +243,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getKind(): null|FHIRCodeableConcept
     {
@@ -279,9 +257,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $kind
-     * @return static
      */
     public function setKind(null|FHIRCodeableConcept $kind): self
     {
@@ -299,8 +274,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this supply request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -313,9 +286,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this supply request.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -332,8 +302,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSupplyStatus
      */
     public function getStatus(): null|FHIRSupplyStatus
     {
@@ -345,9 +313,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSupplyStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSupplyStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRSupplyStatusList|FHIRSupplyStatus $status): self
     {
@@ -368,8 +333,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is requested to be supplied.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getOrderedItem(): null|FHIRResourceReference
     {
@@ -382,9 +345,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is requested to be supplied.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $orderedItem
-     * @return static
      */
     public function setOrderedItem(null|FHIRResourceReference $orderedItem): self
     {
@@ -402,8 +362,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the ordered item is for.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getPatient(): null|FHIRResourceReference
     {
@@ -416,9 +374,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the ordered item is for.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRResourceReference $patient): self
     {
@@ -459,9 +414,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      *
      * Indicates the details of the dispense event such as the days supply and quantity
      * of a supply dispensed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSupply\FHIRSupplyDispense $dispense
-     * @return static
      */
     public function addDispense(FHIRSupplyDispense $dispense): self
     {
@@ -477,9 +429,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
      *
      * Indicates the details of the dispense event such as the days supply and quantity
      * of a supply dispensed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSupply\FHIRSupplyDispense ...$dispense
-     * @return static
      */
     public function setDispense(FHIRSupplyDispense ...$dispense): self
     {
@@ -493,10 +442,7 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRSupply $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRSupply
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -582,11 +528,6 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -655,10 +596,7 @@ class FHIRSupply extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRSupply $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRSupply
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -148,8 +147,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * The ingredient (substance or medication) that the ingredient.strength relates
      * to. This is represented as a concept from a code system or described in another
      * resource (Substance or Medication).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $item;
@@ -159,8 +156,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * Indication of whether this ingredient affects the therapeutic action of the
      * drug.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $isActive;
@@ -173,10 +168,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * the denominator is assumed to be 1 tablet.
      */
     #[FHIRRatio]
     protected FHIRRatio $strengthRatio;
@@ -189,10 +181,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * the denominator is assumed to be 1 tablet.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $strengthCodeableConcept;
@@ -206,10 +195,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * the denominator is assumed to be 1 tablet.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $strengthQuantity;
@@ -218,13 +204,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
     /**
      * FHIRMedicationIngredient Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $item
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $isActive
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $strengthRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $strengthCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $strengthQuantity
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -274,8 +254,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * The ingredient (substance or medication) that the ingredient.strength relates
      * to. This is represented as a concept from a code system or described in another
      * resource (Substance or Medication).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getItem(): null|FHIRCodeableReference
     {
@@ -291,9 +269,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * The ingredient (substance or medication) that the ingredient.strength relates
      * to. This is represented as a concept from a code system or described in another
      * resource (Substance or Medication).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $item
-     * @return static
      */
     public function setItem(null|FHIRCodeableReference $item): self
     {
@@ -311,8 +286,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * Indication of whether this ingredient affects the therapeutic action of the
      * drug.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getIsActive(): null|FHIRBoolean
     {
@@ -325,9 +298,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * Indication of whether this ingredient affects the therapeutic action of the
      * drug.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $isActive
-     * @return static
      */
     public function setIsActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isActive): self
     {
@@ -351,10 +321,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * the denominator is assumed to be 1 tablet.
      */
     public function getStrengthRatio(): null|FHIRRatio
     {
@@ -370,11 +337,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
-     * only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $strengthRatio
-     * @return static
+     * the denominator is assumed to be 1 tablet.
      */
     public function setStrengthRatio(null|FHIRRatio $strengthRatio): self
     {
@@ -395,10 +358,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * the denominator is assumed to be 1 tablet.
      */
     public function getStrengthCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -414,11 +374,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
-     * only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $strengthCodeableConcept
-     * @return static
+     * the denominator is assumed to be 1 tablet.
      */
     public function setStrengthCodeableConcept(null|FHIRCodeableConcept $strengthCodeableConcept): self
     {
@@ -440,10 +396,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * the denominator is assumed to be 1 tablet.
      */
     public function getStrengthQuantity(): null|FHIRQuantity
     {
@@ -460,11 +413,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet but can also be expressed a quantity when
-     * the denominator is assumed to be 1 tablet. (choose any one of strength*, but
-     * only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $strengthQuantity
-     * @return static
+     * the denominator is assumed to be 1 tablet.
      */
     public function setStrengthQuantity(null|FHIRQuantity $strengthQuantity): self
     {
@@ -478,10 +427,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -541,10 +487,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -582,10 +524,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

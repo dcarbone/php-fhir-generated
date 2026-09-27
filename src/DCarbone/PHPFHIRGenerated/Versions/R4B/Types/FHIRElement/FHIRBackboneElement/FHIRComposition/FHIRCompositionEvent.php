@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -155,8 +155,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * The period of time covered by the documentation. There is no assertion that the
      * documentation is a complete representation for this period, only that it
      * documents events during this time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -177,10 +175,8 @@ class FHIRCompositionEvent extends FHIRBackboneElement
     /**
      * FHIRCompositionEvent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $detail
      * @param null|string[] $fhirComments
      */
@@ -253,9 +249,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * typeCode, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -276,9 +269,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * typeCode, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$code
-     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -298,8 +288,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * The period of time covered by the documentation. There is no assertion that the
      * documentation is a complete representation for this period, only that it
      * documents events during this time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -314,9 +302,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * The period of time covered by the documentation. There is no assertion that the
      * documentation is a complete representation for this period, only that it
      * documents events during this time.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -361,9 +346,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      *
      * The description and/or reference of the event(s) being documented. For example,
      * this could be used to document such a colonoscopy or an appendectomy.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $detail
-     * @return static
      */
     public function addDetail(FHIRReference $detail): self
     {
@@ -381,9 +363,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      *
      * The description and/or reference of the event(s) being documented. For example,
      * this could be used to document such a colonoscopy or an appendectomy.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$detail
-     * @return static
      */
     public function setDetail(FHIRReference ...$detail): self
     {
@@ -397,10 +376,7 @@ class FHIRCompositionEvent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -448,10 +424,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -478,10 +450,7 @@ class FHIRCompositionEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

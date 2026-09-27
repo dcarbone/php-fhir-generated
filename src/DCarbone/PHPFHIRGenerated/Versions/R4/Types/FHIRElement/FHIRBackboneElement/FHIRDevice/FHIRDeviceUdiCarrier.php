@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -132,8 +132,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that
      * identifies the labeler and the specific version or model of a device.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $deviceIdentifier;
@@ -147,8 +145,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * http://hl7.org/fhir/NamingSystem/hibcc-dI, 3) ICCBBA for blood containers:
      * http://hl7.org/fhir/NamingSystem/iccbba-blood-di, 4) ICCBA for other devices:
      * http://hl7.org/fhir/NamingSystem/iccbba-other-di.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $issuer;
@@ -161,8 +157,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * jurisdiction. All UDIs are globally unique within a single namespace with the
      * appropriate repository uri as the system. For example, UDIs of devices managed
      * in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $jurisdiction;
@@ -176,8 +170,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * the device - e.g., a barcode or RFID. Because of limitations on character sets
      * in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be
      * base64 encoded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $carrierAIDC;
@@ -188,8 +180,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * The full UDI carrier as the human readable form (HRF) representation of the
      * barcode string as printed on the packaging of the device.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $carrierHRF;
@@ -198,8 +188,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded entry to indicate how the data was entered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUDIEntryType
      */
     #[FHIRUDIEntryType]
     protected FHIRUDIEntryType $entryType;
@@ -208,14 +196,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     /**
      * FHIRDeviceUdiCarrier Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $deviceIdentifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $issuer
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBase64Binary $carrierAIDC
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $carrierHRF
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRUDIEntryTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUDIEntryType $entryType
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -267,8 +248,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that
      * identifies the labeler and the specific version or model of a device.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDeviceIdentifier(): null|FHIRString
     {
@@ -282,9 +261,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that
      * identifies the labeler and the specific version or model of a device.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $deviceIdentifier
-     * @return static
      */
     public function setDeviceIdentifier(null|string|FHIRStringPrimitive|FHIRString $deviceIdentifier): self
     {
@@ -309,8 +285,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * http://hl7.org/fhir/NamingSystem/hibcc-dI, 3) ICCBBA for blood containers:
      * http://hl7.org/fhir/NamingSystem/iccbba-blood-di, 4) ICCBA for other devices:
      * http://hl7.org/fhir/NamingSystem/iccbba-other-di.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getIssuer(): null|FHIRUri
     {
@@ -327,9 +301,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * http://hl7.org/fhir/NamingSystem/hibcc-dI, 3) ICCBBA for blood containers:
      * http://hl7.org/fhir/NamingSystem/iccbba-blood-di, 4) ICCBA for other devices:
      * http://hl7.org/fhir/NamingSystem/iccbba-other-di.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $issuer
-     * @return static
      */
     public function setIssuer(null|string|FHIRUriPrimitive|FHIRUri $issuer): self
     {
@@ -353,8 +324,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * jurisdiction. All UDIs are globally unique within a single namespace with the
      * appropriate repository uri as the system. For example, UDIs of devices managed
      * in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getJurisdiction(): null|FHIRUri
     {
@@ -370,9 +339,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * jurisdiction. All UDIs are globally unique within a single namespace with the
      * appropriate repository uri as the system. For example, UDIs of devices managed
      * in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $jurisdiction
-     * @return static
      */
     public function setJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $jurisdiction): self
     {
@@ -397,8 +363,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * the device - e.g., a barcode or RFID. Because of limitations on character sets
      * in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be
      * base64 encoded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBase64Binary
      */
     public function getCarrierAIDC(): null|FHIRBase64Binary
     {
@@ -415,9 +379,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * the device - e.g., a barcode or RFID. Because of limitations on character sets
      * in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be
      * base64 encoded.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBase64Binary $carrierAIDC
-     * @return static
      */
     public function setCarrierAIDC(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $carrierAIDC): self
     {
@@ -439,8 +400,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * The full UDI carrier as the human readable form (HRF) representation of the
      * barcode string as printed on the packaging of the device.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getCarrierHRF(): null|FHIRString
     {
@@ -454,9 +413,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * The full UDI carrier as the human readable form (HRF) representation of the
      * barcode string as printed on the packaging of the device.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $carrierHRF
-     * @return static
      */
     public function setCarrierHRF(null|string|FHIRStringPrimitive|FHIRString $carrierHRF): self
     {
@@ -476,8 +432,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded entry to indicate how the data was entered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUDIEntryType
      */
     public function getEntryType(): null|FHIRUDIEntryType
     {
@@ -489,9 +443,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded entry to indicate how the data was entered.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRUDIEntryTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUDIEntryType $entryType
-     * @return static
      */
     public function setEntryType(null|string|FHIRUDIEntryTypeList|FHIRUDIEntryType $entryType): self
     {
@@ -508,10 +459,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -613,10 +561,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -684,10 +628,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

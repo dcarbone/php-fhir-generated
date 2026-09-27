@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -144,8 +143,6 @@ class FHIRClaimAccident extends FHIRBackboneElement
      *
      * Date of an accident event related to the products and services contained in the
      * claim.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $date;
@@ -158,8 +155,6 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * The type or context of the accident event for the purposes of selection of
      * potential insurance coverages and determination of coordination between
      * insurers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -173,10 +168,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
+     * The physical location of the accident event.
      */
     #[FHIRAddress]
     protected FHIRAddress $locationAddress;
@@ -185,10 +177,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * The physical location of the accident event.
      */
     #[FHIRReference]
     protected FHIRReference $locationReference;
@@ -197,12 +186,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
     /**
      * FHIRClaimAccident Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $locationAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $locationReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -247,8 +231,6 @@ class FHIRClaimAccident extends FHIRBackboneElement
      *
      * Date of an accident event related to the products and services contained in the
      * claim.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     public function getDate(): null|FHIRDate
     {
@@ -263,9 +245,6 @@ class FHIRClaimAccident extends FHIRBackboneElement
      *
      * Date of an accident event related to the products and services contained in the
      * claim.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
@@ -289,8 +268,6 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * The type or context of the accident event for the purposes of selection of
      * potential insurance coverages and determination of coordination between
      * insurers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -306,9 +283,6 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * The type or context of the accident event for the purposes of selection of
      * potential insurance coverages and determination of coordination between
      * insurers.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -330,10 +304,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
+     * The physical location of the accident event.
      */
     public function getLocationAddress(): null|FHIRAddress
     {
@@ -350,11 +321,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $locationAddress
-     * @return static
+     * The physical location of the accident event.
      */
     public function setLocationAddress(null|FHIRAddress $locationAddress): self
     {
@@ -371,10 +338,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * The physical location of the accident event.
      */
     public function getLocationReference(): null|FHIRReference
     {
@@ -386,11 +350,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical location of the accident event. (choose any one of location*, but
-     * only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $locationReference
-     * @return static
+     * The physical location of the accident event.
      */
     public function setLocationReference(null|FHIRReference $locationReference): self
     {
@@ -404,10 +364,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -465,10 +422,6 @@ class FHIRClaimAccident extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -501,10 +454,7 @@ class FHIRClaimAccident extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimAccident
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

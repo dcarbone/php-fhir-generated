@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -134,8 +134,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -146,8 +144,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $reference;
@@ -157,8 +153,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the object that was involved in this audit event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $type;
@@ -169,8 +163,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Code representing the functional application role of Participant Object being
      * audited.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $role;
@@ -180,8 +172,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the data life-cycle stage for the participant object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $lifecycle;
@@ -203,8 +193,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * An instance-specific descriptor of the Participant Object ID audited, such as a
      * person's name.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -214,8 +202,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that describes the object in more detail.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -225,8 +211,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual query for a query-type participant object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $query;
@@ -246,17 +230,8 @@ class FHIRAuditEventObject extends FHIRBackboneElement
     /**
      * FHIRAuditEventObject Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $reference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $lifecycle
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $securityLabel
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBase64Binary $query
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail> $detail
      * @param null|string[] $fhirComments
      */
@@ -325,8 +300,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -340,9 +313,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -361,8 +331,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getReference(): null|FHIRReference
     {
@@ -376,9 +344,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $reference
-     * @return static
      */
     public function setReference(null|FHIRReference $reference): self
     {
@@ -396,8 +361,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the object that was involved in this audit event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getType(): null|FHIRCoding
     {
@@ -410,9 +373,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the object that was involved in this audit event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -431,8 +391,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Code representing the functional application role of Participant Object being
      * audited.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getRole(): null|FHIRCoding
     {
@@ -446,9 +404,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Code representing the functional application role of Participant Object being
      * audited.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $role
-     * @return static
      */
     public function setRole(null|FHIRCoding $role): self
     {
@@ -466,8 +421,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the data life-cycle stage for the participant object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getLifecycle(): null|FHIRCoding
     {
@@ -480,9 +433,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the data life-cycle stage for the participant object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $lifecycle
-     * @return static
      */
     public function setLifecycle(null|FHIRCoding $lifecycle): self
     {
@@ -525,9 +475,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Denotes security labels for the identified object.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $securityLabel
-     * @return static
      */
     public function addSecurityLabel(FHIRCoding $securityLabel): self
     {
@@ -544,9 +491,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Denotes security labels for the identified object.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$securityLabel
-     * @return static
      */
     public function setSecurityLabel(FHIRCoding ...$securityLabel): self
     {
@@ -565,8 +509,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * An instance-specific descriptor of the Participant Object ID audited, such as a
      * person's name.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -580,9 +522,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * An instance-specific descriptor of the Participant Object ID audited, such as a
      * person's name.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -603,8 +542,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that describes the object in more detail.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -617,9 +554,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that describes the object in more detail.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -640,8 +574,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual query for a query-type participant object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBase64Binary
      */
     public function getQuery(): null|FHIRBase64Binary
     {
@@ -654,9 +586,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual query for a query-type participant object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBase64Binary $query
-     * @return static
      */
     public function setQuery(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $query): self
     {
@@ -702,9 +631,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * usage.
      *
      * Additional Information about the Object.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail $detail
-     * @return static
      */
     public function addDetail(FHIRAuditEventDetail $detail): self
     {
@@ -721,9 +647,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * usage.
      *
      * Additional Information about the Object.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail ...$detail
-     * @return static
      */
     public function setDetail(FHIRAuditEventDetail ...$detail): self
     {
@@ -737,10 +660,7 @@ class FHIRAuditEventObject extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventObject $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventObject
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -826,10 +746,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -906,10 +822,7 @@ class FHIRAuditEventObject extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventObject $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventObject
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,8 +135,6 @@ class FHIRConsentPolicyBasis extends FHIRBackboneElement
      *
      * A Reference that identifies the policy the organization will enforce for this
      * Consent.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $reference;
@@ -147,8 +145,6 @@ class FHIRConsentPolicyBasis extends FHIRBackboneElement
      *
      * A URL that links to a computable version of the policy the organization will
      * enforce for this Consent.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
      */
     #[FHIRUrl]
     protected FHIRUrl $url;
@@ -157,10 +153,7 @@ class FHIRConsentPolicyBasis extends FHIRBackboneElement
     /**
      * FHIRConsentPolicyBasis Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $reference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $url
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -196,8 +189,6 @@ class FHIRConsentPolicyBasis extends FHIRBackboneElement
      *
      * A Reference that identifies the policy the organization will enforce for this
      * Consent.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getReference(): null|FHIRReference
     {
@@ -211,9 +202,6 @@ class FHIRConsentPolicyBasis extends FHIRBackboneElement
      *
      * A Reference that identifies the policy the organization will enforce for this
      * Consent.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $reference
-     * @return static
      */
     public function setReference(null|FHIRReference $reference): self
     {
@@ -232,8 +220,6 @@ class FHIRConsentPolicyBasis extends FHIRBackboneElement
      *
      * A URL that links to a computable version of the policy the organization will
      * enforce for this Consent.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
      */
     public function getUrl(): null|FHIRUrl
     {
@@ -247,9 +233,6 @@ class FHIRConsentPolicyBasis extends FHIRBackboneElement
      *
      * A URL that links to a computable version of the policy the organization will
      * enforce for this Consent.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUrlPrimitive|FHIRUrl $url): self
     {
@@ -266,10 +249,7 @@ class FHIRConsentPolicyBasis extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicyBasis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicyBasis
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -323,10 +303,6 @@ class FHIRConsentPolicyBasis extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -349,10 +325,7 @@ class FHIRConsentPolicyBasis extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicyBasis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicyBasis
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
@@ -86,7 +84,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
@@ -151,8 +148,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this organization affiliation record is in active use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $active;
@@ -163,8 +158,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      *
      * The period during which the participatingOrganization is affiliated with the
      * primary organization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -174,8 +167,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization where the role is available (primary organization/has members).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $organization;
@@ -186,8 +177,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      *
      * The Participating Organization provides/performs the role(s) defined by the code
      * to the Primary Organization (e.g. providing services or is a member of).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $participatingOrganization;
@@ -277,19 +266,10 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
     /* constructor.php:61 */
     /**
      * FHIROrganizationAffiliation Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $active
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $organization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $participatingOrganization
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $network
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $code
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $specialty
@@ -414,9 +394,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers that are specific to this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -434,9 +411,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers that are specific to this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -453,8 +427,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this organization affiliation record is in active use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getActive(): null|FHIRBoolean
     {
@@ -466,9 +438,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this organization affiliation record is in active use.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $active
-     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -490,8 +459,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      *
      * The period during which the participatingOrganization is affiliated with the
      * primary organization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -505,9 +472,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      *
      * The period during which the participatingOrganization is affiliated with the
      * primary organization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -525,8 +489,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization where the role is available (primary organization/has members).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getOrganization(): null|FHIRReference
     {
@@ -539,9 +501,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization where the role is available (primary organization/has members).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $organization
-     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -560,8 +519,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      *
      * The Participating Organization provides/performs the role(s) defined by the code
      * to the Primary Organization (e.g. providing services or is a member of).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getParticipatingOrganization(): null|FHIRReference
     {
@@ -575,9 +532,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      *
      * The Participating Organization provides/performs the role(s) defined by the code
      * to the Primary Organization (e.g. providing services or is a member of).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $participatingOrganization
-     * @return static
      */
     public function setParticipatingOrganization(null|FHIRReference $participatingOrganization): self
     {
@@ -624,9 +578,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * Health insurance provider network in which the participatingOrganization
      * provides the role's services (if defined) at the indicated locations (if
      * defined).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $network
-     * @return static
      */
     public function addNetwork(FHIRReference $network): self
     {
@@ -645,9 +596,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * Health insurance provider network in which the participatingOrganization
      * provides the role's services (if defined) at the indicated locations (if
      * defined).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$network
-     * @return static
      */
     public function setNetwork(FHIRReference ...$network): self
     {
@@ -692,9 +640,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the role the participatingOrganization plays in the association.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -712,9 +657,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the role the participatingOrganization plays in the association.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$code
-     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -759,9 +701,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the participatingOrganization in the context of the role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $specialty
-     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -779,9 +718,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the participatingOrganization in the context of the role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$specialty
-     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -824,9 +760,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which the role occurs.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $location
-     * @return static
      */
     public function addLocation(FHIRReference $location): self
     {
@@ -843,9 +776,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which the role occurs.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$location
-     * @return static
      */
     public function setLocation(FHIRReference ...$location): self
     {
@@ -888,9 +818,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare services provided through the role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $healthcareService
-     * @return static
      */
     public function addHealthcareService(FHIRReference $healthcareService): self
     {
@@ -907,9 +834,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare services provided through the role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$healthcareService
-     * @return static
      */
     public function setHealthcareService(FHIRReference ...$healthcareService): self
     {
@@ -954,9 +878,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details at the participatingOrganization relevant to this Affiliation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $telecom
-     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -974,9 +895,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contact details at the participatingOrganization relevant to this Affiliation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -1019,9 +937,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $endpoint
-     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -1038,9 +953,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$endpoint
-     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {
@@ -1054,10 +966,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1167,11 +1076,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1284,10 +1188,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements VersionC
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

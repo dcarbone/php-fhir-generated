@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -129,8 +128,6 @@ class FHIRContractSigner extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of this Contract signer, e.g. notary, grantee.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $type;
@@ -140,8 +137,6 @@ class FHIRContractSigner extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party which is a signator to this Contract.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $party;
@@ -151,8 +146,6 @@ class FHIRContractSigner extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Legally binding Contract DSIG signature contents in Base64.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $signature;
@@ -161,11 +154,7 @@ class FHIRContractSigner extends FHIRBackboneElement
     /**
      * FHIRContractSigner Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $party
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $signature
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -204,8 +193,6 @@ class FHIRContractSigner extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of this Contract signer, e.g. notary, grantee.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getType(): null|FHIRCoding
     {
@@ -218,9 +205,6 @@ class FHIRContractSigner extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of this Contract signer, e.g. notary, grantee.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -238,8 +222,6 @@ class FHIRContractSigner extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party which is a signator to this Contract.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getParty(): null|FHIRReference
     {
@@ -252,9 +234,6 @@ class FHIRContractSigner extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party which is a signator to this Contract.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $party
-     * @return static
      */
     public function setParty(null|FHIRReference $party): self
     {
@@ -272,8 +251,6 @@ class FHIRContractSigner extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Legally binding Contract DSIG signature contents in Base64.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getSignature(): null|FHIRString
     {
@@ -286,9 +263,6 @@ class FHIRContractSigner extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Legally binding Contract DSIG signature contents in Base64.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $signature
-     * @return static
      */
     public function setSignature(null|string|FHIRStringPrimitive|FHIRString $signature): self
     {
@@ -305,10 +279,7 @@ class FHIRContractSigner extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -364,10 +335,6 @@ class FHIRContractSigner extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -395,10 +362,7 @@ class FHIRContractSigner extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

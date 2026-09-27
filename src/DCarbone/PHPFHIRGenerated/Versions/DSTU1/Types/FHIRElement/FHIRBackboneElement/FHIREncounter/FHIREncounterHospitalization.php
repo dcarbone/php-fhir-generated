@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -124,8 +124,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pre-admission identifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $preAdmissionIdentifier;
@@ -135,8 +133,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location from which the patient came before admission.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $origin;
@@ -147,8 +143,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * From where patient was admitted (physician referral, transfer).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $admitSource;
@@ -158,8 +152,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Period during which the patient was admitted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -180,8 +172,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dietary restrictions for the patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $diet;
@@ -215,8 +205,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location to which the patient is discharged.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $destination;
@@ -227,8 +215,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category or kind of location after discharge.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $dischargeDisposition;
@@ -239,8 +225,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * The final diagnosis given a patient before release from the hospital after all
      * testing, surgery, and workup are complete.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $dischargeDiagnosis;
@@ -249,8 +233,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this hospitalization is a readmission.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $reAdmission;
@@ -259,20 +241,10 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     /**
      * FHIREncounterHospitalization Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $origin
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $admitSource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAccomodation> $accomodation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $diet
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $specialCourtesy
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $specialArrangement
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $destination
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $dischargeDisposition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $dischargeDiagnosis
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $reAdmission
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -347,8 +319,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pre-admission identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     public function getPreAdmissionIdentifier(): null|FHIRIdentifier
     {
@@ -361,9 +331,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pre-admission identifier.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
-     * @return static
      */
     public function setPreAdmissionIdentifier(null|FHIRIdentifier $preAdmissionIdentifier): self
     {
@@ -381,8 +348,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location from which the patient came before admission.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getOrigin(): null|FHIRResourceReference
     {
@@ -395,9 +360,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location from which the patient came before admission.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $origin
-     * @return static
      */
     public function setOrigin(null|FHIRResourceReference $origin): self
     {
@@ -416,8 +378,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * From where patient was admitted (physician referral, transfer).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAdmitSource(): null|FHIRCodeableConcept
     {
@@ -431,9 +391,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * From where patient was admitted (physician referral, transfer).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $admitSource
-     * @return static
      */
     public function setAdmitSource(null|FHIRCodeableConcept $admitSource): self
     {
@@ -451,8 +408,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Period during which the patient was admitted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -465,9 +420,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Period during which the patient was admitted.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -508,9 +460,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * Where the patient stays during this encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAccomodation $accomodation
-     * @return static
      */
     public function addAccomodation(FHIREncounterAccomodation $accomodation): self
     {
@@ -526,9 +475,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * Where the patient stays during this encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAccomodation ...$accomodation
-     * @return static
      */
     public function setAccomodation(FHIREncounterAccomodation ...$accomodation): self
     {
@@ -547,8 +493,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dietary restrictions for the patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDiet(): null|FHIRCodeableConcept
     {
@@ -562,9 +506,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dietary restrictions for the patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $diet
-     * @return static
      */
     public function setDiet(null|FHIRCodeableConcept $diet): self
     {
@@ -609,9 +550,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Special courtesies (VIP, board member).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $specialCourtesy
-     * @return static
      */
     public function addSpecialCourtesy(FHIRCodeableConcept $specialCourtesy): self
     {
@@ -629,9 +567,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Special courtesies (VIP, board member).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$specialCourtesy
-     * @return static
      */
     public function setSpecialCourtesy(FHIRCodeableConcept ...$specialCourtesy): self
     {
@@ -676,9 +611,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Wheelchair, translator, stretcher, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $specialArrangement
-     * @return static
      */
     public function addSpecialArrangement(FHIRCodeableConcept $specialArrangement): self
     {
@@ -696,9 +628,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Wheelchair, translator, stretcher, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$specialArrangement
-     * @return static
      */
     public function setSpecialArrangement(FHIRCodeableConcept ...$specialArrangement): self
     {
@@ -716,8 +645,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location to which the patient is discharged.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getDestination(): null|FHIRResourceReference
     {
@@ -730,9 +657,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location to which the patient is discharged.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $destination
-     * @return static
      */
     public function setDestination(null|FHIRResourceReference $destination): self
     {
@@ -751,8 +675,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category or kind of location after discharge.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDischargeDisposition(): null|FHIRCodeableConcept
     {
@@ -766,9 +688,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category or kind of location after discharge.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $dischargeDisposition
-     * @return static
      */
     public function setDischargeDisposition(null|FHIRCodeableConcept $dischargeDisposition): self
     {
@@ -787,8 +706,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * The final diagnosis given a patient before release from the hospital after all
      * testing, surgery, and workup are complete.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getDischargeDiagnosis(): null|FHIRResourceReference
     {
@@ -802,9 +719,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * The final diagnosis given a patient before release from the hospital after all
      * testing, surgery, and workup are complete.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $dischargeDiagnosis
-     * @return static
      */
     public function setDischargeDiagnosis(null|FHIRResourceReference $dischargeDiagnosis): self
     {
@@ -821,8 +735,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this hospitalization is a readmission.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getReAdmission(): null|FHIRBoolean
     {
@@ -834,9 +746,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this hospitalization is a readmission.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $reAdmission
-     * @return static
      */
     public function setReAdmission(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $reAdmission): self
     {
@@ -853,10 +762,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -930,10 +836,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1012,10 +914,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

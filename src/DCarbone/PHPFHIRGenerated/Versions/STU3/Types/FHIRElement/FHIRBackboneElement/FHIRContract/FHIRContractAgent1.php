@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -114,8 +113,6 @@ class FHIRContractAgent1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The agent assigned a role in this Contract Provision.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $actor;
@@ -137,9 +134,7 @@ class FHIRContractAgent1 extends FHIRBackboneElement
     /**
      * FHIRContractAgent1 Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $actor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $role
      * @param null|string[] $fhirComments
      */
@@ -175,8 +170,6 @@ class FHIRContractAgent1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The agent assigned a role in this Contract Provision.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getActor(): null|FHIRReference
     {
@@ -189,9 +182,6 @@ class FHIRContractAgent1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The agent assigned a role in this Contract Provision.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $actor
-     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -238,9 +228,6 @@ class FHIRContractAgent1 extends FHIRBackboneElement
      *
      * Role played by the agent assigned this role in the execution of this Contract
      * Provision.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -259,9 +246,6 @@ class FHIRContractAgent1 extends FHIRBackboneElement
      *
      * Role played by the agent assigned this role in the execution of this Contract
      * Provision.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$role
-     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -275,10 +259,7 @@ class FHIRContractAgent1 extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAgent1 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAgent1
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -324,10 +305,6 @@ class FHIRContractAgent1 extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -347,10 +324,7 @@ class FHIRContractAgent1 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAgent1 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAgent1
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

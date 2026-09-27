@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -138,8 +137,6 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      *
      * The categorization of the specific characteristic that is relevant to the
      * administration guideline (e.g. height, weight, gender).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -149,10 +146,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
-     * of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * The specific characteristic (e.g. height, weight, gender, etc.).
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -163,10 +157,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
-     * of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * The specific characteristic (e.g. height, weight, gender, etc.).
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -175,10 +166,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
-     * of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * The specific characteristic (e.g. height, weight, gender, etc.).
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -187,12 +175,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
     /**
      * FHIRMedicationKnowledgePatientCharacteristic Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -237,8 +220,6 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      *
      * The categorization of the specific characteristic that is relevant to the
      * administration guideline (e.g. height, weight, gender).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -253,9 +234,6 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      *
      * The categorization of the specific characteristic that is relevant to the
      * administration guideline (e.g. height, weight, gender).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -273,10 +251,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
-     * of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * The specific characteristic (e.g. height, weight, gender, etc.).
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -289,11 +264,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
-     * of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
+     * The specific characteristic (e.g. height, weight, gender, etc.).
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -312,10 +283,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
-     * of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * The specific characteristic (e.g. height, weight, gender, etc.).
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -329,11 +297,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
-     * of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * The specific characteristic (e.g. height, weight, gender, etc.).
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -350,10 +314,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
-     * of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * The specific characteristic (e.g. height, weight, gender, etc.).
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -365,11 +326,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The specific characteristic (e.g. height, weight, gender, etc.). (choose any one
-     * of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @return static
+     * The specific characteristic (e.g. height, weight, gender, etc.).
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -383,10 +340,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristic $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristic
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -436,10 +390,6 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -467,10 +417,7 @@ class FHIRMedicationKnowledgePatientCharacteristic extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristic $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristic
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

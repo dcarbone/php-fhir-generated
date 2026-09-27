@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -31,16 +31,11 @@ interface ResourceContainerTypeInterface extends TypeInterface
 {
     /**
      * Must return the contained resource, or null if one is not set.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\ContainedTypeInterface
      */
     public function getContainedType(): null|ContainedTypeInterface;
 
     /**
      * Set or unset the contained type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Types\ContainedTypeInterface $containedType
-     * @return static
      */
     public function setContainedType(null|ContainedTypeInterface $containedType): self;
 }

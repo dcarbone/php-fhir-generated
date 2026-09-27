@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -118,8 +118,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      *
      * Server adds CORS headers when responding to requests - this enables javascript
      * applications to use the server.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $cors;
@@ -141,8 +139,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * General description of how security works.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -162,11 +158,8 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
     /**
      * FHIRCapabilityStatementSecurity Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $cors
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $service
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementCertificate> $certificate
      * @param null|string[] $fhirComments
      */
@@ -210,8 +203,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      *
      * Server adds CORS headers when responding to requests - this enables javascript
      * applications to use the server.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getCors(): null|FHIRBoolean
     {
@@ -224,9 +215,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      *
      * Server adds CORS headers when responding to requests - this enables javascript
      * applications to use the server.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $cors
-     * @return static
      */
     public function setCors(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $cors): self
     {
@@ -274,9 +262,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Types of security services that are supported/required by the system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $service
-     * @return static
      */
     public function addService(FHIRCodeableConcept $service): self
     {
@@ -294,9 +279,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Types of security services that are supported/required by the system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$service
-     * @return static
      */
     public function setService(FHIRCodeableConcept ...$service): self
     {
@@ -314,8 +296,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * General description of how security works.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -328,9 +308,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * General description of how security works.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -376,9 +353,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      * statement of required or desired server implementation.
      *
      * Certificates associated with security profiles.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementCertificate $certificate
-     * @return static
      */
     public function addCertificate(FHIRCapabilityStatementCertificate $certificate): self
     {
@@ -395,9 +369,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      * statement of required or desired server implementation.
      *
      * Certificates associated with security profiles.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementCertificate ...$certificate
-     * @return static
      */
     public function setCertificate(FHIRCapabilityStatementCertificate ...$certificate): self
     {
@@ -411,10 +382,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -480,10 +448,6 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -525,10 +489,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

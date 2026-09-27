@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -130,8 +129,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of channel to send notifications on.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSubscriptionChannelType
      */
     #[FHIRSubscriptionChannelType]
     protected FHIRSubscriptionChannelType $type;
@@ -141,8 +138,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The url that describes the actual end-point to send messages to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl
      */
     #[FHIRUrl]
     protected FHIRUrl $endpoint;
@@ -156,8 +151,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * application/fhir+json. If the payload is not present, then there is no payload
      * in the notification, just a notification. The mime type "text/plain" may also be
      * used for Email and SMS subscriptions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $payload;
@@ -177,11 +170,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
     /**
      * FHIRSubscriptionChannel Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSubscriptionChannelTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSubscriptionChannelType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl $endpoint
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $payload
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString> $header
      * @param null|string[] $fhirComments
      */
@@ -224,8 +213,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of channel to send notifications on.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSubscriptionChannelType
      */
     public function getType(): null|FHIRSubscriptionChannelType
     {
@@ -237,9 +224,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of channel to send notifications on.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSubscriptionChannelTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSubscriptionChannelType $type
-     * @return static
      */
     public function setType(null|string|FHIRSubscriptionChannelTypeList|FHIRSubscriptionChannelType $type): self
     {
@@ -260,8 +244,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The url that describes the actual end-point to send messages to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl
      */
     public function getEndpoint(): null|FHIRUrl
     {
@@ -274,9 +256,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The url that describes the actual end-point to send messages to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl $endpoint
-     * @return static
      */
     public function setEndpoint(null|string|FHIRUrlPrimitive|FHIRUrl $endpoint): self
     {
@@ -301,8 +280,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * application/fhir+json. If the payload is not present, then there is no payload
      * in the notification, just a notification. The mime type "text/plain" may also be
      * used for Email and SMS subscriptions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode
      */
     public function getPayload(): null|FHIRCode
     {
@@ -319,9 +296,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * application/fhir+json. If the payload is not present, then there is no payload
      * in the notification, just a notification. The mime type "text/plain" may also be
      * used for Email and SMS subscriptions.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $payload
-     * @return static
      */
     public function setPayload(null|string|FHIRCodePrimitive|FHIRCode $payload): self
     {
@@ -367,9 +341,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional headers / information to send as part of the notification.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $header
-     * @return static
      */
     public function addHeader(string|FHIRStringPrimitive|FHIRString $header): self
     {
@@ -389,9 +360,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional headers / information to send as part of the notification.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString ...$header
-     * @return static
      */
     public function setHeader(string|FHIRStringPrimitive|FHIRString ...$header): self
     {
@@ -412,10 +380,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -489,10 +454,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -537,10 +498,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

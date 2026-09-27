@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -126,8 +126,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * The specific person or organization who is participating/expected to participate
      * in the care team.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $member;
@@ -137,8 +135,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of the practitioner.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $onBehalfOf;
@@ -149,8 +145,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * Indicates when the specific member or organization did (or is intended to) come
      * into effect and end.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -159,12 +153,8 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
     /**
      * FHIRCareTeamParticipant Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $member
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $onBehalfOf
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -236,9 +226,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * Indicates specific responsibility of an individual within the care team, such as
      * "Primary care physician", "Trained social worker counselor", "Caregiver", etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -257,9 +244,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * Indicates specific responsibility of an individual within the care team, such as
      * "Primary care physician", "Trained social worker counselor", "Caregiver", etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$role
-     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -278,8 +262,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * The specific person or organization who is participating/expected to participate
      * in the care team.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getMember(): null|FHIRReference
     {
@@ -293,9 +275,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * The specific person or organization who is participating/expected to participate
      * in the care team.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $member
-     * @return static
      */
     public function setMember(null|FHIRReference $member): self
     {
@@ -313,8 +292,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of the practitioner.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getOnBehalfOf(): null|FHIRReference
     {
@@ -327,9 +304,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of the practitioner.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $onBehalfOf
-     * @return static
      */
     public function setOnBehalfOf(null|FHIRReference $onBehalfOf): self
     {
@@ -348,8 +322,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * Indicates when the specific member or organization did (or is intended to) come
      * into effect and end.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -363,9 +335,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * Indicates when the specific member or organization did (or is intended to) come
      * into effect and end.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -379,10 +348,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -432,10 +398,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -465,10 +427,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

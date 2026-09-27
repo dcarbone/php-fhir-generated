@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -131,8 +131,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
      *
      * The overall intention of the treatment, for example, prophylactic, supporative,
      * curative, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $treatmentIntent;
@@ -153,8 +151,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
      *
      * The type of the treatment that the guideline applies to, for example, long term
      * therapy, first line treatment, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $administrationTreatment;
@@ -173,11 +169,8 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
     /**
      * FHIRMedicationKnowledgeDosingGuideline Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $treatmentIntent
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage> $dosage
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $administrationTreatment
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristic> $patientCharacteristic
      * @param null|string[] $fhirComments
      */
@@ -223,8 +216,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
      *
      * The overall intention of the treatment, for example, prophylactic, supporative,
      * curative, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getTreatmentIntent(): null|FHIRCodeableConcept
     {
@@ -239,9 +230,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
      *
      * The overall intention of the treatment, for example, prophylactic, supporative,
      * curative, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $treatmentIntent
-     * @return static
      */
     public function setTreatmentIntent(null|FHIRCodeableConcept $treatmentIntent): self
     {
@@ -280,9 +268,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * Dosage for the medication for the specific guidelines.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage $dosage
-     * @return static
      */
     public function addDosage(FHIRMedicationKnowledgeDosage $dosage): self
     {
@@ -297,9 +282,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * Dosage for the medication for the specific guidelines.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage ...$dosage
-     * @return static
      */
     public function setDosage(FHIRMedicationKnowledgeDosage ...$dosage): self
     {
@@ -319,8 +301,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
      *
      * The type of the treatment that the guideline applies to, for example, long term
      * therapy, first line treatment, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getAdministrationTreatment(): null|FHIRCodeableConcept
     {
@@ -335,9 +315,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
      *
      * The type of the treatment that the guideline applies to, for example, long term
      * therapy, first line treatment, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $administrationTreatment
-     * @return static
      */
     public function setAdministrationTreatment(null|FHIRCodeableConcept $administrationTreatment): self
     {
@@ -378,9 +355,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
      *
      * Characteristics of the patient that are relevant to the administration
      * guidelines (for example, height, weight, gender, etc.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristic $patientCharacteristic
-     * @return static
      */
     public function addPatientCharacteristic(FHIRMedicationKnowledgePatientCharacteristic $patientCharacteristic): self
     {
@@ -396,9 +370,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
      *
      * Characteristics of the patient that are relevant to the administration
      * guidelines (for example, height, weight, gender, etc.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristic ...$patientCharacteristic
-     * @return static
      */
     public function setPatientCharacteristic(FHIRMedicationKnowledgePatientCharacteristic ...$patientCharacteristic): self
     {
@@ -412,10 +383,7 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosingGuideline $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosingGuideline
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -465,10 +433,6 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -500,10 +464,7 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosingGuideline $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosingGuideline
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

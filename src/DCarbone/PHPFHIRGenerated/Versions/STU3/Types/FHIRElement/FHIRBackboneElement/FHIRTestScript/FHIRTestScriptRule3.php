@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -119,8 +118,6 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Id of the referenced rule within the external ruleset template.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $ruleId;
@@ -139,9 +136,7 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
     /**
      * FHIRTestScriptRule3 Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $ruleId
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam3> $param
      * @param null|string[] $fhirComments
      */
@@ -180,8 +175,6 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Id of the referenced rule within the external ruleset template.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId
      */
     public function getRuleId(): null|FHIRId
     {
@@ -197,9 +190,6 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Id of the referenced rule within the external ruleset template.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $ruleId
-     * @return static
      */
     public function setRuleId(null|string|FHIRIdPrimitive|FHIRId $ruleId): self
     {
@@ -243,9 +233,6 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
      * compliance against the FHIR specification.
      *
      * Each rule template can take one or more parameters for rule evaluation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam3 $param
-     * @return static
      */
     public function addParam(FHIRTestScriptParam3 $param): self
     {
@@ -261,9 +248,6 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
      * compliance against the FHIR specification.
      *
      * Each rule template can take one or more parameters for rule evaluation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam3 ...$param
-     * @return static
      */
     public function setParam(FHIRTestScriptParam3 ...$param): self
     {
@@ -277,10 +261,7 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule3 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule3
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -334,10 +315,6 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -362,10 +339,7 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule3 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule3
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

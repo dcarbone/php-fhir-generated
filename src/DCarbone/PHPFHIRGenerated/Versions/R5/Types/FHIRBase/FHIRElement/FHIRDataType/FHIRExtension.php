@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -271,10 +270,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
@@ -283,10 +279,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -297,10 +290,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRCanonical]
     protected FHIRCanonical $valueCanonical;
@@ -311,10 +301,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRCode]
     protected FHIRCode $valueCode;
@@ -325,10 +312,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -342,10 +326,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -356,10 +337,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -372,10 +350,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRId]
     protected FHIRId $valueId;
@@ -388,10 +363,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRInstant]
     protected FHIRInstant $valueInstant;
@@ -401,10 +373,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -414,10 +383,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $valueInteger64;
@@ -431,10 +397,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $valueMarkdown;
@@ -445,10 +408,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIROid]
     protected FHIROid $valueOid;
@@ -458,10 +418,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $valuePositiveInt;
@@ -471,10 +428,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -483,10 +437,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -496,10 +447,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $valueUnsignedInt;
@@ -509,10 +457,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -522,10 +467,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRUrl]
     protected FHIRUrl $valueUrl;
@@ -536,10 +478,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRUuid]
     protected FHIRUuid $valueUuid;
@@ -554,10 +493,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRAddress]
     protected FHIRAddress $valueAddress;
@@ -567,10 +503,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRAge]
     protected FHIRAge $valueAge;
@@ -581,10 +514,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $valueAnnotation;
@@ -594,10 +524,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -608,10 +535,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -622,10 +546,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $valueCodeableReference;
@@ -635,10 +556,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -649,10 +567,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $valueContactPoint;
@@ -664,10 +579,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRCount]
     protected FHIRCount $valueCount;
@@ -677,10 +589,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRDistance]
     protected FHIRDistance $valueDistance;
@@ -690,10 +599,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRDuration]
     protected FHIRDuration $valueDuration;
@@ -705,10 +611,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRHumanName]
     protected FHIRHumanName $valueHumanName;
@@ -719,10 +622,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $valueIdentifier;
@@ -732,10 +632,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRMoney]
     protected FHIRMoney $valueMoney;
@@ -745,10 +642,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -760,10 +654,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -773,10 +664,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -787,10 +675,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRRatio]
     protected FHIRRatio $valueRatio;
@@ -800,10 +685,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $valueRatioRange;
@@ -813,10 +695,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -827,10 +706,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
@@ -844,10 +720,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRSignature]
     protected FHIRSignature $valueSignature;
@@ -861,10 +734,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRTiming]
     protected FHIRTiming $valueTiming;
@@ -874,10 +744,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $valueContactDetail;
@@ -888,10 +755,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $valueDataRequirement;
@@ -903,10 +767,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRExpression]
     protected FHIRExpression $valueExpression;
@@ -918,10 +779,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $valueParameterDefinition;
@@ -932,10 +790,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $valueRelatedArtifact;
@@ -946,10 +801,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $valueTriggerDefinition;
@@ -962,10 +814,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $valueUsageContext;
@@ -975,10 +824,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRAvailability]
     protected FHIRAvailability $valueAvailability;
@@ -989,10 +835,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $valueExtendedContactDetail;
@@ -1002,10 +845,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRDosage]
     protected FHIRDosage $valueDosage;
@@ -1017,14 +857,10 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta
+     * [Extensibility](extensibility.html) for a list).
      */
     #[FHIRMeta]
     protected FHIRMeta $valueMeta;
-    /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive */
     #[FHIRUriPrimitive]
     protected FHIRUriPrimitive $url;
 
@@ -1032,62 +868,6 @@ class FHIRExtension extends FHIRDataType
     /**
      * FHIRExtension Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueCanonical
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $valueCode
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $valueDecimal
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $valueId
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $valueInstant
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $valueInteger64
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $valueMarkdown
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid $valueOid
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $valuePositiveInt
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $valueTime
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $valueUrl
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid $valueUuid
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $valueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $valueAge
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $valueAnnotation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $valueCodeableReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $valueContactPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount $valueCount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance $valueDistance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $valueHumanName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $valueIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $valueMoney
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $valueRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $valueRatioRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData $valueSampledData
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature $valueSignature
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $valueTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $valueContactDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement $valueDataRequirement
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $valueExpression
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition $valueParameterDefinition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $valueRelatedArtifact
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition $valueTriggerDefinition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $valueUsageContext
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability $valueAvailability
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $valueExtendedContactDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage $valueDosage
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $valueMeta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive $url
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -1332,10 +1112,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueBase64Binary(): null|FHIRBase64Binary
     {
@@ -1348,11 +1125,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -1372,10 +1145,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -1387,11 +1157,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -1413,10 +1179,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueCanonical(): null|FHIRCanonical
     {
@@ -1430,11 +1193,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueCanonical
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueCanonical): self
     {
@@ -1456,10 +1215,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueCode(): null|FHIRCode
     {
@@ -1473,11 +1229,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $valueCode
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -1499,10 +1251,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -1516,11 +1265,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -1545,10 +1290,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -1565,11 +1307,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -1591,10 +1329,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -1608,11 +1343,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $valueDecimal
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -1636,10 +1367,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueId(): null|FHIRId
     {
@@ -1655,11 +1383,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $valueId
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
@@ -1683,10 +1407,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueInstant(): null|FHIRInstant
     {
@@ -1702,11 +1423,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $valueInstant
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $valueInstant): self
     {
@@ -1727,10 +1444,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -1743,11 +1457,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -1768,10 +1478,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueInteger64(): null|FHIRInteger64
     {
@@ -1784,11 +1491,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $valueInteger64
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueInteger64(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $valueInteger64): self
     {
@@ -1813,10 +1516,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueMarkdown(): null|FHIRMarkdown
     {
@@ -1833,11 +1533,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $valueMarkdown
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $valueMarkdown): self
     {
@@ -1859,10 +1555,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueOid(): null|FHIROid
     {
@@ -1876,11 +1569,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid $valueOid
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueOid(null|string|FHIROidPrimitive|FHIROid $valueOid): self
     {
@@ -1901,10 +1590,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValuePositiveInt(): null|FHIRPositiveInt
     {
@@ -1917,11 +1603,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $valuePositiveInt
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $valuePositiveInt): self
     {
@@ -1942,10 +1624,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueString(): null|FHIRString
     {
@@ -1958,11 +1637,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -1982,10 +1657,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -1997,11 +1669,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $valueTime
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -2022,10 +1690,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -2038,11 +1703,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $valueUnsignedInt): self
     {
@@ -2063,10 +1724,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -2079,11 +1737,7 @@ class FHIRExtension extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -2104,10 +1758,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueUrl(): null|FHIRUrl
     {
@@ -2120,11 +1771,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $valueUrl
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueUrl(null|string|FHIRUrlPrimitive|FHIRUrl $valueUrl): self
     {
@@ -2146,10 +1793,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueUuid(): null|FHIRUuid
     {
@@ -2163,11 +1807,7 @@ class FHIRExtension extends FHIRDataType
      * the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid $valueUuid
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueUuid(null|string|FHIRUuidPrimitive|FHIRUuid $valueUuid): self
     {
@@ -2193,10 +1833,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueAddress(): null|FHIRAddress
     {
@@ -2214,11 +1851,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $valueAddress
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueAddress(null|FHIRAddress $valueAddress): self
     {
@@ -2236,10 +1869,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueAge(): null|FHIRAge
     {
@@ -2252,11 +1882,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $valueAge
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueAge(null|FHIRAge $valueAge): self
     {
@@ -2275,10 +1901,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueAnnotation(): null|FHIRAnnotation
     {
@@ -2292,11 +1915,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $valueAnnotation
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueAnnotation(null|FHIRAnnotation $valueAnnotation): self
     {
@@ -2314,10 +1933,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -2330,11 +1946,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -2353,10 +1965,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -2370,11 +1979,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -2393,10 +1998,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueCodeableReference(): null|FHIRCodeableReference
     {
@@ -2410,11 +2012,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $valueCodeableReference
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueCodeableReference(null|FHIRCodeableReference $valueCodeableReference): self
     {
@@ -2432,10 +2030,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -2448,11 +2043,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -2471,10 +2062,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueContactPoint(): null|FHIRContactPoint
     {
@@ -2488,11 +2076,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $valueContactPoint
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueContactPoint(null|FHIRContactPoint $valueContactPoint): self
     {
@@ -2512,10 +2096,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueCount(): null|FHIRCount
     {
@@ -2530,11 +2111,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount $valueCount
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueCount(null|FHIRCount $valueCount): self
     {
@@ -2552,10 +2129,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueDistance(): null|FHIRDistance
     {
@@ -2568,11 +2142,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance $valueDistance
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueDistance(null|FHIRDistance $valueDistance): self
     {
@@ -2590,10 +2160,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueDuration(): null|FHIRDuration
     {
@@ -2606,11 +2173,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
@@ -2630,10 +2193,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueHumanName(): null|FHIRHumanName
     {
@@ -2648,11 +2208,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $valueHumanName
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueHumanName(null|FHIRHumanName $valueHumanName): self
     {
@@ -2671,10 +2227,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueIdentifier(): null|FHIRIdentifier
     {
@@ -2688,11 +2241,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $valueIdentifier
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
@@ -2710,10 +2259,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueMoney(): null|FHIRMoney
     {
@@ -2726,11 +2272,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $valueMoney
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueMoney(null|FHIRMoney $valueMoney): self
     {
@@ -2748,10 +2290,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -2764,11 +2303,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -2788,10 +2323,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -2806,11 +2338,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -2828,10 +2356,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -2844,11 +2369,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -2867,10 +2388,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueRatio(): null|FHIRRatio
     {
@@ -2884,11 +2402,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $valueRatio
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -2906,10 +2420,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueRatioRange(): null|FHIRRatioRange
     {
@@ -2922,11 +2433,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $valueRatioRange
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueRatioRange(null|FHIRRatioRange $valueRatioRange): self
     {
@@ -2944,10 +2451,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -2960,11 +2464,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -2983,10 +2483,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueSampledData(): null|FHIRSampledData
     {
@@ -3000,11 +2497,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData $valueSampledData
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -3026,10 +2519,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueSignature(): null|FHIRSignature
     {
@@ -3046,11 +2536,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature $valueSignature
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueSignature(null|FHIRSignature $valueSignature): self
     {
@@ -3072,10 +2558,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueTiming(): null|FHIRTiming
     {
@@ -3092,11 +2575,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $valueTiming
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueTiming(null|FHIRTiming $valueTiming): self
     {
@@ -3114,10 +2593,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueContactDetail(): null|FHIRContactDetail
     {
@@ -3130,11 +2606,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $valueContactDetail
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueContactDetail(null|FHIRContactDetail $valueContactDetail): self
     {
@@ -3153,10 +2625,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueDataRequirement(): null|FHIRDataRequirement
     {
@@ -3170,11 +2639,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement $valueDataRequirement
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueDataRequirement(null|FHIRDataRequirement $valueDataRequirement): self
     {
@@ -3194,10 +2659,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueExpression(): null|FHIRExpression
     {
@@ -3212,11 +2674,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $valueExpression
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueExpression(null|FHIRExpression $valueExpression): self
     {
@@ -3236,10 +2694,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueParameterDefinition(): null|FHIRParameterDefinition
     {
@@ -3254,11 +2709,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition $valueParameterDefinition
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueParameterDefinition(null|FHIRParameterDefinition $valueParameterDefinition): self
     {
@@ -3277,10 +2728,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueRelatedArtifact(): null|FHIRRelatedArtifact
     {
@@ -3294,11 +2742,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $valueRelatedArtifact
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueRelatedArtifact(null|FHIRRelatedArtifact $valueRelatedArtifact): self
     {
@@ -3317,10 +2761,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueTriggerDefinition(): null|FHIRTriggerDefinition
     {
@@ -3334,11 +2775,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition $valueTriggerDefinition
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueTriggerDefinition(null|FHIRTriggerDefinition $valueTriggerDefinition): self
     {
@@ -3359,10 +2796,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueUsageContext(): null|FHIRUsageContext
     {
@@ -3378,11 +2812,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $valueUsageContext
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueUsageContext(null|FHIRUsageContext $valueUsageContext): self
     {
@@ -3400,10 +2830,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueAvailability(): null|FHIRAvailability
     {
@@ -3416,11 +2843,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability $valueAvailability
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueAvailability(null|FHIRAvailability $valueAvailability): self
     {
@@ -3439,10 +2862,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueExtendedContactDetail(): null|FHIRExtendedContactDetail
     {
@@ -3456,11 +2876,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $valueExtendedContactDetail
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueExtendedContactDetail(null|FHIRExtendedContactDetail $valueExtendedContactDetail): self
     {
@@ -3478,10 +2894,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueDosage(): null|FHIRDosage
     {
@@ -3494,11 +2907,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage $valueDosage
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueDosage(null|FHIRDosage $valueDosage): self
     {
@@ -3518,10 +2927,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta
+     * [Extensibility](extensibility.html) for a list).
      */
     public function getValueMeta(): null|FHIRMeta
     {
@@ -3536,11 +2942,7 @@ class FHIRExtension extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Value of extension - must be one of a constrained set of the data types (see
-     * [Extensibility](extensibility.html) for a list). (choose any one of the
-     * elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $valueMeta
-     * @return static
+     * [Extensibility](extensibility.html) for a list).
      */
     public function setValueMeta(null|FHIRMeta $valueMeta): self
     {
@@ -3552,18 +2954,11 @@ class FHIRExtension extends FHIRDataType
         return $this;
     }
 
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive
-     */
     public function getUrl(): null|FHIRUriPrimitive
     {
         return $this->url ?? null;
     }
 
-    /**
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive $url
-     * @return static
-     */
     public function setUrl(null|string|FHIRUriPrimitive $url): self
     {
         if (null === $url) {
@@ -3579,10 +2974,7 @@ class FHIRExtension extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -3903,10 +3295,6 @@ class FHIRExtension extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -4296,10 +3684,7 @@ class FHIRExtension extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

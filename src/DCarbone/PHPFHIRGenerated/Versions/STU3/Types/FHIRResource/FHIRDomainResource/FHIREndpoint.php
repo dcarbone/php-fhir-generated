@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -89,7 +87,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -173,8 +170,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * active | suspended | error | off | test.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIREndpointStatus
      */
     #[FHIREndpointStatus]
     protected FHIREndpointStatus $status;
@@ -186,8 +181,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * A coded value that represents the technical details of the usage of this
      * endpoint, such as what WSDLs should be used in what way. (e.g.
      * XDS.b/DICOM/cds-hook).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $connectionType;
@@ -197,8 +190,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A friendly name that this endpoint can be referred to with.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -210,8 +201,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * The organization that manages this endpoint (even if technically another
      * organisation is hosting this in the cloud, it is the organisation associated
      * with the data).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $managingOrganization;
@@ -234,8 +223,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval during which the endpoint is expected to be operational.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -272,8 +259,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The uri that describes the actual end-point to connect to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $address;
@@ -292,24 +277,13 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
     /* constructor.php:61 */
     /**
      * FHIREndpoint Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIREndpointStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIREndpointStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $connectionType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $managingOrganization
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint> $contact
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $payloadType
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode> $payloadMimeType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $address
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> $header
      * @param null|string[] $fhirComments
      */
@@ -424,9 +398,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifier for the organization that is used to identify the endpoint across
      * multiple disparate systems.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -444,9 +415,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifier for the organization that is used to identify the endpoint across
      * multiple disparate systems.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -463,8 +431,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * active | suspended | error | off | test.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIREndpointStatus
      */
     public function getStatus(): null|FHIREndpointStatus
     {
@@ -476,9 +442,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * active | suspended | error | off | test.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIREndpointStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIREndpointStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIREndpointStatusList|FHIREndpointStatus $status): self
     {
@@ -501,8 +464,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * A coded value that represents the technical details of the usage of this
      * endpoint, such as what WSDLs should be used in what way. (e.g.
      * XDS.b/DICOM/cds-hook).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding
      */
     public function getConnectionType(): null|FHIRCoding
     {
@@ -517,9 +478,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * A coded value that represents the technical details of the usage of this
      * endpoint, such as what WSDLs should be used in what way. (e.g.
      * XDS.b/DICOM/cds-hook).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $connectionType
-     * @return static
      */
     public function setConnectionType(null|FHIRCoding $connectionType): self
     {
@@ -537,8 +495,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A friendly name that this endpoint can be referred to with.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -551,9 +507,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A friendly name that this endpoint can be referred to with.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -576,8 +529,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * The organization that manages this endpoint (even if technically another
      * organisation is hosting this in the cloud, it is the organisation associated
      * with the data).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getManagingOrganization(): null|FHIRReference
     {
@@ -592,9 +543,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * The organization that manages this endpoint (even if technically another
      * organisation is hosting this in the cloud, it is the organisation associated
      * with the data).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $managingOrganization
-     * @return static
      */
     public function setManagingOrganization(null|FHIRReference $managingOrganization): self
     {
@@ -641,9 +589,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint $contact
-     * @return static
      */
     public function addContact(FHIRContactPoint $contact): self
     {
@@ -662,9 +607,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint ...$contact
-     * @return static
      */
     public function setContact(FHIRContactPoint ...$contact): self
     {
@@ -682,8 +624,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval during which the endpoint is expected to be operational.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -696,9 +636,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval during which the endpoint is expected to be operational.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -745,9 +682,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The payload type describes the acceptable content that can be communicated on
      * the endpoint.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $payloadType
-     * @return static
      */
     public function addPayloadType(FHIRCodeableConcept $payloadType): self
     {
@@ -766,9 +700,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The payload type describes the acceptable content that can be communicated on
      * the endpoint.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$payloadType
-     * @return static
      */
     public function setPayloadType(FHIRCodeableConcept ...$payloadType): self
     {
@@ -817,9 +748,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * The mime type to send the payload in - e.g. application/fhir+xml,
      * application/fhir+json. If the mime type is not specified, then the sender could
      * send any content (including no content depending on the connectionType).
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $payloadMimeType
-     * @return static
      */
     public function addPayloadMimeType(string|FHIRCodePrimitive|FHIRCode $payloadMimeType): self
     {
@@ -842,9 +770,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * The mime type to send the payload in - e.g. application/fhir+xml,
      * application/fhir+json. If the mime type is not specified, then the sender could
      * send any content (including no content depending on the connectionType).
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode ...$payloadMimeType
-     * @return static
      */
     public function setPayloadMimeType(string|FHIRCodePrimitive|FHIRCode ...$payloadMimeType): self
     {
@@ -869,8 +794,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The uri that describes the actual end-point to connect to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getAddress(): null|FHIRUri
     {
@@ -883,9 +806,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The uri that describes the actual end-point to connect to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $address
-     * @return static
      */
     public function setAddress(null|string|FHIRUriPrimitive|FHIRUri $address): self
     {
@@ -931,9 +851,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional headers / information to send as part of the notification.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $header
-     * @return static
      */
     public function addHeader(string|FHIRStringPrimitive|FHIRString $header): self
     {
@@ -953,9 +870,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional headers / information to send as part of the notification.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString ...$header
-     * @return static
      */
     public function setHeader(string|FHIRStringPrimitive|FHIRString ...$header): self
     {
@@ -976,10 +890,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIREndpoint $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIREndpoint
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1103,11 +1014,6 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1219,10 +1125,7 @@ class FHIREndpoint extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIREndpoint $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIREndpoint
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

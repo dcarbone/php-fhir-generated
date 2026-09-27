@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -119,8 +118,6 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The definition of the search parameter that describes this part.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $definition;
@@ -131,8 +128,6 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      *
      * A sub-expression that defines how to extract values for this component from the
      * output of the main SearchParameter.expression.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $expression;
@@ -141,10 +136,7 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
     /**
      * FHIRSearchParameterComponent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $definition
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $expression
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -179,8 +171,6 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The definition of the search parameter that describes this part.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getDefinition(): null|FHIRReference
     {
@@ -193,9 +183,6 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The definition of the search parameter that describes this part.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $definition
-     * @return static
      */
     public function setDefinition(null|FHIRReference $definition): self
     {
@@ -214,8 +201,6 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      *
      * A sub-expression that defines how to extract values for this component from the
      * output of the main SearchParameter.expression.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getExpression(): null|FHIRString
     {
@@ -229,9 +214,6 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
      *
      * A sub-expression that defines how to extract values for this component from the
      * output of the main SearchParameter.expression.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $expression
-     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -248,10 +230,7 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -305,10 +284,6 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -331,10 +306,7 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

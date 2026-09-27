@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -153,7 +153,6 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
     /**
      * FHIRBodyStructureDistanceFromLandmark Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $device
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity> $value
@@ -218,9 +217,6 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An instrument, tool, analyzer, etc. used in the measurement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $device
-     * @return static
      */
     public function addDevice(FHIRCodeableReference $device): self
     {
@@ -238,9 +234,6 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An instrument, tool, analyzer, etc. used in the measurement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$device
-     * @return static
      */
     public function setDevice(FHIRCodeableReference ...$device): self
     {
@@ -287,9 +280,6 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measured distance (e.g., in cm) from a body landmark.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $value
-     * @return static
      */
     public function addValue(FHIRQuantity $value): self
     {
@@ -308,9 +298,6 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The measured distance (e.g., in cm) from a body landmark.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$value
-     * @return static
      */
     public function setValue(FHIRQuantity ...$value): self
     {
@@ -324,10 +311,7 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -373,10 +357,6 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -398,10 +378,7 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

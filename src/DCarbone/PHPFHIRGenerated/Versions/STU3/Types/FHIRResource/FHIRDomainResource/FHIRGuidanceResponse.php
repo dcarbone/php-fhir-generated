@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -89,7 +87,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Version;
@@ -162,8 +159,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * The id of the request associated with this response. If an id was given as part
      * of the request, it will be reproduced here to enable the requester to more
      * easily identify the response in a multi-request scenario.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $requestId;
@@ -173,8 +168,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -184,8 +177,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the knowledge module that was invoked.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $module;
@@ -201,8 +192,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * determines that a potentially more accurate response could be provided if more
      * data was available, the status will be data-requested, and the response will
      * contain a description of the additional requested information.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRGuidanceResponseStatus
      */
     #[FHIRGuidanceResponseStatus]
     protected FHIRGuidanceResponseStatus $status;
@@ -212,8 +201,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient for which the request was processed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -224,8 +211,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      *
      * Allows the context of the guidance response to be provided if available. In a
      * service context, this would likely be unavailable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $context;
@@ -238,8 +223,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the guidance response was processed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -249,8 +232,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the device that performed the guidance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $performer;
@@ -264,8 +245,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * parameter to the evaluation and echoed by the service, although for some use
      * cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reasonCodeableConcept;
@@ -278,8 +257,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * parameter to the evaluation and echoed by the service, although for some use
      * cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $reasonReference;
@@ -318,8 +295,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * are returned as part of the operation result. However, modules may define
      * specific outputs that would be returned as the result of the evaluation, and
      * these would be returned in this element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $outputParameters;
@@ -329,8 +304,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actions, if any, produced by the evaluation of the artifact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $result;
@@ -353,28 +326,11 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
     /* constructor.php:61 */
     /**
      * FHIRGuidanceResponse Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $requestId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $module
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRGuidanceResponseStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRGuidanceResponseStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $context
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $occurrenceDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $performer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $reasonReference
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $evaluationMessage
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $outputParameters
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $result
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement> $dataRequirement
      * @param null|string[] $fhirComments
      */
@@ -483,8 +439,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * The id of the request associated with this response. If an id was given as part
      * of the request, it will be reproduced here to enable the requester to more
      * easily identify the response in a multi-request scenario.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId
      */
     public function getRequestId(): null|FHIRId
     {
@@ -502,9 +456,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * The id of the request associated with this response. If an id was given as part
      * of the request, it will be reproduced here to enable the requester to more
      * easily identify the response in a multi-request scenario.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $requestId
-     * @return static
      */
     public function setRequestId(null|string|FHIRIdPrimitive|FHIRId $requestId): self
     {
@@ -525,8 +476,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -539,9 +488,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -559,8 +505,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the knowledge module that was invoked.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getModule(): null|FHIRReference
     {
@@ -573,9 +517,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the knowledge module that was invoked.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $module
-     * @return static
      */
     public function setModule(null|FHIRReference $module): self
     {
@@ -599,8 +540,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * determines that a potentially more accurate response could be provided if more
      * data was available, the status will be data-requested, and the response will
      * contain a description of the additional requested information.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRGuidanceResponseStatus
      */
     public function getStatus(): null|FHIRGuidanceResponseStatus
     {
@@ -619,9 +558,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * determines that a potentially more accurate response could be provided if more
      * data was available, the status will be data-requested, and the response will
      * contain a description of the additional requested information.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRGuidanceResponseStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRGuidanceResponseStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRGuidanceResponseStatusList|FHIRGuidanceResponseStatus $status): self
     {
@@ -642,8 +578,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient for which the request was processed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -656,9 +590,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient for which the request was processed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -677,8 +608,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      *
      * Allows the context of the guidance response to be provided if available. In a
      * service context, this would likely be unavailable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getContext(): null|FHIRReference
     {
@@ -692,9 +621,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      *
      * Allows the context of the guidance response to be provided if available. In a
      * service context, this would likely be unavailable.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $context
-     * @return static
      */
     public function setContext(null|FHIRReference $context): self
     {
@@ -715,8 +641,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the guidance response was processed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -732,9 +656,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the guidance response was processed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $occurrenceDateTime
-     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -755,8 +676,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the device that performed the guidance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getPerformer(): null|FHIRReference
     {
@@ -769,9 +688,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the device that performed the guidance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $performer
-     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -793,8 +709,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * parameter to the evaluation and echoed by the service, although for some use
      * cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -811,9 +725,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * parameter to the evaluation and echoed by the service, although for some use
      * cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
-     * @return static
      */
     public function setReasonCodeableConcept(null|FHIRCodeableConcept $reasonCodeableConcept): self
     {
@@ -834,8 +745,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * parameter to the evaluation and echoed by the service, although for some use
      * cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getReasonReference(): null|FHIRReference
     {
@@ -851,9 +760,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * parameter to the evaluation and echoed by the service, although for some use
      * cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $reasonReference
-     * @return static
      */
     public function setReasonReference(null|FHIRReference $reasonReference): self
     {
@@ -898,9 +804,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -918,9 +821,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -967,9 +867,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * Messages resulting from the evaluation of the artifact or artifacts. As part of
      * evaluating the request, the engine may produce informational or warning
      * messages. These messages will be provided by this element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $evaluationMessage
-     * @return static
      */
     public function addEvaluationMessage(FHIRReference $evaluationMessage): self
     {
@@ -988,9 +885,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * Messages resulting from the evaluation of the artifact or artifacts. As part of
      * evaluating the request, the engine may produce informational or warning
      * messages. These messages will be provided by this element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$evaluationMessage
-     * @return static
      */
     public function setEvaluationMessage(FHIRReference ...$evaluationMessage): self
     {
@@ -1012,8 +906,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * are returned as part of the operation result. However, modules may define
      * specific outputs that would be returned as the result of the evaluation, and
      * these would be returned in this element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getOutputParameters(): null|FHIRReference
     {
@@ -1030,9 +922,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * are returned as part of the operation result. However, modules may define
      * specific outputs that would be returned as the result of the evaluation, and
      * these would be returned in this element.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $outputParameters
-     * @return static
      */
     public function setOutputParameters(null|FHIRReference $outputParameters): self
     {
@@ -1050,8 +939,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actions, if any, produced by the evaluation of the artifact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getResult(): null|FHIRReference
     {
@@ -1064,9 +951,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actions, if any, produced by the evaluation of the artifact.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $result
-     * @return static
      */
     public function setResult(null|FHIRReference $result): self
     {
@@ -1117,9 +1001,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * additional information would potentially result in a more accurate response,
      * this element will a description of the data required in order to proceed with
      * the evaluation. A subsequent request to the service should include this data.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement $dataRequirement
-     * @return static
      */
     public function addDataRequirement(FHIRDataRequirement $dataRequirement): self
     {
@@ -1140,9 +1021,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
      * additional information would potentially result in a more accurate response,
      * this element will a description of the data required in order to proceed with
      * the evaluation. A subsequent request to the service should include this data.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement ...$dataRequirement
-     * @return static
      */
     public function setDataRequirement(FHIRDataRequirement ...$dataRequirement): self
     {
@@ -1156,10 +1034,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1291,11 +1166,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1423,10 +1293,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

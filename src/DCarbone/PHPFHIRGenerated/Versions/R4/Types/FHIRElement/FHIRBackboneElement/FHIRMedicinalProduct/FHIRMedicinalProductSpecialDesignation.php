@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -133,8 +133,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of special designation, e.g. orphan drug, minor use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -145,8 +143,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended use of the product, e.g. prevention, treatment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $intendedUse;
@@ -157,8 +153,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the medicinal use applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $indicationCodeableConcept;
@@ -168,8 +162,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the medicinal use applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $indicationReference;
@@ -180,8 +172,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example granted, pending, expired or withdrawn.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -194,8 +184,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the designation was granted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -206,8 +194,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Animal species for which this applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $species;
@@ -216,16 +202,8 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
     /**
      * FHIRMedicinalProductSpecialDesignation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $intendedUse
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $indicationReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $species
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -311,9 +289,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the designation, or procedure number.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -331,9 +306,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the designation, or procedure number.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -352,8 +324,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of special designation, e.g. orphan drug, minor use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -367,9 +337,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of special designation, e.g. orphan drug, minor use.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -388,8 +355,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended use of the product, e.g. prevention, treatment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getIntendedUse(): null|FHIRCodeableConcept
     {
@@ -403,9 +368,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended use of the product, e.g. prevention, treatment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $intendedUse
-     * @return static
      */
     public function setIntendedUse(null|FHIRCodeableConcept $intendedUse): self
     {
@@ -424,8 +386,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the medicinal use applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getIndicationCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -439,9 +399,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the medicinal use applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
-     * @return static
      */
     public function setIndicationCodeableConcept(null|FHIRCodeableConcept $indicationCodeableConcept): self
     {
@@ -459,8 +416,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the medicinal use applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getIndicationReference(): null|FHIRReference
     {
@@ -473,9 +428,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the medicinal use applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $indicationReference
-     * @return static
      */
     public function setIndicationReference(null|FHIRReference $indicationReference): self
     {
@@ -494,8 +446,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example granted, pending, expired or withdrawn.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -509,9 +459,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example granted, pending, expired or withdrawn.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -532,8 +479,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the designation was granted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -549,9 +494,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the designation was granted.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -573,8 +515,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Animal species for which this applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSpecies(): null|FHIRCodeableConcept
     {
@@ -588,9 +528,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Animal species for which this applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $species
-     * @return static
      */
     public function setSpecies(null|FHIRCodeableConcept $species): self
     {
@@ -604,10 +541,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -673,10 +607,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -731,10 +661,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -139,8 +139,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      *
      * The parameter whose value is to be tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $measure;
@@ -158,8 +156,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
      * low value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $detailQuantity;
@@ -175,8 +171,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
      * low value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $detailRange;
@@ -193,8 +187,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
      * low value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $detailCodeableConcept;
@@ -205,8 +197,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      *
      * Indicates the timeframe after the start of the goal in which the goal should be
      * met.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $due;
@@ -215,13 +205,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
     /**
      * FHIRPlanDefinitionTarget Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $measure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $detailQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $detailRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $due
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -270,8 +254,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      *
      * The parameter whose value is to be tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMeasure(): null|FHIRCodeableConcept
     {
@@ -286,9 +268,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      *
      * The parameter whose value is to be tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $measure
-     * @return static
      */
     public function setMeasure(null|FHIRCodeableConcept $measure): self
     {
@@ -314,8 +293,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
      * low value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getDetailQuantity(): null|FHIRQuantity
     {
@@ -336,9 +313,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
      * low value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $detailQuantity
-     * @return static
      */
     public function setDetailQuantity(null|FHIRQuantity $detailQuantity): self
     {
@@ -362,8 +336,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
      * low value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange
      */
     public function getDetailRange(): null|FHIRRange
     {
@@ -382,9 +354,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
      * low value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $detailRange
-     * @return static
      */
     public function setDetailRange(null|FHIRRange $detailRange): self
     {
@@ -409,8 +378,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
      * low value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDetailCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -430,9 +397,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * achieved at any value at or below the high value. Similarly, if the high value
      * is missing, it indicates that the goal is achieved at any value at or above the
      * low value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
-     * @return static
      */
     public function setDetailCodeableConcept(null|FHIRCodeableConcept $detailCodeableConcept): self
     {
@@ -451,8 +415,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      *
      * Indicates the timeframe after the start of the goal in which the goal should be
      * met.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDue(): null|FHIRDuration
     {
@@ -466,9 +428,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      *
      * Indicates the timeframe after the start of the goal in which the goal should be
      * met.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $due
-     * @return static
      */
     public function setDue(null|FHIRDuration $due): self
     {
@@ -482,10 +441,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -537,10 +493,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -573,10 +525,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit;
@@ -105,7 +103,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomain
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -157,8 +154,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the sequence shall be specified based on a controlled vocabulary.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $sequenceType;
@@ -171,8 +166,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * bonds shall be described. Subunits would be strands of nucleic acids that are
      * tightly associated typically through Watson-Crick base pairing. NOTE: If not
      * specified in the reference source, the assumption is that there is 1 subunit.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $numberOfSubunits;
@@ -185,8 +178,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * RNA or DNA. The number associated with the subunit followed by the number
      * associated to the residue shall be specified in increasing order. The underscore
      * “” shall be used as separator as follows: “Subunitnumber Residue”.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $areaOfHybridisation;
@@ -197,8 +188,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * (TBC).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $oligoNucleotideType;
@@ -220,18 +209,9 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
     /* constructor.php:61 */
     /**
      * FHIRSubstanceNucleicAcid Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sequenceType
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $numberOfSubunits
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $areaOfHybridisation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $oligoNucleotideType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit> $subunit
      * @param null|string[] $fhirComments
      */
@@ -296,8 +276,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the sequence shall be specified based on a controlled vocabulary.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getSequenceType(): null|FHIRCodeableConcept
     {
@@ -311,9 +289,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the sequence shall be specified based on a controlled vocabulary.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sequenceType
-     * @return static
      */
     public function setSequenceType(null|FHIRCodeableConcept $sequenceType): self
     {
@@ -334,8 +309,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * bonds shall be described. Subunits would be strands of nucleic acids that are
      * tightly associated typically through Watson-Crick base pairing. NOTE: If not
      * specified in the reference source, the assumption is that there is 1 subunit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     public function getNumberOfSubunits(): null|FHIRInteger
     {
@@ -351,9 +324,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * bonds shall be described. Subunits would be strands of nucleic acids that are
      * tightly associated typically through Watson-Crick base pairing. NOTE: If not
      * specified in the reference source, the assumption is that there is 1 subunit.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $numberOfSubunits
-     * @return static
      */
     public function setNumberOfSubunits(null|string|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits): self
     {
@@ -377,8 +347,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * RNA or DNA. The number associated with the subunit followed by the number
      * associated to the residue shall be specified in increasing order. The underscore
      * “” shall be used as separator as follows: “Subunitnumber Residue”.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getAreaOfHybridisation(): null|FHIRString
     {
@@ -394,9 +362,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * RNA or DNA. The number associated with the subunit followed by the number
      * associated to the residue shall be specified in increasing order. The underscore
      * “” shall be used as separator as follows: “Subunitnumber Residue”.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $areaOfHybridisation
-     * @return static
      */
     public function setAreaOfHybridisation(null|string|FHIRStringPrimitive|FHIRString $areaOfHybridisation): self
     {
@@ -418,8 +383,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * (TBC).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getOligoNucleotideType(): null|FHIRCodeableConcept
     {
@@ -433,9 +396,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * (TBC).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $oligoNucleotideType
-     * @return static
      */
     public function setOligoNucleotideType(null|FHIRCodeableConcept $oligoNucleotideType): self
     {
@@ -484,9 +444,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * Subunits are listed in order of decreasing length; sequences of the same length
      * will be ordered by molecular weight; subunits that have identical sequences will
      * be repeated multiple times.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit $subunit
-     * @return static
      */
     public function addSubunit(FHIRSubstanceNucleicAcidSubunit $subunit): self
     {
@@ -506,9 +463,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * Subunits are listed in order of decreasing length; sequences of the same length
      * will be ordered by molecular weight; subunits that have identical sequences will
      * be repeated multiple times.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit ...$subunit
-     * @return static
      */
     public function setSubunit(FHIRSubstanceNucleicAcidSubunit ...$subunit): self
     {
@@ -522,10 +476,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSubstanceNucleicAcid $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSubstanceNucleicAcid
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -629,11 +580,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -702,10 +648,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSubstanceNucleicAcid $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSubstanceNucleicAcid
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,8 +135,6 @@ class FHIRTiming extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of rules that describe when the event should occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming\FHIRTimingRepeat
      */
     #[FHIRTimingRepeat]
     protected FHIRTimingRepeat $repeat;
@@ -148,8 +146,6 @@ class FHIRTiming extends FHIRElement
      *
      * A code for the timing pattern. Some codes such as BID are ubiquitous, but many
      * institutions define their own additional codes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -158,10 +154,7 @@ class FHIRTiming extends FHIRElement
     /**
      * FHIRTiming Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<string>|iterable<\DateTimeInterface>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime> $event
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming\FHIRTimingRepeat $repeat
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -229,9 +222,6 @@ class FHIRTiming extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies specific times when the event occurs.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $event
-     * @return static
      */
     public function addEvent(string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $event): self
     {
@@ -254,9 +244,6 @@ class FHIRTiming extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies specific times when the event occurs.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime ...$event
-     * @return static
      */
     public function setEvent(string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime ...$event): self
     {
@@ -284,8 +271,6 @@ class FHIRTiming extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of rules that describe when the event should occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming\FHIRTimingRepeat
      */
     public function getRepeat(): null|FHIRTimingRepeat
     {
@@ -301,9 +286,6 @@ class FHIRTiming extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of rules that describe when the event should occur.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming\FHIRTimingRepeat $repeat
-     * @return static
      */
     public function setRepeat(null|FHIRTimingRepeat $repeat): self
     {
@@ -323,8 +305,6 @@ class FHIRTiming extends FHIRElement
      *
      * A code for the timing pattern. Some codes such as BID are ubiquitous, but many
      * institutions define their own additional codes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -339,9 +319,6 @@ class FHIRTiming extends FHIRElement
      *
      * A code for the timing pattern. Some codes such as BID are ubiquitous, but many
      * institutions define their own additional codes.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -355,10 +332,7 @@ class FHIRTiming extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -404,10 +378,6 @@ class FHIRTiming extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -432,10 +402,7 @@ class FHIRTiming extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

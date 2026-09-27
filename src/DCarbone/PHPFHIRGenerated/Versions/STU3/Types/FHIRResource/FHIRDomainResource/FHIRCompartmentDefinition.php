@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -95,7 +93,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -192,8 +189,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * compartment definition is (or will be) published. The URL SHOULD include the
      * major version of the compartment definition. For more information see [Technical
      * and Business Versions](resource.html#versions).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -205,8 +200,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * A natural language name identifying the compartment definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -216,8 +209,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the compartment definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -226,8 +217,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * The status of this compartment definition. Enables tracking the life-cycle of
      * the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -238,8 +227,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * A boolean value to indicate that this compartment definition is authored for
      * testing purposes (or education/evaluation/marketing), and is not intended to be
      * used for genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -255,8 +242,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * The date must change if and when the business version changes and it must change
      * if the status code changes. In addition, it should change when the substantive
      * content of the compartment definition changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -267,8 +252,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * The name of the individual or organization that published the compartment
      * definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -297,8 +280,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * A free text natural language description of the compartment definition from a
      * consumer's perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -315,8 +296,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * Explaination of why this compartment definition is needed and why it has been
      * designed as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -354,8 +333,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which compartment this definition describes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCompartmentType
      */
     #[FHIRCompartmentType]
     protected FHIRCompartmentType $code;
@@ -364,8 +341,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the search syntax is supported,.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $search;
@@ -382,28 +357,12 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
     /* constructor.php:61 */
     /**
      * FHIRCompartmentDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $url
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $purpose
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRCompartmentTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCompartmentType $code
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $search
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource> $resource
      * @param null|string[] $fhirComments
      */
@@ -512,8 +471,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * compartment definition is (or will be) published. The URL SHOULD include the
      * major version of the compartment definition. For more information see [Technical
      * and Business Versions](resource.html#versions).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -531,9 +488,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * compartment definition is (or will be) published. The URL SHOULD include the
      * major version of the compartment definition. For more information see [Technical
      * and Business Versions](resource.html#versions).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -556,8 +510,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * A natural language name identifying the compartment definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -572,9 +524,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * A natural language name identifying the compartment definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -595,8 +544,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the compartment definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -609,9 +556,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the compartment definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -631,8 +575,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * The status of this compartment definition. Enables tracking the life-cycle of
      * the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -644,9 +586,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * The status of this compartment definition. Enables tracking the life-cycle of
      * the content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -668,8 +607,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * A boolean value to indicate that this compartment definition is authored for
      * testing purposes (or education/evaluation/marketing), and is not intended to be
      * used for genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -683,9 +620,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * A boolean value to indicate that this compartment definition is authored for
      * testing purposes (or education/evaluation/marketing), and is not intended to be
      * used for genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -712,8 +646,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * The date must change if and when the business version changes and it must change
      * if the status code changes. In addition, it should change when the substantive
      * content of the compartment definition changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -732,9 +664,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * The date must change if and when the business version changes and it must change
      * if the status code changes. In addition, it should change when the substantive
      * content of the compartment definition changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -756,8 +685,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * The name of the individual or organization that published the compartment
      * definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -771,9 +698,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * The name of the individual or organization that published the compartment
      * definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -821,9 +745,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -841,9 +762,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -868,8 +786,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * A free text natural language description of the compartment definition from a
      * consumer's perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -889,9 +805,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * A free text natural language description of the compartment definition from a
      * consumer's perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -919,8 +832,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * Explaination of why this compartment definition is needed and why it has been
      * designed as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -940,9 +851,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * Explaination of why this compartment definition is needed and why it has been
      * designed as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -998,9 +906,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate compartment definition instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1022,9 +927,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate compartment definition instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1071,9 +973,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * A legal or geographic region in which the compartment definition is intended to
      * be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1092,9 +991,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      *
      * A legal or geographic region in which the compartment definition is intended to
      * be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1111,8 +1007,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which compartment this definition describes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCompartmentType
      */
     public function getCode(): null|FHIRCompartmentType
     {
@@ -1124,9 +1018,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which compartment this definition describes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRCompartmentTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCompartmentType $code
-     * @return static
      */
     public function setCode(null|string|FHIRCompartmentTypeList|FHIRCompartmentType $code): self
     {
@@ -1146,8 +1037,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the search syntax is supported,.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getSearch(): null|FHIRBoolean
     {
@@ -1159,9 +1048,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the search syntax is supported,.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $search
-     * @return static
      */
     public function setSearch(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $search): self
     {
@@ -1203,9 +1089,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * A compartment definition that defines how resources are accessed on a server.
      *
      * Information about how a resource is related to the compartment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource $resource
-     * @return static
      */
     public function addResource(FHIRCompartmentDefinitionResource $resource): self
     {
@@ -1220,9 +1103,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
      * A compartment definition that defines how resources are accessed on a server.
      *
      * Information about how a resource is related to the compartment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource ...$resource
-     * @return static
      */
     public function setResource(FHIRCompartmentDefinitionResource ...$resource): self
     {
@@ -1236,10 +1116,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRCompartmentDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRCompartmentDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1435,11 +1312,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1609,10 +1481,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements VersionCon
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRCompartmentDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRCompartmentDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

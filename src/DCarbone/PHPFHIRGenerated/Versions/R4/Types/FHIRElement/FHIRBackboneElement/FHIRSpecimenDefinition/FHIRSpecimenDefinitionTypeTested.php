@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -129,8 +128,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Primary of secondary specimen.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $isDerived;
@@ -141,8 +138,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen conditioned for testing expected by lab.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -151,8 +146,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preference for this type of conditioned specimen.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSpecimenContainedPreference
      */
     #[FHIRSpecimenContainedPreference]
     protected FHIRSpecimenContainedPreference $preference;
@@ -160,8 +153,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * A kind of specimen with associated set of requirements.
      *
      * The specimen's container.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
      */
     #[FHIRSpecimenDefinitionContainer]
     protected FHIRSpecimenDefinitionContainer $container;
@@ -172,8 +163,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Requirements for delivery and special handling of this kind of conditioned
      * specimen.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $requirement;
@@ -184,8 +173,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * The usual time that a specimen of this kind is retained after the ordered tests
      * are completed, for the purpose of additional testing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $retentionTime;
@@ -216,14 +203,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     /**
      * FHIRSpecimenDefinitionTypeTested Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $isDerived
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSpecimenContainedPreferenceList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSpecimenContainedPreference $preference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer $container
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $requirement
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $retentionTime
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $rejectionCriterion
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling> $handling
      * @param null|string[] $fhirComments
@@ -283,8 +263,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Primary of secondary specimen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getIsDerived(): null|FHIRBoolean
     {
@@ -296,9 +274,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Primary of secondary specimen.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $isDerived
-     * @return static
      */
     public function setIsDerived(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDerived): self
     {
@@ -320,8 +295,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen conditioned for testing expected by lab.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -335,9 +308,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen conditioned for testing expected by lab.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -354,8 +324,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preference for this type of conditioned specimen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSpecimenContainedPreference
      */
     public function getPreference(): null|FHIRSpecimenContainedPreference
     {
@@ -367,9 +335,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preference for this type of conditioned specimen.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSpecimenContainedPreferenceList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSpecimenContainedPreference $preference
-     * @return static
      */
     public function setPreference(null|string|FHIRSpecimenContainedPreferenceList|FHIRSpecimenContainedPreference $preference): self
     {
@@ -388,8 +353,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * A kind of specimen with associated set of requirements.
      *
      * The specimen's container.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
      */
     public function getContainer(): null|FHIRSpecimenDefinitionContainer
     {
@@ -400,9 +363,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * A kind of specimen with associated set of requirements.
      *
      * The specimen's container.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer $container
-     * @return static
      */
     public function setContainer(null|FHIRSpecimenDefinitionContainer $container): self
     {
@@ -421,8 +381,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Requirements for delivery and special handling of this kind of conditioned
      * specimen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getRequirement(): null|FHIRString
     {
@@ -436,9 +394,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Requirements for delivery and special handling of this kind of conditioned
      * specimen.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $requirement
-     * @return static
      */
     public function setRequirement(null|string|FHIRStringPrimitive|FHIRString $requirement): self
     {
@@ -460,8 +415,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * The usual time that a specimen of this kind is retained after the ordered tests
      * are completed, for the purpose of additional testing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getRetentionTime(): null|FHIRDuration
     {
@@ -475,9 +428,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * The usual time that a specimen of this kind is retained after the ordered tests
      * are completed, for the purpose of additional testing.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $retentionTime
-     * @return static
      */
     public function setRetentionTime(null|FHIRDuration $retentionTime): self
     {
@@ -522,9 +472,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Criterion for rejection of the specimen in its container by the laboratory.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $rejectionCriterion
-     * @return static
      */
     public function addRejectionCriterion(FHIRCodeableConcept $rejectionCriterion): self
     {
@@ -542,9 +489,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Criterion for rejection of the specimen in its container by the laboratory.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$rejectionCriterion
-     * @return static
      */
     public function setRejectionCriterion(FHIRCodeableConcept ...$rejectionCriterion): self
     {
@@ -585,9 +529,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Set of instructions for preservation/transport of the specimen at a defined
      * temperature interval, prior the testing process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling $handling
-     * @return static
      */
     public function addHandling(FHIRSpecimenDefinitionHandling $handling): self
     {
@@ -603,9 +544,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Set of instructions for preservation/transport of the specimen at a defined
      * temperature interval, prior the testing process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling ...$handling
-     * @return static
      */
     public function setHandling(FHIRSpecimenDefinitionHandling ...$handling): self
     {
@@ -619,10 +557,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -704,10 +639,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -774,10 +705,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

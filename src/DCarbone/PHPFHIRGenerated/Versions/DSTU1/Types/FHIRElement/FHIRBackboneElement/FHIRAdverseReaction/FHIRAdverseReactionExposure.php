@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -124,8 +124,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      *
      * Identifies the initial date of the exposure that is suspected to be related to
      * the reaction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -134,8 +132,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of exposure: Drug Administration, Immunization, Coincidental.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExposureType
      */
     #[FHIRExposureType]
     protected FHIRExposureType $type;
@@ -145,8 +141,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      *
      * A statement of how confident that the recorder was that this exposure caused the
      * reaction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCausalityExpectation
      */
     #[FHIRCausalityExpectation]
     protected FHIRCausalityExpectation $causalityExpectation;
@@ -156,8 +150,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance that is presumed to have caused the adverse reaction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $substance;
@@ -166,12 +158,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
     /**
      * FHIRAdverseReactionExposure Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRExposureTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExposureType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCausalityExpectationList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCausalityExpectation $causalityExpectation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $substance
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -217,8 +204,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      *
      * Identifies the initial date of the exposure that is suspected to be related to
      * the reaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -234,9 +219,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      *
      * Identifies the initial date of the exposure that is suspected to be related to
      * the reaction.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -256,8 +238,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of exposure: Drug Administration, Immunization, Coincidental.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExposureType
      */
     public function getType(): null|FHIRExposureType
     {
@@ -269,9 +249,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of exposure: Drug Administration, Immunization, Coincidental.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRExposureTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExposureType $type
-     * @return static
      */
     public function setType(null|string|FHIRExposureTypeList|FHIRExposureType $type): self
     {
@@ -292,8 +269,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      *
      * A statement of how confident that the recorder was that this exposure caused the
      * reaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCausalityExpectation
      */
     public function getCausalityExpectation(): null|FHIRCausalityExpectation
     {
@@ -306,9 +281,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      *
      * A statement of how confident that the recorder was that this exposure caused the
      * reaction.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCausalityExpectationList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCausalityExpectation $causalityExpectation
-     * @return static
      */
     public function setCausalityExpectation(null|string|FHIRCausalityExpectationList|FHIRCausalityExpectation $causalityExpectation): self
     {
@@ -329,8 +301,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance that is presumed to have caused the adverse reaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getSubstance(): null|FHIRResourceReference
     {
@@ -343,9 +313,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance that is presumed to have caused the adverse reaction.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $substance
-     * @return static
      */
     public function setSubstance(null|FHIRResourceReference $substance): self
     {
@@ -359,10 +326,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -436,10 +400,6 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -482,10 +442,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

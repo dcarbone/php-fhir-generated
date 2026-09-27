@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -156,8 +155,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * Allows the comparisonGroup for the study and the comparisonGroup for the subject
      * to be linked easily.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $linkId;
@@ -167,8 +164,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Unique, human-readable label for this comparisonGroup of the study.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -180,8 +175,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * Categorization of study comparisonGroup, e.g. experimental, active comparator,
      * placebo comparater.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -196,8 +189,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * A succinct description of the path through the study that would be followed by a
      * subject adhering to this comparisonGroup.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -218,8 +209,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Group of participants who were enrolled in study comparisonGroup.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $observedGroup;
@@ -228,14 +217,8 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
     /**
      * FHIRResearchStudyComparisonGroup Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $linkId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $intendedExposure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $observedGroup
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -290,8 +273,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * Allows the comparisonGroup for the study and the comparisonGroup for the subject
      * to be linked easily.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getLinkId(): null|FHIRId
     {
@@ -308,9 +289,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * Allows the comparisonGroup for the study and the comparisonGroup for the subject
      * to be linked easily.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $linkId
-     * @return static
      */
     public function setLinkId(null|string|FHIRIdPrimitive|FHIRId $linkId): self
     {
@@ -331,8 +309,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Unique, human-readable label for this comparisonGroup of the study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -345,9 +321,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Unique, human-readable label for this comparisonGroup of the study.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -370,8 +343,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * Categorization of study comparisonGroup, e.g. experimental, active comparator,
      * placebo comparater.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -386,9 +357,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * Categorization of study comparisonGroup, e.g. experimental, active comparator,
      * placebo comparater.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -411,8 +379,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * A succinct description of the path through the study that would be followed by a
      * subject adhering to this comparisonGroup.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -430,9 +396,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * A succinct description of the path through the study that would be followed by a
      * subject adhering to this comparisonGroup.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -478,9 +441,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Interventions or exposures in this comparisonGroup or cohort.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $intendedExposure
-     * @return static
      */
     public function addIntendedExposure(FHIRReference $intendedExposure): self
     {
@@ -497,9 +457,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Interventions or exposures in this comparisonGroup or cohort.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$intendedExposure
-     * @return static
      */
     public function setIntendedExposure(FHIRReference ...$intendedExposure): self
     {
@@ -517,8 +474,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Group of participants who were enrolled in study comparisonGroup.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getObservedGroup(): null|FHIRReference
     {
@@ -531,9 +486,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Group of participants who were enrolled in study comparisonGroup.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $observedGroup
-     * @return static
      */
     public function setObservedGroup(null|FHIRReference $observedGroup): self
     {
@@ -547,10 +499,7 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyComparisonGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyComparisonGroup
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -628,10 +577,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -686,10 +631,7 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyComparisonGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyComparisonGroup
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

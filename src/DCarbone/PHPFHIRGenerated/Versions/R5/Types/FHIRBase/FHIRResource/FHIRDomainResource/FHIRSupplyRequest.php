@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -115,7 +113,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestPri
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSupplyRequestStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -199,8 +196,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSupplyRequestStatus
      */
     #[FHIRSupplyRequestStatus]
     protected FHIRSupplyRequestStatus $status;
@@ -223,8 +218,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -233,8 +226,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Indicates how quickly this SupplyRequest should be addressed with respect to
      * other requests.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     #[FHIRRequestPriority]
     protected FHIRRequestPriority $priority;
@@ -244,8 +235,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient to whom the supply will be given or for whom they will be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $deliverFor;
@@ -258,8 +247,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $item;
@@ -271,8 +258,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is being ordered of the indicated item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -297,10 +282,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When the request should be fulfilled. (choose any one of occurrence*, but only
-     * one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * When the request should be fulfilled.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -309,10 +291,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled. (choose any one of occurrence*, but only
-     * one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * When the request should be fulfilled.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -325,10 +304,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled. (choose any one of occurrence*, but only
-     * one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * When the request should be fulfilled.
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -342,8 +318,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request was made.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $authoredOn;
@@ -353,8 +327,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who initiated the request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $requester;
@@ -387,8 +359,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is expected to come from.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $deliverFrom;
@@ -398,8 +368,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is destined to go.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $deliverTo;
@@ -407,32 +375,14 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
     /* constructor.php:61 */
     /**
      * FHIRSupplyRequest Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSupplyRequestStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSupplyRequestStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $basedOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestPriorityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority $priority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $deliverFor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $item
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestParameter> $parameter
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $occurrenceDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $occurrencePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $occurrenceTiming
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $authoredOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $requester
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $supplier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $reason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $deliverFrom
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $deliverTo
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -578,9 +528,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * Business identifiers assigned to this SupplyRequest by the author and/or other
      * systems. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -600,9 +547,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * Business identifiers assigned to this SupplyRequest by the author and/or other
      * systems. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -618,8 +562,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSupplyRequestStatus
      */
     public function getStatus(): null|FHIRSupplyRequestStatus
     {
@@ -630,9 +572,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSupplyRequestStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSupplyRequestStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRSupplyRequestStatusEnum|FHIRSupplyRequestStatus $status): self
     {
@@ -678,9 +617,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan/proposal/order fulfilled by this request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -697,9 +633,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan/proposal/order fulfilled by this request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -719,8 +652,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -735,9 +666,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -754,8 +682,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Indicates how quickly this SupplyRequest should be addressed with respect to
      * other requests.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     public function getPriority(): null|FHIRRequestPriority
     {
@@ -767,9 +693,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Indicates how quickly this SupplyRequest should be addressed with respect to
      * other requests.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestPriorityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority $priority
-     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityEnum|FHIRRequestPriority $priority): self
     {
@@ -790,8 +713,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient to whom the supply will be given or for whom they will be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getDeliverFor(): null|FHIRReference
     {
@@ -804,9 +725,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient to whom the supply will be given or for whom they will be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $deliverFor
-     * @return static
      */
     public function setDeliverFor(null|FHIRReference $deliverFor): self
     {
@@ -827,8 +745,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getItem(): null|FHIRCodeableReference
     {
@@ -844,9 +760,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $item
-     * @return static
      */
     public function setItem(null|FHIRCodeableReference $item): self
     {
@@ -866,8 +779,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is being ordered of the indicated item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -882,9 +793,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is being ordered of the indicated item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -929,9 +837,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Specific parameters for the ordered item. For example, the size of the indicated
      * item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestParameter $parameter
-     * @return static
      */
     public function addParameter(FHIRSupplyRequestParameter $parameter): self
     {
@@ -949,9 +854,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      *
      * Specific parameters for the ordered item. For example, the size of the indicated
      * item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestParameter ...$parameter
-     * @return static
      */
     public function setParameter(FHIRSupplyRequestParameter ...$parameter): self
     {
@@ -972,10 +874,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When the request should be fulfilled. (choose any one of occurrence*, but only
-     * one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * When the request should be fulfilled.
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -991,11 +890,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When the request should be fulfilled. (choose any one of occurrence*, but only
-     * one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $occurrenceDateTime
-     * @return static
+     * When the request should be fulfilled.
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1015,10 +910,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled. (choose any one of occurrence*, but only
-     * one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * When the request should be fulfilled.
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -1030,11 +922,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled. (choose any one of occurrence*, but only
-     * one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $occurrencePeriod
-     * @return static
+     * When the request should be fulfilled.
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1055,10 +943,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled. (choose any one of occurrence*, but only
-     * one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * When the request should be fulfilled.
      */
     public function getOccurrenceTiming(): null|FHIRTiming
     {
@@ -1074,11 +959,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the request should be fulfilled. (choose any one of occurrence*, but only
-     * one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $occurrenceTiming
-     * @return static
+     * When the request should be fulfilled.
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1100,8 +981,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request was made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getAuthoredOn(): null|FHIRDateTime
     {
@@ -1118,9 +997,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request was made.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $authoredOn
-     * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn): self
     {
@@ -1141,8 +1017,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who initiated the request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getRequester(): null|FHIRReference
     {
@@ -1155,9 +1029,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who initiated the request.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $requester
-     * @return static
      */
     public function setRequester(null|FHIRReference $requester): self
     {
@@ -1200,9 +1071,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who is intended to fulfill the request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $supplier
-     * @return static
      */
     public function addSupplier(FHIRReference $supplier): self
     {
@@ -1219,9 +1087,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who is intended to fulfill the request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$supplier
-     * @return static
      */
     public function setSupplier(FHIRReference ...$supplier): self
     {
@@ -1266,9 +1131,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the supply item was requested.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $reason
-     * @return static
      */
     public function addReason(FHIRCodeableReference $reason): self
     {
@@ -1286,9 +1148,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the supply item was requested.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$reason
-     * @return static
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
@@ -1306,8 +1165,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is expected to come from.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getDeliverFrom(): null|FHIRReference
     {
@@ -1320,9 +1177,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is expected to come from.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $deliverFrom
-     * @return static
      */
     public function setDeliverFrom(null|FHIRReference $deliverFrom): self
     {
@@ -1340,8 +1194,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is destined to go.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getDeliverTo(): null|FHIRReference
     {
@@ -1354,9 +1206,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is destined to go.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $deliverTo
-     * @return static
      */
     public function setDeliverTo(null|FHIRReference $deliverTo): self
     {
@@ -1370,10 +1219,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSupplyRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSupplyRequest
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1519,11 +1365,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1675,10 +1516,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements VersionContainedTy
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSupplyRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSupplyRequest
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

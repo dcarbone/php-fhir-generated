@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -144,8 +144,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent population in a MeasureReport resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $linkId;
@@ -156,8 +154,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of population criteria.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -171,8 +167,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this population criteria.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -185,8 +179,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * An expression that specifies the criteria for the population, typically the name
      * of an expression in a library.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     #[FHIRExpression]
     protected FHIRExpression $criteria;
@@ -196,8 +188,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Group resource that defines this population as a set of characteristics.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $groupDefinition;
@@ -213,8 +203,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * and must be resolved explicitly. For example in a ratio measure with multiple
      * initial populations, the denominator must specify which population should be
      * used as the starting point.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $inputPopulationId;
@@ -228,8 +216,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * For most scoring types, this is implied by scoring (e.g. a proportion measure
      * counts members of the populations). For continuous variables, however, this
      * information must be specified to ensure correct calculation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $aggregateMethod;
@@ -238,15 +224,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
     /**
      * FHIRMeasurePopulation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $criteria
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $groupDefinition
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $inputPopulationId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $aggregateMethod
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -302,8 +280,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent population in a MeasureReport resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getLinkId(): null|FHIRString
     {
@@ -317,9 +293,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent population in a MeasureReport resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -341,8 +314,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of population criteria.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -356,9 +327,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of population criteria.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -380,8 +348,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this population criteria.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -398,9 +364,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this population criteria.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -424,8 +387,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * An expression that specifies the criteria for the population, typically the name
      * of an expression in a library.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     public function getCriteria(): null|FHIRExpression
     {
@@ -441,9 +402,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * An expression that specifies the criteria for the population, typically the name
      * of an expression in a library.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $criteria
-     * @return static
      */
     public function setCriteria(null|FHIRExpression $criteria): self
     {
@@ -461,8 +419,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Group resource that defines this population as a set of characteristics.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getGroupDefinition(): null|FHIRReference
     {
@@ -475,9 +431,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Group resource that defines this population as a set of characteristics.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $groupDefinition
-     * @return static
      */
     public function setGroupDefinition(null|FHIRReference $groupDefinition): self
     {
@@ -501,8 +454,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * and must be resolved explicitly. For example in a ratio measure with multiple
      * initial populations, the denominator must specify which population should be
      * used as the starting point.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getInputPopulationId(): null|FHIRString
     {
@@ -521,9 +472,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * and must be resolved explicitly. For example in a ratio measure with multiple
      * initial populations, the denominator must specify which population should be
      * used as the starting point.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $inputPopulationId
-     * @return static
      */
     public function setInputPopulationId(null|string|FHIRStringPrimitive|FHIRString $inputPopulationId): self
     {
@@ -548,8 +496,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * For most scoring types, this is implied by scoring (e.g. a proportion measure
      * counts members of the populations). For continuous variables, however, this
      * information must be specified to ensure correct calculation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getAggregateMethod(): null|FHIRCodeableConcept
     {
@@ -566,9 +512,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * For most scoring types, this is implied by scoring (e.g. a proportion measure
      * counts members of the populations). For continuous variables, however, this
      * information must be specified to ensure correct calculation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $aggregateMethod
-     * @return static
      */
     public function setAggregateMethod(null|FHIRCodeableConcept $aggregateMethod): self
     {
@@ -582,10 +525,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasurePopulation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasurePopulation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -665,10 +605,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -726,10 +662,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasurePopulation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasurePopulation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -135,8 +134,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Nominal position in a series.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $doseSequence;
@@ -147,8 +144,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -158,8 +153,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol. E.g. ACIP.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $authority;
@@ -170,8 +163,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $series;
@@ -181,8 +172,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The recommended number of doses to achieve immunity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $seriesDoses;
@@ -205,8 +194,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the immunization event should "count" against the protocol.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $doseStatus;
@@ -218,8 +205,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      *
      * Provides an explanation as to why an immunization event should or should not
      * count against the protocol.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $doseStatusReason;
@@ -228,16 +213,8 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
     /**
      * FHIRImmunizationVaccinationProtocol Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $doseSequence
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $authority
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $series
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $seriesDoses
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $targetDisease
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $doseStatus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $doseStatusReason
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -296,8 +273,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Nominal position in a series.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     public function getDoseSequence(): null|FHIRPositiveInt
     {
@@ -310,9 +285,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Nominal position in a series.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $doseSequence
-     * @return static
      */
     public function setDoseSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseSequence): self
     {
@@ -334,8 +306,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -349,9 +319,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -372,8 +339,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol. E.g. ACIP.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getAuthority(): null|FHIRReference
     {
@@ -386,9 +351,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol. E.g. ACIP.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $authority
-     * @return static
      */
     public function setAuthority(null|FHIRReference $authority): self
     {
@@ -407,8 +369,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getSeries(): null|FHIRString
     {
@@ -422,9 +382,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $series
-     * @return static
      */
     public function setSeries(null|string|FHIRStringPrimitive|FHIRString $series): self
     {
@@ -445,8 +402,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The recommended number of doses to achieve immunity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     public function getSeriesDoses(): null|FHIRPositiveInt
     {
@@ -459,9 +414,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The recommended number of doses to achieve immunity.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $seriesDoses
-     * @return static
      */
     public function setSeriesDoses(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $seriesDoses): self
     {
@@ -509,9 +461,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The targeted disease.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $targetDisease
-     * @return static
      */
     public function addTargetDisease(FHIRCodeableConcept $targetDisease): self
     {
@@ -529,9 +478,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The targeted disease.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$targetDisease
-     * @return static
      */
     public function setTargetDisease(FHIRCodeableConcept ...$targetDisease): self
     {
@@ -550,8 +496,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the immunization event should "count" against the protocol.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDoseStatus(): null|FHIRCodeableConcept
     {
@@ -565,9 +509,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the immunization event should "count" against the protocol.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $doseStatus
-     * @return static
      */
     public function setDoseStatus(null|FHIRCodeableConcept $doseStatus): self
     {
@@ -587,8 +528,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      *
      * Provides an explanation as to why an immunization event should or should not
      * count against the protocol.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDoseStatusReason(): null|FHIRCodeableConcept
     {
@@ -603,9 +542,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
      *
      * Provides an explanation as to why an immunization event should or should not
      * count against the protocol.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $doseStatusReason
-     * @return static
      */
     public function setDoseStatusReason(null|FHIRCodeableConcept $doseStatusReason): self
     {
@@ -619,10 +555,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -712,10 +645,6 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -785,10 +714,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -114,8 +114,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of structure (e.g. Full, Partial, Representative).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -126,8 +124,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      *
      * The structural representation as text string in a format e.g. InChI, SMILES,
      * MOLFILE, CDX.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $representation;
@@ -137,8 +133,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An attached file with the structural representation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $attachment;
@@ -147,11 +141,7 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
     /**
      * FHIRSubstanceSpecificationRepresentation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $representation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $attachment
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -191,8 +181,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of structure (e.g. Full, Partial, Representative).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -206,9 +194,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of structure (e.g. Full, Partial, Representative).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -227,8 +212,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      *
      * The structural representation as text string in a format e.g. InChI, SMILES,
      * MOLFILE, CDX.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getRepresentation(): null|FHIRString
     {
@@ -242,9 +225,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      *
      * The structural representation as text string in a format e.g. InChI, SMILES,
      * MOLFILE, CDX.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $representation
-     * @return static
      */
     public function setRepresentation(null|string|FHIRStringPrimitive|FHIRString $representation): self
     {
@@ -265,8 +245,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An attached file with the structural representation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment
      */
     public function getAttachment(): null|FHIRAttachment
     {
@@ -279,9 +257,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An attached file with the structural representation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $attachment
-     * @return static
      */
     public function setAttachment(null|FHIRAttachment $attachment): self
     {
@@ -295,10 +270,7 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -354,10 +326,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -385,10 +353,7 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

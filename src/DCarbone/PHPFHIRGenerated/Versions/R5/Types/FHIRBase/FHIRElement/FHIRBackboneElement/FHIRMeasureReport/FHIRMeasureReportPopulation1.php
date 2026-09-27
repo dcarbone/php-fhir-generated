@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -141,8 +141,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * The population from the Measure that corresponds to this population in the
      * MeasureReport resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $linkId;
@@ -153,8 +151,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the population.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -164,8 +160,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of members of the population in this stratum.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $count;
@@ -176,8 +170,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * This element refers to a List of individual level MeasureReport resources, one
      * for each subject in this population in this stratum.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subjectResults;
@@ -199,8 +191,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optional Group identifying the individuals that make up the population.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subjects;
@@ -209,14 +199,8 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
     /**
      * FHIRMeasureReportPopulation1 Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $count
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subjectResults
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $subjectReport
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subjects
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -268,8 +252,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * The population from the Measure that corresponds to this population in the
      * MeasureReport resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getLinkId(): null|FHIRString
     {
@@ -283,9 +265,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * The population from the Measure that corresponds to this population in the
      * MeasureReport resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -307,8 +286,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the population.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -322,9 +299,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the population.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -342,8 +316,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of members of the population in this stratum.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     public function getCount(): null|FHIRInteger
     {
@@ -356,9 +328,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of members of the population in this stratum.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $count
-     * @return static
      */
     public function setCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $count): self
     {
@@ -380,8 +349,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * This element refers to a List of individual level MeasureReport resources, one
      * for each subject in this population in this stratum.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubjectResults(): null|FHIRReference
     {
@@ -395,9 +362,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * This element refers to a List of individual level MeasureReport resources, one
      * for each subject in this population in this stratum.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subjectResults
-     * @return static
      */
     public function setSubjectResults(null|FHIRReference $subjectResults): self
     {
@@ -442,9 +406,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * A reference to an individual level MeasureReport resource for a member of the
      * population.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subjectReport
-     * @return static
      */
     public function addSubjectReport(FHIRReference $subjectReport): self
     {
@@ -462,9 +423,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * A reference to an individual level MeasureReport resource for a member of the
      * population.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$subjectReport
-     * @return static
      */
     public function setSubjectReport(FHIRReference ...$subjectReport): self
     {
@@ -482,8 +440,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optional Group identifying the individuals that make up the population.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubjects(): null|FHIRReference
     {
@@ -496,9 +452,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optional Group identifying the individuals that make up the population.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subjects
-     * @return static
      */
     public function setSubjects(null|FHIRReference $subjects): self
     {
@@ -512,10 +465,7 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -585,10 +535,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -638,10 +584,7 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

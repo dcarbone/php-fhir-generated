@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -47,8 +47,6 @@ class Validator
 
     /**
      * Define a validation rule.  Will overwrite any pre-existing rule with the same name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Validation\RuleInterface $rule
      */
     public static function setRule(RuleInterface $rule): void
     {
@@ -57,9 +55,6 @@ class Validator
 
     /**
      * Return a rule by name, if it exists
-     *
-     * @param string $ruleName
-     * @return null|\DCarbone\PHPFHIRGenerated\Validation\RuleInterface
      */
     public static function getRule(string $ruleName): null|RuleInterface
     {
@@ -76,12 +71,7 @@ class Validator
     }
 
     /**
-     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
-     * @param string $field
      * @param string|\DCarbone\PHPFHIRGenerated\Validation\RuleInterface $rule Name of registered validation rule, or a specific rule instance to run.
-     * @param mixed $constraint
-     * @param mixed $value
-     * @return null|string
      */
     public static function runRule(TypeInterface $type,
                                    string $field,

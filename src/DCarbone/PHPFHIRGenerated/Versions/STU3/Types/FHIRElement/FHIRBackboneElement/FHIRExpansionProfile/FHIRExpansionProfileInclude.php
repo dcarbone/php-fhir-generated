@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -113,7 +113,6 @@ class FHIRExpansionProfileInclude extends FHIRBackboneElement
     /**
      * FHIRExpansionProfileInclude Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation1> $designation
      * @param null|string[] $fhirComments
@@ -167,9 +166,6 @@ class FHIRExpansionProfileInclude extends FHIRBackboneElement
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
      *
      * A data group for each designation to be included.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation1 $designation
-     * @return static
      */
     public function addDesignation(FHIRExpansionProfileDesignation1 $designation): self
     {
@@ -184,9 +180,6 @@ class FHIRExpansionProfileInclude extends FHIRBackboneElement
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
      *
      * A data group for each designation to be included.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation1 ...$designation
-     * @return static
      */
     public function setDesignation(FHIRExpansionProfileDesignation1 ...$designation): self
     {
@@ -200,10 +193,7 @@ class FHIRExpansionProfileInclude extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -247,10 +237,6 @@ class FHIRExpansionProfileInclude extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -265,10 +251,7 @@ class FHIRExpansionProfileInclude extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -133,8 +133,6 @@ class FHIRConsentActor extends FHIRBackboneElement
      *
      * How the individual is involved in the resources content that is described in the
      * exception.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
@@ -146,8 +144,6 @@ class FHIRConsentActor extends FHIRBackboneElement
      * The resource that identifies the actor. To identify actors by type, use group to
      * identify a set of actors by some property they share (e.g. 'admitting
      * officers').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $reference;
@@ -156,10 +152,7 @@ class FHIRConsentActor extends FHIRBackboneElement
     /**
      * FHIRConsentActor Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $reference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -196,8 +189,6 @@ class FHIRConsentActor extends FHIRBackboneElement
      *
      * How the individual is involved in the resources content that is described in the
      * exception.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getRole(): null|FHIRCodeableConcept
     {
@@ -212,9 +203,6 @@ class FHIRConsentActor extends FHIRBackboneElement
      *
      * How the individual is involved in the resources content that is described in the
      * exception.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $role
-     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -234,8 +222,6 @@ class FHIRConsentActor extends FHIRBackboneElement
      * The resource that identifies the actor. To identify actors by type, use group to
      * identify a set of actors by some property they share (e.g. 'admitting
      * officers').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getReference(): null|FHIRReference
     {
@@ -250,9 +236,6 @@ class FHIRConsentActor extends FHIRBackboneElement
      * The resource that identifies the actor. To identify actors by type, use group to
      * identify a set of actors by some property they share (e.g. 'admitting
      * officers').
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $reference
-     * @return static
      */
     public function setReference(null|FHIRReference $reference): self
     {
@@ -266,10 +249,7 @@ class FHIRConsentActor extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -315,10 +295,6 @@ class FHIRConsentActor extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -336,10 +312,7 @@ class FHIRConsentActor extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

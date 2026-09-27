@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -116,7 +114,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMedication
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -242,8 +239,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMedicationDispenseStatusCodes
      */
     #[FHIRMedicationDispenseStatusCodes]
     protected FHIRMedicationDispenseStatusCodes $status;
@@ -254,8 +249,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason why a dispense was not performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $notPerformedReason;
@@ -269,8 +262,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and maybe time) when the status of the dispense record changed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $statusChanged;
@@ -296,8 +287,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * Identifies the medication supplied. This is either a link to a resource
      * representing the details of the medication or a simple attribute carrying a code
      * that identifies the medication from a known list of medications.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $medication;
@@ -308,8 +297,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * A link to a resource representing the person or the group to whom the medication
      * will be given.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -319,8 +306,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that establishes the context for this event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -356,8 +341,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the dispense was performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $location;
@@ -380,8 +363,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * Indicates the type of dispensing event that is performed. For example, Trial
      * Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -393,8 +374,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication that has been dispensed. Includes unit of measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -406,8 +385,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication expressed as a timing amount.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $daysSupply;
@@ -422,8 +399,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * The date (and maybe time) when the dispense activity started if whenPrepared or
      * whenHandedOver is not populated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $recorded;
@@ -437,8 +412,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $whenPrepared;
@@ -453,8 +426,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * The time the dispensed product was provided to the patient or their
      * representative.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $whenHandedOver;
@@ -465,8 +436,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * Identification of the facility/location where the medication was/will be shipped
      * to, as part of the dispense event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $destination;
@@ -508,8 +477,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * The full representation of the dose of the medication included in all dosage
      * instructions. To be used when multiple dosage instructions are included to
      * represent complex dosing such as increasing or tapering doses.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $renderedDosageInstruction;
@@ -535,8 +502,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * substitution is not expected but does happen. This block explains what
      * substitution did or did not happen and why. If nothing is specified,
      * substitution was not done.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      */
     #[FHIRMedicationDispenseSubstitution]
     protected FHIRMedicationDispenseSubstitution $substitution;
@@ -556,40 +521,19 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
     /* constructor.php:61 */
     /**
      * FHIRMedicationDispense Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $basedOn
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $partOf
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMedicationDispenseStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMedicationDispenseStatusCodes $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $notPerformedReason
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $statusChanged
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $medication
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $supportingInformation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispensePerformer> $performer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $authorizingPrescription
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $daysSupply
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $recorded
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $whenPrepared
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $whenHandedOver
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $destination
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $receiver
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $renderedDosageInstruction
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage> $dosageInstruction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution $substitution
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $eventHistory
      * @param null|string[] $fhirComments
      */
@@ -776,9 +720,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * resource itself is not appropriate. They are business identifiers assigned to
      * this resource by the performer or other systems and remain constant as the
      * resource is updated and propagates from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -800,9 +741,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * resource itself is not appropriate. They are business identifiers assigned to
      * this resource by the performer or other systems and remain constant as the
      * resource is updated and propagates from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -845,9 +783,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan that is fulfilled in whole or in part by this MedicationDispense.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -864,9 +799,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan that is fulfilled in whole or in part by this MedicationDispense.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -909,9 +841,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure or medication administration that triggered the dispense.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $partOf
-     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -928,9 +857,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure or medication administration that triggered the dispense.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$partOf
-     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -947,8 +873,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMedicationDispenseStatusCodes
      */
     public function getStatus(): null|FHIRMedicationDispenseStatusCodes
     {
@@ -960,9 +884,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMedicationDispenseStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMedicationDispenseStatusCodes $status
-     * @return static
      */
     public function setStatus(null|string|FHIRMedicationDispenseStatusCodesEnum|FHIRMedicationDispenseStatusCodes $status): self
     {
@@ -984,8 +905,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason why a dispense was not performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getNotPerformedReason(): null|FHIRCodeableReference
     {
@@ -999,9 +918,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason why a dispense was not performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $notPerformedReason
-     * @return static
      */
     public function setNotPerformedReason(null|FHIRCodeableReference $notPerformedReason): self
     {
@@ -1023,8 +939,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and maybe time) when the status of the dispense record changed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getStatusChanged(): null|FHIRDateTime
     {
@@ -1041,9 +955,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and maybe time) when the status of the dispense record changed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $statusChanged
-     * @return static
      */
     public function setStatusChanged(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusChanged): self
     {
@@ -1093,9 +1004,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * Indicates the type of medication dispense (for example, drug classification like
      * ATC, where meds would be administered, legal category of the medication.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -1114,9 +1022,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * Indicates the type of medication dispense (for example, drug classification like
      * ATC, where meds would be administered, legal category of the medication.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -1137,8 +1042,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * Identifies the medication supplied. This is either a link to a resource
      * representing the details of the medication or a simple attribute carrying a code
      * that identifies the medication from a known list of medications.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getMedication(): null|FHIRCodeableReference
     {
@@ -1154,9 +1057,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * Identifies the medication supplied. This is either a link to a resource
      * representing the details of the medication or a simple attribute carrying a code
      * that identifies the medication from a known list of medications.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $medication
-     * @return static
      */
     public function setMedication(null|FHIRCodeableReference $medication): self
     {
@@ -1175,8 +1075,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * A link to a resource representing the person or the group to whom the medication
      * will be given.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -1190,9 +1088,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * A link to a resource representing the person or the group to whom the medication
      * will be given.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1210,8 +1105,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that establishes the context for this event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -1224,9 +1117,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that establishes the context for this event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1275,9 +1165,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * example, there may be requirements that a specific lab test has been completed
      * prior to dispensing or the patient's weight at the time of dispensing is
      * documented.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $supportingInformation
-     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation): self
     {
@@ -1297,9 +1184,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * example, there may be requirements that a specific lab test has been completed
      * prior to dispensing or the patient's weight at the time of dispensing is
      * documented.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$supportingInformation
-     * @return static
      */
     public function setSupportingInformation(FHIRReference ...$supportingInformation): self
     {
@@ -1344,9 +1228,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * dispense is the result of a pharmacy system responding to a medication order.
      *
      * Indicates who or what performed the event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispensePerformer $performer
-     * @return static
      */
     public function addPerformer(FHIRMedicationDispensePerformer $performer): self
     {
@@ -1364,9 +1245,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * dispense is the result of a pharmacy system responding to a medication order.
      *
      * Indicates who or what performed the event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispensePerformer ...$performer
-     * @return static
      */
     public function setPerformer(FHIRMedicationDispensePerformer ...$performer): self
     {
@@ -1384,8 +1262,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the dispense was performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getLocation(): null|FHIRReference
     {
@@ -1398,9 +1274,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the dispense was performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
-     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1443,9 +1316,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $authorizingPrescription
-     * @return static
      */
     public function addAuthorizingPrescription(FHIRReference $authorizingPrescription): self
     {
@@ -1462,9 +1332,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$authorizingPrescription
-     * @return static
      */
     public function setAuthorizingPrescription(FHIRReference ...$authorizingPrescription): self
     {
@@ -1484,8 +1351,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * Indicates the type of dispensing event that is performed. For example, Trial
      * Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -1500,9 +1365,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * Indicates the type of dispensing event that is performed. For example, Trial
      * Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -1522,8 +1384,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication that has been dispensed. Includes unit of measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -1538,9 +1398,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication that has been dispensed. Includes unit of measure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -1560,8 +1417,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication expressed as a timing amount.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getDaysSupply(): null|FHIRQuantity
     {
@@ -1576,9 +1431,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication expressed as a timing amount.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $daysSupply
-     * @return static
      */
     public function setDaysSupply(null|FHIRQuantity $daysSupply): self
     {
@@ -1601,8 +1453,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * The date (and maybe time) when the dispense activity started if whenPrepared or
      * whenHandedOver is not populated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getRecorded(): null|FHIRDateTime
     {
@@ -1620,9 +1470,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * The date (and maybe time) when the dispense activity started if whenPrepared or
      * whenHandedOver is not populated.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $recorded
-     * @return static
      */
     public function setRecorded(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recorded): self
     {
@@ -1647,8 +1494,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getWhenPrepared(): null|FHIRDateTime
     {
@@ -1665,9 +1510,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $whenPrepared
-     * @return static
      */
     public function setWhenPrepared(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenPrepared): self
     {
@@ -1693,8 +1535,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * The time the dispensed product was provided to the patient or their
      * representative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getWhenHandedOver(): null|FHIRDateTime
     {
@@ -1712,9 +1552,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * The time the dispensed product was provided to the patient or their
      * representative.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $whenHandedOver
-     * @return static
      */
     public function setWhenHandedOver(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenHandedOver): self
     {
@@ -1736,8 +1573,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * Identification of the facility/location where the medication was/will be shipped
      * to, as part of the dispense event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getDestination(): null|FHIRReference
     {
@@ -1751,9 +1586,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * Identification of the facility/location where the medication was/will be shipped
      * to, as part of the dispense event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $destination
-     * @return static
      */
     public function setDestination(null|FHIRReference $destination): self
     {
@@ -1800,9 +1632,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * Identifies the person who picked up the medication or the location of where the
      * medication was delivered. This will usually be a patient or their caregiver, but
      * some cases exist where it can be a healthcare professional or a location.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $receiver
-     * @return static
      */
     public function addReceiver(FHIRReference $receiver): self
     {
@@ -1821,9 +1650,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * Identifies the person who picked up the medication or the location of where the
      * medication was delivered. This will usually be a patient or their caregiver, but
      * some cases exist where it can be a healthcare professional or a location.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$receiver
-     * @return static
      */
     public function setReceiver(FHIRReference ...$receiver): self
     {
@@ -1870,9 +1696,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * Extra information about the dispense that could not be conveyed in the other
      * attributes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1891,9 +1714,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * Extra information about the dispense that could not be conveyed in the other
      * attributes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1917,8 +1737,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * The full representation of the dose of the medication included in all dosage
      * instructions. To be used when multiple dosage instructions are included to
      * represent complex dosing such as increasing or tapering doses.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getRenderedDosageInstruction(): null|FHIRMarkdown
     {
@@ -1937,9 +1755,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * The full representation of the dose of the medication included in all dosage
      * instructions. To be used when multiple dosage instructions are included to
      * represent complex dosing such as increasing or tapering doses.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $renderedDosageInstruction
-     * @return static
      */
     public function setRenderedDosageInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $renderedDosageInstruction): self
     {
@@ -1985,9 +1800,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how the medication is to be used by the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage $dosageInstruction
-     * @return static
      */
     public function addDosageInstruction(FHIRDosage $dosageInstruction): self
     {
@@ -2004,9 +1816,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how the medication is to be used by the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage ...$dosageInstruction
-     * @return static
      */
     public function setDosageInstruction(FHIRDosage ...$dosageInstruction): self
     {
@@ -2029,8 +1838,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * substitution is not expected but does happen. This block explains what
      * substitution did or did not happen and why. If nothing is specified,
      * substitution was not done.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      */
     public function getSubstitution(): null|FHIRMedicationDispenseSubstitution
     {
@@ -2048,9 +1855,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      * substitution is not expected but does happen. This block explains what
      * substitution did or did not happen and why. If nothing is specified,
      * substitution was not done.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution $substitution
-     * @return static
      */
     public function setSubstitution(null|FHIRMedicationDispenseSubstitution $substitution): self
     {
@@ -2095,9 +1899,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * A summary of the events of interest that have occurred, such as when the
      * dispense was verified.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $eventHistory
-     * @return static
      */
     public function addEventHistory(FHIRReference $eventHistory): self
     {
@@ -2115,9 +1916,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
      *
      * A summary of the events of interest that have occurred, such as when the
      * dispense was verified.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$eventHistory
-     * @return static
      */
     public function setEventHistory(FHIRReference ...$eventHistory): self
     {
@@ -2131,10 +1929,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedicationDispense $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedicationDispense
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2314,11 +2109,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2537,10 +2327,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedicationDispense $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedicationDispense
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

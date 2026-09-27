@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -134,8 +134,6 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The narrative description of the tests.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $narrative;
@@ -144,8 +142,6 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
      *
      * The test cases in a structured language e.g. gherkin, Postman, or FHIR
      * TestScript.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanScript
      */
     #[FHIRTestPlanScript]
     protected FHIRTestPlanScript $script;
@@ -154,10 +150,7 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
     /**
      * FHIRTestPlanTestRun Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $narrative
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanScript $script
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -196,8 +189,6 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The narrative description of the tests.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getNarrative(): null|FHIRMarkdown
     {
@@ -214,9 +205,6 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The narrative description of the tests.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $narrative
-     * @return static
      */
     public function setNarrative(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $narrative): self
     {
@@ -236,8 +224,6 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
      *
      * The test cases in a structured language e.g. gherkin, Postman, or FHIR
      * TestScript.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanScript
      */
     public function getScript(): null|FHIRTestPlanScript
     {
@@ -249,9 +235,6 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
      *
      * The test cases in a structured language e.g. gherkin, Postman, or FHIR
      * TestScript.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanScript $script
-     * @return static
      */
     public function setScript(null|FHIRTestPlanScript $script): self
     {
@@ -265,10 +248,7 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -322,10 +302,6 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -348,10 +324,7 @@ class FHIRTestPlanTestRun extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

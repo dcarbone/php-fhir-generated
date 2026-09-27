@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -114,8 +114,6 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which authority uses this official name.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $authority;
@@ -126,8 +124,6 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the official name.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -140,8 +136,6 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of official name change.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -150,11 +144,7 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
     /**
      * FHIRSubstanceSpecificationOfficial Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $authority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -194,8 +184,6 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which authority uses this official name.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAuthority(): null|FHIRCodeableConcept
     {
@@ -209,9 +197,6 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which authority uses this official name.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $authority
-     * @return static
      */
     public function setAuthority(null|FHIRCodeableConcept $authority): self
     {
@@ -230,8 +215,6 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the official name.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -245,9 +228,6 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the official name.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -268,8 +248,6 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of official name change.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -285,9 +263,6 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of official name change.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -304,10 +279,7 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -363,10 +335,6 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -394,10 +362,7 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

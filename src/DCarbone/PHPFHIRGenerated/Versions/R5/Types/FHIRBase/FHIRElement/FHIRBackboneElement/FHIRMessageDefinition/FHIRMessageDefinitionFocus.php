@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -151,8 +150,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The kind of resource that must be the focus for this message.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRResourceType
      */
     #[FHIRResourceType]
     protected FHIRResourceType $code;
@@ -164,8 +161,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * A profile that reflects constraints for the focal resource (and potentially for
      * related resources).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $profile;
@@ -176,8 +171,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * Identifies the minimum number of resources of this type that must be pointed to
      * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $min;
@@ -188,8 +181,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * Identifies the maximum number of resources of this type that must be pointed to
      * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $max;
@@ -198,12 +189,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
     /**
      * FHIRMessageDefinitionFocus Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRResourceTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRResourceType $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $profile
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $min
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $max
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -244,8 +230,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The kind of resource that must be the focus for this message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRResourceType
      */
     public function getCode(): null|FHIRResourceType
     {
@@ -256,9 +240,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The kind of resource that must be the focus for this message.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRResourceTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRResourceType $code
-     * @return static
      */
     public function setCode(null|string|FHIRResourceTypeEnum|FHIRResourceType $code): self
     {
@@ -281,8 +262,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * A profile that reflects constraints for the focal resource (and potentially for
      * related resources).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getProfile(): null|FHIRCanonical
     {
@@ -297,9 +276,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * A profile that reflects constraints for the focal resource (and potentially for
      * related resources).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $profile
-     * @return static
      */
     public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -321,8 +297,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * Identifies the minimum number of resources of this type that must be pointed to
      * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     public function getMin(): null|FHIRUnsignedInt
     {
@@ -336,9 +310,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * Identifies the minimum number of resources of this type that must be pointed to
      * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $min
-     * @return static
      */
     public function setMin(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $min): self
     {
@@ -360,8 +331,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * Identifies the maximum number of resources of this type that must be pointed to
      * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getMax(): null|FHIRString
     {
@@ -375,9 +344,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * Identifies the maximum number of resources of this type that must be pointed to
      * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $max
-     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
@@ -394,10 +360,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -479,10 +442,6 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -530,10 +489,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

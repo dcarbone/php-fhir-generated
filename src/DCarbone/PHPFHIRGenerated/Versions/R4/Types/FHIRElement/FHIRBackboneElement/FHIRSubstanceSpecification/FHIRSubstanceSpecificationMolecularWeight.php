@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -111,8 +111,6 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method by which the molecular weight was determined.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $method;
@@ -124,8 +122,6 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
      *
      * Type of molecular weight such as exact, average (also known as. number average),
      * weight average.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -139,8 +135,6 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
      * value for a given element is given, it would be captured in this field.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $amount;
@@ -149,11 +143,7 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
     /**
      * FHIRSubstanceSpecificationMolecularWeight Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $method
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amount
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -193,8 +183,6 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method by which the molecular weight was determined.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod(): null|FHIRCodeableConcept
     {
@@ -208,9 +196,6 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method by which the molecular weight was determined.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $method
-     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -230,8 +215,6 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
      *
      * Type of molecular weight such as exact, average (also known as. number average),
      * weight average.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -246,9 +229,6 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
      *
      * Type of molecular weight such as exact, average (also known as. number average),
      * weight average.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -270,8 +250,6 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
      * value for a given element is given, it would be captured in this field.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     public function getAmount(): null|FHIRQuantity
     {
@@ -288,9 +266,6 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
      * value for a given element is given, it would be captured in this field.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amount
-     * @return static
      */
     public function setAmount(null|FHIRQuantity $amount): self
     {
@@ -304,10 +279,7 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -355,10 +327,6 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -381,10 +349,7 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

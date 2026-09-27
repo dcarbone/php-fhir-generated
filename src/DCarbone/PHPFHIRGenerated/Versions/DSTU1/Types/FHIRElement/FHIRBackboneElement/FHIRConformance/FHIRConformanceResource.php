@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -135,8 +134,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $type;
@@ -148,8 +145,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * A specification of the profile that describes the solution's support for the
      * resource, including any constraints on cardinality, bindings, lengths or other
      * limitations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $profile;
@@ -170,8 +165,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $readHistory;
@@ -183,8 +176,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the server. If the update operation is used (client) or allowed (server) to a
      * new location where a resource doesn't already exist. This means that the server
      * allows the client to create new identities on the server.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $updateCreate;
@@ -214,13 +205,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
     /**
      * FHIRConformanceResource Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $profile
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation> $operation
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $readHistory
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $updateCreate
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString> $searchInclude
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam> $searchParam
      * @param null|string[] $fhirComments
@@ -278,8 +264,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getType(): null|FHIRCode
     {
@@ -293,9 +277,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $type
-     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -318,8 +299,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * A specification of the profile that describes the solution's support for the
      * resource, including any constraints on cardinality, bindings, lengths or other
      * limitations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getProfile(): null|FHIRResourceReference
     {
@@ -334,9 +313,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * A specification of the profile that describes the solution's support for the
      * resource, including any constraints on cardinality, bindings, lengths or other
      * limitations.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $profile
-     * @return static
      */
     public function setProfile(null|FHIRResourceReference $profile): self
     {
@@ -379,9 +355,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * particular implementation.
      *
      * Identifies a restful operation supported by the solution.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation $operation
-     * @return static
      */
     public function addOperation(FHIRConformanceOperation $operation): self
     {
@@ -398,9 +371,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * particular implementation.
      *
      * Identifies a restful operation supported by the solution.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation ...$operation
-     * @return static
      */
     public function setOperation(FHIRConformanceOperation ...$operation): self
     {
@@ -418,8 +388,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getReadHistory(): null|FHIRBoolean
     {
@@ -432,9 +400,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $readHistory
-     * @return static
      */
     public function setReadHistory(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readHistory): self
     {
@@ -457,8 +422,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the server. If the update operation is used (client) or allowed (server) to a
      * new location where a resource doesn't already exist. This means that the server
      * allows the client to create new identities on the server.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getUpdateCreate(): null|FHIRBoolean
     {
@@ -473,9 +436,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the server. If the update operation is used (client) or allowed (server) to a
      * new location where a resource doesn't already exist. This means that the server
      * allows the client to create new identities on the server.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $updateCreate
-     * @return static
      */
     public function setUpdateCreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $updateCreate): self
     {
@@ -519,9 +479,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $searchInclude
-     * @return static
      */
     public function addSearchInclude(string|FHIRStringPrimitive|FHIRString $searchInclude): self
     {
@@ -540,9 +497,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString ...$searchInclude
-     * @return static
      */
     public function setSearchInclude(string|FHIRStringPrimitive|FHIRString ...$searchInclude): self
     {
@@ -592,9 +546,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * particular implementation.
      *
      * Additional search parameters for implementations to support and/or make use of.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam $searchParam
-     * @return static
      */
     public function addSearchParam(FHIRConformanceSearchParam $searchParam): self
     {
@@ -611,9 +562,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * particular implementation.
      *
      * Additional search parameters for implementations to support and/or make use of.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam ...$searchParam
-     * @return static
      */
     public function setSearchParam(FHIRConformanceSearchParam ...$searchParam): self
     {
@@ -627,10 +575,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -710,10 +655,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -777,10 +718,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

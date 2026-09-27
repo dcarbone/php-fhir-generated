@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -140,8 +139,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of this image in the series.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $number;
@@ -151,8 +148,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Formal identifier for this image.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid
      */
     #[FHIROid]
     protected FHIROid $uid;
@@ -162,8 +157,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * DICOM Image type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid
      */
     #[FHIROid]
     protected FHIROid $sopclass;
@@ -172,8 +165,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of instance (image etc) (0004,1430).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $type;
@@ -182,8 +173,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description (0070,0080 | 0040,A043 > 0008,0104 | 0042,0010 | 0008,0008).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -192,8 +181,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * WADO-RS url where image is available.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -203,8 +190,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A FHIR resource with content for this instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $attachment;
@@ -213,15 +198,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     /**
      * FHIRImagingStudyInstance Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $number
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid $uid
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid $sopclass
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $url
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $attachment
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -275,8 +252,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of this image in the series.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     public function getNumber(): null|FHIRInteger
     {
@@ -288,9 +263,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of this image in the series.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $number
-     * @return static
      */
     public function setNumber(null|string|float|FHIRIntegerPrimitive|FHIRInteger $number): self
     {
@@ -311,8 +283,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Formal identifier for this image.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid
      */
     public function getUid(): null|FHIROid
     {
@@ -325,9 +295,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Formal identifier for this image.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid $uid
-     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -348,8 +315,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * DICOM Image type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid
      */
     public function getSopclass(): null|FHIROid
     {
@@ -362,9 +327,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * DICOM Image type.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIROid $sopclass
-     * @return static
      */
     public function setSopclass(null|string|FHIROidPrimitive|FHIROid $sopclass): self
     {
@@ -384,8 +346,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of instance (image etc) (0004,1430).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getType(): null|FHIRString
     {
@@ -397,9 +357,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of instance (image etc) (0004,1430).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $type
-     * @return static
      */
     public function setType(null|string|FHIRStringPrimitive|FHIRString $type): self
     {
@@ -419,8 +376,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description (0070,0080 | 0040,A043 > 0008,0104 | 0042,0010 | 0008,0008).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -432,9 +387,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description (0070,0080 | 0040,A043 > 0008,0104 | 0042,0010 | 0008,0008).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -454,8 +406,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * WADO-RS url where image is available.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -467,9 +417,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * WADO-RS url where image is available.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -490,8 +437,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A FHIR resource with content for this instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getAttachment(): null|FHIRResourceReference
     {
@@ -504,9 +449,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A FHIR resource with content for this instance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $attachment
-     * @return static
      */
     public function setAttachment(null|FHIRResourceReference $attachment): self
     {
@@ -520,10 +462,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -627,10 +566,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -703,10 +638,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

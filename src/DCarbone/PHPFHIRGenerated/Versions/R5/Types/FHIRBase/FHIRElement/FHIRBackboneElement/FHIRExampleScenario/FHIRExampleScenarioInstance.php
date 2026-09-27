@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -166,8 +165,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A unique string within the scenario that is used to reference the instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $key;
@@ -178,8 +175,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * A code indicating the kind of data structure (FHIR resource or some other
      * standard) this is an instance of.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $structureType;
@@ -190,8 +185,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Conveys the version of the data structure instantiated. I.e. what release of
      * FHIR, X12, OpenEHR, etc. is instance compliant with.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $structureVersion;
@@ -201,10 +194,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * Refers to a profile, template or other ruleset the instance adheres to.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $structureProfileCanonical;
@@ -213,10 +203,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * Refers to a profile, template or other ruleset the instance adheres to.
      */
     #[FHIRUri]
     protected FHIRUri $structureProfileUri;
@@ -226,8 +213,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short descriptive label the instance to be used in tables or diagrams.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -241,8 +226,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An explanation of what the instance contains and what it's for.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -253,8 +236,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Points to an instance (typically an example) that shows the data that would
      * corespond to this instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $content;
@@ -282,16 +263,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
     /**
      * FHIRExampleScenarioInstance Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $key
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $structureType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $structureVersion
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $structureProfileCanonical
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $structureProfileUri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $content
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioVersion> $version
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance> $containedInstance
      * @param null|string[] $fhirComments
@@ -360,8 +332,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A unique string within the scenario that is used to reference the instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getKey(): null|FHIRString
     {
@@ -374,9 +344,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A unique string within the scenario that is used to reference the instance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $key
-     * @return static
      */
     public function setKey(null|string|FHIRStringPrimitive|FHIRString $key): self
     {
@@ -398,8 +365,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * A code indicating the kind of data structure (FHIR resource or some other
      * standard) this is an instance of.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     public function getStructureType(): null|FHIRCoding
     {
@@ -413,9 +378,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * A code indicating the kind of data structure (FHIR resource or some other
      * standard) this is an instance of.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $structureType
-     * @return static
      */
     public function setStructureType(null|FHIRCoding $structureType): self
     {
@@ -434,8 +396,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Conveys the version of the data structure instantiated. I.e. what release of
      * FHIR, X12, OpenEHR, etc. is instance compliant with.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getStructureVersion(): null|FHIRString
     {
@@ -449,9 +409,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Conveys the version of the data structure instantiated. I.e. what release of
      * FHIR, X12, OpenEHR, etc. is instance compliant with.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $structureVersion
-     * @return static
      */
     public function setStructureVersion(null|string|FHIRStringPrimitive|FHIRString $structureVersion): self
     {
@@ -472,10 +429,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * Refers to a profile, template or other ruleset the instance adheres to.
      */
     public function getStructureProfileCanonical(): null|FHIRCanonical
     {
@@ -488,11 +442,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $structureProfileCanonical
-     * @return static
+     * Refers to a profile, template or other ruleset the instance adheres to.
      */
     public function setStructureProfileCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $structureProfileCanonical): self
     {
@@ -512,10 +462,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * Refers to a profile, template or other ruleset the instance adheres to.
      */
     public function getStructureProfileUri(): null|FHIRUri
     {
@@ -527,11 +474,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Refers to a profile, template or other ruleset the instance adheres to. (choose
-     * any one of structureProfile*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $structureProfileUri
-     * @return static
+     * Refers to a profile, template or other ruleset the instance adheres to.
      */
     public function setStructureProfileUri(null|string|FHIRUriPrimitive|FHIRUri $structureProfileUri): self
     {
@@ -552,8 +495,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short descriptive label the instance to be used in tables or diagrams.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -566,9 +507,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short descriptive label the instance to be used in tables or diagrams.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -593,8 +531,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An explanation of what the instance contains and what it's for.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -611,9 +547,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An explanation of what the instance contains and what it's for.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -635,8 +568,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Points to an instance (typically an example) that shows the data that would
      * corespond to this instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getContent(): null|FHIRReference
     {
@@ -650,9 +581,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Points to an instance (typically an example) that shows the data that would
      * corespond to this instance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $content
-     * @return static
      */
     public function setContent(null|FHIRReference $content): self
     {
@@ -691,9 +619,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Represents the instance as it was at a specific time-point.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioVersion $version
-     * @return static
      */
     public function addVersion(FHIRExampleScenarioVersion $version): self
     {
@@ -708,9 +633,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Represents the instance as it was at a specific time-point.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioVersion ...$version
-     * @return static
      */
     public function setVersion(FHIRExampleScenarioVersion ...$version): self
     {
@@ -751,9 +673,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * References to other instances that can be found within this instance (e.g. the
      * observations contained in a bundle).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance $containedInstance
-     * @return static
      */
     public function addContainedInstance(FHIRExampleScenarioContainedInstance $containedInstance): self
     {
@@ -769,9 +688,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * References to other instances that can be found within this instance (e.g. the
      * observations contained in a bundle).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance ...$containedInstance
-     * @return static
      */
     public function setContainedInstance(FHIRExampleScenarioContainedInstance ...$containedInstance): self
     {
@@ -785,10 +701,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -898,10 +811,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -993,10 +902,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -128,6 +127,12 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
         self::FIELD_TYPE => [
             MinOccursRule::NAME => 1,
         ],
+        self::FIELD_WHEN_DATE_TIME => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_WHEN_PERIOD => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -143,8 +148,6 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded event such as when a service is expected or a card printed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -158,9 +161,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * expectd to occur.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $whenDateTime;
@@ -170,9 +171,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * expectd to occur.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $whenPeriod;
@@ -181,11 +180,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
     /**
      * FHIRCoverageEligibilityRequestEvent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $whenDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $whenPeriod
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -225,8 +220,6 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded event such as when a service is expected or a card printed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -240,9 +233,6 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded event such as when a service is expected or a card printed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -264,9 +254,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * expectd to occur.
      */
     public function getWhenDateTime(): null|FHIRDateTime
     {
@@ -283,10 +271,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $whenDateTime
-     * @return static
+     * expectd to occur.
      */
     public function setWhenDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenDateTime): self
     {
@@ -307,9 +292,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * expectd to occur.
      */
     public function getWhenPeriod(): null|FHIRPeriod
     {
@@ -322,10 +305,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A date or period in the past or future indicating when the event occurred or is
-     * expectd to occur. (choose any one of when*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $whenPeriod
-     * @return static
+     * expectd to occur.
      */
     public function setWhenPeriod(null|FHIRPeriod $whenPeriod): self
     {
@@ -339,10 +319,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestEvent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -398,10 +375,6 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -429,10 +402,7 @@ class FHIRCoverageEligibilityRequestEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestEvent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

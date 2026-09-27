@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -114,8 +114,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance identifier for each non-natural or radioisotope.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -126,8 +124,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance name for each non-natural or radioisotope.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $name;
@@ -138,8 +134,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of isotopic substitution present in a single substance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $substitution;
@@ -151,8 +145,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Half life - for a non-natural nuclide.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $halfLife;
@@ -161,8 +153,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
      */
     #[FHIRSubstanceSpecificationMolecularWeight]
     protected FHIRSubstanceSpecificationMolecularWeight $molecularWeight;
@@ -171,13 +161,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
     /**
      * FHIRSubstanceSpecificationIsotope Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $substitution
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $halfLife
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -225,8 +209,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance identifier for each non-natural or radioisotope.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -240,9 +222,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance identifier for each non-natural or radioisotope.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -261,8 +240,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance name for each non-natural or radioisotope.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getName(): null|FHIRCodeableConcept
     {
@@ -276,9 +253,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Substance name for each non-natural or radioisotope.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $name
-     * @return static
      */
     public function setName(null|FHIRCodeableConcept $name): self
     {
@@ -297,8 +271,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of isotopic substitution present in a single substance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSubstitution(): null|FHIRCodeableConcept
     {
@@ -312,9 +284,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of isotopic substitution present in a single substance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $substitution
-     * @return static
      */
     public function setSubstitution(null|FHIRCodeableConcept $substitution): self
     {
@@ -334,8 +303,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Half life - for a non-natural nuclide.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     public function getHalfLife(): null|FHIRQuantity
     {
@@ -350,9 +317,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Half life - for a non-natural nuclide.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $halfLife
-     * @return static
      */
     public function setHalfLife(null|FHIRQuantity $halfLife): self
     {
@@ -369,8 +333,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
      */
     public function getMolecularWeight(): null|FHIRSubstanceSpecificationMolecularWeight
     {
@@ -382,9 +344,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
-     * @return static
      */
     public function setMolecularWeight(null|FHIRSubstanceSpecificationMolecularWeight $molecularWeight): self
     {
@@ -398,10 +357,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -453,10 +409,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -489,10 +441,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

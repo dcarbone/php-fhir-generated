@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -32,15 +32,11 @@ interface VersionTypeMapInterface
 {
     /**
      * Must return the full internal class map
-     *
-     * @return array
      */
     public static function getMap(): array;
 
     /**
      * Must return the full list of containable resource types
-     *
-     * @return array
      */
     public static function getContainableTypes(): array;
 
@@ -48,7 +44,6 @@ interface VersionTypeMapInterface
      * Must return the fully qualified class name for FHIR Type name.  Must return null if type not found.
      *
      * @param string|\stdClass|\SimpleXMLElement $input Must expect either name of type, or unserialized JSON or XML.
-     * @return string|null
      */
     public static function getTypeClassname(string|\stdClass|\SimpleXMLElement $input): null|string;
 
@@ -63,9 +58,6 @@ interface VersionTypeMapInterface
 
     /**
      * Must attempt to determine if the provided value is or describes a containable resource type
-     *
-     * @param string|\stdClass|\SimpleXMLElement|\DCarbone\PHPFHIRGenerated\Types\TypeInterface $input
-     * @return bool
      */
     public static function isContainableType(string|\stdClass|\SimpleXMLElement|TypeInterface $input): bool;
 
@@ -76,7 +68,6 @@ interface VersionTypeMapInterface
     public static function mustGetContainedTypeClassnameFromXML(\SimpleXMLElement $node): string;
 
     /**
-     * @param \stdClass $decoded
      * @return string Fully qualified class name of contained resource type
      */
     public static function mustGetContainedTypeClassnameFromJSON(\stdClass $decoded): string;

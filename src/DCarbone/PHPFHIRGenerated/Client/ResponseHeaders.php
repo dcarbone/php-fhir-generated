@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -28,18 +28,11 @@ namespace DCarbone\PHPFHIRGenerated\Client;
 
 class ResponseHeaders implements \Countable
 {
-    /** @var array */
     private array $_headerLines = [];
-    /** @var int */
     private int $_headerLen = 0;
-    /** @var array */
     private array $_headers = [];
-    /** @var bool */
     private bool $_parsed = false;
 
-    /**
-     * @return int
-     */
     public function getLength(): int
     {
         return $this->_headerLen;
@@ -47,18 +40,12 @@ class ResponseHeaders implements \Countable
 
     /**
      * Returns the number of raw header lines seen in the response.
-     *
-     * @return int
      */
     public function count(): int
     {
         return count($this->_headerLines);
     }
 
-    /**
-     * @param string $line
-     * @return int
-     */
     public function addLine(string $line): int
     {
         $this->_parsed = false;
@@ -70,9 +57,6 @@ class ResponseHeaders implements \Countable
 
     /**
      * Return all parsed values for a given response header, if it exists.
-     *
-     * @param string $name
-     * @return null|array
      */
     public function get(string $name): null|array
     {
@@ -82,8 +66,6 @@ class ResponseHeaders implements \Countable
 
     /**
      * Return the first value for a given response header, if it exists.
-     *
-     * @return null|string
      */
     public function getFirst(string $name): null|string
     {
@@ -96,8 +78,6 @@ class ResponseHeaders implements \Countable
 
     /**
      * Returns an iterator containing the raw header lines extracted from the repsonse.
-     *
-     * @return iterable
      */
     public function getLinesIterator(): iterable
     {
@@ -106,8 +86,6 @@ class ResponseHeaders implements \Countable
 
     /**
      * Returns an iterator containing the parsed header lines from the response.
-     *
-     * @return iterable
      */
     public function getParsedIterator(): iterable
     {

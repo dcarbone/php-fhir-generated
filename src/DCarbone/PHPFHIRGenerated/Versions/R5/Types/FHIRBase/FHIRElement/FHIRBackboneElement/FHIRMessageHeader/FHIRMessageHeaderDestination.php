@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -139,10 +139,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates where the message should be routed. (choose any one of endpoint*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * Indicates where the message should be routed.
      */
     #[FHIRUrl]
     protected FHIRUrl $endpointUrl;
@@ -151,10 +148,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates where the message should be routed. (choose any one of endpoint*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Indicates where the message should be routed.
      */
     #[FHIRReference]
     protected FHIRReference $endpointReference;
@@ -164,8 +158,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable name for the target system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -176,8 +168,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      *
      * Identifies the target end system in situations where the initial message
      * transmission is to an intermediary system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $target;
@@ -188,8 +178,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      *
      * Allows data conveyed by a message to be addressed to a particular person or
      * department when routing to a specific application isn't sufficient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $receiver;
@@ -198,13 +186,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
     /**
      * FHIRMessageHeaderDestination Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $endpointUrl
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $endpointReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $target
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $receiver
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -250,10 +232,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates where the message should be routed. (choose any one of endpoint*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * Indicates where the message should be routed.
      */
     public function getEndpointUrl(): null|FHIRUrl
     {
@@ -265,11 +244,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates where the message should be routed. (choose any one of endpoint*, but
-     * only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $endpointUrl
-     * @return static
+     * Indicates where the message should be routed.
      */
     public function setEndpointUrl(null|string|FHIRUrlPrimitive|FHIRUrl $endpointUrl): self
     {
@@ -289,10 +264,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates where the message should be routed. (choose any one of endpoint*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Indicates where the message should be routed.
      */
     public function getEndpointReference(): null|FHIRReference
     {
@@ -304,11 +276,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates where the message should be routed. (choose any one of endpoint*, but
-     * only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $endpointReference
-     * @return static
+     * Indicates where the message should be routed.
      */
     public function setEndpointReference(null|FHIRReference $endpointReference): self
     {
@@ -326,8 +294,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable name for the target system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -340,9 +306,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable name for the target system.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -364,8 +327,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      *
      * Identifies the target end system in situations where the initial message
      * transmission is to an intermediary system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getTarget(): null|FHIRReference
     {
@@ -379,9 +340,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      *
      * Identifies the target end system in situations where the initial message
      * transmission is to an intermediary system.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $target
-     * @return static
      */
     public function setTarget(null|FHIRReference $target): self
     {
@@ -400,8 +358,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      *
      * Allows data conveyed by a message to be addressed to a particular person or
      * department when routing to a specific application isn't sufficient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getReceiver(): null|FHIRReference
     {
@@ -415,9 +371,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
      *
      * Allows data conveyed by a message to be addressed to a particular person or
      * department when routing to a specific application isn't sufficient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $receiver
-     * @return static
      */
     public function setReceiver(null|FHIRReference $receiver): self
     {
@@ -431,10 +384,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -502,10 +452,6 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -548,10 +494,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

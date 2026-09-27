@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElement
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -137,8 +136,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * ElementDefinition.path for that element. Across FHIR, there is only one base
      * definition of any element - that is, an element definition on a
      * [[[StructureDefinition]]] without a StructureDefinition.base.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -148,8 +145,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Minimum cardinality of the base element identified by the path.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $min;
@@ -159,8 +154,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Maximum cardinality of the base element identified by the path.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $max;
@@ -169,10 +162,6 @@ class FHIRElementDefinitionBase extends FHIRElement
     /**
      * FHIRElementDefinitionBase Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $path
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger $min
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $max
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -212,8 +201,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * ElementDefinition.path for that element. Across FHIR, there is only one base
      * definition of any element - that is, an element definition on a
      * [[[StructureDefinition]]] without a StructureDefinition.base.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getPath(): null|FHIRString
     {
@@ -229,9 +216,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * ElementDefinition.path for that element. Across FHIR, there is only one base
      * definition of any element - that is, an element definition on a
      * [[[StructureDefinition]]] without a StructureDefinition.base.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $path
-     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -252,8 +236,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Minimum cardinality of the base element identified by the path.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger
      */
     public function getMin(): null|FHIRInteger
     {
@@ -266,9 +248,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Minimum cardinality of the base element identified by the path.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger $min
-     * @return static
      */
     public function setMin(null|string|float|FHIRIntegerPrimitive|FHIRInteger $min): self
     {
@@ -289,8 +268,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Maximum cardinality of the base element identified by the path.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getMax(): null|FHIRString
     {
@@ -303,9 +280,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Maximum cardinality of the base element identified by the path.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $max
-     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
@@ -322,10 +296,7 @@ class FHIRElementDefinitionBase extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBase $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBase
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -395,10 +366,6 @@ class FHIRElementDefinitionBase extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -436,10 +403,7 @@ class FHIRElementDefinitionBase extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBase $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBase
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

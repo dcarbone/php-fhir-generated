@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -213,8 +212,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $question;
@@ -222,8 +219,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the criteria by which the question is enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuestionnaireItemOperator
      */
     #[FHIRQuestionnaireItemOperator]
     protected FHIRQuestionnaireItemOperator $operator;
@@ -233,8 +228,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $answerBoolean;
@@ -246,8 +239,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $answerDecimal;
@@ -258,8 +249,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $answerInteger;
@@ -271,8 +260,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $answerDate;
@@ -286,8 +273,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $answerDateTime;
@@ -297,8 +282,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $answerTime;
@@ -309,8 +292,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $answerString;
@@ -321,8 +302,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $answerCoding;
@@ -335,8 +314,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $answerQuantity;
@@ -347,8 +324,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $answerReference;
@@ -357,20 +332,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * FHIRQuestionnaireEnableWhen Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $question
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRQuestionnaireItemOperatorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuestionnaireItemOperator $operator
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $answerBoolean
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $answerDecimal
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $answerInteger
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $answerDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $answerDateTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $answerTime
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $answerString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $answerCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $answerQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $answerReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -446,8 +408,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getQuestion(): null|FHIRString
     {
@@ -461,9 +421,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $question
-     * @return static
      */
     public function setQuestion(null|string|FHIRStringPrimitive|FHIRString $question): self
     {
@@ -482,8 +439,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the criteria by which the question is enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuestionnaireItemOperator
      */
     public function getOperator(): null|FHIRQuestionnaireItemOperator
     {
@@ -494,9 +449,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the criteria by which the question is enabled.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRQuestionnaireItemOperatorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuestionnaireItemOperator $operator
-     * @return static
      */
     public function setOperator(null|string|FHIRQuestionnaireItemOperatorEnum|FHIRQuestionnaireItemOperator $operator): self
     {
@@ -517,8 +469,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getAnswerBoolean(): null|FHIRBoolean
     {
@@ -531,9 +481,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $answerBoolean
-     * @return static
      */
     public function setAnswerBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $answerBoolean): self
     {
@@ -556,8 +503,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     public function getAnswerDecimal(): null|FHIRDecimal
     {
@@ -572,9 +517,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $answerDecimal
-     * @return static
      */
     public function setAnswerDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $answerDecimal): self
     {
@@ -596,8 +538,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     public function getAnswerInteger(): null|FHIRInteger
     {
@@ -611,9 +551,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $answerInteger
-     * @return static
      */
     public function setAnswerInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $answerInteger): self
     {
@@ -636,8 +573,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     public function getAnswerDate(): null|FHIRDate
     {
@@ -652,9 +587,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $answerDate
-     * @return static
      */
     public function setAnswerDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $answerDate): self
     {
@@ -679,8 +611,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getAnswerDateTime(): null|FHIRDateTime
     {
@@ -697,9 +627,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $answerDateTime
-     * @return static
      */
     public function setAnswerDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $answerDateTime): self
     {
@@ -720,8 +647,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime
      */
     public function getAnswerTime(): null|FHIRTime
     {
@@ -734,9 +659,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $answerTime
-     * @return static
      */
     public function setAnswerTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $answerTime): self
     {
@@ -758,8 +680,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getAnswerString(): null|FHIRString
     {
@@ -773,9 +693,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $answerString
-     * @return static
      */
     public function setAnswerString(null|string|FHIRStringPrimitive|FHIRString $answerString): self
     {
@@ -797,8 +714,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding
      */
     public function getAnswerCoding(): null|FHIRCoding
     {
@@ -812,9 +727,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $answerCoding
-     * @return static
      */
     public function setAnswerCoding(null|FHIRCoding $answerCoding): self
     {
@@ -835,8 +747,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getAnswerQuantity(): null|FHIRQuantity
     {
@@ -852,9 +762,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $answerQuantity
-     * @return static
      */
     public function setAnswerQuantity(null|FHIRQuantity $answerQuantity): self
     {
@@ -873,8 +780,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getAnswerReference(): null|FHIRReference
     {
@@ -888,9 +793,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * A value that the referenced question is tested using the specified operator in
      * order for the item to be enabled.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $answerReference
-     * @return static
      */
     public function setAnswerReference(null|FHIRReference $answerReference): self
     {
@@ -904,10 +806,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1045,10 +944,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1161,10 +1056,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

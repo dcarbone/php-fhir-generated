@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
@@ -112,7 +110,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
@@ -182,8 +179,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Broad category of this product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductCategory
      */
     #[FHIRBiologicallyDerivedProductCategory]
     protected FHIRBiologicallyDerivedProductCategory $productCategory;
@@ -195,8 +190,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      *
      * A code that identifies the kind of this biologically derived product (SNOMED
      * Ctcode).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $productCode;
@@ -204,8 +197,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the product is currently available.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductStatus
      */
     #[FHIRBiologicallyDerivedProductStatus]
     protected FHIRBiologicallyDerivedProductStatus $status;
@@ -226,8 +217,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of discrete units within this product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $quantity;
@@ -247,8 +236,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * transplanted or infused into another (possibly the same) biological entity.
      *
      * How this product was collected.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      */
     #[FHIRBiologicallyDerivedProductCollection]
     protected FHIRBiologicallyDerivedProductCollection $collection;
@@ -271,8 +258,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * Any manipulation of product post-collection that is intended to alter the
      * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
      * Blood Stem Cells to make it more suitable for infusion.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
      */
     #[FHIRBiologicallyDerivedProductManipulation]
     protected FHIRBiologicallyDerivedProductManipulation $manipulation;
@@ -290,24 +275,13 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
     /* constructor.php:61 */
     /**
      * FHIRBiologicallyDerivedProduct Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRBiologicallyDerivedProductCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductCategory $productCategory
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $productCode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRBiologicallyDerivedProductStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $request
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $quantity
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $parent
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $collection
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing> $processing
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation $manipulation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage> $storage
      * @param null|string[] $fhirComments
      */
@@ -428,9 +402,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * instance that are defined by business processes and/or used to refer to it when
      * a direct URL reference to the resource itself is not appropriate (e.g. in CDA
      * documents, or in written / printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -451,9 +422,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * instance that are defined by business processes and/or used to refer to it when
      * a direct URL reference to the resource itself is not appropriate (e.g. in CDA
      * documents, or in written / printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -469,8 +437,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Broad category of this product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductCategory
      */
     public function getProductCategory(): null|FHIRBiologicallyDerivedProductCategory
     {
@@ -481,9 +447,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Broad category of this product.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRBiologicallyDerivedProductCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductCategory $productCategory
-     * @return static
      */
     public function setProductCategory(null|string|FHIRBiologicallyDerivedProductCategoryEnum|FHIRBiologicallyDerivedProductCategory $productCategory): self
     {
@@ -506,8 +469,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      *
      * A code that identifies the kind of this biologically derived product (SNOMED
      * Ctcode).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getProductCode(): null|FHIRCodeableConcept
     {
@@ -522,9 +483,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      *
      * A code that identifies the kind of this biologically derived product (SNOMED
      * Ctcode).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $productCode
-     * @return static
      */
     public function setProductCode(null|FHIRCodeableConcept $productCode): self
     {
@@ -540,8 +498,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the product is currently available.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductStatus
      */
     public function getStatus(): null|FHIRBiologicallyDerivedProductStatus
     {
@@ -552,9 +508,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the product is currently available.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRBiologicallyDerivedProductStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRBiologicallyDerivedProductStatusEnum|FHIRBiologicallyDerivedProductStatus $status): self
     {
@@ -600,9 +553,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Procedure request to obtain this biologically derived product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $request
-     * @return static
      */
     public function addRequest(FHIRReference $request): self
     {
@@ -619,9 +569,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Procedure request to obtain this biologically derived product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$request
-     * @return static
      */
     public function setRequest(FHIRReference ...$request): self
     {
@@ -639,8 +586,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of discrete units within this product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     public function getQuantity(): null|FHIRInteger
     {
@@ -653,9 +598,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of discrete units within this product.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $quantity
-     * @return static
      */
     public function setQuantity(null|string|float|FHIRIntegerPrimitive|FHIRInteger $quantity): self
     {
@@ -701,9 +643,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parent product (if any).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $parent
-     * @return static
      */
     public function addParent(FHIRReference $parent): self
     {
@@ -720,9 +659,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parent product (if any).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$parent
-     * @return static
      */
     public function setParent(FHIRReference ...$parent): self
     {
@@ -739,8 +675,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * transplanted or infused into another (possibly the same) biological entity.
      *
      * How this product was collected.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      */
     public function getCollection(): null|FHIRBiologicallyDerivedProductCollection
     {
@@ -752,9 +686,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * transplanted or infused into another (possibly the same) biological entity.
      *
      * How this product was collected.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $collection
-     * @return static
      */
     public function setCollection(null|FHIRBiologicallyDerivedProductCollection $collection): self
     {
@@ -799,9 +730,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * Any processing of the product during collection that does not change the
      * fundamental nature of the product. For example adding anti-coagulants during the
      * collection of Peripheral Blood Stem Cells.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing $processing
-     * @return static
      */
     public function addProcessing(FHIRBiologicallyDerivedProductProcessing $processing): self
     {
@@ -819,9 +747,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * Any processing of the product during collection that does not change the
      * fundamental nature of the product. For example adding anti-coagulants during the
      * collection of Peripheral Blood Stem Cells.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing ...$processing
-     * @return static
      */
     public function setProcessing(FHIRBiologicallyDerivedProductProcessing ...$processing): self
     {
@@ -840,8 +765,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * Any manipulation of product post-collection that is intended to alter the
      * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
      * Blood Stem Cells to make it more suitable for infusion.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
      */
     public function getManipulation(): null|FHIRBiologicallyDerivedProductManipulation
     {
@@ -855,9 +778,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * Any manipulation of product post-collection that is intended to alter the
      * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
      * Blood Stem Cells to make it more suitable for infusion.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation $manipulation
-     * @return static
      */
     public function setManipulation(null|FHIRBiologicallyDerivedProductManipulation $manipulation): self
     {
@@ -898,9 +818,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * transplanted or infused into another (possibly the same) biological entity.
      *
      * Product storage.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage $storage
-     * @return static
      */
     public function addStorage(FHIRBiologicallyDerivedProductStorage $storage): self
     {
@@ -916,9 +833,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
      * transplanted or infused into another (possibly the same) biological entity.
      *
      * Product storage.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage ...$storage
-     * @return static
      */
     public function setStorage(FHIRBiologicallyDerivedProductStorage ...$storage): self
     {
@@ -932,10 +846,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1059,11 +970,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1175,10 +1081,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements Versi
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

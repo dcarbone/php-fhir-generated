@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * It qualifies the interval of temperature, which characterizes an occurrence of
      * handling. Conditions that are not related to temperature may be handled in the
      * instruction element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $temperatureQualifier;
@@ -149,8 +147,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The temperature interval for this set of handling instructions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $temperatureRange;
@@ -160,8 +156,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum time interval of preservation of the specimen with these conditions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $maxDuration;
@@ -176,8 +170,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      *
      * Additional textual instructions for the preservation or transport of the
      * specimen. For instance, 'Protect from light exposure'.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $instruction;
@@ -186,12 +178,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
     /**
      * FHIRSpecimenDefinitionHandling Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $temperatureQualifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $temperatureRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $maxDuration
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $instruction
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -237,8 +224,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * It qualifies the interval of temperature, which characterizes an occurrence of
      * handling. Conditions that are not related to temperature may be handled in the
      * instruction element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getTemperatureQualifier(): null|FHIRCodeableConcept
     {
@@ -254,9 +239,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * It qualifies the interval of temperature, which characterizes an occurrence of
      * handling. Conditions that are not related to temperature may be handled in the
      * instruction element.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $temperatureQualifier
-     * @return static
      */
     public function setTemperatureQualifier(null|FHIRCodeableConcept $temperatureQualifier): self
     {
@@ -274,8 +256,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The temperature interval for this set of handling instructions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     public function getTemperatureRange(): null|FHIRRange
     {
@@ -288,9 +268,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The temperature interval for this set of handling instructions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $temperatureRange
-     * @return static
      */
     public function setTemperatureRange(null|FHIRRange $temperatureRange): self
     {
@@ -308,8 +285,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum time interval of preservation of the specimen with these conditions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     public function getMaxDuration(): null|FHIRDuration
     {
@@ -322,9 +297,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum time interval of preservation of the specimen with these conditions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $maxDuration
-     * @return static
      */
     public function setMaxDuration(null|FHIRDuration $maxDuration): self
     {
@@ -347,8 +319,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      *
      * Additional textual instructions for the preservation or transport of the
      * specimen. For instance, 'Protect from light exposure'.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getInstruction(): null|FHIRMarkdown
     {
@@ -366,9 +336,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      *
      * Additional textual instructions for the preservation or transport of the
      * specimen. For instance, 'Protect from light exposure'.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $instruction
-     * @return static
      */
     public function setInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $instruction): self
     {
@@ -385,10 +352,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -446,10 +410,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -482,10 +442,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

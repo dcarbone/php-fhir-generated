@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier of the packaged medication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -150,8 +148,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that defines the specific type of packaging.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -161,8 +157,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of items contained in the package (devices or sub-packages).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $count;
@@ -201,11 +195,7 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
     /**
      * FHIRDeviceDefinitionPackaging Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $count
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionDistributor> $distributor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier> $udiDeviceIdentifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging> $packaging
@@ -260,8 +250,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier of the packaged medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -275,9 +263,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier of the packaged medication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -296,8 +281,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that defines the specific type of packaging.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -311,9 +294,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that defines the specific type of packaging.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -331,8 +311,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of items contained in the package (devices or sub-packages).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     public function getCount(): null|FHIRInteger
     {
@@ -345,9 +323,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of items contained in the package (devices or sub-packages).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $count
-     * @return static
      */
     public function setCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $count): self
     {
@@ -391,9 +366,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * An organization that distributes the packaged device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionDistributor $distributor
-     * @return static
      */
     public function addDistributor(FHIRDeviceDefinitionDistributor $distributor): self
     {
@@ -409,9 +381,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * An organization that distributes the packaged device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionDistributor ...$distributor
-     * @return static
      */
     public function setDistributor(FHIRDeviceDefinitionDistributor ...$distributor): self
     {
@@ -452,9 +421,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * Unique Device Identifier (UDI) Barcode string on the packaging.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier $udiDeviceIdentifier
-     * @return static
      */
     public function addUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier $udiDeviceIdentifier): self
     {
@@ -470,9 +436,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * Unique Device Identifier (UDI) Barcode string on the packaging.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier ...$udiDeviceIdentifier
-     * @return static
      */
     public function setUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier ...$udiDeviceIdentifier): self
     {
@@ -513,9 +476,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * Allows packages within packages.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging $packaging
-     * @return static
      */
     public function addPackaging(FHIRDeviceDefinitionPackaging $packaging): self
     {
@@ -531,9 +491,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * component of a medical device.
      *
      * Allows packages within packages.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging ...$packaging
-     * @return static
      */
     public function setPackaging(FHIRDeviceDefinitionPackaging ...$packaging): self
     {
@@ -547,10 +504,7 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -612,10 +566,6 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -664,10 +614,7 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

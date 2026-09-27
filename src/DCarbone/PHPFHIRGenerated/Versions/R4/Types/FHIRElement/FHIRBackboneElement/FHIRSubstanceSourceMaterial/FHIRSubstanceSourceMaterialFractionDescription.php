@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -123,8 +123,6 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
      *
      * This element is capturing information about the fraction of a plant part, or
      * human plasma for fractionation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $fraction;
@@ -137,8 +135,6 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
      * The specific type of the material constituting the component. For Herbal
      * preparations the particulars of the extracts (liquid/dry) is described in
      * Specified Substance Group 1.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $materialType;
@@ -147,10 +143,7 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
     /**
      * FHIRSubstanceSourceMaterialFractionDescription Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $fraction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $materialType
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -186,8 +179,6 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
      *
      * This element is capturing information about the fraction of a plant part, or
      * human plasma for fractionation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getFraction(): null|FHIRString
     {
@@ -201,9 +192,6 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
      *
      * This element is capturing information about the fraction of a plant part, or
      * human plasma for fractionation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $fraction
-     * @return static
      */
     public function setFraction(null|string|FHIRStringPrimitive|FHIRString $fraction): self
     {
@@ -227,8 +215,6 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
      * The specific type of the material constituting the component. For Herbal
      * preparations the particulars of the extracts (liquid/dry) is described in
      * Specified Substance Group 1.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMaterialType(): null|FHIRCodeableConcept
     {
@@ -244,9 +230,6 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
      * The specific type of the material constituting the component. For Herbal
      * preparations the particulars of the extracts (liquid/dry) is described in
      * Specified Substance Group 1.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $materialType
-     * @return static
      */
     public function setMaterialType(null|FHIRCodeableConcept $materialType): self
     {
@@ -260,10 +243,7 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -317,10 +297,6 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -343,10 +319,7 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

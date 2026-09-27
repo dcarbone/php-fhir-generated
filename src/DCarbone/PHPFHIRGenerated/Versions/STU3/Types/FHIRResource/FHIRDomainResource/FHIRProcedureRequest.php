@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -97,7 +95,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestStatus;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Version;
@@ -240,8 +237,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * A shared identifier common to all procedure or diagnostic requests that were
      * authorized more or less simultaneously by a single author, representing the
      * composite or group identifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $requisition;
@@ -250,8 +245,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestStatus
      */
     #[FHIRRequestStatus]
     protected FHIRRequestStatus $status;
@@ -260,8 +253,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestIntent
      */
     #[FHIRRequestIntent]
     protected FHIRRequestIntent $intent;
@@ -271,8 +262,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Indicates how quickly the ProcedureRequest should be addressed with respect to
      * other requests.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestPriority
      */
     #[FHIRRequestPriority]
     protected FHIRRequestPriority $priority;
@@ -282,8 +271,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Set this to true if the record is saying that the procedure should NOT be
      * performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $doNotPerform;
@@ -308,8 +295,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * A code that identifies a particular procedure, diagnostic investigation, or
      * panel of investigations, that have been requested.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -322,8 +307,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * a human patient, but can also be requested on animals, groups of humans or
      * animals, devices such as dialysis machines, or even locations (typically for
      * environmental scans).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -334,8 +317,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * An encounter or episode of care that provides additional information about the
      * healthcare context in which this request is made.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $context;
@@ -348,8 +329,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurrenceDateTime;
@@ -359,8 +338,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurrencePeriod;
@@ -374,8 +351,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $occurrenceTiming;
@@ -385,8 +360,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure. For example "pain", "on flare-up", etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $asNeededBoolean;
@@ -398,8 +371,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure. For example "pain", "on flare-up", etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $asNeededCodeableConcept;
@@ -412,8 +383,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request transitioned to being actionable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $authoredOn;
@@ -423,8 +392,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The individual who initiated the request and has responsibility for its
      * activation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProcedureRequest\FHIRProcedureRequestRequester
      */
     #[FHIRProcedureRequestRequester]
     protected FHIRProcedureRequestRequester $requester;
@@ -435,8 +402,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Desired type of performer for doing the diagnostic testing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $performerType;
@@ -447,8 +412,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The desired perfomer for doing the diagnostic testing. For example, the surgeon,
      * dermatopathologist, endoscopist, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $performer;
@@ -549,11 +512,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
     /* constructor.php:61 */
     /**
      * FHIRProcedureRequest Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
@@ -561,24 +519,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $definition
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $basedOn
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $replaces
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $requisition
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRRequestStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestStatus $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRRequestIntentList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestIntent $intent
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRRequestPriorityList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestPriority $priority
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $doNotPerform
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $context
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $occurrenceDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $occurrencePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $occurrenceTiming
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $asNeededBoolean
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $authoredOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProcedureRequest\FHIRProcedureRequestRequester $requester
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $performerType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $performer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $reasonCode
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $reasonReference
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $supportingInfo
@@ -771,9 +712,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Identifiers assigned to this order instance by the orderer and/or the receiver
      * and/or order fulfiller.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -791,9 +729,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Identifiers assigned to this order instance by the orderer and/or the receiver
      * and/or order fulfiller.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -836,9 +771,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Protocol or definition followed by this request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $definition
-     * @return static
      */
     public function addDefinition(FHIRReference $definition): self
     {
@@ -855,9 +787,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Protocol or definition followed by this request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$definition
-     * @return static
      */
     public function setDefinition(FHIRReference ...$definition): self
     {
@@ -900,9 +829,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan/proposal/order fulfilled by this request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -919,9 +845,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan/proposal/order fulfilled by this request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -966,9 +889,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The request takes the place of the referenced completed or terminated
      * request(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $replaces
-     * @return static
      */
     public function addReplaces(FHIRReference $replaces): self
     {
@@ -986,9 +906,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The request takes the place of the referenced completed or terminated
      * request(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$replaces
-     * @return static
      */
     public function setReplaces(FHIRReference ...$replaces): self
     {
@@ -1008,8 +925,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * A shared identifier common to all procedure or diagnostic requests that were
      * authorized more or less simultaneously by a single author, representing the
      * composite or group identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     public function getRequisition(): null|FHIRIdentifier
     {
@@ -1024,9 +939,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * A shared identifier common to all procedure or diagnostic requests that were
      * authorized more or less simultaneously by a single author, representing the
      * composite or group identifier.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $requisition
-     * @return static
      */
     public function setRequisition(null|FHIRIdentifier $requisition): self
     {
@@ -1043,8 +955,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestStatus
      */
     public function getStatus(): null|FHIRRequestStatus
     {
@@ -1056,9 +966,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRRequestStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRRequestStatusList|FHIRRequestStatus $status): self
     {
@@ -1078,8 +985,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestIntent
      */
     public function getIntent(): null|FHIRRequestIntent
     {
@@ -1091,9 +996,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRRequestIntentList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestIntent $intent
-     * @return static
      */
     public function setIntent(null|string|FHIRRequestIntentList|FHIRRequestIntent $intent): self
     {
@@ -1114,8 +1016,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Indicates how quickly the ProcedureRequest should be addressed with respect to
      * other requests.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestPriority
      */
     public function getPriority(): null|FHIRRequestPriority
     {
@@ -1128,9 +1028,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Indicates how quickly the ProcedureRequest should be addressed with respect to
      * other requests.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRRequestPriorityList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRequestPriority $priority
-     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityList|FHIRRequestPriority $priority): self
     {
@@ -1151,8 +1048,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Set this to true if the record is saying that the procedure should NOT be
      * performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getDoNotPerform(): null|FHIRBoolean
     {
@@ -1165,9 +1060,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Set this to true if the record is saying that the procedure should NOT be
      * performed.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $doNotPerform
-     * @return static
      */
     public function setDoNotPerform(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform): self
     {
@@ -1217,9 +1109,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * A code that classifies the procedure for searching, sorting and display purposes
      * (e.g. "Surgical Procedure").
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -1238,9 +1127,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * A code that classifies the procedure for searching, sorting and display purposes
      * (e.g. "Surgical Procedure").
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -1260,8 +1146,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * A code that identifies a particular procedure, diagnostic investigation, or
      * panel of investigations, that have been requested.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -1276,9 +1160,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * A code that identifies a particular procedure, diagnostic investigation, or
      * panel of investigations, that have been requested.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -1299,8 +1180,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * a human patient, but can also be requested on animals, groups of humans or
      * animals, devices such as dialysis machines, or even locations (typically for
      * environmental scans).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -1316,9 +1195,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * a human patient, but can also be requested on animals, groups of humans or
      * animals, devices such as dialysis machines, or even locations (typically for
      * environmental scans).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1337,8 +1213,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * An encounter or episode of care that provides additional information about the
      * healthcare context in which this request is made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getContext(): null|FHIRReference
     {
@@ -1352,9 +1226,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * An encounter or episode of care that provides additional information about the
      * healthcare context in which this request is made.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $context
-     * @return static
      */
     public function setContext(null|FHIRReference $context): self
     {
@@ -1375,8 +1246,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime(): null|FHIRDateTime
     {
@@ -1392,9 +1261,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $occurrenceDateTime
-     * @return static
      */
     public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
     {
@@ -1415,8 +1281,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod(): null|FHIRPeriod
     {
@@ -1429,9 +1293,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $occurrencePeriod
-     * @return static
      */
     public function setOccurrencePeriod(null|FHIRPeriod $occurrencePeriod): self
     {
@@ -1453,8 +1314,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming
      */
     public function getOccurrenceTiming(): null|FHIRTiming
     {
@@ -1471,9 +1330,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $occurrenceTiming
-     * @return static
      */
     public function setOccurrenceTiming(null|FHIRTiming $occurrenceTiming): self
     {
@@ -1491,8 +1347,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure. For example "pain", "on flare-up", etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getAsNeededBoolean(): null|FHIRBoolean
     {
@@ -1505,9 +1359,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure. For example "pain", "on flare-up", etc.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $asNeededBoolean
-     * @return static
      */
     public function setAsNeededBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeededBoolean): self
     {
@@ -1530,8 +1381,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure. For example "pain", "on flare-up", etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAsNeededCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1546,9 +1395,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure. For example "pain", "on flare-up", etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
-     * @return static
      */
     public function setAsNeededCodeableConcept(null|FHIRCodeableConcept $asNeededCodeableConcept): self
     {
@@ -1569,8 +1415,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request transitioned to being actionable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getAuthoredOn(): null|FHIRDateTime
     {
@@ -1586,9 +1430,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request transitioned to being actionable.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $authoredOn
-     * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn): self
     {
@@ -1609,8 +1450,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The individual who initiated the request and has responsibility for its
      * activation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProcedureRequest\FHIRProcedureRequestRequester
      */
     public function getRequester(): null|FHIRProcedureRequestRequester
     {
@@ -1623,9 +1462,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The individual who initiated the request and has responsibility for its
      * activation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProcedureRequest\FHIRProcedureRequestRequester $requester
-     * @return static
      */
     public function setRequester(null|FHIRProcedureRequestRequester $requester): self
     {
@@ -1644,8 +1480,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Desired type of performer for doing the diagnostic testing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPerformerType(): null|FHIRCodeableConcept
     {
@@ -1659,9 +1493,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Desired type of performer for doing the diagnostic testing.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $performerType
-     * @return static
      */
     public function setPerformerType(null|FHIRCodeableConcept $performerType): self
     {
@@ -1680,8 +1511,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The desired perfomer for doing the diagnostic testing. For example, the surgeon,
      * dermatopathologist, endoscopist, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getPerformer(): null|FHIRReference
     {
@@ -1695,9 +1524,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The desired perfomer for doing the diagnostic testing. For example, the surgeon,
      * dermatopathologist, endoscopist, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $performer
-     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -1746,9 +1572,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * An explanation or justification for why this diagnostic investigation is being
      * requested in coded or textual form. This is often for billing purposes. May
      * relate to the resources referred to in supportingInformation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $reasonCode
-     * @return static
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode): self
     {
@@ -1768,9 +1591,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * An explanation or justification for why this diagnostic investigation is being
      * requested in coded or textual form. This is often for billing purposes. May
      * relate to the resources referred to in supportingInformation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$reasonCode
-     * @return static
      */
     public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
     {
@@ -1817,9 +1637,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * Indicates another resource that provides a justification for why this diagnostic
      * investigation is being requested. May relate to the resources referred to in
      * supportingInformation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $reasonReference
-     * @return static
      */
     public function addReasonReference(FHIRReference $reasonReference): self
     {
@@ -1838,9 +1655,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * Indicates another resource that provides a justification for why this diagnostic
      * investigation is being requested. May relate to the resources referred to in
      * supportingInformation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$reasonReference
-     * @return static
      */
     public function setReasonReference(FHIRReference ...$reasonReference): self
     {
@@ -1895,9 +1709,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * includes observations explicitly requested by the producer (filler) to provide
      * context or supporting information needed to complete the order. For example,
      * reporting the amount of inspired oxygen for blood gas measurements.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $supportingInfo
-     * @return static
      */
     public function addSupportingInfo(FHIRReference $supportingInfo): self
     {
@@ -1920,9 +1731,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * includes observations explicitly requested by the producer (filler) to provide
      * context or supporting information needed to complete the order. For example,
      * reporting the amount of inspired oxygen for blood gas measurements.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$supportingInfo
-     * @return static
      */
     public function setSupportingInfo(FHIRReference ...$supportingInfo): self
     {
@@ -1965,9 +1773,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the laboratory procedure will use.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $specimen
-     * @return static
      */
     public function addSpecimen(FHIRReference $specimen): self
     {
@@ -1984,9 +1789,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the laboratory procedure will use.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$specimen
-     * @return static
      */
     public function setSpecimen(FHIRReference ...$specimen): self
     {
@@ -2033,9 +1835,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Anatomic location where the procedure should be performed. This is the target
      * site.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite): self
     {
@@ -2054,9 +1853,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Anatomic location where the procedure should be performed. This is the target
      * site.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$bodySite
-     * @return static
      */
     public function setBodySite(FHIRCodeableConcept ...$bodySite): self
     {
@@ -2105,9 +1901,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * Any other notes and comments made about the service request. For example,
      * letting provider know that "patient hates needles" or other provider
      * instructions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -2127,9 +1920,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * Any other notes and comments made about the service request. For example,
      * letting provider know that "patient hates needles" or other provider
      * instructions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -2172,9 +1962,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key events in the history of the request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $relevantHistory
-     * @return static
      */
     public function addRelevantHistory(FHIRReference $relevantHistory): self
     {
@@ -2191,9 +1978,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key events in the history of the request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$relevantHistory
-     * @return static
      */
     public function setRelevantHistory(FHIRReference ...$relevantHistory): self
     {
@@ -2207,10 +1991,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRProcedureRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2402,11 +2183,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2642,10 +2418,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRProcedureRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

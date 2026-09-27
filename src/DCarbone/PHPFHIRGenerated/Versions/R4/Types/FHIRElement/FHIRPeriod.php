@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -115,8 +115,6 @@ class FHIRPeriod extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The start of the period. The boundary is inclusive.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $start;
@@ -132,8 +130,6 @@ class FHIRPeriod extends FHIRElement
      * known or planned at the time the instance was created. The start may be in the
      * past, and the end date in the future, which means that period is
      * expected/planned to end at that time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $end;
@@ -142,9 +138,6 @@ class FHIRPeriod extends FHIRElement
     /**
      * FHIRPeriod Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $start
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $end
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -180,8 +173,6 @@ class FHIRPeriod extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The start of the period. The boundary is inclusive.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getStart(): null|FHIRDateTime
     {
@@ -197,9 +188,6 @@ class FHIRPeriod extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The start of the period. The boundary is inclusive.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $start
-     * @return static
      */
     public function setStart(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $start): self
     {
@@ -226,8 +214,6 @@ class FHIRPeriod extends FHIRElement
      * known or planned at the time the instance was created. The start may be in the
      * past, and the end date in the future, which means that period is
      * expected/planned to end at that time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getEnd(): null|FHIRDateTime
     {
@@ -246,9 +232,6 @@ class FHIRPeriod extends FHIRElement
      * known or planned at the time the instance was created. The start may be in the
      * past, and the end date in the future, which means that period is
      * expected/planned to end at that time.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $end
-     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $end): self
     {
@@ -265,10 +248,7 @@ class FHIRPeriod extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -328,10 +308,6 @@ class FHIRPeriod extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -359,10 +335,7 @@ class FHIRPeriod extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

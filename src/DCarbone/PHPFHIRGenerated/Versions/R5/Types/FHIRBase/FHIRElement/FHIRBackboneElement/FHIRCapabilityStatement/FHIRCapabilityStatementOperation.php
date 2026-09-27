@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -154,8 +153,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * OperationDefinition.code of the defining OperationDefinition. However, it can
      * sometimes differ if necessary to disambiguate when a server supports multiple
      * OperationDefinition that happen to share the same code.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -173,8 +170,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * [OperationDefinition](operationdefinition.html#) with a 'base' of the original
      * OperationDefinition. The custom definition would describe the specific subset of
      * functionality supported.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $definition;
@@ -190,8 +185,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * Documentation that describes anything special about the operation behavior,
      * possibly detailing different behavior for system, type and instance-level
      * invocation of the operation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $documentation;
@@ -200,11 +193,7 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
     /**
      * FHIRCapabilityStatementOperation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $definition
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $documentation
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -248,8 +237,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * OperationDefinition.code of the defining OperationDefinition. However, it can
      * sometimes differ if necessary to disambiguate when a server supports multiple
      * OperationDefinition that happen to share the same code.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -267,9 +254,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * OperationDefinition.code of the defining OperationDefinition. However, it can
      * sometimes differ if necessary to disambiguate when a server supports multiple
      * OperationDefinition that happen to share the same code.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -298,8 +282,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * [OperationDefinition](operationdefinition.html#) with a 'base' of the original
      * OperationDefinition. The custom definition would describe the specific subset of
      * functionality supported.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getDefinition(): null|FHIRCanonical
     {
@@ -320,9 +302,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * [OperationDefinition](operationdefinition.html#) with a 'base' of the original
      * OperationDefinition. The custom definition would describe the specific subset of
      * functionality supported.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $definition
-     * @return static
      */
     public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition): self
     {
@@ -349,8 +328,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * Documentation that describes anything special about the operation behavior,
      * possibly detailing different behavior for system, type and instance-level
      * invocation of the operation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDocumentation(): null|FHIRMarkdown
     {
@@ -369,9 +346,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
      * Documentation that describes anything special about the operation behavior,
      * possibly detailing different behavior for system, type and instance-level
      * invocation of the operation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation): self
     {
@@ -388,10 +362,7 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -463,10 +434,6 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -504,10 +471,7 @@ class FHIRCapabilityStatementOperation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

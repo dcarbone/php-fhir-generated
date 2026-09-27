@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -190,8 +189,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -202,8 +199,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -213,8 +208,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -225,8 +218,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -239,8 +230,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -249,8 +238,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -260,8 +247,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -271,8 +256,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -282,8 +265,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -293,8 +274,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -306,8 +285,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -317,8 +294,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -327,20 +302,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
     /**
      * FHIRQuestionnaireInitial Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $valueBoolean
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $valueDecimal
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $valueInteger
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $valueDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRTime $valueTime
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $valueString
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $valueUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $valueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $valueReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -414,8 +376,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -427,9 +387,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -451,8 +408,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -466,9 +421,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $valueDecimal
-     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -489,8 +441,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -503,9 +453,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $valueInteger
-     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -527,8 +474,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -542,9 +487,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $valueDate
-     * @return static
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -568,8 +510,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -585,9 +525,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $valueDateTime
-     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -607,8 +544,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRTime
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -620,9 +555,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRTime $valueTime
-     * @return static
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -643,8 +575,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getValueString(): null|FHIRString
     {
@@ -657,9 +587,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $valueString
-     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -680,8 +607,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -694,9 +619,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $valueUri
-     * @return static
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -717,8 +639,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -731,9 +651,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $valueAttachment
-     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -751,8 +668,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -765,9 +680,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $valueCoding
-     * @return static
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -787,8 +699,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -803,9 +713,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
-     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -823,8 +730,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -837,9 +742,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $valueReference
-     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -853,10 +755,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -986,10 +885,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1097,10 +992,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

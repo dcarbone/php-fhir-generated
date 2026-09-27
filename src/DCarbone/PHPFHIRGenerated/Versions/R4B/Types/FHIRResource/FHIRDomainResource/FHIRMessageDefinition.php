@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -122,7 +120,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -235,8 +232,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The business identifier that is used to reference the MessageDefinition and *is*
      * expected to be consistent from server to server.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -265,8 +260,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -278,8 +271,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A natural language name identifying the message definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -289,8 +280,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the message definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -311,8 +300,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The status of this message definition. Enables tracking the life-cycle of the
      * content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -323,8 +310,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A Boolean value to indicate that this message definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -340,8 +325,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the message definition changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -352,8 +335,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The name of the organization or individual that published the message
      * definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -380,8 +361,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * A free text natural language description of the message definition from a
      * consumer's perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -427,8 +406,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Explanation of why this message definition is needed and why it has been
      * designed as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -444,8 +421,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A copyright statement relating to the message definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the message definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -456,8 +431,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * The MessageDefinition that is the basis for the contents of this resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $base;
@@ -480,8 +453,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Event code or link to the EventDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $eventCoding;
@@ -491,8 +462,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Event code or link to the EventDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $eventUri;
@@ -500,8 +469,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The impact of the content of the message.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMessageSignificanceCategory
      */
     #[FHIRMessageSignificanceCategory]
     protected FHIRMessageSignificanceCategory $category;
@@ -523,8 +490,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Declare at a message definition level whether a response is required or only
      * upon error or success, or never.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMessageheaderResponseRequest
      */
     #[FHIRMessageheaderResponseRequest]
     protected FHIRMessageheaderResponseRequest $responseRequired;
@@ -560,37 +525,16 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
     /* constructor.php:61 */
     /**
      * FHIRMessageDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $title
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> $replaces
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $base
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> $parent
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $eventCoding
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $eventUri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRMessageSignificanceCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMessageSignificanceCategory $category
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus> $focus
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRMessageheaderResponseRequestEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMessageheaderResponseRequest $responseRequired
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse> $allowedResponse
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> $graph
      * @param null|string[] $fhirComments
@@ -736,8 +680,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The business identifier that is used to reference the MessageDefinition and *is*
      * expected to be consistent from server to server.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -751,9 +693,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The business identifier that is used to reference the MessageDefinition and *is*
      * expected to be consistent from server to server.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -805,9 +744,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A formal identifier that is used to identify this message definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -827,9 +763,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A formal identifier that is used to identify this message definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -852,8 +785,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -871,9 +802,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -896,8 +824,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A natural language name identifying the message definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -912,9 +838,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A natural language name identifying the message definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -935,8 +858,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the message definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -949,9 +870,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the message definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -999,9 +917,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * A MessageDefinition that is superseded by this definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $replaces
-     * @return static
      */
     public function addReplaces(string|FHIRCanonicalPrimitive|FHIRCanonical $replaces): self
     {
@@ -1022,9 +937,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * A MessageDefinition that is superseded by this definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical ...$replaces
-     * @return static
      */
     public function setReplaces(string|FHIRCanonicalPrimitive|FHIRCanonical ...$replaces): self
     {
@@ -1048,8 +960,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The status of this message definition. Enables tracking the life-cycle of the
      * content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -1061,9 +971,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The status of this message definition. Enables tracking the life-cycle of the
      * content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1085,8 +992,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A Boolean value to indicate that this message definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -1100,9 +1005,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A Boolean value to indicate that this message definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1129,8 +1031,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the message definition changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1149,9 +1049,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the message definition changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1173,8 +1070,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The name of the organization or individual that published the message
      * definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1188,9 +1083,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * The name of the organization or individual that published the message
      * definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1238,9 +1130,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1258,9 +1147,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1283,8 +1169,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * A free text natural language description of the message definition from a
      * consumer's perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1302,9 +1186,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * A free text natural language description of the message definition from a
      * consumer's perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1364,9 +1245,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate message definition
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1390,9 +1268,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate message definition
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1439,9 +1314,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * A legal or geographic region in which the message definition is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1460,9 +1332,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * A legal or geographic region in which the message definition is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1485,8 +1354,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Explanation of why this message definition is needed and why it has been
      * designed as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1504,9 +1371,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Explanation of why this message definition is needed and why it has been
      * designed as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1533,8 +1397,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A copyright statement relating to the message definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the message definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1553,9 +1415,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * A copyright statement relating to the message definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the message definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1577,8 +1436,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * The MessageDefinition that is the basis for the contents of this resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     public function getBase(): null|FHIRCanonical
     {
@@ -1592,9 +1449,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * The MessageDefinition that is the basis for the contents of this resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $base
-     * @return static
      */
     public function setBase(null|string|FHIRCanonicalPrimitive|FHIRCanonical $base): self
     {
@@ -1644,9 +1498,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Identifies a protocol or workflow that this MessageDefinition represents a step
      * in.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $parent
-     * @return static
      */
     public function addParent(string|FHIRCanonicalPrimitive|FHIRCanonical $parent): self
     {
@@ -1668,9 +1519,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Identifies a protocol or workflow that this MessageDefinition represents a step
      * in.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical ...$parent
-     * @return static
      */
     public function setParent(string|FHIRCanonicalPrimitive|FHIRCanonical ...$parent): self
     {
@@ -1695,8 +1543,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Event code or link to the EventDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding
      */
     public function getEventCoding(): null|FHIRCoding
     {
@@ -1709,9 +1555,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Event code or link to the EventDefinition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $eventCoding
-     * @return static
      */
     public function setEventCoding(null|FHIRCoding $eventCoding): self
     {
@@ -1729,8 +1572,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Event code or link to the EventDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getEventUri(): null|FHIRUri
     {
@@ -1743,9 +1584,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Event code or link to the EventDefinition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $eventUri
-     * @return static
      */
     public function setEventUri(null|string|FHIRUriPrimitive|FHIRUri $eventUri): self
     {
@@ -1764,8 +1602,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The impact of the content of the message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMessageSignificanceCategory
      */
     public function getCategory(): null|FHIRMessageSignificanceCategory
     {
@@ -1776,9 +1612,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The impact of the content of the message.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRMessageSignificanceCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMessageSignificanceCategory $category
-     * @return static
      */
     public function setCategory(null|string|FHIRMessageSignificanceCategoryEnum|FHIRMessageSignificanceCategory $category): self
     {
@@ -1828,9 +1661,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * Identifies the resource (or resources) that are being addressed by the event.
      * For example, the Encounter for an admit message or two Account records for a
      * merge.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus $focus
-     * @return static
      */
     public function addFocus(FHIRMessageDefinitionFocus $focus): self
     {
@@ -1849,9 +1679,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * Identifies the resource (or resources) that are being addressed by the event.
      * For example, the Encounter for an admit message or two Account records for a
      * merge.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus ...$focus
-     * @return static
      */
     public function setFocus(FHIRMessageDefinitionFocus ...$focus): self
     {
@@ -1868,8 +1695,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Declare at a message definition level whether a response is required or only
      * upon error or success, or never.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMessageheaderResponseRequest
      */
     public function getResponseRequired(): null|FHIRMessageheaderResponseRequest
     {
@@ -1881,9 +1706,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Declare at a message definition level whether a response is required or only
      * upon error or success, or never.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRMessageheaderResponseRequestEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMessageheaderResponseRequest $responseRequired
-     * @return static
      */
     public function setResponseRequired(null|string|FHIRMessageheaderResponseRequestEnum|FHIRMessageheaderResponseRequest $responseRequired): self
     {
@@ -1931,9 +1753,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Indicates what types of messages may be sent as an application-level response to
      * this message.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse $allowedResponse
-     * @return static
      */
     public function addAllowedResponse(FHIRMessageDefinitionAllowedResponse $allowedResponse): self
     {
@@ -1951,9 +1770,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      *
      * Indicates what types of messages may be sent as an application-level response to
      * this message.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse ...$allowedResponse
-     * @return static
      */
     public function setAllowedResponse(FHIRMessageDefinitionAllowedResponse ...$allowedResponse): self
     {
@@ -2006,9 +1822,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * controls what resources are to be added to the bundle when building the
      * document. The GraphDefinition can also specify profiles that apply to the
      * various resources.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $graph
-     * @return static
      */
     public function addGraph(string|FHIRCanonicalPrimitive|FHIRCanonical $graph): self
     {
@@ -2033,9 +1846,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
      * controls what resources are to be added to the bundle when building the
      * document. The GraphDefinition can also specify profiles that apply to the
      * various resources.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical ...$graph
-     * @return static
      */
     public function setGraph(string|FHIRCanonicalPrimitive|FHIRCanonical ...$graph): self
     {
@@ -2056,10 +1866,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMessageDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMessageDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2307,11 +2114,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2561,10 +2363,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements VersionContain
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMessageDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMessageDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

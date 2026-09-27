@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -154,8 +153,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The human readable description of this resource trigger for the
      * SubscriptionTopic - for example, "An Encounter enters the 'in-progress' state".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -170,8 +167,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * maps to http://hl7.org/fhir/StructureDefinition/Patient. For more information,
      * see <a
      * href="elementdefinition-definitions.html#ElementDefinition.type.code">ElementDefinition.type.code</a>.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $resource;
@@ -192,8 +187,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The FHIR query based rules that the server should use to determine when to
      * trigger a notification for this subscription topic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria
      */
     #[FHIRSubscriptionTopicQueryCriteria]
     protected FHIRSubscriptionTopicQueryCriteria $queryCriteria;
@@ -204,8 +197,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The FHIRPath based rules that the server should use to determine when to trigger
      * a notification for this topic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $fhirPathCriteria;
@@ -214,13 +205,8 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
     /**
      * FHIRSubscriptionTopicResourceTrigger Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $resource
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRInteractionTriggerEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteractionTrigger> $supportedInteraction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria $queryCriteria
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $fhirPathCriteria
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -272,8 +258,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The human readable description of this resource trigger for the
      * SubscriptionTopic - for example, "An Encounter enters the 'in-progress' state".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -291,9 +275,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The human readable description of this resource trigger for the
      * SubscriptionTopic - for example, "An Encounter enters the 'in-progress' state".
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -319,8 +300,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * maps to http://hl7.org/fhir/StructureDefinition/Patient. For more information,
      * see <a
      * href="elementdefinition-definitions.html#ElementDefinition.type.code">ElementDefinition.type.code</a>.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getResource(): null|FHIRUri
     {
@@ -338,9 +317,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * maps to http://hl7.org/fhir/StructureDefinition/Patient. For more information,
      * see <a
      * href="elementdefinition-definitions.html#ElementDefinition.type.code">ElementDefinition.type.code</a>.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $resource
-     * @return static
      */
     public function setResource(null|string|FHIRUriPrimitive|FHIRUri $resource): self
     {
@@ -386,9 +362,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * The FHIR RESTful interaction which can be used to trigger a notification for the
      * SubscriptionTopic. Multiple values are considered OR joined (e.g., CREATE or
      * UPDATE).
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRInteractionTriggerEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteractionTrigger $supportedInteraction
-     * @return static
      */
     public function addSupportedInteraction(string|FHIRInteractionTriggerEnum|FHIRInteractionTrigger $supportedInteraction): self
     {
@@ -408,9 +381,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * The FHIR RESTful interaction which can be used to trigger a notification for the
      * SubscriptionTopic. Multiple values are considered OR joined (e.g., CREATE or
      * UPDATE).
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRInteractionTriggerEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteractionTrigger ...$supportedInteraction
-     * @return static
      */
     public function setSupportedInteraction(string|FHIRInteractionTriggerEnum|FHIRInteractionTrigger ...$supportedInteraction): self
     {
@@ -435,8 +405,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The FHIR query based rules that the server should use to determine when to
      * trigger a notification for this subscription topic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria
      */
     public function getQueryCriteria(): null|FHIRSubscriptionTopicQueryCriteria
     {
@@ -449,9 +417,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The FHIR query based rules that the server should use to determine when to
      * trigger a notification for this subscription topic.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria $queryCriteria
-     * @return static
      */
     public function setQueryCriteria(null|FHIRSubscriptionTopicQueryCriteria $queryCriteria): self
     {
@@ -470,8 +435,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The FHIRPath based rules that the server should use to determine when to trigger
      * a notification for this topic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getFhirPathCriteria(): null|FHIRString
     {
@@ -485,9 +448,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The FHIRPath based rules that the server should use to determine when to trigger
      * a notification for this topic.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $fhirPathCriteria
-     * @return static
      */
     public function setFhirPathCriteria(null|string|FHIRStringPrimitive|FHIRString $fhirPathCriteria): self
     {
@@ -504,10 +464,7 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicResourceTrigger $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicResourceTrigger
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -583,10 +540,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -636,10 +589,7 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicResourceTrigger $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicResourceTrigger
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -139,8 +138,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence of the information element which serves to provide a link.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequence;
@@ -152,8 +149,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * The general class of the information supplied: information; exception; accident,
      * employment; onset, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -166,8 +161,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * System and code pertaining to the specific information regarding special
      * conditions relating to the setting, treatment or patient for which care is
      * sought which may influence the adjudication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -178,8 +171,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when or period to which this information refers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $timingDate;
@@ -189,8 +180,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date when or period to which this information refers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $timingPeriod;
@@ -201,8 +190,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -215,8 +202,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -227,8 +212,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -239,8 +222,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -252,8 +233,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * For example, provides the reason for: the additional stay, or missing tooth or
      * any other situation where a reason code is required in addition to the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reason;
@@ -262,18 +241,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
     /**
      * FHIRClaimInformation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $timingDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $valueString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $valueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $valueReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $reason
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -340,8 +308,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence of the information element which serves to provide a link.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     public function getSequence(): null|FHIRPositiveInt
     {
@@ -354,9 +320,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence of the information element which serves to provide a link.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -379,8 +342,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * The general class of the information supplied: information; exception; accident,
      * employment; onset, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -395,9 +356,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * The general class of the information supplied: information; exception; accident,
      * employment; onset, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -418,8 +376,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * System and code pertaining to the specific information regarding special
      * conditions relating to the setting, treatment or patient for which care is
      * sought which may influence the adjudication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -435,9 +391,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * System and code pertaining to the specific information regarding special
      * conditions relating to the setting, treatment or patient for which care is
      * sought which may influence the adjudication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -456,8 +409,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when or period to which this information refers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     public function getTimingDate(): null|FHIRDate
     {
@@ -471,9 +422,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when or period to which this information refers.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $timingDate
-     * @return static
      */
     public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate): self
     {
@@ -494,8 +442,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date when or period to which this information refers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod(): null|FHIRPeriod
     {
@@ -508,9 +454,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date when or period to which this information refers.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -529,8 +472,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getValueString(): null|FHIRString
     {
@@ -544,9 +485,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $valueString
-     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -570,8 +508,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -587,9 +523,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
-     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -608,8 +541,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -623,9 +554,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $valueAttachment
-     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -644,8 +572,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -659,9 +585,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $valueReference
-     * @return static
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -681,8 +604,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * For example, provides the reason for: the additional stay, or missing tooth or
      * any other situation where a reason code is required in addition to the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReason(): null|FHIRCodeableConcept
     {
@@ -697,9 +618,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * For example, provides the reason for: the additional stay, or missing tooth or
      * any other situation where a reason code is required in addition to the content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -713,10 +631,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInformation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInformation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -802,10 +717,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -878,10 +789,7 @@ class FHIRClaimInformation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInformation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInformation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

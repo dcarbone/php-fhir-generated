@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -146,8 +145,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * The item from the Questionnaire that corresponds to this item in the
      * QuestionnaireResponse resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $linkId;
@@ -158,8 +155,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * A reference to an [ElementDefinition](elementdefinition.html) that provides the
      * details for the item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $definition;
@@ -170,8 +165,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * Text that is displayed above the contents of the group or as the text of the
      * question being answered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -202,11 +195,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
     /**
      * FHIRQuestionnaireResponseItem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $linkId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $definition
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer> $answer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem> $item
      * @param null|string[] $fhirComments
@@ -256,8 +245,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * The item from the Questionnaire that corresponds to this item in the
      * QuestionnaireResponse resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getLinkId(): null|FHIRString
     {
@@ -271,9 +258,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * The item from the Questionnaire that corresponds to this item in the
      * QuestionnaireResponse resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $linkId
-     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -295,8 +279,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * A reference to an [ElementDefinition](elementdefinition.html) that provides the
      * details for the item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getDefinition(): null|FHIRUri
     {
@@ -310,9 +292,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * A reference to an [ElementDefinition](elementdefinition.html) that provides the
      * details for the item.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $definition
-     * @return static
      */
     public function setDefinition(null|string|FHIRUriPrimitive|FHIRUri $definition): self
     {
@@ -334,8 +313,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * Text that is displayed above the contents of the group or as the text of the
      * question being answered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -349,9 +326,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * Text that is displayed above the contents of the group or as the text of the
      * question being answered.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -397,9 +371,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * The respondent's answer(s) to the question.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer $answer
-     * @return static
      */
     public function addAnswer(FHIRQuestionnaireResponseAnswer $answer): self
     {
@@ -416,9 +387,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * The respondent's answer(s) to the question.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer ...$answer
-     * @return static
      */
     public function setAnswer(FHIRQuestionnaireResponseAnswer ...$answer): self
     {
@@ -461,9 +429,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * Questions or sub-groups nested beneath a question or group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
-     * @return static
      */
     public function addItem(FHIRQuestionnaireResponseItem $item): self
     {
@@ -480,9 +445,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * Questions or sub-groups nested beneath a question or group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem ...$item
-     * @return static
      */
     public function setItem(FHIRQuestionnaireResponseItem ...$item): self
     {
@@ -496,10 +458,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -575,10 +534,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -630,10 +585,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

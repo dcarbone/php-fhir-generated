@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -153,8 +152,6 @@ class FHIRCitationTitle extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the specific language of the title.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $language;
@@ -168,8 +165,6 @@ class FHIRCitationTitle extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The title of the article or artifact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $text;
@@ -178,11 +173,8 @@ class FHIRCitationTitle extends FHIRBackboneElement
     /**
      * FHIRCitationTitle Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $language
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $text
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -248,9 +240,6 @@ class FHIRCitationTitle extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the reason for or classification of the title.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -268,9 +257,6 @@ class FHIRCitationTitle extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the reason for or classification of the title.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -289,8 +275,6 @@ class FHIRCitationTitle extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the specific language of the title.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getLanguage(): null|FHIRCodeableConcept
     {
@@ -304,9 +288,6 @@ class FHIRCitationTitle extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the specific language of the title.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $language
-     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {
@@ -328,8 +309,6 @@ class FHIRCitationTitle extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The title of the article or artifact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getText(): null|FHIRMarkdown
     {
@@ -346,9 +325,6 @@ class FHIRCitationTitle extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The title of the article or artifact.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $text
-     * @return static
      */
     public function setText(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $text): self
     {
@@ -365,10 +341,7 @@ class FHIRCitationTitle extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationTitle $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationTitle
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -424,10 +397,6 @@ class FHIRCitationTitle extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -457,10 +426,7 @@ class FHIRCitationTitle extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationTitle $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationTitle
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

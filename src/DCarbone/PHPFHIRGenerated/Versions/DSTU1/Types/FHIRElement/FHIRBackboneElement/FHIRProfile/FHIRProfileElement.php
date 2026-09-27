@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -124,8 +123,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -148,8 +145,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      * definitions using Profile.structure.element.definition.nameReference). This is a
      * unique name referring to a specific set of constraints applied to this element.
      * One use of this is to provide a name to different slices of the same element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -163,8 +158,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      * set of slices is any elements that come after this in the element sequence that
      * have the same path, until a shorter path occurs (the shorter path terminates the
      * set).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
      */
     #[FHIRProfileSlicing]
     protected FHIRProfileSlicing $slicing;
@@ -175,8 +168,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * Definition of the content of the element to provide a more specific definition
      * than that contained for the element in the base resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
      */
     #[FHIRProfileDefinition]
     protected FHIRProfileDefinition $definition;
@@ -185,13 +176,8 @@ class FHIRProfileElement extends FHIRBackboneElement
     /**
      * FHIRProfileElement Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $path
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRPropertyRepresentationList>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPropertyRepresentation> $representation
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing $slicing
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition $definition
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -238,8 +224,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getPath(): null|FHIRString
     {
@@ -252,9 +236,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * The path identifies the element and is expressed as a "."-separated list of
      * ancestor elements, beginning with the name of the resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $path
-     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -300,9 +281,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRPropertyRepresentationList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPropertyRepresentation $representation
-     * @return static
      */
     public function addRepresentation(string|FHIRPropertyRepresentationList|FHIRPropertyRepresentation $representation): self
     {
@@ -322,9 +300,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * Codes that define how this element is represented in instances, when the
      * deviation varies from the normal case.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRPropertyRepresentationList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPropertyRepresentation ...$representation
-     * @return static
      */
     public function setRepresentation(string|FHIRPropertyRepresentationList|FHIRPropertyRepresentation ...$representation): self
     {
@@ -351,8 +326,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      * definitions using Profile.structure.element.definition.nameReference). This is a
      * unique name referring to a specific set of constraints applied to this element.
      * One use of this is to provide a name to different slices of the same element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -367,9 +340,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      * definitions using Profile.structure.element.definition.nameReference). This is a
      * unique name referring to a specific set of constraints applied to this element.
      * One use of this is to provide a name to different slices of the same element.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -394,8 +364,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      * set of slices is any elements that come after this in the element sequence that
      * have the same path, until a shorter path occurs (the shorter path terminates the
      * set).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
      */
     public function getSlicing(): null|FHIRProfileSlicing
     {
@@ -412,9 +380,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      * set of slices is any elements that come after this in the element sequence that
      * have the same path, until a shorter path occurs (the shorter path terminates the
      * set).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing $slicing
-     * @return static
      */
     public function setSlicing(null|FHIRProfileSlicing $slicing): self
     {
@@ -433,8 +398,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * Definition of the content of the element to provide a more specific definition
      * than that contained for the element in the base resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
      */
     public function getDefinition(): null|FHIRProfileDefinition
     {
@@ -448,9 +411,6 @@ class FHIRProfileElement extends FHIRBackboneElement
      *
      * Definition of the content of the element to provide a more specific definition
      * than that contained for the element in the base resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition $definition
-     * @return static
      */
     public function setDefinition(null|FHIRProfileDefinition $definition): self
     {
@@ -464,10 +424,7 @@ class FHIRProfileElement extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -535,10 +492,6 @@ class FHIRProfileElement extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -583,10 +536,7 @@ class FHIRProfileElement extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

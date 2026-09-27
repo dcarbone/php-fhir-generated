@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -119,7 +117,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTaskIntent;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTaskStatus;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -226,8 +223,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this Task.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $instantiatesCanonical;
@@ -238,8 +233,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The URL pointing to an *externally* maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this Task.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $instantiatesUri;
@@ -268,8 +261,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * An identifier that links together multiple tasks and other requests that were
      * created in the same context.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $groupIdentifier;
@@ -288,8 +279,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current status of the task.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTaskStatus
      */
     #[FHIRTaskStatus]
     protected FHIRTaskStatus $status;
@@ -300,8 +289,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An explanation as to why this task is held, failed, was refused, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $statusReason;
@@ -312,8 +299,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contains business-specific nuances of the business state.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $businessStatus;
@@ -322,8 +307,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Indicates the "level" of actionability associated with the Task, i.e. i+R[9]Cs
      * this a proposed task, a planned task, an actionable task, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTaskIntent
      */
     #[FHIRTaskIntent]
     protected FHIRTaskIntent $intent;
@@ -332,8 +315,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Indicates how quickly the Task should be addressed with respect to other
      * requests.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRequestPriority
      */
     #[FHIRRequestPriority]
     protected FHIRRequestPriority $priority;
@@ -344,8 +325,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name or code (or both) briefly describing what the task involves.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -355,8 +334,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free-text description of what is to be performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -366,8 +343,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The request being actioned or the resource being manipulated by this task.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $focus;
@@ -378,8 +353,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The entity who benefits from the performance of the service specified in the
      * task (e.g., the patient).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $for;
@@ -390,8 +363,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this task was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -403,8 +374,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Identifies the time action was first taken against the task (start) and/or the
      * time final action was taken against the task prior to marking it as completed
      * (end).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $executionPeriod;
@@ -417,8 +386,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this task was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $authoredOn;
@@ -431,8 +398,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of last modification to this task.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $lastModified;
@@ -442,8 +407,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The creator of the task.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $requester;
@@ -465,8 +428,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual organization or Device currently responsible for task execution.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $owner;
@@ -476,8 +437,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Principal physical location where the this task is performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $location;
@@ -488,8 +447,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description or code indicating why this task needs to be performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reasonCode;
@@ -499,8 +456,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource reference indicating why this task needs to be performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $reasonReference;
@@ -547,8 +502,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the Task.focus is a request resource and the task is seeking fulfillment
      * (i.e. is asking for the request to be actioned), this element identifies any
      * limitations on what parts of the referenced request should be actioned.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction
      */
     #[FHIRTaskRestriction]
     protected FHIRTaskRestriction $restriction;
@@ -574,43 +527,16 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
     /* constructor.php:61 */
     /**
      * FHIRTask Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $instantiatesCanonical
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $instantiatesUri
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $basedOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $groupIdentifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $partOf
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRTaskStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTaskStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $statusReason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $businessStatus
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRTaskIntentEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTaskIntent $intent
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRRequestPriorityEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRequestPriority $priority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $focus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $for
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $encounter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $executionPeriod
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $authoredOn
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $lastModified
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $requester
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $performerType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $owner
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $location
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $reasonCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $reasonReference
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $insurance
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $relevantHistory
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction $restriction
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskInput> $input
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput> $output
      * @param null|string[] $fhirComments
@@ -806,9 +732,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier for this task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -826,9 +749,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier for this task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -848,8 +768,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this Task.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     public function getInstantiatesCanonical(): null|FHIRCanonical
     {
@@ -864,9 +782,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this Task.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $instantiatesCanonical
-     * @return static
      */
     public function setInstantiatesCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -888,8 +803,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The URL pointing to an *externally* maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this Task.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getInstantiatesUri(): null|FHIRUri
     {
@@ -903,9 +816,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The URL pointing to an *externally* maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this Task.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $instantiatesUri
-     * @return static
      */
     public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -963,9 +873,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * referenced by FocusOn. For example, based on a ServiceRequest (= BasedOn), a
      * task is created to fulfill a procedureRequest ( = FocusOn ) to collect a
      * specimen from a patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -988,9 +895,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * referenced by FocusOn. For example, based on a ServiceRequest (= BasedOn), a
      * task is created to fulfill a procedureRequest ( = FocusOn ) to collect a
      * specimen from a patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -1010,8 +914,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * An identifier that links together multiple tasks and other requests that were
      * created in the same context.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier
      */
     public function getGroupIdentifier(): null|FHIRIdentifier
     {
@@ -1026,9 +928,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * An identifier that links together multiple tasks and other requests that were
      * created in the same context.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $groupIdentifier
-     * @return static
      */
     public function setGroupIdentifier(null|FHIRIdentifier $groupIdentifier): self
     {
@@ -1071,9 +970,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Task that this particular task is part of.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $partOf
-     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -1090,9 +986,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Task that this particular task is part of.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$partOf
-     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -1108,8 +1001,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current status of the task.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTaskStatus
      */
     public function getStatus(): null|FHIRTaskStatus
     {
@@ -1120,9 +1011,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current status of the task.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRTaskStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTaskStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRTaskStatusEnum|FHIRTaskStatus $status): self
     {
@@ -1144,8 +1032,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An explanation as to why this task is held, failed, was refused, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStatusReason(): null|FHIRCodeableConcept
     {
@@ -1159,9 +1045,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An explanation as to why this task is held, failed, was refused, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $statusReason
-     * @return static
      */
     public function setStatusReason(null|FHIRCodeableConcept $statusReason): self
     {
@@ -1180,8 +1063,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contains business-specific nuances of the business state.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getBusinessStatus(): null|FHIRCodeableConcept
     {
@@ -1195,9 +1076,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contains business-specific nuances of the business state.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $businessStatus
-     * @return static
      */
     public function setBusinessStatus(null|FHIRCodeableConcept $businessStatus): self
     {
@@ -1214,8 +1092,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Indicates the "level" of actionability associated with the Task, i.e. i+R[9]Cs
      * this a proposed task, a planned task, an actionable task, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTaskIntent
      */
     public function getIntent(): null|FHIRTaskIntent
     {
@@ -1227,9 +1103,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Indicates the "level" of actionability associated with the Task, i.e. i+R[9]Cs
      * this a proposed task, a planned task, an actionable task, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRTaskIntentEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTaskIntent $intent
-     * @return static
      */
     public function setIntent(null|string|FHIRTaskIntentEnum|FHIRTaskIntent $intent): self
     {
@@ -1249,8 +1122,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Indicates how quickly the Task should be addressed with respect to other
      * requests.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRequestPriority
      */
     public function getPriority(): null|FHIRRequestPriority
     {
@@ -1262,9 +1133,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Indicates how quickly the Task should be addressed with respect to other
      * requests.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRRequestPriorityEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRequestPriority $priority
-     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityEnum|FHIRRequestPriority $priority): self
     {
@@ -1286,8 +1154,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name or code (or both) briefly describing what the task involves.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -1301,9 +1167,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name or code (or both) briefly describing what the task involves.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -1321,8 +1184,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free-text description of what is to be performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -1335,9 +1196,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free-text description of what is to be performed.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1358,8 +1216,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The request being actioned or the resource being manipulated by this task.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getFocus(): null|FHIRReference
     {
@@ -1372,9 +1228,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The request being actioned or the resource being manipulated by this task.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $focus
-     * @return static
      */
     public function setFocus(null|FHIRReference $focus): self
     {
@@ -1393,8 +1246,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The entity who benefits from the performance of the service specified in the
      * task (e.g., the patient).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getFor(): null|FHIRReference
     {
@@ -1408,9 +1259,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The entity who benefits from the performance of the service specified in the
      * task (e.g., the patient).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $for
-     * @return static
      */
     public function setFor(null|FHIRReference $for): self
     {
@@ -1429,8 +1277,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this task was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -1444,9 +1290,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this task was created.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1466,8 +1309,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Identifies the time action was first taken against the task (start) and/or the
      * time final action was taken against the task prior to marking it as completed
      * (end).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getExecutionPeriod(): null|FHIRPeriod
     {
@@ -1482,9 +1323,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Identifies the time action was first taken against the task (start) and/or the
      * time final action was taken against the task prior to marking it as completed
      * (end).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $executionPeriod
-     * @return static
      */
     public function setExecutionPeriod(null|FHIRPeriod $executionPeriod): self
     {
@@ -1505,8 +1343,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this task was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getAuthoredOn(): null|FHIRDateTime
     {
@@ -1522,9 +1358,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this task was created.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $authoredOn
-     * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn): self
     {
@@ -1548,8 +1381,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of last modification to this task.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getLastModified(): null|FHIRDateTime
     {
@@ -1565,9 +1396,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of last modification to this task.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $lastModified
-     * @return static
      */
     public function setLastModified(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastModified): self
     {
@@ -1588,8 +1416,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The creator of the task.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getRequester(): null|FHIRReference
     {
@@ -1602,9 +1428,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The creator of the task.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $requester
-     * @return static
      */
     public function setRequester(null|FHIRReference $requester): self
     {
@@ -1649,9 +1472,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of participant that should perform the task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $performerType
-     * @return static
      */
     public function addPerformerType(FHIRCodeableConcept $performerType): self
     {
@@ -1669,9 +1489,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of participant that should perform the task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$performerType
-     * @return static
      */
     public function setPerformerType(FHIRCodeableConcept ...$performerType): self
     {
@@ -1689,8 +1506,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual organization or Device currently responsible for task execution.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getOwner(): null|FHIRReference
     {
@@ -1703,9 +1518,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual organization or Device currently responsible for task execution.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $owner
-     * @return static
      */
     public function setOwner(null|FHIRReference $owner): self
     {
@@ -1723,8 +1535,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Principal physical location where the this task is performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getLocation(): null|FHIRReference
     {
@@ -1737,9 +1547,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Principal physical location where the this task is performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $location
-     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1758,8 +1565,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description or code indicating why this task needs to be performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCode(): null|FHIRCodeableConcept
     {
@@ -1773,9 +1578,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description or code indicating why this task needs to be performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $reasonCode
-     * @return static
      */
     public function setReasonCode(null|FHIRCodeableConcept $reasonCode): self
     {
@@ -1793,8 +1595,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource reference indicating why this task needs to be performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getReasonReference(): null|FHIRReference
     {
@@ -1807,9 +1607,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource reference indicating why this task needs to be performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $reasonReference
-     * @return static
      */
     public function setReasonReference(null|FHIRReference $reasonReference): self
     {
@@ -1854,9 +1651,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be relevant to the Task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $insurance
-     * @return static
      */
     public function addInsurance(FHIRReference $insurance): self
     {
@@ -1874,9 +1668,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be relevant to the Task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$insurance
-     * @return static
      */
     public function setInsurance(FHIRReference ...$insurance): self
     {
@@ -1921,9 +1712,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Free-text information captured about the task as it progresses.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1941,9 +1729,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Free-text information captured about the task as it progresses.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1990,9 +1775,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Links to Provenance records for past versions of this Task that identify key
      * state transitions or updates that are likely to be relevant to a user looking at
      * the current version of the task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $relevantHistory
-     * @return static
      */
     public function addRelevantHistory(FHIRReference $relevantHistory): self
     {
@@ -2011,9 +1793,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Links to Provenance records for past versions of this Task that identify key
      * state transitions or updates that are likely to be relevant to a user looking at
      * the current version of the task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$relevantHistory
-     * @return static
      */
     public function setRelevantHistory(FHIRReference ...$relevantHistory): self
     {
@@ -2031,8 +1810,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the Task.focus is a request resource and the task is seeking fulfillment
      * (i.e. is asking for the request to be actioned), this element identifies any
      * limitations on what parts of the referenced request should be actioned.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction
      */
     public function getRestriction(): null|FHIRTaskRestriction
     {
@@ -2045,9 +1822,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the Task.focus is a request resource and the task is seeking fulfillment
      * (i.e. is asking for the request to be actioned), this element identifies any
      * limitations on what parts of the referenced request should be actioned.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction $restriction
-     * @return static
      */
     public function setRestriction(null|FHIRTaskRestriction $restriction): self
     {
@@ -2086,9 +1860,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * A task to be performed.
      *
      * Additional information that may be needed in the execution of the task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskInput $input
-     * @return static
      */
     public function addInput(FHIRTaskInput $input): self
     {
@@ -2103,9 +1874,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * A task to be performed.
      *
      * Additional information that may be needed in the execution of the task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskInput ...$input
-     * @return static
      */
     public function setInput(FHIRTaskInput ...$input): self
     {
@@ -2144,9 +1912,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * A task to be performed.
      *
      * Outputs produced by the Task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput $output
-     * @return static
      */
     public function addOutput(FHIRTaskOutput $output): self
     {
@@ -2161,9 +1926,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
      * A task to be performed.
      *
      * Outputs produced by the Task.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput ...$output
-     * @return static
      */
     public function setOutput(FHIRTaskOutput ...$output): self
     {
@@ -2177,10 +1939,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRTask $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRTask
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2384,11 +2143,6 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2633,10 +2387,7 @@ class FHIRTask extends FHIRDomainResource implements VersionContainedTypeInterfa
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRTask $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRTask
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

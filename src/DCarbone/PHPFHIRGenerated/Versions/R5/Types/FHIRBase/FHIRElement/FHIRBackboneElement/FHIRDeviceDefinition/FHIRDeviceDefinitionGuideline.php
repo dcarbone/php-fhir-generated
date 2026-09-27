@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -160,8 +160,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Detailed written and visual directions for the user on how to use the device.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $usageInstruction;
@@ -221,8 +219,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      *
      * A description of the general purpose or medical use of the device or its
      * function.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $intendedUse;
@@ -231,15 +227,12 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
     /**
      * FHIRDeviceDefinitionGuideline Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext> $useContext
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $usageInstruction
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact> $relatedArtifact
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $indication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $contraindication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $warning
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $intendedUse
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -325,9 +318,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The circumstances that form the setting for using the device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -347,9 +337,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The circumstances that form the setting for using the device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -371,8 +358,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Detailed written and visual directions for the user on how to use the device.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getUsageInstruction(): null|FHIRMarkdown
     {
@@ -389,9 +374,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Detailed written and visual directions for the user on how to use the device.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $usageInstruction
-     * @return static
      */
     public function setUsageInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $usageInstruction): self
     {
@@ -439,9 +421,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A source of information or reference for this guideline.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $relatedArtifact
-     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -459,9 +438,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A source of information or reference for this guideline.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$relatedArtifact
-     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -506,9 +482,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A clinical condition for which the device was designed to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $indication
-     * @return static
      */
     public function addIndication(FHIRCodeableConcept $indication): self
     {
@@ -526,9 +499,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A clinical condition for which the device was designed to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$indication
-     * @return static
      */
     public function setIndication(FHIRCodeableConcept ...$indication): self
     {
@@ -573,9 +543,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specific situation when a device should not be used because it may cause harm.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $contraindication
-     * @return static
      */
     public function addContraindication(FHIRCodeableConcept $contraindication): self
     {
@@ -593,9 +560,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specific situation when a device should not be used because it may cause harm.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$contraindication
-     * @return static
      */
     public function setContraindication(FHIRCodeableConcept ...$contraindication): self
     {
@@ -642,9 +606,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      *
      * Specific hazard alert information that a user needs to know before using the
      * device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $warning
-     * @return static
      */
     public function addWarning(FHIRCodeableConcept $warning): self
     {
@@ -663,9 +624,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      *
      * Specific hazard alert information that a user needs to know before using the
      * device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$warning
-     * @return static
      */
     public function setWarning(FHIRCodeableConcept ...$warning): self
     {
@@ -684,8 +642,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      *
      * A description of the general purpose or medical use of the device or its
      * function.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getIntendedUse(): null|FHIRString
     {
@@ -699,9 +655,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      *
      * A description of the general purpose or medical use of the device or its
      * function.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $intendedUse
-     * @return static
      */
     public function setIntendedUse(null|string|FHIRStringPrimitive|FHIRString $intendedUse): self
     {
@@ -718,10 +671,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionGuideline $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionGuideline
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -793,10 +743,6 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -859,10 +805,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionGuideline $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionGuideline
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

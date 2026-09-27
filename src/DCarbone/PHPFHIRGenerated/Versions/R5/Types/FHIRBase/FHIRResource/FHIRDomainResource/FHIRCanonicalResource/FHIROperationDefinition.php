@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
@@ -124,7 +122,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRVersionInd
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -270,8 +267,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the operation definition is stored on different
      * servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -300,8 +295,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -311,9 +304,7 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -323,9 +314,7 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -337,8 +326,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A natural language name identifying the operation definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -348,8 +335,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the operation definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -357,8 +342,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of this operation definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -366,8 +349,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is an operation or a named query.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationKind
      */
     #[FHIROperationKind]
     protected FHIROperationKind $kind;
@@ -378,8 +359,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A Boolean value to indicate that this operation definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended for
      * genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -396,8 +375,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the operation definition changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -408,8 +385,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the operation definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -436,8 +411,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * A free text natural language description of the operation definition from a
      * consumer's perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -483,8 +456,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Explanation of why this operation definition is needed and why it has been
      * designed as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -500,8 +471,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A copyright statement relating to the operation definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the operation definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -513,8 +482,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $copyrightLabel;
@@ -524,8 +491,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Whether the operation affects state. Side effects such as producing audit trail
      * entries do not count as 'affecting state'.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $affectsState;
@@ -539,8 +504,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * cases, servers may need to use a different CapabilityStatement operation.name to
      * differentiate between multiple SearchParameters that happen to have the same
      * code.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -554,8 +517,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * the Narrative, or extensions
      *
      * Additional information about how to use this operation or named query.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $comment;
@@ -566,8 +527,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * the Narrative, or extensions
      *
      * Indicates that this operation definition is a constraining profile on the base.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $base;
@@ -586,8 +545,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Indicates whether this operation or named query can be invoked at the system
      * level (e.g. without needing to choose a resource type for the context).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $system;
@@ -598,8 +555,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Indicates whether this operation or named query can be invoked at the resource
      * type level for any given resource type level (e.g. without needing to choose a
      * specific resource id for the context).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $type;
@@ -609,8 +564,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Indicates whether this operation can be invoked on a particular instance of one
      * of the given types.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $instance;
@@ -623,8 +576,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Additional validation information for the in parameters - a single profile that
      * covers all the parameters. The profile is a constraint on the parameters
      * resource as a whole.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $inputProfile;
@@ -637,8 +588,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Additional validation information for the out parameters - a single profile that
      * covers all the parameters. The profile is a constraint on the parameters
      * resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $outputProfile;
@@ -668,43 +617,14 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
     /* constructor.php:61 */
     /**
      * FHIROperationDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $versionAlgorithmString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $versionAlgorithmCoding
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROperationKindEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationKind $kind
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $copyrightLabel
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $affectsState
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $comment
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $base
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRVersionIndependentResourceTypesAllEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRVersionIndependentResourceTypesAll> $resource
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $system
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $type
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $instance
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $inputProfile
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $outputProfile
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter> $parameter
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload> $overload
      * @param null|string[] $fhirComments
@@ -879,8 +799,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the operation definition is stored on different
      * servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -899,9 +817,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the operation definition is stored on different
      * servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -953,9 +868,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A formal identifier that is used to identify this implementation guide when it
      * is represented in other formats, or referenced in a specification, model, design
      * or an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -975,9 +887,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A formal identifier that is used to identify this implementation guide when it
      * is represented in other formats, or referenced in a specification, model, design
      * or an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -1000,8 +909,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -1019,9 +926,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -1042,9 +946,7 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -1057,10 +959,7 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $versionAlgorithmString
-     * @return static
+     * current.
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -1081,9 +980,7 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -1096,10 +993,7 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $versionAlgorithmCoding
-     * @return static
+     * current.
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -1119,8 +1013,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A natural language name identifying the operation definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -1135,9 +1027,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A natural language name identifying the operation definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1158,8 +1047,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the operation definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -1172,9 +1059,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the operation definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1193,8 +1077,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of this operation definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -1205,9 +1087,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of this operation definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1226,8 +1105,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is an operation or a named query.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationKind
      */
     public function getKind(): null|FHIROperationKind
     {
@@ -1238,9 +1115,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is an operation or a named query.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROperationKindEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationKind $kind
-     * @return static
      */
     public function setKind(null|string|FHIROperationKindEnum|FHIROperationKind $kind): self
     {
@@ -1262,8 +1136,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A Boolean value to indicate that this operation definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended for
      * genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -1277,9 +1149,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A Boolean value to indicate that this operation definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended for
      * genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1307,8 +1176,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the operation definition changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1328,9 +1195,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the operation definition changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1352,8 +1216,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the operation definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1367,9 +1229,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the operation definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1417,9 +1276,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1437,9 +1293,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1462,8 +1315,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * A free text natural language description of the operation definition from a
      * consumer's perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1481,9 +1332,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * A free text natural language description of the operation definition from a
      * consumer's perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1543,9 +1391,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate operation
      * definition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1569,9 +1414,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate operation
      * definition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1618,9 +1460,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * A legal or geographic region in which the operation definition is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1639,9 +1478,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * A legal or geographic region in which the operation definition is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1664,8 +1500,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Explanation of why this operation definition is needed and why it has been
      * designed as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1683,9 +1517,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Explanation of why this operation definition is needed and why it has been
      * designed as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1712,8 +1543,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A copyright statement relating to the operation definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the operation definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1732,9 +1561,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A copyright statement relating to the operation definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the operation definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1757,8 +1583,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getCopyrightLabel(): null|FHIRString
     {
@@ -1773,9 +1597,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $copyrightLabel
-     * @return static
      */
     public function setCopyrightLabel(null|string|FHIRStringPrimitive|FHIRString $copyrightLabel): self
     {
@@ -1796,8 +1617,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Whether the operation affects state. Side effects such as producing audit trail
      * entries do not count as 'affecting state'.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getAffectsState(): null|FHIRBoolean
     {
@@ -1810,9 +1629,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Whether the operation affects state. Side effects such as producing audit trail
      * entries do not count as 'affecting state'.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $affectsState
-     * @return static
      */
     public function setAffectsState(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $affectsState): self
     {
@@ -1837,8 +1653,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * cases, servers may need to use a different CapabilityStatement operation.name to
      * differentiate between multiple SearchParameters that happen to have the same
      * code.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -1855,9 +1669,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * cases, servers may need to use a different CapabilityStatement operation.name to
      * differentiate between multiple SearchParameters that happen to have the same
      * code.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -1882,8 +1693,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * the Narrative, or extensions
      *
      * Additional information about how to use this operation or named query.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getComment(): null|FHIRMarkdown
     {
@@ -1900,9 +1709,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * the Narrative, or extensions
      *
      * Additional information about how to use this operation or named query.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $comment
-     * @return static
      */
     public function setComment(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $comment): self
     {
@@ -1924,8 +1730,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * the Narrative, or extensions
      *
      * Indicates that this operation definition is a constraining profile on the base.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getBase(): null|FHIRCanonical
     {
@@ -1939,9 +1743,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * the Narrative, or extensions
      *
      * Indicates that this operation definition is a constraining profile on the base.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $base
-     * @return static
      */
     public function setBase(null|string|FHIRCanonicalPrimitive|FHIRCanonical $base): self
     {
@@ -1983,9 +1784,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The types on which this operation can be executed.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRVersionIndependentResourceTypesAllEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRVersionIndependentResourceTypesAll $resource
-     * @return static
      */
     public function addResource(string|FHIRVersionIndependentResourceTypesAllEnum|FHIRVersionIndependentResourceTypesAll $resource): self
     {
@@ -2003,9 +1801,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The types on which this operation can be executed.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRVersionIndependentResourceTypesAllEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRVersionIndependentResourceTypesAll ...$resource
-     * @return static
      */
     public function setResource(string|FHIRVersionIndependentResourceTypesAllEnum|FHIRVersionIndependentResourceTypesAll ...$resource): self
     {
@@ -2030,8 +1825,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Indicates whether this operation or named query can be invoked at the system
      * level (e.g. without needing to choose a resource type for the context).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getSystem(): null|FHIRBoolean
     {
@@ -2044,9 +1837,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Indicates whether this operation or named query can be invoked at the system
      * level (e.g. without needing to choose a resource type for the context).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $system
-     * @return static
      */
     public function setSystem(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $system): self
     {
@@ -2068,8 +1858,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Indicates whether this operation or named query can be invoked at the resource
      * type level for any given resource type level (e.g. without needing to choose a
      * specific resource id for the context).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getType(): null|FHIRBoolean
     {
@@ -2083,9 +1871,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Indicates whether this operation or named query can be invoked at the resource
      * type level for any given resource type level (e.g. without needing to choose a
      * specific resource id for the context).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $type
-     * @return static
      */
     public function setType(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $type): self
     {
@@ -2106,8 +1891,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Indicates whether this operation can be invoked on a particular instance of one
      * of the given types.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getInstance(): null|FHIRBoolean
     {
@@ -2120,9 +1903,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      *
      * Indicates whether this operation can be invoked on a particular instance of one
      * of the given types.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $instance
-     * @return static
      */
     public function setInstance(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $instance): self
     {
@@ -2146,8 +1926,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Additional validation information for the in parameters - a single profile that
      * covers all the parameters. The profile is a constraint on the parameters
      * resource as a whole.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getInputProfile(): null|FHIRCanonical
     {
@@ -2163,9 +1941,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Additional validation information for the in parameters - a single profile that
      * covers all the parameters. The profile is a constraint on the parameters
      * resource as a whole.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $inputProfile
-     * @return static
      */
     public function setInputProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $inputProfile): self
     {
@@ -2189,8 +1964,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Additional validation information for the out parameters - a single profile that
      * covers all the parameters. The profile is a constraint on the parameters
      * resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getOutputProfile(): null|FHIRCanonical
     {
@@ -2206,9 +1979,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Additional validation information for the out parameters - a single profile that
      * covers all the parameters. The profile is a constraint on the parameters
      * resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $outputProfile
-     * @return static
      */
     public function setOutputProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $outputProfile): self
     {
@@ -2252,9 +2022,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * named query (using the search interaction).
      *
      * The parameters for the operation/query.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter $parameter
-     * @return static
      */
     public function addParameter(FHIROperationDefinitionParameter $parameter): self
     {
@@ -2270,9 +2037,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * named query (using the search interaction).
      *
      * The parameters for the operation/query.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter ...$parameter
-     * @return static
      */
     public function setParameter(FHIROperationDefinitionParameter ...$parameter): self
     {
@@ -2317,9 +2081,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Defines an appropriate combination of parameters to use when invoking this
      * operation, to help code generators when generating overloaded parameter sets for
      * this operation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload $overload
-     * @return static
      */
     public function addOverload(FHIROperationDefinitionOverload $overload): self
     {
@@ -2337,9 +2098,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
      * Defines an appropriate combination of parameters to use when invoking this
      * operation, to help code generators when generating overloaded parameter sets for
      * this operation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload ...$overload
-     * @return static
      */
     public function setOverload(FHIROperationDefinitionOverload ...$overload): self
     {
@@ -2353,10 +2111,7 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIROperationDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIROperationDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2680,11 +2435,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -3000,10 +2750,7 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements VersionCo
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIROperationDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIROperationDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

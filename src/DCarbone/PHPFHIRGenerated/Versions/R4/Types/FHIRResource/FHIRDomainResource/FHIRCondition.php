@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -92,7 +90,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
@@ -186,8 +183,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinical status of the condition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $clinicalStatus;
@@ -198,8 +193,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The verification status to support the clinical status of the condition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $verificationStatus;
@@ -223,8 +216,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A subjective assessment of the severity of the condition as evaluated by the
      * clinician.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $severity;
@@ -235,8 +226,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the condition, problem or diagnosis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -258,8 +247,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the patient or group who the condition record is associated with.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -270,8 +257,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The Encounter during which this Condition was created or to which the creation
      * of this record is tightly associated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -285,8 +270,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $onsetDateTime;
@@ -297,8 +280,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     #[FHIRAge]
     protected FHIRAge $onsetAge;
@@ -309,8 +290,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $onsetPeriod;
@@ -321,8 +300,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $onsetRange;
@@ -333,8 +310,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $onsetString;
@@ -350,8 +325,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $abatementDateTime;
@@ -364,8 +337,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     #[FHIRAge]
     protected FHIRAge $abatementAge;
@@ -378,8 +349,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $abatementPeriod;
@@ -392,8 +361,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $abatementRange;
@@ -406,8 +373,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $abatementString;
@@ -421,8 +386,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The recordedDate represents when this particular Condition record was created in
      * the system, which is often a system-generated date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $recordedDate;
@@ -432,8 +395,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $recorder;
@@ -443,8 +404,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who is making the condition statement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $asserter;
@@ -486,36 +445,12 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
     /* constructor.php:61 */
     /**
      * FHIRCondition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $clinicalStatus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $verificationStatus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $severity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $bodySite
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $encounter
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $onsetDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $onsetPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $onsetRange
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $onsetString
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $abatementDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $abatementAge
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $abatementPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $abatementRange
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $abatementString
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $recordedDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $recorder
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $asserter
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage> $stage
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence> $evidence
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation> $note
@@ -692,9 +627,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * Business identifiers assigned to this condition by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -714,9 +646,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * Business identifiers assigned to this condition by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -735,8 +664,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinical status of the condition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getClinicalStatus(): null|FHIRCodeableConcept
     {
@@ -750,9 +677,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinical status of the condition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $clinicalStatus
-     * @return static
      */
     public function setClinicalStatus(null|FHIRCodeableConcept $clinicalStatus): self
     {
@@ -771,8 +695,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The verification status to support the clinical status of the condition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getVerificationStatus(): null|FHIRCodeableConcept
     {
@@ -786,9 +708,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The verification status to support the clinical status of the condition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $verificationStatus
-     * @return static
      */
     public function setVerificationStatus(null|FHIRCodeableConcept $verificationStatus): self
     {
@@ -833,9 +752,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A category assigned to the condition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -853,9 +769,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A category assigned to the condition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -875,8 +788,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A subjective assessment of the severity of the condition as evaluated by the
      * clinician.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSeverity(): null|FHIRCodeableConcept
     {
@@ -891,9 +802,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * A subjective assessment of the severity of the condition as evaluated by the
      * clinician.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $severity
-     * @return static
      */
     public function setSeverity(null|FHIRCodeableConcept $severity): self
     {
@@ -912,8 +820,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the condition, problem or diagnosis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -927,9 +833,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the condition, problem or diagnosis.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -974,9 +877,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location where this condition manifests itself.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite): self
     {
@@ -994,9 +894,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location where this condition manifests itself.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$bodySite
-     * @return static
      */
     public function setBodySite(FHIRCodeableConcept ...$bodySite): self
     {
@@ -1014,8 +911,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the patient or group who the condition record is associated with.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -1028,9 +923,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the patient or group who the condition record is associated with.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1049,8 +941,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The Encounter during which this Condition was created or to which the creation
      * of this record is tightly associated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -1064,9 +954,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The Encounter during which this Condition was created or to which the creation
      * of this record is tightly associated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1088,8 +975,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getOnsetDateTime(): null|FHIRDateTime
     {
@@ -1106,9 +991,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $onsetDateTime
-     * @return static
      */
     public function setOnsetDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $onsetDateTime): self
     {
@@ -1130,8 +1012,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getOnsetAge(): null|FHIRAge
     {
@@ -1145,9 +1025,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
-     * @return static
      */
     public function setOnsetAge(null|FHIRAge $onsetAge): self
     {
@@ -1166,8 +1043,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getOnsetPeriod(): null|FHIRPeriod
     {
@@ -1181,9 +1056,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $onsetPeriod
-     * @return static
      */
     public function setOnsetPeriod(null|FHIRPeriod $onsetPeriod): self
     {
@@ -1202,8 +1074,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     public function getOnsetRange(): null|FHIRRange
     {
@@ -1217,9 +1087,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $onsetRange
-     * @return static
      */
     public function setOnsetRange(null|FHIRRange $onsetRange): self
     {
@@ -1238,8 +1105,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getOnsetString(): null|FHIRString
     {
@@ -1253,9 +1118,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $onsetString
-     * @return static
      */
     public function setOnsetString(null|string|FHIRStringPrimitive|FHIRString $onsetString): self
     {
@@ -1282,8 +1144,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getAbatementDateTime(): null|FHIRDateTime
     {
@@ -1302,9 +1162,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $abatementDateTime
-     * @return static
      */
     public function setAbatementDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $abatementDateTime): self
     {
@@ -1328,8 +1185,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getAbatementAge(): null|FHIRAge
     {
@@ -1345,9 +1200,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRAge $abatementAge
-     * @return static
      */
     public function setAbatementAge(null|FHIRAge $abatementAge): self
     {
@@ -1368,8 +1220,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getAbatementPeriod(): null|FHIRPeriod
     {
@@ -1385,9 +1235,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $abatementPeriod
-     * @return static
      */
     public function setAbatementPeriod(null|FHIRPeriod $abatementPeriod): self
     {
@@ -1408,8 +1255,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     public function getAbatementRange(): null|FHIRRange
     {
@@ -1425,9 +1270,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $abatementRange
-     * @return static
      */
     public function setAbatementRange(null|FHIRRange $abatementRange): self
     {
@@ -1448,8 +1290,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getAbatementString(): null|FHIRString
     {
@@ -1465,9 +1305,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $abatementString
-     * @return static
      */
     public function setAbatementString(null|string|FHIRStringPrimitive|FHIRString $abatementString): self
     {
@@ -1492,8 +1329,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The recordedDate represents when this particular Condition record was created in
      * the system, which is often a system-generated date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getRecordedDate(): null|FHIRDateTime
     {
@@ -1510,9 +1345,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The recordedDate represents when this particular Condition record was created in
      * the system, which is often a system-generated date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $recordedDate
-     * @return static
      */
     public function setRecordedDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedDate): self
     {
@@ -1533,8 +1365,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getRecorder(): null|FHIRReference
     {
@@ -1547,9 +1377,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $recorder
-     * @return static
      */
     public function setRecorder(null|FHIRReference $recorder): self
     {
@@ -1567,8 +1394,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who is making the condition statement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getAsserter(): null|FHIRReference
     {
@@ -1581,9 +1406,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who is making the condition statement.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $asserter
-     * @return static
      */
     public function setAsserter(null|FHIRReference $asserter): self
     {
@@ -1624,9 +1446,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * clinical concept that has risen to a level of concern.
      *
      * Clinical stage or grade of a condition. May include formal severity assessments.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage $stage
-     * @return static
      */
     public function addStage(FHIRConditionStage $stage): self
     {
@@ -1642,9 +1461,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * clinical concept that has risen to a level of concern.
      *
      * Clinical stage or grade of a condition. May include formal severity assessments.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage ...$stage
-     * @return static
      */
     public function setStage(FHIRConditionStage ...$stage): self
     {
@@ -1687,9 +1503,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Supporting evidence / manifestations that are the basis of the Condition's
      * verification status, such as evidence that confirmed or refuted the condition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence $evidence
-     * @return static
      */
     public function addEvidence(FHIRConditionEvidence $evidence): self
     {
@@ -1706,9 +1519,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Supporting evidence / manifestations that are the basis of the Condition's
      * verification status, such as evidence that confirmed or refuted the condition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence ...$evidence
-     * @return static
      */
     public function setEvidence(FHIRConditionEvidence ...$evidence): self
     {
@@ -1755,9 +1565,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Additional information about the Condition. This is a general notes/comments
      * entry for description of the Condition, its diagnosis and prognosis.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1776,9 +1583,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Additional information about the Condition. This is a general notes/comments
      * entry for description of the Condition, its diagnosis and prognosis.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1792,10 +1596,7 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCondition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCondition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1963,11 +1764,6 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2161,10 +1957,7 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCondition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCondition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

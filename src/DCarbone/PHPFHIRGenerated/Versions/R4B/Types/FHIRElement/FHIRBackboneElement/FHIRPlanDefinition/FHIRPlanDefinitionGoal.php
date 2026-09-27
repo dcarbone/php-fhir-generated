@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a category the goal falls within.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -157,8 +154,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * Human-readable and/or coded description of a specific desired objective of care,
      * such as "control blood pressure" or "negotiate an obstacle course" or "dance
      * with child at wedding".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $description;
@@ -170,8 +165,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      *
      * Identifies the expected level of importance associated with reaching/sustaining
      * the defined goal.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $priority;
@@ -182,8 +175,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The event after which the goal should begin being pursued.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $start;
@@ -232,12 +223,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
     /**
      * FHIRPlanDefinitionGoal Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $priority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $start
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $addresses
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact> $documentation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget> $target
@@ -296,8 +282,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a category the goal falls within.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -311,9 +295,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a category the goal falls within.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -334,8 +315,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * Human-readable and/or coded description of a specific desired objective of care,
      * such as "control blood pressure" or "negotiate an obstacle course" or "dance
      * with child at wedding".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDescription(): null|FHIRCodeableConcept
     {
@@ -351,9 +330,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * Human-readable and/or coded description of a specific desired objective of care,
      * such as "control blood pressure" or "negotiate an obstacle course" or "dance
      * with child at wedding".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $description
-     * @return static
      */
     public function setDescription(null|FHIRCodeableConcept $description): self
     {
@@ -373,8 +349,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      *
      * Identifies the expected level of importance associated with reaching/sustaining
      * the defined goal.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPriority(): null|FHIRCodeableConcept
     {
@@ -389,9 +363,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      *
      * Identifies the expected level of importance associated with reaching/sustaining
      * the defined goal.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $priority
-     * @return static
      */
     public function setPriority(null|FHIRCodeableConcept $priority): self
     {
@@ -410,8 +381,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The event after which the goal should begin being pursued.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStart(): null|FHIRCodeableConcept
     {
@@ -425,9 +394,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The event after which the goal should begin being pursued.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $start
-     * @return static
      */
     public function setStart(null|FHIRCodeableConcept $start): self
     {
@@ -474,9 +440,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      *
      * Identifies problems, conditions, issues, or concerns the goal is intended to
      * address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $addresses
-     * @return static
      */
     public function addAddresses(FHIRCodeableConcept $addresses): self
     {
@@ -495,9 +458,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      *
      * Identifies problems, conditions, issues, or concerns the goal is intended to
      * address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$addresses
-     * @return static
      */
     public function setAddresses(FHIRCodeableConcept ...$addresses): self
     {
@@ -546,9 +506,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * Didactic or other informational resources associated with the goal that provide
      * further supporting information about the goal. Information resources can include
      * inline text commentary and links to web resources.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact $documentation
-     * @return static
      */
     public function addDocumentation(FHIRRelatedArtifact $documentation): self
     {
@@ -568,9 +525,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * Didactic or other informational resources associated with the goal that provide
      * further supporting information about the goal. Information resources can include
      * inline text commentary and links to web resources.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact ...$documentation
-     * @return static
      */
     public function setDocumentation(FHIRRelatedArtifact ...$documentation): self
     {
@@ -617,9 +571,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * specifications.
      *
      * Indicates what should be done and within what timeframe.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget $target
-     * @return static
      */
     public function addTarget(FHIRPlanDefinitionTarget $target): self
     {
@@ -638,9 +589,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * specifications.
      *
      * Indicates what should be done and within what timeframe.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget ...$target
-     * @return static
      */
     public function setTarget(FHIRPlanDefinitionTarget ...$target): self
     {
@@ -654,10 +602,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -713,10 +658,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -765,10 +706,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

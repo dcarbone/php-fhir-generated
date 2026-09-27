@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -147,8 +146,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the procedure (for each type).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequence;
@@ -159,8 +156,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure relevant to the account.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $code;
@@ -175,8 +170,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * Date of the procedure when using a coded procedure. If using a reference to a
      * procedure, then the date on the procedure should be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $dateOfService;
@@ -221,11 +214,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
     /**
      * FHIRAccountProcedure Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $code
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $dateOfService
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $packageCode
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $device
@@ -279,8 +268,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the procedure (for each type).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getSequence(): null|FHIRPositiveInt
     {
@@ -293,9 +280,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the procedure (for each type).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -317,8 +301,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure relevant to the account.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getCode(): null|FHIRCodeableReference
     {
@@ -332,9 +314,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure relevant to the account.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableReference $code): self
     {
@@ -357,8 +336,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * Date of the procedure when using a coded procedure. If using a reference to a
      * procedure, then the date on the procedure should be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDateOfService(): null|FHIRDateTime
     {
@@ -376,9 +353,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * Date of the procedure when using a coded procedure. If using a reference to a
      * procedure, then the date on the procedure should be used.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $dateOfService
-     * @return static
      */
     public function setDateOfService(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateOfService): self
     {
@@ -426,9 +400,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How this procedure value should be used in charging the account.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -446,9 +417,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How this procedure value should be used in charging the account.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -495,9 +463,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * The package code can be used to group procedures that may be priced or delivered
      * as a single product. Such as DRGs.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $packageCode
-     * @return static
      */
     public function addPackageCode(FHIRCodeableConcept $packageCode): self
     {
@@ -516,9 +481,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * The package code can be used to group procedures that may be priced or delivered
      * as a single product. Such as DRGs.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$packageCode
-     * @return static
      */
     public function setPackageCode(FHIRCodeableConcept ...$packageCode): self
     {
@@ -561,9 +523,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any devices that were associated with the procedure relevant to the account.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $device
-     * @return static
      */
     public function addDevice(FHIRReference $device): self
     {
@@ -580,9 +539,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any devices that were associated with the procedure relevant to the account.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$device
-     * @return static
      */
     public function setDevice(FHIRReference ...$device): self
     {
@@ -596,10 +552,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountProcedure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountProcedure
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -669,10 +622,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -726,10 +675,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountProcedure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountProcedure
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

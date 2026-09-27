@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -123,7 +121,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -244,8 +241,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the capability statement is stored on different
      * servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -260,8 +255,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -273,8 +266,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A natural language name identifying the capability statement. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -284,8 +275,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the capability statement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -294,8 +283,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * The status of this capability statement. Enables tracking the life-cycle of the
      * content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -306,8 +293,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A Boolean value to indicate that this capability statement is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -323,8 +308,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the capability statement changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -335,8 +318,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * The name of the organization or individual that published the capability
      * statement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -365,8 +346,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * consumer's perspective. Typically, this is used when the capability statement
      * describes a desired rather than an actual solution, for example as a formal
      * expression of requirements as part of an RFP.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -412,8 +391,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * Explanation of why this capability statement is needed and why it has been
      * designed as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -429,8 +406,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A copyright statement relating to the capability statement and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the capability statement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -440,8 +415,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
      * software) or a class of implementation (e.g. a desired purchase).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCapabilityStatementKind
      */
     #[FHIRCapabilityStatementKind]
     protected FHIRCapabilityStatementKind $kind;
@@ -485,8 +458,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * Software that is covered by this capability statement. It is used when the
      * capability statement describes the capabilities of a particular software
      * version, independent of an installation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
      */
     #[FHIRCapabilityStatementSoftware]
     protected FHIRCapabilityStatementSoftware $software;
@@ -499,8 +470,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * Identifies a specific implementation instance that is described by the
      * capability statement - i.e. a particular installation, rather than the
      * capabilities of a software program.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
      */
     #[FHIRCapabilityStatementImplementation]
     protected FHIRCapabilityStatementImplementation $implementation;
@@ -510,8 +479,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * The version of the FHIR specification that this CapabilityStatement describes
      * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
      * There is no default value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFHIRVersion
      */
     #[FHIRFHIRVersion]
     protected FHIRFHIRVersion $fhirVersion;
@@ -594,34 +561,14 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
     /* constructor.php:61 */
     /**
      * FHIRCapabilityStatement Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCapabilityStatementKindEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCapabilityStatementKind $kind
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> $instantiates
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> $imports
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware $software
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation $implementation
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRFHIRVersionEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFHIRVersion $fhirVersion
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode> $format
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode> $patchFormat
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> $implementationGuide
@@ -780,8 +727,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the capability statement is stored on different
      * servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -800,9 +745,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the capability statement is stored on different
      * servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -828,8 +770,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -847,9 +787,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -872,8 +809,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A natural language name identifying the capability statement. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -888,9 +823,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A natural language name identifying the capability statement. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -911,8 +843,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the capability statement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -925,9 +855,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the capability statement.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -947,8 +874,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * The status of this capability statement. Enables tracking the life-cycle of the
      * content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -960,9 +885,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * The status of this capability statement. Enables tracking the life-cycle of the
      * content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -984,8 +906,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A Boolean value to indicate that this capability statement is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -999,9 +919,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A Boolean value to indicate that this capability statement is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1028,8 +945,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the capability statement changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1048,9 +963,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the capability statement changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1072,8 +984,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * The name of the organization or individual that published the capability
      * statement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1087,9 +997,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * The name of the organization or individual that published the capability
      * statement.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1137,9 +1044,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1157,9 +1061,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1184,8 +1085,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * consumer's perspective. Typically, this is used when the capability statement
      * describes a desired rather than an actual solution, for example as a formal
      * expression of requirements as part of an RFP.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1205,9 +1104,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * consumer's perspective. Typically, this is used when the capability statement
      * describes a desired rather than an actual solution, for example as a formal
      * expression of requirements as part of an RFP.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1267,9 +1163,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate capability
      * statement instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1293,9 +1186,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate capability
      * statement instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1342,9 +1232,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A legal or geographic region in which the capability statement is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1363,9 +1250,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A legal or geographic region in which the capability statement is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1388,8 +1272,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * Explanation of why this capability statement is needed and why it has been
      * designed as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1407,9 +1289,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * Explanation of why this capability statement is needed and why it has been
      * designed as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1436,8 +1315,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A copyright statement relating to the capability statement and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the capability statement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1456,9 +1333,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * A copyright statement relating to the capability statement and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the capability statement.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1479,8 +1353,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
      * software) or a class of implementation (e.g. a desired purchase).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCapabilityStatementKind
      */
     public function getKind(): null|FHIRCapabilityStatementKind
     {
@@ -1493,9 +1365,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
      * software) or a class of implementation (e.g. a desired purchase).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCapabilityStatementKindEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCapabilityStatementKind $kind
-     * @return static
      */
     public function setKind(null|string|FHIRCapabilityStatementKindEnum|FHIRCapabilityStatementKind $kind): self
     {
@@ -1551,9 +1420,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * corresponds to a business service. The server may actually implement a subset of
      * the capability statement it claims to implement, so the capability statement
      * must specify the full capability details.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $instantiates
-     * @return static
      */
     public function addInstantiates(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiates): self
     {
@@ -1578,9 +1444,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * corresponds to a business service. The server may actually implement a subset of
      * the capability statement it claims to implement, so the capability statement
      * must specify the full capability details.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical ...$instantiates
-     * @return static
      */
     public function setInstantiates(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiates): self
     {
@@ -1638,9 +1501,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * adds to. The capability statement automatically includes everything in the other
      * statement, and it is not duplicated, though the server may repeat the same
      * resources, interactions and operations to add additional details to them.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $imports
-     * @return static
      */
     public function addImports(string|FHIRCanonicalPrimitive|FHIRCanonical $imports): self
     {
@@ -1664,9 +1524,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * adds to. The capability statement automatically includes everything in the other
      * statement, and it is not duplicated, though the server may repeat the same
      * resources, interactions and operations to add additional details to them.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical ...$imports
-     * @return static
      */
     public function setImports(string|FHIRCanonicalPrimitive|FHIRCanonical ...$imports): self
     {
@@ -1694,8 +1551,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * Software that is covered by this capability statement. It is used when the
      * capability statement describes the capabilities of a particular software
      * version, independent of an installation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
      */
     public function getSoftware(): null|FHIRCapabilityStatementSoftware
     {
@@ -1711,9 +1566,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * Software that is covered by this capability statement. It is used when the
      * capability statement describes the capabilities of a particular software
      * version, independent of an installation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware $software
-     * @return static
      */
     public function setSoftware(null|FHIRCapabilityStatementSoftware $software): self
     {
@@ -1734,8 +1586,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * Identifies a specific implementation instance that is described by the
      * capability statement - i.e. a particular installation, rather than the
      * capabilities of a software program.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
      */
     public function getImplementation(): null|FHIRCapabilityStatementImplementation
     {
@@ -1751,9 +1601,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * Identifies a specific implementation instance that is described by the
      * capability statement - i.e. a particular installation, rather than the
      * capabilities of a software program.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation $implementation
-     * @return static
      */
     public function setImplementation(null|FHIRCapabilityStatementImplementation $implementation): self
     {
@@ -1771,8 +1618,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * The version of the FHIR specification that this CapabilityStatement describes
      * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
      * There is no default value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFHIRVersion
      */
     public function getFhirVersion(): null|FHIRFHIRVersion
     {
@@ -1785,9 +1630,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * The version of the FHIR specification that this CapabilityStatement describes
      * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
      * There is no default value.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRFHIRVersionEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRFHIRVersion $fhirVersion
-     * @return static
      */
     public function setFhirVersion(null|string|FHIRFHIRVersionEnum|FHIRFHIRVersion $fhirVersion): self
     {
@@ -1837,9 +1679,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of the formats supported by this implementation using their content
      * types.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $format
-     * @return static
      */
     public function addFormat(string|FHIRCodePrimitive|FHIRCode $format): self
     {
@@ -1861,9 +1700,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of the formats supported by this implementation using their content
      * types.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode ...$format
-     * @return static
      */
     public function setFormat(string|FHIRCodePrimitive|FHIRCode ...$format): self
     {
@@ -1917,9 +1753,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of the patch formats supported by this implementation using their content
      * types.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $patchFormat
-     * @return static
      */
     public function addPatchFormat(string|FHIRCodePrimitive|FHIRCode $patchFormat): self
     {
@@ -1941,9 +1774,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of the patch formats supported by this implementation using their content
      * types.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode ...$patchFormat
-     * @return static
      */
     public function setPatchFormat(string|FHIRCodePrimitive|FHIRCode ...$patchFormat): self
     {
@@ -1997,9 +1827,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of implementation guides that the server does (or should) support in
      * their entirety.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $implementationGuide
-     * @return static
      */
     public function addImplementationGuide(string|FHIRCanonicalPrimitive|FHIRCanonical $implementationGuide): self
     {
@@ -2021,9 +1848,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      *
      * A list of implementation guides that the server does (or should) support in
      * their entirety.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical ...$implementationGuide
-     * @return static
      */
     public function setImplementationGuide(string|FHIRCanonicalPrimitive|FHIRCanonical ...$implementationGuide): self
     {
@@ -2075,9 +1899,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A definition of the restful capabilities of the solution, if any.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest $rest
-     * @return static
      */
     public function addRest(FHIRCapabilityStatementRest $rest): self
     {
@@ -2095,9 +1916,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A definition of the restful capabilities of the solution, if any.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest ...$rest
-     * @return static
      */
     public function setRest(FHIRCapabilityStatementRest ...$rest): self
     {
@@ -2142,9 +1960,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A description of the messaging capabilities of the solution.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging $messaging
-     * @return static
      */
     public function addMessaging(FHIRCapabilityStatementMessaging $messaging): self
     {
@@ -2162,9 +1977,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A description of the messaging capabilities of the solution.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging ...$messaging
-     * @return static
      */
     public function setMessaging(FHIRCapabilityStatementMessaging ...$messaging): self
     {
@@ -2209,9 +2021,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A document definition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument $document
-     * @return static
      */
     public function addDocument(FHIRCapabilityStatementDocument $document): self
     {
@@ -2229,9 +2038,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
      * implementation.
      *
      * A document definition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument ...$document
-     * @return static
      */
     public function setDocument(FHIRCapabilityStatementDocument ...$document): self
     {
@@ -2245,10 +2051,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2482,11 +2285,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2735,10 +2533,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements VersionConta
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

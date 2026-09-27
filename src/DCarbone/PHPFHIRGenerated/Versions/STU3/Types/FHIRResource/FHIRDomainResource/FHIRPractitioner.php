@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive;
@@ -92,7 +90,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Version;
@@ -158,8 +155,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this practitioner's record is in active use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $active;
@@ -209,8 +204,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAdministrativeGender
      */
     #[FHIRAdministrativeGender]
     protected FHIRAdministrativeGender $gender;
@@ -221,8 +214,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the practitioner.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $birthDate;
@@ -263,21 +254,13 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
     /* constructor.php:61 */
     /**
      * FHIRPractitioner Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $active
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHumanName> $name
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint> $telecom
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAddress> $address
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAdministrativeGender $gender
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $birthDate
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment> $photo
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification> $qualification
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $communication
@@ -388,9 +371,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that applies to this person in this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -407,9 +387,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that applies to this person in this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -426,8 +403,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this practitioner's record is in active use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getActive(): null|FHIRBoolean
     {
@@ -439,9 +414,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this practitioner's record is in active use.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $active
-     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -487,9 +459,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name(s) associated with the practitioner.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHumanName $name
-     * @return static
      */
     public function addName(FHIRHumanName $name): self
     {
@@ -506,9 +475,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name(s) associated with the practitioner.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHumanName ...$name
-     * @return static
      */
     public function setName(FHIRHumanName ...$name): self
     {
@@ -555,9 +521,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      *
      * A contact detail for the practitioner, e.g. a telephone number or an email
      * address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint $telecom
-     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -576,9 +539,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      *
      * A contact detail for the practitioner, e.g. a telephone number or an email
      * address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -633,9 +593,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * Address(es) of the practitioner that are not role specific (typically home
      * address). Work addresses are not typically entered in this property as they are
      * usually role dependent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAddress $address
-     * @return static
      */
     public function addAddress(FHIRAddress $address): self
     {
@@ -658,9 +615,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * Address(es) of the practitioner that are not role specific (typically home
      * address). Work addresses are not typically entered in this property as they are
      * usually role dependent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAddress ...$address
-     * @return static
      */
     public function setAddress(FHIRAddress ...$address): self
     {
@@ -677,8 +631,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender(): null|FHIRAdministrativeGender
     {
@@ -690,9 +642,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAdministrativeGender $gender
-     * @return static
      */
     public function setGender(null|string|FHIRAdministrativeGenderList|FHIRAdministrativeGender $gender): self
     {
@@ -714,8 +663,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the practitioner.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     public function getBirthDate(): null|FHIRDate
     {
@@ -729,9 +676,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the practitioner.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $birthDate
-     * @return static
      */
     public function setBirthDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $birthDate): self
     {
@@ -777,9 +721,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $photo
-     * @return static
      */
     public function addPhoto(FHIRAttachment $photo): self
     {
@@ -796,9 +737,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment ...$photo
-     * @return static
      */
     public function setPhoto(FHIRAttachment ...$photo): self
     {
@@ -839,9 +777,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * healthcare.
      *
      * Qualifications obtained by training and certification.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification $qualification
-     * @return static
      */
     public function addQualification(FHIRPractitionerQualification $qualification): self
     {
@@ -857,9 +792,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * healthcare.
      *
      * Qualifications obtained by training and certification.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification ...$qualification
-     * @return static
      */
     public function setQualification(FHIRPractitionerQualification ...$qualification): self
     {
@@ -904,9 +836,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A language the practitioner is able to use in patient communication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $communication
-     * @return static
      */
     public function addCommunication(FHIRCodeableConcept $communication): self
     {
@@ -924,9 +853,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A language the practitioner is able to use in patient communication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$communication
-     * @return static
      */
     public function setCommunication(FHIRCodeableConcept ...$communication): self
     {
@@ -940,10 +866,7 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRPractitioner $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRPractitioner
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1065,11 +988,6 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1180,10 +1098,7 @@ class FHIRPractitioner extends FHIRDomainResource implements VersionContainedTyp
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRPractitioner $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRPractitioner
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -134,8 +133,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Series instance UID of the SOP instances in the selection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIROid
      */
     #[FHIROid]
     protected FHIROid $uid;
@@ -146,8 +143,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      *
      * WADO-RS URL to retrieve the series. Note that this URL retrieves all SOP
      * instances of the series not only those in the selection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -174,10 +169,7 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
     /**
      * FHIRImagingObjectSelectionSeries Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIROid $uid
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance> $instance
      * @param null|string[] $fhirComments
      */
@@ -218,8 +210,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Series instance UID of the SOP instances in the selection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIROid
      */
     public function getUid(): null|FHIROid
     {
@@ -233,9 +223,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Series instance UID of the SOP instances in the selection.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIROid $uid
-     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -257,8 +244,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      *
      * WADO-RS URL to retrieve the series. Note that this URL retrieves all SOP
      * instances of the series not only those in the selection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -272,9 +257,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      *
      * WADO-RS URL to retrieve the series. Note that this URL retrieves all SOP
      * instances of the series not only those in the selection.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -334,9 +316,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      * and so on.
      *
      * Identity and locating information of the selected DICOM SOP instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance $instance
-     * @return static
      */
     public function addInstance(FHIRImagingObjectSelectionInstance $instance): self
     {
@@ -360,9 +339,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      * and so on.
      *
      * Identity and locating information of the selected DICOM SOP instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance ...$instance
-     * @return static
      */
     public function setInstance(FHIRImagingObjectSelectionInstance ...$instance): self
     {
@@ -376,10 +352,7 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -443,10 +416,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -481,10 +450,7 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -118,7 +116,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -202,8 +199,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * address at which at which an authoritative instance of this example scenario is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the example scenario is stored on different servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -232,8 +227,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -245,8 +238,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A natural language name identifying the example scenario. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -255,8 +246,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * The status of this example scenario. Enables tracking the life-cycle of the
      * content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -267,8 +256,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A Boolean value to indicate that this example scenario is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -284,8 +271,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * example scenario changes. (e.g. the 'content logical definition').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -295,8 +280,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the example scenario.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -355,8 +338,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A copyright statement relating to the example scenario and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the example scenario.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -372,8 +353,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * What the example scenario resource is created for. This should not be used to
      * show the business purpose of the scenario itself, but the purpose of documenting
      * a scenario.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -420,27 +399,13 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
     /* constructor.php:61 */
     /**
      * FHIRExampleScenario Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $contact
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioActor> $actor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance> $instance
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess> $process
@@ -560,8 +525,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * address at which at which an authoritative instance of this example scenario is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the example scenario is stored on different servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -579,9 +542,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * address at which at which an authoritative instance of this example scenario is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the example scenario is stored on different servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -633,9 +593,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A formal identifier that is used to identify this example scenario when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -655,9 +612,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A formal identifier that is used to identify this example scenario when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -680,8 +634,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -699,9 +651,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -724,8 +673,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A natural language name identifying the example scenario. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -740,9 +687,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A natural language name identifying the example scenario. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -762,8 +706,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * The status of this example scenario. Enables tracking the life-cycle of the
      * content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -775,9 +717,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * The status of this example scenario. Enables tracking the life-cycle of the
      * content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -799,8 +738,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A Boolean value to indicate that this example scenario is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -814,9 +751,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A Boolean value to indicate that this example scenario is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -843,8 +777,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * example scenario changes. (e.g. the 'content logical definition').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -863,9 +795,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * example scenario changes. (e.g. the 'content logical definition').
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -886,8 +815,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the example scenario.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -900,9 +827,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the example scenario.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -950,9 +874,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -970,9 +891,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1029,9 +947,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate example scenario
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1055,9 +970,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate example scenario
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1104,9 +1016,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * A legal or geographic region in which the example scenario is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1125,9 +1034,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      *
      * A legal or geographic region in which the example scenario is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1151,8 +1057,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A copyright statement relating to the example scenario and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the example scenario.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1171,9 +1075,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * A copyright statement relating to the example scenario and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the example scenario.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1200,8 +1101,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * What the example scenario resource is created for. This should not be used to
      * show the business purpose of the scenario itself, but the purpose of documenting
      * a scenario.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1220,9 +1119,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * What the example scenario resource is created for. This should not be used to
      * show the business purpose of the scenario itself, but the purpose of documenting
      * a scenario.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1264,9 +1160,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Actor participating in the resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioActor $actor
-     * @return static
      */
     public function addActor(FHIRExampleScenarioActor $actor): self
     {
@@ -1281,9 +1174,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Actor participating in the resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioActor ...$actor
-     * @return static
      */
     public function setActor(FHIRExampleScenarioActor ...$actor): self
     {
@@ -1322,9 +1212,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Each resource and each version that is present in the workflow.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance $instance
-     * @return static
      */
     public function addInstance(FHIRExampleScenarioInstance $instance): self
     {
@@ -1339,9 +1226,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Each resource and each version that is present in the workflow.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance ...$instance
-     * @return static
      */
     public function setInstance(FHIRExampleScenarioInstance ...$instance): self
     {
@@ -1380,9 +1264,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Each major process - a group of operations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess $process
-     * @return static
      */
     public function addProcess(FHIRExampleScenarioProcess $process): self
     {
@@ -1397,9 +1278,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * Example of workflow instance.
      *
      * Each major process - a group of operations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess ...$process
-     * @return static
      */
     public function setProcess(FHIRExampleScenarioProcess ...$process): self
     {
@@ -1444,9 +1322,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * the Narrative, or extensions
      *
      * Another nested workflow.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $workflow
-     * @return static
      */
     public function addWorkflow(string|FHIRCanonicalPrimitive|FHIRCanonical $workflow): self
     {
@@ -1467,9 +1342,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
      * the Narrative, or extensions
      *
      * Another nested workflow.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical ...$workflow
-     * @return static
      */
     public function setWorkflow(string|FHIRCanonicalPrimitive|FHIRCanonical ...$workflow): self
     {
@@ -1490,10 +1362,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRExampleScenario $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRExampleScenario
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1677,11 +1546,6 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1859,10 +1723,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements VersionContained
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRExampleScenario $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRExampleScenario
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

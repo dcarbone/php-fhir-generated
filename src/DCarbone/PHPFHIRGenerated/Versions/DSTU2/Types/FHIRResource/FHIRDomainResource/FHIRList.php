@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -89,7 +87,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRListModeList;
@@ -172,8 +169,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label for the list assigned by the author.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -184,8 +179,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This code defines the purpose of the list - why it was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -196,8 +189,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The common subject (or patient) of the resources that are in the list, if there
      * is one.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -208,8 +199,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The entity responsible for deciding what the contents of the list were. Where
      * the list was created by a human, this is the same as the author of the list.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $source;
@@ -219,8 +208,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that is the context in which this list was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -229,8 +216,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this list.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRListStatus
      */
     #[FHIRListStatus]
     protected FHIRListStatus $status;
@@ -243,8 +228,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the list was prepared.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -255,8 +238,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What order applies to the items in the list.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $orderedBy;
@@ -268,8 +249,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * being maintained on an ongoing basis, or if it represents a snapshot of a list
      * of items from another source, or whether it is a prepared list where items may
      * be marked as added, modified or deleted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRListMode
      */
     #[FHIRListMode]
     protected FHIRListMode $mode;
@@ -279,8 +258,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments that apply to the overall list.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $note;
@@ -300,8 +277,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the list is empty, why the list is empty.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $emptyReason;
@@ -309,27 +284,11 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
     /* constructor.php:61 */
     /**
      * FHIRList Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $title
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $source
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRListStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRListStatus $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $orderedBy
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRListModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRListMode $mode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $note
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRList\FHIRListEntry> $entry
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $emptyReason
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -451,9 +410,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifier for the List assigned for business purposes outside the context of
      * FHIR.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -471,9 +427,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifier for the List assigned for business purposes outside the context of
      * FHIR.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -491,8 +444,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label for the list assigned by the author.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -505,9 +456,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label for the list assigned by the author.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -529,8 +477,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This code defines the purpose of the list - why it was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -544,9 +490,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This code defines the purpose of the list - why it was created.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -565,8 +508,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The common subject (or patient) of the resources that are in the list, if there
      * is one.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -580,9 +521,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The common subject (or patient) of the resources that are in the list, if there
      * is one.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -601,8 +539,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The entity responsible for deciding what the contents of the list were. Where
      * the list was created by a human, this is the same as the author of the list.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSource(): null|FHIRReference
     {
@@ -616,9 +552,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The entity responsible for deciding what the contents of the list were. Where
      * the list was created by a human, this is the same as the author of the list.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $source
-     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -636,8 +569,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that is the context in which this list was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -650,9 +581,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that is the context in which this list was created.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -669,8 +597,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this list.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRListStatus
      */
     public function getStatus(): null|FHIRListStatus
     {
@@ -682,9 +608,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this list.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRListStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRListStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRListStatusList|FHIRListStatus $status): self
     {
@@ -708,8 +631,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the list was prepared.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -725,9 +646,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the list was prepared.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -749,8 +667,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What order applies to the items in the list.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getOrderedBy(): null|FHIRCodeableConcept
     {
@@ -764,9 +680,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What order applies to the items in the list.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $orderedBy
-     * @return static
      */
     public function setOrderedBy(null|FHIRCodeableConcept $orderedBy): self
     {
@@ -786,8 +699,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * being maintained on an ongoing basis, or if it represents a snapshot of a list
      * of items from another source, or whether it is a prepared list where items may
      * be marked as added, modified or deleted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRListMode
      */
     public function getMode(): null|FHIRListMode
     {
@@ -802,9 +713,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * being maintained on an ongoing basis, or if it represents a snapshot of a list
      * of items from another source, or whether it is a prepared list where items may
      * be marked as added, modified or deleted.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRListModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRListMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRListModeList|FHIRListMode $mode): self
     {
@@ -825,8 +733,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments that apply to the overall list.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getNote(): null|FHIRString
     {
@@ -839,9 +745,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments that apply to the overall list.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $note
-     * @return static
      */
     public function setNote(null|string|FHIRStringPrimitive|FHIRString $note): self
     {
@@ -883,9 +786,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * A set of information summarized from a list of other resources.
      *
      * Entries in this list.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRList\FHIRListEntry $entry
-     * @return static
      */
     public function addEntry(FHIRListEntry $entry): self
     {
@@ -900,9 +800,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * A set of information summarized from a list of other resources.
      *
      * Entries in this list.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRList\FHIRListEntry ...$entry
-     * @return static
      */
     public function setEntry(FHIRListEntry ...$entry): self
     {
@@ -921,8 +818,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the list is empty, why the list is empty.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getEmptyReason(): null|FHIRCodeableConcept
     {
@@ -936,9 +831,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the list is empty, why the list is empty.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $emptyReason
-     * @return static
      */
     public function setEmptyReason(null|FHIRCodeableConcept $emptyReason): self
     {
@@ -952,10 +844,7 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRList $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRList
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1099,11 +988,6 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1229,10 +1113,7 @@ class FHIRList extends FHIRDomainResource implements VersionContainedTypeInterfa
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRList $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRList
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

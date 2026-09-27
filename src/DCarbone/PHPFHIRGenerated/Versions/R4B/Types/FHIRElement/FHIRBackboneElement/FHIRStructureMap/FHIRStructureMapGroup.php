@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -160,8 +159,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A unique name for the group for the convenience of human readers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $name;
@@ -174,8 +171,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Another group that this group adds rules to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $extends;
@@ -184,8 +179,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * If this is the default rule set to apply for the source type or this combination
      * of types.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStructureMapGroupTypeMode
      */
     #[FHIRStructureMapGroupTypeMode]
     protected FHIRStructureMapGroupTypeMode $typeMode;
@@ -196,8 +189,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * Additional supporting documentation that explains the purpose of the group and
      * the types of mappings within it.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $documentation;
@@ -225,12 +216,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
     /**
      * FHIRStructureMapGroup Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $extends
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRStructureMapGroupTypeModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStructureMapGroupTypeMode $typeMode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $documentation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput> $input
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule> $rule
      * @param null|string[] $fhirComments
@@ -286,8 +272,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A unique name for the group for the convenience of human readers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     public function getName(): null|FHIRId
     {
@@ -303,9 +287,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A unique name for the group for the convenience of human readers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $name
-     * @return static
      */
     public function setName(null|string|FHIRIdPrimitive|FHIRId $name): self
     {
@@ -329,8 +310,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Another group that this group adds rules to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     public function getExtends(): null|FHIRId
     {
@@ -346,9 +325,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Another group that this group adds rules to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $extends
-     * @return static
      */
     public function setExtends(null|string|FHIRIdPrimitive|FHIRId $extends): self
     {
@@ -368,8 +344,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * If this is the default rule set to apply for the source type or this combination
      * of types.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStructureMapGroupTypeMode
      */
     public function getTypeMode(): null|FHIRStructureMapGroupTypeMode
     {
@@ -381,9 +355,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * If this is the default rule set to apply for the source type or this combination
      * of types.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRStructureMapGroupTypeModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStructureMapGroupTypeMode $typeMode
-     * @return static
      */
     public function setTypeMode(null|string|FHIRStructureMapGroupTypeModeEnum|FHIRStructureMapGroupTypeMode $typeMode): self
     {
@@ -405,8 +376,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * Additional supporting documentation that explains the purpose of the group and
      * the types of mappings within it.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDocumentation(): null|FHIRString
     {
@@ -420,9 +389,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * Additional supporting documentation that explains the purpose of the group and
      * the types of mappings within it.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -466,9 +432,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * A name assigned to an instance of data. The instance must be provided when the
      * mapping is invoked.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput $input
-     * @return static
      */
     public function addInput(FHIRStructureMapInput $input): self
     {
@@ -484,9 +447,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      *
      * A name assigned to an instance of data. The instance must be provided when the
      * mapping is invoked.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput ...$input
-     * @return static
      */
     public function setInput(FHIRStructureMapInput ...$input): self
     {
@@ -525,9 +485,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Transform Rule from source to target.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule $rule
-     * @return static
      */
     public function addRule(FHIRStructureMapRule $rule): self
     {
@@ -542,9 +499,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Transform Rule from source to target.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule ...$rule
-     * @return static
      */
     public function setRule(FHIRStructureMapRule ...$rule): self
     {
@@ -558,10 +512,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -647,10 +598,6 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -712,10 +659,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

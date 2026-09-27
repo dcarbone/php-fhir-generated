@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -111,13 +111,11 @@ class FHIRInstantPrimitive implements PrimitiveTypeInterface
     ];
 
     /* class_primitive.php:98 */
-    /** @var string */
     protected string $value;
 
     /* class_primitive.php:116 */
     /**
      * FHIRInstantPrimitive Constructor
-     * @param null|string|\DateTimeInterface $value
      */
     public function __construct(null|string|\DateTimeInterface $value = null)
     {
@@ -125,9 +123,6 @@ class FHIRInstantPrimitive implements PrimitiveTypeInterface
     }
 
     /* class_primitive.php:134 */
-    /**
-     * @return string
-     */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
@@ -138,18 +133,11 @@ class FHIRInstantPrimitive implements PrimitiveTypeInterface
     {
         return Version::getFHIRVersion();
     }
-    /**
-     * @return null|string
-     */
     public function getValue(): null|string
     {
         return $this->value ?? null;
     }
 
-    /**
-     * @param null|string|\DateTimeInterface $value
-     * @return static
-     */
     public function setValue(null|string|\DateTimeInterface $value): self
     {
         if (null === $value) {
@@ -167,9 +155,6 @@ class FHIRInstantPrimitive implements PrimitiveTypeInterface
         throw new \InvalidArgumentException(sprintf('Value must be null, string, or instance of \\DateTimeInterface, %s seen.', gettype($value)));
     }
 
-    /**
-     * @return null|\DateTimeInterface
-     */
     public function _getValueAsDateTime(): null|\DateTimeInterface
     {
         if (!isset($this->value)) {
@@ -182,9 +167,6 @@ class FHIRInstantPrimitive implements PrimitiveTypeInterface
         return $dt;
     }
 
-    /**
-     * @return string
-     */
     public function _getValueAsString(): string
     {
         return (string)$this->getValue();

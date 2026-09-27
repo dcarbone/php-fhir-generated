@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -125,8 +124,6 @@ class FHIRPatientCommunication extends FHIRBackboneElement
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
      * "en" for English, or "en-US" for American English versus "en-EN" for England
      * English.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $language;
@@ -136,8 +133,6 @@ class FHIRPatientCommunication extends FHIRBackboneElement
      *
      * Indicates whether or not the patient prefers this language (over other languages
      * he masters up a certain level).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $preferred;
@@ -146,10 +141,7 @@ class FHIRPatientCommunication extends FHIRBackboneElement
     /**
      * FHIRPatientCommunication Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $language
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $preferred
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -188,8 +180,6 @@ class FHIRPatientCommunication extends FHIRBackboneElement
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
      * "en" for English, or "en-US" for American English versus "en-EN" for England
      * English.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getLanguage(): null|FHIRCodeableConcept
     {
@@ -206,9 +196,6 @@ class FHIRPatientCommunication extends FHIRBackboneElement
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
      * "en" for English, or "en-US" for American English versus "en-EN" for England
      * English.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $language
-     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {
@@ -226,8 +213,6 @@ class FHIRPatientCommunication extends FHIRBackboneElement
      *
      * Indicates whether or not the patient prefers this language (over other languages
      * he masters up a certain level).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     public function getPreferred(): null|FHIRBoolean
     {
@@ -240,9 +225,6 @@ class FHIRPatientCommunication extends FHIRBackboneElement
      *
      * Indicates whether or not the patient prefers this language (over other languages
      * he masters up a certain level).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $preferred
-     * @return static
      */
     public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred): self
     {
@@ -259,10 +241,7 @@ class FHIRPatientCommunication extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -316,10 +295,6 @@ class FHIRPatientCommunication extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -342,10 +317,7 @@ class FHIRPatientCommunication extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

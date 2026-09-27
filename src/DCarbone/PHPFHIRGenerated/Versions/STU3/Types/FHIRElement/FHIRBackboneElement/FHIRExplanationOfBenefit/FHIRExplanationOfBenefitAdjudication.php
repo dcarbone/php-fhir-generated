@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -122,8 +121,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code indicating: Co-Pay, deductable, elegible, benefit, tax, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -134,8 +131,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Adjudication reason such as limit reached.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reason;
@@ -145,8 +140,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Monitory amount associated with the code.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $amount;
@@ -158,8 +151,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      *
      * A non-monetary value for example a percentage. Mutually exclusive to the amount
      * element above.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $value;
@@ -168,12 +159,7 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
     /**
      * FHIRExplanationOfBenefitAdjudication Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $amount
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -217,8 +203,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code indicating: Co-Pay, deductable, elegible, benefit, tax, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -232,9 +216,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code indicating: Co-Pay, deductable, elegible, benefit, tax, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -253,8 +234,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Adjudication reason such as limit reached.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReason(): null|FHIRCodeableConcept
     {
@@ -268,9 +247,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Adjudication reason such as limit reached.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -288,8 +264,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Monitory amount associated with the code.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAmount(): null|FHIRMoney
     {
@@ -302,9 +276,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Monitory amount associated with the code.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $amount
-     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {
@@ -324,8 +295,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      *
      * A non-monetary value for example a percentage. Mutually exclusive to the amount
      * element above.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     public function getValue(): null|FHIRDecimal
     {
@@ -340,9 +309,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      *
      * A non-monetary value for example a percentage. Mutually exclusive to the amount
      * element above.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $value
-     * @return static
      */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $value): self
     {
@@ -359,10 +325,7 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -420,10 +383,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -456,10 +415,7 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

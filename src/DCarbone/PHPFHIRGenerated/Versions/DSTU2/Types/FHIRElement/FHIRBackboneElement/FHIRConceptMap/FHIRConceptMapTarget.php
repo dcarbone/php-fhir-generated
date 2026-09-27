@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -135,8 +134,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * An absolute URI that identifies the code system of the target code (if the
      * target is a value set that cross code systems).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $codeSystem;
@@ -147,8 +144,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item that the map refers to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -161,8 +156,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * The equivalence between the source and target concepts (counting for the
      * dependencies and products). The equivalence is read from target to source (e.g.
      * the target is 'wider' than the source).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $equivalence;
@@ -173,8 +166,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * A description of status/issues in mapping that conveys additional information
      * not represented in the structured data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $comments;
@@ -208,12 +199,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     /**
      * FHIRConceptMapTarget Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $codeSystem
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $equivalence
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $comments
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn> $dependsOn
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn> $product
      * @param null|string[] $fhirComments
@@ -267,8 +253,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * An absolute URI that identifies the code system of the target code (if the
      * target is a value set that cross code systems).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getCodeSystem(): null|FHIRUri
     {
@@ -282,9 +266,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * An absolute URI that identifies the code system of the target code (if the
      * target is a value set that cross code systems).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $codeSystem
-     * @return static
      */
     public function setCodeSystem(null|string|FHIRUriPrimitive|FHIRUri $codeSystem): self
     {
@@ -306,8 +287,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item that the map refers to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -321,9 +300,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item that the map refers to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -347,8 +323,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * The equivalence between the source and target concepts (counting for the
      * dependencies and products). The equivalence is read from target to source (e.g.
      * the target is 'wider' than the source).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     public function getEquivalence(): null|FHIRCode
     {
@@ -364,9 +338,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * The equivalence between the source and target concepts (counting for the
      * dependencies and products). The equivalence is read from target to source (e.g.
      * the target is 'wider' than the source).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $equivalence
-     * @return static
      */
     public function setEquivalence(null|string|FHIRCodePrimitive|FHIRCode $equivalence): self
     {
@@ -388,8 +359,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * A description of status/issues in mapping that conveys additional information
      * not represented in the structured data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getComments(): null|FHIRString
     {
@@ -403,9 +372,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * A description of status/issues in mapping that conveys additional information
      * not represented in the structured data.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $comments
-     * @return static
      */
     public function setComments(null|string|FHIRStringPrimitive|FHIRString $comments): self
     {
@@ -453,9 +419,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * A set of additional dependencies for this mapping to hold. This mapping is only
      * applicable if the specified element can be resolved, and it has the specified
      * value.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $dependsOn
-     * @return static
      */
     public function addDependsOn(FHIRConceptMapDependsOn $dependsOn): self
     {
@@ -473,9 +436,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * A set of additional dependencies for this mapping to hold. This mapping is only
      * applicable if the specified element can be resolved, and it has the specified
      * value.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn ...$dependsOn
-     * @return static
      */
     public function setDependsOn(FHIRConceptMapDependsOn ...$dependsOn): self
     {
@@ -522,9 +482,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * execute this mapping, the specified element must be mapped to some data element
      * or source that is in context. The mapping may still be useful without a place
      * for the additional data elements, but the equivalence cannot be relied on.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $product
-     * @return static
      */
     public function addProduct(FHIRConceptMapDependsOn $product): self
     {
@@ -543,9 +500,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * execute this mapping, the specified element must be mapped to some data element
      * or source that is in context. The mapping may still be useful without a place
      * for the additional data elements, but the equivalence cannot be relied on.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn ...$product
-     * @return static
      */
     public function setProduct(FHIRConceptMapDependsOn ...$product): self
     {
@@ -559,10 +513,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -648,10 +599,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -713,10 +660,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

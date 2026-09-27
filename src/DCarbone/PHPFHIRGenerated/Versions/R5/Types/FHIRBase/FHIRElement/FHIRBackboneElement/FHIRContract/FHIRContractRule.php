@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment;
@@ -116,6 +117,12 @@ class FHIRContractRule extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_CONTENT_ATTACHMENT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_CONTENT_REFERENCE => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -129,9 +136,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal). (choose any one of content*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * SecPal).
      */
     #[FHIRAttachment]
     protected FHIRAttachment $contentAttachment;
@@ -141,9 +146,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal). (choose any one of content*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * SecPal).
      */
     #[FHIRReference]
     protected FHIRReference $contentReference;
@@ -152,10 +155,7 @@ class FHIRContractRule extends FHIRBackboneElement
     /**
      * FHIRContractRule Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $contentAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $contentReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -190,9 +190,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal). (choose any one of content*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * SecPal).
      */
     public function getContentAttachment(): null|FHIRAttachment
     {
@@ -205,10 +203,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal). (choose any one of content*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $contentAttachment
-     * @return static
+     * SecPal).
      */
     public function setContentAttachment(null|FHIRAttachment $contentAttachment): self
     {
@@ -226,9 +221,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal). (choose any one of content*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * SecPal).
      */
     public function getContentReference(): null|FHIRReference
     {
@@ -241,10 +234,7 @@ class FHIRContractRule extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
-     * SecPal). (choose any one of content*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $contentReference
-     * @return static
+     * SecPal).
      */
     public function setContentReference(null|FHIRReference $contentReference): self
     {
@@ -258,10 +248,7 @@ class FHIRContractRule extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -307,10 +294,6 @@ class FHIRContractRule extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -328,10 +311,7 @@ class FHIRContractRule extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -32,27 +32,17 @@ interface RuleInterface
 {
     /**
      * Must return the name of this rule.
-     *
-     * @return string
      */
     public function getName(): string;
 
     /**
      * Should return a human-readable description of the purpose of this validator
-     *
-     * @return string
      */
     public function getDescription(): string;
 
     /**
      * Perform assertion for this rule.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Types\TypeInterface $type
-     * @param string $field
-     * @param mixed $constraint
-     * @param mixed $value
-     * @return null|string
-
      */
     public function assert(TypeInterface $type, string $field, mixed $constraint, mixed $value): null|string;
 }

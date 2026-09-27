@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -139,8 +138,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * replication through the interaction of specific proteins at one or more origins
      * of replication
      * ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $chromosome;
@@ -152,8 +149,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh
      * 37'. Version number must be included if a versioned release of a primary build
      * was used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $genomeBuild;
@@ -167,8 +162,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * type in the Sequence.type field. For example, the prefix, “NG_” identifies
      * reference sequence for genes, “NM_” for messenger RNA transcripts, and
      * “NP_” for amino acid sequences.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $referenceSeqId;
@@ -178,8 +171,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Pointer to another Sequence entity as reference sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $referenceSeqPointer;
@@ -189,8 +180,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A string like "ACGT".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $referenceSeqString;
@@ -202,8 +191,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * Directionality of DNA sequence. Available values are "1" for the plus strand (5'
      * to 3')/Watson/Sense/positive and "-1" for the minus strand(3' to
      * 5')/Crick/Antisense/negative.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $strand;
@@ -214,8 +201,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      *
      * Start position of the window on the reference sequence. If the coordinate system
      * is either 0-based or 1-based, then start position is inclusive.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $windowStart;
@@ -228,8 +213,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * is 0-based then end is is exclusive and does not include the last position. If
      * the coordinate system is 1-base, then end is inclusive and includes the last
      * position.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $windowEnd;
@@ -238,16 +221,7 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
     /**
      * FHIRSequenceReferenceSeq Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $chromosome
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $genomeBuild
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $referenceSeqId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $referenceSeqPointer
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $referenceSeqString
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $strand
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $windowStart
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $windowEnd
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -310,8 +284,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * replication through the interaction of specific proteins at one or more origins
      * of replication
      * ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getChromosome(): null|FHIRCodeableConcept
     {
@@ -328,9 +300,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * replication through the interaction of specific proteins at one or more origins
      * of replication
      * ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $chromosome
-     * @return static
      */
     public function setChromosome(null|FHIRCodeableConcept $chromosome): self
     {
@@ -350,8 +319,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh
      * 37'. Version number must be included if a versioned release of a primary build
      * was used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getGenomeBuild(): null|FHIRString
     {
@@ -366,9 +333,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh
      * 37'. Version number must be included if a versioned release of a primary build
      * was used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $genomeBuild
-     * @return static
      */
     public function setGenomeBuild(null|string|FHIRStringPrimitive|FHIRString $genomeBuild): self
     {
@@ -393,8 +357,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * type in the Sequence.type field. For example, the prefix, “NG_” identifies
      * reference sequence for genes, “NM_” for messenger RNA transcripts, and
      * “NP_” for amino acid sequences.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReferenceSeqId(): null|FHIRCodeableConcept
     {
@@ -411,9 +373,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * type in the Sequence.type field. For example, the prefix, “NG_” identifies
      * reference sequence for genes, “NM_” for messenger RNA transcripts, and
      * “NP_” for amino acid sequences.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $referenceSeqId
-     * @return static
      */
     public function setReferenceSeqId(null|FHIRCodeableConcept $referenceSeqId): self
     {
@@ -431,8 +390,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Pointer to another Sequence entity as reference sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getReferenceSeqPointer(): null|FHIRReference
     {
@@ -445,9 +402,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Pointer to another Sequence entity as reference sequence.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $referenceSeqPointer
-     * @return static
      */
     public function setReferenceSeqPointer(null|FHIRReference $referenceSeqPointer): self
     {
@@ -465,8 +419,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A string like "ACGT".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getReferenceSeqString(): null|FHIRString
     {
@@ -479,9 +431,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A string like "ACGT".
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $referenceSeqString
-     * @return static
      */
     public function setReferenceSeqString(null|string|FHIRStringPrimitive|FHIRString $referenceSeqString): self
     {
@@ -504,8 +453,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * Directionality of DNA sequence. Available values are "1" for the plus strand (5'
      * to 3')/Watson/Sense/positive and "-1" for the minus strand(3' to
      * 5')/Crick/Antisense/negative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     public function getStrand(): null|FHIRInteger
     {
@@ -520,9 +467,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * Directionality of DNA sequence. Available values are "1" for the plus strand (5'
      * to 3')/Watson/Sense/positive and "-1" for the minus strand(3' to
      * 5')/Crick/Antisense/negative.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $strand
-     * @return static
      */
     public function setStrand(null|string|float|FHIRIntegerPrimitive|FHIRInteger $strand): self
     {
@@ -544,8 +488,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      *
      * Start position of the window on the reference sequence. If the coordinate system
      * is either 0-based or 1-based, then start position is inclusive.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     public function getWindowStart(): null|FHIRInteger
     {
@@ -559,9 +501,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      *
      * Start position of the window on the reference sequence. If the coordinate system
      * is either 0-based or 1-based, then start position is inclusive.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $windowStart
-     * @return static
      */
     public function setWindowStart(null|string|float|FHIRIntegerPrimitive|FHIRInteger $windowStart): self
     {
@@ -585,8 +524,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * is 0-based then end is is exclusive and does not include the last position. If
      * the coordinate system is 1-base, then end is inclusive and includes the last
      * position.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     public function getWindowEnd(): null|FHIRInteger
     {
@@ -602,9 +539,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * is 0-based then end is is exclusive and does not include the last position. If
      * the coordinate system is 1-base, then end is inclusive and includes the last
      * position.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $windowEnd
-     * @return static
      */
     public function setWindowEnd(null|string|float|FHIRIntegerPrimitive|FHIRInteger $windowEnd): self
     {
@@ -621,10 +555,7 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -722,10 +653,6 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -798,10 +725,7 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

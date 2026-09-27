@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -133,8 +133,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * A classification that provides the origin of the raw material. Example: cat hair
      * would be an Animal source type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -146,8 +144,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * The genus of an organism, typically referring to the Latin epithet of the genus
      * element of the plant/animal scientific name.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $genus;
@@ -159,8 +155,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * The species of an organism, typically referring to the Latin epithet of the
      * species of the plant/animal.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $species;
@@ -171,8 +165,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An anatomical origin of the source material within an organism.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $part;
@@ -193,12 +185,7 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
     /**
      * FHIRSubstanceDefinitionSourceMaterial Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $genus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $species
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $part
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $countryOfOrigin
      * @param null|string[] $fhirComments
      */
@@ -248,8 +235,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * A classification that provides the origin of the raw material. Example: cat hair
      * would be an Animal source type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -264,9 +249,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * A classification that provides the origin of the raw material. Example: cat hair
      * would be an Animal source type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -286,8 +268,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * The genus of an organism, typically referring to the Latin epithet of the genus
      * element of the plant/animal scientific name.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getGenus(): null|FHIRCodeableConcept
     {
@@ -302,9 +282,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * The genus of an organism, typically referring to the Latin epithet of the genus
      * element of the plant/animal scientific name.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $genus
-     * @return static
      */
     public function setGenus(null|FHIRCodeableConcept $genus): self
     {
@@ -324,8 +301,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * The species of an organism, typically referring to the Latin epithet of the
      * species of the plant/animal.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSpecies(): null|FHIRCodeableConcept
     {
@@ -340,9 +315,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      *
      * The species of an organism, typically referring to the Latin epithet of the
      * species of the plant/animal.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $species
-     * @return static
      */
     public function setSpecies(null|FHIRCodeableConcept $species): self
     {
@@ -361,8 +333,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An anatomical origin of the source material within an organism.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPart(): null|FHIRCodeableConcept
     {
@@ -376,9 +346,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An anatomical origin of the source material within an organism.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $part
-     * @return static
      */
     public function setPart(null|FHIRCodeableConcept $part): self
     {
@@ -423,9 +390,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries where the material is harvested.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $countryOfOrigin
-     * @return static
      */
     public function addCountryOfOrigin(FHIRCodeableConcept $countryOfOrigin): self
     {
@@ -443,9 +407,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries where the material is harvested.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$countryOfOrigin
-     * @return static
      */
     public function setCountryOfOrigin(FHIRCodeableConcept ...$countryOfOrigin): self
     {
@@ -459,10 +420,7 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionSourceMaterial $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionSourceMaterial
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -514,10 +472,6 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -552,10 +506,7 @@ class FHIRSubstanceDefinitionSourceMaterial extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionSourceMaterial $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionSourceMaterial
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -145,8 +144,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      *
      * The country in which the marketing authorization has been granted shall be
      * specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $country;
@@ -160,8 +157,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * which specific provisions within a jurisdiction apply, the jurisdiction can be
      * specified using an appropriate controlled terminology The controlled term and
      * the controlled term identifier shall be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $jurisdiction;
@@ -173,8 +168,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      *
      * This attribute provides information on the status of the marketing of the
      * medicinal product See ISO/TS 20443 for more information and examples.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -189,8 +182,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * month and year shall be specified using the ISO 8601 date format NOTE “Placed
      * on the market” refers to the release of the Medicinal Product into the
      * distribution chain.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $dateRange;
@@ -209,8 +200,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * month and year shall be specified using the ISO 8601 date format NOTE “Placed
      * on the market” refers to the release of the Medicinal Product into the
      * distribution chain.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $restoreDate;
@@ -219,13 +208,7 @@ class FHIRMarketingStatus extends FHIRBackboneType
     /**
      * FHIRMarketingStatus Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $country
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $jurisdiction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $dateRange
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $restoreDate
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -274,8 +257,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      *
      * The country in which the marketing authorization has been granted shall be
      * specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCountry(): null|FHIRCodeableConcept
     {
@@ -290,9 +271,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      *
      * The country in which the marketing authorization has been granted shall be
      * specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $country
-     * @return static
      */
     public function setCountry(null|FHIRCodeableConcept $country): self
     {
@@ -314,8 +292,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * which specific provisions within a jurisdiction apply, the jurisdiction can be
      * specified using an appropriate controlled terminology The controlled term and
      * the controlled term identifier shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getJurisdiction(): null|FHIRCodeableConcept
     {
@@ -332,9 +308,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * which specific provisions within a jurisdiction apply, the jurisdiction can be
      * specified using an appropriate controlled terminology The controlled term and
      * the controlled term identifier shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function setJurisdiction(null|FHIRCodeableConcept $jurisdiction): self
     {
@@ -354,8 +327,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      *
      * This attribute provides information on the status of the marketing of the
      * medicinal product See ISO/TS 20443 for more information and examples.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -370,9 +341,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      *
      * This attribute provides information on the status of the marketing of the
      * medicinal product See ISO/TS 20443 for more information and examples.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -395,8 +363,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * month and year shall be specified using the ISO 8601 date format NOTE “Placed
      * on the market” refers to the release of the Medicinal Product into the
      * distribution chain.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getDateRange(): null|FHIRPeriod
     {
@@ -414,9 +380,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * month and year shall be specified using the ISO 8601 date format NOTE “Placed
      * on the market” refers to the release of the Medicinal Product into the
      * distribution chain.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $dateRange
-     * @return static
      */
     public function setDateRange(null|FHIRPeriod $dateRange): self
     {
@@ -443,8 +406,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * month and year shall be specified using the ISO 8601 date format NOTE “Placed
      * on the market” refers to the release of the Medicinal Product into the
      * distribution chain.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getRestoreDate(): null|FHIRDateTime
     {
@@ -466,9 +427,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
      * month and year shall be specified using the ISO 8601 date format NOTE “Placed
      * on the market” refers to the release of the Medicinal Product into the
      * distribution chain.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $restoreDate
-     * @return static
      */
     public function setRestoreDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $restoreDate): self
     {
@@ -485,10 +443,7 @@ class FHIRMarketingStatus extends FHIRBackboneType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -548,10 +503,6 @@ class FHIRMarketingStatus extends FHIRBackboneType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -589,10 +540,7 @@ class FHIRMarketingStatus extends FHIRBackboneType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

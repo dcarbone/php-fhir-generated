@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -154,8 +153,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the unique identifier scheme used for this particular identifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRNamingSystemIdentifierType
      */
     #[FHIRNamingSystemIdentifierType]
     protected FHIRNamingSystemIdentifierType $type;
@@ -166,8 +163,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * The string that should be sent over the wire to identify the code system or
      * identifier system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $value;
@@ -176,8 +171,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether this identifier is the "preferred" identifier of this type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $preferred;
@@ -187,8 +180,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes about the past or intended usage of this identifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $comment;
@@ -200,8 +191,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * Identifies the period of time over which this identifier is considered
      * appropriate to refer to the naming system. Outside of this window, the
      * identifier might be non-deterministic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -211,8 +200,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * Indicates whether this identifier ie endorsed by the official owner of the
      * associated naming system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $authoritative;
@@ -221,14 +208,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
     /**
      * FHIRNamingSystemUniqueId Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRNamingSystemIdentifierTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRNamingSystemIdentifierType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $preferred
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $comment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $authoritative
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -277,8 +257,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the unique identifier scheme used for this particular identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRNamingSystemIdentifierType
      */
     public function getType(): null|FHIRNamingSystemIdentifierType
     {
@@ -289,9 +267,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the unique identifier scheme used for this particular identifier.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRNamingSystemIdentifierTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRNamingSystemIdentifierType $type
-     * @return static
      */
     public function setType(null|string|FHIRNamingSystemIdentifierTypeEnum|FHIRNamingSystemIdentifierType $type): self
     {
@@ -313,8 +288,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * The string that should be sent over the wire to identify the code system or
      * identifier system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getValue(): null|FHIRString
     {
@@ -328,9 +301,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * The string that should be sent over the wire to identify the code system or
      * identifier system.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
-     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -350,8 +320,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether this identifier is the "preferred" identifier of this type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getPreferred(): null|FHIRBoolean
     {
@@ -363,9 +331,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether this identifier is the "preferred" identifier of this type.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $preferred
-     * @return static
      */
     public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred): self
     {
@@ -386,8 +351,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes about the past or intended usage of this identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getComment(): null|FHIRString
     {
@@ -400,9 +363,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes about the past or intended usage of this identifier.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $comment
-     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -425,8 +385,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * Identifies the period of time over which this identifier is considered
      * appropriate to refer to the naming system. Outside of this window, the
      * identifier might be non-deterministic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -441,9 +399,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * Identifies the period of time over which this identifier is considered
      * appropriate to refer to the naming system. Outside of this window, the
      * identifier might be non-deterministic.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -461,8 +416,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * Indicates whether this identifier ie endorsed by the official owner of the
      * associated naming system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getAuthoritative(): null|FHIRBoolean
     {
@@ -475,9 +428,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * Indicates whether this identifier ie endorsed by the official owner of the
      * associated naming system.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $authoritative
-     * @return static
      */
     public function setAuthoritative(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $authoritative): self
     {
@@ -494,10 +444,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -591,10 +538,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -657,10 +600,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

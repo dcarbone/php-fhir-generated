@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -145,8 +145,6 @@ class FHIRHumanName extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for this name.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRNameUse
      */
     #[FHIRNameUse]
     protected FHIRNameUse $use;
@@ -157,8 +155,6 @@ class FHIRHumanName extends FHIRDataType
      *
      * Specifies the entire name as it should be displayed e.g. on an application UI.
      * This may be provided instead of or as well as the specific parts.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -169,8 +165,6 @@ class FHIRHumanName extends FHIRDataType
      *
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea)
      * the family name of a son is the first name of his father.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $family;
@@ -215,8 +209,6 @@ class FHIRHumanName extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time when this name was valid for the named person.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -225,14 +217,9 @@ class FHIRHumanName extends FHIRDataType
     /**
      * FHIRHumanName Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRNameUseEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRNameUse $use
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $text
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $family
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $given
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $prefix
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $suffix
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -284,8 +271,6 @@ class FHIRHumanName extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for this name.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRNameUse
      */
     public function getUse(): null|FHIRNameUse
     {
@@ -297,9 +282,6 @@ class FHIRHumanName extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for this name.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRNameUseEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRNameUse $use
-     * @return static
      */
     public function setUse(null|string|FHIRNameUseEnum|FHIRNameUse $use): self
     {
@@ -321,8 +303,6 @@ class FHIRHumanName extends FHIRDataType
      *
      * Specifies the entire name as it should be displayed e.g. on an application UI.
      * This may be provided instead of or as well as the specific parts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -336,9 +316,6 @@ class FHIRHumanName extends FHIRDataType
      *
      * Specifies the entire name as it should be displayed e.g. on an application UI.
      * This may be provided instead of or as well as the specific parts.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -360,8 +337,6 @@ class FHIRHumanName extends FHIRDataType
      *
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea)
      * the family name of a son is the first name of his father.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getFamily(): null|FHIRString
     {
@@ -375,9 +350,6 @@ class FHIRHumanName extends FHIRDataType
      *
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea)
      * the family name of a son is the first name of his father.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $family
-     * @return static
      */
     public function setFamily(null|string|FHIRStringPrimitive|FHIRString $family): self
     {
@@ -423,9 +395,6 @@ class FHIRHumanName extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Given name.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $given
-     * @return static
      */
     public function addGiven(string|FHIRStringPrimitive|FHIRString $given): self
     {
@@ -445,9 +414,6 @@ class FHIRHumanName extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Given name.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$given
-     * @return static
      */
     public function setGiven(string|FHIRStringPrimitive|FHIRString ...$given): self
     {
@@ -499,9 +465,6 @@ class FHIRHumanName extends FHIRDataType
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the start of the name.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $prefix
-     * @return static
      */
     public function addPrefix(string|FHIRStringPrimitive|FHIRString $prefix): self
     {
@@ -522,9 +485,6 @@ class FHIRHumanName extends FHIRDataType
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the start of the name.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$prefix
-     * @return static
      */
     public function setPrefix(string|FHIRStringPrimitive|FHIRString ...$prefix): self
     {
@@ -576,9 +536,6 @@ class FHIRHumanName extends FHIRDataType
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the end of the name.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $suffix
-     * @return static
      */
     public function addSuffix(string|FHIRStringPrimitive|FHIRString $suffix): self
     {
@@ -599,9 +556,6 @@ class FHIRHumanName extends FHIRDataType
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the end of the name.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$suffix
-     * @return static
      */
     public function setSuffix(string|FHIRStringPrimitive|FHIRString ...$suffix): self
     {
@@ -626,8 +580,6 @@ class FHIRHumanName extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time when this name was valid for the named person.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -640,9 +592,6 @@ class FHIRHumanName extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time when this name was valid for the named person.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -656,10 +605,7 @@ class FHIRHumanName extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -737,10 +683,6 @@ class FHIRHumanName extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -804,10 +746,7 @@ class FHIRHumanName extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -144,8 +143,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * Identifier for a family of the event. For example, a menu item, program, rule,
      * policy, function code, application name or URL. It identifies the performed
      * function.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $type;
@@ -167,8 +164,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventAction
      */
     #[FHIRAuditEventAction]
     protected FHIRAuditEventAction $action;
@@ -180,8 +175,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event occurred on the source.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $dateTime;
@@ -190,8 +183,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the event succeeded or failed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventOutcome
      */
     #[FHIRAuditEventOutcome]
     protected FHIRAuditEventOutcome $outcome;
@@ -201,8 +192,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text description of the outcome of the event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $outcomeDesc;
@@ -222,14 +211,8 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
     /**
      * FHIRAuditEventEvent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $subtype
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventActionList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventAction $action
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $dateTime
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventOutcomeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventOutcome $outcome
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $outcomeDesc
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $purposeOfEvent
      * @param null|string[] $fhirComments
      */
@@ -287,8 +270,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * Identifier for a family of the event. For example, a menu item, program, rule,
      * policy, function code, application name or URL. It identifies the performed
      * function.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getType(): null|FHIRCoding
     {
@@ -303,9 +284,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * Identifier for a family of the event. For example, a menu item, program, rule,
      * policy, function code, application name or URL. It identifies the performed
      * function.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -348,9 +326,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $subtype
-     * @return static
      */
     public function addSubtype(FHIRCoding $subtype): self
     {
@@ -367,9 +342,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$subtype
-     * @return static
      */
     public function setSubtype(FHIRCoding ...$subtype): self
     {
@@ -388,8 +360,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventAction
      */
     public function getAction(): null|FHIRAuditEventAction
     {
@@ -403,9 +373,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventActionList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventAction $action
-     * @return static
      */
     public function setAction(null|string|FHIRAuditEventActionList|FHIRAuditEventAction $action): self
     {
@@ -428,8 +395,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event occurred on the source.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     public function getDateTime(): null|FHIRInstant
     {
@@ -444,9 +409,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event occurred on the source.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $dateTime
-     * @return static
      */
     public function setDateTime(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $dateTime): self
     {
@@ -466,8 +428,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the event succeeded or failed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventOutcome
      */
     public function getOutcome(): null|FHIRAuditEventOutcome
     {
@@ -479,9 +439,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the event succeeded or failed.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventOutcomeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventOutcome $outcome
-     * @return static
      */
     public function setOutcome(null|string|FHIRAuditEventOutcomeList|FHIRAuditEventOutcome $outcome): self
     {
@@ -502,8 +459,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text description of the outcome of the event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getOutcomeDesc(): null|FHIRString
     {
@@ -516,9 +471,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text description of the outcome of the event.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $outcomeDesc
-     * @return static
      */
     public function setOutcomeDesc(null|string|FHIRStringPrimitive|FHIRString $outcomeDesc): self
     {
@@ -564,9 +516,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purposeOfUse (reason) that was used during the event being recorded.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $purposeOfEvent
-     * @return static
      */
     public function addPurposeOfEvent(FHIRCoding $purposeOfEvent): self
     {
@@ -583,9 +532,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purposeOfUse (reason) that was used during the event being recorded.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$purposeOfEvent
-     * @return static
      */
     public function setPurposeOfEvent(FHIRCoding ...$purposeOfEvent): self
     {
@@ -599,10 +545,7 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEvent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -690,10 +633,6 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -760,10 +699,7 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEvent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

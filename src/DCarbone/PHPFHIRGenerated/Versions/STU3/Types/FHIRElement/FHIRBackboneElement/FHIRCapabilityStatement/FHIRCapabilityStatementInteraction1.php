@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -119,8 +118,6 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded identifier of the operation, supported by the system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSystemRestfulInteraction
      */
     #[FHIRSystemRestfulInteraction]
     protected FHIRSystemRestfulInteraction $code;
@@ -132,8 +129,6 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
      * Guidance specific to the implementation of this operation, such as limitations
      * on the kind of transactions allowed, or information about system wide search is
      * implemented.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $documentation;
@@ -142,10 +137,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
     /**
      * FHIRCapabilityStatementInteraction1 Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRSystemRestfulInteractionList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSystemRestfulInteraction $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $documentation
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -179,8 +171,6 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded identifier of the operation, supported by the system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSystemRestfulInteraction
      */
     public function getCode(): null|FHIRSystemRestfulInteraction
     {
@@ -192,9 +182,6 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded identifier of the operation, supported by the system.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRSystemRestfulInteractionList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSystemRestfulInteraction $code
-     * @return static
      */
     public function setCode(null|string|FHIRSystemRestfulInteractionList|FHIRSystemRestfulInteraction $code): self
     {
@@ -217,8 +204,6 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
      * Guidance specific to the implementation of this operation, such as limitations
      * on the kind of transactions allowed, or information about system wide search is
      * implemented.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDocumentation(): null|FHIRString
     {
@@ -233,9 +218,6 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
      * Guidance specific to the implementation of this operation, such as limitations
      * on the kind of transactions allowed, or information about system wide search is
      * implemented.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -252,10 +234,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -317,10 +296,6 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -348,10 +323,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

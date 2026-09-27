@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -135,8 +134,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this particular Contract Provision.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -149,8 +146,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract Provision was issued.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $issued;
@@ -160,8 +155,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract Provision is applicable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $applies;
@@ -172,8 +165,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity that the term applies to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $topicCodeableConcept;
@@ -183,8 +174,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity that the term applies to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $topicReference;
@@ -198,8 +187,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * both parties to perform a particular requirement by some specified time or
      * prevents one or both parties from performing a particular requirement by some
      * specified time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -210,8 +197,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specialized legal clause or condition based on overarching contract type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subType;
@@ -221,8 +206,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Statement of a provision in a policy or a contract.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -242,8 +225,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * The matter of concern in the context of this provision of the agrement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer
      */
     #[FHIRContractOffer]
     protected FHIRContractOffer $offer;
@@ -283,18 +264,8 @@ class FHIRContractTerm extends FHIRBackboneElement
     /**
      * FHIRContractTerm Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $issued
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $applies
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $topicCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $topicReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $subType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel> $securityLabel
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer $offer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAsset> $asset
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAction> $action
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm> $group
@@ -377,8 +348,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this particular Contract Provision.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -392,9 +361,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this particular Contract Provision.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -415,8 +381,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract Provision was issued.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getIssued(): null|FHIRDateTime
     {
@@ -432,9 +396,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract Provision was issued.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $issued
-     * @return static
      */
     public function setIssued(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $issued): self
     {
@@ -455,8 +416,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract Provision is applicable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getApplies(): null|FHIRPeriod
     {
@@ -469,9 +428,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract Provision is applicable.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $applies
-     * @return static
      */
     public function setApplies(null|FHIRPeriod $applies): self
     {
@@ -490,8 +446,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity that the term applies to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getTopicCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -505,9 +459,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity that the term applies to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $topicCodeableConcept
-     * @return static
      */
     public function setTopicCodeableConcept(null|FHIRCodeableConcept $topicCodeableConcept): self
     {
@@ -525,8 +476,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity that the term applies to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getTopicReference(): null|FHIRReference
     {
@@ -539,9 +488,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity that the term applies to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $topicReference
-     * @return static
      */
     public function setTopicReference(null|FHIRReference $topicReference): self
     {
@@ -563,8 +509,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * both parties to perform a particular requirement by some specified time or
      * prevents one or both parties from performing a particular requirement by some
      * specified time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -581,9 +525,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * both parties to perform a particular requirement by some specified time or
      * prevents one or both parties from performing a particular requirement by some
      * specified time.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -602,8 +543,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specialized legal clause or condition based on overarching contract type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSubType(): null|FHIRCodeableConcept
     {
@@ -617,9 +556,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specialized legal clause or condition based on overarching contract type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $subType
-     * @return static
      */
     public function setSubType(null|FHIRCodeableConcept $subType): self
     {
@@ -637,8 +573,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Statement of a provision in a policy or a contract.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -651,9 +585,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Statement of a provision in a policy or a contract.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -699,9 +630,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      *
      * Security labels that protect the handling of information about the term and its
      * elements, which may be specifically identified..
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel $securityLabel
-     * @return static
      */
     public function addSecurityLabel(FHIRContractSecurityLabel $securityLabel): self
     {
@@ -718,9 +646,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      *
      * Security labels that protect the handling of information about the term and its
      * elements, which may be specifically identified..
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel ...$securityLabel
-     * @return static
      */
     public function setSecurityLabel(FHIRContractSecurityLabel ...$securityLabel): self
     {
@@ -737,8 +662,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * The matter of concern in the context of this provision of the agrement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer
      */
     public function getOffer(): null|FHIRContractOffer
     {
@@ -750,9 +673,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * The matter of concern in the context of this provision of the agrement.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer $offer
-     * @return static
      */
     public function setOffer(null|FHIRContractOffer $offer): self
     {
@@ -793,9 +713,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * Contract Term Asset List.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAsset $asset
-     * @return static
      */
     public function addAsset(FHIRContractAsset $asset): self
     {
@@ -811,9 +728,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * Contract Term Asset List.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAsset ...$asset
-     * @return static
      */
     public function setAsset(FHIRContractAsset ...$asset): self
     {
@@ -856,9 +770,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAction $action
-     * @return static
      */
     public function addAction(FHIRContractAction $action): self
     {
@@ -875,9 +786,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAction ...$action
-     * @return static
      */
     public function setAction(FHIRContractAction ...$action): self
     {
@@ -918,9 +826,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * Nested group of Contract Provisions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm $group
-     * @return static
      */
     public function addGroup(FHIRContractTerm $group): self
     {
@@ -936,9 +841,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * Nested group of Contract Provisions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm ...$group
-     * @return static
      */
     public function setGroup(FHIRContractTerm ...$group): self
     {
@@ -952,10 +854,7 @@ class FHIRContractTerm extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1039,10 +938,6 @@ class FHIRContractTerm extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1133,10 +1028,7 @@ class FHIRContractTerm extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

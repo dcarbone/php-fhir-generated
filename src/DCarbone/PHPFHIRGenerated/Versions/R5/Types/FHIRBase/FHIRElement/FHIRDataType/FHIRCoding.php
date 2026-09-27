@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -148,8 +148,6 @@ class FHIRCoding extends FHIRDataType
      *
      * The identification of the code system that defines the meaning of the symbol in
      * the code.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $system;
@@ -163,8 +161,6 @@ class FHIRCoding extends FHIRDataType
      * meaning of codes is consistent across versions. However this cannot consistently
      * be assured, and when the meaning is not guaranteed to be consistent, the version
      * SHOULD be exchanged.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -176,8 +172,6 @@ class FHIRCoding extends FHIRDataType
      *
      * A symbol in syntax defined by the system. The symbol may be a predefined code or
      * an expression in a syntax defined by the coding system (e.g. post-coordination).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -188,8 +182,6 @@ class FHIRCoding extends FHIRDataType
      *
      * A representation of the meaning of the code in the system, following the rules
      * of the system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $display;
@@ -199,8 +191,6 @@ class FHIRCoding extends FHIRDataType
      *
      * Indicates that this coding was chosen by a user directly - e.g. off a pick list
      * of available items (codes or displays).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $userSelected;
@@ -209,12 +199,6 @@ class FHIRCoding extends FHIRDataType
     /**
      * FHIRCoding Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $system
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $display
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $userSelected
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -260,8 +244,6 @@ class FHIRCoding extends FHIRDataType
      *
      * The identification of the code system that defines the meaning of the symbol in
      * the code.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getSystem(): null|FHIRUri
     {
@@ -275,9 +257,6 @@ class FHIRCoding extends FHIRDataType
      *
      * The identification of the code system that defines the meaning of the symbol in
      * the code.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $system
-     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -302,8 +281,6 @@ class FHIRCoding extends FHIRDataType
      * meaning of codes is consistent across versions. However this cannot consistently
      * be assured, and when the meaning is not guaranteed to be consistent, the version
      * SHOULD be exchanged.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -320,9 +297,6 @@ class FHIRCoding extends FHIRDataType
      * meaning of codes is consistent across versions. However this cannot consistently
      * be assured, and when the meaning is not guaranteed to be consistent, the version
      * SHOULD be exchanged.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -345,8 +319,6 @@ class FHIRCoding extends FHIRDataType
      *
      * A symbol in syntax defined by the system. The symbol may be a predefined code or
      * an expression in a syntax defined by the coding system (e.g. post-coordination).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -361,9 +333,6 @@ class FHIRCoding extends FHIRDataType
      *
      * A symbol in syntax defined by the system. The symbol may be a predefined code or
      * an expression in a syntax defined by the coding system (e.g. post-coordination).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -385,8 +354,6 @@ class FHIRCoding extends FHIRDataType
      *
      * A representation of the meaning of the code in the system, following the rules
      * of the system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDisplay(): null|FHIRString
     {
@@ -400,9 +367,6 @@ class FHIRCoding extends FHIRDataType
      *
      * A representation of the meaning of the code in the system, following the rules
      * of the system.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $display
-     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -423,8 +387,6 @@ class FHIRCoding extends FHIRDataType
      *
      * Indicates that this coding was chosen by a user directly - e.g. off a pick list
      * of available items (codes or displays).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getUserSelected(): null|FHIRBoolean
     {
@@ -437,9 +399,6 @@ class FHIRCoding extends FHIRDataType
      *
      * Indicates that this coding was chosen by a user directly - e.g. off a pick list
      * of available items (codes or displays).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $userSelected
-     * @return static
      */
     public function setUserSelected(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $userSelected): self
     {
@@ -456,10 +415,7 @@ class FHIRCoding extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -549,10 +505,6 @@ class FHIRCoding extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -610,10 +562,7 @@ class FHIRCoding extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

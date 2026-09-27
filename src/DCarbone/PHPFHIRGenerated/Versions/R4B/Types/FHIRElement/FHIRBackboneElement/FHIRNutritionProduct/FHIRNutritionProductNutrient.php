@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -129,8 +129,6 @@ class FHIRNutritionProductNutrient extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The (relevant) nutrients in the product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $item;
@@ -152,9 +150,7 @@ class FHIRNutritionProductNutrient extends FHIRBackboneElement
     /**
      * FHIRNutritionProductNutrient Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $item
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio> $amount
      * @param null|string[] $fhirComments
      */
@@ -191,8 +187,6 @@ class FHIRNutritionProductNutrient extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The (relevant) nutrients in the product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference
      */
     public function getItem(): null|FHIRCodeableReference
     {
@@ -206,9 +200,6 @@ class FHIRNutritionProductNutrient extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The (relevant) nutrients in the product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $item
-     * @return static
      */
     public function setItem(null|FHIRCodeableReference $item): self
     {
@@ -255,9 +246,6 @@ class FHIRNutritionProductNutrient extends FHIRBackboneElement
      *
      * The amount of nutrient expressed in one or more units: X per pack / per serving
      * / per dose.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $amount
-     * @return static
      */
     public function addAmount(FHIRRatio $amount): self
     {
@@ -276,9 +264,6 @@ class FHIRNutritionProductNutrient extends FHIRBackboneElement
      *
      * The amount of nutrient expressed in one or more units: X per pack / per serving
      * / per dose.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio ...$amount
-     * @return static
      */
     public function setAmount(FHIRRatio ...$amount): self
     {
@@ -292,10 +277,7 @@ class FHIRNutritionProductNutrient extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductNutrient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductNutrient
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -341,10 +323,6 @@ class FHIRNutritionProductNutrient extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -364,10 +342,7 @@ class FHIRNutritionProductNutrient extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductNutrient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductNutrient
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

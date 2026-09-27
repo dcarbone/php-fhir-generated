@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -113,8 +113,6 @@ class FHIRDocumentReferenceRelated extends FHIRBackboneElement
      *
      * Related identifier to this DocumentReference. If both id and ref are present
      * they shall refer to the same thing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -125,8 +123,6 @@ class FHIRDocumentReferenceRelated extends FHIRBackboneElement
      *
      * Related Resource to this DocumentReference. If both id and ref are present they
      * shall refer to the same thing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $ref;
@@ -135,10 +131,7 @@ class FHIRDocumentReferenceRelated extends FHIRBackboneElement
     /**
      * FHIRDocumentReferenceRelated Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $ref
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -174,8 +167,6 @@ class FHIRDocumentReferenceRelated extends FHIRBackboneElement
      *
      * Related identifier to this DocumentReference. If both id and ref are present
      * they shall refer to the same thing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -189,9 +180,6 @@ class FHIRDocumentReferenceRelated extends FHIRBackboneElement
      *
      * Related identifier to this DocumentReference. If both id and ref are present
      * they shall refer to the same thing.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -210,8 +198,6 @@ class FHIRDocumentReferenceRelated extends FHIRBackboneElement
      *
      * Related Resource to this DocumentReference. If both id and ref are present they
      * shall refer to the same thing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getRef(): null|FHIRReference
     {
@@ -225,9 +211,6 @@ class FHIRDocumentReferenceRelated extends FHIRBackboneElement
      *
      * Related Resource to this DocumentReference. If both id and ref are present they
      * shall refer to the same thing.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $ref
-     * @return static
      */
     public function setRef(null|FHIRReference $ref): self
     {
@@ -241,10 +224,7 @@ class FHIRDocumentReferenceRelated extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelated $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelated
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -290,10 +270,6 @@ class FHIRDocumentReferenceRelated extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -311,10 +287,7 @@ class FHIRDocumentReferenceRelated extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelated $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelated
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -146,8 +145,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRProvenanceEntityRole
      */
     #[FHIRProvenanceEntityRole]
     protected FHIRProvenanceEntityRole $role;
@@ -158,8 +155,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $what;
@@ -188,10 +183,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     /**
      * FHIRProvenanceEntity Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRProvenanceEntityRoleEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRProvenanceEntityRole $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $what
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent> $agent
      * @param null|string[] $fhirComments
      */
@@ -229,8 +221,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRProvenanceEntityRole
      */
     public function getRole(): null|FHIRProvenanceEntityRole
     {
@@ -241,9 +231,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRProvenanceEntityRoleEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRProvenanceEntityRole $role
-     * @return static
      */
     public function setRole(null|string|FHIRProvenanceEntityRoleEnum|FHIRProvenanceEntityRole $role): self
     {
@@ -265,8 +252,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getWhat(): null|FHIRReference
     {
@@ -280,9 +265,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $what
-     * @return static
      */
     public function setWhat(null|FHIRReference $what): self
     {
@@ -343,9 +325,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * that entity, possibly along with other agents. This description can be
      * understood as shorthand for saying that the agent was responsible for the
      * activity which generated the entity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent $agent
-     * @return static
      */
     public function addAgent(FHIRProvenanceAgent $agent): self
     {
@@ -371,9 +350,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * that entity, possibly along with other agents. This description can be
      * understood as shorthand for saying that the agent was responsible for the
      * activity which generated the entity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent ...$agent
-     * @return static
      */
     public function setAgent(FHIRProvenanceAgent ...$agent): self
     {
@@ -387,10 +363,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -446,10 +419,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -479,10 +448,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

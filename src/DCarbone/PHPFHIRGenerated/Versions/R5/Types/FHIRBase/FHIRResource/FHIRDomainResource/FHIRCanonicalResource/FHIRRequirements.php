@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
@@ -120,7 +118,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicatio
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive;
@@ -221,8 +218,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * which an authoritative instance of this Requirements is (or will be) published.
      * This URL can be the target of a canonical reference. It SHALL remain the same
      * when the Requirements is stored on different servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -251,8 +246,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -262,9 +255,7 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -274,9 +265,7 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -288,8 +277,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A natural language name identifying the Requirements. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -299,8 +286,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the Requirements.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -308,8 +293,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this Requirements. Enables tracking the life-cycle of the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -320,8 +303,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A Boolean value to indicate that this Requirements is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -338,8 +319,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * Requirements changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -350,8 +329,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the Requirements.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -377,8 +354,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * the Narrative, or extensions
      *
      * A free text natural language description of the requirements.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -423,8 +398,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      *
      * Explanation of why this Requirements is needed and why it has been designed as
      * it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -440,8 +413,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A copyright statement relating to the Requirements and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the Requirements.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -453,8 +424,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $copyrightLabel;
@@ -509,32 +478,13 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
     /* constructor.php:61 */
     /**
      * FHIRRequirements Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $versionAlgorithmString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $versionAlgorithmCoding
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $copyrightLabel
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical> $derivedFrom
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl> $reference
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical> $actor
@@ -674,8 +624,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * which an authoritative instance of this Requirements is (or will be) published.
      * This URL can be the target of a canonical reference. It SHALL remain the same
      * when the Requirements is stored on different servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -693,9 +641,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * which an authoritative instance of this Requirements is (or will be) published.
      * This URL can be the target of a canonical reference. It SHALL remain the same
      * when the Requirements is stored on different servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -747,9 +692,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A formal identifier that is used to identify this Requirements when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -769,9 +711,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A formal identifier that is used to identify this Requirements when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -794,8 +733,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -813,9 +750,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -836,9 +770,7 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -851,10 +783,7 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $versionAlgorithmString
-     * @return static
+     * current.
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -875,9 +804,7 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -890,10 +817,7 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $versionAlgorithmCoding
-     * @return static
+     * current.
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -913,8 +837,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A natural language name identifying the Requirements. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -929,9 +851,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A natural language name identifying the Requirements. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -952,8 +871,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the Requirements.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -966,9 +883,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the Requirements.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -987,8 +901,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this Requirements. Enables tracking the life-cycle of the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -999,9 +911,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this Requirements. Enables tracking the life-cycle of the content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1023,8 +932,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A Boolean value to indicate that this Requirements is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -1038,9 +945,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A Boolean value to indicate that this Requirements is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1068,8 +972,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * Requirements changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1089,9 +991,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * Requirements changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1113,8 +1012,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the Requirements.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1128,9 +1025,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the Requirements.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1178,9 +1072,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1198,9 +1089,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1222,8 +1110,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * the Narrative, or extensions
      *
      * A free text natural language description of the requirements.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1240,9 +1126,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * the Narrative, or extensions
      *
      * A free text natural language description of the requirements.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1302,9 +1185,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate Requirements
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1328,9 +1208,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate Requirements
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1375,9 +1252,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the Requirements is intended to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1395,9 +1269,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the Requirements is intended to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1420,8 +1291,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      *
      * Explanation of why this Requirements is needed and why it has been designed as
      * it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1439,9 +1308,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      *
      * Explanation of why this Requirements is needed and why it has been designed as
      * it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1468,8 +1334,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A copyright statement relating to the Requirements and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the Requirements.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1488,9 +1352,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A copyright statement relating to the Requirements and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the Requirements.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1513,8 +1374,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getCopyrightLabel(): null|FHIRString
     {
@@ -1529,9 +1388,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $copyrightLabel
-     * @return static
      */
     public function setCopyrightLabel(null|string|FHIRStringPrimitive|FHIRString $copyrightLabel): self
     {
@@ -1579,9 +1435,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * the Narrative, or extensions
      *
      * Another set of Requirements that this set of Requirements builds on and updates.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $derivedFrom
-     * @return static
      */
     public function addDerivedFrom(string|FHIRCanonicalPrimitive|FHIRCanonical $derivedFrom): self
     {
@@ -1602,9 +1455,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * the Narrative, or extensions
      *
      * Another set of Requirements that this set of Requirements builds on and updates.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$derivedFrom
-     * @return static
      */
     public function setDerivedFrom(string|FHIRCanonicalPrimitive|FHIRCanonical ...$derivedFrom): self
     {
@@ -1658,9 +1508,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A reference to another artifact that created this set of requirements. This
      * could be a Profile, etc., or external regulation, or business requirements
      * expressed elsewhere.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $reference
-     * @return static
      */
     public function addReference(string|FHIRUrlPrimitive|FHIRUrl $reference): self
     {
@@ -1682,9 +1529,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * A reference to another artifact that created this set of requirements. This
      * could be a Profile, etc., or external regulation, or business requirements
      * expressed elsewhere.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl ...$reference
-     * @return static
      */
     public function setReference(string|FHIRUrlPrimitive|FHIRUrl ...$reference): self
     {
@@ -1736,9 +1580,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * the Narrative, or extensions
      *
      * An actor these requirements are in regard to.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $actor
-     * @return static
      */
     public function addActor(string|FHIRCanonicalPrimitive|FHIRCanonical $actor): self
     {
@@ -1759,9 +1600,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * the Narrative, or extensions
      *
      * An actor these requirements are in regard to.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$actor
-     * @return static
      */
     public function setActor(string|FHIRCanonicalPrimitive|FHIRCanonical ...$actor): self
     {
@@ -1809,9 +1647,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * are necessary to achieve organizational or regulatory goals.
      *
      * The actual statement of requirement, in markdown format.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequirements\FHIRRequirementsStatement $statement
-     * @return static
      */
     public function addStatement(FHIRRequirementsStatement $statement): self
     {
@@ -1827,9 +1662,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
      * are necessary to achieve organizational or regulatory goals.
      *
      * The actual statement of requirement, in markdown format.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequirements\FHIRRequirementsStatement ...$statement
-     * @return static
      */
     public function setStatement(FHIRRequirementsStatement ...$statement): self
     {
@@ -1843,10 +1675,7 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRRequirements $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRRequirements
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2072,11 +1901,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2299,10 +2123,7 @@ class FHIRRequirements extends FHIRCanonicalResource implements VersionContained
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRRequirements $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRRequirements
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

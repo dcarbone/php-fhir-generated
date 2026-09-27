@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -138,8 +137,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * A descriptive name for this - can be useful for generating implementation
      * artifacts.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -151,8 +148,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * type permits) text alone to convey concepts not covered by the set of codes
      * identified in the binding. If false, then conformant systems are constrained to
      * the provided codes alone.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $isExtensible;
@@ -161,8 +156,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the degree of conformance expectations associated with this binding.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBindingConformance
      */
     #[FHIRBindingConformance]
     protected FHIRBindingConformance $conformance;
@@ -171,8 +164,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the intended use of this particular set of codes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -182,8 +173,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition that identifies the set of codes
      * to be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $referenceUri;
@@ -194,8 +183,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition that identifies the set of codes
      * to be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $referenceResource;
@@ -204,14 +191,7 @@ class FHIRProfileBinding extends FHIRBackboneElement
     /**
      * FHIRProfileBinding Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $isExtensible
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRBindingConformanceList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBindingConformance $conformance
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $referenceUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $referenceResource
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -262,8 +242,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * A descriptive name for this - can be useful for generating implementation
      * artifacts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -276,9 +254,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * A descriptive name for this - can be useful for generating implementation
      * artifacts.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -301,8 +276,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * type permits) text alone to convey concepts not covered by the set of codes
      * identified in the binding. If false, then conformant systems are constrained to
      * the provided codes alone.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getIsExtensible(): null|FHIRBoolean
     {
@@ -317,9 +290,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * type permits) text alone to convey concepts not covered by the set of codes
      * identified in the binding. If false, then conformant systems are constrained to
      * the provided codes alone.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $isExtensible
-     * @return static
      */
     public function setIsExtensible(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isExtensible): self
     {
@@ -339,8 +309,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the degree of conformance expectations associated with this binding.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBindingConformance
      */
     public function getConformance(): null|FHIRBindingConformance
     {
@@ -352,9 +320,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the degree of conformance expectations associated with this binding.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRBindingConformanceList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBindingConformance $conformance
-     * @return static
      */
     public function setConformance(null|string|FHIRBindingConformanceList|FHIRBindingConformance $conformance): self
     {
@@ -374,8 +339,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the intended use of this particular set of codes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -387,9 +350,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the intended use of this particular set of codes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -410,8 +370,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition that identifies the set of codes
      * to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     public function getReferenceUri(): null|FHIRUri
     {
@@ -424,9 +382,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition that identifies the set of codes
      * to be used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $referenceUri
-     * @return static
      */
     public function setReferenceUri(null|string|FHIRUriPrimitive|FHIRUri $referenceUri): self
     {
@@ -448,8 +403,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition that identifies the set of codes
      * to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getReferenceResource(): null|FHIRResourceReference
     {
@@ -463,9 +416,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition that identifies the set of codes
      * to be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $referenceResource
-     * @return static
      */
     public function setReferenceResource(null|FHIRResourceReference $referenceResource): self
     {
@@ -479,10 +429,7 @@ class FHIRProfileBinding extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -576,10 +523,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -642,10 +585,7 @@ class FHIRProfileBinding extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

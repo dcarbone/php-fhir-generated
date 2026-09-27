@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -139,8 +139,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the aspect of the subject's journey that the state refers to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -151,8 +149,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current state of the subject.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectState;
@@ -163,8 +159,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The milestones the subject has passed through.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $milestone;
@@ -176,8 +170,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      *
      * The reason for the state change. If coded it should follow the formal subject
      * state model.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reason;
@@ -191,8 +183,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the new status started.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $startDate;
@@ -206,8 +196,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the state ended.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $endDate;
@@ -216,14 +204,7 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
     /**
      * FHIRResearchSubjectProgress Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subjectState
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $milestone
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $reason
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $startDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $endDate
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -275,8 +256,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the aspect of the subject's journey that the state refers to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -290,9 +269,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the aspect of the subject's journey that the state refers to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -311,8 +287,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current state of the subject.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getSubjectState(): null|FHIRCodeableConcept
     {
@@ -326,9 +300,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current state of the subject.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subjectState
-     * @return static
      */
     public function setSubjectState(null|FHIRCodeableConcept $subjectState): self
     {
@@ -347,8 +318,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The milestones the subject has passed through.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getMilestone(): null|FHIRCodeableConcept
     {
@@ -362,9 +331,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The milestones the subject has passed through.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $milestone
-     * @return static
      */
     public function setMilestone(null|FHIRCodeableConcept $milestone): self
     {
@@ -384,8 +350,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      *
      * The reason for the state change. If coded it should follow the formal subject
      * state model.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getReason(): null|FHIRCodeableConcept
     {
@@ -400,9 +364,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      *
      * The reason for the state change. If coded it should follow the formal subject
      * state model.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $reason
-     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -424,8 +385,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the new status started.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getStartDate(): null|FHIRDateTime
     {
@@ -442,9 +401,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the new status started.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $startDate
-     * @return static
      */
     public function setStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $startDate): self
     {
@@ -469,8 +425,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the state ended.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getEndDate(): null|FHIRDateTime
     {
@@ -487,9 +441,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the state ended.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $endDate
-     * @return static
      */
     public function setEndDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $endDate): self
     {
@@ -506,10 +457,7 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchSubject\FHIRResearchSubjectProgress $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchSubject\FHIRResearchSubjectProgress
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -579,10 +527,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -630,10 +574,7 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchSubject\FHIRResearchSubjectProgress $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchSubject\FHIRResearchSubjectProgress
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

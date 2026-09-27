@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -122,7 +120,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicatio
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -217,8 +214,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Canonical identifier for this study resource, represented as a globally unique
      * URI.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -240,8 +235,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business version for the study record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -251,8 +244,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name for this study (computer friendly).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -262,8 +253,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable name of the research study.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -331,8 +320,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the ResearchStudy Resource changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -340,8 +327,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The publication state of the resource (not of the study).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -353,8 +338,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The type of study based upon the intent of the study activities. A
      * classification of the intent of the study.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $primaryPurposeType;
@@ -366,8 +349,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The stage in the progression of a therapy from initial experimental use in
      * humans in clinical trials to post-market evaluation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $phase;
@@ -446,8 +427,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A brief text for explaining the study.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $descriptionSummary;
@@ -461,8 +440,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A detailed and human-readable narrative of the study. E.g., study abstract.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -473,8 +450,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Identifies the start date and the expected (or actual, depending on status) end
      * date for the study.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -550,8 +525,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description and/or code explaining the premature termination of the study.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $whyStopped;
@@ -563,8 +536,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Target or actual group of participants enrolled in study.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment
      */
     #[FHIRResearchStudyRecruitment]
     protected FHIRResearchStudyRecruitment $recruitment;
@@ -631,42 +602,24 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
     /* constructor.php:61 */
     /**
      * FHIRResearchStudy Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel> $label
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $protocol
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $partOf
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact> $relatedArtifact
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $primaryPurposeType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $phase
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $studyDesign
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $focus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $condition
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $keyword
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $region
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $descriptionSummary
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $site
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $classifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyAssociatedParty> $associatedParty
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyProgressStatus> $progressStatus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $whyStopped
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment $recruitment
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyComparisonGroup> $comparisonGroup
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyObjective> $objective
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyOutcomeMeasure> $outcomeMeasure
@@ -842,8 +795,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Canonical identifier for this study resource, represented as a globally unique
      * URI.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -857,9 +808,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Canonical identifier for this study resource, represented as a globally unique
      * URI.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -907,9 +855,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this research study by the sponsor or other systems.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -927,9 +872,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this research study by the sponsor or other systems.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -947,8 +889,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business version for the study record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -961,9 +901,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business version for the study record.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -984,8 +921,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name for this study (computer friendly).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -998,9 +933,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name for this study (computer friendly).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1021,8 +953,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable name of the research study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -1035,9 +965,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable name of the research study.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1087,9 +1014,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Additional names for the study.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel $label
-     * @return static
      */
     public function addLabel(FHIRResearchStudyLabel $label): self
     {
@@ -1108,9 +1032,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Additional names for the study.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel ...$label
-     * @return static
      */
     public function setLabel(FHIRResearchStudyLabel ...$label): self
     {
@@ -1153,9 +1074,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of steps expected to be performed as part of the execution of the study.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $protocol
-     * @return static
      */
     public function addProtocol(FHIRReference $protocol): self
     {
@@ -1172,9 +1090,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of steps expected to be performed as part of the execution of the study.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$protocol
-     * @return static
      */
     public function setProtocol(FHIRReference ...$protocol): self
     {
@@ -1217,9 +1132,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger research study of which this particular study is a component or step.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $partOf
-     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -1236,9 +1148,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger research study of which this particular study is a component or step.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$partOf
-     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -1291,9 +1200,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * of "documentation" or "supported-with" and the URL value will often be in
      * relatedArtifact.document.url but another possible location is
      * relatedArtifact.resource when it is a canonical URL.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $relatedArtifact
-     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -1315,9 +1221,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * of "documentation" or "supported-with" and the URL value will often be in
      * relatedArtifact.document.url but another possible location is
      * relatedArtifact.resource when it is a canonical URL.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$relatedArtifact
-     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -1342,8 +1245,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the ResearchStudy Resource changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1363,9 +1264,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the ResearchStudy Resource changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1384,8 +1282,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The publication state of the resource (not of the study).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -1396,9 +1292,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The publication state of the resource (not of the study).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1421,8 +1314,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The type of study based upon the intent of the study activities. A
      * classification of the intent of the study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getPrimaryPurposeType(): null|FHIRCodeableConcept
     {
@@ -1437,9 +1328,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The type of study based upon the intent of the study activities. A
      * classification of the intent of the study.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $primaryPurposeType
-     * @return static
      */
     public function setPrimaryPurposeType(null|FHIRCodeableConcept $primaryPurposeType): self
     {
@@ -1459,8 +1347,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The stage in the progression of a therapy from initial experimental use in
      * humans in clinical trials to post-market evaluation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getPhase(): null|FHIRCodeableConcept
     {
@@ -1475,9 +1361,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The stage in the progression of a therapy from initial experimental use in
      * humans in clinical trials to post-market evaluation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $phase
-     * @return static
      */
     public function setPhase(null|FHIRCodeableConcept $phase): self
     {
@@ -1524,9 +1407,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Codes categorizing the type of study such as investigational vs. observational,
      * type of blinding, type of randomization, safety vs. efficacy, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $studyDesign
-     * @return static
      */
     public function addStudyDesign(FHIRCodeableConcept $studyDesign): self
     {
@@ -1545,9 +1425,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Codes categorizing the type of study such as investigational vs. observational,
      * type of blinding, type of randomization, safety vs. efficacy, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$studyDesign
-     * @return static
      */
     public function setStudyDesign(FHIRCodeableConcept ...$studyDesign): self
     {
@@ -1594,9 +1471,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The medication(s), food(s), therapy(ies), device(s) or other concerns or
      * interventions that the study is seeking to gain more information about.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $focus
-     * @return static
      */
     public function addFocus(FHIRCodeableReference $focus): self
     {
@@ -1615,9 +1489,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The medication(s), food(s), therapy(ies), device(s) or other concerns or
      * interventions that the study is seeking to gain more information about.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$focus
-     * @return static
      */
     public function setFocus(FHIRCodeableReference ...$focus): self
     {
@@ -1666,9 +1537,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * The condition that is the focus of the study. For example, In a study to examine
      * risk factors for Lupus, might have as an inclusion criterion "healthy
      * volunteer", but the target condition code would be a Lupus SNOMED code.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $condition
-     * @return static
      */
     public function addCondition(FHIRCodeableConcept $condition): self
     {
@@ -1688,9 +1556,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * The condition that is the focus of the study. For example, In a study to examine
      * risk factors for Lupus, might have as an inclusion criterion "healthy
      * volunteer", but the target condition code would be a Lupus SNOMED code.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$condition
-     * @return static
      */
     public function setCondition(FHIRCodeableConcept ...$condition): self
     {
@@ -1735,9 +1600,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key terms to aid in searching for or filtering the study.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $keyword
-     * @return static
      */
     public function addKeyword(FHIRCodeableConcept $keyword): self
     {
@@ -1755,9 +1617,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key terms to aid in searching for or filtering the study.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$keyword
-     * @return static
      */
     public function setKeyword(FHIRCodeableConcept ...$keyword): self
     {
@@ -1804,9 +1663,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * A country, state or other area where the study is taking place rather than its
      * precise geographic location or address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $region
-     * @return static
      */
     public function addRegion(FHIRCodeableConcept $region): self
     {
@@ -1825,9 +1681,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * A country, state or other area where the study is taking place rather than its
      * precise geographic location or address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$region
-     * @return static
      */
     public function setRegion(FHIRCodeableConcept ...$region): self
     {
@@ -1849,8 +1702,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A brief text for explaining the study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescriptionSummary(): null|FHIRMarkdown
     {
@@ -1867,9 +1718,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A brief text for explaining the study.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $descriptionSummary
-     * @return static
      */
     public function setDescriptionSummary(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $descriptionSummary): self
     {
@@ -1894,8 +1742,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A detailed and human-readable narrative of the study. E.g., study abstract.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1912,9 +1758,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A detailed and human-readable narrative of the study. E.g., study abstract.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1936,8 +1779,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Identifies the start date and the expected (or actual, depending on status) end
      * date for the study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -1951,9 +1792,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Identifies the start date and the expected (or actual, depending on status) end
      * date for the study.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -1996,9 +1834,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A facility in which study activities are conducted.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $site
-     * @return static
      */
     public function addSite(FHIRReference $site): self
     {
@@ -2015,9 +1850,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A facility in which study activities are conducted.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$site
-     * @return static
      */
     public function setSite(FHIRReference ...$site): self
     {
@@ -2062,9 +1894,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the study by the performer, subject or other participants.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -2082,9 +1911,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the study by the performer, subject or other participants.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -2137,9 +1963,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * requirement), IRB-exempt, etc. Implementation Note: do not use the classifier
      * element to support existing semantics that are already supported thru explicit
      * elements in the resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $classifier
-     * @return static
      */
     public function addClassifier(FHIRCodeableConcept $classifier): self
     {
@@ -2161,9 +1984,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * requirement), IRB-exempt, etc. Implementation Note: do not use the classifier
      * element to support existing semantics that are already supported thru explicit
      * elements in the resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$classifier
-     * @return static
      */
     public function setClassifier(FHIRCodeableConcept ...$classifier): self
     {
@@ -2210,9 +2030,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Sponsors, collaborators, and other parties.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyAssociatedParty $associatedParty
-     * @return static
      */
     public function addAssociatedParty(FHIRResearchStudyAssociatedParty $associatedParty): self
     {
@@ -2231,9 +2048,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Sponsors, collaborators, and other parties.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyAssociatedParty ...$associatedParty
-     * @return static
      */
     public function setAssociatedParty(FHIRResearchStudyAssociatedParty ...$associatedParty): self
     {
@@ -2280,9 +2094,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Status of study with time for that status.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyProgressStatus $progressStatus
-     * @return static
      */
     public function addProgressStatus(FHIRResearchStudyProgressStatus $progressStatus): self
     {
@@ -2301,9 +2112,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Status of study with time for that status.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyProgressStatus ...$progressStatus
-     * @return static
      */
     public function setProgressStatus(FHIRResearchStudyProgressStatus ...$progressStatus): self
     {
@@ -2322,8 +2130,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description and/or code explaining the premature termination of the study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getWhyStopped(): null|FHIRCodeableConcept
     {
@@ -2337,9 +2143,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description and/or code explaining the premature termination of the study.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $whyStopped
-     * @return static
      */
     public function setWhyStopped(null|FHIRCodeableConcept $whyStopped): self
     {
@@ -2359,8 +2162,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Target or actual group of participants enrolled in study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment
      */
     public function getRecruitment(): null|FHIRResearchStudyRecruitment
     {
@@ -2375,9 +2176,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Target or actual group of participants enrolled in study.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment $recruitment
-     * @return static
      */
     public function setRecruitment(null|FHIRResearchStudyRecruitment $recruitment): self
     {
@@ -2430,9 +2228,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * study. E.g. for a living subject: exposure to drug A, wash-out, exposure to drug
      * B, wash-out, follow-up. E.g. for a stability study: {store sample from lot A at
      * 25 degrees for 1 month}, {store sample from lot A at 40 degrees for 1 month}.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyComparisonGroup $comparisonGroup
-     * @return static
      */
     public function addComparisonGroup(FHIRResearchStudyComparisonGroup $comparisonGroup): self
     {
@@ -2454,9 +2249,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * study. E.g. for a living subject: exposure to drug A, wash-out, exposure to drug
      * B, wash-out, follow-up. E.g. for a stability study: {store sample from lot A at
      * 25 degrees for 1 month}, {store sample from lot A at 40 degrees for 1 month}.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyComparisonGroup ...$comparisonGroup
-     * @return static
      */
     public function setComparisonGroup(FHIRResearchStudyComparisonGroup ...$comparisonGroup): self
     {
@@ -2505,9 +2297,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * A goal that the study is aiming to achieve in terms of a scientific question to
      * be answered by the analysis of data collected during the study.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyObjective $objective
-     * @return static
      */
     public function addObjective(FHIRResearchStudyObjective $objective): self
     {
@@ -2527,9 +2316,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * A goal that the study is aiming to achieve in terms of a scientific question to
      * be answered by the analysis of data collected during the study.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyObjective ...$objective
-     * @return static
      */
     public function setObjective(FHIRResearchStudyObjective ...$objective): self
     {
@@ -2584,9 +2370,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * variables on the participants in a study, or for observational studies, to
      * describe patterns of diseases or traits or associations with exposures, risk
      * factors or treatment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyOutcomeMeasure $outcomeMeasure
-     * @return static
      */
     public function addOutcomeMeasure(FHIRResearchStudyOutcomeMeasure $outcomeMeasure): self
     {
@@ -2609,9 +2392,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * variables on the participants in a study, or for observational studies, to
      * describe patterns of diseases or traits or associations with exposures, risk
      * factors or treatment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyOutcomeMeasure ...$outcomeMeasure
-     * @return static
      */
     public function setOutcomeMeasure(FHIRResearchStudyOutcomeMeasure ...$outcomeMeasure): self
     {
@@ -2656,9 +2436,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Link to one or more sets of results generated by the study. Could also link to a
      * research registry holding the results such as ClinicalTrials.gov.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $result
-     * @return static
      */
     public function addResult(FHIRReference $result): self
     {
@@ -2676,9 +2453,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Link to one or more sets of results generated by the study. Could also link to a
      * research registry holding the results such as ClinicalTrials.gov.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$result
-     * @return static
      */
     public function setResult(FHIRReference ...$result): self
     {
@@ -2692,10 +2466,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRResearchStudy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRResearchStudy
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2901,11 +2672,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -3175,10 +2941,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRResearchStudy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRResearchStudy
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

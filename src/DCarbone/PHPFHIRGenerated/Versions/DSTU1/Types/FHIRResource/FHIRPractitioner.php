@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
@@ -148,8 +146,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName
      */
     #[FHIRHumanName]
     protected FHIRHumanName $name;
@@ -174,8 +170,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * The postal address where the practitioner can be found or visited or to which
      * mail can be delivered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $address;
@@ -187,8 +181,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $gender;
@@ -200,8 +192,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of birth for the practitioner.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $birthDate;
@@ -222,8 +212,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that the practitioner represents.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $organization;
@@ -258,8 +246,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -300,23 +286,14 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
     /* constructor.php:61 */
     /**
      * FHIRPractitioner Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName $name
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact> $telecom
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $address
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $gender
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $birthDate
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment> $photo
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $organization
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $role
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $specialty
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $location
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification> $qualification
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $communication
@@ -439,9 +416,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that applies to this person in this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -458,9 +432,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that applies to this person in this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -478,8 +449,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName
      */
     public function getName(): null|FHIRHumanName
     {
@@ -492,9 +461,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName $name
-     * @return static
      */
     public function setName(null|FHIRHumanName $name): self
     {
@@ -541,9 +507,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * A contact detail for the practitioner, e.g. a telephone number or an email
      * address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $telecom
-     * @return static
      */
     public function addTelecom(FHIRContact $telecom): self
     {
@@ -562,9 +525,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * A contact detail for the practitioner, e.g. a telephone number or an email
      * address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContact ...$telecom): self
     {
@@ -584,8 +544,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * The postal address where the practitioner can be found or visited or to which
      * mail can be delivered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress
      */
     public function getAddress(): null|FHIRAddress
     {
@@ -600,9 +558,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * The postal address where the practitioner can be found or visited or to which
      * mail can be delivered.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $address
-     * @return static
      */
     public function setAddress(null|FHIRAddress $address): self
     {
@@ -622,8 +577,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getGender(): null|FHIRCodeableConcept
     {
@@ -638,9 +591,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $gender
-     * @return static
      */
     public function setGender(null|FHIRCodeableConcept $gender): self
     {
@@ -660,8 +610,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of birth for the practitioner.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getBirthDate(): null|FHIRDateTime
     {
@@ -676,9 +624,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of birth for the practitioner.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $birthDate
-     * @return static
      */
     public function setBirthDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $birthDate): self
     {
@@ -724,9 +669,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $photo
-     * @return static
      */
     public function addPhoto(FHIRAttachment $photo): self
     {
@@ -743,9 +685,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment ...$photo
-     * @return static
      */
     public function setPhoto(FHIRAttachment ...$photo): self
     {
@@ -763,8 +702,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that the practitioner represents.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getOrganization(): null|FHIRResourceReference
     {
@@ -777,9 +714,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that the practitioner represents.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $organization
-     * @return static
      */
     public function setOrganization(null|FHIRResourceReference $organization): self
     {
@@ -824,9 +758,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -844,9 +775,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$role
-     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -891,9 +819,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $specialty
-     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -911,9 +836,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$specialty
-     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -932,8 +854,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -947,9 +867,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -992,9 +909,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $location
-     * @return static
      */
     public function addLocation(FHIRResourceReference $location): self
     {
@@ -1011,9 +925,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$location
-     * @return static
      */
     public function setLocation(FHIRResourceReference ...$location): self
     {
@@ -1054,9 +965,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * healthcare.
      *
      * Qualifications obtained by training and certification.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification $qualification
-     * @return static
      */
     public function addQualification(FHIRPractitionerQualification $qualification): self
     {
@@ -1072,9 +980,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * healthcare.
      *
      * Qualifications obtained by training and certification.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification ...$qualification
-     * @return static
      */
     public function setQualification(FHIRPractitionerQualification ...$qualification): self
     {
@@ -1119,9 +1024,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A language the practitioner is able to use in patient communication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $communication
-     * @return static
      */
     public function addCommunication(FHIRCodeableConcept $communication): self
     {
@@ -1139,9 +1041,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A language the practitioner is able to use in patient communication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$communication
-     * @return static
      */
     public function setCommunication(FHIRCodeableConcept ...$communication): self
     {
@@ -1155,10 +1054,7 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRPractitioner $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRPractitioner
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1260,11 +1156,6 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1387,10 +1278,7 @@ class FHIRPractitioner extends FHIRResource implements VersionContainedTypeInter
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRPractitioner $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRPractitioner
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

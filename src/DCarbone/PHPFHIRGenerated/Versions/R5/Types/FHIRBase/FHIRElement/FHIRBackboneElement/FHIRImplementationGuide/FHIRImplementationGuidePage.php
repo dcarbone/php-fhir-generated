@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -163,10 +162,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * Indicates the URL or the actual content to provide for the page.
      */
     #[FHIRUrl]
     protected FHIRUrl $sourceUrl;
@@ -175,10 +171,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * Indicates the URL or the actual content to provide for the page.
      */
     #[FHIRString]
     protected FHIRString $sourceString;
@@ -191,10 +184,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
+     * Indicates the URL or the actual content to provide for the page.
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $sourceMarkdown;
@@ -204,8 +194,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The url by which the page should be known when published.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
      */
     #[FHIRUrl]
     protected FHIRUrl $name;
@@ -216,8 +204,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A short title used to represent this page in navigational structures such as
      * table of contents, bread crumbs, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -225,8 +211,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the page is generated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGuidePageGeneration
      */
     #[FHIRGuidePageGeneration]
     protected FHIRGuidePageGeneration $generation;
@@ -247,14 +231,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     /**
      * FHIRImplementationGuidePage Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $sourceUrl
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sourceString
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $sourceMarkdown
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGuidePageGenerationEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGuidePageGeneration $generation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage> $page
      * @param null|string[] $fhirComments
      */
@@ -309,10 +286,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * Indicates the URL or the actual content to provide for the page.
      */
     public function getSourceUrl(): null|FHIRUrl
     {
@@ -324,11 +298,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $sourceUrl
-     * @return static
+     * Indicates the URL or the actual content to provide for the page.
      */
     public function setSourceUrl(null|string|FHIRUrlPrimitive|FHIRUrl $sourceUrl): self
     {
@@ -348,10 +318,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * Indicates the URL or the actual content to provide for the page.
      */
     public function getSourceString(): null|FHIRString
     {
@@ -363,11 +330,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sourceString
-     * @return static
+     * Indicates the URL or the actual content to provide for the page.
      */
     public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
@@ -391,10 +354,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
+     * Indicates the URL or the actual content to provide for the page.
      */
     public function getSourceMarkdown(): null|FHIRMarkdown
     {
@@ -410,11 +370,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Indicates the URL or the actual content to provide for the page. (choose any one
-     * of source*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $sourceMarkdown
-     * @return static
+     * Indicates the URL or the actual content to provide for the page.
      */
     public function setSourceMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $sourceMarkdown): self
     {
@@ -435,8 +391,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The url by which the page should be known when published.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
      */
     public function getName(): null|FHIRUrl
     {
@@ -449,9 +403,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The url by which the page should be known when published.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $name
-     * @return static
      */
     public function setName(null|string|FHIRUrlPrimitive|FHIRUrl $name): self
     {
@@ -473,8 +424,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A short title used to represent this page in navigational structures such as
      * table of contents, bread crumbs, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -488,9 +437,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A short title used to represent this page in navigational structures such as
      * table of contents, bread crumbs, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -509,8 +455,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the page is generated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGuidePageGeneration
      */
     public function getGeneration(): null|FHIRGuidePageGeneration
     {
@@ -521,9 +465,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the page is generated.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGuidePageGenerationEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGuidePageGeneration $generation
-     * @return static
      */
     public function setGeneration(null|string|FHIRGuidePageGenerationEnum|FHIRGuidePageGeneration $generation): self
     {
@@ -571,9 +512,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Nested Pages/Sections under this page.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
-     * @return static
      */
     public function addPage(FHIRImplementationGuidePage $page): self
     {
@@ -591,9 +529,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Nested Pages/Sections under this page.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage ...$page
-     * @return static
      */
     public function setPage(FHIRImplementationGuidePage ...$page): self
     {
@@ -607,10 +542,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -714,10 +646,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -792,10 +720,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -133,8 +133,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purpose/type of contact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $purpose;
@@ -175,8 +173,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address for the contact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $address;
@@ -188,8 +184,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * This contact detail is handled/monitored by a specific organization. If the name
      * is provided in the contact, then it is referring to the named individual within
      * this organization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $organization;
@@ -199,8 +193,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Period that this contact was valid for usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -209,13 +201,8 @@ class FHIRExtendedContactDetail extends FHIRDataType
     /**
      * FHIRExtendedContactDetail Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $purpose
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName> $name
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint> $telecom
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $address
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $organization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -265,8 +252,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purpose/type of contact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getPurpose(): null|FHIRCodeableConcept
     {
@@ -280,9 +265,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The purpose/type of contact.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $purpose
-     * @return static
      */
     public function setPurpose(null|FHIRCodeableConcept $purpose): self
     {
@@ -331,9 +313,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      *
      * The name of an individual to contact, some types of contact detail are usually
      * blank.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $name
-     * @return static
      */
     public function addName(FHIRHumanName $name): self
     {
@@ -353,9 +332,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      *
      * The name of an individual to contact, some types of contact detail are usually
      * blank.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName ...$name
-     * @return static
      */
     public function setName(FHIRHumanName ...$name): self
     {
@@ -400,9 +376,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The contact details application for the purpose defined.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $telecom
-     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -420,9 +393,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The contact details application for the purpose defined.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -445,8 +415,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address for the contact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     public function getAddress(): null|FHIRAddress
     {
@@ -464,9 +432,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address for the contact.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $address
-     * @return static
      */
     public function setAddress(null|FHIRAddress $address): self
     {
@@ -486,8 +451,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * This contact detail is handled/monitored by a specific organization. If the name
      * is provided in the contact, then it is referring to the named individual within
      * this organization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getOrganization(): null|FHIRReference
     {
@@ -502,9 +465,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * This contact detail is handled/monitored by a specific organization. If the name
      * is provided in the contact, then it is referring to the named individual within
      * this organization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $organization
-     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -522,8 +482,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Period that this contact was valid for usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -536,9 +494,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Period that this contact was valid for usage.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -552,10 +507,7 @@ class FHIRExtendedContactDetail extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -607,10 +559,6 @@ class FHIRExtendedContactDetail extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -652,10 +600,7 @@ class FHIRExtendedContactDetail extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

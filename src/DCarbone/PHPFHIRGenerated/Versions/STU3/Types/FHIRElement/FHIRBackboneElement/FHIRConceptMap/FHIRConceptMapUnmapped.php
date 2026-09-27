@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -132,8 +131,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * versions, and only a few codes have changed), use a fixed code (a default code),
      * or alternatively, a reference to a different concept map can be provided (by
      * canonical URL).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConceptMapGroupUnmappedMode
      */
     #[FHIRConceptMapGroupUnmappedMode]
     protected FHIRConceptMapGroupUnmappedMode $mode;
@@ -145,8 +142,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The fixed code to use when the mode = 'fixed' - all unmapped codes are mapped to
      * a single fixed code.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -157,8 +152,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $display;
@@ -168,8 +161,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The canonical URL of the map to use if this map contains no mapping.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -178,12 +169,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
     /**
      * FHIRConceptMapUnmapped Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConceptMapGroupUnmappedModeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConceptMapGroupUnmappedMode $mode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $display
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $url
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -229,8 +215,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * versions, and only a few codes have changed), use a fixed code (a default code),
      * or alternatively, a reference to a different concept map can be provided (by
      * canonical URL).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConceptMapGroupUnmappedMode
      */
     public function getMode(): null|FHIRConceptMapGroupUnmappedMode
     {
@@ -246,9 +230,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * versions, and only a few codes have changed), use a fixed code (a default code),
      * or alternatively, a reference to a different concept map can be provided (by
      * canonical URL).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConceptMapGroupUnmappedModeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConceptMapGroupUnmappedMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRConceptMapGroupUnmappedModeList|FHIRConceptMapGroupUnmappedMode $mode): self
     {
@@ -271,8 +252,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The fixed code to use when the mode = 'fixed' - all unmapped codes are mapped to
      * a single fixed code.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -287,9 +266,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The fixed code to use when the mode = 'fixed' - all unmapped codes are mapped to
      * a single fixed code.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -311,8 +287,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDisplay(): null|FHIRString
     {
@@ -326,9 +300,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $display
-     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -349,8 +320,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The canonical URL of the map to use if this map contains no mapping.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -363,9 +332,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The canonical URL of the map to use if this map contains no mapping.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -382,10 +348,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -467,10 +430,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -518,10 +477,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -204,7 +204,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     /**
      * FHIRMolecularSequenceRoc Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger> $score
      * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger> $numTP
@@ -292,9 +291,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Invidual data point representing the GQ (genotype quality) score threshold.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $score
-     * @return static
      */
     public function addScore(string|float|FHIRIntegerPrimitive|FHIRInteger $score): self
     {
@@ -314,9 +310,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Invidual data point representing the GQ (genotype quality) score threshold.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger ...$score
-     * @return static
      */
     public function setScore(string|float|FHIRIntegerPrimitive|FHIRInteger ...$score): self
     {
@@ -368,9 +361,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of true positives if the GQ score threshold was set to "score" field
      * value.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $numTP
-     * @return static
      */
     public function addNumTP(string|float|FHIRIntegerPrimitive|FHIRInteger $numTP): self
     {
@@ -391,9 +381,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of true positives if the GQ score threshold was set to "score" field
      * value.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger ...$numTP
-     * @return static
      */
     public function setNumTP(string|float|FHIRIntegerPrimitive|FHIRInteger ...$numTP): self
     {
@@ -445,9 +432,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of false positives if the GQ score threshold was set to "score" field
      * value.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $numFP
-     * @return static
      */
     public function addNumFP(string|float|FHIRIntegerPrimitive|FHIRInteger $numFP): self
     {
@@ -468,9 +452,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of false positives if the GQ score threshold was set to "score" field
      * value.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger ...$numFP
-     * @return static
      */
     public function setNumFP(string|float|FHIRIntegerPrimitive|FHIRInteger ...$numFP): self
     {
@@ -522,9 +503,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of false negatives if the GQ score threshold was set to "score" field
      * value.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $numFN
-     * @return static
      */
     public function addNumFN(string|float|FHIRIntegerPrimitive|FHIRInteger $numFN): self
     {
@@ -545,9 +523,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * The number of false negatives if the GQ score threshold was set to "score" field
      * value.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger ...$numFN
-     * @return static
      */
     public function setNumFN(string|float|FHIRIntegerPrimitive|FHIRInteger ...$numFN): self
     {
@@ -599,9 +574,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated precision if the GQ score threshold was set to "score" field value.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $precision
-     * @return static
      */
     public function addPrecision(string|int|float|FHIRDecimalPrimitive|FHIRDecimal $precision): self
     {
@@ -622,9 +594,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated precision if the GQ score threshold was set to "score" field value.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal ...$precision
-     * @return static
      */
     public function setPrecision(string|int|float|FHIRDecimalPrimitive|FHIRDecimal ...$precision): self
     {
@@ -676,9 +645,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $sensitivity
-     * @return static
      */
     public function addSensitivity(string|int|float|FHIRDecimalPrimitive|FHIRDecimal $sensitivity): self
     {
@@ -699,9 +665,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal ...$sensitivity
-     * @return static
      */
     public function setSensitivity(string|int|float|FHIRDecimalPrimitive|FHIRDecimal ...$sensitivity): self
     {
@@ -753,9 +716,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated fScore if the GQ score threshold was set to "score" field value.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $fMeasure
-     * @return static
      */
     public function addFMeasure(string|int|float|FHIRDecimalPrimitive|FHIRDecimal $fMeasure): self
     {
@@ -776,9 +736,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Calculated fScore if the GQ score threshold was set to "score" field value.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal ...$fMeasure
-     * @return static
      */
     public function setFMeasure(string|int|float|FHIRDecimalPrimitive|FHIRDecimal ...$fMeasure): self
     {
@@ -799,10 +756,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -858,10 +812,6 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -918,10 +868,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

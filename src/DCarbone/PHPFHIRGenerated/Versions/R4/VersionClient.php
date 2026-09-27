@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -227,9 +227,6 @@ class VersionClient
 
     /**
      * VersionClient Constructor
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Client\ClientInterface $client
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Version $version
      */
     public function __construct(ClientInterface $client, Version $version)
     {
@@ -242,14 +239,7 @@ class VersionClient
      *
      * @see https://www.hl7.org/fhir/http.html#read
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\VersionResourceTypeEnum $resourceType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|int $count
      * @param null|string|\DCarbone\PHPFHIRGenerated\Client\SortDirectionEnum $sort May be a string value if your server supports non-standard sorting methods
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @param null|array $queryParams
-     * @param null|bool $parseResponseHeaders
-     * @return \DCarbone\PHPFHIRGenerated\Client\Response
      */
     public function read(VersionResourceTypeEnum $resourceType,
                          null|string|FHIRId|FHIRIdPrimitive $resourceID = null,
@@ -287,10 +277,7 @@ class VersionClient
      * @see https://www.hl7.org/fhir/http.html#create
      *
      * @param \DCarbone\PHPFHIRGenerated\Versions\R4\VersionResourceTypeInterface $resource The resource to update, must have a defined ID.
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
      * @param null|array $queryParams Any additional query params to send as part of this request
-     * @param null|bool $parseResponseHeaders
-     * @return \DCarbone\PHPFHIRGenerated\Client\Response
      */
     public function create(VersionResourceTypeInterface $resource,
                            null|SerializeFormatEnum $format = null,
@@ -316,10 +303,7 @@ class VersionClient
      * @see https://www.hl7.org/fhir/http.html#update
      *
      * @param \DCarbone\PHPFHIRGenerated\Versions\R4\VersionResourceTypeInterface $resource The resource to update, must have a defined ID.
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
      * @param null|array $queryParams Any additional query params to send as part of this request
-     * @param null|bool $parseResponseHeaders
-     * @return \DCarbone\PHPFHIRGenerated\Client\Response
      */
     public function update(VersionResourceTypeInterface $resource,
                            null|SerializeFormatEnum $format = null,
@@ -345,10 +329,7 @@ class VersionClient
      * @see https://www.hl7.org/fhir/http.html#patch
      *
      * @param \DCarbone\PHPFHIRGenerated\Versions\R4\VersionResourceTypeInterface $resource The resource to update, must have a defined ID.
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
      * @param null|array $queryParams Any additional query params to send as part of this request
-     * @param null|bool $parseResponseHeaders
-     * @return \DCarbone\PHPFHIRGenerated\Client\Response
      */
     public function patch(VersionResourceTypeInterface $resource,
                            null|SerializeFormatEnum $format = null,
@@ -373,9 +354,7 @@ class VersionClient
      *
      * @see https://www.hl7.org/fhir/http.html#delete
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\VersionResourceTypeEnum $resourceType
      * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID ID of resource to delete.
-     * @return \DCarbone\PHPFHIRGenerated\Client\Response
      */
     public function delete(VersionResourceTypeEnum $resourceType,
                            string|FHIRId|FHIRIdPrimitive $resourceID): Response
@@ -393,7 +372,6 @@ class VersionClient
      * @see https://www.hl7.org/fhir/http.html#delete
      *
      * @param \DCarbone\PHPFHIRGenerated\Versions\R4\VersionResourceTypeInterface $resource Specific resource to delete.
-     * @return \DCarbone\PHPFHIRGenerated\Client\Response
      */
     public function deleteResource(VersionResourceTypeInterface $resource): Response
     {
@@ -407,9 +385,6 @@ class VersionClient
     /**
      * Read one Account resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRAccount
      * @throws \Exception
      */
     public function readOneAccount(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -434,9 +409,6 @@ class VersionClient
     /**
      * Read one ActivityDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRActivityDefinition
      * @throws \Exception
      */
     public function readOneActivityDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -461,9 +433,6 @@ class VersionClient
     /**
      * Read one AdverseEvent resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRAdverseEvent
      * @throws \Exception
      */
     public function readOneAdverseEvent(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -488,9 +457,6 @@ class VersionClient
     /**
      * Read one AllergyIntolerance resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
      * @throws \Exception
      */
     public function readOneAllergyIntolerance(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -515,9 +481,6 @@ class VersionClient
     /**
      * Read one Appointment resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRAppointment
      * @throws \Exception
      */
     public function readOneAppointment(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -542,9 +505,6 @@ class VersionClient
     /**
      * Read one AppointmentResponse resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
      * @throws \Exception
      */
     public function readOneAppointmentResponse(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -569,9 +529,6 @@ class VersionClient
     /**
      * Read one AuditEvent resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRAuditEvent
      * @throws \Exception
      */
     public function readOneAuditEvent(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -596,9 +553,6 @@ class VersionClient
     /**
      * Read one Basic resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRBasic
      * @throws \Exception
      */
     public function readOneBasic(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -623,9 +577,6 @@ class VersionClient
     /**
      * Read one Binary resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRBinary
      * @throws \Exception
      */
     public function readOneBinary(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -650,9 +601,6 @@ class VersionClient
     /**
      * Read one BiologicallyDerivedProduct resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
      * @throws \Exception
      */
     public function readOneBiologicallyDerivedProduct(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -677,9 +625,6 @@ class VersionClient
     /**
      * Read one BodyStructure resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRBodyStructure
      * @throws \Exception
      */
     public function readOneBodyStructure(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -704,9 +649,6 @@ class VersionClient
     /**
      * Read one CapabilityStatement resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
      * @throws \Exception
      */
     public function readOneCapabilityStatement(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -731,9 +673,6 @@ class VersionClient
     /**
      * Read one CarePlan resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCarePlan
      * @throws \Exception
      */
     public function readOneCarePlan(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -758,9 +697,6 @@ class VersionClient
     /**
      * Read one CareTeam resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCareTeam
      * @throws \Exception
      */
     public function readOneCareTeam(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -785,9 +721,6 @@ class VersionClient
     /**
      * Read one CatalogEntry resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCatalogEntry
      * @throws \Exception
      */
     public function readOneCatalogEntry(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -812,9 +745,6 @@ class VersionClient
     /**
      * Read one ChargeItem resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRChargeItem
      * @throws \Exception
      */
     public function readOneChargeItem(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -839,9 +769,6 @@ class VersionClient
     /**
      * Read one ChargeItemDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRChargeItemDefinition
      * @throws \Exception
      */
     public function readOneChargeItemDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -866,9 +793,6 @@ class VersionClient
     /**
      * Read one Claim resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRClaim
      * @throws \Exception
      */
     public function readOneClaim(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -893,9 +817,6 @@ class VersionClient
     /**
      * Read one ClaimResponse resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRClaimResponse
      * @throws \Exception
      */
     public function readOneClaimResponse(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -920,9 +841,6 @@ class VersionClient
     /**
      * Read one ClinicalImpression resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
      * @throws \Exception
      */
     public function readOneClinicalImpression(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -947,9 +865,6 @@ class VersionClient
     /**
      * Read one CodeSystem resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCodeSystem
      * @throws \Exception
      */
     public function readOneCodeSystem(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -974,9 +889,6 @@ class VersionClient
     /**
      * Read one Communication resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCommunication
      * @throws \Exception
      */
     public function readOneCommunication(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1001,9 +913,6 @@ class VersionClient
     /**
      * Read one CommunicationRequest resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
      * @throws \Exception
      */
     public function readOneCommunicationRequest(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1028,9 +937,6 @@ class VersionClient
     /**
      * Read one CompartmentDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCompartmentDefinition
      * @throws \Exception
      */
     public function readOneCompartmentDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1055,9 +961,6 @@ class VersionClient
     /**
      * Read one Composition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRComposition
      * @throws \Exception
      */
     public function readOneComposition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1082,9 +985,6 @@ class VersionClient
     /**
      * Read one ConceptMap resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRConceptMap
      * @throws \Exception
      */
     public function readOneConceptMap(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1109,9 +1009,6 @@ class VersionClient
     /**
      * Read one Condition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCondition
      * @throws \Exception
      */
     public function readOneCondition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1136,9 +1033,6 @@ class VersionClient
     /**
      * Read one Consent resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRConsent
      * @throws \Exception
      */
     public function readOneConsent(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1163,9 +1057,6 @@ class VersionClient
     /**
      * Read one Contract resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRContract
      * @throws \Exception
      */
     public function readOneContract(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1190,9 +1081,6 @@ class VersionClient
     /**
      * Read one Coverage resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCoverage
      * @throws \Exception
      */
     public function readOneCoverage(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1217,9 +1105,6 @@ class VersionClient
     /**
      * Read one CoverageEligibilityRequest resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityRequest
      * @throws \Exception
      */
     public function readOneCoverageEligibilityRequest(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1244,9 +1129,6 @@ class VersionClient
     /**
      * Read one CoverageEligibilityResponse resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse
      * @throws \Exception
      */
     public function readOneCoverageEligibilityResponse(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1271,9 +1153,6 @@ class VersionClient
     /**
      * Read one DetectedIssue resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRDetectedIssue
      * @throws \Exception
      */
     public function readOneDetectedIssue(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1298,9 +1177,6 @@ class VersionClient
     /**
      * Read one Device resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRDevice
      * @throws \Exception
      */
     public function readOneDevice(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1325,9 +1201,6 @@ class VersionClient
     /**
      * Read one DeviceDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRDeviceDefinition
      * @throws \Exception
      */
     public function readOneDeviceDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1352,9 +1225,6 @@ class VersionClient
     /**
      * Read one DeviceMetric resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRDeviceMetric
      * @throws \Exception
      */
     public function readOneDeviceMetric(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1379,9 +1249,6 @@ class VersionClient
     /**
      * Read one DeviceRequest resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRDeviceRequest
      * @throws \Exception
      */
     public function readOneDeviceRequest(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1406,9 +1273,6 @@ class VersionClient
     /**
      * Read one DeviceUseStatement resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRDeviceUseStatement
      * @throws \Exception
      */
     public function readOneDeviceUseStatement(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1433,9 +1297,6 @@ class VersionClient
     /**
      * Read one DiagnosticReport resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRDiagnosticReport
      * @throws \Exception
      */
     public function readOneDiagnosticReport(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1460,9 +1321,6 @@ class VersionClient
     /**
      * Read one DocumentManifest resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRDocumentManifest
      * @throws \Exception
      */
     public function readOneDocumentManifest(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1487,9 +1345,6 @@ class VersionClient
     /**
      * Read one DocumentReference resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRDocumentReference
      * @throws \Exception
      */
     public function readOneDocumentReference(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1514,9 +1369,6 @@ class VersionClient
     /**
      * Read one EffectEvidenceSynthesis resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
      * @throws \Exception
      */
     public function readOneEffectEvidenceSynthesis(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1541,9 +1393,6 @@ class VersionClient
     /**
      * Read one Encounter resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREncounter
      * @throws \Exception
      */
     public function readOneEncounter(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1568,9 +1417,6 @@ class VersionClient
     /**
      * Read one Endpoint resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREndpoint
      * @throws \Exception
      */
     public function readOneEndpoint(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1595,9 +1441,6 @@ class VersionClient
     /**
      * Read one EnrollmentRequest resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREnrollmentRequest
      * @throws \Exception
      */
     public function readOneEnrollmentRequest(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1622,9 +1465,6 @@ class VersionClient
     /**
      * Read one EnrollmentResponse resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREnrollmentResponse
      * @throws \Exception
      */
     public function readOneEnrollmentResponse(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1649,9 +1489,6 @@ class VersionClient
     /**
      * Read one EpisodeOfCare resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREpisodeOfCare
      * @throws \Exception
      */
     public function readOneEpisodeOfCare(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1676,9 +1513,6 @@ class VersionClient
     /**
      * Read one EventDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREventDefinition
      * @throws \Exception
      */
     public function readOneEventDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1703,9 +1537,6 @@ class VersionClient
     /**
      * Read one Evidence resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREvidence
      * @throws \Exception
      */
     public function readOneEvidence(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1730,9 +1561,6 @@ class VersionClient
     /**
      * Read one EvidenceVariable resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREvidenceVariable
      * @throws \Exception
      */
     public function readOneEvidenceVariable(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1757,9 +1585,6 @@ class VersionClient
     /**
      * Read one ExampleScenario resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRExampleScenario
      * @throws \Exception
      */
     public function readOneExampleScenario(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1784,9 +1609,6 @@ class VersionClient
     /**
      * Read one ExplanationOfBenefit resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRExplanationOfBenefit
      * @throws \Exception
      */
     public function readOneExplanationOfBenefit(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1811,9 +1633,6 @@ class VersionClient
     /**
      * Read one FamilyMemberHistory resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
      * @throws \Exception
      */
     public function readOneFamilyMemberHistory(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1838,9 +1657,6 @@ class VersionClient
     /**
      * Read one Flag resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRFlag
      * @throws \Exception
      */
     public function readOneFlag(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1865,9 +1681,6 @@ class VersionClient
     /**
      * Read one Goal resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRGoal
      * @throws \Exception
      */
     public function readOneGoal(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1892,9 +1705,6 @@ class VersionClient
     /**
      * Read one GraphDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRGraphDefinition
      * @throws \Exception
      */
     public function readOneGraphDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1919,9 +1729,6 @@ class VersionClient
     /**
      * Read one Group resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRGroup
      * @throws \Exception
      */
     public function readOneGroup(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1946,9 +1753,6 @@ class VersionClient
     /**
      * Read one GuidanceResponse resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
      * @throws \Exception
      */
     public function readOneGuidanceResponse(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -1973,9 +1777,6 @@ class VersionClient
     /**
      * Read one HealthcareService resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRHealthcareService
      * @throws \Exception
      */
     public function readOneHealthcareService(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2000,9 +1801,6 @@ class VersionClient
     /**
      * Read one ImagingStudy resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRImagingStudy
      * @throws \Exception
      */
     public function readOneImagingStudy(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2027,9 +1825,6 @@ class VersionClient
     /**
      * Read one Immunization resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRImmunization
      * @throws \Exception
      */
     public function readOneImmunization(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2054,9 +1849,6 @@ class VersionClient
     /**
      * Read one ImmunizationEvaluation resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
      * @throws \Exception
      */
     public function readOneImmunizationEvaluation(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2081,9 +1873,6 @@ class VersionClient
     /**
      * Read one ImmunizationRecommendation resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRImmunizationRecommendation
      * @throws \Exception
      */
     public function readOneImmunizationRecommendation(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2108,9 +1897,6 @@ class VersionClient
     /**
      * Read one ImplementationGuide resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
      * @throws \Exception
      */
     public function readOneImplementationGuide(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2135,9 +1921,6 @@ class VersionClient
     /**
      * Read one InsurancePlan resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRInsurancePlan
      * @throws \Exception
      */
     public function readOneInsurancePlan(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2162,9 +1945,6 @@ class VersionClient
     /**
      * Read one Invoice resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRInvoice
      * @throws \Exception
      */
     public function readOneInvoice(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2189,9 +1969,6 @@ class VersionClient
     /**
      * Read one Library resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRLibrary
      * @throws \Exception
      */
     public function readOneLibrary(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2216,9 +1993,6 @@ class VersionClient
     /**
      * Read one Linkage resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRLinkage
      * @throws \Exception
      */
     public function readOneLinkage(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2243,9 +2017,6 @@ class VersionClient
     /**
      * Read one List resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRList
      * @throws \Exception
      */
     public function readOneList(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2270,9 +2041,6 @@ class VersionClient
     /**
      * Read one Location resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRLocation
      * @throws \Exception
      */
     public function readOneLocation(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2297,9 +2065,6 @@ class VersionClient
     /**
      * Read one Measure resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMeasure
      * @throws \Exception
      */
     public function readOneMeasure(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2324,9 +2089,6 @@ class VersionClient
     /**
      * Read one MeasureReport resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMeasureReport
      * @throws \Exception
      */
     public function readOneMeasureReport(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2351,9 +2113,6 @@ class VersionClient
     /**
      * Read one Media resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedia
      * @throws \Exception
      */
     public function readOneMedia(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2378,9 +2137,6 @@ class VersionClient
     /**
      * Read one Medication resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedication
      * @throws \Exception
      */
     public function readOneMedication(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2405,9 +2161,6 @@ class VersionClient
     /**
      * Read one MedicationAdministration resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicationAdministration
      * @throws \Exception
      */
     public function readOneMedicationAdministration(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2432,9 +2185,6 @@ class VersionClient
     /**
      * Read one MedicationDispense resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicationDispense
      * @throws \Exception
      */
     public function readOneMedicationDispense(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2459,9 +2209,6 @@ class VersionClient
     /**
      * Read one MedicationKnowledge resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
      * @throws \Exception
      */
     public function readOneMedicationKnowledge(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2486,9 +2233,6 @@ class VersionClient
     /**
      * Read one MedicationRequest resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicationRequest
      * @throws \Exception
      */
     public function readOneMedicationRequest(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2513,9 +2257,6 @@ class VersionClient
     /**
      * Read one MedicationStatement resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicationStatement
      * @throws \Exception
      */
     public function readOneMedicationStatement(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2540,9 +2281,6 @@ class VersionClient
     /**
      * Read one MedicinalProduct resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProduct
      * @throws \Exception
      */
     public function readOneMedicinalProduct(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2567,9 +2305,6 @@ class VersionClient
     /**
      * Read one MedicinalProductAuthorization resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization
      * @throws \Exception
      */
     public function readOneMedicinalProductAuthorization(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2594,9 +2329,6 @@ class VersionClient
     /**
      * Read one MedicinalProductContraindication resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductContraindication
      * @throws \Exception
      */
     public function readOneMedicinalProductContraindication(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2621,9 +2353,6 @@ class VersionClient
     /**
      * Read one MedicinalProductIndication resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
      * @throws \Exception
      */
     public function readOneMedicinalProductIndication(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2648,9 +2377,6 @@ class VersionClient
     /**
      * Read one MedicinalProductIngredient resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
      * @throws \Exception
      */
     public function readOneMedicinalProductIngredient(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2675,9 +2401,6 @@ class VersionClient
     /**
      * Read one MedicinalProductInteraction resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction
      * @throws \Exception
      */
     public function readOneMedicinalProductInteraction(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2702,9 +2425,6 @@ class VersionClient
     /**
      * Read one MedicinalProductManufactured resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
      * @throws \Exception
      */
     public function readOneMedicinalProductManufactured(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2729,9 +2449,6 @@ class VersionClient
     /**
      * Read one MedicinalProductPackaged resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPackaged
      * @throws \Exception
      */
     public function readOneMedicinalProductPackaged(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2756,9 +2473,6 @@ class VersionClient
     /**
      * Read one MedicinalProductPharmaceutical resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPharmaceutical
      * @throws \Exception
      */
     public function readOneMedicinalProductPharmaceutical(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2783,9 +2497,6 @@ class VersionClient
     /**
      * Read one MedicinalProductUndesirableEffect resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
      * @throws \Exception
      */
     public function readOneMedicinalProductUndesirableEffect(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2810,9 +2521,6 @@ class VersionClient
     /**
      * Read one MessageDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMessageDefinition
      * @throws \Exception
      */
     public function readOneMessageDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2837,9 +2545,6 @@ class VersionClient
     /**
      * Read one MessageHeader resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMessageHeader
      * @throws \Exception
      */
     public function readOneMessageHeader(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2864,9 +2569,6 @@ class VersionClient
     /**
      * Read one MolecularSequence resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMolecularSequence
      * @throws \Exception
      */
     public function readOneMolecularSequence(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2891,9 +2593,6 @@ class VersionClient
     /**
      * Read one NamingSystem resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRNamingSystem
      * @throws \Exception
      */
     public function readOneNamingSystem(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2918,9 +2617,6 @@ class VersionClient
     /**
      * Read one NutritionOrder resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
      * @throws \Exception
      */
     public function readOneNutritionOrder(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2945,9 +2641,6 @@ class VersionClient
     /**
      * Read one Observation resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRObservation
      * @throws \Exception
      */
     public function readOneObservation(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2972,9 +2665,6 @@ class VersionClient
     /**
      * Read one ObservationDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRObservationDefinition
      * @throws \Exception
      */
     public function readOneObservationDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -2999,9 +2689,6 @@ class VersionClient
     /**
      * Read one OperationDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIROperationDefinition
      * @throws \Exception
      */
     public function readOneOperationDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3026,9 +2713,6 @@ class VersionClient
     /**
      * Read one OperationOutcome resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIROperationOutcome
      * @throws \Exception
      */
     public function readOneOperationOutcome(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3053,9 +2737,6 @@ class VersionClient
     /**
      * Read one Organization resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIROrganization
      * @throws \Exception
      */
     public function readOneOrganization(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3080,9 +2761,6 @@ class VersionClient
     /**
      * Read one OrganizationAffiliation resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIROrganizationAffiliation
      * @throws \Exception
      */
     public function readOneOrganizationAffiliation(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3107,9 +2785,6 @@ class VersionClient
     /**
      * Read one Parameters resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRParameters
      * @throws \Exception
      */
     public function readOneParameters(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3134,9 +2809,6 @@ class VersionClient
     /**
      * Read one Patient resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPatient
      * @throws \Exception
      */
     public function readOnePatient(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3161,9 +2833,6 @@ class VersionClient
     /**
      * Read one PaymentNotice resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPaymentNotice
      * @throws \Exception
      */
     public function readOnePaymentNotice(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3188,9 +2857,6 @@ class VersionClient
     /**
      * Read one PaymentReconciliation resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation
      * @throws \Exception
      */
     public function readOnePaymentReconciliation(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3215,9 +2881,6 @@ class VersionClient
     /**
      * Read one Person resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPerson
      * @throws \Exception
      */
     public function readOnePerson(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3242,9 +2905,6 @@ class VersionClient
     /**
      * Read one PlanDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPlanDefinition
      * @throws \Exception
      */
     public function readOnePlanDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3269,9 +2929,6 @@ class VersionClient
     /**
      * Read one Practitioner resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPractitioner
      * @throws \Exception
      */
     public function readOnePractitioner(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3296,9 +2953,6 @@ class VersionClient
     /**
      * Read one PractitionerRole resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPractitionerRole
      * @throws \Exception
      */
     public function readOnePractitionerRole(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3323,9 +2977,6 @@ class VersionClient
     /**
      * Read one Procedure resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRProcedure
      * @throws \Exception
      */
     public function readOneProcedure(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3350,9 +3001,6 @@ class VersionClient
     /**
      * Read one Provenance resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRProvenance
      * @throws \Exception
      */
     public function readOneProvenance(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3377,9 +3025,6 @@ class VersionClient
     /**
      * Read one Questionnaire resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRQuestionnaire
      * @throws \Exception
      */
     public function readOneQuestionnaire(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3404,9 +3049,6 @@ class VersionClient
     /**
      * Read one QuestionnaireResponse resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
      * @throws \Exception
      */
     public function readOneQuestionnaireResponse(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3431,9 +3073,6 @@ class VersionClient
     /**
      * Read one RelatedPerson resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRRelatedPerson
      * @throws \Exception
      */
     public function readOneRelatedPerson(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3458,9 +3097,6 @@ class VersionClient
     /**
      * Read one RequestGroup resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRRequestGroup
      * @throws \Exception
      */
     public function readOneRequestGroup(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3485,9 +3121,6 @@ class VersionClient
     /**
      * Read one ResearchDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRResearchDefinition
      * @throws \Exception
      */
     public function readOneResearchDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3512,9 +3145,6 @@ class VersionClient
     /**
      * Read one ResearchElementDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRResearchElementDefinition
      * @throws \Exception
      */
     public function readOneResearchElementDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3539,9 +3169,6 @@ class VersionClient
     /**
      * Read one ResearchStudy resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRResearchStudy
      * @throws \Exception
      */
     public function readOneResearchStudy(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3566,9 +3193,6 @@ class VersionClient
     /**
      * Read one ResearchSubject resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRResearchSubject
      * @throws \Exception
      */
     public function readOneResearchSubject(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3593,9 +3217,6 @@ class VersionClient
     /**
      * Read one RiskAssessment resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
      * @throws \Exception
      */
     public function readOneRiskAssessment(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3620,9 +3241,6 @@ class VersionClient
     /**
      * Read one RiskEvidenceSynthesis resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRRiskEvidenceSynthesis
      * @throws \Exception
      */
     public function readOneRiskEvidenceSynthesis(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3647,9 +3265,6 @@ class VersionClient
     /**
      * Read one Schedule resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSchedule
      * @throws \Exception
      */
     public function readOneSchedule(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3674,9 +3289,6 @@ class VersionClient
     /**
      * Read one SearchParameter resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSearchParameter
      * @throws \Exception
      */
     public function readOneSearchParameter(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3701,9 +3313,6 @@ class VersionClient
     /**
      * Read one ServiceRequest resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRServiceRequest
      * @throws \Exception
      */
     public function readOneServiceRequest(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3728,9 +3337,6 @@ class VersionClient
     /**
      * Read one Slot resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSlot
      * @throws \Exception
      */
     public function readOneSlot(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3755,9 +3361,6 @@ class VersionClient
     /**
      * Read one Specimen resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSpecimen
      * @throws \Exception
      */
     public function readOneSpecimen(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3782,9 +3385,6 @@ class VersionClient
     /**
      * Read one SpecimenDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSpecimenDefinition
      * @throws \Exception
      */
     public function readOneSpecimenDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3809,9 +3409,6 @@ class VersionClient
     /**
      * Read one StructureDefinition resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRStructureDefinition
      * @throws \Exception
      */
     public function readOneStructureDefinition(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3836,9 +3433,6 @@ class VersionClient
     /**
      * Read one StructureMap resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRStructureMap
      * @throws \Exception
      */
     public function readOneStructureMap(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3863,9 +3457,6 @@ class VersionClient
     /**
      * Read one Subscription resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubscription
      * @throws \Exception
      */
     public function readOneSubscription(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3890,9 +3481,6 @@ class VersionClient
     /**
      * Read one Substance resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstance
      * @throws \Exception
      */
     public function readOneSubstance(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3917,9 +3505,6 @@ class VersionClient
     /**
      * Read one SubstanceNucleicAcid resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceNucleicAcid
      * @throws \Exception
      */
     public function readOneSubstanceNucleicAcid(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3944,9 +3529,6 @@ class VersionClient
     /**
      * Read one SubstancePolymer resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer
      * @throws \Exception
      */
     public function readOneSubstancePolymer(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3971,9 +3553,6 @@ class VersionClient
     /**
      * Read one SubstanceProtein resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceProtein
      * @throws \Exception
      */
     public function readOneSubstanceProtein(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -3998,9 +3577,6 @@ class VersionClient
     /**
      * Read one SubstanceReferenceInformation resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceReferenceInformation
      * @throws \Exception
      */
     public function readOneSubstanceReferenceInformation(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4025,9 +3601,6 @@ class VersionClient
     /**
      * Read one SubstanceSourceMaterial resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
      * @throws \Exception
      */
     public function readOneSubstanceSourceMaterial(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4052,9 +3625,6 @@ class VersionClient
     /**
      * Read one SubstanceSpecification resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSubstanceSpecification
      * @throws \Exception
      */
     public function readOneSubstanceSpecification(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4079,9 +3649,6 @@ class VersionClient
     /**
      * Read one SupplyDelivery resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery
      * @throws \Exception
      */
     public function readOneSupplyDelivery(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4106,9 +3673,6 @@ class VersionClient
     /**
      * Read one SupplyRequest resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRSupplyRequest
      * @throws \Exception
      */
     public function readOneSupplyRequest(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4133,9 +3697,6 @@ class VersionClient
     /**
      * Read one Task resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRTask
      * @throws \Exception
      */
     public function readOneTask(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4160,9 +3721,6 @@ class VersionClient
     /**
      * Read one TerminologyCapabilities resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities
      * @throws \Exception
      */
     public function readOneTerminologyCapabilities(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4187,9 +3745,6 @@ class VersionClient
     /**
      * Read one TestReport resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRTestReport
      * @throws \Exception
      */
     public function readOneTestReport(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4214,9 +3769,6 @@ class VersionClient
     /**
      * Read one TestScript resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRTestScript
      * @throws \Exception
      */
     public function readOneTestScript(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4241,9 +3793,6 @@ class VersionClient
     /**
      * Read one ValueSet resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRValueSet
      * @throws \Exception
      */
     public function readOneValueSet(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4268,9 +3817,6 @@ class VersionClient
     /**
      * Read one VerificationResult resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRVerificationResult
      * @throws \Exception
      */
     public function readOneVerificationResult(string|FHIRId|FHIRIdPrimitive $resourceID,
@@ -4295,9 +3841,6 @@ class VersionClient
     /**
      * Read one VisionPrescription resource.
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive $resourceID
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum $format
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRVisionPrescription
      * @throws \Exception
      */
     public function readOneVisionPrescription(string|FHIRId|FHIRIdPrimitive $resourceID,

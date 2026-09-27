@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedul
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedul
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -141,8 +140,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how often the event should occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $frequency;
@@ -151,8 +148,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the occurrence of daily life that determines timing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIREventTiming
      */
     #[FHIREventTiming]
     protected FHIREventTiming $when;
@@ -161,8 +156,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long each repetition should last.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $duration;
@@ -171,8 +164,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUnitsOfTime
      */
     #[FHIRUnitsOfTime]
     protected FHIRUnitsOfTime $units;
@@ -181,8 +172,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $count;
@@ -194,8 +183,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When to stop repeating the schedule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $end;
@@ -204,13 +191,6 @@ class FHIRScheduleRepeat extends FHIRElement
     /**
      * FHIRScheduleRepeat Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $frequency
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIREventTimingList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIREventTiming $when
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $duration
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRUnitsOfTimeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUnitsOfTime $units
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $count
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $end
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -258,8 +238,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how often the event should occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     public function getFrequency(): null|FHIRInteger
     {
@@ -271,9 +249,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how often the event should occur.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $frequency
-     * @return static
      */
     public function setFrequency(null|string|float|FHIRIntegerPrimitive|FHIRInteger $frequency): self
     {
@@ -293,8 +268,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the occurrence of daily life that determines timing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIREventTiming
      */
     public function getWhen(): null|FHIREventTiming
     {
@@ -306,9 +279,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the occurrence of daily life that determines timing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIREventTimingList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIREventTiming $when
-     * @return static
      */
     public function setWhen(null|string|FHIREventTimingList|FHIREventTiming $when): self
     {
@@ -328,8 +298,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long each repetition should last.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     public function getDuration(): null|FHIRDecimal
     {
@@ -341,9 +309,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long each repetition should last.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $duration
-     * @return static
      */
     public function setDuration(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $duration): self
     {
@@ -363,8 +328,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUnitsOfTime
      */
     public function getUnits(): null|FHIRUnitsOfTime
     {
@@ -376,9 +339,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRUnitsOfTimeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUnitsOfTime $units
-     * @return static
      */
     public function setUnits(null|string|FHIRUnitsOfTimeList|FHIRUnitsOfTime $units): self
     {
@@ -398,8 +358,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     public function getCount(): null|FHIRInteger
     {
@@ -411,9 +369,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $count
-     * @return static
      */
     public function setCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $count): self
     {
@@ -436,8 +391,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When to stop repeating the schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getEnd(): null|FHIRDateTime
     {
@@ -452,9 +405,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When to stop repeating the schedule.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $end
-     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $end): self
     {
@@ -471,10 +421,7 @@ class FHIRScheduleRepeat extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule\FHIRScheduleRepeat $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -574,10 +521,6 @@ class FHIRScheduleRepeat extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -645,10 +588,7 @@ class FHIRScheduleRepeat extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule\FHIRScheduleRepeat $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -137,8 +137,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of patient centric costs associated with treatment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -150,8 +148,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -163,8 +159,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * Is a flag to indicate whether the benefits refer to in-network providers or
      * out-of-network providers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $network;
@@ -175,8 +169,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the benefits apply to an individual or to the family.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unit;
@@ -188,8 +180,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual visits'.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $term;
@@ -200,10 +190,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * The amount due from the patient for the cost category.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -212,10 +199,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
+     * The amount due from the patient for the cost category.
      */
     #[FHIRMoney]
     protected FHIRMoney $valueMoney;
@@ -235,15 +219,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
     /**
      * FHIRCoverageCostToBeneficiary Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $network
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $unit
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $term
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $valueMoney
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException> $exception
      * @param null|string[] $fhirComments
      */
@@ -304,8 +280,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of patient centric costs associated with treatment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -319,9 +293,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of patient centric costs associated with treatment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -341,8 +312,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -357,9 +326,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -379,8 +345,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * Is a flag to indicate whether the benefits refer to in-network providers or
      * out-of-network providers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getNetwork(): null|FHIRCodeableConcept
     {
@@ -395,9 +359,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * Is a flag to indicate whether the benefits refer to in-network providers or
      * out-of-network providers.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $network
-     * @return static
      */
     public function setNetwork(null|FHIRCodeableConcept $network): self
     {
@@ -416,8 +377,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the benefits apply to an individual or to the family.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getUnit(): null|FHIRCodeableConcept
     {
@@ -431,9 +390,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the benefits apply to an individual or to the family.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $unit
-     * @return static
      */
     public function setUnit(null|FHIRCodeableConcept $unit): self
     {
@@ -453,8 +409,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual visits'.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getTerm(): null|FHIRCodeableConcept
     {
@@ -469,9 +423,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual visits'.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $term
-     * @return static
      */
     public function setTerm(null|FHIRCodeableConcept $term): self
     {
@@ -490,10 +441,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * The amount due from the patient for the cost category.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -507,11 +455,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * The amount due from the patient for the cost category.
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -528,10 +472,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
+     * The amount due from the patient for the cost category.
      */
     public function getValueMoney(): null|FHIRMoney
     {
@@ -543,11 +484,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $valueMoney
-     * @return static
+     * The amount due from the patient for the cost category.
      */
     public function setValueMoney(null|FHIRMoney $valueMoney): self
     {
@@ -590,9 +527,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * A suite of codes indicating exceptions or reductions to patient costs and their
      * effective periods.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException $exception
-     * @return static
      */
     public function addException(FHIRCoverageException $exception): self
     {
@@ -609,9 +543,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * A suite of codes indicating exceptions or reductions to patient costs and their
      * effective periods.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException ...$exception
-     * @return static
      */
     public function setException(FHIRCoverageException ...$exception): self
     {
@@ -625,10 +556,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCostToBeneficiary $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCostToBeneficiary
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -686,10 +614,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -739,10 +663,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCostToBeneficiary $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCostToBeneficiary
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

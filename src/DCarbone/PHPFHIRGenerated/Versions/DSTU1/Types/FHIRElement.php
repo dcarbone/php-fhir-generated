@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -115,7 +115,6 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
      */
     #[FHIRExtension]
     protected array $extension;
-    /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive */
     #[FHIRIdPrimitive]
     protected FHIRIdPrimitive $id;
 
@@ -123,7 +122,6 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
     /**
      * FHIRElement Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -185,9 +183,6 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An extension - additional local content. The extension URL defines it's meaning
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension $extension
-     * @return static
      */
     public function addExtension(FHIRExtension $extension): self
     {
@@ -204,9 +199,6 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An extension - additional local content. The extension URL defines it's meaning
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension ...$extension
-     * @return static
      */
     public function setExtension(FHIRExtension ...$extension): self
     {
@@ -218,18 +210,11 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
         return $this;
     }
 
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive
-     */
     public function getId(): null|FHIRIdPrimitive
     {
         return $this->id ?? null;
     }
 
-    /**
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @return static
-     */
     public function setId(null|string|FHIRIdPrimitive $id): self
     {
         if (null === $id) {
@@ -245,10 +230,7 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -288,10 +270,6 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -317,10 +295,7 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

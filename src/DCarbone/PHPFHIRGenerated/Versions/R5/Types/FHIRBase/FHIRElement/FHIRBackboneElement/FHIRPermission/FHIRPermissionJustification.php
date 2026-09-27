@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -151,7 +151,6 @@ class FHIRPermissionJustification extends FHIRBackboneElement
     /**
      * FHIRPermissionJustification Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $basis
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $evidence
@@ -218,9 +217,6 @@ class FHIRPermissionJustification extends FHIRBackboneElement
      *
      * This would be a codeableconcept, or a coding, which can be constrained to , for
      * example, the 6 grounds for processing in GDPR.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $basis
-     * @return static
      */
     public function addBasis(FHIRCodeableConcept $basis): self
     {
@@ -239,9 +235,6 @@ class FHIRPermissionJustification extends FHIRBackboneElement
      *
      * This would be a codeableconcept, or a coding, which can be constrained to , for
      * example, the 6 grounds for processing in GDPR.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$basis
-     * @return static
      */
     public function setBasis(FHIRCodeableConcept ...$basis): self
     {
@@ -284,9 +277,6 @@ class FHIRPermissionJustification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Justifing rational.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $evidence
-     * @return static
      */
     public function addEvidence(FHIRReference $evidence): self
     {
@@ -303,9 +293,6 @@ class FHIRPermissionJustification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Justifing rational.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$evidence
-     * @return static
      */
     public function setEvidence(FHIRReference ...$evidence): self
     {
@@ -319,10 +306,7 @@ class FHIRPermissionJustification extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionJustification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionJustification
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -368,10 +352,6 @@ class FHIRPermissionJustification extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -393,10 +373,7 @@ class FHIRPermissionJustification extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionJustification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionJustification
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -165,7 +165,6 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
     /**
      * FHIRTestPlanAssertion Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $object
@@ -237,9 +236,6 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
      *
      * The test assertion type - this can be used to group assertions as 'required' or
      * 'optional', or can be used for other classification of the assertion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -258,9 +254,6 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
      *
      * The test assertion type - this can be used to group assertions as 'required' or
      * 'optional', or can be used for other classification of the assertion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -305,9 +298,6 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The focus or object of the assertion i.e. a resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $object
-     * @return static
      */
     public function addObject(FHIRCodeableReference $object): self
     {
@@ -325,9 +315,6 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The focus or object of the assertion i.e. a resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$object
-     * @return static
      */
     public function setObject(FHIRCodeableReference ...$object): self
     {
@@ -372,9 +359,6 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The test assertion - the expected outcome from the test case execution.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $result
-     * @return static
      */
     public function addResult(FHIRCodeableReference $result): self
     {
@@ -392,9 +376,6 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The test assertion - the expected outcome from the test case execution.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$result
-     * @return static
      */
     public function setResult(FHIRCodeableReference ...$result): self
     {
@@ -408,10 +389,7 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanAssertion $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanAssertion
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -459,10 +437,6 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -491,10 +465,7 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanAssertion $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanAssertion
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

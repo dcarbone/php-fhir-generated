@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -117,7 +115,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestPri
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -255,8 +252,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * may have business ramifications in terms of reporting of results, billing, etc.
      * E.g. a requisition number shared by a set of lab tests ordered together, or a
      * prescription number shared by all meds ordered at one time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $groupIdentifier;
@@ -265,8 +260,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * The current state of the request. For request orchestrations, the status
      * reflects the status of all the requests in the orchestration.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestStatus
      */
     #[FHIRRequestStatus]
     protected FHIRRequestStatus $status;
@@ -275,8 +268,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * Indicates the level of authority/intentionality associated with the request and
      * where the request fits into the workflow chain.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestIntent
      */
     #[FHIRRequestIntent]
     protected FHIRRequestIntent $intent;
@@ -285,8 +276,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * Indicates how quickly the request should be addressed with respect to other
      * requests.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     #[FHIRRequestPriority]
     protected FHIRRequestPriority $priority;
@@ -297,8 +286,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies what the overall request orchestration is.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -308,8 +295,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject for which the request orchestration was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -319,8 +304,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the context of the request orchestration, if any.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -334,8 +317,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the request orchestration was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $authoredOn;
@@ -345,8 +326,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the author of the request orchestration.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $author;
@@ -400,11 +379,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
     /* constructor.php:61 */
     /**
      * FHIRRequestOrchestration Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
@@ -413,15 +387,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri> $instantiatesUri
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $basedOn
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $replaces
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $groupIdentifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestStatus $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestIntentEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestIntent $intent
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestPriorityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority $priority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $authoredOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $author
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $reason
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $goal
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
@@ -567,9 +532,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -587,9 +549,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -636,9 +595,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this request.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $instantiatesCanonical
-     * @return static
      */
     public function addInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -660,9 +616,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this request.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$instantiatesCanonical
-     * @return static
      */
     public function setInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiatesCanonical): self
     {
@@ -714,9 +667,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * A URL referencing an externally defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this request.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $instantiatesUri
-     * @return static
      */
     public function addInstantiatesUri(string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -737,9 +687,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * A URL referencing an externally defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this request.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri ...$instantiatesUri
-     * @return static
      */
     public function setInstantiatesUri(string|FHIRUriPrimitive|FHIRUri ...$instantiatesUri): self
     {
@@ -789,9 +736,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -808,9 +752,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -853,9 +794,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $replaces
-     * @return static
      */
     public function addReplaces(FHIRReference $replaces): self
     {
@@ -872,9 +810,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$replaces
-     * @return static
      */
     public function setReplaces(FHIRReference ...$replaces): self
     {
@@ -898,8 +833,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * may have business ramifications in terms of reporting of results, billing, etc.
      * E.g. a requisition number shared by a set of lab tests ordered together, or a
      * prescription number shared by all meds ordered at one time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     public function getGroupIdentifier(): null|FHIRIdentifier
     {
@@ -918,9 +851,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * may have business ramifications in terms of reporting of results, billing, etc.
      * E.g. a requisition number shared by a set of lab tests ordered together, or a
      * prescription number shared by all meds ordered at one time.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $groupIdentifier
-     * @return static
      */
     public function setGroupIdentifier(null|FHIRIdentifier $groupIdentifier): self
     {
@@ -937,8 +867,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * The current state of the request. For request orchestrations, the status
      * reflects the status of all the requests in the orchestration.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestStatus
      */
     public function getStatus(): null|FHIRRequestStatus
     {
@@ -950,9 +878,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * The current state of the request. For request orchestrations, the status
      * reflects the status of all the requests in the orchestration.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRRequestStatusEnum|FHIRRequestStatus $status): self
     {
@@ -972,8 +897,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * Indicates the level of authority/intentionality associated with the request and
      * where the request fits into the workflow chain.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestIntent
      */
     public function getIntent(): null|FHIRRequestIntent
     {
@@ -985,9 +908,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * Indicates the level of authority/intentionality associated with the request and
      * where the request fits into the workflow chain.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestIntentEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestIntent $intent
-     * @return static
      */
     public function setIntent(null|string|FHIRRequestIntentEnum|FHIRRequestIntent $intent): self
     {
@@ -1007,8 +927,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * Indicates how quickly the request should be addressed with respect to other
      * requests.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     public function getPriority(): null|FHIRRequestPriority
     {
@@ -1020,9 +938,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * Indicates how quickly the request should be addressed with respect to other
      * requests.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestPriorityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority $priority
-     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityEnum|FHIRRequestPriority $priority): self
     {
@@ -1044,8 +959,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies what the overall request orchestration is.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -1059,9 +972,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies what the overall request orchestration is.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -1079,8 +989,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject for which the request orchestration was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -1093,9 +1001,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject for which the request orchestration was created.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1113,8 +1018,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the context of the request orchestration, if any.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -1127,9 +1030,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the context of the request orchestration, if any.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1151,8 +1051,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the request orchestration was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getAuthoredOn(): null|FHIRDateTime
     {
@@ -1169,9 +1067,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the request orchestration was created.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $authoredOn
-     * @return static
      */
     public function setAuthoredOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoredOn): self
     {
@@ -1192,8 +1087,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the author of the request orchestration.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getAuthor(): null|FHIRReference
     {
@@ -1206,9 +1099,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the author of the request orchestration.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $author
-     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -1253,9 +1143,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the request orchestration in coded or textual form.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $reason
-     * @return static
      */
     public function addReason(FHIRCodeableReference $reason): self
     {
@@ -1273,9 +1160,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the request orchestration in coded or textual form.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$reason
-     * @return static
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
@@ -1320,9 +1204,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * Goals that are intended to be achieved by following the requests in this
      * RequestOrchestration.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $goal
-     * @return static
      */
     public function addGoal(FHIRReference $goal): self
     {
@@ -1340,9 +1221,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      *
      * Goals that are intended to be achieved by following the requests in this
      * RequestOrchestration.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$goal
-     * @return static
      */
     public function setGoal(FHIRReference ...$goal): self
     {
@@ -1387,9 +1265,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1407,9 +1282,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1450,9 +1322,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * have inter-dependencies such as "give this medication after that one".
      *
      * The actions, if any, produced by the evaluation of the artifact.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationAction $action
-     * @return static
      */
     public function addAction(FHIRRequestOrchestrationAction $action): self
     {
@@ -1468,9 +1337,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
      * have inter-dependencies such as "give this medication after that one".
      *
      * The actions, if any, produced by the evaluation of the artifact.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationAction ...$action
-     * @return static
      */
     public function setAction(FHIRRequestOrchestrationAction ...$action): self
     {
@@ -1484,10 +1350,7 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRRequestOrchestration $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRRequestOrchestration
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1633,11 +1496,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1797,10 +1655,7 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements VersionCont
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRRequestOrchestration $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRRequestOrchestration
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

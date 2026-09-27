@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -132,8 +132,6 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a related claim.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $claim;
@@ -144,8 +142,6 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to convey how the claims are related.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $relationship;
@@ -157,8 +153,6 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
      *
      * An alternate organizational reference to the case or file to which this
      * particular claim pertains.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $reference;
@@ -167,11 +161,7 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
     /**
      * FHIRExplanationOfBenefitRelated Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $claim
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $relationship
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $reference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -210,8 +200,6 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a related claim.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getClaim(): null|FHIRReference
     {
@@ -224,9 +212,6 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a related claim.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $claim
-     * @return static
      */
     public function setClaim(null|FHIRReference $claim): self
     {
@@ -245,8 +230,6 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to convey how the claims are related.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRelationship(): null|FHIRCodeableConcept
     {
@@ -260,9 +243,6 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to convey how the claims are related.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $relationship
-     * @return static
      */
     public function setRelationship(null|FHIRCodeableConcept $relationship): self
     {
@@ -282,8 +262,6 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
      *
      * An alternate organizational reference to the case or file to which this
      * particular claim pertains.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier
      */
     public function getReference(): null|FHIRIdentifier
     {
@@ -298,9 +276,6 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
      *
      * An alternate organizational reference to the case or file to which this
      * particular claim pertains.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $reference
-     * @return static
      */
     public function setReference(null|FHIRIdentifier $reference): self
     {
@@ -314,10 +289,7 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitRelated $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitRelated
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -365,10 +337,6 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -391,10 +359,7 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitRelated $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitRelated
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

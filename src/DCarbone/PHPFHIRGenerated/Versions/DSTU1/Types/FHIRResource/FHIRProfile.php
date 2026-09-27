@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -169,8 +167,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * The identifier that is used to identify this profile when it is referenced in a
      * specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $identifier;
@@ -182,8 +178,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * referenced in a specification, model, design or instance. This is an arbitrary
      * value managed by the profile author manually and the value should be a
      * timestamp.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -192,8 +186,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Profile.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -203,8 +195,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * Details of the individual or organization who accepts responsibility for
      * publishing the profile.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -226,8 +216,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the profile and its use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -248,8 +236,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the profile.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceProfileStatus
      */
     #[FHIRResourceProfileStatus]
     protected FHIRResourceProfileStatus $status;
@@ -260,8 +246,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * This profile was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -273,8 +257,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that this version of the profile was published.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -283,8 +265,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Scope and Usage that this profile was created to meet.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $requirements;
@@ -296,8 +276,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this profile is based.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $fhirVersion;
@@ -349,24 +327,11 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
     /* constructor.php:61 */
     /**
      * FHIRProfile Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact> $telecom
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding> $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRResourceProfileStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceProfileStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $requirements
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $fhirVersion
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping> $mapping
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileStructure> $structure
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileExtensionDefn> $extensionDefn
@@ -474,8 +439,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * The identifier that is used to identify this profile when it is referenced in a
      * specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getIdentifier(): null|FHIRString
     {
@@ -489,9 +452,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * The identifier that is used to identify this profile when it is referenced in a
      * specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $identifier
-     * @return static
      */
     public function setIdentifier(null|string|FHIRStringPrimitive|FHIRString $identifier): self
     {
@@ -514,8 +474,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * referenced in a specification, model, design or instance. This is an arbitrary
      * value managed by the profile author manually and the value should be a
      * timestamp.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -530,9 +488,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * referenced in a specification, model, design or instance. This is an arbitrary
      * value managed by the profile author manually and the value should be a
      * timestamp.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -552,8 +507,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Profile.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -565,9 +518,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Profile.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -588,8 +538,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * Details of the individual or organization who accepts responsibility for
      * publishing the profile.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -602,9 +550,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * Details of the individual or organization who accepts responsibility for
      * publishing the profile.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -654,9 +599,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $telecom
-     * @return static
      */
     public function addTelecom(FHIRContact $telecom): self
     {
@@ -675,9 +617,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContact ...$telecom): self
     {
@@ -694,8 +633,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the profile and its use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -707,9 +644,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the profile and its use.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -757,9 +691,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * A set of terms from external terminologies that may be used to assist with
      * indexing and searching of templates.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $code
-     * @return static
      */
     public function addCode(FHIRCoding $code): self
     {
@@ -777,9 +708,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      *
      * A set of terms from external terminologies that may be used to assist with
      * indexing and searching of templates.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding ...$code
-     * @return static
      */
     public function setCode(FHIRCoding ...$code): self
     {
@@ -796,8 +724,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the profile.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceProfileStatus
      */
     public function getStatus(): null|FHIRResourceProfileStatus
     {
@@ -809,9 +735,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the profile.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRResourceProfileStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceProfileStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRResourceProfileStatusList|FHIRResourceProfileStatus $status): self
     {
@@ -833,8 +756,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * This profile was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -848,9 +769,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * This profile was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -873,8 +791,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that this version of the profile was published.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -889,9 +805,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that this version of the profile was published.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -911,8 +824,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Scope and Usage that this profile was created to meet.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getRequirements(): null|FHIRString
     {
@@ -924,9 +835,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Scope and Usage that this profile was created to meet.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $requirements
-     * @return static
      */
     public function setRequirements(null|string|FHIRStringPrimitive|FHIRString $requirements): self
     {
@@ -949,8 +857,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this profile is based.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId
      */
     public function getFhirVersion(): null|FHIRId
     {
@@ -965,9 +871,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this profile is based.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $fhirVersion
-     * @return static
      */
     public function setFhirVersion(null|string|FHIRIdPrimitive|FHIRId $fhirVersion): self
     {
@@ -1013,9 +916,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * An external specification that the content is mapped to.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping $mapping
-     * @return static
      */
     public function addMapping(FHIRProfileMapping $mapping): self
     {
@@ -1032,9 +932,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * An external specification that the content is mapped to.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping ...$mapping
-     * @return static
      */
     public function setMapping(FHIRProfileMapping ...$mapping): self
     {
@@ -1077,9 +974,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * A constraint statement about what contents a resource or data type may have.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileStructure $structure
-     * @return static
      */
     public function addStructure(FHIRProfileStructure $structure): self
     {
@@ -1096,9 +990,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * A constraint statement about what contents a resource or data type may have.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileStructure ...$structure
-     * @return static
      */
     public function setStructure(FHIRProfileStructure ...$structure): self
     {
@@ -1141,9 +1032,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * An extension defined as part of the profile.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileExtensionDefn $extensionDefn
-     * @return static
      */
     public function addExtensionDefn(FHIRProfileExtensionDefn $extensionDefn): self
     {
@@ -1160,9 +1048,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * An extension defined as part of the profile.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileExtensionDefn ...$extensionDefn
-     * @return static
      */
     public function setExtensionDefn(FHIRProfileExtensionDefn ...$extensionDefn): self
     {
@@ -1205,9 +1090,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * Definition of a named query and its parameters and their meaning.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileQuery $query
-     * @return static
      */
     public function addQuery(FHIRProfileQuery $query): self
     {
@@ -1224,9 +1106,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
      * and Extension Definitions.
      *
      * Definition of a named query and its parameters and their meaning.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileQuery ...$query
-     * @return static
      */
     public function setQuery(FHIRProfileQuery ...$query): self
     {
@@ -1240,10 +1119,7 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRProfile $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRProfile
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1421,11 +1297,6 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1599,10 +1470,7 @@ class FHIRProfile extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRProfile $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRProfile
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

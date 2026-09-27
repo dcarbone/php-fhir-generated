@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -164,10 +164,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * Specific type of Contract Valued Item that may be priced.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $entityCodeableConcept;
@@ -176,10 +173,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Specific type of Contract Valued Item that may be priced.
      */
     #[FHIRReference]
     protected FHIRReference $entityReference;
@@ -190,8 +184,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a Contract Valued Item instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -206,8 +198,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * Indicates the time during which this Contract ValuedItem information is
      * effective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $effectiveTime;
@@ -220,8 +210,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * Specifies the units by which the Contract Valued Item is measured or counted,
      * and quantifies the countable or measurable Contract Valued Item instances.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -231,8 +219,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Contract Valued Item unit valuation measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $unitPrice;
@@ -245,8 +231,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of the Contract Valued Item delivered. The concept of a Factor allows for a
      * discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $factor;
@@ -260,8 +244,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * resource intensiveness) associated with the Contract Valued Item delivered. The
      * concept of Points allows for assignment of point values for a Contract Valued
      * Item, such that a monetary amount can be assigned to each point.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $points;
@@ -274,8 +256,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per
      * Point) * factor Number * points = net Amount. Quantity, factor and points are
      * assumed to be 1 if not supplied.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $net;
@@ -285,8 +265,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Terms of valuation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $payment;
@@ -300,8 +278,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When payment is due.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $paymentDate;
@@ -311,8 +287,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who will make payment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $responsible;
@@ -322,8 +296,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who will receive payment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $recipient;
@@ -356,21 +328,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     /**
      * FHIRContractValuedItem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $entityCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $entityReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $effectiveTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $unitPrice
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $points
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $net
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $payment
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $paymentDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $responsible
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $recipient
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $linkId
      * @param null|iterable<string>|iterable<int>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt> $securityLabelNumber
      * @param null|string[] $fhirComments
@@ -459,10 +417,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * Specific type of Contract Valued Item that may be priced.
      */
     public function getEntityCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -475,11 +430,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $entityCodeableConcept
-     * @return static
+     * Specific type of Contract Valued Item that may be priced.
      */
     public function setEntityCodeableConcept(null|FHIRCodeableConcept $entityCodeableConcept): self
     {
@@ -496,10 +447,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Specific type of Contract Valued Item that may be priced.
      */
     public function getEntityReference(): null|FHIRReference
     {
@@ -511,11 +459,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $entityReference
-     * @return static
+     * Specific type of Contract Valued Item that may be priced.
      */
     public function setEntityReference(null|FHIRReference $entityReference): self
     {
@@ -534,8 +478,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a Contract Valued Item instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -549,9 +491,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a Contract Valued Item instance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -574,8 +513,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * Indicates the time during which this Contract ValuedItem information is
      * effective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getEffectiveTime(): null|FHIRDateTime
     {
@@ -593,9 +530,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * Indicates the time during which this Contract ValuedItem information is
      * effective.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $effectiveTime
-     * @return static
      */
     public function setEffectiveTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveTime): self
     {
@@ -619,8 +553,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * Specifies the units by which the Contract Valued Item is measured or counted,
      * and quantifies the countable or measurable Contract Valued Item instances.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -636,9 +568,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * Specifies the units by which the Contract Valued Item is measured or counted,
      * and quantifies the countable or measurable Contract Valued Item instances.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -656,8 +585,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Contract Valued Item unit valuation measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     public function getUnitPrice(): null|FHIRMoney
     {
@@ -670,9 +597,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Contract Valued Item unit valuation measure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $unitPrice
-     * @return static
      */
     public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
@@ -693,8 +617,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of the Contract Valued Item delivered. The concept of a Factor allows for a
      * discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     public function getFactor(): null|FHIRDecimal
     {
@@ -710,9 +632,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of the Contract Valued Item delivered. The concept of a Factor allows for a
      * discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
-     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -737,8 +656,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * resource intensiveness) associated with the Contract Valued Item delivered. The
      * concept of Points allows for assignment of point values for a Contract Valued
      * Item, such that a monetary amount can be assigned to each point.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     public function getPoints(): null|FHIRDecimal
     {
@@ -755,9 +672,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * resource intensiveness) associated with the Contract Valued Item delivered. The
      * concept of Points allows for assignment of point values for a Contract Valued
      * Item, such that a monetary amount can be assigned to each point.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $points
-     * @return static
      */
     public function setPoints(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $points): self
     {
@@ -781,8 +695,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per
      * Point) * factor Number * points = net Amount. Quantity, factor and points are
      * assumed to be 1 if not supplied.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     public function getNet(): null|FHIRMoney
     {
@@ -798,9 +710,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per
      * Point) * factor Number * points = net Amount. Quantity, factor and points are
      * assumed to be 1 if not supplied.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $net
-     * @return static
      */
     public function setNet(null|FHIRMoney $net): self
     {
@@ -818,8 +727,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Terms of valuation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPayment(): null|FHIRString
     {
@@ -832,9 +739,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Terms of valuation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $payment
-     * @return static
      */
     public function setPayment(null|string|FHIRStringPrimitive|FHIRString $payment): self
     {
@@ -859,8 +763,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When payment is due.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getPaymentDate(): null|FHIRDateTime
     {
@@ -877,9 +779,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When payment is due.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $paymentDate
-     * @return static
      */
     public function setPaymentDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $paymentDate): self
     {
@@ -900,8 +799,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who will make payment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getResponsible(): null|FHIRReference
     {
@@ -914,9 +811,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who will make payment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $responsible
-     * @return static
      */
     public function setResponsible(null|FHIRReference $responsible): self
     {
@@ -934,8 +828,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who will receive payment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getRecipient(): null|FHIRReference
     {
@@ -948,9 +840,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who will receive payment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $recipient
-     * @return static
      */
     public function setRecipient(null|FHIRReference $recipient): self
     {
@@ -995,9 +884,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * Id of the clause or question text related to the context of this valuedItem in
      * the referenced form or QuestionnaireResponse.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @return static
      */
     public function addLinkId(string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -1018,9 +904,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * Id of the clause or question text related to the context of this valuedItem in
      * the referenced form or QuestionnaireResponse.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$linkId
-     * @return static
      */
     public function setLinkId(string|FHIRStringPrimitive|FHIRString ...$linkId): self
     {
@@ -1072,9 +955,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * A set of security labels that define which terms are controlled by this
      * condition.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $securityLabelNumber
-     * @return static
      */
     public function addSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $securityLabelNumber): self
     {
@@ -1095,9 +975,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * A set of security labels that define which terms are controlled by this
      * condition.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt ...$securityLabelNumber
-     * @return static
      */
     public function setSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt ...$securityLabelNumber): self
     {
@@ -1118,10 +995,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1233,10 +1107,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1348,10 +1218,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

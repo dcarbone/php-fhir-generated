@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical;
@@ -129,6 +130,15 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE_CODING => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_URI => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CANONICAL => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -143,9 +153,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Code|uri|canonical. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * Code|uri|canonical.
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -154,9 +162,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Code|uri|canonical. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * Code|uri|canonical.
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -166,9 +172,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Code|uri|canonical. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * Code|uri|canonical.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $valueCanonical;
@@ -177,11 +181,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
     /**
      * FHIRDocumentReferenceProfile Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueCanonical
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -219,9 +219,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Code|uri|canonical. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * Code|uri|canonical.
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -233,10 +231,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Code|uri|canonical. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @return static
+     * Code|uri|canonical.
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -253,9 +248,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Code|uri|canonical. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * Code|uri|canonical.
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -267,10 +260,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Code|uri|canonical. (choose any one of value*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @return static
+     * Code|uri|canonical.
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -291,9 +281,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Code|uri|canonical. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * Code|uri|canonical.
      */
     public function getValueCanonical(): null|FHIRCanonical
     {
@@ -306,10 +294,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Code|uri|canonical. (choose any one of value*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueCanonical
-     * @return static
+     * Code|uri|canonical.
      */
     public function setValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueCanonical): self
     {
@@ -326,10 +311,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceProfile $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceProfile
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -393,10 +375,6 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -429,10 +407,7 @@ class FHIRDocumentReferenceProfile extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceProfile $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceProfile
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

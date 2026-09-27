@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -142,8 +142,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server can return nested value sets.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $hierarchical;
@@ -152,8 +150,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports paging on expansion.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $paging;
@@ -162,8 +158,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if requests for incomplete expansions are allowed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $incomplete;
@@ -188,8 +182,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Documentation about text searching works.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $textFilter;
@@ -198,13 +190,8 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
     /**
      * FHIRTerminologyCapabilitiesExpansion Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $hierarchical
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $paging
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $incomplete
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter> $parameter
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $textFilter
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -250,8 +237,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server can return nested value sets.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getHierarchical(): null|FHIRBoolean
     {
@@ -263,9 +248,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server can return nested value sets.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $hierarchical
-     * @return static
      */
     public function setHierarchical(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $hierarchical): self
     {
@@ -285,8 +267,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports paging on expansion.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getPaging(): null|FHIRBoolean
     {
@@ -298,9 +278,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports paging on expansion.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $paging
-     * @return static
      */
     public function setPaging(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $paging): self
     {
@@ -320,8 +297,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if requests for incomplete expansions are allowed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getIncomplete(): null|FHIRBoolean
     {
@@ -333,9 +308,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if requests for incomplete expansions are allowed.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $incomplete
-     * @return static
      */
     public function setIncomplete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $incomplete): self
     {
@@ -381,9 +353,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * Supported expansion parameter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter $parameter
-     * @return static
      */
     public function addParameter(FHIRTerminologyCapabilitiesParameter $parameter): self
     {
@@ -400,9 +369,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * Supported expansion parameter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter ...$parameter
-     * @return static
      */
     public function setParameter(FHIRTerminologyCapabilitiesParameter ...$parameter): self
     {
@@ -424,8 +390,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Documentation about text searching works.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getTextFilter(): null|FHIRMarkdown
     {
@@ -442,9 +406,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Documentation about text searching works.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $textFilter
-     * @return static
      */
     public function setTextFilter(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $textFilter): self
     {
@@ -461,10 +422,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -548,10 +506,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -606,10 +560,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

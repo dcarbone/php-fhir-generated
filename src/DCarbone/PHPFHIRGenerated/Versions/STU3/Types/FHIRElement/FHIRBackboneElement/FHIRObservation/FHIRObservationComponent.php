@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what was observed. Sometimes this is called the observation "code".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -157,8 +154,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -170,8 +165,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -182,8 +175,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -194,8 +185,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -207,8 +196,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $valueRatio;
@@ -220,8 +207,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSampledData
      */
     #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
@@ -232,8 +217,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -243,8 +226,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -258,8 +239,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -270,8 +249,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -283,8 +260,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * Provides a reason why the expected value in the element Observation.value[x] is
      * missing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $dataAbsentReason;
@@ -298,8 +273,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * compact code often placed adjacent to the result value in reports and flow
      * sheets to signal the meaning/normalcy status of the result. Otherwise known as
      * abnormal flag.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $interpretation;
@@ -319,21 +292,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
     /**
      * FHIRObservationComponent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $valueString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $valueRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio $valueRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSampledData $valueSampledData
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $valueAttachment
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime $valueTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $dataAbsentReason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $interpretation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange> $referenceRange
      * @param null|string[] $fhirComments
      */
@@ -418,8 +377,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what was observed. Sometimes this is called the observation "code".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -433,9 +390,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what was observed. Sometimes this is called the observation "code".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -456,8 +410,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -473,9 +425,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $valueQuantity
-     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -495,8 +444,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -511,9 +458,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -532,8 +476,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getValueString(): null|FHIRString
     {
@@ -547,9 +489,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $valueString
-     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -571,8 +510,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -586,9 +523,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $valueRange
-     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -608,8 +542,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio
      */
     public function getValueRatio(): null|FHIRRatio
     {
@@ -624,9 +556,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio $valueRatio
-     * @return static
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -646,8 +575,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSampledData
      */
     public function getValueSampledData(): null|FHIRSampledData
     {
@@ -662,9 +589,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSampledData $valueSampledData
-     * @return static
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -683,8 +607,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -698,9 +620,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $valueAttachment
-     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -718,8 +637,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -732,9 +649,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime $valueTime
-     * @return static
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -759,8 +673,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -777,9 +689,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $valueDateTime
-     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -801,8 +710,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -816,9 +723,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $valuePeriod
-     * @return static
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -838,8 +742,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * Provides a reason why the expected value in the element Observation.value[x] is
      * missing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDataAbsentReason(): null|FHIRCodeableConcept
     {
@@ -854,9 +756,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * Provides a reason why the expected value in the element Observation.value[x] is
      * missing.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $dataAbsentReason
-     * @return static
      */
     public function setDataAbsentReason(null|FHIRCodeableConcept $dataAbsentReason): self
     {
@@ -878,8 +777,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * compact code often placed adjacent to the result value in reports and flow
      * sheets to signal the meaning/normalcy status of the result. Otherwise known as
      * abnormal flag.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getInterpretation(): null|FHIRCodeableConcept
     {
@@ -896,9 +793,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * compact code often placed adjacent to the result value in reports and flow
      * sheets to signal the meaning/normalcy status of the result. Otherwise known as
      * abnormal flag.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $interpretation
-     * @return static
      */
     public function setInterpretation(null|FHIRCodeableConcept $interpretation): self
     {
@@ -941,9 +835,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * Guidance on how to interpret the value by comparison to a normal or recommended
      * range.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange $referenceRange
-     * @return static
      */
     public function addReferenceRange(FHIRObservationReferenceRange $referenceRange): self
     {
@@ -960,9 +851,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
      *
      * Guidance on how to interpret the value by comparison to a normal or recommended
      * range.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange ...$referenceRange
-     * @return static
      */
     public function setReferenceRange(FHIRObservationReferenceRange ...$referenceRange): self
     {
@@ -976,10 +864,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1073,10 +958,6 @@ class FHIRObservationComponent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1171,10 +1052,7 @@ class FHIRObservationComponent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

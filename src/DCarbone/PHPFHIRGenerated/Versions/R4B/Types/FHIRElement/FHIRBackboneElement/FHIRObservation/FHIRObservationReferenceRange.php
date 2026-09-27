@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -142,8 +142,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is <=2.3).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $low;
@@ -158,8 +156,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is >= 2.3).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $high;
@@ -171,8 +167,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * Codes to indicate the what part of the targeted reference population it applies
      * to. For example, the normal or therapeutic range.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -199,8 +193,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $age;
@@ -212,8 +204,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * Text based reference range in an observation which may be used when a
      * quantitative range is not appropriate for an observation. An example would be a
      * reference value of "Negative" or a list or table of "normals".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -222,14 +212,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     /**
      * FHIRObservationReferenceRange Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $low
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $high
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $appliesTo
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $age
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $text
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -285,8 +269,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is <=2.3).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getLow(): null|FHIRQuantity
     {
@@ -304,9 +286,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is <=2.3).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $low
-     * @return static
      */
     public function setLow(null|FHIRQuantity $low): self
     {
@@ -329,8 +308,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is >= 2.3).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getHigh(): null|FHIRQuantity
     {
@@ -348,9 +325,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is >= 2.3).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $high
-     * @return static
      */
     public function setHigh(null|FHIRQuantity $high): self
     {
@@ -370,8 +344,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * Codes to indicate the what part of the targeted reference population it applies
      * to. For example, the normal or therapeutic range.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -386,9 +358,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * Codes to indicate the what part of the targeted reference population it applies
      * to. For example, the normal or therapeutic range.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -441,9 +410,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * sex or race. Multiple `appliesTo` are interpreted as an "AND" of the target
      * populations. For example, to represent a target population of African American
      * females, both a code of female and a code for African American would be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $appliesTo
-     * @return static
      */
     public function addAppliesTo(FHIRCodeableConcept $appliesTo): self
     {
@@ -465,9 +431,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * sex or race. Multiple `appliesTo` are interpreted as an "AND" of the target
      * populations. For example, to represent a target population of African American
      * females, both a code of female and a code for African American would be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$appliesTo
-     * @return static
      */
     public function setAppliesTo(FHIRCodeableConcept ...$appliesTo): self
     {
@@ -486,8 +449,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange
      */
     public function getAge(): null|FHIRRange
     {
@@ -501,9 +462,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $age
-     * @return static
      */
     public function setAge(null|FHIRRange $age): self
     {
@@ -523,8 +481,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * Text based reference range in an observation which may be used when a
      * quantitative range is not appropriate for an observation. An example would be a
      * reference value of "Negative" or a list or table of "normals".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -539,9 +495,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * Text based reference range in an observation which may be used when a
      * quantitative range is not appropriate for an observation. An example would be a
      * reference value of "Negative" or a list or table of "normals".
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -558,10 +511,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -623,10 +573,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -671,10 +617,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

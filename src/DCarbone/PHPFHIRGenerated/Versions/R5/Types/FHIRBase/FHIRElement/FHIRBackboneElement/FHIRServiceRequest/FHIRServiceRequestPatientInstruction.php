@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,10 +135,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
+     * Instructions in terms that are understood by the patient or consumer.
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $instructionMarkdown;
@@ -147,10 +144,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Instructions in terms that are understood by the patient or consumer.
      */
     #[FHIRReference]
     protected FHIRReference $instructionReference;
@@ -159,10 +153,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
     /**
      * FHIRServiceRequestPatientInstruction Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $instructionMarkdown
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $instructionReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -200,10 +191,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
+     * Instructions in terms that are understood by the patient or consumer.
      */
     public function getInstructionMarkdown(): null|FHIRMarkdown
     {
@@ -219,11 +207,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $instructionMarkdown
-     * @return static
+     * Instructions in terms that are understood by the patient or consumer.
      */
     public function setInstructionMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $instructionMarkdown): self
     {
@@ -243,10 +227,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Instructions in terms that are understood by the patient or consumer.
      */
     public function getInstructionReference(): null|FHIRReference
     {
@@ -258,11 +239,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Instructions in terms that are understood by the patient or consumer. (choose
-     * any one of instruction*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $instructionReference
-     * @return static
+     * Instructions in terms that are understood by the patient or consumer.
      */
     public function setInstructionReference(null|FHIRReference $instructionReference): self
     {
@@ -276,10 +253,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestPatientInstruction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestPatientInstruction
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -333,10 +307,6 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -359,10 +329,7 @@ class FHIRServiceRequestPatientInstruction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestPatientInstruction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestPatientInstruction
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

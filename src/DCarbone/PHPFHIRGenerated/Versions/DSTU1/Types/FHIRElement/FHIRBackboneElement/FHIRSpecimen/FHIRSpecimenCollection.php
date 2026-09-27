@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -121,8 +121,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who collected the specimen.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $collector;
@@ -146,8 +144,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $collectedDateTime;
@@ -158,8 +154,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $collectedPeriod;
@@ -172,8 +166,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * The quantity of specimen collected; for instance the volume of a blood sample,
      * or the physical measurement of an anatomic pathology sample.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -184,8 +176,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded value specifying the technique that is used to perform the procedure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $method;
@@ -197,8 +187,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Anatomical location from which the specimen should be collected (if subject is a
      * patient). This element is not used for environmental specimens.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $sourceSite;
@@ -207,15 +195,8 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
     /**
      * FHIRSpecimenCollection Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $collector
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString> $comment
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $collectedDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $collectedPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $method
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $sourceSite
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -270,8 +251,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who collected the specimen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getCollector(): null|FHIRResourceReference
     {
@@ -284,9 +263,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who collected the specimen.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $collector
-     * @return static
      */
     public function setCollector(null|FHIRResourceReference $collector): self
     {
@@ -329,9 +305,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * To communicate any details or issues encountered during the specimen collection
      * procedure.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $comment
-     * @return static
      */
     public function addComment(string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -351,9 +324,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * To communicate any details or issues encountered during the specimen collection
      * procedure.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString ...$comment
-     * @return static
      */
     public function setComment(string|FHIRStringPrimitive|FHIRString ...$comment): self
     {
@@ -381,8 +351,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getCollectedDateTime(): null|FHIRDateTime
     {
@@ -398,9 +366,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $collectedDateTime
-     * @return static
      */
     public function setCollectedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $collectedDateTime): self
     {
@@ -422,8 +387,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getCollectedPeriod(): null|FHIRPeriod
     {
@@ -437,9 +400,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $collectedPeriod
-     * @return static
      */
     public function setCollectedPeriod(null|FHIRPeriod $collectedPeriod): self
     {
@@ -460,8 +420,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * The quantity of specimen collected; for instance the volume of a blood sample,
      * or the physical measurement of an anatomic pathology sample.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -477,9 +435,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * The quantity of specimen collected; for instance the volume of a blood sample,
      * or the physical measurement of an anatomic pathology sample.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -498,8 +453,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded value specifying the technique that is used to perform the procedure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod(): null|FHIRCodeableConcept
     {
@@ -513,9 +466,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded value specifying the technique that is used to perform the procedure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $method
-     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -535,8 +485,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Anatomical location from which the specimen should be collected (if subject is a
      * patient). This element is not used for environmental specimens.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSourceSite(): null|FHIRCodeableConcept
     {
@@ -551,9 +499,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Anatomical location from which the specimen should be collected (if subject is a
      * patient). This element is not used for environmental specimens.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $sourceSite
-     * @return static
      */
     public function setSourceSite(null|FHIRCodeableConcept $sourceSite): self
     {
@@ -567,10 +512,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -634,10 +576,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -687,10 +625,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

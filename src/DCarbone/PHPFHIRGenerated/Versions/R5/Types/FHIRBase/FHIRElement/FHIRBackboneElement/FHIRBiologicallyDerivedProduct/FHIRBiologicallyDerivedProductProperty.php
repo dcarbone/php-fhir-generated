@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -142,6 +141,33 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
         self::FIELD_TYPE => [
             MinOccursRule::NAME => 1,
         ],
+        self::FIELD_VALUE_BOOLEAN => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_INTEGER => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CODEABLE_CONCEPT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_PERIOD => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_QUANTITY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_RANGE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_RATIO => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_STRING => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_ATTACHMENT => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -160,8 +186,6 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * Code that specifies the property. It should reference an established coding
      * system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -169,9 +193,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * Property values.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -180,9 +202,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * Property values.
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -192,9 +212,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * Property values.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -203,9 +221,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * Property values.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -216,9 +232,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Property values.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -227,9 +241,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Property values.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -239,9 +251,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * Property values.
      */
     #[FHIRRatio]
     protected FHIRRatio $valueRatio;
@@ -250,9 +260,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * Property values.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -261,9 +269,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * Property values.
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -272,18 +278,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
     /**
      * FHIRBiologicallyDerivedProductProperty Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $valueRatio
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -352,8 +347,6 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * Code that specifies the property. It should reference an established coding
      * system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -368,9 +361,6 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      *
      * Code that specifies the property. It should reference an established coding
      * system.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -386,9 +376,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * Property values.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -399,10 +387,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
+     * Property values.
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -422,9 +407,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * Property values.
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -436,10 +419,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @return static
+     * Property values.
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -460,9 +440,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * Property values.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -475,10 +453,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
+     * Property values.
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -495,9 +470,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * Property values.
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -509,10 +482,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @return static
+     * Property values.
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -531,9 +501,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Property values.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -547,10 +515,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * Property values.
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -567,9 +532,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Property values.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -581,10 +544,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @return static
+     * Property values.
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -602,9 +562,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * Property values.
      */
     public function getValueRatio(): null|FHIRRatio
     {
@@ -617,10 +575,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $valueRatio
-     * @return static
+     * Property values.
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -637,9 +592,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * Property values.
      */
     public function getValueString(): null|FHIRString
     {
@@ -651,10 +604,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @return static
+     * Property values.
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -674,9 +624,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * Property values.
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -688,10 +636,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Property values. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @return static
+     * Property values.
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -705,10 +650,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProperty $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProperty
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -794,10 +736,6 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -870,10 +808,7 @@ class FHIRBiologicallyDerivedProductProperty extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProperty $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProperty
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

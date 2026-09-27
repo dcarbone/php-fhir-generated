@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -118,8 +117,6 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      *
      * The name of the parameter or dot-separated path of parameter names pointing to
      * the resource parameter that is expected to contain a reference to this resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $source;
@@ -130,8 +127,6 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      *
      * The id of the element in the referencing resource that is expected to resolve to
      * this resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $sourceId;
@@ -140,10 +135,7 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
     /**
      * FHIROperationDefinitionReferencedFrom Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $source
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $sourceId
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -179,8 +171,6 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      *
      * The name of the parameter or dot-separated path of parameter names pointing to
      * the resource parameter that is expected to contain a reference to this resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getSource(): null|FHIRString
     {
@@ -194,9 +184,6 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      *
      * The name of the parameter or dot-separated path of parameter names pointing to
      * the resource parameter that is expected to contain a reference to this resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $source
-     * @return static
      */
     public function setSource(null|string|FHIRStringPrimitive|FHIRString $source): self
     {
@@ -218,8 +205,6 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      *
      * The id of the element in the referencing resource that is expected to resolve to
      * this resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getSourceId(): null|FHIRString
     {
@@ -233,9 +218,6 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
      *
      * The id of the element in the referencing resource that is expected to resolve to
      * this resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $sourceId
-     * @return static
      */
     public function setSourceId(null|string|FHIRStringPrimitive|FHIRString $sourceId): self
     {
@@ -252,10 +234,7 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -317,10 +296,6 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -348,10 +323,7 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

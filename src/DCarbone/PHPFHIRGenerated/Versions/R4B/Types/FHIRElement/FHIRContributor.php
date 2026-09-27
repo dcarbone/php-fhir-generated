@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -141,8 +140,6 @@ class FHIRContributor extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of contributor.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributorType
      */
     #[FHIRContributorType]
     protected FHIRContributorType $type;
@@ -152,8 +149,6 @@ class FHIRContributor extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization responsible for the contribution.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -174,9 +169,6 @@ class FHIRContributor extends FHIRElement
     /**
      * FHIRContributor Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRContributorTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributorType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $contact
      * @param null|string[] $fhirComments
      */
@@ -213,8 +205,6 @@ class FHIRContributor extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of contributor.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributorType
      */
     public function getType(): null|FHIRContributorType
     {
@@ -226,9 +216,6 @@ class FHIRContributor extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of contributor.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRContributorTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributorType $type
-     * @return static
      */
     public function setType(null|string|FHIRContributorTypeEnum|FHIRContributorType $type): self
     {
@@ -249,8 +236,6 @@ class FHIRContributor extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization responsible for the contribution.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -263,9 +248,6 @@ class FHIRContributor extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization responsible for the contribution.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -313,9 +295,6 @@ class FHIRContributor extends FHIRElement
      *
      * Contact details to assist a user in finding and communicating with the
      * contributor.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -333,9 +312,6 @@ class FHIRContributor extends FHIRElement
      *
      * Contact details to assist a user in finding and communicating with the
      * contributor.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -349,10 +325,7 @@ class FHIRContributor extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributor $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributor
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -414,10 +387,6 @@ class FHIRContributor extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -452,10 +421,7 @@ class FHIRContributor extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributor $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributor
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

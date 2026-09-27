@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the medium cited. Common codes are "Internet" or "Print".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $citedMedium;
@@ -149,8 +147,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Volume number of journal in which the article is published.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $volume;
@@ -160,8 +156,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Issue, part or supplement of journal in which the article is published.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $issue;
@@ -172,8 +166,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Defining the date on which the issue of the journal was published.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationDateOfPublication
      */
     #[FHIRCitationDateOfPublication]
     protected FHIRCitationDateOfPublication $dateOfPublication;
@@ -182,12 +174,7 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
     /**
      * FHIRCitationPeriodicRelease Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $citedMedium
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $volume
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $issue
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationDateOfPublication $dateOfPublication
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -231,8 +218,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the medium cited. Common codes are "Internet" or "Print".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCitedMedium(): null|FHIRCodeableConcept
     {
@@ -246,9 +231,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the medium cited. Common codes are "Internet" or "Print".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $citedMedium
-     * @return static
      */
     public function setCitedMedium(null|FHIRCodeableConcept $citedMedium): self
     {
@@ -266,8 +248,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Volume number of journal in which the article is published.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getVolume(): null|FHIRString
     {
@@ -280,9 +260,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Volume number of journal in which the article is published.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $volume
-     * @return static
      */
     public function setVolume(null|string|FHIRStringPrimitive|FHIRString $volume): self
     {
@@ -303,8 +280,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Issue, part or supplement of journal in which the article is published.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getIssue(): null|FHIRString
     {
@@ -317,9 +292,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Issue, part or supplement of journal in which the article is published.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $issue
-     * @return static
      */
     public function setIssue(null|string|FHIRStringPrimitive|FHIRString $issue): self
     {
@@ -341,8 +313,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Defining the date on which the issue of the journal was published.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationDateOfPublication
      */
     public function getDateOfPublication(): null|FHIRCitationDateOfPublication
     {
@@ -356,9 +326,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Defining the date on which the issue of the journal was published.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationDateOfPublication $dateOfPublication
-     * @return static
      */
     public function setDateOfPublication(null|FHIRCitationDateOfPublication $dateOfPublication): self
     {
@@ -372,10 +339,7 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPeriodicRelease $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPeriodicRelease
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -441,10 +405,6 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -482,10 +442,7 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPeriodicRelease $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPeriodicRelease
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

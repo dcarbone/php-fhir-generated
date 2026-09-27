@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -33,14 +33,10 @@ interface VersionConfigInterface
 {
     /**
      * Must return the unserialization config to use for this version
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig
      */
     public function getUnserializeConfig(): UnserializeConfig;
 
     /**
-     * Must return the serialization config to use for this version
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig     */
+     * Must return the serialization config to use for this version     */
     public function getSerializeConfig(): SerializeConfig;
 }

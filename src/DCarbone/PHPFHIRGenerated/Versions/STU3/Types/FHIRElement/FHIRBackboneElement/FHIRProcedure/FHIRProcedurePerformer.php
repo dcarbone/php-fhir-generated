@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -117,8 +116,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example: surgeon, anaethetist, endoscopist.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
@@ -128,8 +125,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who was involved in the procedure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $actor;
@@ -139,8 +134,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization the device or practitioner was acting on behalf of.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $onBehalfOf;
@@ -149,11 +142,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
     /**
      * FHIRProcedurePerformer Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $actor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $onBehalfOf
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -193,8 +182,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example: surgeon, anaethetist, endoscopist.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRole(): null|FHIRCodeableConcept
     {
@@ -208,9 +195,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example: surgeon, anaethetist, endoscopist.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -228,8 +212,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who was involved in the procedure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getActor(): null|FHIRReference
     {
@@ -242,9 +224,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who was involved in the procedure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $actor
-     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -262,8 +241,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization the device or practitioner was acting on behalf of.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getOnBehalfOf(): null|FHIRReference
     {
@@ -276,9 +253,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization the device or practitioner was acting on behalf of.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $onBehalfOf
-     * @return static
      */
     public function setOnBehalfOf(null|FHIRReference $onBehalfOf): self
     {
@@ -292,10 +266,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -343,10 +314,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -369,10 +336,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

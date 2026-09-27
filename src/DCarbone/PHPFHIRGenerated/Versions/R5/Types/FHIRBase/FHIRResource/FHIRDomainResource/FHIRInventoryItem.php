@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -113,7 +111,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomain
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInventoryItemStatusCodesEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -182,8 +179,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the item entry.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryItemStatusCodes
      */
     #[FHIRInventoryItemStatusCodes]
     protected FHIRInventoryItemStatusCodes $status;
@@ -237,8 +232,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * The descriptive characteristics of the inventory item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemDescription
      */
     #[FHIRInventoryItemDescription]
     protected FHIRInventoryItemDescription $description;
@@ -262,8 +255,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The base unit of measure - the unit in which the product is used or counted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $baseUnit;
@@ -275,8 +266,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Net content or amount present in the item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $netContent;
@@ -305,8 +294,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Instances or occurrences of the product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemInstance
      */
     #[FHIRInventoryItemInstance]
     protected FHIRInventoryItemInstance $instance;
@@ -316,8 +303,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link to a product resource used in clinical workflows.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $productReference;
@@ -325,28 +310,17 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
     /* constructor.php:61 */
     /**
      * FHIRInventoryItem Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInventoryItemStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryItemStatusCodes $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $category
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $code
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemName> $name
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemResponsibleOrganization> $responsibleOrganization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemDescription $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $inventoryStatus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $baseUnit
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $netContent
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation> $association
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemCharacteristic> $characteristic
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemInstance $instance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $productReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -472,9 +446,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for the inventory item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -492,9 +463,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for the inventory item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -511,8 +479,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the item entry.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryItemStatusCodes
      */
     public function getStatus(): null|FHIRInventoryItemStatusCodes
     {
@@ -524,9 +490,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the item entry.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInventoryItemStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryItemStatusCodes $status
-     * @return static
      */
     public function setStatus(null|string|FHIRInventoryItemStatusCodesEnum|FHIRInventoryItemStatusCodes $status): self
     {
@@ -574,9 +537,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category or class of the item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -594,9 +554,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category or class of the item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -641,9 +598,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code designating the specific type of item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function addCode(FHIRCodeableConcept $code): self
     {
@@ -661,9 +615,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code designating the specific type of item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$code
-     * @return static
      */
     public function setCode(FHIRCodeableConcept ...$code): self
     {
@@ -706,9 +657,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      *
      * The item name(s) - the brand name, or common name, functional name, generic
      * name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemName $name
-     * @return static
      */
     public function addName(FHIRInventoryItemName $name): self
     {
@@ -725,9 +673,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      *
      * The item name(s) - the brand name, or common name, functional name, generic
      * name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemName ...$name
-     * @return static
      */
     public function setName(FHIRInventoryItemName ...$name): self
     {
@@ -768,9 +713,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Organization(s) responsible for the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemResponsibleOrganization $responsibleOrganization
-     * @return static
      */
     public function addResponsibleOrganization(FHIRInventoryItemResponsibleOrganization $responsibleOrganization): self
     {
@@ -786,9 +728,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Organization(s) responsible for the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemResponsibleOrganization ...$responsibleOrganization
-     * @return static
      */
     public function setResponsibleOrganization(FHIRInventoryItemResponsibleOrganization ...$responsibleOrganization): self
     {
@@ -805,8 +744,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * The descriptive characteristics of the inventory item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemDescription
      */
     public function getDescription(): null|FHIRInventoryItemDescription
     {
@@ -818,9 +755,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * The descriptive characteristics of the inventory item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemDescription $description
-     * @return static
      */
     public function setDescription(null|FHIRInventoryItemDescription $description): self
     {
@@ -867,9 +801,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      *
      * The usage status e.g. recalled, in use, discarded... This can be used to
      * indicate that the items have been taken out of inventory, or are in use, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $inventoryStatus
-     * @return static
      */
     public function addInventoryStatus(FHIRCodeableConcept $inventoryStatus): self
     {
@@ -888,9 +819,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      *
      * The usage status e.g. recalled, in use, discarded... This can be used to
      * indicate that the items have been taken out of inventory, or are in use, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$inventoryStatus
-     * @return static
      */
     public function setInventoryStatus(FHIRCodeableConcept ...$inventoryStatus): self
     {
@@ -909,8 +837,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The base unit of measure - the unit in which the product is used or counted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getBaseUnit(): null|FHIRCodeableConcept
     {
@@ -924,9 +850,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The base unit of measure - the unit in which the product is used or counted.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $baseUnit
-     * @return static
      */
     public function setBaseUnit(null|FHIRCodeableConcept $baseUnit): self
     {
@@ -946,8 +869,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Net content or amount present in the item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getNetContent(): null|FHIRQuantity
     {
@@ -962,9 +883,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Net content or amount present in the item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $netContent
-     * @return static
      */
     public function setNetContent(null|FHIRQuantity $netContent): self
     {
@@ -1005,9 +923,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Association with other items or products.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation $association
-     * @return static
      */
     public function addAssociation(FHIRInventoryItemAssociation $association): self
     {
@@ -1023,9 +938,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Association with other items or products.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation ...$association
-     * @return static
      */
     public function setAssociation(FHIRInventoryItemAssociation ...$association): self
     {
@@ -1066,9 +978,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * The descriptive or identifying characteristics of the item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemCharacteristic $characteristic
-     * @return static
      */
     public function addCharacteristic(FHIRInventoryItemCharacteristic $characteristic): self
     {
@@ -1084,9 +993,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * The descriptive or identifying characteristics of the item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemCharacteristic ...$characteristic
-     * @return static
      */
     public function setCharacteristic(FHIRInventoryItemCharacteristic ...$characteristic): self
     {
@@ -1103,8 +1009,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Instances or occurrences of the product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemInstance
      */
     public function getInstance(): null|FHIRInventoryItemInstance
     {
@@ -1116,9 +1020,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * supply-related workflows.
      *
      * Instances or occurrences of the product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemInstance $instance
-     * @return static
      */
     public function setInstance(null|FHIRInventoryItemInstance $instance): self
     {
@@ -1136,8 +1037,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link to a product resource used in clinical workflows.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getProductReference(): null|FHIRReference
     {
@@ -1150,9 +1049,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link to a product resource used in clinical workflows.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $productReference
-     * @return static
      */
     public function setProductReference(null|FHIRReference $productReference): self
     {
@@ -1166,10 +1062,7 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRInventoryItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRInventoryItem
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1283,11 +1176,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1410,10 +1298,7 @@ class FHIRInventoryItem extends FHIRDomainResource implements VersionContainedTy
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRInventoryItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRInventoryItem
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

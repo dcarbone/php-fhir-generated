@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -102,7 +100,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
@@ -216,8 +213,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * address at which at which an authoritative instance of this plan definition is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the plan definition is stored on different servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -250,8 +245,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -263,8 +256,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A natural language name identifying the plan definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -274,8 +265,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the plan definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -286,8 +275,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An explanatory or alternate title for the plan definition giving additional
      * information about its content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subtitle;
@@ -299,8 +286,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A high-level category for the plan definition that distinguishes the kinds of
      * systems that would be interested in the plan definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -309,8 +294,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The status of this plan definition. Enables tracking the life-cycle of the
      * content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -321,8 +304,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A Boolean value to indicate that this plan definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -334,8 +315,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A code or group definition that describes the intended subject of the plan
      * definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectCodeableConcept;
@@ -346,8 +325,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A code or group definition that describes the intended subject of the plan
      * definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subjectReference;
@@ -363,8 +340,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * plan definition changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -374,8 +349,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the plan definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -402,8 +375,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A free text natural language description of the plan definition from a
      * consumer's perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -449,8 +420,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * Explanation of why this plan definition is needed and why it has been designed
      * as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -461,8 +430,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A detailed description of how the plan definition is used from a clinical
      * perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $usage;
@@ -478,8 +445,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A copyright statement relating to the plan definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the plan definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -491,8 +456,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $approvalDate;
@@ -504,8 +467,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastReviewDate;
@@ -516,8 +477,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The period during which the plan definition content was or is planned to be in
      * active use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -639,37 +598,13 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
     /* constructor.php:61 */
     /**
      * FHIRPlanDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $subtitle
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subjectReference
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $usage
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $approvalDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $lastReviewDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $effectivePeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $topic
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $author
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $editor
@@ -854,8 +789,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * address at which at which an authoritative instance of this plan definition is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the plan definition is stored on different servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -873,9 +806,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * address at which at which an authoritative instance of this plan definition is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the plan definition is stored on different servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -927,9 +857,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A formal identifier that is used to identify this plan definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -949,9 +876,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A formal identifier that is used to identify this plan definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -978,8 +902,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -1001,9 +923,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -1026,8 +945,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A natural language name identifying the plan definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -1042,9 +959,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A natural language name identifying the plan definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1065,8 +979,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the plan definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -1079,9 +991,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the plan definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1103,8 +1012,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An explanatory or alternate title for the plan definition giving additional
      * information about its content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getSubtitle(): null|FHIRString
     {
@@ -1118,9 +1025,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An explanatory or alternate title for the plan definition giving additional
      * information about its content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $subtitle
-     * @return static
      */
     public function setSubtitle(null|string|FHIRStringPrimitive|FHIRString $subtitle): self
     {
@@ -1143,8 +1047,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A high-level category for the plan definition that distinguishes the kinds of
      * systems that would be interested in the plan definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -1159,9 +1061,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A high-level category for the plan definition that distinguishes the kinds of
      * systems that would be interested in the plan definition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -1178,8 +1077,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The status of this plan definition. Enables tracking the life-cycle of the
      * content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -1191,9 +1088,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The status of this plan definition. Enables tracking the life-cycle of the
      * content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -1215,8 +1109,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A Boolean value to indicate that this plan definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -1230,9 +1122,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A Boolean value to indicate that this plan definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1255,8 +1144,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A code or group definition that describes the intended subject of the plan
      * definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSubjectCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1271,9 +1158,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A code or group definition that describes the intended subject of the plan
      * definition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
-     * @return static
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -1292,8 +1176,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A code or group definition that describes the intended subject of the plan
      * definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getSubjectReference(): null|FHIRReference
     {
@@ -1307,9 +1189,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A code or group definition that describes the intended subject of the plan
      * definition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subjectReference
-     * @return static
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -1333,8 +1212,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * plan definition changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1353,9 +1230,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * plan definition changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1376,8 +1250,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the plan definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1390,9 +1262,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the plan definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1440,9 +1309,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1460,9 +1326,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1485,8 +1348,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A free text natural language description of the plan definition from a
      * consumer's perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1504,9 +1365,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A free text natural language description of the plan definition from a
      * consumer's perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1566,9 +1424,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate plan definition
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1592,9 +1447,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate plan definition
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1641,9 +1493,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A legal or geographic region in which the plan definition is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1662,9 +1511,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A legal or geographic region in which the plan definition is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1687,8 +1533,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * Explanation of why this plan definition is needed and why it has been designed
      * as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1706,9 +1550,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * Explanation of why this plan definition is needed and why it has been designed
      * as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1730,8 +1571,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A detailed description of how the plan definition is used from a clinical
      * perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getUsage(): null|FHIRString
     {
@@ -1745,9 +1584,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A detailed description of how the plan definition is used from a clinical
      * perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $usage
-     * @return static
      */
     public function setUsage(null|string|FHIRStringPrimitive|FHIRString $usage): self
     {
@@ -1774,8 +1610,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A copyright statement relating to the plan definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the plan definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1794,9 +1628,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * A copyright statement relating to the plan definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the plan definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1819,8 +1650,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     public function getApprovalDate(): null|FHIRDate
     {
@@ -1835,9 +1664,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $approvalDate
-     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1860,8 +1686,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     public function getLastReviewDate(): null|FHIRDate
     {
@@ -1876,9 +1700,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $lastReviewDate
-     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1900,8 +1721,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The period during which the plan definition content was or is planned to be in
      * active use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -1915,9 +1734,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * The period during which the plan definition content was or is planned to be in
      * active use.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1966,9 +1782,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * Descriptive topics related to the content of the plan definition. Topics provide
      * a high-level categorization of the definition that can be useful for filtering
      * and searching.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $topic
-     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -1988,9 +1801,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * Descriptive topics related to the content of the plan definition. Topics provide
      * a high-level categorization of the definition that can be useful for filtering
      * and searching.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$topic
-     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -2035,9 +1845,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $author
-     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -2055,9 +1862,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$author
-     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -2102,9 +1906,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $editor
-     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -2122,9 +1923,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$editor
-     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -2169,9 +1967,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $reviewer
-     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -2189,9 +1984,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$reviewer
-     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -2236,9 +2028,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $endorser
-     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -2256,9 +2045,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$endorser
-     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -2305,9 +2091,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact $relatedArtifact
-     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -2326,9 +2109,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact ...$relatedArtifact
-     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -2375,9 +2155,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A reference to a Library resource containing any formal logic used by the plan
      * definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $library
-     * @return static
      */
     public function addLibrary(string|FHIRCanonicalPrimitive|FHIRCanonical $library): self
     {
@@ -2399,9 +2176,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      *
      * A reference to a Library resource containing any formal logic used by the plan
      * definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical ...$library
-     * @return static
      */
     public function setLibrary(string|FHIRCanonicalPrimitive|FHIRCanonical ...$library): self
     {
@@ -2457,9 +2231,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * Goals that describe what the activities within the plan are intended to achieve.
      * For example, weight loss, restoring an activity of daily living, obtaining herd
      * immunity via immunization, meeting a process improvement objective, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal $goal
-     * @return static
      */
     public function addGoal(FHIRPlanDefinitionGoal $goal): self
     {
@@ -2479,9 +2250,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * Goals that describe what the activities within the plan are intended to achieve.
      * For example, weight loss, restoring an activity of daily living, obtaining herd
      * immunity via immunization, meeting a process improvement objective, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal ...$goal
-     * @return static
      */
     public function setGoal(FHIRPlanDefinitionGoal ...$goal): self
     {
@@ -2526,9 +2294,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * support rules, order sets and protocols.
      *
      * An action or group of actions to be taken as part of the plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction $action
-     * @return static
      */
     public function addAction(FHIRPlanDefinitionAction $action): self
     {
@@ -2546,9 +2311,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
      * support rules, order sets and protocols.
      *
      * An action or group of actions to be taken as part of the plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction ...$action
-     * @return static
      */
     public function setAction(FHIRPlanDefinitionAction ...$action): self
     {
@@ -2562,10 +2324,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPlanDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPlanDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2827,11 +2586,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -3124,10 +2878,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements VersionContainedT
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPlanDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPlanDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

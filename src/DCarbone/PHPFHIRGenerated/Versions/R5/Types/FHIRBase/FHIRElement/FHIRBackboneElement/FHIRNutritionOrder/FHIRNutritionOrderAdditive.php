@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,8 +135,6 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * Indicates the type of modular component such as protein, carbohydrate, fat or
      * fiber to be provided in addition to or mixed with the base formula.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $type;
@@ -147,8 +145,6 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * The product or brand name of the type of modular component to be added to the
      * formula.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $productName;
@@ -161,8 +157,6 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * The amount of additive to be given in addition or to be mixed in with the base
      * formula.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -171,11 +165,7 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
     /**
      * FHIRNutritionOrderAdditive Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $productName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -216,8 +206,6 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * Indicates the type of modular component such as protein, carbohydrate, fat or
      * fiber to be provided in addition to or mixed with the base formula.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getType(): null|FHIRCodeableReference
     {
@@ -232,9 +220,6 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * Indicates the type of modular component such as protein, carbohydrate, fat or
      * fiber to be provided in addition to or mixed with the base formula.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $type
-     * @return static
      */
     public function setType(null|FHIRCodeableReference $type): self
     {
@@ -253,8 +238,6 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * The product or brand name of the type of modular component to be added to the
      * formula.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getProductName(): null|FHIRString
     {
@@ -268,9 +251,6 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * The product or brand name of the type of modular component to be added to the
      * formula.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $productName
-     * @return static
      */
     public function setProductName(null|string|FHIRStringPrimitive|FHIRString $productName): self
     {
@@ -294,8 +274,6 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * The amount of additive to be given in addition or to be mixed in with the base
      * formula.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -311,9 +289,6 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
      *
      * The amount of additive to be given in addition or to be mixed in with the base
      * formula.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -327,10 +302,7 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdditive $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdditive
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -386,10 +358,6 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -417,10 +385,7 @@ class FHIRNutritionOrderAdditive extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdditive $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdditive
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

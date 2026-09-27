@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
@@ -143,8 +141,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique code or number identifying the location to its users.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -153,8 +149,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the location as used by humans. Does not need to be unique.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -163,8 +157,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of the Location, which helps in finding or referencing the place.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -175,8 +167,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of function performed at the location.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -201,8 +191,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical location.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $address;
@@ -213,8 +201,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical form of the location, e.g. building, room, vehicle, road.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $physicalType;
@@ -225,8 +211,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * The absolute geographic location of the Location, expressed in a KML compatible
      * manner (see notes below for KML).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
      */
     #[FHIRLocationPosition]
     protected FHIRLocationPosition $position;
@@ -237,8 +221,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * The organization that is responsible for the provisioning and upkeep of the
      * location.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $managingOrganization;
@@ -247,8 +229,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * active | suspended | inactive.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationStatus
      */
     #[FHIRLocationStatus]
     protected FHIRLocationStatus $status;
@@ -258,8 +238,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another Location which this Location is physically part of.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $partOf;
@@ -270,8 +248,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * Indicates whether a resource instance represents a specific location or a class
      * of locations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationMode
      */
     #[FHIRLocationMode]
     protected FHIRLocationMode $mode;
@@ -279,24 +255,10 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
     /* constructor.php:61 */
     /**
      * FHIRLocation Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact> $telecom
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $address
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $physicalType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition $position
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $managingOrganization
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRLocationStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $partOf
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRLocationModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationMode $mode
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRCodePrimitive|FHIRCode $language = null,
@@ -383,8 +345,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique code or number identifying the location to its users.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -397,9 +357,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique code or number identifying the location to its users.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -416,8 +373,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the location as used by humans. Does not need to be unique.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -429,9 +384,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the location as used by humans. Does not need to be unique.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -451,8 +403,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of the Location, which helps in finding or referencing the place.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -464,9 +414,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of the Location, which helps in finding or referencing the place.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -488,8 +435,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of function performed at the location.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -503,9 +448,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of function performed at the location.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -554,9 +496,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * The contact details of communication devices available at the location. This can
      * include phone numbers, fax numbers, mobile numbers, email addresses and web
      * sites.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $telecom
-     * @return static
      */
     public function addTelecom(FHIRContact $telecom): self
     {
@@ -576,9 +515,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * The contact details of communication devices available at the location. This can
      * include phone numbers, fax numbers, mobile numbers, email addresses and web
      * sites.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContact ...$telecom): self
     {
@@ -597,8 +533,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical location.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress
      */
     public function getAddress(): null|FHIRAddress
     {
@@ -612,9 +546,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical location.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $address
-     * @return static
      */
     public function setAddress(null|FHIRAddress $address): self
     {
@@ -633,8 +564,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical form of the location, e.g. building, room, vehicle, road.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPhysicalType(): null|FHIRCodeableConcept
     {
@@ -648,9 +577,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical form of the location, e.g. building, room, vehicle, road.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $physicalType
-     * @return static
      */
     public function setPhysicalType(null|FHIRCodeableConcept $physicalType): self
     {
@@ -669,8 +595,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * The absolute geographic location of the Location, expressed in a KML compatible
      * manner (see notes below for KML).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
      */
     public function getPosition(): null|FHIRLocationPosition
     {
@@ -684,9 +608,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * The absolute geographic location of the Location, expressed in a KML compatible
      * manner (see notes below for KML).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition $position
-     * @return static
      */
     public function setPosition(null|FHIRLocationPosition $position): self
     {
@@ -705,8 +626,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * The organization that is responsible for the provisioning and upkeep of the
      * location.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getManagingOrganization(): null|FHIRResourceReference
     {
@@ -720,9 +639,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * The organization that is responsible for the provisioning and upkeep of the
      * location.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $managingOrganization
-     * @return static
      */
     public function setManagingOrganization(null|FHIRResourceReference $managingOrganization): self
     {
@@ -739,8 +655,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * active | suspended | inactive.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationStatus
      */
     public function getStatus(): null|FHIRLocationStatus
     {
@@ -752,9 +666,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * active | suspended | inactive.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRLocationStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRLocationStatusList|FHIRLocationStatus $status): self
     {
@@ -775,8 +686,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another Location which this Location is physically part of.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getPartOf(): null|FHIRResourceReference
     {
@@ -789,9 +698,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another Location which this Location is physically part of.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $partOf
-     * @return static
      */
     public function setPartOf(null|FHIRResourceReference $partOf): self
     {
@@ -810,8 +716,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * Indicates whether a resource instance represents a specific location or a class
      * of locations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationMode
      */
     public function getMode(): null|FHIRLocationMode
     {
@@ -825,9 +729,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * Indicates whether a resource instance represents a specific location or a class
      * of locations.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRLocationModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRLocationModeList|FHIRLocationMode $mode): self
     {
@@ -844,10 +745,7 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRLocation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRLocation
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -969,11 +867,6 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1087,10 +980,7 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRLocation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRLocation
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

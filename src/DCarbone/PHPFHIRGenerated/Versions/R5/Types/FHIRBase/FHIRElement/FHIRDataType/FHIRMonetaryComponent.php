@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * the Narrative, or extensions
      *
      * base | surcharge | deduction | discount | tax | informational.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $type;
@@ -156,8 +153,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      *
      * Codes may be used to differentiate between kinds of taxes, surcharges, discounts
      * etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -168,8 +163,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Factor used for calculating this component.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $factor;
@@ -179,8 +172,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Explicit value amount to be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $amount;
@@ -189,11 +180,6 @@ class FHIRMonetaryComponent extends FHIRDataType
     /**
      * FHIRMonetaryComponent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $amount
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -235,8 +221,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * the Narrative, or extensions
      *
      * base | surcharge | deduction | discount | tax | informational.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getType(): null|FHIRCode
     {
@@ -250,9 +234,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * the Narrative, or extensions
      *
      * base | surcharge | deduction | discount | tax | informational.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $type
-     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -275,8 +256,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      *
      * Codes may be used to differentiate between kinds of taxes, surcharges, discounts
      * etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -291,9 +270,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      *
      * Codes may be used to differentiate between kinds of taxes, surcharges, discounts
      * etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -312,8 +288,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Factor used for calculating this component.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     public function getFactor(): null|FHIRDecimal
     {
@@ -327,9 +301,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Factor used for calculating this component.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $factor
-     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -350,8 +321,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Explicit value amount to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     public function getAmount(): null|FHIRMoney
     {
@@ -364,9 +333,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Explicit value amount to be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $amount
-     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {
@@ -380,10 +346,7 @@ class FHIRMonetaryComponent extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -447,10 +410,6 @@ class FHIRMonetaryComponent extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -488,10 +447,7 @@ class FHIRMonetaryComponent extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

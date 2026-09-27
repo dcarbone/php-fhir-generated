@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
@@ -91,7 +89,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -162,8 +159,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     #[FHIRFinancialResourceStatusCodes]
     protected FHIRFinancialResourceStatusCodes $status;
@@ -174,8 +169,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * The period of time for which payments have been gathered into this bulk payment
      * for settlement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -188,8 +181,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $created;
@@ -199,8 +190,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $organization;
@@ -210,8 +199,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $request;
@@ -222,8 +209,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Transaction status: error, complete.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $outcome;
@@ -233,8 +218,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $disposition;
@@ -244,8 +227,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $requestProvider;
@@ -255,8 +236,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $requestOrganization;
@@ -277,8 +256,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $form;
@@ -288,8 +265,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Total payment amount.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $total;
@@ -307,27 +282,11 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
     /* constructor.php:61 */
     /**
      * FHIRPaymentReconciliation Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFinancialResourceStatusCodes $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $period
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $created
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $organization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $request
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $outcome
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $disposition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $requestProvider
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $requestOrganization
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail> $detail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $form
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $total
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote> $processNote
      * @param null|string[] $fhirComments
      */
@@ -452,9 +411,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -471,9 +427,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -490,8 +443,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus(): null|FHIRFinancialResourceStatusCodes
     {
@@ -503,9 +454,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFinancialResourceStatusCodes $status
-     * @return static
      */
     public function setStatus(null|string|FHIRFinancialResourceStatusCodesList|FHIRFinancialResourceStatusCodes $status): self
     {
@@ -527,8 +475,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * The period of time for which payments have been gathered into this bulk payment
      * for settlement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -542,9 +488,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * The period of time for which payments have been gathered into this bulk payment
      * for settlement.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -565,8 +508,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getCreated(): null|FHIRDateTime
     {
@@ -582,9 +523,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $created
-     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -605,8 +543,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getOrganization(): null|FHIRReference
     {
@@ -619,9 +555,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $organization
-     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -639,8 +572,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getRequest(): null|FHIRReference
     {
@@ -653,9 +584,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $request
-     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -674,8 +602,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Transaction status: error, complete.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getOutcome(): null|FHIRCodeableConcept
     {
@@ -689,9 +615,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Transaction status: error, complete.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $outcome
-     * @return static
      */
     public function setOutcome(null|FHIRCodeableConcept $outcome): self
     {
@@ -709,8 +632,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDisposition(): null|FHIRString
     {
@@ -723,9 +644,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $disposition
-     * @return static
      */
     public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition): self
     {
@@ -746,8 +664,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getRequestProvider(): null|FHIRReference
     {
@@ -760,9 +676,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $requestProvider
-     * @return static
      */
     public function setRequestProvider(null|FHIRReference $requestProvider): self
     {
@@ -780,8 +693,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getRequestOrganization(): null|FHIRReference
     {
@@ -794,9 +705,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $requestOrganization
-     * @return static
      */
     public function setRequestOrganization(null|FHIRReference $requestOrganization): self
     {
@@ -837,9 +745,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * payment.
      *
      * List of individual settlement amounts and the corresponding transaction.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail $detail
-     * @return static
      */
     public function addDetail(FHIRPaymentReconciliationDetail $detail): self
     {
@@ -855,9 +760,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * payment.
      *
      * List of individual settlement amounts and the corresponding transaction.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail ...$detail
-     * @return static
      */
     public function setDetail(FHIRPaymentReconciliationDetail ...$detail): self
     {
@@ -876,8 +778,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getForm(): null|FHIRCodeableConcept
     {
@@ -891,9 +791,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $form
-     * @return static
      */
     public function setForm(null|FHIRCodeableConcept $form): self
     {
@@ -911,8 +808,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Total payment amount.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getTotal(): null|FHIRMoney
     {
@@ -925,9 +820,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Total payment amount.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $total
-     * @return static
      */
     public function setTotal(null|FHIRMoney $total): self
     {
@@ -968,9 +860,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * payment.
      *
      * Suite of notes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote $processNote
-     * @return static
      */
     public function addProcessNote(FHIRPaymentReconciliationProcessNote $processNote): self
     {
@@ -986,9 +875,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * payment.
      *
      * Suite of notes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote ...$processNote
-     * @return static
      */
     public function setProcessNote(FHIRPaymentReconciliationProcessNote ...$processNote): self
     {
@@ -1002,10 +888,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1135,11 +1018,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1262,10 +1140,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -149,8 +149,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Variable this rule applies to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $context;
@@ -160,8 +158,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Field to create in the context.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $element;
@@ -174,8 +170,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Named context for field, if desired, and a field is specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $variable;
@@ -197,8 +191,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Internal rule reference for shared list items.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $listRuleId;
@@ -206,8 +198,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the data is copied / created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapTransform
      */
     #[FHIRStructureMapTransform]
     protected FHIRStructureMapTransform $transform;
@@ -225,14 +215,8 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
     /**
      * FHIRStructureMapTarget Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $context
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $element
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $variable
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStructureMapTargetListModeEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapTargetListMode> $listMode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $listRuleId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStructureMapTransformEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapTransform $transform
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter> $parameter
      * @param null|string[] $fhirComments
      */
@@ -288,8 +272,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Variable this rule applies to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getContext(): null|FHIRString
     {
@@ -302,9 +284,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Variable this rule applies to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $context
-     * @return static
      */
     public function setContext(null|string|FHIRStringPrimitive|FHIRString $context): self
     {
@@ -325,8 +304,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Field to create in the context.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getElement(): null|FHIRString
     {
@@ -339,9 +316,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Field to create in the context.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $element
-     * @return static
      */
     public function setElement(null|string|FHIRStringPrimitive|FHIRString $element): self
     {
@@ -365,8 +339,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Named context for field, if desired, and a field is specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getVariable(): null|FHIRId
     {
@@ -382,9 +354,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Named context for field, if desired, and a field is specified.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $variable
-     * @return static
      */
     public function setVariable(null|string|FHIRIdPrimitive|FHIRId $variable): self
     {
@@ -426,9 +395,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If field is a list, how to manage the list.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStructureMapTargetListModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapTargetListMode $listMode
-     * @return static
      */
     public function addListMode(string|FHIRStructureMapTargetListModeEnum|FHIRStructureMapTargetListMode $listMode): self
     {
@@ -446,9 +412,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If field is a list, how to manage the list.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStructureMapTargetListModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapTargetListMode ...$listMode
-     * @return static
      */
     public function setListMode(string|FHIRStructureMapTargetListModeEnum|FHIRStructureMapTargetListMode ...$listMode): self
     {
@@ -476,8 +439,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Internal rule reference for shared list items.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getListRuleId(): null|FHIRId
     {
@@ -493,9 +454,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Internal rule reference for shared list items.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $listRuleId
-     * @return static
      */
     public function setListRuleId(null|string|FHIRIdPrimitive|FHIRId $listRuleId): self
     {
@@ -514,8 +472,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the data is copied / created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapTransform
      */
     public function getTransform(): null|FHIRStructureMapTransform
     {
@@ -526,9 +482,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the data is copied / created.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStructureMapTransformEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapTransform $transform
-     * @return static
      */
     public function setTransform(null|string|FHIRStructureMapTransformEnum|FHIRStructureMapTransform $transform): self
     {
@@ -570,9 +523,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Parameters to the transform.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter $parameter
-     * @return static
      */
     public function addParameter(FHIRStructureMapParameter $parameter): self
     {
@@ -587,9 +537,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Parameters to the transform.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter ...$parameter
-     * @return static
      */
     public function setParameter(FHIRStructureMapParameter ...$parameter): self
     {
@@ -603,10 +550,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -702,10 +646,6 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -777,10 +717,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

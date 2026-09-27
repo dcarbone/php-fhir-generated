@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -132,8 +132,6 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * File containing input data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $file;
@@ -144,8 +142,6 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of input data, e.g., BAM, CRAM, or FASTA.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -155,10 +151,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
+     * The analysis event or other GenomicStudy that generated this input file.
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $generatedByIdentifier;
@@ -167,10 +160,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * The analysis event or other GenomicStudy that generated this input file.
      */
     #[FHIRReference]
     protected FHIRReference $generatedByReference;
@@ -179,12 +169,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
     /**
      * FHIRGenomicStudyInput Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $file
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $generatedByReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -227,8 +212,6 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * File containing input data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getFile(): null|FHIRReference
     {
@@ -241,9 +224,6 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * File containing input data.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $file
-     * @return static
      */
     public function setFile(null|FHIRReference $file): self
     {
@@ -262,8 +242,6 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of input data, e.g., BAM, CRAM, or FASTA.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -277,9 +255,6 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of input data, e.g., BAM, CRAM, or FASTA.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -297,10 +272,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
+     * The analysis event or other GenomicStudy that generated this input file.
      */
     public function getGeneratedByIdentifier(): null|FHIRIdentifier
     {
@@ -313,11 +285,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
-     * @return static
+     * The analysis event or other GenomicStudy that generated this input file.
      */
     public function setGeneratedByIdentifier(null|FHIRIdentifier $generatedByIdentifier): self
     {
@@ -334,10 +302,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * The analysis event or other GenomicStudy that generated this input file.
      */
     public function getGeneratedByReference(): null|FHIRReference
     {
@@ -349,11 +314,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The analysis event or other GenomicStudy that generated this input file. (choose
-     * any one of generatedBy*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $generatedByReference
-     * @return static
+     * The analysis event or other GenomicStudy that generated this input file.
      */
     public function setGeneratedByReference(null|FHIRReference $generatedByReference): self
     {
@@ -367,10 +328,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -420,10 +378,6 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -451,10 +405,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

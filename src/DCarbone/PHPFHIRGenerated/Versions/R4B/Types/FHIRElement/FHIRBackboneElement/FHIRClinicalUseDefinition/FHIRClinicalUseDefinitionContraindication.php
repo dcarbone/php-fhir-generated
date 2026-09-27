@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -133,8 +133,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The situation that is being documented as contraindicating against this item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $diseaseSymptomProcedure;
@@ -146,8 +144,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * The status of the disease or symptom for the contraindication, for example
      * "chronic" or "metastatic".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $diseaseStatus;
@@ -190,10 +186,7 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
     /**
      * FHIRClinicalUseDefinitionContraindication Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $diseaseSymptomProcedure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $diseaseStatus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference> $comorbidity
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $indication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionOtherTherapy> $otherTherapy
@@ -244,8 +237,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The situation that is being documented as contraindicating against this item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference
      */
     public function getDiseaseSymptomProcedure(): null|FHIRCodeableReference
     {
@@ -259,9 +250,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The situation that is being documented as contraindicating against this item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $diseaseSymptomProcedure
-     * @return static
      */
     public function setDiseaseSymptomProcedure(null|FHIRCodeableReference $diseaseSymptomProcedure): self
     {
@@ -281,8 +269,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * The status of the disease or symptom for the contraindication, for example
      * "chronic" or "metastatic".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference
      */
     public function getDiseaseStatus(): null|FHIRCodeableReference
     {
@@ -297,9 +283,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * The status of the disease or symptom for the contraindication, for example
      * "chronic" or "metastatic".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $diseaseStatus
-     * @return static
      */
     public function setDiseaseStatus(null|FHIRCodeableReference $diseaseStatus): self
     {
@@ -344,9 +327,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A comorbidity (concurrent condition) or coinfection.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $comorbidity
-     * @return static
      */
     public function addComorbidity(FHIRCodeableReference $comorbidity): self
     {
@@ -364,9 +344,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A comorbidity (concurrent condition) or coinfection.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference ...$comorbidity
-     * @return static
      */
     public function setComorbidity(FHIRCodeableReference ...$comorbidity): self
     {
@@ -409,9 +386,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The indication which this is a contraidication for.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $indication
-     * @return static
      */
     public function addIndication(FHIRReference $indication): self
     {
@@ -428,9 +402,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The indication which this is a contraidication for.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$indication
-     * @return static
      */
     public function setIndication(FHIRReference ...$indication): self
     {
@@ -473,9 +444,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the contraindication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionOtherTherapy $otherTherapy
-     * @return static
      */
     public function addOtherTherapy(FHIRClinicalUseDefinitionOtherTherapy $otherTherapy): self
     {
@@ -492,9 +460,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the contraindication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionOtherTherapy ...$otherTherapy
-     * @return static
      */
     public function setOtherTherapy(FHIRClinicalUseDefinitionOtherTherapy ...$otherTherapy): self
     {
@@ -508,10 +473,7 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -563,10 +525,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -605,10 +563,7 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

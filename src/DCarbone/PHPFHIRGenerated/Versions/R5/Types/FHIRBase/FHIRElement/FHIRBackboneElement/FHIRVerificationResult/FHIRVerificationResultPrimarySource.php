@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the primary source.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $who;
@@ -177,8 +175,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * Status of the validation of the target against the primary source (successful;
      * failed; unknown).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $validationStatus;
@@ -192,8 +188,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the target was validated against the primary source.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $validationDate;
@@ -204,8 +198,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ability of the primary source to push updates/alerts (yes; no; undetermined).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $canPushUpdates;
@@ -227,14 +219,9 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
     /**
      * FHIRVerificationResultPrimarySource Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $who
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $communicationMethod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $validationStatus
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $validationDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $canPushUpdates
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $pushTypeAvailable
      * @param null|string[] $fhirComments
      */
@@ -290,8 +277,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the primary source.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getWho(): null|FHIRReference
     {
@@ -304,9 +289,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the primary source.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $who
-     * @return static
      */
     public function setWho(null|FHIRReference $who): self
     {
@@ -355,9 +337,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * Type of primary source (License Board; Primary Education; Continuing Education;
      * Postal Service; Relationship owner; Registration Authority; legal source;
      * issuing source; authoritative source).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -377,9 +356,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * Type of primary source (License Board; Primary Education; Continuing Education;
      * Postal Service; Relationship owner; Registration Authority; legal source;
      * issuing source; authoritative source).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -424,9 +400,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Method for communicating with the primary source (manual; API; Push).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $communicationMethod
-     * @return static
      */
     public function addCommunicationMethod(FHIRCodeableConcept $communicationMethod): self
     {
@@ -444,9 +417,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Method for communicating with the primary source (manual; API; Push).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$communicationMethod
-     * @return static
      */
     public function setCommunicationMethod(FHIRCodeableConcept ...$communicationMethod): self
     {
@@ -466,8 +436,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * Status of the validation of the target against the primary source (successful;
      * failed; unknown).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getValidationStatus(): null|FHIRCodeableConcept
     {
@@ -482,9 +450,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * Status of the validation of the target against the primary source (successful;
      * failed; unknown).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $validationStatus
-     * @return static
      */
     public function setValidationStatus(null|FHIRCodeableConcept $validationStatus): self
     {
@@ -506,8 +471,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the target was validated against the primary source.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getValidationDate(): null|FHIRDateTime
     {
@@ -524,9 +487,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the target was validated against the primary source.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $validationDate
-     * @return static
      */
     public function setValidationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $validationDate): self
     {
@@ -548,8 +508,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ability of the primary source to push updates/alerts (yes; no; undetermined).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCanPushUpdates(): null|FHIRCodeableConcept
     {
@@ -563,9 +521,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ability of the primary source to push updates/alerts (yes; no; undetermined).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $canPushUpdates
-     * @return static
      */
     public function setCanPushUpdates(null|FHIRCodeableConcept $canPushUpdates): self
     {
@@ -612,9 +567,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * Type of alerts/updates the primary source can send (specific requested changes;
      * any changes; as defined by source).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $pushTypeAvailable
-     * @return static
      */
     public function addPushTypeAvailable(FHIRCodeableConcept $pushTypeAvailable): self
     {
@@ -633,9 +585,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * Type of alerts/updates the primary source can send (specific requested changes;
      * any changes; as defined by source).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$pushTypeAvailable
-     * @return static
      */
     public function setPushTypeAvailable(FHIRCodeableConcept ...$pushTypeAvailable): self
     {
@@ -649,10 +598,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -716,10 +662,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -773,10 +715,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -151,6 +152,42 @@ class FHIRContractAnswer extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE_BOOLEAN => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DECIMAL => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_INTEGER => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DATE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DATE_TIME => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_TIME => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_STRING => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_URI => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_ATTACHMENT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CODING => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_QUANTITY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_REFERENCE => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -173,9 +210,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * research.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -188,9 +223,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
+     * research.
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -202,9 +235,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * research.
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -217,9 +248,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * research.
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -235,9 +264,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * research.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -248,9 +275,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
+     * research.
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -262,9 +287,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * research.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -276,9 +299,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * research.
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -290,9 +311,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * research.
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -304,9 +323,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * research.
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -320,9 +337,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * research.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -334,9 +349,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * research.
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -345,20 +358,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
     /**
      * FHIRContractAnswer Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $valueDecimal
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $valueTime
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -434,9 +434,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * research.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -450,10 +448,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
+     * research.
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -477,9 +472,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
+     * research.
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -495,10 +488,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $valueDecimal
-     * @return static
+     * research.
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -521,9 +511,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * research.
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -538,10 +526,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @return static
+     * research.
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -565,9 +550,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * research.
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -583,10 +566,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
-     * @return static
+     * research.
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -613,9 +593,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * research.
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -634,10 +612,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @return static
+     * research.
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -659,9 +634,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
+     * research.
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -675,10 +648,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $valueTime
-     * @return static
+     * research.
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -701,9 +671,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * research.
      */
     public function getValueString(): null|FHIRString
     {
@@ -718,10 +686,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @return static
+     * research.
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -744,9 +709,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * research.
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -761,10 +724,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @return static
+     * research.
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -787,9 +747,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * research.
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -804,10 +762,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @return static
+     * research.
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -827,9 +782,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * research.
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -844,10 +797,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @return static
+     * research.
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -869,9 +819,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * research.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -888,10 +836,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * research.
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -911,9 +856,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * research.
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -928,10 +871,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * Response to an offer clause or question text, which enables selection of values
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warranty duration, or whether biospecimen may be used for further
-     * research. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @return static
+     * research.
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -945,10 +885,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1078,10 +1015,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1189,10 +1122,7 @@ class FHIRContractAnswer extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -133,8 +133,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      * A simple summary of the stage such as "Stage 3" or "Early Onset". The
      * determination of the stage is disease-specific, such as cancer, retinopathy of
      * prematurity, kidney diseases, Alzheimer's, or Parkinson disease.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $summary;
@@ -157,8 +155,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of staging, such as pathological or clinical staging.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -167,11 +163,8 @@ class FHIRConditionStage extends FHIRBackboneElement
     /**
      * FHIRConditionStage Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $summary
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $assessment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -213,8 +206,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      * A simple summary of the stage such as "Stage 3" or "Early Onset". The
      * determination of the stage is disease-specific, such as cancer, retinopathy of
      * prematurity, kidney diseases, Alzheimer's, or Parkinson disease.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getSummary(): null|FHIRCodeableConcept
     {
@@ -230,9 +221,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      * A simple summary of the stage such as "Stage 3" or "Early Onset". The
      * determination of the stage is disease-specific, such as cancer, retinopathy of
      * prematurity, kidney diseases, Alzheimer's, or Parkinson disease.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $summary
-     * @return static
      */
     public function setSummary(null|FHIRCodeableConcept $summary): self
     {
@@ -277,9 +265,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      *
      * Reference to a formal record of the evidence on which the staging assessment is
      * based.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $assessment
-     * @return static
      */
     public function addAssessment(FHIRReference $assessment): self
     {
@@ -297,9 +282,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      *
      * Reference to a formal record of the evidence on which the staging assessment is
      * based.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$assessment
-     * @return static
      */
     public function setAssessment(FHIRReference ...$assessment): self
     {
@@ -318,8 +300,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of staging, such as pathological or clinical staging.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -333,9 +313,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of staging, such as pathological or clinical staging.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -349,10 +326,7 @@ class FHIRConditionStage extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -400,10 +374,6 @@ class FHIRConditionStage extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -428,10 +398,7 @@ class FHIRConditionStage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

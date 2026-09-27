@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -117,7 +115,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -218,8 +215,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory type, e.g. Investigational or Authorized.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -230,8 +225,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this medicine applies to human or veterinary uses.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $domain;
@@ -242,8 +235,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * A business identifier relating to a specific version of the product, this is
      * commonly used to support revisions to an existing product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -256,8 +247,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * The status within the lifecycle of this product record. A high-level status,
      * this is not intended to duplicate details carried elsewhere such as legal
      * status, or authorization status.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -271,8 +260,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status became applicable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $statusDate;
@@ -286,8 +273,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * the Narrative, or extensions
      *
      * General description of this product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -301,8 +286,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * product. This is one concept that describes all the components. It does not
      * represent the form with components physically mixed, if that might be necessary,
      * for which see (AdministrableProductDefinition.administrableDoseForm).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $combinedPharmaceuticalDoseForm;
@@ -335,8 +318,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * are not required. In cases where structured indications are required, they are
      * captured using the ClinicalUseDefinition resource. An indication is a medical
      * situation for which using the product is appropriate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $indication;
@@ -348,8 +329,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $legalStatusOfSupply;
@@ -361,8 +340,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Whether the Medicinal Product is subject to additional monitoring for regulatory
      * reasons, such as heightened reporting requirements.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $additionalMonitoringIndicator;
@@ -386,8 +363,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If authorised for use in children, or infants, neonates etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $pediatricUseIndicator;
@@ -605,28 +580,12 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
     /* constructor.php:61 */
     /**
      * FHIRMedicinalProductDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $domain
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $statusDate
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $combinedPharmaceuticalDoseForm
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $route
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $indication
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $legalStatusOfSupply
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $additionalMonitoringIndicator
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $specialMeasures
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $pediatricUseIndicator
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $classification
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus> $marketingStatus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $packagedMedicinalProduct
@@ -835,9 +794,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * assigned by a manufacturer or regulator, and unique to a product (which, when
      * compared to a product instance being prescribed, is actually a product type).
      * See also MedicinalProductDefinition.code.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -859,9 +815,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * assigned by a manufacturer or regulator, and unique to a product (which, when
      * compared to a product instance being prescribed, is actually a product type).
      * See also MedicinalProductDefinition.code.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -880,8 +833,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory type, e.g. Investigational or Authorized.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -895,9 +846,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory type, e.g. Investigational or Authorized.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -916,8 +864,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this medicine applies to human or veterinary uses.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getDomain(): null|FHIRCodeableConcept
     {
@@ -931,9 +877,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this medicine applies to human or veterinary uses.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $domain
-     * @return static
      */
     public function setDomain(null|FHIRCodeableConcept $domain): self
     {
@@ -952,8 +895,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * A business identifier relating to a specific version of the product, this is
      * commonly used to support revisions to an existing product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -967,9 +908,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * A business identifier relating to a specific version of the product, this is
      * commonly used to support revisions to an existing product.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -993,8 +931,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * The status within the lifecycle of this product record. A high-level status,
      * this is not intended to duplicate details carried elsewhere such as legal
      * status, or authorization status.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -1010,9 +946,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * The status within the lifecycle of this product record. A high-level status,
      * this is not intended to duplicate details carried elsewhere such as legal
      * status, or authorization status.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -1034,8 +967,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status became applicable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getStatusDate(): null|FHIRDateTime
     {
@@ -1052,9 +983,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status became applicable.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $statusDate
-     * @return static
      */
     public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
     {
@@ -1079,8 +1007,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * the Narrative, or extensions
      *
      * General description of this product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1097,9 +1023,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * the Narrative, or extensions
      *
      * General description of this product.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1124,8 +1047,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * product. This is one concept that describes all the components. It does not
      * represent the form with components physically mixed, if that might be necessary,
      * for which see (AdministrableProductDefinition.administrableDoseForm).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCombinedPharmaceuticalDoseForm(): null|FHIRCodeableConcept
     {
@@ -1142,9 +1063,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * product. This is one concept that describes all the components. It does not
      * represent the form with components physically mixed, if that might be necessary,
      * for which see (AdministrableProductDefinition.administrableDoseForm).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $combinedPharmaceuticalDoseForm
-     * @return static
      */
     public function setCombinedPharmaceuticalDoseForm(null|FHIRCodeableConcept $combinedPharmaceuticalDoseForm): self
     {
@@ -1197,9 +1115,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * AdministrableProductDefinition resource. MedicinalProductDefinition.route is the
      * same concept as AdministrableProductDefinition.routeOfAdministration.code, and
      * they cannot be used together.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $route
-     * @return static
      */
     public function addRoute(FHIRCodeableConcept $route): self
     {
@@ -1221,9 +1136,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * AdministrableProductDefinition resource. MedicinalProductDefinition.route is the
      * same concept as AdministrableProductDefinition.routeOfAdministration.code, and
      * they cannot be used together.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$route
-     * @return static
      */
     public function setRoute(FHIRCodeableConcept ...$route): self
     {
@@ -1248,8 +1160,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * are not required. In cases where structured indications are required, they are
      * captured using the ClinicalUseDefinition resource. An indication is a medical
      * situation for which using the product is appropriate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getIndication(): null|FHIRMarkdown
     {
@@ -1269,9 +1179,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * are not required. In cases where structured indications are required, they are
      * captured using the ClinicalUseDefinition resource. An indication is a medical
      * situation for which using the product is appropriate.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $indication
-     * @return static
      */
     public function setIndication(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $indication): self
     {
@@ -1294,8 +1201,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getLegalStatusOfSupply(): null|FHIRCodeableConcept
     {
@@ -1310,9 +1215,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $legalStatusOfSupply
-     * @return static
      */
     public function setLegalStatusOfSupply(null|FHIRCodeableConcept $legalStatusOfSupply): self
     {
@@ -1332,8 +1234,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Whether the Medicinal Product is subject to additional monitoring for regulatory
      * reasons, such as heightened reporting requirements.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getAdditionalMonitoringIndicator(): null|FHIRCodeableConcept
     {
@@ -1348,9 +1248,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Whether the Medicinal Product is subject to additional monitoring for regulatory
      * reasons, such as heightened reporting requirements.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $additionalMonitoringIndicator
-     * @return static
      */
     public function setAdditionalMonitoringIndicator(null|FHIRCodeableConcept $additionalMonitoringIndicator): self
     {
@@ -1397,9 +1294,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Whether the Medicinal Product is subject to special measures for regulatory
      * reasons, such as a requirement to conduct post-authorization studies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $specialMeasures
-     * @return static
      */
     public function addSpecialMeasures(FHIRCodeableConcept $specialMeasures): self
     {
@@ -1418,9 +1312,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Whether the Medicinal Product is subject to special measures for regulatory
      * reasons, such as a requirement to conduct post-authorization studies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$specialMeasures
-     * @return static
      */
     public function setSpecialMeasures(FHIRCodeableConcept ...$specialMeasures): self
     {
@@ -1439,8 +1330,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If authorised for use in children, or infants, neonates etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getPediatricUseIndicator(): null|FHIRCodeableConcept
     {
@@ -1454,9 +1343,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If authorised for use in children, or infants, neonates etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $pediatricUseIndicator
-     * @return static
      */
     public function setPediatricUseIndicator(null|FHIRCodeableConcept $pediatricUseIndicator): self
     {
@@ -1501,9 +1387,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows the product to be classified by various systems, commonly WHO ATC.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $classification
-     * @return static
      */
     public function addClassification(FHIRCodeableConcept $classification): self
     {
@@ -1521,9 +1404,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows the product to be classified by various systems, commonly WHO ATC.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$classification
-     * @return static
      */
     public function setClassification(FHIRCodeableConcept ...$classification): self
     {
@@ -1572,9 +1452,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * Marketing status of the medicinal product, in contrast to marketing
      * authorization. This refers to the product being actually 'on the market' as
      * opposed to being allowed to be on the market (which is an authorization).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus $marketingStatus
-     * @return static
      */
     public function addMarketingStatus(FHIRMarketingStatus $marketingStatus): self
     {
@@ -1594,9 +1471,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * Marketing status of the medicinal product, in contrast to marketing
      * authorization. This refers to the product being actually 'on the market' as
      * opposed to being allowed to be on the market (which is an authorization).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus ...$marketingStatus
-     * @return static
      */
     public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
     {
@@ -1641,9 +1515,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Package type for the product. See also the PackagedProductDefinition resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $packagedMedicinalProduct
-     * @return static
      */
     public function addPackagedMedicinalProduct(FHIRCodeableConcept $packagedMedicinalProduct): self
     {
@@ -1661,9 +1532,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Package type for the product. See also the PackagedProductDefinition resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$packagedMedicinalProduct
-     * @return static
      */
     public function setPackagedMedicinalProduct(FHIRCodeableConcept ...$packagedMedicinalProduct): self
     {
@@ -1712,9 +1580,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * of, such as tablets, capsule, or syringes. Used as a direct link when the item's
      * packaging is not being recorded (see also
      * PackagedProductDefinition.package.containedItem.item).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $comprisedOf
-     * @return static
      */
     public function addComprisedOf(FHIRReference $comprisedOf): self
     {
@@ -1734,9 +1599,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * of, such as tablets, capsule, or syringes. Used as a direct link when the item's
      * packaging is not being recorded (see also
      * PackagedProductDefinition.package.containedItem.item).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$comprisedOf
-     * @return static
      */
     public function setComprisedOf(FHIRReference ...$comprisedOf): self
     {
@@ -1791,9 +1653,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * AdministrableProductDefinition, PackagedProductDefinition or
      * ManufacturedItemDefinition references. In cases where those levels of detail are
      * not used, the ingredients may be specified directly here as codes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $ingredient
-     * @return static
      */
     public function addIngredient(FHIRCodeableConcept $ingredient): self
     {
@@ -1816,9 +1675,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * AdministrableProductDefinition, PackagedProductDefinition or
      * ManufacturedItemDefinition references. In cases where those levels of detail are
      * not used, the ingredients may be specified directly here as codes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$ingredient
-     * @return static
      */
     public function setIngredient(FHIRCodeableConcept ...$ingredient): self
     {
@@ -1869,9 +1725,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * the drug substance, or an excipient in the drug product. This includes
      * process-related impurities and contaminants, product-related impurities
      * including degradation products.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $impurity
-     * @return static
      */
     public function addImpurity(FHIRCodeableReference $impurity): self
     {
@@ -1892,9 +1745,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * the drug substance, or an excipient in the drug product. This includes
      * process-related impurities and contaminants, product-related impurities
      * including degradation products.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$impurity
-     * @return static
      */
     public function setImpurity(FHIRCodeableReference ...$impurity): self
     {
@@ -1937,9 +1787,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information or supporting documentation about the medicinal product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $attachedDocument
-     * @return static
      */
     public function addAttachedDocument(FHIRReference $attachedDocument): self
     {
@@ -1956,9 +1803,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information or supporting documentation about the medicinal product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$attachedDocument
-     * @return static
      */
     public function setAttachedDocument(FHIRReference ...$attachedDocument): self
     {
@@ -2009,9 +1853,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * to provide confidential detailed information about facilities, processes or
      * articles used in the manufacturing, processing, packaging and storing of drug
      * products.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $masterFile
-     * @return static
      */
     public function addMasterFile(FHIRReference $masterFile): self
     {
@@ -2032,9 +1873,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * to provide confidential detailed information about facilities, processes or
      * articles used in the manufacturing, processing, packaging and storing of drug
      * products.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$masterFile
-     * @return static
      */
     public function setMasterFile(FHIRReference ...$masterFile): self
     {
@@ -2083,9 +1921,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * use, or drug catalogs).
      *
      * A product specific contact, person (in a role), or an organization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionContact $contact
-     * @return static
      */
     public function addContact(FHIRMedicinalProductDefinitionContact $contact): self
     {
@@ -2105,9 +1940,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * use, or drug catalogs).
      *
      * A product specific contact, person (in a role), or an organization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionContact ...$contact
-     * @return static
      */
     public function setContact(FHIRMedicinalProductDefinitionContact ...$contact): self
     {
@@ -2150,9 +1982,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical trials or studies that this product is involved in.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $clinicalTrial
-     * @return static
      */
     public function addClinicalTrial(FHIRReference $clinicalTrial): self
     {
@@ -2169,9 +1998,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical trials or studies that this product is involved in.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$clinicalTrial
-     * @return static
      */
     public function setClinicalTrial(FHIRReference ...$clinicalTrial): self
     {
@@ -2224,9 +2050,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * development and within regulatory process. However when they are prescribed they
      * tend to be identified by codes. The same product may be have multiple codes,
      * applied to it by multiple organizations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $code
-     * @return static
      */
     public function addCode(FHIRCoding $code): self
     {
@@ -2248,9 +2071,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * development and within regulatory process. However when they are prescribed they
      * tend to be identified by codes. The same product may be have multiple codes,
      * applied to it by multiple organizations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$code
-     * @return static
      */
     public function setCode(FHIRCoding ...$code): self
     {
@@ -2299,9 +2119,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * use, or drug catalogs).
      *
      * The product's name, including full name and possibly coded parts.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionName $name
-     * @return static
      */
     public function addName(FHIRMedicinalProductDefinitionName $name): self
     {
@@ -2321,9 +2138,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * use, or drug catalogs).
      *
      * The product's name, including full name and possibly coded parts.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionName ...$name
-     * @return static
      */
     public function setName(FHIRMedicinalProductDefinitionName ...$name): self
     {
@@ -2374,9 +2188,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Reference to another product, e.g. for linking authorised to investigational
      * product, or a virtual product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionCrossReference $crossReference
-     * @return static
      */
     public function addCrossReference(FHIRMedicinalProductDefinitionCrossReference $crossReference): self
     {
@@ -2397,9 +2208,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Reference to another product, e.g. for linking authorised to investigational
      * product, or a virtual product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionCrossReference ...$crossReference
-     * @return static
      */
     public function setCrossReference(FHIRMedicinalProductDefinitionCrossReference ...$crossReference): self
     {
@@ -2450,9 +2258,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * A manufacturing or administrative process or step associated with (or performed
      * on) the medicinal product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionOperation $operation
-     * @return static
      */
     public function addOperation(FHIRMedicinalProductDefinitionOperation $operation): self
     {
@@ -2473,9 +2278,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * A manufacturing or administrative process or step associated with (or performed
      * on) the medicinal product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionOperation ...$operation
-     * @return static
      */
     public function setOperation(FHIRMedicinalProductDefinitionOperation ...$operation): self
     {
@@ -2526,9 +2328,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Allows the key product features to be recorded, such as "sugar free", "modified
      * release", "parallel import".
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionCharacteristic $characteristic
-     * @return static
      */
     public function addCharacteristic(FHIRMedicinalProductDefinitionCharacteristic $characteristic): self
     {
@@ -2549,9 +2348,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      *
      * Allows the key product features to be recorded, such as "sugar free", "modified
      * release", "parallel import".
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionCharacteristic ...$characteristic
-     * @return static
      */
     public function setCharacteristic(FHIRMedicinalProductDefinitionCharacteristic ...$characteristic): self
     {
@@ -2565,10 +2361,7 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2736,11 +2529,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2973,10 +2761,7 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedicinalProductDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

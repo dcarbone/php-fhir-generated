@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -118,8 +117,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier of the population group as defined in the measure definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -142,8 +139,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
      * defined in the group.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $measureScore;
@@ -162,11 +157,8 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
     /**
      * FHIRMeasureReportGroup Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation> $population
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $measureScore
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier> $stratifier
      * @param null|string[] $fhirComments
      */
@@ -210,8 +202,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier of the population group as defined in the measure definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -224,9 +214,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier of the population group as defined in the measure definition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -267,9 +254,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The populations that make up the population group, one for each type of
      * population appropriate for the measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation $population
-     * @return static
      */
     public function addPopulation(FHIRMeasureReportPopulation $population): self
     {
@@ -285,9 +269,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * The populations that make up the population group, one for each type of
      * population appropriate for the measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation ...$population
-     * @return static
      */
     public function setPopulation(FHIRMeasureReportPopulation ...$population): self
     {
@@ -308,8 +289,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
      * defined in the group.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     public function getMeasureScore(): null|FHIRDecimal
     {
@@ -325,9 +304,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * The measure score for this population group, calculated as appropriate for the
      * measure type and scoring method, and based on the contents of the populations
      * defined in the group.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $measureScore
-     * @return static
      */
     public function setMeasureScore(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $measureScore): self
     {
@@ -371,9 +347,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * When a measure includes multiple stratifiers, there will be a stratifier group
      * for each stratifier defined by the measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier $stratifier
-     * @return static
      */
     public function addStratifier(FHIRMeasureReportStratifier $stratifier): self
     {
@@ -389,9 +362,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      *
      * When a measure includes multiple stratifiers, there will be a stratifier group
      * for each stratifier defined by the measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier ...$stratifier
-     * @return static
      */
     public function setStratifier(FHIRMeasureReportStratifier ...$stratifier): self
     {
@@ -405,10 +375,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -466,10 +433,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -506,10 +469,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -129,8 +129,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The family of an organism shall be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $family;
@@ -143,8 +141,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The genus of an organism shall be specified; refers to the Latin epithet of the
      * genus element of the plant/animal scientific name; it is present in names for
      * genera, species and infraspecies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $genus;
@@ -157,8 +153,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The species of an organism shall be specified; refers to the Latin epithet of
      * the species of the plant/animal; it is present in names for species and
      * infraspecies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $species;
@@ -169,8 +163,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Intraspecific type of an organism shall be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $intraspecificType;
@@ -182,8 +174,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The intraspecific description of an organism shall be specified based on a
      * controlled vocabulary. For Influenza Vaccine, the intraspecific description
      * shall contain the syntax of the antigen in line with the WHO convention.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $intraspecificDescription;
@@ -224,8 +214,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.8.1 Hybrid species maternal organism ID (Optional).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
      */
     #[FHIRSubstanceSourceMaterialHybrid]
     protected FHIRSubstanceSourceMaterialHybrid $hybrid;
@@ -245,8 +233,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.7.1 Kingdom (Conditional).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
      */
     #[FHIRSubstanceSourceMaterialOrganismGeneral]
     protected FHIRSubstanceSourceMaterialOrganismGeneral $organismGeneral;
@@ -255,16 +241,8 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
     /**
      * FHIRSubstanceSourceMaterialOrganism Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $family
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $genus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $species
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $intraspecificType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $intraspecificDescription
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor> $author
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid $hybrid
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral $organismGeneral
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -324,8 +302,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The family of an organism shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getFamily(): null|FHIRCodeableConcept
     {
@@ -339,9 +315,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The family of an organism shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $family
-     * @return static
      */
     public function setFamily(null|FHIRCodeableConcept $family): self
     {
@@ -362,8 +335,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The genus of an organism shall be specified; refers to the Latin epithet of the
      * genus element of the plant/animal scientific name; it is present in names for
      * genera, species and infraspecies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getGenus(): null|FHIRCodeableConcept
     {
@@ -379,9 +350,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The genus of an organism shall be specified; refers to the Latin epithet of the
      * genus element of the plant/animal scientific name; it is present in names for
      * genera, species and infraspecies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $genus
-     * @return static
      */
     public function setGenus(null|FHIRCodeableConcept $genus): self
     {
@@ -402,8 +370,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The species of an organism shall be specified; refers to the Latin epithet of
      * the species of the plant/animal; it is present in names for species and
      * infraspecies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSpecies(): null|FHIRCodeableConcept
     {
@@ -419,9 +385,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The species of an organism shall be specified; refers to the Latin epithet of
      * the species of the plant/animal; it is present in names for species and
      * infraspecies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $species
-     * @return static
      */
     public function setSpecies(null|FHIRCodeableConcept $species): self
     {
@@ -440,8 +403,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Intraspecific type of an organism shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getIntraspecificType(): null|FHIRCodeableConcept
     {
@@ -455,9 +416,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Intraspecific type of an organism shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $intraspecificType
-     * @return static
      */
     public function setIntraspecificType(null|FHIRCodeableConcept $intraspecificType): self
     {
@@ -477,8 +435,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The intraspecific description of an organism shall be specified based on a
      * controlled vocabulary. For Influenza Vaccine, the intraspecific description
      * shall contain the syntax of the antigen in line with the WHO convention.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getIntraspecificDescription(): null|FHIRString
     {
@@ -493,9 +449,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * The intraspecific description of an organism shall be specified based on a
      * controlled vocabulary. For Influenza Vaccine, the intraspecific description
      * shall contain the syntax of the antigen in line with the WHO convention.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $intraspecificDescription
-     * @return static
      */
     public function setIntraspecificDescription(null|string|FHIRStringPrimitive|FHIRString $intraspecificDescription): self
     {
@@ -561,9 +514,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.6.1 Author type (Conditional).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor $author
-     * @return static
      */
     public function addAuthor(FHIRSubstanceSourceMaterialAuthor $author): self
     {
@@ -590,9 +540,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.6.1 Author type (Conditional).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor ...$author
-     * @return static
      */
     public function setAuthor(FHIRSubstanceSourceMaterialAuthor ...$author): self
     {
@@ -620,8 +567,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.8.1 Hybrid species maternal organism ID (Optional).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
      */
     public function getHybrid(): null|FHIRSubstanceSourceMaterialHybrid
     {
@@ -644,9 +589,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.8.1 Hybrid species maternal organism ID (Optional).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid $hybrid
-     * @return static
      */
     public function setHybrid(null|FHIRSubstanceSourceMaterialHybrid $hybrid): self
     {
@@ -674,8 +616,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.7.1 Kingdom (Conditional).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
      */
     public function getOrganismGeneral(): null|FHIRSubstanceSourceMaterialOrganismGeneral
     {
@@ -698,9 +638,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * 4.9.13.7.1 Kingdom (Conditional).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral $organismGeneral
-     * @return static
      */
     public function setOrganismGeneral(null|FHIRSubstanceSourceMaterialOrganismGeneral $organismGeneral): self
     {
@@ -714,10 +651,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -783,10 +717,6 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -841,10 +771,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

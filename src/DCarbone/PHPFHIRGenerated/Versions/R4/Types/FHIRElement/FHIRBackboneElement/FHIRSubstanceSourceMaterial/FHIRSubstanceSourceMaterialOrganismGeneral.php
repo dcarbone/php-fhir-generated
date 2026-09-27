@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -122,8 +122,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kingdom of an organism shall be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $kingdom;
@@ -134,8 +132,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The phylum of an organism shall be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $phylum;
@@ -146,8 +142,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The class of an organism shall be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $class;
@@ -158,8 +152,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The order of an organism shall be specified,.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $order;
@@ -168,12 +160,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
     /**
      * FHIRSubstanceSourceMaterialOrganismGeneral Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $kingdom
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $phylum
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $class
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $order
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -217,8 +204,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kingdom of an organism shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getKingdom(): null|FHIRCodeableConcept
     {
@@ -232,9 +217,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kingdom of an organism shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $kingdom
-     * @return static
      */
     public function setKingdom(null|FHIRCodeableConcept $kingdom): self
     {
@@ -253,8 +235,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The phylum of an organism shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPhylum(): null|FHIRCodeableConcept
     {
@@ -268,9 +248,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The phylum of an organism shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $phylum
-     * @return static
      */
     public function setPhylum(null|FHIRCodeableConcept $phylum): self
     {
@@ -289,8 +266,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The class of an organism shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getClass(): null|FHIRCodeableConcept
     {
@@ -304,9 +279,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The class of an organism shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $class
-     * @return static
      */
     public function setClass(null|FHIRCodeableConcept $class): self
     {
@@ -325,8 +297,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The order of an organism shall be specified,.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getOrder(): null|FHIRCodeableConcept
     {
@@ -340,9 +310,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The order of an organism shall be specified,.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $order
-     * @return static
      */
     public function setOrder(null|FHIRCodeableConcept $order): self
     {
@@ -356,10 +323,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -409,10 +373,6 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -440,10 +400,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

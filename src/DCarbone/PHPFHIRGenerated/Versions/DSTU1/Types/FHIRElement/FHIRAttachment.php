@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -138,8 +137,6 @@ class FHIRAttachment extends FHIRElement
      * Identifies the type of the data in the attachment and allows a method to be
      * chosen to interpret or render the data. Includes mime type parameters such as
      * charset where appropriate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $contentType;
@@ -151,8 +148,6 @@ class FHIRAttachment extends FHIRElement
      *
      * The human language of the content. The value can be any valid value according to
      * BCP 47.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $language;
@@ -162,8 +157,6 @@ class FHIRAttachment extends FHIRElement
      *
      * The actual data of the attachment - a sequence of bytes. In XML, represented
      * using base64.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $data;
@@ -172,8 +165,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An alternative location where the data can be accessed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -182,8 +173,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of bytes of data that make up this attachment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $size;
@@ -192,8 +181,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The calculated hash of the data using SHA-1. Represented using base64.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $hash;
@@ -202,8 +189,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label or set of text to display in place of the data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -212,14 +197,6 @@ class FHIRAttachment extends FHIRElement
     /**
      * FHIRAttachment Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $contentType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $data
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $url
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $size
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $hash
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $title
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -275,8 +252,6 @@ class FHIRAttachment extends FHIRElement
      * Identifies the type of the data in the attachment and allows a method to be
      * chosen to interpret or render the data. Includes mime type parameters such as
      * charset where appropriate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getContentType(): null|FHIRCode
     {
@@ -292,9 +267,6 @@ class FHIRAttachment extends FHIRElement
      * Identifies the type of the data in the attachment and allows a method to be
      * chosen to interpret or render the data. Includes mime type parameters such as
      * charset where appropriate.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $contentType
-     * @return static
      */
     public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
     {
@@ -317,8 +289,6 @@ class FHIRAttachment extends FHIRElement
      *
      * The human language of the content. The value can be any valid value according to
      * BCP 47.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getLanguage(): null|FHIRCode
     {
@@ -333,9 +303,6 @@ class FHIRAttachment extends FHIRElement
      *
      * The human language of the content. The value can be any valid value according to
      * BCP 47.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @return static
      */
     public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -356,8 +323,6 @@ class FHIRAttachment extends FHIRElement
      *
      * The actual data of the attachment - a sequence of bytes. In XML, represented
      * using base64.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary
      */
     public function getData(): null|FHIRBase64Binary
     {
@@ -370,9 +335,6 @@ class FHIRAttachment extends FHIRElement
      *
      * The actual data of the attachment - a sequence of bytes. In XML, represented
      * using base64.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $data
-     * @return static
      */
     public function setData(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $data): self
     {
@@ -392,8 +354,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An alternative location where the data can be accessed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -405,9 +365,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An alternative location where the data can be accessed.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -427,8 +384,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of bytes of data that make up this attachment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     public function getSize(): null|FHIRInteger
     {
@@ -440,9 +395,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of bytes of data that make up this attachment.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $size
-     * @return static
      */
     public function setSize(null|string|float|FHIRIntegerPrimitive|FHIRInteger $size): self
     {
@@ -462,8 +414,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The calculated hash of the data using SHA-1. Represented using base64.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary
      */
     public function getHash(): null|FHIRBase64Binary
     {
@@ -475,9 +425,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The calculated hash of the data using SHA-1. Represented using base64.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $hash
-     * @return static
      */
     public function setHash(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $hash): self
     {
@@ -497,8 +444,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label or set of text to display in place of the data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -510,9 +455,6 @@ class FHIRAttachment extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label or set of text to display in place of the data.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -529,10 +471,7 @@ class FHIRAttachment extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -642,10 +581,6 @@ class FHIRAttachment extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -723,10 +658,7 @@ class FHIRAttachment extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

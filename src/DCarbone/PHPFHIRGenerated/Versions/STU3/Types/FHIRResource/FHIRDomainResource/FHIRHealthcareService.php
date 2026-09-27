@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive;
@@ -89,7 +87,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -178,8 +175,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this healthcareservice record is in active use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $active;
@@ -189,8 +184,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that provides this healthcare service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $providedBy;
@@ -201,8 +194,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the broad category of service being performed or delivered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -249,8 +240,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Further description of the service as it would be presented to a consumer while
      * searching.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -262,8 +251,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Any additional description of the service and/or any specific issues not covered
      * by the other attributes, which can be displayed as further detail under the
      * serviceName.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $comment;
@@ -273,8 +260,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra details about the service that can't be placed in the other fields.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $extraDetails;
@@ -285,8 +270,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * If there is a photo/symbol associated with this HealthcareService, it may be
      * included here to facilitate quick identification of the service in a list.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $photo;
@@ -335,8 +318,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $eligibility;
@@ -346,8 +327,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the eligibility conditions for the service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $eligibilityNote;
@@ -394,8 +373,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Indicates whether or not a prospective consumer will require an appointment for
      * a particular service at a site to be provided by the Organization. Indicates if
      * an appointment is required for access to this service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $appointmentRequired;
@@ -426,8 +403,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
      * details in the available Times and not available Times.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $availabilityExceptions;
@@ -447,37 +422,21 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
     /* constructor.php:61 */
     /**
      * FHIRHealthcareService Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $active
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $providedBy
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $specialty
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $location
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $comment
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $extraDetails
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $photo
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint> $telecom
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $coverageArea
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $serviceProvisionCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $eligibility
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $eligibilityNote
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> $programName
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $characteristic
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $referralMethod
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $appointmentRequired
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime> $availableTime
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable> $notAvailable
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $availabilityExceptions
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $endpoint
      * @param null|string[] $fhirComments
      */
@@ -642,9 +601,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifiers for this item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -661,9 +617,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifiers for this item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -680,8 +633,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this healthcareservice record is in active use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getActive(): null|FHIRBoolean
     {
@@ -693,9 +644,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this healthcareservice record is in active use.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $active
-     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -716,8 +664,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that provides this healthcare service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getProvidedBy(): null|FHIRReference
     {
@@ -730,9 +676,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that provides this healthcare service.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $providedBy
-     * @return static
      */
     public function setProvidedBy(null|FHIRReference $providedBy): self
     {
@@ -751,8 +694,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the broad category of service being performed or delivered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -766,9 +707,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the broad category of service being performed or delivered.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -813,9 +751,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific type of service that may be delivered or performed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -833,9 +768,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific type of service that may be delivered or performed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -882,9 +814,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $specialty
-     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -903,9 +832,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$specialty
-     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -948,9 +874,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) where this healthcare service may be provided.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $location
-     * @return static
      */
     public function addLocation(FHIRReference $location): self
     {
@@ -967,9 +890,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) where this healthcare service may be provided.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$location
-     * @return static
      */
     public function setLocation(FHIRReference ...$location): self
     {
@@ -988,8 +908,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Further description of the service as it would be presented to a consumer while
      * searching.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -1003,9 +921,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Further description of the service as it would be presented to a consumer while
      * searching.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1028,8 +943,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Any additional description of the service and/or any specific issues not covered
      * by the other attributes, which can be displayed as further detail under the
      * serviceName.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getComment(): null|FHIRString
     {
@@ -1044,9 +957,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Any additional description of the service and/or any specific issues not covered
      * by the other attributes, which can be displayed as further detail under the
      * serviceName.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $comment
-     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -1067,8 +977,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra details about the service that can't be placed in the other fields.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getExtraDetails(): null|FHIRString
     {
@@ -1081,9 +989,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra details about the service that can't be placed in the other fields.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $extraDetails
-     * @return static
      */
     public function setExtraDetails(null|string|FHIRStringPrimitive|FHIRString $extraDetails): self
     {
@@ -1105,8 +1010,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * If there is a photo/symbol associated with this HealthcareService, it may be
      * included here to facilitate quick identification of the service in a list.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     public function getPhoto(): null|FHIRAttachment
     {
@@ -1120,9 +1023,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * If there is a photo/symbol associated with this HealthcareService, it may be
      * included here to facilitate quick identification of the service in a list.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $photo
-     * @return static
      */
     public function setPhoto(null|FHIRAttachment $photo): self
     {
@@ -1167,9 +1067,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of contacts related to this specific healthcare service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint $telecom
-     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -1187,9 +1084,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of contacts related to this specific healthcare service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactPoint ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -1234,9 +1128,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The location(s) that this service is available to (not where the service is
      * provided).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $coverageArea
-     * @return static
      */
     public function addCoverageArea(FHIRReference $coverageArea): self
     {
@@ -1254,9 +1145,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The location(s) that this service is available to (not where the service is
      * provided).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$coverageArea
-     * @return static
      */
     public function setCoverageArea(FHIRReference ...$coverageArea): self
     {
@@ -1303,9 +1191,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $serviceProvisionCode
-     * @return static
      */
     public function addServiceProvisionCode(FHIRCodeableConcept $serviceProvisionCode): self
     {
@@ -1324,9 +1209,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$serviceProvisionCode
-     * @return static
      */
     public function setServiceProvisionCode(FHIRCodeableConcept ...$serviceProvisionCode): self
     {
@@ -1346,8 +1228,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getEligibility(): null|FHIRCodeableConcept
     {
@@ -1362,9 +1242,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $eligibility
-     * @return static
      */
     public function setEligibility(null|FHIRCodeableConcept $eligibility): self
     {
@@ -1382,8 +1259,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the eligibility conditions for the service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getEligibilityNote(): null|FHIRString
     {
@@ -1396,9 +1271,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the eligibility conditions for the service.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $eligibilityNote
-     * @return static
      */
     public function setEligibilityNote(null|string|FHIRStringPrimitive|FHIRString $eligibilityNote): self
     {
@@ -1444,9 +1316,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Program Names that can be used to categorize the service.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $programName
-     * @return static
      */
     public function addProgramName(string|FHIRStringPrimitive|FHIRString $programName): self
     {
@@ -1466,9 +1335,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Program Names that can be used to categorize the service.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString ...$programName
-     * @return static
      */
     public function setProgramName(string|FHIRStringPrimitive|FHIRString ...$programName): self
     {
@@ -1520,9 +1386,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $characteristic
-     * @return static
      */
     public function addCharacteristic(FHIRCodeableConcept $characteristic): self
     {
@@ -1540,9 +1403,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$characteristic
-     * @return static
      */
     public function setCharacteristic(FHIRCodeableConcept ...$characteristic): self
     {
@@ -1589,9 +1449,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $referralMethod
-     * @return static
      */
     public function addReferralMethod(FHIRCodeableConcept $referralMethod): self
     {
@@ -1610,9 +1467,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$referralMethod
-     * @return static
      */
     public function setReferralMethod(FHIRCodeableConcept ...$referralMethod): self
     {
@@ -1631,8 +1485,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Indicates whether or not a prospective consumer will require an appointment for
      * a particular service at a site to be provided by the Organization. Indicates if
      * an appointment is required for access to this service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getAppointmentRequired(): null|FHIRBoolean
     {
@@ -1646,9 +1498,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * Indicates whether or not a prospective consumer will require an appointment for
      * a particular service at a site to be provided by the Organization. Indicates if
      * an appointment is required for access to this service.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $appointmentRequired
-     * @return static
      */
     public function setAppointmentRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $appointmentRequired): self
     {
@@ -1690,9 +1539,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * The details of a healthcare service available at a location.
      *
      * A collection of times that the Service Site is available.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime $availableTime
-     * @return static
      */
     public function addAvailableTime(FHIRHealthcareServiceAvailableTime $availableTime): self
     {
@@ -1707,9 +1553,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * The details of a healthcare service available at a location.
      *
      * A collection of times that the Service Site is available.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime ...$availableTime
-     * @return static
      */
     public function setAvailableTime(FHIRHealthcareServiceAvailableTime ...$availableTime): self
     {
@@ -1750,9 +1593,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The HealthcareService is not available during this period of time due to the
      * provided reason.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable $notAvailable
-     * @return static
      */
     public function addNotAvailable(FHIRHealthcareServiceNotAvailable $notAvailable): self
     {
@@ -1768,9 +1608,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * The HealthcareService is not available during this period of time due to the
      * provided reason.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable ...$notAvailable
-     * @return static
      */
     public function setNotAvailable(FHIRHealthcareServiceNotAvailable ...$notAvailable): self
     {
@@ -1790,8 +1627,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
      * details in the available Times and not available Times.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getAvailabilityExceptions(): null|FHIRString
     {
@@ -1806,9 +1641,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
      * details in the available Times and not available Times.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $availabilityExceptions
-     * @return static
      */
     public function setAvailabilityExceptions(null|string|FHIRStringPrimitive|FHIRString $availabilityExceptions): self
     {
@@ -1856,9 +1688,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $endpoint
-     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -1876,9 +1705,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
      *
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$endpoint
-     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {
@@ -1892,10 +1718,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRHealthcareService $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRHealthcareService
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2077,11 +1900,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2294,10 +2112,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements VersionContain
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRHealthcareService $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRHealthcareService
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

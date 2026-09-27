@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -103,7 +103,6 @@ class FHIRCarePlanGoalStatus extends FHIRElement implements PrimitiveContainerTy
     ];
 
     /* class_default.php:112 */
-    /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanGoalStatusList */
     #[FHIRCarePlanGoalStatusList]
     protected FHIRCarePlanGoalStatusList $value;
 
@@ -111,8 +110,6 @@ class FHIRCarePlanGoalStatus extends FHIRElement implements PrimitiveContainerTy
     /**
      * FHIRCarePlanGoalStatus Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanGoalStatusList $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -135,18 +132,11 @@ class FHIRCarePlanGoalStatus extends FHIRElement implements PrimitiveContainerTy
     }
 
     /* class_default.php:174 */
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanGoalStatusList
-     */
     public function getValue(): null|FHIRCarePlanGoalStatusList
     {
         return $this->value ?? null;
     }
 
-    /**
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanGoalStatusList $value
-     * @return static
-     */
     public function setValue(null|string|FHIRCarePlanGoalStatusList $value): self
     {
         if (null === $value) {
@@ -169,10 +159,7 @@ class FHIRCarePlanGoalStatus extends FHIRElement implements PrimitiveContainerTy
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanGoalStatus $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanGoalStatus
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -225,11 +212,6 @@ class FHIRCarePlanGoalStatus extends FHIRElement implements PrimitiveContainerTy
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config,
                                  null|ValueXMLLocationEnum $valueLocation = null): void
@@ -253,10 +235,7 @@ class FHIRCarePlanGoalStatus extends FHIRElement implements PrimitiveContainerTy
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanGoalStatus $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanGoalStatus
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

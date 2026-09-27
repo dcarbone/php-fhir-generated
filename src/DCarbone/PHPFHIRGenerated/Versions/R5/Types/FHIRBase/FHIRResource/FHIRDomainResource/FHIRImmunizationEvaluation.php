@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -111,7 +109,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImmunizati
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -203,8 +200,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Indicates the current status of the evaluation of the vaccination administration
      * event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImmunizationEvaluationStatusCodes
      */
     #[FHIRImmunizationEvaluationStatusCodes]
     protected FHIRImmunizationEvaluationStatusCodes $status;
@@ -214,8 +209,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual for whom the evaluation is being done.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -229,8 +222,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the evaluation of the vaccine administration event was performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -240,8 +231,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol (e.g. ACIP).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $authority;
@@ -252,8 +241,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine preventable disease the dose is being evaluated against.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $targetDisease;
@@ -263,8 +250,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine administration event being evaluated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $immunizationEvent;
@@ -276,8 +261,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Indicates if the dose is valid or not valid with respect to the published
      * recommendations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $doseStatus;
@@ -304,8 +287,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * the Narrative, or extensions
      *
      * Additional information about the evaluation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -316,8 +297,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $series;
@@ -328,8 +307,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Nominal position in a series as determined by the outcome of the evaluation
      * process.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $doseNumber;
@@ -340,8 +317,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * The recommended number of doses to achieve immunity as determined by the outcome
      * of the evaluation process.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $seriesDoses;
@@ -349,27 +324,11 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
     /* constructor.php:61 */
     /**
      * FHIRImmunizationEvaluation Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImmunizationEvaluationStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImmunizationEvaluationStatusCodes $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $authority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $targetDisease
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $immunizationEvent
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $doseStatus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $doseStatusReason
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $series
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $doseNumber
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $seriesDoses
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -491,9 +450,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this immunization evaluation record.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -511,9 +467,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this immunization evaluation record.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -530,8 +483,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Indicates the current status of the evaluation of the vaccination administration
      * event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImmunizationEvaluationStatusCodes
      */
     public function getStatus(): null|FHIRImmunizationEvaluationStatusCodes
     {
@@ -543,9 +494,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Indicates the current status of the evaluation of the vaccination administration
      * event.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImmunizationEvaluationStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImmunizationEvaluationStatusCodes $status
-     * @return static
      */
     public function setStatus(null|string|FHIRImmunizationEvaluationStatusCodesEnum|FHIRImmunizationEvaluationStatusCodes $status): self
     {
@@ -566,8 +514,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual for whom the evaluation is being done.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -580,9 +526,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual for whom the evaluation is being done.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -604,8 +547,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the evaluation of the vaccine administration event was performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -622,9 +563,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the evaluation of the vaccine administration event was performed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -645,8 +583,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol (e.g. ACIP).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getAuthority(): null|FHIRReference
     {
@@ -659,9 +595,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol (e.g. ACIP).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $authority
-     * @return static
      */
     public function setAuthority(null|FHIRReference $authority): self
     {
@@ -680,8 +613,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine preventable disease the dose is being evaluated against.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getTargetDisease(): null|FHIRCodeableConcept
     {
@@ -695,9 +626,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine preventable disease the dose is being evaluated against.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $targetDisease
-     * @return static
      */
     public function setTargetDisease(null|FHIRCodeableConcept $targetDisease): self
     {
@@ -715,8 +643,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine administration event being evaluated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getImmunizationEvent(): null|FHIRReference
     {
@@ -729,9 +655,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine administration event being evaluated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $immunizationEvent
-     * @return static
      */
     public function setImmunizationEvent(null|FHIRReference $immunizationEvent): self
     {
@@ -751,8 +674,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Indicates if the dose is valid or not valid with respect to the published
      * recommendations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getDoseStatus(): null|FHIRCodeableConcept
     {
@@ -767,9 +688,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Indicates if the dose is valid or not valid with respect to the published
      * recommendations.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $doseStatus
-     * @return static
      */
     public function setDoseStatus(null|FHIRCodeableConcept $doseStatus): self
     {
@@ -816,9 +734,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Provides an explanation as to why the vaccine administration event is valid or
      * not relative to the published recommendations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $doseStatusReason
-     * @return static
      */
     public function addDoseStatusReason(FHIRCodeableConcept $doseStatusReason): self
     {
@@ -837,9 +752,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Provides an explanation as to why the vaccine administration event is valid or
      * not relative to the published recommendations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$doseStatusReason
-     * @return static
      */
     public function setDoseStatusReason(FHIRCodeableConcept ...$doseStatusReason): self
     {
@@ -861,8 +773,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * the Narrative, or extensions
      *
      * Additional information about the evaluation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -879,9 +789,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      * the Narrative, or extensions
      *
      * Additional information about the evaluation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -903,8 +810,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSeries(): null|FHIRString
     {
@@ -918,9 +823,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $series
-     * @return static
      */
     public function setSeries(null|string|FHIRStringPrimitive|FHIRString $series): self
     {
@@ -942,8 +844,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Nominal position in a series as determined by the outcome of the evaluation
      * process.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDoseNumber(): null|FHIRString
     {
@@ -957,9 +857,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * Nominal position in a series as determined by the outcome of the evaluation
      * process.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $doseNumber
-     * @return static
      */
     public function setDoseNumber(null|string|FHIRStringPrimitive|FHIRString $doseNumber): self
     {
@@ -981,8 +878,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * The recommended number of doses to achieve immunity as determined by the outcome
      * of the evaluation process.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSeriesDoses(): null|FHIRString
     {
@@ -996,9 +891,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
      *
      * The recommended number of doses to achieve immunity as determined by the outcome
      * of the evaluation process.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $seriesDoses
-     * @return static
      */
     public function setSeriesDoses(null|string|FHIRStringPrimitive|FHIRString $seriesDoses): self
     {
@@ -1015,10 +907,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1170,11 +1059,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1305,10 +1189,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements VersionCo
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRImmunizationEvaluation
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

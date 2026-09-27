@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -110,7 +108,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNutritionProduc
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
@@ -162,8 +159,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNutritionProductStatus
      */
     #[FHIRNutritionProductStatus]
     protected FHIRNutritionProductStatus $status;
@@ -188,8 +183,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * The code assigned to the product, for example a manufacturer number or other
      * terminology.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -249,8 +242,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * Conveys instance-level information about this product item. One or several
      * physical, countable instances or occurrences of the product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance
      */
     #[FHIRNutritionProductInstance]
     protected FHIRNutritionProductInstance $instance;
@@ -270,23 +261,15 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
     /* constructor.php:61 */
     /**
      * FHIRNutritionProduct Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRNutritionProductStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNutritionProductStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $manufacturer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductNutrient> $nutrient
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductIngredient> $ingredient
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference> $knownAllergen
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductProductCharacteristic> $productCharacteristic
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance $instance
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|string[] $fhirComments
      */
@@ -368,8 +351,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNutritionProductStatus
      */
     public function getStatus(): null|FHIRNutritionProductStatus
     {
@@ -380,9 +361,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the product.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRNutritionProductStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNutritionProductStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRNutritionProductStatusEnum|FHIRNutritionProductStatus $status): self
     {
@@ -432,9 +410,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * Nutrition products can have different classifications - according to its
      * nutritional properties, preparation methods, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -453,9 +428,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * Nutrition products can have different classifications - according to its
      * nutritional properties, preparation methods, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -475,8 +447,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * The code assigned to the product, for example a manufacturer number or other
      * terminology.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -491,9 +461,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * The code assigned to the product, for example a manufacturer number or other
      * terminology.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -538,9 +505,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * The organisation (manufacturer, representative or legal authorisation holder)
      * that is responsible for the device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $manufacturer
-     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -558,9 +522,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * The organisation (manufacturer, representative or legal authorisation holder)
      * that is responsible for the device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$manufacturer
-     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -599,9 +560,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or fluid product that is consumed by patients.
      *
      * The product's nutritional information expressed by the nutrients.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductNutrient $nutrient
-     * @return static
      */
     public function addNutrient(FHIRNutritionProductNutrient $nutrient): self
     {
@@ -616,9 +574,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or fluid product that is consumed by patients.
      *
      * The product's nutritional information expressed by the nutrients.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductNutrient ...$nutrient
-     * @return static
      */
     public function setNutrient(FHIRNutritionProductNutrient ...$nutrient): self
     {
@@ -657,9 +612,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or fluid product that is consumed by patients.
      *
      * Ingredients contained in this product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductIngredient $ingredient
-     * @return static
      */
     public function addIngredient(FHIRNutritionProductIngredient $ingredient): self
     {
@@ -674,9 +626,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or fluid product that is consumed by patients.
      *
      * Ingredients contained in this product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductIngredient ...$ingredient
-     * @return static
      */
     public function setIngredient(FHIRNutritionProductIngredient ...$ingredient): self
     {
@@ -721,9 +670,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allergens that are known or suspected to be a part of this nutrition product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $knownAllergen
-     * @return static
      */
     public function addKnownAllergen(FHIRCodeableReference $knownAllergen): self
     {
@@ -741,9 +687,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allergens that are known or suspected to be a part of this nutrition product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference ...$knownAllergen
-     * @return static
      */
     public function setKnownAllergen(FHIRCodeableReference ...$knownAllergen): self
     {
@@ -782,9 +725,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or fluid product that is consumed by patients.
      *
      * Specifies descriptive properties of the nutrition product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductProductCharacteristic $productCharacteristic
-     * @return static
      */
     public function addProductCharacteristic(FHIRNutritionProductProductCharacteristic $productCharacteristic): self
     {
@@ -799,9 +739,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * A food or fluid product that is consumed by patients.
      *
      * Specifies descriptive properties of the nutrition product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductProductCharacteristic ...$productCharacteristic
-     * @return static
      */
     public function setProductCharacteristic(FHIRNutritionProductProductCharacteristic ...$productCharacteristic): self
     {
@@ -818,8 +755,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * Conveys instance-level information about this product item. One or several
      * physical, countable instances or occurrences of the product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance
      */
     public function getInstance(): null|FHIRNutritionProductInstance
     {
@@ -831,9 +766,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      *
      * Conveys instance-level information about this product item. One or several
      * physical, countable instances or occurrences of the product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance $instance
-     * @return static
      */
     public function setInstance(null|FHIRNutritionProductInstance $instance): self
     {
@@ -878,9 +810,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -898,9 +827,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -914,10 +840,7 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRNutritionProduct $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRNutritionProduct
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1023,11 +946,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1128,10 +1046,7 @@ class FHIRNutritionProduct extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRNutritionProduct $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRNutritionProduct
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

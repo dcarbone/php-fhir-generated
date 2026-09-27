@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -122,7 +120,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -222,8 +219,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the subscription topic is stored on different
      * servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -252,8 +247,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed
      * version is not available. There is also no expectation that versions are
      * orderable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -264,8 +257,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * A short, descriptive, user-friendly title for the SubscriptionTopic, for
      * example, "admission".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -286,8 +277,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the SubscriptionTopic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -298,8 +287,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * A flag to indicate that this TopSubscriptionTopicic is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -314,8 +301,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * For draft definitions, indicates the date of initial creation. For active
      * definitions, represents the date of activation. For withdrawn definitions,
      * indicates the date of withdrawal.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -326,8 +311,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * Helps establish the "authority/credibility" of the SubscriptionTopic. May also
      * allow for contact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -354,8 +337,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * A free text natural language description of the Topic from the consumer's
      * perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -397,8 +378,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * Explains why this Topic is needed and why it has been designed as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -414,8 +393,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * A copyright statement relating to the SubscriptionTopic and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the SubscriptionTopic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -427,8 +404,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $approvalDate;
@@ -440,8 +415,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastReviewDate;
@@ -452,8 +425,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The period during which the SubscriptionTopic content was or is planned to be
      * effective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -508,32 +479,14 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
     /* constructor.php:61 */
     /**
      * FHIRSubscriptionTopic Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $title
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical> $derivedFrom
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $approvalDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $lastReviewDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $effectivePeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicResourceTrigger> $resourceTrigger
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicEventTrigger> $eventTrigger
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy> $canFilterBy
@@ -674,8 +627,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the subscription topic is stored on different
      * servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -694,9 +645,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the subscription topic is stored on different
      * servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -748,9 +696,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * Business identifiers assigned to this subscription topic by the performer and/or
      * other systems. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -770,9 +715,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * Business identifiers assigned to this subscription topic by the performer and/or
      * other systems. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -795,8 +737,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed
      * version is not available. There is also no expectation that versions are
      * orderable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -814,9 +754,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed
      * version is not available. There is also no expectation that versions are
      * orderable.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -838,8 +775,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * A short, descriptive, user-friendly title for the SubscriptionTopic, for
      * example, "admission".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -853,9 +788,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * A short, descriptive, user-friendly title for the SubscriptionTopic, for
      * example, "admission".
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -905,9 +837,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The canonical URL pointing to another FHIR-defined SubscriptionTopic that is
      * adhered to in whole or in part by this SubscriptionTopic.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $derivedFrom
-     * @return static
      */
     public function addDerivedFrom(string|FHIRCanonicalPrimitive|FHIRCanonical $derivedFrom): self
     {
@@ -929,9 +858,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The canonical URL pointing to another FHIR-defined SubscriptionTopic that is
      * adhered to in whole or in part by this SubscriptionTopic.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical ...$derivedFrom
-     * @return static
      */
     public function setDerivedFrom(string|FHIRCanonicalPrimitive|FHIRCanonical ...$derivedFrom): self
     {
@@ -954,8 +880,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the SubscriptionTopic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -966,9 +890,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the SubscriptionTopic.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -990,8 +911,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * A flag to indicate that this TopSubscriptionTopicic is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -1005,9 +924,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * A flag to indicate that this TopSubscriptionTopicic is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1033,8 +949,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * For draft definitions, indicates the date of initial creation. For active
      * definitions, represents the date of activation. For withdrawn definitions,
      * indicates the date of withdrawal.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1052,9 +966,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * For draft definitions, indicates the date of initial creation. For active
      * definitions, represents the date of activation. For withdrawn definitions,
      * indicates the date of withdrawal.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1076,8 +987,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * Helps establish the "authority/credibility" of the SubscriptionTopic. May also
      * allow for contact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1091,9 +1000,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * Helps establish the "authority/credibility" of the SubscriptionTopic. May also
      * allow for contact.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1141,9 +1047,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1161,9 +1064,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1186,8 +1086,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * A free text natural language description of the Topic from the consumer's
      * perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1205,9 +1103,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * A free text natural language description of the Topic from the consumer's
      * perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1263,9 +1158,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of code system definitions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1287,9 +1179,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of code system definitions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1334,9 +1223,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the Topic is intended to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1354,9 +1240,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the Topic is intended to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1378,8 +1261,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * Explains why this Topic is needed and why it has been designed as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1396,9 +1277,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * the Narrative, or extensions
      *
      * Explains why this Topic is needed and why it has been designed as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1425,8 +1303,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * A copyright statement relating to the SubscriptionTopic and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the SubscriptionTopic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1445,9 +1321,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * A copyright statement relating to the SubscriptionTopic and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the SubscriptionTopic.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1470,8 +1343,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     public function getApprovalDate(): null|FHIRDate
     {
@@ -1486,9 +1357,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $approvalDate
-     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1511,8 +1379,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     public function getLastReviewDate(): null|FHIRDate
     {
@@ -1527,9 +1393,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $lastReviewDate
-     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1551,8 +1414,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The period during which the SubscriptionTopic content was or is planned to be
      * effective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -1566,9 +1427,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * The period during which the SubscriptionTopic content was or is planned to be
      * effective.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1617,9 +1475,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * a full FHIR search string or FHIRPath expression. Multiple triggers are
      * considered OR joined (e.g., a resource update matching ANY of the definitions
      * will trigger a notification).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicResourceTrigger $resourceTrigger
-     * @return static
      */
     public function addResourceTrigger(FHIRSubscriptionTopicResourceTrigger $resourceTrigger): self
     {
@@ -1639,9 +1494,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * a full FHIR search string or FHIRPath expression. Multiple triggers are
      * considered OR joined (e.g., a resource update matching ANY of the definitions
      * will trigger a notification).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicResourceTrigger ...$resourceTrigger
-     * @return static
      */
     public function setResourceTrigger(FHIRSubscriptionTopicResourceTrigger ...$resourceTrigger): self
     {
@@ -1682,9 +1534,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * useful to filter projections from this topic.
      *
      * Event definition which can be used to trigger the SubscriptionTopic.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicEventTrigger $eventTrigger
-     * @return static
      */
     public function addEventTrigger(FHIRSubscriptionTopicEventTrigger $eventTrigger): self
     {
@@ -1700,9 +1549,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * useful to filter projections from this topic.
      *
      * Event definition which can be used to trigger the SubscriptionTopic.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicEventTrigger ...$eventTrigger
-     * @return static
      */
     public function setEventTrigger(FHIRSubscriptionTopicEventTrigger ...$eventTrigger): self
     {
@@ -1747,9 +1593,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * List of properties by which Subscriptions on the SubscriptionTopic can be
      * filtered. May be defined Search Parameters (e.g., Encounter.patient) or
      * parameters defined within this SubscriptionTopic context (e.g., hub.event).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy $canFilterBy
-     * @return static
      */
     public function addCanFilterBy(FHIRSubscriptionTopicCanFilterBy $canFilterBy): self
     {
@@ -1767,9 +1610,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      * List of properties by which Subscriptions on the SubscriptionTopic can be
      * filtered. May be defined Search Parameters (e.g., Encounter.patient) or
      * parameters defined within this SubscriptionTopic context (e.g., hub.event).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy ...$canFilterBy
-     * @return static
      */
     public function setCanFilterBy(FHIRSubscriptionTopicCanFilterBy ...$canFilterBy): self
     {
@@ -1812,9 +1652,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * List of properties to describe the shape (e.g., resources) included in
      * notifications from this Subscription Topic.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicNotificationShape $notificationShape
-     * @return static
      */
     public function addNotificationShape(FHIRSubscriptionTopicNotificationShape $notificationShape): self
     {
@@ -1831,9 +1668,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
      *
      * List of properties to describe the shape (e.g., resources) included in
      * notifications from this Subscription Topic.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicNotificationShape ...$notificationShape
-     * @return static
      */
     public function setNotificationShape(FHIRSubscriptionTopicNotificationShape ...$notificationShape): self
     {
@@ -1847,10 +1681,7 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubscriptionTopic $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubscriptionTopic
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2068,11 +1899,6 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2292,10 +2118,7 @@ class FHIRSubscriptionTopic extends FHIRDomainResource implements VersionContain
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubscriptionTopic $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubscriptionTopic
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -119,8 +119,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      *
      * A brief, natural language description of the intended semantics of the dynamic
      * value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -131,8 +129,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      *
      * The path to the element to be customized. This is the path on the resource that
      * will hold the result of the calculation defined by the expression.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -142,8 +138,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $language;
@@ -153,8 +147,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression specifying the value of the customized element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $expression;
@@ -163,12 +155,7 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
     /**
      * FHIRActivityDefinitionDynamicValue Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $path
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $language
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $expression
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -212,8 +199,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      *
      * A brief, natural language description of the intended semantics of the dynamic
      * value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -227,9 +212,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      *
      * A brief, natural language description of the intended semantics of the dynamic
      * value.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -251,8 +233,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      *
      * The path to the element to be customized. This is the path on the resource that
      * will hold the result of the calculation defined by the expression.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getPath(): null|FHIRString
     {
@@ -266,9 +246,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      *
      * The path to the element to be customized. This is the path on the resource that
      * will hold the result of the calculation defined by the expression.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $path
-     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -289,8 +266,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getLanguage(): null|FHIRString
     {
@@ -303,9 +278,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $language
-     * @return static
      */
     public function setLanguage(null|string|FHIRStringPrimitive|FHIRString $language): self
     {
@@ -326,8 +298,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression specifying the value of the customized element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getExpression(): null|FHIRString
     {
@@ -340,9 +310,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression specifying the value of the customized element.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $expression
-     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -359,10 +326,7 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -444,10 +408,6 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -495,10 +455,7 @@ class FHIRActivityDefinitionDynamicValue extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -145,8 +144,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the variable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $variableDefinition;
@@ -154,8 +151,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the variable is classified for use in adjusted analysis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREvidenceVariableHandling
      */
     #[FHIREvidenceVariableHandling]
     protected FHIREvidenceVariableHandling $handling;
@@ -200,10 +195,7 @@ class FHIREvidenceVariable extends FHIRBackboneElement
     /**
      * FHIREvidenceVariable Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $variableDefinition
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREvidenceVariableHandlingEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREvidenceVariableHandling $handling
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $valueCategory
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity> $valueQuantity
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange> $valueRange
@@ -253,8 +245,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the variable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getVariableDefinition(): null|FHIRReference
     {
@@ -267,9 +257,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the variable.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $variableDefinition
-     * @return static
      */
     public function setVariableDefinition(null|FHIRReference $variableDefinition): self
     {
@@ -285,8 +272,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the variable is classified for use in adjusted analysis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREvidenceVariableHandling
      */
     public function getHandling(): null|FHIREvidenceVariableHandling
     {
@@ -297,9 +282,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the variable is classified for use in adjusted analysis.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREvidenceVariableHandlingEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREvidenceVariableHandling $handling
-     * @return static
      */
     public function setHandling(null|string|FHIREvidenceVariableHandlingEnum|FHIREvidenceVariableHandling $handling): self
     {
@@ -347,9 +329,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description for grouping of ordinal or polychotomous variables.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCategory
-     * @return static
      */
     public function addValueCategory(FHIRCodeableConcept $valueCategory): self
     {
@@ -367,9 +346,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description for grouping of ordinal or polychotomous variables.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$valueCategory
-     * @return static
      */
     public function setValueCategory(FHIRCodeableConcept ...$valueCategory): self
     {
@@ -416,9 +392,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Discrete value for grouping of ordinal or polychotomous variables.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
      */
     public function addValueQuantity(FHIRQuantity $valueQuantity): self
     {
@@ -437,9 +410,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Discrete value for grouping of ordinal or polychotomous variables.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$valueQuantity
-     * @return static
      */
     public function setValueQuantity(FHIRQuantity ...$valueQuantity): self
     {
@@ -482,9 +452,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Range of values for grouping of ordinal or polychotomous variables.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @return static
      */
     public function addValueRange(FHIRRange $valueRange): self
     {
@@ -501,9 +468,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Range of values for grouping of ordinal or polychotomous variables.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange ...$valueRange
-     * @return static
      */
     public function setValueRange(FHIRRange ...$valueRange): self
     {
@@ -517,10 +481,7 @@ class FHIREvidenceVariable extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariable $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariable
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -580,10 +541,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -627,10 +584,7 @@ class FHIREvidenceVariable extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariable $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariable
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

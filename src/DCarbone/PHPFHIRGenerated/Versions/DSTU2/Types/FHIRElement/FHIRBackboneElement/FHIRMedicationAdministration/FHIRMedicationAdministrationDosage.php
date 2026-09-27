@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -132,8 +132,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * too complex to code. When coded instructions are present, the free text
      * instructions may still be present for display to humans taking or administering
      * the medication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -145,8 +143,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. For example, "left arm".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $siteCodeableConcept;
@@ -157,8 +153,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. For example, "left arm".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $siteReference;
@@ -171,8 +165,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto the patient. For example, topical, intravenous,
      * etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $route;
@@ -186,8 +178,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * was introduced into or on the body. This attribute will most often NOT be
      * populated. It is most commonly used for injections. For example, Slow Push, Deep
      * IV.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $method;
@@ -195,8 +185,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * The amount of the medication given at one administration event. Use this value
      * when the administration is essentially an instantaneous event such as a
      * swallowing a tablet or giving an injection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     #[FHIRSimpleQuantity]
     protected FHIRSimpleQuantity $quantity;
@@ -212,8 +200,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Currently we do not specify a default of '1' in the denominator, but this is
      * being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8
      * hours.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $rateRatio;
@@ -228,8 +214,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Currently we do not specify a default of '1' in the denominator, but this is
      * being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8
      * hours.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $rateRange;
@@ -238,16 +222,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     /**
      * FHIRMedicationAdministrationDosage Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $siteCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $siteReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $route
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $method
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $rateRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $rateRange
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -309,8 +284,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * too complex to code. When coded instructions are present, the free text
      * instructions may still be present for display to humans taking or administering
      * the medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -326,9 +299,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * too complex to code. When coded instructions are present, the free text
      * instructions may still be present for display to humans taking or administering
      * the medication.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -351,8 +321,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. For example, "left arm".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSiteCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -367,9 +335,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. For example, "left arm".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $siteCodeableConcept
-     * @return static
      */
     public function setSiteCodeableConcept(null|FHIRCodeableConcept $siteCodeableConcept): self
     {
@@ -388,8 +353,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. For example, "left arm".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSiteReference(): null|FHIRReference
     {
@@ -403,9 +366,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. For example, "left arm".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $siteReference
-     * @return static
      */
     public function setSiteReference(null|FHIRReference $siteReference): self
     {
@@ -426,8 +386,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto the patient. For example, topical, intravenous,
      * etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRoute(): null|FHIRCodeableConcept
     {
@@ -443,9 +401,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto the patient. For example, topical, intravenous,
      * etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $route
-     * @return static
      */
     public function setRoute(null|FHIRCodeableConcept $route): self
     {
@@ -467,8 +422,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * was introduced into or on the body. This attribute will most often NOT be
      * populated. It is most commonly used for injections. For example, Slow Push, Deep
      * IV.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod(): null|FHIRCodeableConcept
     {
@@ -485,9 +438,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * was introduced into or on the body. This attribute will most often NOT be
      * populated. It is most commonly used for injections. For example, Slow Push, Deep
      * IV.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $method
-     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -503,8 +453,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * The amount of the medication given at one administration event. Use this value
      * when the administration is essentially an instantaneous event such as a
      * swallowing a tablet or giving an injection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getQuantity(): null|FHIRSimpleQuantity
     {
@@ -515,9 +463,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * The amount of the medication given at one administration event. Use this value
      * when the administration is essentially an instantaneous event such as a
      * swallowing a tablet or giving an injection.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRSimpleQuantity $quantity): self
     {
@@ -541,8 +486,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Currently we do not specify a default of '1' in the denominator, but this is
      * being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8
      * hours.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio
      */
     public function getRateRatio(): null|FHIRRatio
     {
@@ -561,9 +504,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Currently we do not specify a default of '1' in the denominator, but this is
      * being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8
      * hours.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRatio $rateRatio
-     * @return static
      */
     public function setRateRatio(null|FHIRRatio $rateRatio): self
     {
@@ -586,8 +526,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Currently we do not specify a default of '1' in the denominator, but this is
      * being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8
      * hours.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange
      */
     public function getRateRange(): null|FHIRRange
     {
@@ -605,9 +543,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * Currently we do not specify a default of '1' in the denominator, but this is
      * being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8
      * hours.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $rateRange
-     * @return static
      */
     public function setRateRange(null|FHIRRange $rateRange): self
     {
@@ -621,10 +556,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -690,10 +622,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -746,10 +674,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

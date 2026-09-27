@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -134,6 +133,24 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
         self::FIELD_TYPE => [
             MinOccursRule::NAME => 1,
         ],
+        self::FIELD_VALUE_CODEABLE_CONCEPT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_STRING => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_QUANTITY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_BASE_64BINARY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_ATTACHMENT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_BOOLEAN => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -152,8 +169,6 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      *
      * A code specifying which characteristic of the product is being described (for
      * example, colour, shape).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -163,10 +178,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * The actual characteristic value corresponding to the type.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -175,10 +187,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * The actual characteristic value corresponding to the type.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -189,10 +198,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * The actual characteristic value corresponding to the type.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -201,10 +207,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
+     * The actual characteristic value corresponding to the type.
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
@@ -213,10 +216,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * The actual characteristic value corresponding to the type.
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -224,10 +224,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * The actual characteristic value corresponding to the type.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -236,15 +233,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
     /**
      * FHIRNutritionProductCharacteristic Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -301,8 +290,6 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      *
      * A code specifying which characteristic of the product is being described (for
      * example, colour, shape).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -317,9 +304,6 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      *
      * A code specifying which characteristic of the product is being described (for
      * example, colour, shape).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -337,10 +321,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * The actual characteristic value corresponding to the type.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -353,11 +334,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
+     * The actual characteristic value corresponding to the type.
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -374,10 +351,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * The actual characteristic value corresponding to the type.
      */
     public function getValueString(): null|FHIRString
     {
@@ -389,11 +363,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @return static
+     * The actual characteristic value corresponding to the type.
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -415,10 +385,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * The actual characteristic value corresponding to the type.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -432,11 +399,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * The actual characteristic value corresponding to the type.
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -453,10 +416,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
+     * The actual characteristic value corresponding to the type.
      */
     public function getValueBase64Binary(): null|FHIRBase64Binary
     {
@@ -468,11 +428,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @return static
+     * The actual characteristic value corresponding to the type.
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -492,10 +448,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * The actual characteristic value corresponding to the type.
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -507,11 +460,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @return static
+     * The actual characteristic value corresponding to the type.
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -527,10 +476,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * The actual characteristic value corresponding to the type.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -541,11 +487,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The actual characteristic value corresponding to the type. (choose any one of
-     * value*, but only one)
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
+     * The actual characteristic value corresponding to the type.
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -562,10 +504,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductCharacteristic $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductCharacteristic
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -645,10 +584,6 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -706,10 +641,7 @@ class FHIRNutritionProductCharacteristic extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductCharacteristic $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductCharacteristic
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

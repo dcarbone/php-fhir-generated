@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -150,8 +149,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * The Locked Date is the effective date that is used to determine the version of
      * all referenced Code Systems and Value Set Definitions included in the compose
      * that are not already tied to a specific version.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lockedDate;
@@ -165,8 +162,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * expansion. If absent, the behavior is determined by the implementation, or by
      * the applicable $expand parameters (but generally, inactive codes would be
      * expected to be included).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $inactive;
@@ -214,10 +209,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     /**
      * FHIRValueSetCompose Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $lockedDate
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $inactive
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude> $include
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude> $exclude
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $property
@@ -270,8 +262,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * The Locked Date is the effective date that is used to determine the version of
      * all referenced Code Systems and Value Set Definitions included in the compose
      * that are not already tied to a specific version.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     public function getLockedDate(): null|FHIRDate
     {
@@ -287,9 +277,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * The Locked Date is the effective date that is used to determine the version of
      * all referenced Code Systems and Value Set Definitions included in the compose
      * that are not already tied to a specific version.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $lockedDate
-     * @return static
      */
     public function setLockedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lockedDate): self
     {
@@ -314,8 +301,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * expansion. If absent, the behavior is determined by the implementation, or by
      * the applicable $expand parameters (but generally, inactive codes would be
      * expected to be included).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getInactive(): null|FHIRBoolean
     {
@@ -332,9 +317,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * expansion. If absent, the behavior is determined by the implementation, or by
      * the applicable $expand parameters (but generally, inactive codes would be
      * expected to be included).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $inactive
-     * @return static
      */
     public function setInactive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inactive): self
     {
@@ -382,9 +364,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * elements](terminologies.html).
      *
      * Include one or more codes from a code system or other value set(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude $include
-     * @return static
      */
     public function addInclude(FHIRValueSetInclude $include): self
     {
@@ -402,9 +381,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * elements](terminologies.html).
      *
      * Include one or more codes from a code system or other value set(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude ...$include
-     * @return static
      */
     public function setInclude(FHIRValueSetInclude ...$include): self
     {
@@ -451,9 +427,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * Exclude one or more codes from the value set based on code system filters and/or
      * other value sets.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude $exclude
-     * @return static
      */
     public function addExclude(FHIRValueSetInclude $exclude): self
     {
@@ -472,9 +445,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * Exclude one or more codes from the value set based on code system filters and/or
      * other value sets.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude ...$exclude
-     * @return static
      */
     public function setExclude(FHIRValueSetInclude ...$exclude): self
     {
@@ -523,9 +493,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * particular properties. May be either a code from the code system definition
      * (convenient) or a the formal URI that refers to the property. The special value
      * '*' means all properties known to the server.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $property
-     * @return static
      */
     public function addProperty(string|FHIRStringPrimitive|FHIRString $property): self
     {
@@ -548,9 +515,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * particular properties. May be either a code from the code system definition
      * (convenient) or a the formal URI that refers to the property. The special value
      * '*' means all properties known to the server.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$property
-     * @return static
      */
     public function setProperty(string|FHIRStringPrimitive|FHIRString ...$property): self
     {
@@ -571,10 +535,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -642,10 +603,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -694,10 +651,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

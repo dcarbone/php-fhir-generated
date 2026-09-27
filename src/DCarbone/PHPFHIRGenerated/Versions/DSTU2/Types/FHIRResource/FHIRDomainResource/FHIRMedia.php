@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -89,7 +87,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDigitalMediaTypeList;
@@ -162,8 +159,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Whether the media is a photo (still image), an audio recording, or a video
      * recording.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDigitalMediaType
      */
     #[FHIRDigitalMediaType]
     protected FHIRDigitalMediaType $type;
@@ -176,8 +171,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * Details of the type of the media - usually, how it was acquired (what type of
      * device). If images sourced from a DICOM system, are wrapped in a Media resource,
      * then this is the modality.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subtype;
@@ -200,8 +193,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who/What this Media is a record of.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -211,8 +202,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who administered the collection of the image.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $operator;
@@ -223,8 +212,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $view;
@@ -235,8 +222,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The name of the device / manufacturer of the device that was used to make the
      * recording.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $deviceName;
@@ -246,8 +231,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * Height of the image in pixels (photo/video).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $height;
@@ -257,8 +240,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * Width of the image in pixels (photo/video).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $width;
@@ -272,8 +253,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * animated gif. If there is more than one frame, this SHALL have a value in order
      * to alert interface software that a multi-frame capable rendering widget is
      * required.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $frames;
@@ -283,8 +262,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * The duration of the recording in seconds - for audio and video.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $duration;
@@ -295,8 +272,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The actual content of the media - inline or by direct reference to the media
      * source file.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $content;
@@ -304,26 +279,10 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
     /* constructor.php:61 */
     /**
      * FHIRMedia Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDigitalMediaTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDigitalMediaType $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $subtype
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $operator
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $view
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $deviceName
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $height
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $width
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $frames
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt $duration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment $content
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -414,8 +373,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Whether the media is a photo (still image), an audio recording, or a video
      * recording.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDigitalMediaType
      */
     public function getType(): null|FHIRDigitalMediaType
     {
@@ -428,9 +385,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Whether the media is a photo (still image), an audio recording, or a video
      * recording.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDigitalMediaTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDigitalMediaType $type
-     * @return static
      */
     public function setType(null|string|FHIRDigitalMediaTypeList|FHIRDigitalMediaType $type): self
     {
@@ -454,8 +408,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * Details of the type of the media - usually, how it was acquired (what type of
      * device). If images sourced from a DICOM system, are wrapped in a Media resource,
      * then this is the modality.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSubtype(): null|FHIRCodeableConcept
     {
@@ -471,9 +423,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * Details of the type of the media - usually, how it was acquired (what type of
      * device). If images sourced from a DICOM system, are wrapped in a Media resource,
      * then this is the modality.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $subtype
-     * @return static
      */
     public function setSubtype(null|FHIRCodeableConcept $subtype): self
     {
@@ -520,9 +469,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * Identifiers associated with the image - these may include identifiers for the
      * image itself, identifiers for the context of its collection (e.g. series ids)
      * and context ids such as accession numbers or other workflow identifiers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -541,9 +487,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * Identifiers associated with the image - these may include identifiers for the
      * image itself, identifiers for the context of its collection (e.g. series ids)
      * and context ids such as accession numbers or other workflow identifiers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -561,8 +504,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who/What this Media is a record of.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -575,9 +516,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who/What this Media is a record of.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -595,8 +533,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who administered the collection of the image.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getOperator(): null|FHIRReference
     {
@@ -609,9 +545,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who administered the collection of the image.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $operator
-     * @return static
      */
     public function setOperator(null|FHIRReference $operator): self
     {
@@ -630,8 +563,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getView(): null|FHIRCodeableConcept
     {
@@ -645,9 +576,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $view
-     * @return static
      */
     public function setView(null|FHIRCodeableConcept $view): self
     {
@@ -666,8 +594,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The name of the device / manufacturer of the device that was used to make the
      * recording.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDeviceName(): null|FHIRString
     {
@@ -681,9 +607,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The name of the device / manufacturer of the device that was used to make the
      * recording.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $deviceName
-     * @return static
      */
     public function setDeviceName(null|string|FHIRStringPrimitive|FHIRString $deviceName): self
     {
@@ -704,8 +627,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * Height of the image in pixels (photo/video).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     public function getHeight(): null|FHIRPositiveInt
     {
@@ -718,9 +639,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * Height of the image in pixels (photo/video).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $height
-     * @return static
      */
     public function setHeight(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $height): self
     {
@@ -741,8 +659,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * Width of the image in pixels (photo/video).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     public function getWidth(): null|FHIRPositiveInt
     {
@@ -755,9 +671,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * Width of the image in pixels (photo/video).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $width
-     * @return static
      */
     public function setWidth(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $width): self
     {
@@ -782,8 +695,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * animated gif. If there is more than one frame, this SHALL have a value in order
      * to alert interface software that a multi-frame capable rendering widget is
      * required.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     public function getFrames(): null|FHIRPositiveInt
     {
@@ -800,9 +711,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * animated gif. If there is more than one frame, this SHALL have a value in order
      * to alert interface software that a multi-frame capable rendering widget is
      * required.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $frames
-     * @return static
      */
     public function setFrames(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $frames): self
     {
@@ -823,8 +731,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * The duration of the recording in seconds - for audio and video.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt
      */
     public function getDuration(): null|FHIRUnsignedInt
     {
@@ -837,9 +743,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * The duration of the recording in seconds - for audio and video.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt $duration
-     * @return static
      */
     public function setDuration(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $duration): self
     {
@@ -861,8 +764,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The actual content of the media - inline or by direct reference to the media
      * source file.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment
      */
     public function getContent(): null|FHIRAttachment
     {
@@ -876,9 +777,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The actual content of the media - inline or by direct reference to the media
      * source file.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAttachment $content
-     * @return static
      */
     public function setContent(null|FHIRAttachment $content): self
     {
@@ -892,10 +790,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRMedia $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRMedia
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1045,11 +940,6 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1173,10 +1063,7 @@ class FHIRMedia extends FHIRDomainResource implements VersionContainedTypeInterf
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRMedia $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRMedia
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

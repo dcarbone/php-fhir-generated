@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -142,8 +142,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of participant in the action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionParticipantType
      */
     #[FHIRActionParticipantType]
     protected FHIRActionParticipantType $type;
@@ -154,8 +152,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The type of participant in the action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $typeCanonical;
@@ -165,8 +161,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of participant in the action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $typeReference;
@@ -177,8 +171,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role the participant should play in performing the described action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
@@ -190,8 +182,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      *
      * Indicates how the actor will be involved in the action - author, reviewer,
      * witness, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $function;
@@ -201,9 +191,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * A reference to the actual participant.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $actorCanonical;
@@ -212,9 +200,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * A reference to the actual participant.
      */
     #[FHIRReference]
     protected FHIRReference $actorReference;
@@ -223,15 +209,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
     /**
      * FHIRRequestOrchestrationParticipant Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionParticipantTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionParticipantType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $typeCanonical
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $typeReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $function
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $actorCanonical
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $actorReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -284,8 +262,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of participant in the action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionParticipantType
      */
     public function getType(): null|FHIRActionParticipantType
     {
@@ -296,9 +272,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of participant in the action.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionParticipantTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionParticipantType $type
-     * @return static
      */
     public function setType(null|string|FHIRActionParticipantTypeEnum|FHIRActionParticipantType $type): self
     {
@@ -320,8 +293,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The type of participant in the action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getTypeCanonical(): null|FHIRCanonical
     {
@@ -335,9 +306,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The type of participant in the action.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $typeCanonical
-     * @return static
      */
     public function setTypeCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $typeCanonical): self
     {
@@ -358,8 +326,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of participant in the action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getTypeReference(): null|FHIRReference
     {
@@ -372,9 +338,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of participant in the action.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $typeReference
-     * @return static
      */
     public function setTypeReference(null|FHIRReference $typeReference): self
     {
@@ -393,8 +356,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role the participant should play in performing the described action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getRole(): null|FHIRCodeableConcept
     {
@@ -408,9 +369,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role the participant should play in performing the described action.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $role
-     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -430,8 +388,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      *
      * Indicates how the actor will be involved in the action - author, reviewer,
      * witness, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getFunction(): null|FHIRCodeableConcept
     {
@@ -446,9 +402,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      *
      * Indicates how the actor will be involved in the action - author, reviewer,
      * witness, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $function
-     * @return static
      */
     public function setFunction(null|FHIRCodeableConcept $function): self
     {
@@ -466,9 +419,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * A reference to the actual participant.
      */
     public function getActorCanonical(): null|FHIRCanonical
     {
@@ -481,10 +432,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $actorCanonical
-     * @return static
+     * A reference to the actual participant.
      */
     public function setActorCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $actorCanonical): self
     {
@@ -504,9 +452,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * A reference to the actual participant.
      */
     public function getActorReference(): null|FHIRReference
     {
@@ -518,10 +464,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A reference to the actual participant. (choose any one of actor*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $actorReference
-     * @return static
+     * A reference to the actual participant.
      */
     public function setActorReference(null|FHIRReference $actorReference): self
     {
@@ -535,10 +478,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationParticipant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationParticipant
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -618,10 +558,6 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -679,10 +615,7 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationParticipant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationParticipant
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

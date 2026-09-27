@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -149,8 +148,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify diagnosis entries.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequence;
@@ -162,8 +159,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $diagnosisCodeableConcept;
@@ -174,8 +169,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $diagnosisReference;
@@ -198,8 +191,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of whether the diagnosis was present on admission to a facility.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $onAdmission;
@@ -212,8 +203,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * A package billing code or bundle code used to group products and services to a
      * particular health condition (such as heart attack) which is based on a
      * predetermined grouping code system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $packageCode;
@@ -222,14 +211,8 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
     /**
      * FHIRExplanationOfBenefitDiagnosis Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $diagnosisReference
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $onAdmission
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $packageCode
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -280,8 +263,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify diagnosis entries.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     public function getSequence(): null|FHIRPositiveInt
     {
@@ -294,9 +275,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify diagnosis entries.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -319,8 +297,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDiagnosisCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -335,9 +311,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
-     * @return static
      */
     public function setDiagnosisCodeableConcept(null|FHIRCodeableConcept $diagnosisCodeableConcept): self
     {
@@ -356,8 +329,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getDiagnosisReference(): null|FHIRReference
     {
@@ -371,9 +342,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $diagnosisReference
-     * @return static
      */
     public function setDiagnosisReference(null|FHIRReference $diagnosisReference): self
     {
@@ -418,9 +386,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the condition was observed or the relative ranking.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -438,9 +403,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the condition was observed or the relative ranking.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -459,8 +421,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of whether the diagnosis was present on admission to a facility.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getOnAdmission(): null|FHIRCodeableConcept
     {
@@ -474,9 +434,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of whether the diagnosis was present on admission to a facility.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $onAdmission
-     * @return static
      */
     public function setOnAdmission(null|FHIRCodeableConcept $onAdmission): self
     {
@@ -497,8 +454,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * A package billing code or bundle code used to group products and services to a
      * particular health condition (such as heart attack) which is based on a
      * predetermined grouping code system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPackageCode(): null|FHIRCodeableConcept
     {
@@ -514,9 +469,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * A package billing code or bundle code used to group products and services to a
      * particular health condition (such as heart attack) which is based on a
      * predetermined grouping code system.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $packageCode
-     * @return static
      */
     public function setPackageCode(null|FHIRCodeableConcept $packageCode): self
     {
@@ -530,10 +482,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDiagnosis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDiagnosis
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -595,10 +544,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -643,10 +588,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDiagnosis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDiagnosis
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

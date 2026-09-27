@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,7 +85,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
@@ -164,8 +161,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -177,8 +172,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $legalStatusOfSupply;
@@ -200,8 +193,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $marketingAuthorization;
@@ -239,20 +230,12 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
     /* constructor.php:61 */
     /**
      * FHIRMedicinalProductPackaged Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $subject
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus> $marketingStatus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $marketingAuthorization
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $manufacturer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier> $batchIdentifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem> $packageItem
@@ -361,9 +344,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -381,9 +361,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -426,9 +403,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product with this is a pack for.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -445,9 +419,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product with this is a pack for.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$subject
-     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -465,8 +436,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -479,9 +448,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -504,8 +470,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getLegalStatusOfSupply(): null|FHIRCodeableConcept
     {
@@ -520,9 +484,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
-     * @return static
      */
     public function setLegalStatusOfSupply(null|FHIRCodeableConcept $legalStatusOfSupply): self
     {
@@ -567,9 +528,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Marketing information.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus $marketingStatus
-     * @return static
      */
     public function addMarketingStatus(FHIRMarketingStatus $marketingStatus): self
     {
@@ -587,9 +545,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Marketing information.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus ...$marketingStatus
-     * @return static
      */
     public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
     {
@@ -607,8 +562,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getMarketingAuthorization(): null|FHIRReference
     {
@@ -621,9 +574,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $marketingAuthorization
-     * @return static
      */
     public function setMarketingAuthorization(null|FHIRReference $marketingAuthorization): self
     {
@@ -666,9 +616,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $manufacturer
-     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -685,9 +632,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$manufacturer
-     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -726,9 +670,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * A medicinal product in a container or package.
      *
      * Batch numbering.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier $batchIdentifier
-     * @return static
      */
     public function addBatchIdentifier(FHIRMedicinalProductPackagedBatchIdentifier $batchIdentifier): self
     {
@@ -743,9 +684,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      * A medicinal product in a container or package.
      *
      * Batch numbering.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier ...$batchIdentifier
-     * @return static
      */
     public function setBatchIdentifier(FHIRMedicinalProductPackagedBatchIdentifier ...$batchIdentifier): self
     {
@@ -786,9 +724,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      *
      * A packaging item, as a contained for medicine, possibly with other packaging
      * items within.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem $packageItem
-     * @return static
      */
     public function addPackageItem(FHIRMedicinalProductPackagedPackageItem $packageItem): self
     {
@@ -804,9 +739,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
      *
      * A packaging item, as a contained for medicine, possibly with other packaging
      * items within.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem ...$packageItem
-     * @return static
      */
     public function setPackageItem(FHIRMedicinalProductPackagedPackageItem ...$packageItem): self
     {
@@ -820,10 +752,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPackaged $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPackaged
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -927,11 +856,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1025,10 +949,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements Version
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPackaged $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPackaged
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

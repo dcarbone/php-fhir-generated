@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -166,8 +165,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      *
      * A page / section in the implementation guide. The root page is the
      * implementation guide home page.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
     #[FHIRImplementationGuidePage]
     protected FHIRImplementationGuidePage $page;
@@ -200,11 +197,9 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
     /**
      * FHIRImplementationGuideDefinition Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGrouping> $grouping
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource> $resource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter> $parameter
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideTemplate> $template
      * @param null|string[] $fhirComments
@@ -280,9 +275,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * A logical group of resources. Logical groups can be used when building pages.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGrouping $grouping
-     * @return static
      */
     public function addGrouping(FHIRImplementationGuideGrouping $grouping): self
     {
@@ -300,9 +292,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * A logical group of resources. Logical groups can be used when building pages.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGrouping ...$grouping
-     * @return static
      */
     public function setGrouping(FHIRImplementationGuideGrouping ...$grouping): self
     {
@@ -353,9 +342,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
      * resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource $resource
-     * @return static
      */
     public function addResource(FHIRImplementationGuideResource $resource): self
     {
@@ -376,9 +362,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
      * resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource ...$resource
-     * @return static
      */
     public function setResource(FHIRImplementationGuideResource ...$resource): self
     {
@@ -398,8 +381,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      *
      * A page / section in the implementation guide. The root page is the
      * implementation guide home page.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
     public function getPage(): null|FHIRImplementationGuidePage
     {
@@ -414,9 +395,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      *
      * A page / section in the implementation guide. The root page is the
      * implementation guide home page.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
-     * @return static
      */
     public function setPage(null|FHIRImplementationGuidePage $page): self
     {
@@ -461,9 +439,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Defines how IG is built by tools.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter $parameter
-     * @return static
      */
     public function addParameter(FHIRImplementationGuideParameter $parameter): self
     {
@@ -481,9 +456,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Defines how IG is built by tools.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter ...$parameter
-     * @return static
      */
     public function setParameter(FHIRImplementationGuideParameter ...$parameter): self
     {
@@ -528,9 +500,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * A template for building resources.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideTemplate $template
-     * @return static
      */
     public function addTemplate(FHIRImplementationGuideTemplate $template): self
     {
@@ -548,9 +517,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * A template for building resources.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideTemplate ...$template
-     * @return static
      */
     public function setTemplate(FHIRImplementationGuideTemplate ...$template): self
     {
@@ -564,10 +530,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -619,10 +582,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -663,10 +622,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

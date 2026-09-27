@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -80,7 +79,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRInstantPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionTypeMap;
@@ -133,8 +131,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * The status code returned by processing this entry. The status SHALL start with a
      * 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description
      * associated with the status code.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $status;
@@ -145,8 +141,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      *
      * The location header created by processing this operation, populated if the
      * operation returns a location.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $location;
@@ -158,8 +152,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * The Etag for the resource, if the operation for the entry produced a versioned
      * resource (see [Resource Metadata and Versioning](http.html#versioning) and
      * [Managing Resource Contention](http.html#concurrency)).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $etag;
@@ -172,16 +164,12 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the resource was modified on the server.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $lastModified;
     /**
      * An OperationOutcome containing hints and warnings produced as part of processing
      * this entry in a batch or transaction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface
      */
     #[FHIRResourceContainer]
     protected VersionContainedTypeInterface $outcome;
@@ -190,13 +178,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
     /**
      * FHIRBundleResponse Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $location
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $etag
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInstant $lastModified
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $outcome
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -245,8 +227,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * The status code returned by processing this entry. The status SHALL start with a
      * 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description
      * associated with the status code.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getStatus(): null|FHIRString
     {
@@ -261,9 +241,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * The status code returned by processing this entry. The status SHALL start with a
      * 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description
      * associated with the status code.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $status
-     * @return static
      */
     public function setStatus(null|string|FHIRStringPrimitive|FHIRString $status): self
     {
@@ -285,8 +262,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      *
      * The location header created by processing this operation, populated if the
      * operation returns a location.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getLocation(): null|FHIRUri
     {
@@ -300,9 +275,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      *
      * The location header created by processing this operation, populated if the
      * operation returns a location.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $location
-     * @return static
      */
     public function setLocation(null|string|FHIRUriPrimitive|FHIRUri $location): self
     {
@@ -325,8 +297,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * The Etag for the resource, if the operation for the entry produced a versioned
      * resource (see [Resource Metadata and Versioning](http.html#versioning) and
      * [Managing Resource Contention](http.html#concurrency)).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getEtag(): null|FHIRString
     {
@@ -341,9 +311,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * The Etag for the resource, if the operation for the entry produced a versioned
      * resource (see [Resource Metadata and Versioning](http.html#versioning) and
      * [Managing Resource Contention](http.html#concurrency)).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $etag
-     * @return static
      */
     public function setEtag(null|string|FHIRStringPrimitive|FHIRString $etag): self
     {
@@ -367,8 +334,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the resource was modified on the server.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInstant
      */
     public function getLastModified(): null|FHIRInstant
     {
@@ -384,9 +349,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the resource was modified on the server.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInstant $lastModified
-     * @return static
      */
     public function setLastModified(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastModified): self
     {
@@ -404,8 +366,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
     /**
      * An OperationOutcome containing hints and warnings produced as part of processing
      * this entry in a batch or transaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface
      */
     public function getOutcome(): null|VersionContainedTypeInterface
     {
@@ -415,9 +375,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
     /**
      * An OperationOutcome containing hints and warnings produced as part of processing
      * this entry in a batch or transaction.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $outcome
-     * @return static
      */
     public function setOutcome(null|FHIRResourceContainer|VersionContainedTypeInterface $outcome): self
     {
@@ -434,10 +391,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -525,10 +479,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -583,10 +533,7 @@ class FHIRBundleResponse extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

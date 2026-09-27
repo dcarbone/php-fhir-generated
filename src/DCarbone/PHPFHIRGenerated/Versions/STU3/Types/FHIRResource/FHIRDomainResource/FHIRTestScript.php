@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -104,7 +102,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -206,8 +203,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * globally unique, and SHOULD be an address at which this test script is (or will
      * be) published. The URL SHOULD include the major version of the test script. For
      * more information see [Technical and Business Versions](resource.html#versions).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -219,8 +214,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A formal identifier that is used to identify this test script when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -235,8 +228,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -248,8 +239,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A natural language name identifying the test script. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -259,8 +248,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the test script.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -268,8 +255,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this test script. Enables tracking the life-cycle of the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -280,8 +265,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A boolean value to indicate that this test script is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -297,8 +280,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * change if and when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * test script changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -308,8 +289,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the test script.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -338,8 +317,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A free text natural language description of the test script from a consumer's
      * perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -384,8 +361,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Explaination of why this test script is needed and why it has been designed as
      * it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -403,8 +378,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A copyright statement relating to the test script and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * test script.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -436,8 +409,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The required capability must exist and are assumed to function correctly on the
      * FHIR server being tested.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata
      */
     #[FHIRTestScriptMetadata]
     protected FHIRTestScriptMetadata $metadata;
@@ -500,8 +471,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * compliance against the FHIR specification.
      *
      * A series of required setup operations before tests are executed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup
      */
     #[FHIRTestScriptSetup]
     protected FHIRTestScriptSetup $setup;
@@ -521,8 +490,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A series of operations required to clean up after the all the tests are executed
      * (successfully or otherwise).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTeardown
      */
     #[FHIRTestScriptTeardown]
     protected FHIRTestScriptTeardown $teardown;
@@ -530,40 +497,20 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
     /* constructor.php:61 */
     /**
      * FHIRTestScript Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $url
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $copyright
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin> $origin
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination> $destination
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata $metadata
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture> $fixture
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $profile
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable> $variable
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule> $rule
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset> $ruleset
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup $setup
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest> $test
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTeardown $teardown
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -714,8 +661,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * globally unique, and SHOULD be an address at which this test script is (or will
      * be) published. The URL SHOULD include the major version of the test script. For
      * more information see [Technical and Business Versions](resource.html#versions).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -732,9 +677,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * globally unique, and SHOULD be an address at which this test script is (or will
      * be) published. The URL SHOULD include the major version of the test script. For
      * more information see [Technical and Business Versions](resource.html#versions).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -757,8 +699,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A formal identifier that is used to identify this test script when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -773,9 +713,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A formal identifier that is used to identify this test script when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -798,8 +735,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -817,9 +752,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -842,8 +774,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A natural language name identifying the test script. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -858,9 +788,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A natural language name identifying the test script. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -881,8 +808,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the test script.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -895,9 +820,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the test script.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -916,8 +838,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this test script. Enables tracking the life-cycle of the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -928,9 +848,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this test script. Enables tracking the life-cycle of the content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -952,8 +869,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A boolean value to indicate that this test script is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -967,9 +882,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A boolean value to indicate that this test script is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -996,8 +908,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * change if and when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * test script changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1016,9 +926,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * change if and when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * test script changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1039,8 +946,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the test script.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1053,9 +958,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the test script.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1103,9 +1005,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1123,9 +1022,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1150,8 +1046,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A free text natural language description of the test script from a consumer's
      * perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1171,9 +1065,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A free text natural language description of the test script from a consumer's
      * perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1229,9 +1120,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate test script instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1253,9 +1141,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate test script instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1300,9 +1185,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the test script is intended to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1320,9 +1202,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the test script is intended to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1347,8 +1226,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Explaination of why this test script is needed and why it has been designed as
      * it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1368,9 +1245,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Explaination of why this test script is needed and why it has been designed as
      * it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1399,8 +1273,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A copyright statement relating to the test script and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * test script.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1421,9 +1293,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * A copyright statement relating to the test script and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * test script.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1469,9 +1338,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * An abstract server used in operations within this test script in the origin
      * element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin $origin
-     * @return static
      */
     public function addOrigin(FHIRTestScriptOrigin $origin): self
     {
@@ -1488,9 +1354,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * An abstract server used in operations within this test script in the origin
      * element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin ...$origin
-     * @return static
      */
     public function setOrigin(FHIRTestScriptOrigin ...$origin): self
     {
@@ -1533,9 +1396,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * An abstract server used in operations within this test script in the destination
      * element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination $destination
-     * @return static
      */
     public function addDestination(FHIRTestScriptDestination $destination): self
     {
@@ -1552,9 +1412,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * An abstract server used in operations within this test script in the destination
      * element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination ...$destination
-     * @return static
      */
     public function setDestination(FHIRTestScriptDestination ...$destination): self
     {
@@ -1572,8 +1429,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The required capability must exist and are assumed to function correctly on the
      * FHIR server being tested.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata
      */
     public function getMetadata(): null|FHIRTestScriptMetadata
     {
@@ -1586,9 +1441,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The required capability must exist and are assumed to function correctly on the
      * FHIR server being tested.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata $metadata
-     * @return static
      */
     public function setMetadata(null|FHIRTestScriptMetadata $metadata): self
     {
@@ -1631,9 +1483,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Fixture in the test script - by reference (uri). All fixtures are required for
      * the test script to execute.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture $fixture
-     * @return static
      */
     public function addFixture(FHIRTestScriptFixture $fixture): self
     {
@@ -1650,9 +1499,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Fixture in the test script - by reference (uri). All fixtures are required for
      * the test script to execute.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture ...$fixture
-     * @return static
      */
     public function setFixture(FHIRTestScriptFixture ...$fixture): self
     {
@@ -1695,9 +1541,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the profile to be used for validation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $profile
-     * @return static
      */
     public function addProfile(FHIRReference $profile): self
     {
@@ -1714,9 +1557,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the profile to be used for validation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$profile
-     * @return static
      */
     public function setProfile(FHIRReference ...$profile): self
     {
@@ -1759,9 +1599,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Variable is set based either on element value in response body or on header
      * field value in the response headers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable $variable
-     * @return static
      */
     public function addVariable(FHIRTestScriptVariable $variable): self
     {
@@ -1778,9 +1615,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Variable is set based either on element value in response body or on header
      * field value in the response headers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable ...$variable
-     * @return static
      */
     public function setVariable(FHIRTestScriptVariable ...$variable): self
     {
@@ -1821,9 +1655,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * compliance against the FHIR specification.
      *
      * Assert rule to be used in one or more asserts within the test script.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule $rule
-     * @return static
      */
     public function addRule(FHIRTestScriptRule $rule): self
     {
@@ -1839,9 +1670,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * compliance against the FHIR specification.
      *
      * Assert rule to be used in one or more asserts within the test script.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule ...$rule
-     * @return static
      */
     public function setRule(FHIRTestScriptRule ...$rule): self
     {
@@ -1884,9 +1712,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Contains one or more rules. Offers a way to group rules so assertions could
      * reference the group of rules and have them all applied.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset $ruleset
-     * @return static
      */
     public function addRuleset(FHIRTestScriptRuleset $ruleset): self
     {
@@ -1903,9 +1728,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Contains one or more rules. Offers a way to group rules so assertions could
      * reference the group of rules and have them all applied.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset ...$ruleset
-     * @return static
      */
     public function setRuleset(FHIRTestScriptRuleset ...$ruleset): self
     {
@@ -1922,8 +1744,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * compliance against the FHIR specification.
      *
      * A series of required setup operations before tests are executed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup
      */
     public function getSetup(): null|FHIRTestScriptSetup
     {
@@ -1935,9 +1755,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * compliance against the FHIR specification.
      *
      * A series of required setup operations before tests are executed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup $setup
-     * @return static
      */
     public function setSetup(null|FHIRTestScriptSetup $setup): self
     {
@@ -1978,9 +1795,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * compliance against the FHIR specification.
      *
      * A test in this script.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest $test
-     * @return static
      */
     public function addTest(FHIRTestScriptTest $test): self
     {
@@ -1996,9 +1810,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      * compliance against the FHIR specification.
      *
      * A test in this script.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest ...$test
-     * @return static
      */
     public function setTest(FHIRTestScriptTest ...$test): self
     {
@@ -2016,8 +1827,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A series of operations required to clean up after the all the tests are executed
      * (successfully or otherwise).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTeardown
      */
     public function getTeardown(): null|FHIRTestScriptTeardown
     {
@@ -2030,9 +1839,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A series of operations required to clean up after the all the tests are executed
      * (successfully or otherwise).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTeardown $teardown
-     * @return static
      */
     public function setTeardown(null|FHIRTestScriptTeardown $teardown): self
     {
@@ -2046,10 +1852,7 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRTestScript $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRTestScript
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2267,11 +2070,6 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2510,10 +2308,7 @@ class FHIRTestScript extends FHIRDomainResource implements VersionContainedTypeI
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRTestScript $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRTestScript
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

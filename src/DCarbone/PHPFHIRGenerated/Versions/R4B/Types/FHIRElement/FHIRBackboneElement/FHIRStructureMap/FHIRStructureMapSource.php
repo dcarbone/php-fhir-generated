@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -320,8 +319,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Type or variable this rule applies to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $context;
@@ -332,8 +329,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified minimum cardinality for the element. This is optional; if present, it
      * acts an implicit check on the input content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $min;
@@ -345,8 +340,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * Specified maximum cardinality for the element - a number or a "*". This is
      * optional; if present, it acts an implicit check on the input content (* just
      * serves as documentation; it's the default value).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $max;
@@ -357,8 +350,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified type for the element. This works as a condition on the mapping - use
      * for polymorphic elements.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $type;
@@ -368,8 +359,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $defaultValueBase64Binary;
@@ -378,8 +367,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $defaultValueBoolean;
@@ -390,8 +377,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $defaultValueCanonical;
@@ -402,8 +387,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $defaultValueCode;
@@ -414,8 +397,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $defaultValueDate;
@@ -428,8 +409,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $defaultValueDateTime;
@@ -440,8 +419,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $defaultValueDecimal;
@@ -454,8 +431,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $defaultValueId;
@@ -468,8 +443,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $defaultValueInstant;
@@ -479,8 +452,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $defaultValueInteger;
@@ -494,8 +465,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $defaultValueMarkdown;
@@ -506,8 +475,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROid
      */
     #[FHIROid]
     protected FHIROid $defaultValueOid;
@@ -517,8 +484,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $defaultValuePositiveInt;
@@ -528,8 +493,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $defaultValueString;
@@ -538,8 +501,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $defaultValueTime;
@@ -549,8 +510,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $defaultValueUnsignedInt;
@@ -560,8 +519,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $defaultValueUri;
@@ -571,8 +528,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUrl
      */
     #[FHIRUrl]
     protected FHIRUrl $defaultValueUrl;
@@ -583,8 +538,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUuid
      */
     #[FHIRUuid]
     protected FHIRUuid $defaultValueUuid;
@@ -598,8 +551,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $defaultValueAddress;
@@ -609,8 +560,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     #[FHIRAge]
     protected FHIRAge $defaultValueAge;
@@ -621,8 +570,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $defaultValueAnnotation;
@@ -632,8 +579,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $defaultValueAttachment;
@@ -644,8 +589,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $defaultValueCodeableConcept;
@@ -655,8 +598,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $defaultValueCoding;
@@ -667,8 +608,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $defaultValueContactPoint;
@@ -680,8 +619,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRCount
      */
     #[FHIRCount]
     protected FHIRCount $defaultValueCount;
@@ -691,8 +628,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDistance
      */
     #[FHIRDistance]
     protected FHIRDistance $defaultValueDistance;
@@ -702,8 +637,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $defaultValueDuration;
@@ -713,8 +646,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName
      */
     #[FHIRHumanName]
     protected FHIRHumanName $defaultValueHumanName;
@@ -725,8 +656,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $defaultValueIdentifier;
@@ -736,8 +665,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $defaultValueMoney;
@@ -747,8 +674,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $defaultValuePeriod;
@@ -760,8 +685,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $defaultValueQuantity;
@@ -771,8 +694,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $defaultValueRange;
@@ -783,8 +704,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $defaultValueRatio;
@@ -794,8 +713,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $defaultValueReference;
@@ -806,8 +723,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSampledData
      */
     #[FHIRSampledData]
     protected FHIRSampledData $defaultValueSampledData;
@@ -821,8 +736,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature
      */
     #[FHIRSignature]
     protected FHIRSignature $defaultValueSignature;
@@ -836,8 +749,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $defaultValueTiming;
@@ -847,8 +758,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $defaultValueContactDetail;
@@ -859,8 +768,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributor
      */
     #[FHIRContributor]
     protected FHIRContributor $defaultValueContributor;
@@ -871,8 +778,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $defaultValueDataRequirement;
@@ -884,8 +789,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExpression
      */
     #[FHIRExpression]
     protected FHIRExpression $defaultValueExpression;
@@ -897,8 +800,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRParameterDefinition
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $defaultValueParameterDefinition;
@@ -909,8 +810,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $defaultValueRelatedArtifact;
@@ -921,8 +820,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTriggerDefinition
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $defaultValueTriggerDefinition;
@@ -935,8 +832,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $defaultValueUsageContext;
@@ -946,8 +841,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
     #[FHIRDosage]
     protected FHIRDosage $defaultValueDosage;
@@ -959,8 +852,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta
      */
     #[FHIRMeta]
     protected FHIRMeta $defaultValueMeta;
@@ -970,8 +861,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Optional field for this source.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $element;
@@ -979,8 +868,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How to handle the list mode for this element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStructureMapSourceListMode
      */
     #[FHIRStructureMapSourceListMode]
     protected FHIRStructureMapSourceListMode $listMode;
@@ -993,8 +880,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Named context for field, if a field is specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $variable;
@@ -1004,8 +889,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * FHIRPath expression - must be true or the rule does not apply.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $condition;
@@ -1016,8 +899,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * FHIRPath expression - must be true or the mapping engine throws an error instead
      * of completing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $check;
@@ -1028,8 +909,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A FHIRPath expression which specifies a message to put in the transform log when
      * content matching the source rule is found.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $logMessage;
@@ -1038,68 +917,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     /**
      * FHIRStructureMapSource Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $context
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $min
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $max
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary $defaultValueBase64Binary
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $defaultValueBoolean
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $defaultValueCanonical
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $defaultValueCode
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $defaultValueDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $defaultValueDateTime
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $defaultValueDecimal
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $defaultValueId
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant $defaultValueInstant
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $defaultValueInteger
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $defaultValueMarkdown
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROid $defaultValueOid
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $defaultValuePositiveInt
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $defaultValueString
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $defaultValueTime
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $defaultValueUnsignedInt
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $defaultValueUri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUrl $defaultValueUrl
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUuid $defaultValueUuid
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress $defaultValueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation $defaultValueAnnotation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAttachment $defaultValueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $defaultValueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName $defaultValueHumanName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $defaultValueMoney
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $defaultValuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $defaultValueRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $defaultValueRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $defaultValueReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSampledData $defaultValueSampledData
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature $defaultValueSignature
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $defaultValueTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $defaultValueContactDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributor $defaultValueContributor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement $defaultValueDataRequirement
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExpression $defaultValueExpression
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRParameterDefinition $defaultValueParameterDefinition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact $defaultValueRelatedArtifact
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTriggerDefinition $defaultValueTriggerDefinition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext $defaultValueUsageContext
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage $defaultValueDosage
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $defaultValueMeta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $element
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRStructureMapSourceListModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStructureMapSourceListMode $listMode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $variable
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $condition
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $check
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $logMessage
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -1369,8 +1187,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Type or variable this rule applies to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     public function getContext(): null|FHIRId
     {
@@ -1386,9 +1202,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Type or variable this rule applies to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $context
-     * @return static
      */
     public function setContext(null|string|FHIRIdPrimitive|FHIRId $context): self
     {
@@ -1410,8 +1223,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified minimum cardinality for the element. This is optional; if present, it
      * acts an implicit check on the input content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     public function getMin(): null|FHIRInteger
     {
@@ -1425,9 +1236,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified minimum cardinality for the element. This is optional; if present, it
      * acts an implicit check on the input content.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $min
-     * @return static
      */
     public function setMin(null|string|float|FHIRIntegerPrimitive|FHIRInteger $min): self
     {
@@ -1450,8 +1258,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * Specified maximum cardinality for the element - a number or a "*". This is
      * optional; if present, it acts an implicit check on the input content (* just
      * serves as documentation; it's the default value).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getMax(): null|FHIRString
     {
@@ -1466,9 +1272,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * Specified maximum cardinality for the element - a number or a "*". This is
      * optional; if present, it acts an implicit check on the input content (* just
      * serves as documentation; it's the default value).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $max
-     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
@@ -1490,8 +1293,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified type for the element. This works as a condition on the mapping - use
      * for polymorphic elements.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getType(): null|FHIRString
     {
@@ -1505,9 +1306,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified type for the element. This works as a condition on the mapping - use
      * for polymorphic elements.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $type
-     * @return static
      */
     public function setType(null|string|FHIRStringPrimitive|FHIRString $type): self
     {
@@ -1528,8 +1326,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary
      */
     public function getDefaultValueBase64Binary(): null|FHIRBase64Binary
     {
@@ -1542,9 +1338,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary $defaultValueBase64Binary
-     * @return static
      */
     public function setDefaultValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $defaultValueBase64Binary): self
     {
@@ -1564,8 +1357,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getDefaultValueBoolean(): null|FHIRBoolean
     {
@@ -1577,9 +1368,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $defaultValueBoolean
-     * @return static
      */
     public function setDefaultValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $defaultValueBoolean): self
     {
@@ -1601,8 +1389,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     public function getDefaultValueCanonical(): null|FHIRCanonical
     {
@@ -1616,9 +1402,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $defaultValueCanonical
-     * @return static
      */
     public function setDefaultValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $defaultValueCanonical): self
     {
@@ -1640,8 +1423,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     public function getDefaultValueCode(): null|FHIRCode
     {
@@ -1655,9 +1436,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $defaultValueCode
-     * @return static
      */
     public function setDefaultValueCode(null|string|FHIRCodePrimitive|FHIRCode $defaultValueCode): self
     {
@@ -1679,8 +1457,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     public function getDefaultValueDate(): null|FHIRDate
     {
@@ -1694,9 +1470,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $defaultValueDate
-     * @return static
      */
     public function setDefaultValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $defaultValueDate): self
     {
@@ -1720,8 +1493,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getDefaultValueDateTime(): null|FHIRDateTime
     {
@@ -1737,9 +1508,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $defaultValueDateTime
-     * @return static
      */
     public function setDefaultValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $defaultValueDateTime): self
     {
@@ -1761,8 +1529,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     public function getDefaultValueDecimal(): null|FHIRDecimal
     {
@@ -1776,9 +1542,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $defaultValueDecimal
-     * @return static
      */
     public function setDefaultValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $defaultValueDecimal): self
     {
@@ -1802,8 +1565,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     public function getDefaultValueId(): null|FHIRId
     {
@@ -1819,9 +1580,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $defaultValueId
-     * @return static
      */
     public function setDefaultValueId(null|string|FHIRIdPrimitive|FHIRId $defaultValueId): self
     {
@@ -1845,8 +1603,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant
      */
     public function getDefaultValueInstant(): null|FHIRInstant
     {
@@ -1862,9 +1618,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant $defaultValueInstant
-     * @return static
      */
     public function setDefaultValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $defaultValueInstant): self
     {
@@ -1885,8 +1638,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     public function getDefaultValueInteger(): null|FHIRInteger
     {
@@ -1899,9 +1650,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $defaultValueInteger
-     * @return static
      */
     public function setDefaultValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $defaultValueInteger): self
     {
@@ -1926,8 +1674,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getDefaultValueMarkdown(): null|FHIRMarkdown
     {
@@ -1944,9 +1690,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $defaultValueMarkdown
-     * @return static
      */
     public function setDefaultValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $defaultValueMarkdown): self
     {
@@ -1968,8 +1711,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROid
      */
     public function getDefaultValueOid(): null|FHIROid
     {
@@ -1983,9 +1724,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROid $defaultValueOid
-     * @return static
      */
     public function setDefaultValueOid(null|string|FHIROidPrimitive|FHIROid $defaultValueOid): self
     {
@@ -2006,8 +1744,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     public function getDefaultValuePositiveInt(): null|FHIRPositiveInt
     {
@@ -2020,9 +1756,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $defaultValuePositiveInt
-     * @return static
      */
     public function setDefaultValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $defaultValuePositiveInt): self
     {
@@ -2043,8 +1776,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDefaultValueString(): null|FHIRString
     {
@@ -2057,9 +1788,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $defaultValueString
-     * @return static
      */
     public function setDefaultValueString(null|string|FHIRStringPrimitive|FHIRString $defaultValueString): self
     {
@@ -2079,8 +1807,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime
      */
     public function getDefaultValueTime(): null|FHIRTime
     {
@@ -2092,9 +1818,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $defaultValueTime
-     * @return static
      */
     public function setDefaultValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $defaultValueTime): self
     {
@@ -2115,8 +1838,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt
      */
     public function getDefaultValueUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -2129,9 +1850,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $defaultValueUnsignedInt
-     * @return static
      */
     public function setDefaultValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $defaultValueUnsignedInt): self
     {
@@ -2152,8 +1870,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getDefaultValueUri(): null|FHIRUri
     {
@@ -2166,9 +1882,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $defaultValueUri
-     * @return static
      */
     public function setDefaultValueUri(null|string|FHIRUriPrimitive|FHIRUri $defaultValueUri): self
     {
@@ -2189,8 +1902,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUrl
      */
     public function getDefaultValueUrl(): null|FHIRUrl
     {
@@ -2203,9 +1914,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUrl $defaultValueUrl
-     * @return static
      */
     public function setDefaultValueUrl(null|string|FHIRUrlPrimitive|FHIRUrl $defaultValueUrl): self
     {
@@ -2227,8 +1935,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUuid
      */
     public function getDefaultValueUuid(): null|FHIRUuid
     {
@@ -2242,9 +1948,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUuid $defaultValueUuid
-     * @return static
      */
     public function setDefaultValueUuid(null|string|FHIRUuidPrimitive|FHIRUuid $defaultValueUuid): self
     {
@@ -2269,8 +1972,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress
      */
     public function getDefaultValueAddress(): null|FHIRAddress
     {
@@ -2287,9 +1988,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress $defaultValueAddress
-     * @return static
      */
     public function setDefaultValueAddress(null|FHIRAddress $defaultValueAddress): self
     {
@@ -2307,8 +2005,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getDefaultValueAge(): null|FHIRAge
     {
@@ -2321,9 +2017,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
-     * @return static
      */
     public function setDefaultValueAge(null|FHIRAge $defaultValueAge): self
     {
@@ -2342,8 +2035,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation
      */
     public function getDefaultValueAnnotation(): null|FHIRAnnotation
     {
@@ -2357,9 +2048,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation $defaultValueAnnotation
-     * @return static
      */
     public function setDefaultValueAnnotation(null|FHIRAnnotation $defaultValueAnnotation): self
     {
@@ -2377,8 +2065,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAttachment
      */
     public function getDefaultValueAttachment(): null|FHIRAttachment
     {
@@ -2391,9 +2077,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAttachment $defaultValueAttachment
-     * @return static
      */
     public function setDefaultValueAttachment(null|FHIRAttachment $defaultValueAttachment): self
     {
@@ -2412,8 +2095,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDefaultValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -2427,9 +2108,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
-     * @return static
      */
     public function setDefaultValueCodeableConcept(null|FHIRCodeableConcept $defaultValueCodeableConcept): self
     {
@@ -2447,8 +2125,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding
      */
     public function getDefaultValueCoding(): null|FHIRCoding
     {
@@ -2461,9 +2137,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $defaultValueCoding
-     * @return static
      */
     public function setDefaultValueCoding(null|FHIRCoding $defaultValueCoding): self
     {
@@ -2482,8 +2155,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint
      */
     public function getDefaultValueContactPoint(): null|FHIRContactPoint
     {
@@ -2497,9 +2168,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $defaultValueContactPoint
-     * @return static
      */
     public function setDefaultValueContactPoint(null|FHIRContactPoint $defaultValueContactPoint): self
     {
@@ -2519,8 +2187,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRCount
      */
     public function getDefaultValueCount(): null|FHIRCount
     {
@@ -2535,9 +2201,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
-     * @return static
      */
     public function setDefaultValueCount(null|FHIRCount $defaultValueCount): self
     {
@@ -2555,8 +2218,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDistance
      */
     public function getDefaultValueDistance(): null|FHIRDistance
     {
@@ -2569,9 +2230,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
-     * @return static
      */
     public function setDefaultValueDistance(null|FHIRDistance $defaultValueDistance): self
     {
@@ -2589,8 +2247,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDefaultValueDuration(): null|FHIRDuration
     {
@@ -2603,9 +2259,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
-     * @return static
      */
     public function setDefaultValueDuration(null|FHIRDuration $defaultValueDuration): self
     {
@@ -2623,8 +2276,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName
      */
     public function getDefaultValueHumanName(): null|FHIRHumanName
     {
@@ -2637,9 +2288,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName $defaultValueHumanName
-     * @return static
      */
     public function setDefaultValueHumanName(null|FHIRHumanName $defaultValueHumanName): self
     {
@@ -2658,8 +2306,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier
      */
     public function getDefaultValueIdentifier(): null|FHIRIdentifier
     {
@@ -2673,9 +2319,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $defaultValueIdentifier
-     * @return static
      */
     public function setDefaultValueIdentifier(null|FHIRIdentifier $defaultValueIdentifier): self
     {
@@ -2693,8 +2336,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney
      */
     public function getDefaultValueMoney(): null|FHIRMoney
     {
@@ -2707,9 +2348,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $defaultValueMoney
-     * @return static
      */
     public function setDefaultValueMoney(null|FHIRMoney $defaultValueMoney): self
     {
@@ -2727,8 +2365,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getDefaultValuePeriod(): null|FHIRPeriod
     {
@@ -2741,9 +2377,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $defaultValuePeriod
-     * @return static
      */
     public function setDefaultValuePeriod(null|FHIRPeriod $defaultValuePeriod): self
     {
@@ -2763,8 +2396,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getDefaultValueQuantity(): null|FHIRQuantity
     {
@@ -2779,9 +2410,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $defaultValueQuantity
-     * @return static
      */
     public function setDefaultValueQuantity(null|FHIRQuantity $defaultValueQuantity): self
     {
@@ -2799,8 +2427,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange
      */
     public function getDefaultValueRange(): null|FHIRRange
     {
@@ -2813,9 +2439,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $defaultValueRange
-     * @return static
      */
     public function setDefaultValueRange(null|FHIRRange $defaultValueRange): self
     {
@@ -2834,8 +2457,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio
      */
     public function getDefaultValueRatio(): null|FHIRRatio
     {
@@ -2849,9 +2470,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $defaultValueRatio
-     * @return static
      */
     public function setDefaultValueRatio(null|FHIRRatio $defaultValueRatio): self
     {
@@ -2869,8 +2487,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getDefaultValueReference(): null|FHIRReference
     {
@@ -2883,9 +2499,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $defaultValueReference
-     * @return static
      */
     public function setDefaultValueReference(null|FHIRReference $defaultValueReference): self
     {
@@ -2904,8 +2517,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSampledData
      */
     public function getDefaultValueSampledData(): null|FHIRSampledData
     {
@@ -2919,9 +2530,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSampledData $defaultValueSampledData
-     * @return static
      */
     public function setDefaultValueSampledData(null|FHIRSampledData $defaultValueSampledData): self
     {
@@ -2943,8 +2551,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature
      */
     public function getDefaultValueSignature(): null|FHIRSignature
     {
@@ -2961,9 +2567,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature $defaultValueSignature
-     * @return static
      */
     public function setDefaultValueSignature(null|FHIRSignature $defaultValueSignature): self
     {
@@ -2985,8 +2588,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     public function getDefaultValueTiming(): null|FHIRTiming
     {
@@ -3003,9 +2604,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $defaultValueTiming
-     * @return static
      */
     public function setDefaultValueTiming(null|FHIRTiming $defaultValueTiming): self
     {
@@ -3023,8 +2621,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail
      */
     public function getDefaultValueContactDetail(): null|FHIRContactDetail
     {
@@ -3037,9 +2633,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $defaultValueContactDetail
-     * @return static
      */
     public function setDefaultValueContactDetail(null|FHIRContactDetail $defaultValueContactDetail): self
     {
@@ -3058,8 +2651,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributor
      */
     public function getDefaultValueContributor(): null|FHIRContributor
     {
@@ -3073,9 +2664,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContributor $defaultValueContributor
-     * @return static
      */
     public function setDefaultValueContributor(null|FHIRContributor $defaultValueContributor): self
     {
@@ -3094,8 +2682,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement
      */
     public function getDefaultValueDataRequirement(): null|FHIRDataRequirement
     {
@@ -3109,9 +2695,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement $defaultValueDataRequirement
-     * @return static
      */
     public function setDefaultValueDataRequirement(null|FHIRDataRequirement $defaultValueDataRequirement): self
     {
@@ -3131,8 +2714,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExpression
      */
     public function getDefaultValueExpression(): null|FHIRExpression
     {
@@ -3147,9 +2728,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExpression $defaultValueExpression
-     * @return static
      */
     public function setDefaultValueExpression(null|FHIRExpression $defaultValueExpression): self
     {
@@ -3169,8 +2747,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRParameterDefinition
      */
     public function getDefaultValueParameterDefinition(): null|FHIRParameterDefinition
     {
@@ -3185,9 +2761,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRParameterDefinition $defaultValueParameterDefinition
-     * @return static
      */
     public function setDefaultValueParameterDefinition(null|FHIRParameterDefinition $defaultValueParameterDefinition): self
     {
@@ -3206,8 +2779,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact
      */
     public function getDefaultValueRelatedArtifact(): null|FHIRRelatedArtifact
     {
@@ -3221,9 +2792,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact $defaultValueRelatedArtifact
-     * @return static
      */
     public function setDefaultValueRelatedArtifact(null|FHIRRelatedArtifact $defaultValueRelatedArtifact): self
     {
@@ -3242,8 +2810,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTriggerDefinition
      */
     public function getDefaultValueTriggerDefinition(): null|FHIRTriggerDefinition
     {
@@ -3257,9 +2823,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTriggerDefinition $defaultValueTriggerDefinition
-     * @return static
      */
     public function setDefaultValueTriggerDefinition(null|FHIRTriggerDefinition $defaultValueTriggerDefinition): self
     {
@@ -3280,8 +2843,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext
      */
     public function getDefaultValueUsageContext(): null|FHIRUsageContext
     {
@@ -3297,9 +2858,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext $defaultValueUsageContext
-     * @return static
      */
     public function setDefaultValueUsageContext(null|FHIRUsageContext $defaultValueUsageContext): self
     {
@@ -3317,8 +2875,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
     public function getDefaultValueDosage(): null|FHIRDosage
     {
@@ -3331,9 +2887,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage $defaultValueDosage
-     * @return static
      */
     public function setDefaultValueDosage(null|FHIRDosage $defaultValueDosage): self
     {
@@ -3353,8 +2906,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta
      */
     public function getDefaultValueMeta(): null|FHIRMeta
     {
@@ -3369,9 +2920,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $defaultValueMeta
-     * @return static
      */
     public function setDefaultValueMeta(null|FHIRMeta $defaultValueMeta): self
     {
@@ -3389,8 +2937,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Optional field for this source.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getElement(): null|FHIRString
     {
@@ -3403,9 +2949,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Optional field for this source.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $element
-     * @return static
      */
     public function setElement(null|string|FHIRStringPrimitive|FHIRString $element): self
     {
@@ -3424,8 +2967,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How to handle the list mode for this element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStructureMapSourceListMode
      */
     public function getListMode(): null|FHIRStructureMapSourceListMode
     {
@@ -3436,9 +2977,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How to handle the list mode for this element.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRStructureMapSourceListModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStructureMapSourceListMode $listMode
-     * @return static
      */
     public function setListMode(null|string|FHIRStructureMapSourceListModeEnum|FHIRStructureMapSourceListMode $listMode): self
     {
@@ -3462,8 +3000,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Named context for field, if a field is specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     public function getVariable(): null|FHIRId
     {
@@ -3479,9 +3015,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Named context for field, if a field is specified.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $variable
-     * @return static
      */
     public function setVariable(null|string|FHIRIdPrimitive|FHIRId $variable): self
     {
@@ -3502,8 +3035,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * FHIRPath expression - must be true or the rule does not apply.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getCondition(): null|FHIRString
     {
@@ -3516,9 +3047,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * FHIRPath expression - must be true or the rule does not apply.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $condition
-     * @return static
      */
     public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition): self
     {
@@ -3540,8 +3068,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * FHIRPath expression - must be true or the mapping engine throws an error instead
      * of completing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getCheck(): null|FHIRString
     {
@@ -3555,9 +3081,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * FHIRPath expression - must be true or the mapping engine throws an error instead
      * of completing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $check
-     * @return static
      */
     public function setCheck(null|string|FHIRStringPrimitive|FHIRString $check): self
     {
@@ -3579,8 +3102,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A FHIRPath expression which specifies a message to put in the transform log when
      * content matching the source rule is found.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getLogMessage(): null|FHIRString
     {
@@ -3594,9 +3115,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A FHIRPath expression which specifies a message to put in the transform log when
      * content matching the source rule is found.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $logMessage
-     * @return static
      */
     public function setLogMessage(null|string|FHIRStringPrimitive|FHIRString $logMessage): self
     {
@@ -3613,10 +3131,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -4010,10 +3525,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -4466,10 +3977,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

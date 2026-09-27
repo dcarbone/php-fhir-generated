@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -142,8 +141,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * resource. For admissions, this is the admission diagnosis. The indication will
      * typically be a Condition (with other resources referenced in the
      * evidence.detail), or a Procedure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $condition;
@@ -155,8 +152,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      *
      * Role that this diagnosis has within the encounter (e.g. admission, billing,
      * discharge …).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $use;
@@ -166,8 +161,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $rank;
@@ -176,11 +169,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
     /**
      * FHIREncounterDiagnosis Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $condition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $use
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $rank
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -222,8 +211,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * resource. For admissions, this is the admission diagnosis. The indication will
      * typically be a Condition (with other resources referenced in the
      * evidence.detail), or a Procedure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getCondition(): null|FHIRReference
     {
@@ -239,9 +226,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * resource. For admissions, this is the admission diagnosis. The indication will
      * typically be a Condition (with other resources referenced in the
      * evidence.detail), or a Procedure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $condition
-     * @return static
      */
     public function setCondition(null|FHIRReference $condition): self
     {
@@ -261,8 +245,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      *
      * Role that this diagnosis has within the encounter (e.g. admission, billing,
      * discharge …).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getUse(): null|FHIRCodeableConcept
     {
@@ -277,9 +259,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      *
      * Role that this diagnosis has within the encounter (e.g. admission, billing,
      * discharge …).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $use
-     * @return static
      */
     public function setUse(null|FHIRCodeableConcept $use): self
     {
@@ -297,8 +276,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     public function getRank(): null|FHIRPositiveInt
     {
@@ -311,9 +288,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $rank
-     * @return static
      */
     public function setRank(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $rank): self
     {
@@ -330,10 +304,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -389,10 +360,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -420,10 +387,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

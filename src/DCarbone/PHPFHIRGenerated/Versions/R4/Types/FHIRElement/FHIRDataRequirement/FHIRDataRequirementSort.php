@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequir
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequir
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -127,8 +126,6 @@ class FHIRDataRequirementSort extends FHIRElement
      * of the required data. The path is allowed to contain qualifiers (.) to traverse
      * sub-elements, as well as indexers ([x]) to traverse multiple-cardinality
      * sub-elements. Note that the index must be an integer constant.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -137,8 +134,6 @@ class FHIRDataRequirementSort extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction of the sort, ascending or descending.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSortDirection
      */
     #[FHIRSortDirection]
     protected FHIRSortDirection $direction;
@@ -147,9 +142,6 @@ class FHIRDataRequirementSort extends FHIRElement
     /**
      * FHIRDataRequirementSort Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $path
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSortDirectionList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSortDirection $direction
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -185,8 +177,6 @@ class FHIRDataRequirementSort extends FHIRElement
      * of the required data. The path is allowed to contain qualifiers (.) to traverse
      * sub-elements, as well as indexers ([x]) to traverse multiple-cardinality
      * sub-elements. Note that the index must be an integer constant.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getPath(): null|FHIRString
     {
@@ -202,9 +192,6 @@ class FHIRDataRequirementSort extends FHIRElement
      * of the required data. The path is allowed to contain qualifiers (.) to traverse
      * sub-elements, as well as indexers ([x]) to traverse multiple-cardinality
      * sub-elements. Note that the index must be an integer constant.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $path
-     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -224,8 +211,6 @@ class FHIRDataRequirementSort extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction of the sort, ascending or descending.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSortDirection
      */
     public function getDirection(): null|FHIRSortDirection
     {
@@ -237,9 +222,6 @@ class FHIRDataRequirementSort extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The direction of the sort, ascending or descending.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSortDirectionList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSortDirection $direction
-     * @return static
      */
     public function setDirection(null|string|FHIRSortDirectionList|FHIRSortDirection $direction): self
     {
@@ -256,10 +238,7 @@ class FHIRDataRequirementSort extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -319,10 +298,6 @@ class FHIRDataRequirementSort extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -350,10 +325,7 @@ class FHIRDataRequirementSort extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

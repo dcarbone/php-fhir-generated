@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -123,8 +123,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $target;
@@ -135,8 +133,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -147,8 +143,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $interaction;
@@ -159,8 +153,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $organism;
@@ -171,8 +163,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $organismType;
@@ -184,8 +174,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $amountQuantity;
@@ -195,8 +183,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $amountRange;
@@ -206,8 +192,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $amountString;
@@ -218,8 +202,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $amountType;
@@ -239,17 +221,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
     /**
      * FHIRSubstanceReferenceInformationTarget Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $target
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $interaction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $organism
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $organismType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $amountRange
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $amountType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $source
      * @param null|string[] $fhirComments
      */
@@ -318,8 +290,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     public function getTarget(): null|FHIRIdentifier
     {
@@ -333,9 +303,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $target
-     * @return static
      */
     public function setTarget(null|FHIRIdentifier $target): self
     {
@@ -354,8 +321,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -369,9 +334,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -390,8 +352,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getInteraction(): null|FHIRCodeableConcept
     {
@@ -405,9 +365,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $interaction
-     * @return static
      */
     public function setInteraction(null|FHIRCodeableConcept $interaction): self
     {
@@ -426,8 +383,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getOrganism(): null|FHIRCodeableConcept
     {
@@ -441,9 +396,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $organism
-     * @return static
      */
     public function setOrganism(null|FHIRCodeableConcept $organism): self
     {
@@ -462,8 +414,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getOrganismType(): null|FHIRCodeableConcept
     {
@@ -477,9 +427,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $organismType
-     * @return static
      */
     public function setOrganismType(null|FHIRCodeableConcept $organismType): self
     {
@@ -499,8 +446,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     public function getAmountQuantity(): null|FHIRQuantity
     {
@@ -515,9 +460,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
-     * @return static
      */
     public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
     {
@@ -535,8 +477,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     public function getAmountRange(): null|FHIRRange
     {
@@ -549,9 +489,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $amountRange
-     * @return static
      */
     public function setAmountRange(null|FHIRRange $amountRange): self
     {
@@ -569,8 +506,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getAmountString(): null|FHIRString
     {
@@ -583,9 +518,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
-     * @return static
      */
     public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
@@ -607,8 +539,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAmountType(): null|FHIRCodeableConcept
     {
@@ -622,9 +552,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $amountType
-     * @return static
      */
     public function setAmountType(null|FHIRCodeableConcept $amountType): self
     {
@@ -667,9 +594,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $source
-     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -686,9 +610,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$source
-     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {
@@ -702,10 +623,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -775,10 +693,6 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -843,10 +757,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

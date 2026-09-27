@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -43,8 +43,6 @@ final class XMLWriter extends \XMLWriter
 
     /**
      * XMLWriter constructor.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      */
     public function __construct(SerializeConfig $config)
     {
@@ -53,8 +51,6 @@ final class XMLWriter extends \XMLWriter
 
     /**
      * @see https://www.php.net/manual/en/xmlwriter.openmemory.php
-     *
-     * @return bool
      */
     public function openMemory(): bool
     {
@@ -67,9 +63,6 @@ final class XMLWriter extends \XMLWriter
 
     /**
      * @see https://www.php.net/manual/en/xmlwriter.openuri.php
-     *
-     * @param string $uri
-     * @return bool
      */
     public function openUri(string $uri): bool
     {
@@ -80,9 +73,6 @@ final class XMLWriter extends \XMLWriter
         return parent::openUri($uri);
     }
 
-    /**
-     * @return bool
-     */
     public function isOpen(): bool
     {
         return null !== $this->_open;
@@ -91,8 +81,6 @@ final class XMLWriter extends \XMLWriter
     /**
      * Returns the destination of writes made by this class.  Value will be "null" if not opened, "memory" if writing
      * opened with "openMemory()", or the $uri provided to "openUri()"
-     *
-     * @return null|string
      */
     public function getWriteDestination(): null|string
     {
@@ -101,8 +89,6 @@ final class XMLWriter extends \XMLWriter
 
     /**
      * Used to track whether the document has been started
-     *
-     * @return bool
      */
     public function isDocStarted(): bool
     {
@@ -111,11 +97,6 @@ final class XMLWriter extends \XMLWriter
 
     /**
      * @see https://www.php.net/manual/en/xmlwriter.startdocument.php
-     *
-     * @param null|string $version
-     * @param null|string $encoding
-     * @param null|string $standalone
-     * @return bool
      */
     public function startDocument(null|string $version = '1.0', null|string $encoding = 'UTF-8', null|string $standalone = 'yes'): bool
     {
@@ -126,19 +107,11 @@ final class XMLWriter extends \XMLWriter
         return parent::startDocument($version, $encoding, $standalone);
     }
 
-    /**
-     * @return bool
-     */
     public function isRootOpen(): bool
     {
         return $this->_rootOpen;
     }
 
-    /**
-     * @param string $name
-     * @param string|null $sourceXMLNS
-     * @return bool
-     */
     public function openRootNode(string $name, null|string $sourceXMLNS): bool
     {
         if (null === $this->_open) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -115,8 +115,6 @@ class FHIRBundleSearch extends FHIRBackboneElement
      *
      * Why this entry is in the result set - whether it's included as a match or
      * because of an _include requirement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSearchEntryMode
      */
     #[FHIRSearchEntryMode]
     protected FHIRSearchEntryMode $mode;
@@ -127,8 +125,6 @@ class FHIRBundleSearch extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When searching, the server's search ranking score for the entry.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $score;
@@ -137,10 +133,7 @@ class FHIRBundleSearch extends FHIRBackboneElement
     /**
      * FHIRBundleSearch Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRSearchEntryModeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSearchEntryMode $mode
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $score
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -176,8 +169,6 @@ class FHIRBundleSearch extends FHIRBackboneElement
      *
      * Why this entry is in the result set - whether it's included as a match or
      * because of an _include requirement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSearchEntryMode
      */
     public function getMode(): null|FHIRSearchEntryMode
     {
@@ -191,9 +182,6 @@ class FHIRBundleSearch extends FHIRBackboneElement
      *
      * Why this entry is in the result set - whether it's included as a match or
      * because of an _include requirement.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRSearchEntryModeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSearchEntryMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRSearchEntryModeList|FHIRSearchEntryMode $mode): self
     {
@@ -215,8 +203,6 @@ class FHIRBundleSearch extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When searching, the server's search ranking score for the entry.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     public function getScore(): null|FHIRDecimal
     {
@@ -230,9 +216,6 @@ class FHIRBundleSearch extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When searching, the server's search ranking score for the entry.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $score
-     * @return static
      */
     public function setScore(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $score): self
     {
@@ -249,10 +232,7 @@ class FHIRBundleSearch extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -314,10 +294,6 @@ class FHIRBundleSearch extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -345,10 +321,7 @@ class FHIRBundleSearch extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -166,8 +164,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * A persistent identifier for the bundle that won't change as a bundle is copied
      * from server to server.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -175,8 +171,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle - how it is intended to be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBundleType
      */
     #[FHIRBundleType]
     protected FHIRBundleType $type;
@@ -190,8 +184,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * The date/time that the bundle was assembled - i.e. when the resources were
      * placed in the bundle.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $timestamp;
@@ -204,8 +196,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * entries of type 'match' across all pages in the search. It does not include
      * search.mode = 'include' or 'outcome' entries and it does not provide a count of
      * the number of entries in the Bundle.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $total;
@@ -238,18 +228,12 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML-DSig or a JWS.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
      */
     #[FHIRSignature]
     protected FHIRSignature $signature;
     /**
-     * (choose any one of the elements, but only one)
-     *
      * Captures issues and warnings that relate to the construction of the Bundle and
      * the content within it.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface
      */
     #[FHIRResourceContainer]
     protected VersionContainedTypeInterface $issues;
@@ -257,18 +241,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     /* constructor.php:61 */
     /**
      * FHIRBundle Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRBundleTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBundleType $type
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $timestamp
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $total
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink> $link
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry> $entry
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature $signature
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $issues
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -337,8 +311,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * A persistent identifier for the bundle that won't change as a bundle is copied
      * from server to server.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -353,9 +325,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * A persistent identifier for the bundle that won't change as a bundle is copied
      * from server to server.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -371,8 +340,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle - how it is intended to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBundleType
      */
     public function getType(): null|FHIRBundleType
     {
@@ -383,9 +350,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle - how it is intended to be used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRBundleTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBundleType $type
-     * @return static
      */
     public function setType(null|string|FHIRBundleTypeEnum|FHIRBundleType $type): self
     {
@@ -410,8 +374,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * The date/time that the bundle was assembled - i.e. when the resources were
      * placed in the bundle.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     public function getTimestamp(): null|FHIRInstant
     {
@@ -428,9 +390,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * The date/time that the bundle was assembled - i.e. when the resources were
      * placed in the bundle.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $timestamp
-     * @return static
      */
     public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp): self
     {
@@ -454,8 +413,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * entries of type 'match' across all pages in the search. It does not include
      * search.mode = 'include' or 'outcome' entries and it does not provide a count of
      * the number of entries in the Bundle.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     public function getTotal(): null|FHIRUnsignedInt
     {
@@ -471,9 +428,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * entries of type 'match' across all pages in the search. It does not include
      * search.mode = 'include' or 'outcome' entries and it does not provide a count of
      * the number of entries in the Bundle.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $total
-     * @return static
      */
     public function setTotal(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $total): self
     {
@@ -515,9 +469,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * A container for a collection of resources.
      *
      * A series of links that provide context to this bundle.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink $link
-     * @return static
      */
     public function addLink(FHIRBundleLink $link): self
     {
@@ -532,9 +483,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * A container for a collection of resources.
      *
      * A series of links that provide context to this bundle.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink ...$link
-     * @return static
      */
     public function setLink(FHIRBundleLink ...$link): self
     {
@@ -575,9 +523,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * An entry in a bundle resource - will either contain a resource or information
      * about a resource (transactions and history only).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry $entry
-     * @return static
      */
     public function addEntry(FHIRBundleEntry $entry): self
     {
@@ -593,9 +538,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * An entry in a bundle resource - will either contain a resource or information
      * about a resource (transactions and history only).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry ...$entry
-     * @return static
      */
     public function setEntry(FHIRBundleEntry ...$entry): self
     {
@@ -617,8 +559,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML-DSig or a JWS.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
      */
     public function getSignature(): null|FHIRSignature
     {
@@ -635,9 +575,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML-DSig or a JWS.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature $signature
-     * @return static
      */
     public function setSignature(null|FHIRSignature $signature): self
     {
@@ -650,12 +587,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
-     * (choose any one of the elements, but only one)
-     *
      * Captures issues and warnings that relate to the construction of the Bundle and
      * the content within it.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface
      */
     public function getIssues(): null|VersionContainedTypeInterface
     {
@@ -663,13 +596,8 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
-     * (choose any one of the elements, but only one)
-     *
      * Captures issues and warnings that relate to the construction of the Bundle and
      * the content within it.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $issues
-     * @return static
      */
     public function setIssues(null|FHIRResourceContainer|VersionContainedTypeInterface $issues): self
     {
@@ -686,10 +614,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRBundle $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRBundle
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -799,11 +724,6 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -896,10 +816,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRBundle $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRBundle
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

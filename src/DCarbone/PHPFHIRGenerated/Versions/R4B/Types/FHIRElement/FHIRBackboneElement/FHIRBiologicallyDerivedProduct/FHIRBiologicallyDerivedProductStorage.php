@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -141,8 +141,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of storage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -153,8 +151,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Storage temperature.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $temperature;
@@ -162,8 +158,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Temperature scale used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductStorageScale
      */
     #[FHIRBiologicallyDerivedProductStorageScale]
     protected FHIRBiologicallyDerivedProductStorageScale $scale;
@@ -173,8 +167,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Storage timeperiod.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $duration;
@@ -183,12 +175,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
     /**
      * FHIRBiologicallyDerivedProductStorage Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $temperature
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRBiologicallyDerivedProductStorageScaleEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductStorageScale $scale
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $duration
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -231,8 +218,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of storage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -245,9 +230,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of storage.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -269,8 +251,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Storage temperature.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     public function getTemperature(): null|FHIRDecimal
     {
@@ -284,9 +264,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Storage temperature.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $temperature
-     * @return static
      */
     public function setTemperature(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $temperature): self
     {
@@ -305,8 +282,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Temperature scale used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductStorageScale
      */
     public function getScale(): null|FHIRBiologicallyDerivedProductStorageScale
     {
@@ -317,9 +292,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Temperature scale used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRBiologicallyDerivedProductStorageScaleEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBiologicallyDerivedProductStorageScale $scale
-     * @return static
      */
     public function setScale(null|string|FHIRBiologicallyDerivedProductStorageScaleEnum|FHIRBiologicallyDerivedProductStorageScale $scale): self
     {
@@ -340,8 +312,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Storage timeperiod.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getDuration(): null|FHIRPeriod
     {
@@ -354,9 +324,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Storage timeperiod.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $duration
-     * @return static
      */
     public function setDuration(null|FHIRPeriod $duration): self
     {
@@ -370,10 +337,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -447,10 +411,6 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -493,10 +453,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

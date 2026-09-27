@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -124,8 +124,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * The human language of the content. The value can be any valid value according to
      * BCP-47
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $language;
@@ -135,8 +133,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text summary of resource content (for human interpretation)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative
      */
     #[FHIRNarrative]
     protected FHIRNarrative $text;
@@ -164,8 +160,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * with a length limit of 36 characters
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $id;
@@ -182,11 +176,8 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
     /* constructor.php:61 */
     /**
      * FHIRResource Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|string[] $fhirComments
      */
@@ -242,8 +233,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * The human language of the content. The value can be any valid value according to
      * BCP-47
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getLanguage(): null|FHIRCode
     {
@@ -258,9 +247,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * The human language of the content. The value can be any valid value according to
      * BCP-47
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @return static
      */
     public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -281,8 +267,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text summary of resource content (for human interpretation)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative
      */
     public function getText(): null|FHIRNarrative
     {
@@ -295,9 +279,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text summary of resource content (for human interpretation)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
-     * @return static
      */
     public function setText(null|FHIRNarrative $text): self
     {
@@ -336,9 +317,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Contained, inline Resources. These resources do not have an independent
      * existence apart from the resource that contains them - they cannot be identified
      * independently, and nor can they have their own independent transaction scope
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface $contained
-     * @return static
      */
     public function addContained(FHIRResourceInline|VersionContainedTypeInterface $contained): self
     {
@@ -356,9 +334,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Contained, inline Resources. These resources do not have an independent
      * existence apart from the resource that contains them - they cannot be identified
      * independently, and nor can they have their own independent transaction scope
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface ...$contained
-     * @return static
      */
     public function setContained(FHIRResourceInline|VersionContainedTypeInterface ...$contained): self
     {
@@ -404,9 +379,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension $extension
-     * @return static
      */
     public function addExtension(FHIRExtension $extension): self
     {
@@ -421,9 +393,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension ...$extension
-     * @return static
      */
     public function setExtension(FHIRExtension ...$extension): self
     {
@@ -441,8 +410,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * with a length limit of 36 characters
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId
      */
     public function getId(): null|FHIRId
     {
@@ -455,9 +422,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * with a length limit of 36 characters
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
-     * @return static
      */
     public function setId(null|string|FHIRIdPrimitive|FHIRId $id): self
     {
@@ -499,9 +463,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension $modifierExtension
-     * @return static
      */
     public function addModifierExtension(FHIRExtension $modifierExtension): self
     {
@@ -516,9 +477,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * Optional Extensions Element - found in all resources.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension ...$modifierExtension
-     * @return static
      */
     public function setModifierExtension(FHIRExtension ...$modifierExtension): self
     {
@@ -532,10 +490,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -601,11 +556,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -684,10 +634,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

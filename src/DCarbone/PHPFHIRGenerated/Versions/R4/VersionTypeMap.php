@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -1341,7 +1341,6 @@ class VersionTypeMap implements VersionTypeMapInterface
 
     /**
      * Returns the full internal class map
-     * @return array
      */
     public static function getMap(): array
     {
@@ -1350,8 +1349,6 @@ class VersionTypeMap implements VersionTypeMapInterface
 
     /**
      * Returns a map of [ "typeName" => "typeClass" ] of all types that may be contained within a resource container.
-     *
-     * @return array
      */
     public static function getContainableTypes(): array
     {
@@ -1362,7 +1359,6 @@ class VersionTypeMap implements VersionTypeMapInterface
      * Returns the fully qualified classname for the provided input, if it represents a FHIR type.
      *
      * @param string|\stdClass|\SimpleXMLElement $input Expects either name of type or unserialized JSON or XML.
-     * @return string|null
      */
     public static function getTypeClassname(string|\stdClass|\SimpleXMLElement $input): null|string
     {
@@ -1396,8 +1392,6 @@ class VersionTypeMap implements VersionTypeMapInterface
     /**
      * Attempts to determine if the provided value is or represents a containable resource type
      *
-     * @param string|\stdClass|\SimpleXMLElement|\DCarbone\PHPFHIRGenerated\Types\TypeInterface $input
-     * @return bool
      * @throws \InvalidArgumentException
      */
     public static function isContainableType(string|\stdClass|\SimpleXMLElement|TypeInterface $input): bool
@@ -1426,7 +1420,6 @@ class VersionTypeMap implements VersionTypeMapInterface
     }
 
     /**
-     * @param \stdClass $decoded
      * @return string Fully qualified class name of contained resource type
      * @throws \UnexpectedValueException
      * @throws \DomainException
@@ -1446,10 +1439,6 @@ class VersionTypeMap implements VersionTypeMapInterface
         throw self::createdInvalidContainedTypeException($decoded->resourceType);
     }
 
-    /**
-     * @param string $typeName
-     * @return \UnexpectedValueException
-     */
     private static function createdInvalidContainedTypeException(string $typeName): \UnexpectedValueException
     {
         return new \UnexpectedValueException(sprintf(

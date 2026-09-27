@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -137,8 +137,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * of decreasing length. Sequences of the same length will be ordered by molecular
      * weight. Subunits that have identical sequences will be repeated and have
      * sequential subscripts.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $subunit;
@@ -154,8 +152,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * synthetic peptide containing amino acids that are not represented with a single
      * letter code an X should be used within the sequence. The modified amino acids
      * will be distinguished by their position in the sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $sequence;
@@ -165,8 +161,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of linear sequences of amino acids contained in the subunit.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $length;
@@ -182,8 +176,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * synthetic peptide containing amino acids that are not represented with a single
      * letter code an X should be used within the sequence. The modified amino acids
      * will be distinguished by their position in the sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $sequenceAttachment;
@@ -195,8 +187,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $nTerminalModificationId;
@@ -207,8 +197,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * The name of the fragment modified at the N-terminal of the SubstanceProtein
      * shall be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $nTerminalModification;
@@ -220,8 +208,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $cTerminalModificationId;
@@ -231,8 +217,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The modification at the C-terminal shall be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $cTerminalModification;
@@ -241,16 +225,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     /**
      * FHIRSubstanceProteinSubunit Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $subunit
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $sequence
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $length
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $sequenceAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $nTerminalModificationId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $nTerminalModification
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $cTerminalModificationId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $cTerminalModification
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -312,8 +287,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * of decreasing length. Sequences of the same length will be ordered by molecular
      * weight. Subunits that have identical sequences will be repeated and have
      * sequential subscripts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getSubunit(): null|FHIRInteger
     {
@@ -329,9 +302,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * of decreasing length. Sequences of the same length will be ordered by molecular
      * weight. Subunits that have identical sequences will be repeated and have
      * sequential subscripts.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $subunit
-     * @return static
      */
     public function setSubunit(null|string|float|FHIRIntegerPrimitive|FHIRInteger $subunit): self
     {
@@ -358,8 +328,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * synthetic peptide containing amino acids that are not represented with a single
      * letter code an X should be used within the sequence. The modified amino acids
      * will be distinguished by their position in the sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getSequence(): null|FHIRString
     {
@@ -378,9 +346,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * synthetic peptide containing amino acids that are not represented with a single
      * letter code an X should be used within the sequence. The modified amino acids
      * will be distinguished by their position in the sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $sequence
-     * @return static
      */
     public function setSequence(null|string|FHIRStringPrimitive|FHIRString $sequence): self
     {
@@ -401,8 +366,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of linear sequences of amino acids contained in the subunit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getLength(): null|FHIRInteger
     {
@@ -415,9 +378,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of linear sequences of amino acids contained in the subunit.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $length
-     * @return static
      */
     public function setLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $length): self
     {
@@ -444,8 +404,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * synthetic peptide containing amino acids that are not represented with a single
      * letter code an X should be used within the sequence. The modified amino acids
      * will be distinguished by their position in the sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment
      */
     public function getSequenceAttachment(): null|FHIRAttachment
     {
@@ -464,9 +422,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * synthetic peptide containing amino acids that are not represented with a single
      * letter code an X should be used within the sequence. The modified amino acids
      * will be distinguished by their position in the sequence.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $sequenceAttachment
-     * @return static
      */
     public function setSequenceAttachment(null|FHIRAttachment $sequenceAttachment): self
     {
@@ -486,8 +441,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     public function getNTerminalModificationId(): null|FHIRIdentifier
     {
@@ -502,9 +455,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $nTerminalModificationId
-     * @return static
      */
     public function setNTerminalModificationId(null|FHIRIdentifier $nTerminalModificationId): self
     {
@@ -523,8 +473,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * The name of the fragment modified at the N-terminal of the SubstanceProtein
      * shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getNTerminalModification(): null|FHIRString
     {
@@ -538,9 +486,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * The name of the fragment modified at the N-terminal of the SubstanceProtein
      * shall be specified.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $nTerminalModification
-     * @return static
      */
     public function setNTerminalModification(null|string|FHIRStringPrimitive|FHIRString $nTerminalModification): self
     {
@@ -563,8 +508,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     public function getCTerminalModificationId(): null|FHIRIdentifier
     {
@@ -579,9 +522,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $cTerminalModificationId
-     * @return static
      */
     public function setCTerminalModificationId(null|FHIRIdentifier $cTerminalModificationId): self
     {
@@ -599,8 +539,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The modification at the C-terminal shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getCTerminalModification(): null|FHIRString
     {
@@ -613,9 +551,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The modification at the C-terminal shall be specified.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $cTerminalModification
-     * @return static
      */
     public function setCTerminalModification(null|string|FHIRStringPrimitive|FHIRString $cTerminalModification): self
     {
@@ -632,10 +567,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -733,10 +665,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -809,10 +737,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

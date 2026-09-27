@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -169,8 +169,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * The owner of an asset has the residual control rights over the asset: the right
      * to decide all usages of the asset in any way not inconsistent with a prior
      * contract, custom, or law (Hart, 1995, p. 30).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $topic;
@@ -182,8 +180,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * Type of Contract Provision such as specific requirements, purposes for actions,
      * obligations, prohibitions, e.g. life time maximum benefit.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -195,8 +191,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * Type of choice made by accepting party with respect to an offer made by an
      * offeror/ grantee.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $decision;
@@ -228,8 +222,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human readable form of this Contract Offer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -261,16 +253,11 @@ class FHIRContractOffer extends FHIRBackboneElement
     /**
      * FHIRContractOffer Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractParty> $party
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $topic
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $decision
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $decisionMode
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer> $answer
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $text
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $linkId
      * @param null|iterable<string>|iterable<int>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt> $securityLabelNumber
      * @param null|string[] $fhirComments
@@ -366,9 +353,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this particular Contract Provision.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -386,9 +370,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this particular Contract Provision.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -429,9 +410,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * policy or agreement.
      *
      * Offer Recipient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractParty $party
-     * @return static
      */
     public function addParty(FHIRContractParty $party): self
     {
@@ -447,9 +425,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * policy or agreement.
      *
      * Offer Recipient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractParty ...$party
-     * @return static
      */
     public function setParty(FHIRContractParty ...$party): self
     {
@@ -469,8 +444,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * The owner of an asset has the residual control rights over the asset: the right
      * to decide all usages of the asset in any way not inconsistent with a prior
      * contract, custom, or law (Hart, 1995, p. 30).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getTopic(): null|FHIRReference
     {
@@ -485,9 +458,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * The owner of an asset has the residual control rights over the asset: the right
      * to decide all usages of the asset in any way not inconsistent with a prior
      * contract, custom, or law (Hart, 1995, p. 30).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $topic
-     * @return static
      */
     public function setTopic(null|FHIRReference $topic): self
     {
@@ -507,8 +477,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * Type of Contract Provision such as specific requirements, purposes for actions,
      * obligations, prohibitions, e.g. life time maximum benefit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -523,9 +491,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * Type of Contract Provision such as specific requirements, purposes for actions,
      * obligations, prohibitions, e.g. life time maximum benefit.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -545,8 +510,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * Type of choice made by accepting party with respect to an offer made by an
      * offeror/ grantee.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getDecision(): null|FHIRCodeableConcept
     {
@@ -561,9 +524,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * Type of choice made by accepting party with respect to an offer made by an
      * offeror/ grantee.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $decision
-     * @return static
      */
     public function setDecision(null|FHIRCodeableConcept $decision): self
     {
@@ -608,9 +568,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How the decision about a Contract was conveyed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $decisionMode
-     * @return static
      */
     public function addDecisionMode(FHIRCodeableConcept $decisionMode): self
     {
@@ -628,9 +585,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How the decision about a Contract was conveyed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$decisionMode
-     * @return static
      */
     public function setDecisionMode(FHIRCodeableConcept ...$decisionMode): self
     {
@@ -671,9 +625,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * policy or agreement.
      *
      * Response to offer text.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer $answer
-     * @return static
      */
     public function addAnswer(FHIRContractAnswer $answer): self
     {
@@ -689,9 +640,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * policy or agreement.
      *
      * Response to offer text.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer ...$answer
-     * @return static
      */
     public function setAnswer(FHIRContractAnswer ...$answer): self
     {
@@ -709,8 +657,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human readable form of this Contract Offer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -723,9 +669,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human readable form of this Contract Offer.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -773,9 +716,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * The id of the clause or question text of the offer in the referenced
      * questionnaire/response.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @return static
      */
     public function addLinkId(string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -796,9 +736,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * The id of the clause or question text of the offer in the referenced
      * questionnaire/response.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$linkId
-     * @return static
      */
     public function setLinkId(string|FHIRStringPrimitive|FHIRString ...$linkId): self
     {
@@ -848,9 +785,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the offer.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $securityLabelNumber
-     * @return static
      */
     public function addSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $securityLabelNumber): self
     {
@@ -870,9 +804,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the offer.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt ...$securityLabelNumber
-     * @return static
      */
     public function setSecurityLabelNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt ...$securityLabelNumber): self
     {
@@ -893,10 +824,7 @@ class FHIRContractOffer extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -966,10 +894,6 @@ class FHIRContractOffer extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1044,10 +968,7 @@ class FHIRContractOffer extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

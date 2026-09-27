@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * An identifier that is unique within the questionnaire allowing linkage to the
      * equivalent group in a [[[QuestionnaireResponse]]] resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $linkId;
@@ -161,8 +159,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual question as shown to the user to prompt them for an answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -172,8 +168,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * The expected format of the answer, e.g. the type of input (string, integer) or
      * whether a (multiple) choice is expected.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnswerFormat
      */
     #[FHIRAnswerFormat]
     protected FHIRAnswerFormat $type;
@@ -184,8 +178,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If true, indicates that the question must be answered and have required groups
      * within it also present. If false, the question and any contained groups may be
      * skipped when answering the questionnaire.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $required;
@@ -194,8 +186,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the question may have more than one answer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $repeats;
@@ -206,8 +196,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Reference to a value set containing a list of codes representing permitted
      * answers for the question.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $options;
@@ -240,15 +228,8 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
     /**
      * FHIRQuestionnaireQuestion Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $linkId
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $concept
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $text
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAnswerFormatList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnswerFormat $type
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $required
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $repeats
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $options
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $option
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup> $group
      * @param null|string[] $fhirComments
@@ -314,8 +295,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * An identifier that is unique within the questionnaire allowing linkage to the
      * equivalent group in a [[[QuestionnaireResponse]]] resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getLinkId(): null|FHIRString
     {
@@ -329,9 +308,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * An identifier that is unique within the questionnaire allowing linkage to the
      * equivalent group in a [[[QuestionnaireResponse]]] resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $linkId
-     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -379,9 +355,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Identifies a how this question is known in a particular terminology such as
      * LOINC.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $concept
-     * @return static
      */
     public function addConcept(FHIRCoding $concept): self
     {
@@ -399,9 +372,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Identifies a how this question is known in a particular terminology such as
      * LOINC.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$concept
-     * @return static
      */
     public function setConcept(FHIRCoding ...$concept): self
     {
@@ -419,8 +389,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual question as shown to the user to prompt them for an answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -433,9 +401,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual question as shown to the user to prompt them for an answer.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -456,8 +421,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * The expected format of the answer, e.g. the type of input (string, integer) or
      * whether a (multiple) choice is expected.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnswerFormat
      */
     public function getType(): null|FHIRAnswerFormat
     {
@@ -470,9 +433,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * The expected format of the answer, e.g. the type of input (string, integer) or
      * whether a (multiple) choice is expected.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAnswerFormatList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnswerFormat $type
-     * @return static
      */
     public function setType(null|string|FHIRAnswerFormatList|FHIRAnswerFormat $type): self
     {
@@ -494,8 +454,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If true, indicates that the question must be answered and have required groups
      * within it also present. If false, the question and any contained groups may be
      * skipped when answering the questionnaire.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     public function getRequired(): null|FHIRBoolean
     {
@@ -509,9 +467,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If true, indicates that the question must be answered and have required groups
      * within it also present. If false, the question and any contained groups may be
      * skipped when answering the questionnaire.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $required
-     * @return static
      */
     public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required): self
     {
@@ -531,8 +486,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the question may have more than one answer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     public function getRepeats(): null|FHIRBoolean
     {
@@ -544,9 +497,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the question may have more than one answer.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $repeats
-     * @return static
      */
     public function setRepeats(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $repeats): self
     {
@@ -568,8 +518,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Reference to a value set containing a list of codes representing permitted
      * answers for the question.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getOptions(): null|FHIRReference
     {
@@ -583,9 +531,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Reference to a value set containing a list of codes representing permitted
      * answers for the question.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $options
-     * @return static
      */
     public function setOptions(null|FHIRReference $options): self
     {
@@ -630,9 +575,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * For a "choice" question, identifies one of the permitted answers for the
      * question.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $option
-     * @return static
      */
     public function addOption(FHIRCoding $option): self
     {
@@ -650,9 +592,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * For a "choice" question, identifies one of the permitted answers for the
      * question.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$option
-     * @return static
      */
     public function setOption(FHIRCoding ...$option): self
     {
@@ -697,9 +636,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Nested group, containing nested question for this question. The order of groups
      * within the question is relevant.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup $group
-     * @return static
      */
     public function addGroup(FHIRQuestionnaireGroup $group): self
     {
@@ -717,9 +653,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Nested group, containing nested question for this question. The order of groups
      * within the question is relevant.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup ...$group
-     * @return static
      */
     public function setGroup(FHIRQuestionnaireGroup ...$group): self
     {
@@ -733,10 +666,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -836,10 +766,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -923,10 +849,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

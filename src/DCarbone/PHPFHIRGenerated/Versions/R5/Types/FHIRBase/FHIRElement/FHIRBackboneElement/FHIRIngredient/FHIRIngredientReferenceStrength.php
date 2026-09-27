@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -129,6 +128,15 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
         self::FIELD_SUBSTANCE => [
             MinOccursRule::NAME => 1,
         ],
+        self::FIELD_STRENGTH_RATIO => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_STRENGTH_RATIO_RANGE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_STRENGTH_QUANTITY => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -144,8 +152,6 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant reference substance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $substance;
@@ -155,10 +161,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Strength expressed in terms of a reference substance. (choose any one of
-     * strength*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * Strength expressed in terms of a reference substance.
      */
     #[FHIRRatio]
     protected FHIRRatio $strengthRatio;
@@ -167,10 +170,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Strength expressed in terms of a reference substance. (choose any one of
-     * strength*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
+     * Strength expressed in terms of a reference substance.
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $strengthRatioRange;
@@ -181,10 +181,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Strength expressed in terms of a reference substance. (choose any one of
-     * strength*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Strength expressed in terms of a reference substance.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $strengthQuantity;
@@ -194,8 +191,6 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For when strength is measured at a particular point or distance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $measurementPoint;
@@ -216,13 +211,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
     /**
      * FHIRIngredientReferenceStrength Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $substance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $strengthRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $strengthRatioRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $strengthQuantity
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $measurementPoint
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $country
      * @param null|string[] $fhirComments
      */
@@ -275,8 +264,6 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant reference substance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getSubstance(): null|FHIRCodeableReference
     {
@@ -290,9 +277,6 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant reference substance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $substance
-     * @return static
      */
     public function setSubstance(null|FHIRCodeableReference $substance): self
     {
@@ -310,10 +294,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Strength expressed in terms of a reference substance. (choose any one of
-     * strength*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * Strength expressed in terms of a reference substance.
      */
     public function getStrengthRatio(): null|FHIRRatio
     {
@@ -326,11 +307,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Strength expressed in terms of a reference substance. (choose any one of
-     * strength*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $strengthRatio
-     * @return static
+     * Strength expressed in terms of a reference substance.
      */
     public function setStrengthRatio(null|FHIRRatio $strengthRatio): self
     {
@@ -347,10 +324,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Strength expressed in terms of a reference substance. (choose any one of
-     * strength*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
+     * Strength expressed in terms of a reference substance.
      */
     public function getStrengthRatioRange(): null|FHIRRatioRange
     {
@@ -362,11 +336,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Strength expressed in terms of a reference substance. (choose any one of
-     * strength*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $strengthRatioRange
-     * @return static
+     * Strength expressed in terms of a reference substance.
      */
     public function setStrengthRatioRange(null|FHIRRatioRange $strengthRatioRange): self
     {
@@ -385,10 +355,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Strength expressed in terms of a reference substance. (choose any one of
-     * strength*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Strength expressed in terms of a reference substance.
      */
     public function getStrengthQuantity(): null|FHIRQuantity
     {
@@ -402,11 +369,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Strength expressed in terms of a reference substance. (choose any one of
-     * strength*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $strengthQuantity
-     * @return static
+     * Strength expressed in terms of a reference substance.
      */
     public function setStrengthQuantity(null|FHIRQuantity $strengthQuantity): self
     {
@@ -424,8 +387,6 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For when strength is measured at a particular point or distance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getMeasurementPoint(): null|FHIRString
     {
@@ -438,9 +399,6 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For when strength is measured at a particular point or distance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $measurementPoint
-     * @return static
      */
     public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint): self
     {
@@ -488,9 +446,6 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $country
-     * @return static
      */
     public function addCountry(FHIRCodeableConcept $country): self
     {
@@ -508,9 +463,6 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$country
-     * @return static
      */
     public function setCountry(FHIRCodeableConcept ...$country): self
     {
@@ -524,10 +476,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -589,10 +538,6 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -637,10 +582,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

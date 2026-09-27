@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -144,8 +143,6 @@ class FHIRSampledData extends FHIRElement
      *
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $origin;
@@ -154,8 +151,6 @@ class FHIRSampledData extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of time between sampling times, measured in milliseconds.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $period;
@@ -165,8 +160,6 @@ class FHIRSampledData extends FHIRElement
      *
      * A correction factor that is applied to the sampled data points before they are
      * added to the origin.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $factor;
@@ -176,8 +169,6 @@ class FHIRSampledData extends FHIRElement
      *
      * The lower limit of detection of the measured points. This is needed if any of
      * the data points have the value "L" (lower than detection limit).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $lowerLimit;
@@ -187,8 +178,6 @@ class FHIRSampledData extends FHIRElement
      *
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $upperLimit;
@@ -199,8 +188,6 @@ class FHIRSampledData extends FHIRElement
      * The number of sample points at each time point. If this value is greater than
      * one, then the dimensions will be interlaced - all the sample points for a point
      * in time will be recorded at once.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $dimensions;
@@ -208,8 +195,6 @@ class FHIRSampledData extends FHIRElement
      * A series of data points which are decimal values separated by a single space
      * (character u20). The special values "E" (error), "L" (below detection limit) and
      * "U" (above detection limit) can also be used in place of a decimal value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledDataDataType
      */
     #[FHIRSampledDataDataType]
     protected FHIRSampledDataDataType $data;
@@ -218,14 +203,6 @@ class FHIRSampledData extends FHIRElement
     /**
      * FHIRSampledData Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $origin
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $period
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $factor
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $lowerLimit
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $upperLimit
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $dimensions
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRSampledDataDataTypePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledDataDataType $data
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -281,8 +258,6 @@ class FHIRSampledData extends FHIRElement
      *
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     public function getOrigin(): null|FHIRQuantity
     {
@@ -298,9 +273,6 @@ class FHIRSampledData extends FHIRElement
      *
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $origin
-     * @return static
      */
     public function setOrigin(null|FHIRQuantity $origin): self
     {
@@ -317,8 +289,6 @@ class FHIRSampledData extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of time between sampling times, measured in milliseconds.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     public function getPeriod(): null|FHIRDecimal
     {
@@ -330,9 +300,6 @@ class FHIRSampledData extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of time between sampling times, measured in milliseconds.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $period
-     * @return static
      */
     public function setPeriod(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $period): self
     {
@@ -353,8 +320,6 @@ class FHIRSampledData extends FHIRElement
      *
      * A correction factor that is applied to the sampled data points before they are
      * added to the origin.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     public function getFactor(): null|FHIRDecimal
     {
@@ -367,9 +332,6 @@ class FHIRSampledData extends FHIRElement
      *
      * A correction factor that is applied to the sampled data points before they are
      * added to the origin.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $factor
-     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -390,8 +352,6 @@ class FHIRSampledData extends FHIRElement
      *
      * The lower limit of detection of the measured points. This is needed if any of
      * the data points have the value "L" (lower than detection limit).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     public function getLowerLimit(): null|FHIRDecimal
     {
@@ -404,9 +364,6 @@ class FHIRSampledData extends FHIRElement
      *
      * The lower limit of detection of the measured points. This is needed if any of
      * the data points have the value "L" (lower than detection limit).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $lowerLimit
-     * @return static
      */
     public function setLowerLimit(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $lowerLimit): self
     {
@@ -427,8 +384,6 @@ class FHIRSampledData extends FHIRElement
      *
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     public function getUpperLimit(): null|FHIRDecimal
     {
@@ -441,9 +396,6 @@ class FHIRSampledData extends FHIRElement
      *
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $upperLimit
-     * @return static
      */
     public function setUpperLimit(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $upperLimit): self
     {
@@ -465,8 +417,6 @@ class FHIRSampledData extends FHIRElement
      * The number of sample points at each time point. If this value is greater than
      * one, then the dimensions will be interlaced - all the sample points for a point
      * in time will be recorded at once.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     public function getDimensions(): null|FHIRInteger
     {
@@ -480,9 +430,6 @@ class FHIRSampledData extends FHIRElement
      * The number of sample points at each time point. If this value is greater than
      * one, then the dimensions will be interlaced - all the sample points for a point
      * in time will be recorded at once.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $dimensions
-     * @return static
      */
     public function setDimensions(null|string|float|FHIRIntegerPrimitive|FHIRInteger $dimensions): self
     {
@@ -501,8 +448,6 @@ class FHIRSampledData extends FHIRElement
      * A series of data points which are decimal values separated by a single space
      * (character u20). The special values "E" (error), "L" (below detection limit) and
      * "U" (above detection limit) can also be used in place of a decimal value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledDataDataType
      */
     public function getData(): null|FHIRSampledDataDataType
     {
@@ -513,9 +458,6 @@ class FHIRSampledData extends FHIRElement
      * A series of data points which are decimal values separated by a single space
      * (character u20). The special values "E" (error), "L" (below detection limit) and
      * "U" (above detection limit) can also be used in place of a decimal value.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRSampledDataDataTypePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledDataDataType $data
-     * @return static
      */
     public function setData(null|string|FHIRSampledDataDataTypePrimitive|FHIRSampledDataDataType $data): self
     {
@@ -532,10 +474,7 @@ class FHIRSampledData extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -637,10 +576,6 @@ class FHIRSampledData extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -713,10 +648,7 @@ class FHIRSampledData extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

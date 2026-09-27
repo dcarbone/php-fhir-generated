@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant;
@@ -111,7 +109,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomain
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCareTeamStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -178,8 +175,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of the care team.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCareTeamStatus
      */
     #[FHIRCareTeamStatus]
     protected FHIRCareTeamStatus $status;
@@ -204,8 +199,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A label for human use intended to distinguish like teams. E.g. the "red" vs.
      * "green" trauma teams.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -215,8 +208,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient or group whose intended care is handled by the team.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -226,8 +217,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the team did (or is intended to) come into effect and end.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -293,20 +282,11 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
     /* constructor.php:61 */
     /**
      * FHIRCareTeam Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCareTeamStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCareTeamStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $category
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant> $participant
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $reason
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $managingOrganization
@@ -429,9 +409,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * Business identifiers assigned to this care team by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -451,9 +428,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * Business identifiers assigned to this care team by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -469,8 +443,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of the care team.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCareTeamStatus
      */
     public function getStatus(): null|FHIRCareTeamStatus
     {
@@ -481,9 +453,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of the care team.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCareTeamStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCareTeamStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRCareTeamStatusEnum|FHIRCareTeamStatus $status): self
     {
@@ -535,9 +504,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies what kind of team. This is to support differentiation between
      * multiple co-existing teams, such as care plan team, episode of care team,
      * longitudinal care team.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -557,9 +523,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies what kind of team. This is to support differentiation between
      * multiple co-existing teams, such as care plan team, episode of care team,
      * longitudinal care team.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -578,8 +541,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A label for human use intended to distinguish like teams. E.g. the "red" vs.
      * "green" trauma teams.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -593,9 +554,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A label for human use intended to distinguish like teams. E.g. the "red" vs.
      * "green" trauma teams.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -616,8 +574,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient or group whose intended care is handled by the team.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -630,9 +586,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient or group whose intended care is handled by the team.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -650,8 +603,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the team did (or is intended to) come into effect and end.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -664,9 +615,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the team did (or is intended to) come into effect and end.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -709,9 +657,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care team.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant $participant
-     * @return static
      */
     public function addParticipant(FHIRCareTeamParticipant $participant): self
     {
@@ -728,9 +673,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care team.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant ...$participant
-     * @return static
      */
     public function setParticipant(FHIRCareTeamParticipant ...$participant): self
     {
@@ -775,9 +717,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the care team exists.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $reason
-     * @return static
      */
     public function addReason(FHIRCodeableReference $reason): self
     {
@@ -795,9 +734,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the care team exists.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$reason
-     * @return static
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
@@ -840,9 +776,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization responsible for the care team.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $managingOrganization
-     * @return static
      */
     public function addManagingOrganization(FHIRReference $managingOrganization): self
     {
@@ -859,9 +792,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization responsible for the care team.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$managingOrganization
-     * @return static
      */
     public function setManagingOrganization(FHIRReference ...$managingOrganization): self
     {
@@ -906,9 +836,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A central contact detail for the care team (that applies to all members).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $telecom
-     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -926,9 +853,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A central contact detail for the care team (that applies to all members).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -973,9 +897,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the CareTeam.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -993,9 +914,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the CareTeam.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1009,10 +927,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCareTeam $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCareTeam
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1128,11 +1043,6 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1243,10 +1153,7 @@ class FHIRCareTeam extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCareTeam $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCareTeam
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

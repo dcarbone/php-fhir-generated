@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -150,8 +150,6 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -163,8 +161,6 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * A date parameter that refers to a search parameter defined on the specified type
      * of the DataRequirement, and which searches on elements of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $searchParam;
@@ -182,9 +178,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * Duration before now.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -198,9 +192,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * Duration before now.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -214,9 +206,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * Duration before now.
      */
     #[FHIRDuration]
     protected FHIRDuration $valueDuration;
@@ -225,12 +215,6 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
     /**
      * FHIRDataRequirementDateFilter Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $path
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $searchParam
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -282,8 +266,6 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPath(): null|FHIRString
     {
@@ -303,9 +285,6 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $path
-     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -328,8 +307,6 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * A date parameter that refers to a search parameter defined on the specified type
      * of the DataRequirement, and which searches on elements of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSearchParam(): null|FHIRString
     {
@@ -344,9 +321,6 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * A date parameter that refers to a search parameter defined on the specified type
      * of the DataRequirement, and which searches on elements of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $searchParam
-     * @return static
      */
     public function setSearchParam(null|string|FHIRStringPrimitive|FHIRString $searchParam): self
     {
@@ -375,9 +349,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * Duration before now.
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -398,10 +370,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @return static
+     * Duration before now.
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -426,9 +395,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * Duration before now.
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -445,10 +412,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @return static
+     * Duration before now.
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -470,9 +434,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * Duration before now.
      */
     public function getValueDuration(): null|FHIRDuration
     {
@@ -489,10 +451,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
-     * @return static
+     * Duration before now.
      */
     public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
@@ -506,10 +465,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementDateFilter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementDateFilter
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -583,10 +539,6 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -634,10 +586,7 @@ class FHIRDataRequirementDateFilter extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementDateFilter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementDateFilter
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

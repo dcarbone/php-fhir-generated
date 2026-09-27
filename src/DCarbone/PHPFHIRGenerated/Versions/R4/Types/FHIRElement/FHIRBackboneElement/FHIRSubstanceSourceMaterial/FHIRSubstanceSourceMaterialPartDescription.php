@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -120,8 +120,6 @@ class FHIRSubstanceSourceMaterialPartDescription extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Entity of anatomical origin of source material within an organism.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $part;
@@ -133,8 +131,6 @@ class FHIRSubstanceSourceMaterialPartDescription extends FHIRBackboneElement
      *
      * The detailed anatomic location when the part can be extracted from different
      * anatomical locations of the organism. Multiple alternative locations may apply.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $partLocation;
@@ -143,10 +139,7 @@ class FHIRSubstanceSourceMaterialPartDescription extends FHIRBackboneElement
     /**
      * FHIRSubstanceSourceMaterialPartDescription Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $part
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $partLocation
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -182,8 +175,6 @@ class FHIRSubstanceSourceMaterialPartDescription extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Entity of anatomical origin of source material within an organism.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPart(): null|FHIRCodeableConcept
     {
@@ -197,9 +188,6 @@ class FHIRSubstanceSourceMaterialPartDescription extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Entity of anatomical origin of source material within an organism.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $part
-     * @return static
      */
     public function setPart(null|FHIRCodeableConcept $part): self
     {
@@ -219,8 +207,6 @@ class FHIRSubstanceSourceMaterialPartDescription extends FHIRBackboneElement
      *
      * The detailed anatomic location when the part can be extracted from different
      * anatomical locations of the organism. Multiple alternative locations may apply.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPartLocation(): null|FHIRCodeableConcept
     {
@@ -235,9 +221,6 @@ class FHIRSubstanceSourceMaterialPartDescription extends FHIRBackboneElement
      *
      * The detailed anatomic location when the part can be extracted from different
      * anatomical locations of the organism. Multiple alternative locations may apply.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $partLocation
-     * @return static
      */
     public function setPartLocation(null|FHIRCodeableConcept $partLocation): self
     {
@@ -251,10 +234,7 @@ class FHIRSubstanceSourceMaterialPartDescription extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -300,10 +280,6 @@ class FHIRSubstanceSourceMaterialPartDescription extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -321,10 +297,7 @@ class FHIRSubstanceSourceMaterialPartDescription extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

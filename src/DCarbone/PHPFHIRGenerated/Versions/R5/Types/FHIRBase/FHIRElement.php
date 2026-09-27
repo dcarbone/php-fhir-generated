@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -137,7 +137,6 @@ class FHIRElement extends FHIRBase implements ElementTypeInterface
      */
     #[FHIRExtension]
     protected array $extension;
-    /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive */
     #[FHIRStringPrimitive]
     protected FHIRStringPrimitive $id;
 
@@ -145,7 +144,6 @@ class FHIRElement extends FHIRBase implements ElementTypeInterface
     /**
      * FHIRElement Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -207,9 +205,6 @@ class FHIRElement extends FHIRBase implements ElementTypeInterface
      * there is a strict set of governance applied to the definition and use of
      * extensions. Though any implementer can define an extension, there is a set of
      * requirements that SHALL be met as part of the definition of the extension.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension $extension
-     * @return static
      */
     public function addExtension(FHIRExtension $extension): self
     {
@@ -230,9 +225,6 @@ class FHIRElement extends FHIRBase implements ElementTypeInterface
      * there is a strict set of governance applied to the definition and use of
      * extensions. Though any implementer can define an extension, there is a set of
      * requirements that SHALL be met as part of the definition of the extension.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension ...$extension
-     * @return static
      */
     public function setExtension(FHIRExtension ...$extension): self
     {
@@ -244,18 +236,11 @@ class FHIRElement extends FHIRBase implements ElementTypeInterface
         return $this;
     }
 
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive
-     */
     public function getId(): null|FHIRStringPrimitive
     {
         return $this->id ?? null;
     }
 
-    /**
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @return static
-     */
     public function setId(null|string|FHIRStringPrimitive $id): self
     {
         if (null === $id) {
@@ -271,10 +256,7 @@ class FHIRElement extends FHIRBase implements ElementTypeInterface
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -314,10 +296,6 @@ class FHIRElement extends FHIRBase implements ElementTypeInterface
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -343,10 +321,7 @@ class FHIRElement extends FHIRBase implements ElementTypeInterface
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

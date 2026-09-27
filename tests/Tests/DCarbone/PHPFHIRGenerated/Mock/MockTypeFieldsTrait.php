@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Mock;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -98,8 +98,6 @@ trait MockTypeFieldsTrait
 
     /**
      * Process any / all field definitions for the mock type, ensuring they're probably sane.
-     *
-     * @param array $fields
      */
     protected function _processFields(array $fields): void
     {

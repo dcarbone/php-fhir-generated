@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -125,8 +124,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      * payable under the plan, amounts that: the patient is responsible for in
      * aggregate or pertaining to this item; amounts paid by other coverages; and, the
      * benefit payable for this item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -138,8 +135,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      *
      * A code supporting the understanding of the adjudication result and explaining
      * variance from expected amount.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reason;
@@ -149,8 +144,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Monetary amount associated with the category.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $amount;
@@ -162,8 +155,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      *
      * A non-monetary value associated with the category. Mutually exclusive to the
      * amount element above.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $value;
@@ -172,12 +163,7 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
     /**
      * FHIRClaimResponseAdjudication Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $amount
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -225,8 +211,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      * payable under the plan, amounts that: the patient is responsible for in
      * aggregate or pertaining to this item; amounts paid by other coverages; and, the
      * benefit payable for this item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -244,9 +228,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      * payable under the plan, amounts that: the patient is responsible for in
      * aggregate or pertaining to this item; amounts paid by other coverages; and, the
      * benefit payable for this item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -266,8 +247,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      *
      * A code supporting the understanding of the adjudication result and explaining
      * variance from expected amount.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReason(): null|FHIRCodeableConcept
     {
@@ -282,9 +261,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      *
      * A code supporting the understanding of the adjudication result and explaining
      * variance from expected amount.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -302,8 +278,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Monetary amount associated with the category.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney
      */
     public function getAmount(): null|FHIRMoney
     {
@@ -316,9 +290,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Monetary amount associated with the category.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $amount
-     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {
@@ -338,8 +309,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      *
      * A non-monetary value associated with the category. Mutually exclusive to the
      * amount element above.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     public function getValue(): null|FHIRDecimal
     {
@@ -354,9 +323,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      *
      * A non-monetary value associated with the category. Mutually exclusive to the
      * amount element above.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
-     * @return static
      */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $value): self
     {
@@ -373,10 +339,7 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -434,10 +397,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -470,10 +429,7 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

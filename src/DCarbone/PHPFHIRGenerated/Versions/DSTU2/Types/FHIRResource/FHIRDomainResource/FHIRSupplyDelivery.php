@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
@@ -87,7 +85,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSupplyDeliveryStatus;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRSupplyDeliveryStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
@@ -142,8 +139,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned by the dispensing facility when the item(s) is dispensed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -152,8 +147,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSupplyDeliveryStatus
      */
     #[FHIRSupplyDeliveryStatus]
     protected FHIRSupplyDeliveryStatus $status;
@@ -163,8 +156,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the delivered item is for.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -176,15 +167,11 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates the type of dispensing event that is performed. Examples include:
      * Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     #[FHIRSimpleQuantity]
     protected FHIRSimpleQuantity $quantity;
@@ -196,8 +183,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * Identifies the medication, substance or device being dispensed. This is either a
      * link to a resource representing the details of the item or a simple attribute
      * carrying a code that identifies the item from a known list.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $suppliedItem;
@@ -207,8 +192,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication, supplier or device.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $supplier;
@@ -218,8 +201,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time the dispense event occurred.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $whenPrepared;
@@ -232,8 +213,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time the dispensed item was sent or handed to the patient (or agent).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $time;
@@ -244,8 +223,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Identification of the facility/location where the Supply was shipped to, as part
      * of the dispense event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $destination;
@@ -264,24 +241,9 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
     /* constructor.php:61 */
     /**
      * FHIRSupplyDelivery Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRSupplyDeliveryStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSupplyDeliveryStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $patient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $suppliedItem
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $supplier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $whenPrepared
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $time
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $destination
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference> $receiver
      * @param null|string[] $fhirComments
      */
@@ -369,8 +331,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned by the dispensing facility when the item(s) is dispensed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -383,9 +343,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned by the dispensing facility when the item(s) is dispensed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -402,8 +359,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSupplyDeliveryStatus
      */
     public function getStatus(): null|FHIRSupplyDeliveryStatus
     {
@@ -415,9 +370,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRSupplyDeliveryStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSupplyDeliveryStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRSupplyDeliveryStatusList|FHIRSupplyDeliveryStatus $status): self
     {
@@ -438,8 +390,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the delivered item is for.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -452,9 +402,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the delivered item is for.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -474,8 +421,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates the type of dispensing event that is performed. Examples include:
      * Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -490,9 +435,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Indicates the type of dispensing event that is performed. Examples include:
      * Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -506,8 +448,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
 
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getQuantity(): null|FHIRSimpleQuantity
     {
@@ -516,9 +456,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
 
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRSimpleQuantity $quantity): self
     {
@@ -538,8 +475,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * Identifies the medication, substance or device being dispensed. This is either a
      * link to a resource representing the details of the item or a simple attribute
      * carrying a code that identifies the item from a known list.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSuppliedItem(): null|FHIRReference
     {
@@ -554,9 +489,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * Identifies the medication, substance or device being dispensed. This is either a
      * link to a resource representing the details of the item or a simple attribute
      * carrying a code that identifies the item from a known list.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $suppliedItem
-     * @return static
      */
     public function setSuppliedItem(null|FHIRReference $suppliedItem): self
     {
@@ -574,8 +506,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication, supplier or device.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSupplier(): null|FHIRReference
     {
@@ -588,9 +518,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication, supplier or device.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $supplier
-     * @return static
      */
     public function setSupplier(null|FHIRReference $supplier): self
     {
@@ -608,8 +535,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time the dispense event occurred.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getWhenPrepared(): null|FHIRPeriod
     {
@@ -622,9 +547,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time the dispense event occurred.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $whenPrepared
-     * @return static
      */
     public function setWhenPrepared(null|FHIRPeriod $whenPrepared): self
     {
@@ -645,8 +567,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time the dispensed item was sent or handed to the patient (or agent).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getTime(): null|FHIRDateTime
     {
@@ -662,9 +582,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time the dispensed item was sent or handed to the patient (or agent).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $time
-     * @return static
      */
     public function setTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $time): self
     {
@@ -686,8 +603,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Identification of the facility/location where the Supply was shipped to, as part
      * of the dispense event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getDestination(): null|FHIRReference
     {
@@ -701,9 +616,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      *
      * Identification of the facility/location where the Supply was shipped to, as part
      * of the dispense event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $destination
-     * @return static
      */
     public function setDestination(null|FHIRReference $destination): self
     {
@@ -746,9 +658,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the person who picked up the Supply.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $receiver
-     * @return static
      */
     public function addReceiver(FHIRReference $receiver): self
     {
@@ -765,9 +674,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the person who picked up the Supply.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference ...$receiver
-     * @return static
      */
     public function setReceiver(FHIRReference ...$receiver): self
     {
@@ -781,10 +687,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -900,11 +803,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1003,10 +901,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements VersionContainedT
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRSupplyDelivery
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

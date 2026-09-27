@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -90,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -158,8 +155,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * A single identifier that uniquely identifies this manifest. Principally used to
      * refer to the manifest in non-FHIR contexts.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $masterIdentifier;
@@ -179,8 +174,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document manifest.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentReferenceStatus
      */
     #[FHIRDocumentReferenceStatus]
     protected FHIRDocumentReferenceStatus $status;
@@ -194,8 +187,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * Summary, Prescription, etc.). The type of a set of documents may be the same as
      * one of the documents in it - especially if there is only one - but it may be
      * wider.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -209,8 +200,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * subjects (such as a document about a herd of farm animals, or a set of patients
      * that share a common exposure). If the documents cross more than one subject,
      * then more than one subject is allowed here (unusual use case).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -225,8 +214,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * When the document manifest was created for submission to the server (not
      * necessarily the same thing as the actual resource last modified time, since it
      * may be modified, replicated, etc.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $created;
@@ -261,8 +248,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Identifies the source system, application, or software that produced the
      * document manifest.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $source;
@@ -273,8 +258,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -302,24 +285,12 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
     /* constructor.php:61 */
     /**
      * FHIRDocumentManifest Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $masterIdentifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRDocumentReferenceStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentReferenceStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $created
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $author
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $recipient
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $source
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentManifest\FHIRDocumentManifestContent> $content
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentManifest\FHIRDocumentManifestRelated> $related
      * @param null|string[] $fhirComments
@@ -413,8 +384,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * A single identifier that uniquely identifies this manifest. Principally used to
      * refer to the manifest in non-FHIR contexts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     public function getMasterIdentifier(): null|FHIRIdentifier
     {
@@ -428,9 +397,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * A single identifier that uniquely identifies this manifest. Principally used to
      * refer to the manifest in non-FHIR contexts.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $masterIdentifier
-     * @return static
      */
     public function setMasterIdentifier(null|FHIRIdentifier $masterIdentifier): self
     {
@@ -475,9 +441,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Other identifiers associated with the document manifest, including version
      * independent identifiers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -495,9 +458,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Other identifiers associated with the document manifest, including version
      * independent identifiers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -513,8 +473,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document manifest.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentReferenceStatus
      */
     public function getStatus(): null|FHIRDocumentReferenceStatus
     {
@@ -525,9 +483,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document manifest.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRDocumentReferenceStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentReferenceStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRDocumentReferenceStatusList|FHIRDocumentReferenceStatus $status): self
     {
@@ -552,8 +507,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * Summary, Prescription, etc.). The type of a set of documents may be the same as
      * one of the documents in it - especially if there is only one - but it may be
      * wider.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -570,9 +523,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * Summary, Prescription, etc.). The type of a set of documents may be the same as
      * one of the documents in it - especially if there is only one - but it may be
      * wider.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -594,8 +544,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * subjects (such as a document about a herd of farm animals, or a set of patients
      * that share a common exposure). If the documents cross more than one subject,
      * then more than one subject is allowed here (unusual use case).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -612,9 +560,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * subjects (such as a document about a herd of farm animals, or a set of patients
      * that share a common exposure). If the documents cross more than one subject,
      * then more than one subject is allowed here (unusual use case).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -637,8 +582,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * When the document manifest was created for submission to the server (not
      * necessarily the same thing as the actual resource last modified time, since it
      * may be modified, replicated, etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getCreated(): null|FHIRDateTime
     {
@@ -656,9 +599,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * When the document manifest was created for submission to the server (not
      * necessarily the same thing as the actual resource last modified time, since it
      * may be modified, replicated, etc.).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $created
-     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -706,9 +646,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Identifies who is responsible for creating the manifest, and adding documents to
      * it.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $author
-     * @return static
      */
     public function addAuthor(FHIRReference $author): self
     {
@@ -726,9 +663,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Identifies who is responsible for creating the manifest, and adding documents to
      * it.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$author
-     * @return static
      */
     public function setAuthor(FHIRReference ...$author): self
     {
@@ -773,9 +707,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * A patient, practitioner, or organization for which this set of documents is
      * intended.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $recipient
-     * @return static
      */
     public function addRecipient(FHIRReference $recipient): self
     {
@@ -793,9 +724,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * A patient, practitioner, or organization for which this set of documents is
      * intended.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$recipient
-     * @return static
      */
     public function setRecipient(FHIRReference ...$recipient): self
     {
@@ -814,8 +742,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Identifies the source system, application, or software that produced the
      * document manifest.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getSource(): null|FHIRUri
     {
@@ -829,9 +755,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Identifies the source system, application, or software that produced the
      * document manifest.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $source
-     * @return static
      */
     public function setSource(null|string|FHIRUriPrimitive|FHIRUri $source): self
     {
@@ -853,8 +776,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -868,9 +789,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -914,9 +832,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * applies to the collection.
      *
      * The list of Documents included in the manifest.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentManifest\FHIRDocumentManifestContent $content
-     * @return static
      */
     public function addContent(FHIRDocumentManifestContent $content): self
     {
@@ -932,9 +847,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * applies to the collection.
      *
      * The list of Documents included in the manifest.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentManifest\FHIRDocumentManifestContent ...$content
-     * @return static
      */
     public function setContent(FHIRDocumentManifestContent ...$content): self
     {
@@ -975,9 +887,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * applies to the collection.
      *
      * Related identifiers or resources associated with the DocumentManifest.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentManifest\FHIRDocumentManifestRelated $related
-     * @return static
      */
     public function addRelated(FHIRDocumentManifestRelated $related): self
     {
@@ -993,9 +902,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
      * applies to the collection.
      *
      * Related identifiers or resources associated with the DocumentManifest.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentManifest\FHIRDocumentManifestRelated ...$related
-     * @return static
      */
     public function setRelated(FHIRDocumentManifestRelated ...$related): self
     {
@@ -1009,10 +915,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRDocumentManifest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRDocumentManifest
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1146,11 +1049,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1272,10 +1170,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRDocumentManifest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRDocumentManifest
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

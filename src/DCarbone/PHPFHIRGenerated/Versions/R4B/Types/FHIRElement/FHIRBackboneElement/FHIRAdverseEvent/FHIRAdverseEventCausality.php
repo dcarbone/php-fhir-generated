@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -137,8 +137,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Assessment of if the entity caused the event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $assessment;
@@ -148,8 +146,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * AdverseEvent.suspectEntity.causalityProductRelatedness.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $productRelatedness;
@@ -159,8 +155,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.suspectEntity.causalityAuthor.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $author;
@@ -171,8 +165,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * ProbabilityScale | Bayesian | Checklist.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $method;
@@ -181,12 +173,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
     /**
      * FHIRAdverseEventCausality Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $assessment
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $productRelatedness
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $author
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $method
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -230,8 +217,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Assessment of if the entity caused the event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAssessment(): null|FHIRCodeableConcept
     {
@@ -245,9 +230,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Assessment of if the entity caused the event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $assessment
-     * @return static
      */
     public function setAssessment(null|FHIRCodeableConcept $assessment): self
     {
@@ -265,8 +247,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * AdverseEvent.suspectEntity.causalityProductRelatedness.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getProductRelatedness(): null|FHIRString
     {
@@ -279,9 +259,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * AdverseEvent.suspectEntity.causalityProductRelatedness.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $productRelatedness
-     * @return static
      */
     public function setProductRelatedness(null|string|FHIRStringPrimitive|FHIRString $productRelatedness): self
     {
@@ -302,8 +279,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.suspectEntity.causalityAuthor.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getAuthor(): null|FHIRReference
     {
@@ -316,9 +291,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * AdverseEvent.suspectEntity.causalityAuthor.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $author
-     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -337,8 +309,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * ProbabilityScale | Bayesian | Checklist.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod(): null|FHIRCodeableConcept
     {
@@ -352,9 +322,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * ProbabilityScale | Bayesian | Checklist.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $method
-     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -368,10 +335,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -429,10 +393,6 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -465,10 +425,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

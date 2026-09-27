@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -126,8 +126,6 @@ class FHIRQuantity extends FHIRElement
      *
      * The value of the measured amount. The value includes an implicit precision in
      * the presentation of the value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $value;
@@ -138,8 +136,6 @@ class FHIRQuantity extends FHIRElement
      * How the value should be understood and represented - whether the actual value is
      * greater or less than the stated value due to measurement issues. E.g. if the
      * comparator is "<" , then the real value is < stated value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantityCompararator
      */
     #[FHIRQuantityCompararator]
     protected FHIRQuantityCompararator $comparator;
@@ -148,8 +144,6 @@ class FHIRQuantity extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable form of the units.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $units;
@@ -158,8 +152,6 @@ class FHIRQuantity extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the system that provides the coded form of the unit.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $system;
@@ -170,8 +162,6 @@ class FHIRQuantity extends FHIRElement
      * the Narrative, or extensions
      *
      * A computer processable form of the units in some unit representation system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -180,12 +170,6 @@ class FHIRQuantity extends FHIRElement
     /**
      * FHIRQuantity Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $value
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRQuantityCompararatorList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantityCompararator $comparator
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $units
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $system
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $code
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -230,8 +214,6 @@ class FHIRQuantity extends FHIRElement
      *
      * The value of the measured amount. The value includes an implicit precision in
      * the presentation of the value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     public function getValue(): null|FHIRDecimal
     {
@@ -244,9 +226,6 @@ class FHIRQuantity extends FHIRElement
      *
      * The value of the measured amount. The value includes an implicit precision in
      * the presentation of the value.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $value
-     * @return static
      */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $value): self
     {
@@ -268,8 +247,6 @@ class FHIRQuantity extends FHIRElement
      * How the value should be understood and represented - whether the actual value is
      * greater or less than the stated value due to measurement issues. E.g. if the
      * comparator is "<" , then the real value is < stated value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantityCompararator
      */
     public function getComparator(): null|FHIRQuantityCompararator
     {
@@ -283,9 +260,6 @@ class FHIRQuantity extends FHIRElement
      * How the value should be understood and represented - whether the actual value is
      * greater or less than the stated value due to measurement issues. E.g. if the
      * comparator is "<" , then the real value is < stated value.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRQuantityCompararatorList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantityCompararator $comparator
-     * @return static
      */
     public function setComparator(null|string|FHIRQuantityCompararatorList|FHIRQuantityCompararator $comparator): self
     {
@@ -305,8 +279,6 @@ class FHIRQuantity extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable form of the units.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getUnits(): null|FHIRString
     {
@@ -318,9 +290,6 @@ class FHIRQuantity extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable form of the units.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $units
-     * @return static
      */
     public function setUnits(null|string|FHIRStringPrimitive|FHIRString $units): self
     {
@@ -340,8 +309,6 @@ class FHIRQuantity extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the system that provides the coded form of the unit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     public function getSystem(): null|FHIRUri
     {
@@ -353,9 +320,6 @@ class FHIRQuantity extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the system that provides the coded form of the unit.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $system
-     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -377,8 +341,6 @@ class FHIRQuantity extends FHIRElement
      * the Narrative, or extensions
      *
      * A computer processable form of the units in some unit representation system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -392,9 +354,6 @@ class FHIRQuantity extends FHIRElement
      * the Narrative, or extensions
      *
      * A computer processable form of the units in some unit representation system.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -411,10 +370,7 @@ class FHIRQuantity extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -504,10 +460,6 @@ class FHIRQuantity extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -565,10 +517,7 @@ class FHIRQuantity extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

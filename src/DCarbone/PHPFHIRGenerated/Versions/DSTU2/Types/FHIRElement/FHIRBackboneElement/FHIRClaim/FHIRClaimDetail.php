@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequence;
@@ -154,8 +151,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of product or service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $type;
@@ -166,23 +161,17 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * If a grouping item then 'GROUP' otherwise it is a node therefore a code to
      * indicate the Professional Service or Product supplied.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $service;
     /**
      * The number of repetitions of a service or product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     #[FHIRSimpleQuantity]
     protected FHIRSimpleQuantity $quantity;
     /**
      * If the item is a node then this is the fee for the product or service, otherwise
      * this is the total of the fees for the children of the group.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $unitPrice;
@@ -195,8 +184,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $factor;
@@ -210,8 +197,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * resource intensiveness) associated with the good or service delivered. The
      * concept of Points allows for assignment of point values for services and/or
      * goods, such that a monetary amount can be assigned to each point.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $points;
@@ -220,8 +205,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
      * factor Number * points = net Amount. Quantity, factor and points are assumed to
      * be 1 if not supplied.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $net;
@@ -231,8 +214,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of Unique Device Identifiers associated with this line item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $udi;
@@ -251,17 +232,7 @@ class FHIRClaimDetail extends FHIRBackboneElement
     /**
      * FHIRClaimDetail Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $service
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $unitPrice
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $factor
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $points
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $net
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $udi
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail> $subDetail
      * @param null|string[] $fhirComments
      */
@@ -329,8 +300,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     public function getSequence(): null|FHIRPositiveInt
     {
@@ -343,9 +312,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -366,8 +332,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of product or service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getType(): null|FHIRCoding
     {
@@ -380,9 +344,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of product or service.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -401,8 +362,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * If a grouping item then 'GROUP' otherwise it is a node therefore a code to
      * indicate the Professional Service or Product supplied.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getService(): null|FHIRCoding
     {
@@ -416,9 +375,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * If a grouping item then 'GROUP' otherwise it is a node therefore a code to
      * indicate the Professional Service or Product supplied.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $service
-     * @return static
      */
     public function setService(null|FHIRCoding $service): self
     {
@@ -432,8 +388,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
 
     /**
      * The number of repetitions of a service or product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getQuantity(): null|FHIRSimpleQuantity
     {
@@ -442,9 +396,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
 
     /**
      * The number of repetitions of a service or product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRSimpleQuantity $quantity): self
     {
@@ -459,8 +410,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
     /**
      * If the item is a node then this is the fee for the product or service, otherwise
      * this is the total of the fees for the children of the group.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getUnitPrice(): null|FHIRMoney
     {
@@ -470,9 +419,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
     /**
      * If the item is a node then this is the fee for the product or service, otherwise
      * this is the total of the fees for the children of the group.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $unitPrice
-     * @return static
      */
     public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
@@ -493,8 +439,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal
      */
     public function getFactor(): null|FHIRDecimal
     {
@@ -510,9 +454,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $factor
-     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -537,8 +478,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * resource intensiveness) associated with the good or service delivered. The
      * concept of Points allows for assignment of point values for services and/or
      * goods, such that a monetary amount can be assigned to each point.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal
      */
     public function getPoints(): null|FHIRDecimal
     {
@@ -555,9 +494,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * resource intensiveness) associated with the good or service delivered. The
      * concept of Points allows for assignment of point values for services and/or
      * goods, such that a monetary amount can be assigned to each point.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $points
-     * @return static
      */
     public function setPoints(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $points): self
     {
@@ -577,8 +513,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
      * factor Number * points = net Amount. Quantity, factor and points are assumed to
      * be 1 if not supplied.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getNet(): null|FHIRMoney
     {
@@ -590,9 +524,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
      * factor Number * points = net Amount. Quantity, factor and points are assumed to
      * be 1 if not supplied.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $net
-     * @return static
      */
     public function setNet(null|FHIRMoney $net): self
     {
@@ -610,8 +541,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of Unique Device Identifiers associated with this line item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getUdi(): null|FHIRCoding
     {
@@ -624,9 +553,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of Unique Device Identifiers associated with this line item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $udi
-     * @return static
      */
     public function setUdi(null|FHIRCoding $udi): self
     {
@@ -667,9 +593,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * a patient which is provided to an insurer for payment recovery.
      *
      * Third tier of goods and services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail $subDetail
-     * @return static
      */
     public function addSubDetail(FHIRClaimSubDetail $subDetail): self
     {
@@ -685,9 +608,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * a patient which is provided to an insurer for payment recovery.
      *
      * Third tier of goods and services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail ...$subDetail
-     * @return static
      */
     public function setSubDetail(FHIRClaimSubDetail ...$subDetail): self
     {
@@ -701,10 +621,7 @@ class FHIRClaimDetail extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -790,10 +707,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -868,10 +781,7 @@ class FHIRClaimDetail extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

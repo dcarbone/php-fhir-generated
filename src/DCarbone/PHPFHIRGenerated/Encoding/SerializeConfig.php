@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -47,10 +47,6 @@ class SerializeConfig
         }
     }
 
-    /**
-     * @param null|string $rootXMLNS
-     * @return self
-     */
     public function setRootXMLNS(null|string $rootXMLNS): self
     {
         if (null === $rootXMLNS) {
@@ -61,9 +57,6 @@ class SerializeConfig
         return $this;
     }
 
-    /**
-     * @return null|string
-     */
     public function getRootXMLNS(): null|string
     {
         return $this->_rootXMLNS ?? null;
@@ -71,9 +64,6 @@ class SerializeConfig
 
     /**
      * If true, overrides the xmlns entry found at the root of a source document, if there was one.
-     *
-     * @param bool $overrideSourceXMLNS
-     * @return self
      */
     public function setOverrideSourceXMLNS(bool $overrideSourceXMLNS): self
     {
@@ -81,9 +71,6 @@ class SerializeConfig
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function getOverrideSourceXMLNS(): bool
     {
         return $this->_overrideSourceXMLNS ?? false;
@@ -94,9 +81,6 @@ class SerializeConfig
      * serialization.
      *
      * @see https://www.php.net/manual/en/libxml.constants.php for available options and their purpose.
-     *
-     * @param int $xhtmlLibxmlOpts
-     * @return self
      */
     public function setXHTMLLibxmlOpts(int $xhtmlLibxmlOpts): self
     {
@@ -104,9 +88,6 @@ class SerializeConfig
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getXHTMLLibxmlOpts(): int
     {
         return $this->_xhtmlLibxmlOpts ?? 0;

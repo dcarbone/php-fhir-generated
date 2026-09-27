@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -159,8 +158,6 @@ class FHIRSignature extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the digital signature was signed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $when;
@@ -171,8 +168,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $whoUri;
@@ -183,8 +178,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $whoReference;
@@ -195,8 +188,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $onBehalfOfUri;
@@ -207,8 +198,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $onBehalfOfReference;
@@ -221,8 +210,6 @@ class FHIRSignature extends FHIRElement
      * A mime type that indicates the technical format of the signature. Important mime
      * types are application/signature+xml for X ML DigSig, application/jwt for JWT,
      * and image/* for a graphical image of a signature, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $contentType;
@@ -233,8 +220,6 @@ class FHIRSignature extends FHIRElement
      *
      * The base64 encoding of the Signature content. When signature is not recorded
      * electronically this element would be empty.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $blob;
@@ -243,15 +228,7 @@ class FHIRSignature extends FHIRElement
     /**
      * FHIRSignature Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding> $type
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $when
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $whoUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $whoReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $onBehalfOfUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $onBehalfOfReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $contentType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary $blob
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -337,9 +314,6 @@ class FHIRSignature extends FHIRElement
      * An indication of the reason that the entity signed this document. This may be
      * explicitly included as part of the signature information and can be used when
      * determining accountability for various actions concerning the document.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $type
-     * @return static
      */
     public function addType(FHIRCoding $type): self
     {
@@ -358,9 +332,6 @@ class FHIRSignature extends FHIRElement
      * An indication of the reason that the entity signed this document. This may be
      * explicitly included as part of the signature information and can be used when
      * determining accountability for various actions concerning the document.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding ...$type
-     * @return static
      */
     public function setType(FHIRCoding ...$type): self
     {
@@ -380,8 +351,6 @@ class FHIRSignature extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the digital signature was signed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant
      */
     public function getWhen(): null|FHIRInstant
     {
@@ -396,9 +365,6 @@ class FHIRSignature extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the digital signature was signed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $when
-     * @return static
      */
     public function setWhen(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $when): self
     {
@@ -420,8 +386,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getWhoUri(): null|FHIRUri
     {
@@ -435,9 +399,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $whoUri
-     * @return static
      */
     public function setWhoUri(null|string|FHIRUriPrimitive|FHIRUri $whoUri): self
     {
@@ -459,8 +420,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getWhoReference(): null|FHIRReference
     {
@@ -474,9 +433,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $whoReference
-     * @return static
      */
     public function setWhoReference(null|FHIRReference $whoReference): self
     {
@@ -495,8 +451,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getOnBehalfOfUri(): null|FHIRUri
     {
@@ -510,9 +464,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $onBehalfOfUri
-     * @return static
      */
     public function setOnBehalfOfUri(null|string|FHIRUriPrimitive|FHIRUri $onBehalfOfUri): self
     {
@@ -534,8 +485,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getOnBehalfOfReference(): null|FHIRReference
     {
@@ -549,9 +498,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $onBehalfOfReference
-     * @return static
      */
     public function setOnBehalfOfReference(null|FHIRReference $onBehalfOfReference): self
     {
@@ -572,8 +518,6 @@ class FHIRSignature extends FHIRElement
      * A mime type that indicates the technical format of the signature. Important mime
      * types are application/signature+xml for X ML DigSig, application/jwt for JWT,
      * and image/* for a graphical image of a signature, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode
      */
     public function getContentType(): null|FHIRCode
     {
@@ -589,9 +533,6 @@ class FHIRSignature extends FHIRElement
      * A mime type that indicates the technical format of the signature. Important mime
      * types are application/signature+xml for X ML DigSig, application/jwt for JWT,
      * and image/* for a graphical image of a signature, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $contentType
-     * @return static
      */
     public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
     {
@@ -613,8 +554,6 @@ class FHIRSignature extends FHIRElement
      *
      * The base64 encoding of the Signature content. When signature is not recorded
      * electronically this element would be empty.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary
      */
     public function getBlob(): null|FHIRBase64Binary
     {
@@ -628,9 +567,6 @@ class FHIRSignature extends FHIRElement
      *
      * The base64 encoding of the Signature content. When signature is not recorded
      * electronically this element would be empty.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBase64Binary $blob
-     * @return static
      */
     public function setBlob(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $blob): self
     {
@@ -647,10 +583,7 @@ class FHIRSignature extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSignature $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSignature
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -746,10 +679,6 @@ class FHIRSignature extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -824,10 +753,7 @@ class FHIRSignature extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSignature $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRSignature
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

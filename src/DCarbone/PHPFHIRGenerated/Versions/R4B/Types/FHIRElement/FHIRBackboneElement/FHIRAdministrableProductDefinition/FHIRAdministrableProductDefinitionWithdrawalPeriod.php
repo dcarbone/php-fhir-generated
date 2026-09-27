@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -144,8 +143,6 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      *
      * Coded expression for the type of tissue for which the withdrawal period applies,
      * e.g. meat, milk.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $tissue;
@@ -157,8 +154,6 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value for the time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $value;
@@ -168,8 +163,6 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra information about the withdrawal period.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $supportingInformation;
@@ -178,11 +171,7 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
     /**
      * FHIRAdministrableProductDefinitionWithdrawalPeriod Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $tissue
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $value
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $supportingInformation
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -223,8 +212,6 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      *
      * Coded expression for the type of tissue for which the withdrawal period applies,
      * e.g. meat, milk.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getTissue(): null|FHIRCodeableConcept
     {
@@ -239,9 +226,6 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      *
      * Coded expression for the type of tissue for which the withdrawal period applies,
      * e.g. meat, milk.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $tissue
-     * @return static
      */
     public function setTissue(null|FHIRCodeableConcept $tissue): self
     {
@@ -261,8 +245,6 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value for the time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getValue(): null|FHIRQuantity
     {
@@ -277,9 +259,6 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value for the time.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $value
-     * @return static
      */
     public function setValue(null|FHIRQuantity $value): self
     {
@@ -297,8 +276,6 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra information about the withdrawal period.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getSupportingInformation(): null|FHIRString
     {
@@ -311,9 +288,6 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra information about the withdrawal period.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $supportingInformation
-     * @return static
      */
     public function setSupportingInformation(null|string|FHIRStringPrimitive|FHIRString $supportingInformation): self
     {
@@ -330,10 +304,7 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionWithdrawalPeriod $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionWithdrawalPeriod
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -389,10 +360,6 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -420,10 +387,7 @@ class FHIRAdministrableProductDefinitionWithdrawalPeriod extends FHIRBackboneEle
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionWithdrawalPeriod $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionWithdrawalPeriod
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

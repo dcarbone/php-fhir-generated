@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -173,8 +173,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The collection the cited article or artifact is published in.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublishedIn
      */
     #[FHIRCitationPublishedIn]
     protected FHIRCitationPublishedIn $publishedIn;
@@ -193,8 +191,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * release as commonly done for journals) AND is published separately from the
      * issue (as commonly done with early online publication), to represent specific
      * identification of the publication form not associated with the issue.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $citedMedium;
@@ -204,8 +200,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Volume number of journal or other collection in which the article is published.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $volume;
@@ -216,8 +210,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Issue, part or supplement of journal or other collection in which the article is
      * published.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $issue;
@@ -232,8 +224,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * The date the article was added to the database, or the date the article was
      * released.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $articleDate;
@@ -244,8 +234,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Text representation of the date on which the issue of the cited artifact was
      * published.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publicationDateText;
@@ -255,8 +243,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Spring, Summer, Fall/Autumn, Winter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publicationDateSeason;
@@ -270,8 +256,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the article was last revised or updated in the database.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $lastRevisionDate;
@@ -293,8 +277,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Entry number or identifier for inclusion in a database.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $accessionNumber;
@@ -304,8 +286,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for full display of pagination.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $pageString;
@@ -315,8 +295,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for isolated representation of first page.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $firstPage;
@@ -326,8 +304,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for isolated representation of last page.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $lastPage;
@@ -338,8 +314,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Actual or approximate number of pages or screens. Distinct from reporting the
      * page numbers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $pageCount;
@@ -353,8 +327,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Copyright notice for the full article or artifact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -363,23 +335,8 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
     /**
      * FHIRCitationPublicationForm Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublishedIn $publishedIn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $citedMedium
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $volume
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $issue
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $articleDate
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publicationDateText
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publicationDateSeason
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $lastRevisionDate
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $language
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $accessionNumber
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $pageString
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $firstPage
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $lastPage
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $pageCount
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -467,8 +424,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The collection the cited article or artifact is published in.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublishedIn
      */
     public function getPublishedIn(): null|FHIRCitationPublishedIn
     {
@@ -482,9 +437,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The collection the cited article or artifact is published in.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublishedIn $publishedIn
-     * @return static
      */
     public function setPublishedIn(null|FHIRCitationPublishedIn $publishedIn): self
     {
@@ -511,8 +463,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * release as commonly done for journals) AND is published separately from the
      * issue (as commonly done with early online publication), to represent specific
      * identification of the publication form not associated with the issue.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCitedMedium(): null|FHIRCodeableConcept
     {
@@ -534,9 +484,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * release as commonly done for journals) AND is published separately from the
      * issue (as commonly done with early online publication), to represent specific
      * identification of the publication form not associated with the issue.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $citedMedium
-     * @return static
      */
     public function setCitedMedium(null|FHIRCodeableConcept $citedMedium): self
     {
@@ -554,8 +501,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Volume number of journal or other collection in which the article is published.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getVolume(): null|FHIRString
     {
@@ -568,9 +513,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Volume number of journal or other collection in which the article is published.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $volume
-     * @return static
      */
     public function setVolume(null|string|FHIRStringPrimitive|FHIRString $volume): self
     {
@@ -592,8 +534,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Issue, part or supplement of journal or other collection in which the article is
      * published.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getIssue(): null|FHIRString
     {
@@ -607,9 +547,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Issue, part or supplement of journal or other collection in which the article is
      * published.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $issue
-     * @return static
      */
     public function setIssue(null|string|FHIRStringPrimitive|FHIRString $issue): self
     {
@@ -635,8 +572,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * The date the article was added to the database, or the date the article was
      * released.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getArticleDate(): null|FHIRDateTime
     {
@@ -654,9 +589,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * The date the article was added to the database, or the date the article was
      * released.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $articleDate
-     * @return static
      */
     public function setArticleDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $articleDate): self
     {
@@ -678,8 +610,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Text representation of the date on which the issue of the cited artifact was
      * published.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPublicationDateText(): null|FHIRString
     {
@@ -693,9 +623,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Text representation of the date on which the issue of the cited artifact was
      * published.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publicationDateText
-     * @return static
      */
     public function setPublicationDateText(null|string|FHIRStringPrimitive|FHIRString $publicationDateText): self
     {
@@ -716,8 +643,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Spring, Summer, Fall/Autumn, Winter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPublicationDateSeason(): null|FHIRString
     {
@@ -730,9 +655,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Spring, Summer, Fall/Autumn, Winter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publicationDateSeason
-     * @return static
      */
     public function setPublicationDateSeason(null|string|FHIRStringPrimitive|FHIRString $publicationDateSeason): self
     {
@@ -757,8 +679,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the article was last revised or updated in the database.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getLastRevisionDate(): null|FHIRDateTime
     {
@@ -775,9 +695,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the article was last revised or updated in the database.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $lastRevisionDate
-     * @return static
      */
     public function setLastRevisionDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastRevisionDate): self
     {
@@ -825,9 +742,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The language or languages in which this form of the article is published.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $language
-     * @return static
      */
     public function addLanguage(FHIRCodeableConcept $language): self
     {
@@ -845,9 +759,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The language or languages in which this form of the article is published.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$language
-     * @return static
      */
     public function setLanguage(FHIRCodeableConcept ...$language): self
     {
@@ -865,8 +776,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Entry number or identifier for inclusion in a database.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getAccessionNumber(): null|FHIRString
     {
@@ -879,9 +788,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Entry number or identifier for inclusion in a database.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $accessionNumber
-     * @return static
      */
     public function setAccessionNumber(null|string|FHIRStringPrimitive|FHIRString $accessionNumber): self
     {
@@ -902,8 +808,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for full display of pagination.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPageString(): null|FHIRString
     {
@@ -916,9 +820,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for full display of pagination.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $pageString
-     * @return static
      */
     public function setPageString(null|string|FHIRStringPrimitive|FHIRString $pageString): self
     {
@@ -939,8 +840,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for isolated representation of first page.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getFirstPage(): null|FHIRString
     {
@@ -953,9 +852,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for isolated representation of first page.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $firstPage
-     * @return static
      */
     public function setFirstPage(null|string|FHIRStringPrimitive|FHIRString $firstPage): self
     {
@@ -976,8 +872,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for isolated representation of last page.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getLastPage(): null|FHIRString
     {
@@ -990,9 +884,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for isolated representation of last page.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $lastPage
-     * @return static
      */
     public function setLastPage(null|string|FHIRStringPrimitive|FHIRString $lastPage): self
     {
@@ -1014,8 +905,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Actual or approximate number of pages or screens. Distinct from reporting the
      * page numbers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPageCount(): null|FHIRString
     {
@@ -1029,9 +918,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Actual or approximate number of pages or screens. Distinct from reporting the
      * page numbers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $pageCount
-     * @return static
      */
     public function setPageCount(null|string|FHIRStringPrimitive|FHIRString $pageCount): self
     {
@@ -1056,8 +942,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Copyright notice for the full article or artifact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1074,9 +958,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Copyright notice for the full article or artifact.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1093,10 +974,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublicationForm $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublicationForm
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1264,10 +1142,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1412,10 +1286,7 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublicationForm $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublicationForm
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

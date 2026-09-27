@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -129,8 +129,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      *
      * The period of time this practitioner is performing some role within the episode
      * of care.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -140,8 +138,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner (or Organization) within the team.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $member;
@@ -150,11 +146,8 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
     /**
      * FHIREpisodeOfCareCareTeam Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $member
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -220,9 +213,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role this team member is taking within this episode of care.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -240,9 +230,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role this team member is taking within this episode of care.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept ...$role
-     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -261,8 +248,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      *
      * The period of time this practitioner is performing some role within the episode
      * of care.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -276,9 +261,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      *
      * The period of time this practitioner is performing some role within the episode
      * of care.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -296,8 +278,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner (or Organization) within the team.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getMember(): null|FHIRReference
     {
@@ -310,9 +290,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner (or Organization) within the team.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $member
-     * @return static
      */
     public function setMember(null|FHIRReference $member): self
     {
@@ -326,10 +303,7 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareCareTeam $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareCareTeam
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -377,10 +351,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -405,10 +375,7 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareCareTeam $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareCareTeam
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -112,7 +110,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSlotStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -250,8 +247,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The schedule resource that this slot defines an interval of status information.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $schedule;
@@ -259,8 +254,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * busy | free | busy-unavailable | busy-tentative | entered-in-error.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSlotStatus
      */
     #[FHIRSlotStatus]
     protected FHIRSlotStatus $status;
@@ -273,8 +266,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the slot is to begin.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $start;
@@ -287,8 +278,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the slot is to conclude.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $end;
@@ -298,8 +287,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * This slot has already been overbooked, appointments are unlikely to be accepted
      * for this time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $overbooked;
@@ -310,8 +297,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Comments on the slot to describe any extended information. Such as custom
      * constraints on the slot.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $comment;
@@ -319,11 +304,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
     /* constructor.php:61 */
     /**
      * FHIRSlot Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
@@ -332,12 +312,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $serviceType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $specialty
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $appointmentType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $schedule
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSlotStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSlotStatus $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $start
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $end
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $overbooked
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $comment
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -451,9 +425,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External Ids for this item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -471,9 +442,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External Ids for this item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -520,9 +488,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * A broad categorization of the service that is to be performed during this
      * appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $serviceCategory
-     * @return static
      */
     public function addServiceCategory(FHIRCodeableConcept $serviceCategory): self
     {
@@ -541,9 +506,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * A broad categorization of the service that is to be performed during this
      * appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$serviceCategory
-     * @return static
      */
     public function setServiceCategory(FHIRCodeableConcept ...$serviceCategory): self
     {
@@ -594,9 +556,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * be an identifiable service - which is at a location, rather than the location
      * itself). If provided then this overrides the value provided on the Schedule
      * resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $serviceType
-     * @return static
      */
     public function addServiceType(FHIRCodeableReference $serviceType): self
     {
@@ -617,9 +576,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * be an identifiable service - which is at a location, rather than the location
      * itself). If provided then this overrides the value provided on the Schedule
      * resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$serviceType
-     * @return static
      */
     public function setServiceType(FHIRCodeableReference ...$serviceType): self
     {
@@ -666,9 +622,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $specialty
-     * @return static
      */
     public function addSpecialty(FHIRCodeableConcept $specialty): self
     {
@@ -687,9 +640,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$specialty
-     * @return static
      */
     public function setSpecialty(FHIRCodeableConcept ...$specialty): self
     {
@@ -736,9 +686,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The style of appointment or patient that may be booked in the slot (not service
      * type).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $appointmentType
-     * @return static
      */
     public function addAppointmentType(FHIRCodeableConcept $appointmentType): self
     {
@@ -757,9 +704,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The style of appointment or patient that may be booked in the slot (not service
      * type).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$appointmentType
-     * @return static
      */
     public function setAppointmentType(FHIRCodeableConcept ...$appointmentType): self
     {
@@ -777,8 +721,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The schedule resource that this slot defines an interval of status information.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSchedule(): null|FHIRReference
     {
@@ -791,9 +733,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The schedule resource that this slot defines an interval of status information.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $schedule
-     * @return static
      */
     public function setSchedule(null|FHIRReference $schedule): self
     {
@@ -809,8 +748,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * busy | free | busy-unavailable | busy-tentative | entered-in-error.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSlotStatus
      */
     public function getStatus(): null|FHIRSlotStatus
     {
@@ -821,9 +758,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * busy | free | busy-unavailable | busy-tentative | entered-in-error.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSlotStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSlotStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRSlotStatusEnum|FHIRSlotStatus $status): self
     {
@@ -847,8 +781,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the slot is to begin.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     public function getStart(): null|FHIRInstant
     {
@@ -864,9 +796,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the slot is to begin.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $start
-     * @return static
      */
     public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start): self
     {
@@ -890,8 +819,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the slot is to conclude.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     public function getEnd(): null|FHIRInstant
     {
@@ -907,9 +834,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the slot is to conclude.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $end
-     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
     {
@@ -930,8 +854,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * This slot has already been overbooked, appointments are unlikely to be accepted
      * for this time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getOverbooked(): null|FHIRBoolean
     {
@@ -944,9 +866,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * This slot has already been overbooked, appointments are unlikely to be accepted
      * for this time.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $overbooked
-     * @return static
      */
     public function setOverbooked(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $overbooked): self
     {
@@ -968,8 +887,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Comments on the slot to describe any extended information. Such as custom
      * constraints on the slot.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getComment(): null|FHIRString
     {
@@ -983,9 +900,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Comments on the slot to describe any extended information. Such as custom
      * constraints on the slot.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $comment
-     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -1002,10 +916,7 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSlot $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSlot
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1145,11 +1056,6 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1271,10 +1177,7 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSlot $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSlot
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

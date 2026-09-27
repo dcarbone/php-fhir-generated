@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      *
      * The sequential number of this event in this subscription context. Note that this
      * value is a 64-bit integer value, encoded as a string.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $eventNumber;
@@ -157,8 +154,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual time this event occured on the server.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $timestamp;
@@ -169,8 +164,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      *
      * The focus of this event. While this will usually be a reference to the focus
      * resource of the event, it MAY contain a reference to a non-FHIR object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $focus;
@@ -192,11 +185,7 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
     /**
      * FHIRSubscriptionStatusNotificationEvent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $eventNumber
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant $timestamp
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $focus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $additionalContext
      * @param null|string[] $fhirComments
      */
@@ -241,8 +230,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      *
      * The sequential number of this event in this subscription context. Note that this
      * value is a 64-bit integer value, encoded as a string.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getEventNumber(): null|FHIRString
     {
@@ -256,9 +243,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      *
      * The sequential number of this event in this subscription context. Note that this
      * value is a 64-bit integer value, encoded as a string.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $eventNumber
-     * @return static
      */
     public function setEventNumber(null|string|FHIRStringPrimitive|FHIRString $eventNumber): self
     {
@@ -282,8 +266,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual time this event occured on the server.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant
      */
     public function getTimestamp(): null|FHIRInstant
     {
@@ -299,9 +281,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual time this event occured on the server.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant $timestamp
-     * @return static
      */
     public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp): self
     {
@@ -323,8 +302,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      *
      * The focus of this event. While this will usually be a reference to the focus
      * resource of the event, it MAY contain a reference to a non-FHIR object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getFocus(): null|FHIRReference
     {
@@ -338,9 +315,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      *
      * The focus of this event. While this will usually be a reference to the focus
      * resource of the event, it MAY contain a reference to a non-FHIR object.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $focus
-     * @return static
      */
     public function setFocus(null|FHIRReference $focus): self
     {
@@ -387,9 +361,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * Additional context information for this event. Generally, this will contain
      * references to additional resources included with the event (e.g., the Patient
      * relevant to an Encounter), however it MAY refer to non-FHIR objects.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $additionalContext
-     * @return static
      */
     public function addAdditionalContext(FHIRReference $additionalContext): self
     {
@@ -408,9 +379,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * Additional context information for this event. Generally, this will contain
      * references to additional resources included with the event (e.g., the Patient
      * relevant to an Encounter), however it MAY refer to non-FHIR objects.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$additionalContext
-     * @return static
      */
     public function setAdditionalContext(FHIRReference ...$additionalContext): self
     {
@@ -424,10 +392,7 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -493,10 +458,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -536,10 +497,7 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -179,8 +178,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      *
      * Identifies the type of vision correction product which is required for the
      * patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $product;
@@ -188,8 +185,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The eye for which the lens specification applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRVisionEyes
      */
     #[FHIRVisionEyes]
     protected FHIRVisionEyes $eye;
@@ -200,8 +195,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lens power measured in dioptres (0.25 units).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $sphere;
@@ -212,8 +205,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Power adjustment for astigmatism measured in dioptres (0.25 units).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $cylinder;
@@ -223,8 +214,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Adjustment for astigmatism measured in integer degrees.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $axis;
@@ -245,8 +234,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $add;
@@ -257,8 +244,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contact lens power measured in dioptres (0.25 units).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $power;
@@ -269,8 +254,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Back curvature measured in millimetres.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $backCurve;
@@ -281,8 +264,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contact lens diameter measured in millimetres.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $diameter;
@@ -294,8 +275,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The recommended maximum wear period for the lens.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $duration;
@@ -305,8 +284,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Special color or pattern.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $color;
@@ -316,8 +293,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Brand recommendations or restrictions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $brand;
@@ -338,21 +313,8 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     /**
      * FHIRVisionPrescriptionLensSpecification Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $product
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRVisionEyesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRVisionEyes $eye
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $sphere
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $cylinder
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $axis
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism> $prism
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $add
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $power
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $backCurve
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $diameter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $duration
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $color
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $brand
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|string[] $fhirComments
      */
@@ -438,8 +400,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      *
      * Identifies the type of vision correction product which is required for the
      * patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getProduct(): null|FHIRCodeableConcept
     {
@@ -454,9 +414,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      *
      * Identifies the type of vision correction product which is required for the
      * patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $product
-     * @return static
      */
     public function setProduct(null|FHIRCodeableConcept $product): self
     {
@@ -472,8 +429,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The eye for which the lens specification applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRVisionEyes
      */
     public function getEye(): null|FHIRVisionEyes
     {
@@ -484,9 +439,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The eye for which the lens specification applies.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRVisionEyesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRVisionEyes $eye
-     * @return static
      */
     public function setEye(null|string|FHIRVisionEyesEnum|FHIRVisionEyes $eye): self
     {
@@ -508,8 +460,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lens power measured in dioptres (0.25 units).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     public function getSphere(): null|FHIRDecimal
     {
@@ -523,9 +473,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lens power measured in dioptres (0.25 units).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $sphere
-     * @return static
      */
     public function setSphere(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $sphere): self
     {
@@ -547,8 +494,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Power adjustment for astigmatism measured in dioptres (0.25 units).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     public function getCylinder(): null|FHIRDecimal
     {
@@ -562,9 +507,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Power adjustment for astigmatism measured in dioptres (0.25 units).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $cylinder
-     * @return static
      */
     public function setCylinder(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $cylinder): self
     {
@@ -585,8 +527,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Adjustment for astigmatism measured in integer degrees.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     public function getAxis(): null|FHIRInteger
     {
@@ -599,9 +539,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Adjustment for astigmatism measured in integer degrees.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $axis
-     * @return static
      */
     public function setAxis(null|string|float|FHIRIntegerPrimitive|FHIRInteger $axis): self
     {
@@ -645,9 +582,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * patient.
      *
      * Allows for adjustment on two axis.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism $prism
-     * @return static
      */
     public function addPrism(FHIRVisionPrescriptionPrism $prism): self
     {
@@ -663,9 +597,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * patient.
      *
      * Allows for adjustment on two axis.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism ...$prism
-     * @return static
      */
     public function setPrism(FHIRVisionPrescriptionPrism ...$prism): self
     {
@@ -684,8 +615,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     public function getAdd(): null|FHIRDecimal
     {
@@ -699,9 +628,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $add
-     * @return static
      */
     public function setAdd(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $add): self
     {
@@ -723,8 +649,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contact lens power measured in dioptres (0.25 units).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     public function getPower(): null|FHIRDecimal
     {
@@ -738,9 +662,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contact lens power measured in dioptres (0.25 units).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $power
-     * @return static
      */
     public function setPower(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $power): self
     {
@@ -762,8 +683,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Back curvature measured in millimetres.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     public function getBackCurve(): null|FHIRDecimal
     {
@@ -777,9 +696,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Back curvature measured in millimetres.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $backCurve
-     * @return static
      */
     public function setBackCurve(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $backCurve): self
     {
@@ -801,8 +717,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contact lens diameter measured in millimetres.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     public function getDiameter(): null|FHIRDecimal
     {
@@ -816,9 +730,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contact lens diameter measured in millimetres.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $diameter
-     * @return static
      */
     public function setDiameter(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $diameter): self
     {
@@ -841,8 +752,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The recommended maximum wear period for the lens.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getDuration(): null|FHIRQuantity
     {
@@ -857,9 +766,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The recommended maximum wear period for the lens.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $duration
-     * @return static
      */
     public function setDuration(null|FHIRQuantity $duration): self
     {
@@ -877,8 +783,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Special color or pattern.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getColor(): null|FHIRString
     {
@@ -891,9 +795,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Special color or pattern.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $color
-     * @return static
      */
     public function setColor(null|string|FHIRStringPrimitive|FHIRString $color): self
     {
@@ -914,8 +815,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Brand recommendations or restrictions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getBrand(): null|FHIRString
     {
@@ -928,9 +827,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Brand recommendations or restrictions.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $brand
-     * @return static
      */
     public function setBrand(null|string|FHIRStringPrimitive|FHIRString $brand): self
     {
@@ -978,9 +874,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes for special requirements such as coatings and lens materials.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -998,9 +891,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes for special requirements such as coatings and lens materials.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1014,10 +904,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1167,10 +1054,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1302,10 +1185,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

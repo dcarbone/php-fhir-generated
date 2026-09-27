@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -101,7 +99,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -230,8 +227,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * globally unique, and SHOULD be an address at which this measure is (or will be)
      * published. The URL SHOULD include the major version of the measure. For more
      * information see [Technical and Business Versions](resource.html#versions).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -263,8 +258,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * For more information on versioning knowledge assets, refer to the Decision
      * Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -276,8 +269,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A natural language name identifying the measure. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -287,8 +278,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -296,8 +285,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this measure. Enables tracking the life-cycle of the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -308,8 +295,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A boolean value to indicate that this measure is authored for testing purposes
      * (or education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -325,8 +310,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * change if and when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * measure changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -336,8 +319,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -354,8 +335,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A free text natural language description of the measure from a consumer's
      * perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -372,8 +351,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Explaination of why this measure is needed and why it has been designed as it
      * has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -383,8 +360,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the measure is used from a clinical perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $usage;
@@ -396,8 +371,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $approvalDate;
@@ -409,8 +382,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastReviewDate;
@@ -421,8 +392,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The period during which the measure content was or is planned to be in active
      * use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -507,8 +476,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A copyright statement relating to the measure and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -550,8 +517,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Notices and disclaimers regarding the use of the measure, or related to
      * intellectual property (such as code systems) referenced by the measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $disclaimer;
@@ -564,8 +529,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Indicates how the calculation is performed for the measure, including
      * proportion, ratio, continuous variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $scoring;
@@ -577,8 +540,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * If this is a composite measure, the scoring method used to combine the component
      * measures to determine the composite score.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $compositeScoring;
@@ -603,8 +564,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A description of the risk adjustment factors that may impact the resulting score
      * for the measure and how they may be accounted for when computing and reporting
      * measure results.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $riskAdjustment;
@@ -615,8 +574,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Describes how to combine the information calculated, based on logic in each of
      * several populations, into one summarized result.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $rateAggregation;
@@ -634,8 +591,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Provides a succint statement of the need for the measure. Usually includes
      * statements pertaining to importance criterion: impact, gap in care, and
      * evidence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $rationale;
@@ -652,8 +607,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides a summary of relevant clinical guidelines or other clinical
      * recommendations supporting the measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $clinicalRecommendationStatement;
@@ -665,8 +618,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Information on whether an increase or decrease in score is the preferred result
      * (e.g., a higher score indicates better quality OR a lower score indicates better
      * quality OR quality is whthin a range).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $improvementNotation;
@@ -700,8 +651,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Additional guidance for the measure including how it can be used in a clinical
      * context, and the intent of the measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $guidance;
@@ -711,8 +660,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure set, e.g. Preventive Care and Screening.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $set;
@@ -740,49 +687,19 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
     /* constructor.php:61 */
     /**
      * FHIRMeasure Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $publisher
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $usage
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $approvalDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $lastReviewDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $effectivePeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $topic
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContributor> $contributor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $copyright
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRelatedArtifact> $relatedArtifact
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $library
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $disclaimer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $scoring
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $compositeScoring
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $riskAdjustment
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $rateAggregation
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $rationale
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $clinicalRecommendationStatement
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $improvementNotation
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown> $definition
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $guidance
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $set
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup> $group
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData> $supplementalData
      * @param null|string[] $fhirComments
@@ -979,8 +896,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * globally unique, and SHOULD be an address at which this measure is (or will be)
      * published. The URL SHOULD include the major version of the measure. For more
      * information see [Technical and Business Versions](resource.html#versions).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -997,9 +912,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * globally unique, and SHOULD be an address at which this measure is (or will be)
      * published. The URL SHOULD include the major version of the measure. For more
      * information see [Technical and Business Versions](resource.html#versions).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -1049,9 +961,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A formal identifier that is used to identify this measure when it is represented
      * in other formats, or referenced in a specification, model, design or an
      * instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -1070,9 +979,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A formal identifier that is used to identify this measure when it is represented
      * in other formats, or referenced in a specification, model, design or an
      * instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -1099,8 +1005,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * For more information on versioning knowledge assets, refer to the Decision
      * Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -1122,9 +1026,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * For more information on versioning knowledge assets, refer to the Decision
      * Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -1147,8 +1048,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A natural language name identifying the measure. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -1163,9 +1062,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A natural language name identifying the measure. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1186,8 +1082,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -1200,9 +1094,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the measure.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1221,8 +1112,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this measure. Enables tracking the life-cycle of the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -1233,9 +1122,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this measure. Enables tracking the life-cycle of the content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -1257,8 +1143,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A boolean value to indicate that this measure is authored for testing purposes
      * (or education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -1272,9 +1156,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A boolean value to indicate that this measure is authored for testing purposes
      * (or education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1301,8 +1182,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * change if and when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * measure changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1321,9 +1200,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * change if and when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * measure changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1344,8 +1220,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1358,9 +1232,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the measure.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1388,8 +1259,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A free text natural language description of the measure from a consumer's
      * perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1409,9 +1278,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A free text natural language description of the measure from a consumer's
      * perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1439,8 +1305,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Explaination of why this measure is needed and why it has been designed as it
      * has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1460,9 +1324,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Explaination of why this measure is needed and why it has been designed as it
      * has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1483,8 +1344,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the measure is used from a clinical perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getUsage(): null|FHIRString
     {
@@ -1497,9 +1356,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the measure is used from a clinical perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $usage
-     * @return static
      */
     public function setUsage(null|string|FHIRStringPrimitive|FHIRString $usage): self
     {
@@ -1522,8 +1378,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     public function getApprovalDate(): null|FHIRDate
     {
@@ -1538,9 +1392,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $approvalDate
-     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1563,8 +1414,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     public function getLastReviewDate(): null|FHIRDate
     {
@@ -1579,9 +1428,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $lastReviewDate
-     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1603,8 +1449,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The period during which the measure content was or is planned to be in active
      * use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -1618,9 +1462,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The period during which the measure content was or is planned to be in active
      * use.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1673,9 +1514,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate measure instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1697,9 +1535,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate measure instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1744,9 +1579,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the measure is intended to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1764,9 +1596,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the measure is intended to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1815,9 +1644,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Descriptive topics related to the content of the measure. Topics provide a
      * high-level categorization of the type of the measure that can be useful for
      * filtering and searching.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $topic
-     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -1837,9 +1663,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Descriptive topics related to the content of the measure. Topics provide a
      * high-level categorization of the type of the measure that can be useful for
      * filtering and searching.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$topic
-     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -1886,9 +1709,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A contributor to the content of the measure, including authors, editors,
      * reviewers, and endorsers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContributor $contributor
-     * @return static
      */
     public function addContributor(FHIRContributor $contributor): self
     {
@@ -1907,9 +1727,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A contributor to the content of the measure, including authors, editors,
      * reviewers, and endorsers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContributor ...$contributor
-     * @return static
      */
     public function setContributor(FHIRContributor ...$contributor): self
     {
@@ -1954,9 +1771,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1974,9 +1788,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -2002,8 +1813,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A copyright statement relating to the measure and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -2024,9 +1833,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A copyright statement relating to the measure and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * measure.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -2076,9 +1882,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRelatedArtifact $relatedArtifact
-     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -2097,9 +1900,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRelatedArtifact ...$relatedArtifact
-     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -2144,9 +1944,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A reference to a Library resource containing the formal logic used by the
      * measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $library
-     * @return static
      */
     public function addLibrary(FHIRReference $library): self
     {
@@ -2164,9 +1961,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A reference to a Library resource containing the formal logic used by the
      * measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$library
-     * @return static
      */
     public function setLibrary(FHIRReference ...$library): self
     {
@@ -2191,8 +1985,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Notices and disclaimers regarding the use of the measure, or related to
      * intellectual property (such as code systems) referenced by the measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getDisclaimer(): null|FHIRMarkdown
     {
@@ -2212,9 +2004,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Notices and disclaimers regarding the use of the measure, or related to
      * intellectual property (such as code systems) referenced by the measure.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $disclaimer
-     * @return static
      */
     public function setDisclaimer(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $disclaimer): self
     {
@@ -2238,8 +2027,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Indicates how the calculation is performed for the measure, including
      * proportion, ratio, continuous variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getScoring(): null|FHIRCodeableConcept
     {
@@ -2255,9 +2042,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Indicates how the calculation is performed for the measure, including
      * proportion, ratio, continuous variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $scoring
-     * @return static
      */
     public function setScoring(null|FHIRCodeableConcept $scoring): self
     {
@@ -2277,8 +2061,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * If this is a composite measure, the scoring method used to combine the component
      * measures to determine the composite score.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCompositeScoring(): null|FHIRCodeableConcept
     {
@@ -2293,9 +2075,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * If this is a composite measure, the scoring method used to combine the component
      * measures to determine the composite score.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $compositeScoring
-     * @return static
      */
     public function setCompositeScoring(null|FHIRCodeableConcept $compositeScoring): self
     {
@@ -2342,9 +2121,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -2363,9 +2139,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -2385,8 +2158,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A description of the risk adjustment factors that may impact the resulting score
      * for the measure and how they may be accounted for when computing and reporting
      * measure results.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getRiskAdjustment(): null|FHIRString
     {
@@ -2401,9 +2172,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * A description of the risk adjustment factors that may impact the resulting score
      * for the measure and how they may be accounted for when computing and reporting
      * measure results.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $riskAdjustment
-     * @return static
      */
     public function setRiskAdjustment(null|string|FHIRStringPrimitive|FHIRString $riskAdjustment): self
     {
@@ -2425,8 +2193,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Describes how to combine the information calculated, based on logic in each of
      * several populations, into one summarized result.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getRateAggregation(): null|FHIRString
     {
@@ -2440,9 +2206,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Describes how to combine the information calculated, based on logic in each of
      * several populations, into one summarized result.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $rateAggregation
-     * @return static
      */
     public function setRateAggregation(null|string|FHIRStringPrimitive|FHIRString $rateAggregation): self
     {
@@ -2471,8 +2234,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Provides a succint statement of the need for the measure. Usually includes
      * statements pertaining to importance criterion: impact, gap in care, and
      * evidence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getRationale(): null|FHIRMarkdown
     {
@@ -2493,9 +2254,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Provides a succint statement of the need for the measure. Usually includes
      * statements pertaining to importance criterion: impact, gap in care, and
      * evidence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $rationale
-     * @return static
      */
     public function setRationale(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $rationale): self
     {
@@ -2523,8 +2281,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides a summary of relevant clinical guidelines or other clinical
      * recommendations supporting the measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getClinicalRecommendationStatement(): null|FHIRMarkdown
     {
@@ -2544,9 +2300,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides a summary of relevant clinical guidelines or other clinical
      * recommendations supporting the measure.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $clinicalRecommendationStatement
-     * @return static
      */
     public function setClinicalRecommendationStatement(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $clinicalRecommendationStatement): self
     {
@@ -2569,8 +2322,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Information on whether an increase or decrease in score is the preferred result
      * (e.g., a higher score indicates better quality OR a lower score indicates better
      * quality OR quality is whthin a range).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getImprovementNotation(): null|FHIRString
     {
@@ -2585,9 +2336,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * Information on whether an increase or decrease in score is the preferred result
      * (e.g., a higher score indicates better quality OR a lower score indicates better
      * quality OR quality is whthin a range).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $improvementNotation
-     * @return static
      */
     public function setImprovementNotation(null|string|FHIRStringPrimitive|FHIRString $improvementNotation): self
     {
@@ -2645,9 +2393,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * the Narrative, or extensions
      *
      * Provides a description of an individual term used within the measure.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $definition
-     * @return static
      */
     public function addDefinition(string|FHIRMarkdownPrimitive|FHIRMarkdown $definition): self
     {
@@ -2673,9 +2418,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * the Narrative, or extensions
      *
      * Provides a description of an individual term used within the measure.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown ...$definition
-     * @return static
      */
     public function setDefinition(string|FHIRMarkdownPrimitive|FHIRMarkdown ...$definition): self
     {
@@ -2707,8 +2449,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Additional guidance for the measure including how it can be used in a clinical
      * context, and the intent of the measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown
      */
     public function getGuidance(): null|FHIRMarkdown
     {
@@ -2728,9 +2468,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Additional guidance for the measure including how it can be used in a clinical
      * context, and the intent of the measure.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMarkdown $guidance
-     * @return static
      */
     public function setGuidance(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $guidance): self
     {
@@ -2751,8 +2488,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure set, e.g. Preventive Care and Screening.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getSet(): null|FHIRString
     {
@@ -2765,9 +2500,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The measure set, e.g. Preventive Care and Screening.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $set
-     * @return static
      */
     public function setSet(null|string|FHIRStringPrimitive|FHIRString $set): self
     {
@@ -2809,9 +2541,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * The Measure resource provides the definition of a quality measure.
      *
      * A group of population criteria for the measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup $group
-     * @return static
      */
     public function addGroup(FHIRMeasureGroup $group): self
     {
@@ -2826,9 +2555,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * The Measure resource provides the definition of a quality measure.
      *
      * A group of population criteria for the measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup ...$group
-     * @return static
      */
     public function setGroup(FHIRMeasureGroup ...$group): self
     {
@@ -2871,9 +2597,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * The supplemental data criteria for the measure report, specified as either the
      * name of a valid CQL expression within a referenced library, or a valid FHIR
      * Resource Path.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData $supplementalData
-     * @return static
      */
     public function addSupplementalData(FHIRMeasureSupplementalData $supplementalData): self
     {
@@ -2890,9 +2613,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
      * The supplemental data criteria for the measure report, specified as either the
      * name of a valid CQL expression within a referenced library, or a valid FHIR
      * Resource Path.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData ...$supplementalData
-     * @return static
      */
     public function setSupplementalData(FHIRMeasureSupplementalData ...$supplementalData): self
     {
@@ -2906,10 +2626,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRMeasure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRMeasure
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -3237,11 +2954,6 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -3592,10 +3304,7 @@ class FHIRMeasure extends FHIRDomainResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRMeasure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRMeasure
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

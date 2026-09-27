@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -117,8 +116,6 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * inpatient | outpatient | ambulatory | emergency +.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $class;
@@ -128,8 +125,6 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time that the episode was in the specified class.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -138,10 +133,7 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
     /**
      * FHIREncounterClassHistory Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $class
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -176,8 +168,6 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * inpatient | outpatient | ambulatory | emergency +.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding
      */
     public function getClass(): null|FHIRCoding
     {
@@ -190,9 +180,6 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * inpatient | outpatient | ambulatory | emergency +.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $class
-     * @return static
      */
     public function setClass(null|FHIRCoding $class): self
     {
@@ -210,8 +197,6 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time that the episode was in the specified class.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -224,9 +209,6 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time that the episode was in the specified class.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -240,10 +222,7 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterClassHistory $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterClassHistory
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -289,10 +268,6 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -310,10 +285,7 @@ class FHIREncounterClassHistory extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterClassHistory $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterClassHistory
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

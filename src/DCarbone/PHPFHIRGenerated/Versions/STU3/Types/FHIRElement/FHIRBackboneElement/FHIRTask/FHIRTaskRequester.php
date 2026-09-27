@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -112,8 +111,6 @@ class FHIRTaskRequester extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who initiated the task.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $agent;
@@ -124,8 +121,6 @@ class FHIRTaskRequester extends FHIRBackboneElement
      *
      * The organization the device or practitioner was acting on behalf of when they
      * initiated the task.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $onBehalfOf;
@@ -134,10 +129,7 @@ class FHIRTaskRequester extends FHIRBackboneElement
     /**
      * FHIRTaskRequester Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $agent
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $onBehalfOf
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -172,8 +164,6 @@ class FHIRTaskRequester extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who initiated the task.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getAgent(): null|FHIRReference
     {
@@ -186,9 +176,6 @@ class FHIRTaskRequester extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who initiated the task.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $agent
-     * @return static
      */
     public function setAgent(null|FHIRReference $agent): self
     {
@@ -207,8 +194,6 @@ class FHIRTaskRequester extends FHIRBackboneElement
      *
      * The organization the device or practitioner was acting on behalf of when they
      * initiated the task.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getOnBehalfOf(): null|FHIRReference
     {
@@ -222,9 +207,6 @@ class FHIRTaskRequester extends FHIRBackboneElement
      *
      * The organization the device or practitioner was acting on behalf of when they
      * initiated the task.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $onBehalfOf
-     * @return static
      */
     public function setOnBehalfOf(null|FHIRReference $onBehalfOf): self
     {
@@ -238,10 +220,7 @@ class FHIRTaskRequester extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRequester $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRequester
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -287,10 +266,6 @@ class FHIRTaskRequester extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -308,10 +283,7 @@ class FHIRTaskRequester extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRequester $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRequester
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

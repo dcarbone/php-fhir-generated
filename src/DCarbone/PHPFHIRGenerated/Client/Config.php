@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -64,41 +64,26 @@ class Config
         $this->_parseResponseHeaders = $parseResponseHeaders;
     }
 
-    /**
-     * @return string
-     */
     public function getAddress(): string
     {
         return $this->_address;
     }
 
-    /**
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum
-     */
     public function getDefaultFormat(): SerializeFormatEnum
     {
         return $this->_defaultFormat;
     }
 
-    /**
-     * @return array
-     */
     public function getDefaultQueryParams(): array
     {
         return $this->_defaultQueryParams;
     }
 
-    /**
-     * @return array
-     */
     public function getCurlOpts(): array
     {
         return $this->_curlOpts;
     }
 
-    /**
-     * @return bool
-     */
     public function getParseResponseHeaders(): bool
     {
         return $this->_parseResponseHeaders;

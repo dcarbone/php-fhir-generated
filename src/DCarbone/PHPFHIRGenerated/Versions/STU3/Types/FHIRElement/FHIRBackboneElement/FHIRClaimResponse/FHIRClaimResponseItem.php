@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -119,8 +118,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequenceLinkId;
@@ -160,9 +157,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
     /**
      * FHIRClaimResponseItem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequenceLinkId
      * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt> $noteNumber
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication> $adjudication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail> $detail
@@ -208,8 +203,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     public function getSequenceLinkId(): null|FHIRPositiveInt
     {
@@ -222,9 +215,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequenceLinkId
-     * @return static
      */
     public function setSequenceLinkId(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequenceLinkId): self
     {
@@ -270,9 +260,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A list of note references to the notes provided below.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $noteNumber
-     * @return static
      */
     public function addNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
     {
@@ -292,9 +279,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A list of note references to the notes provided below.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt ...$noteNumber
-     * @return static
      */
     public function setNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
     {
@@ -342,9 +326,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * resource.
      *
      * The adjudication results.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
-     * @return static
      */
     public function addAdjudication(FHIRClaimResponseAdjudication $adjudication): self
     {
@@ -360,9 +341,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * resource.
      *
      * The adjudication results.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication ...$adjudication
-     * @return static
      */
     public function setAdjudication(FHIRClaimResponseAdjudication ...$adjudication): self
     {
@@ -403,9 +381,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * resource.
      *
      * The second tier service adjudications for submitted services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail $detail
-     * @return static
      */
     public function addDetail(FHIRClaimResponseDetail $detail): self
     {
@@ -421,9 +396,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * resource.
      *
      * The second tier service adjudications for submitted services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail ...$detail
-     * @return static
      */
     public function setDetail(FHIRClaimResponseDetail ...$detail): self
     {
@@ -437,10 +409,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -498,10 +467,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -540,10 +505,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

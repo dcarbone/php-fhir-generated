@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -86,7 +84,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -144,8 +141,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      *
      * Unique identifier of the DICOM Key Object Selection (KOS) that this resource
      * represents.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -156,8 +151,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingManifest.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -173,8 +166,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      * (typically) different from the creation date of the selection resource, and from
      * dates associated with the referenced instances (e.g. capture time of the
      * referenced image).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $authoringTime;
@@ -188,8 +179,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      * set of imaging SOP instances to attach in a diagnostic report, and a CAD
      * application may author a selection to describe SOP instances it used to generate
      * a detection conclusion.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $author;
@@ -204,8 +193,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      * the DICOM Key Object Selection object, several of which are not supported by
      * ImagingManifest. Specifically, there is no expected behavior associated with
      * descriptions that suggest referenced images be removed or not used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -224,19 +211,9 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
     /* constructor.php:61 */
     /**
      * FHIRImagingManifest Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $authoringTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $author
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy> $study
      * @param null|string[] $fhirComments
      */
@@ -305,8 +282,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      *
      * Unique identifier of the DICOM Key Object Selection (KOS) that this resource
      * represents.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -320,9 +295,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      *
      * Unique identifier of the DICOM Key Object Selection (KOS) that this resource
      * represents.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -341,8 +313,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingManifest.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -356,9 +326,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingManifest.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -382,8 +349,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      * (typically) different from the creation date of the selection resource, and from
      * dates associated with the referenced instances (e.g. capture time of the
      * referenced image).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getAuthoringTime(): null|FHIRDateTime
     {
@@ -402,9 +367,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      * (typically) different from the creation date of the selection resource, and from
      * dates associated with the referenced instances (e.g. capture time of the
      * referenced image).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $authoringTime
-     * @return static
      */
     public function setAuthoringTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authoringTime): self
     {
@@ -429,8 +391,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      * set of imaging SOP instances to attach in a diagnostic report, and a CAD
      * application may author a selection to describe SOP instances it used to generate
      * a detection conclusion.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getAuthor(): null|FHIRReference
     {
@@ -447,9 +407,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      * set of imaging SOP instances to attach in a diagnostic report, and a CAD
      * application may author a selection to describe SOP instances it used to generate
      * a detection conclusion.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $author
-     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -472,8 +429,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      * the DICOM Key Object Selection object, several of which are not supported by
      * ImagingManifest. Specifically, there is no expected behavior associated with
      * descriptions that suggest referenced images be removed or not used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -491,9 +446,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      * the DICOM Key Object Selection object, several of which are not supported by
      * ImagingManifest. Specifically, there is no expected behavior associated with
      * descriptions that suggest referenced images be removed or not used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -539,9 +491,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      *
      * Study identity and locating information of the DICOM SOP instances in the
      * selection.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy $study
-     * @return static
      */
     public function addStudy(FHIRImagingManifestStudy $study): self
     {
@@ -558,9 +507,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
      *
      * Study identity and locating information of the DICOM SOP instances in the
      * selection.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy ...$study
-     * @return static
      */
     public function setStudy(FHIRImagingManifestStudy ...$study): self
     {
@@ -574,10 +520,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRImagingManifest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRImagingManifest
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -683,11 +626,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -761,10 +699,7 @@ class FHIRImagingManifest extends FHIRDomainResource implements VersionContained
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRImagingManifest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRImagingManifest
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

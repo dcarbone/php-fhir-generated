@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -131,7 +130,6 @@ class FHIRInteger64 extends FHIRElement implements PrimitiveContainerTypeInterfa
     ];
 
     /* class_default.php:112 */
-    /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive */
     #[FHIRInteger64Primitive]
     protected FHIRInteger64Primitive $value;
 
@@ -139,8 +137,6 @@ class FHIRInteger64 extends FHIRElement implements PrimitiveContainerTypeInterfa
     /**
      * FHIRInteger64 Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -163,18 +159,11 @@ class FHIRInteger64 extends FHIRElement implements PrimitiveContainerTypeInterfa
     }
 
     /* class_default.php:174 */
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive
-     */
     public function getValue(): null|FHIRInteger64Primitive
     {
         return $this->value ?? null;
     }
 
-    /**
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive $value
-     * @return static
-     */
     public function setValue(null|string|float|FHIRInteger64Primitive $value): self
     {
         if (null === $value) {
@@ -197,10 +186,7 @@ class FHIRInteger64 extends FHIRElement implements PrimitiveContainerTypeInterfa
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -253,11 +239,6 @@ class FHIRInteger64 extends FHIRElement implements PrimitiveContainerTypeInterfa
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config,
                                  null|ValueXMLLocationEnum $valueLocation = null): void
@@ -281,10 +262,7 @@ class FHIRInteger64 extends FHIRElement implements PrimitiveContainerTypeInterfa
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

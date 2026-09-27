@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -160,8 +160,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -171,8 +169,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -182,8 +178,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -193,8 +187,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
@@ -204,8 +196,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $valueInstant;
@@ -215,8 +205,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -226,8 +214,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -239,8 +225,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -253,8 +237,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -266,8 +248,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $valueCode;
@@ -278,8 +258,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -290,8 +268,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $valueIdentifier;
@@ -303,8 +279,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -315,8 +289,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -329,8 +301,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -341,8 +311,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -353,8 +321,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -366,8 +332,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $valueRatio;
@@ -378,8 +342,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $valueResource;
@@ -391,8 +353,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData
      */
     #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
@@ -403,8 +363,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName
      */
     #[FHIRHumanName]
     protected FHIRHumanName $valueHumanName;
@@ -416,8 +374,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $valueAddress;
@@ -429,8 +385,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact
      */
     #[FHIRContact]
     protected FHIRContact $valueContact;
@@ -442,12 +396,9 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule
      */
     #[FHIRSchedule]
     protected FHIRSchedule $valueSchedule;
-    /** @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive */
     #[FHIRUriPrimitive]
     protected FHIRUriPrimitive $url;
 
@@ -455,32 +406,6 @@ class FHIRExtension extends FHIRElement
     /**
      * FHIRExtension Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $valueBoolean
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $valueInteger
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $valueDecimal
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant $valueInstant
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $valueString
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $valueUri
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate $valueDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $valueCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $valueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $valueIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $valueRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $valueRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $valueResource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData $valueSampledData
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName $valueHumanName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $valueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $valueContact
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $valueSchedule
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive $url
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -605,8 +530,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -619,9 +542,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -642,8 +562,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -656,9 +574,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $valueInteger
-     * @return static
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -679,8 +594,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -693,9 +606,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $valueDecimal
-     * @return static
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -716,8 +626,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary
      */
     public function getValueBase64Binary(): null|FHIRBase64Binary
     {
@@ -730,9 +638,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @return static
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -753,8 +658,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant
      */
     public function getValueInstant(): null|FHIRInstant
     {
@@ -767,9 +670,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant $valueInstant
-     * @return static
      */
     public function setValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $valueInstant): self
     {
@@ -790,8 +690,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getValueString(): null|FHIRString
     {
@@ -804,9 +702,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $valueString
-     * @return static
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -827,8 +722,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -841,9 +734,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $valueUri
-     * @return static
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -866,8 +756,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -882,9 +770,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate $valueDate
-     * @return static
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -908,8 +793,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -925,9 +808,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $valueDateTime
-     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -950,8 +830,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getValueCode(): null|FHIRCode
     {
@@ -966,9 +844,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $valueCode
-     * @return static
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -990,8 +865,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -1005,9 +878,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $valueAttachment
-     * @return static
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -1026,8 +896,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     public function getValueIdentifier(): null|FHIRIdentifier
     {
@@ -1041,9 +909,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $valueIdentifier
-     * @return static
      */
     public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
@@ -1063,8 +928,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1079,9 +942,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -1100,8 +960,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -1115,9 +973,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $valueCoding
-     * @return static
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -1138,8 +993,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -1155,9 +1008,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $valueQuantity
-     * @return static
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -1176,8 +1026,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -1191,9 +1039,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $valueRange
-     * @return static
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -1212,8 +1057,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -1227,9 +1070,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $valuePeriod
-     * @return static
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -1249,8 +1089,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio
      */
     public function getValueRatio(): null|FHIRRatio
     {
@@ -1265,9 +1103,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $valueRatio
-     * @return static
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -1286,8 +1121,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getValueResource(): null|FHIRResourceReference
     {
@@ -1301,9 +1134,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $valueResource
-     * @return static
      */
     public function setValueResource(null|FHIRResourceReference $valueResource): self
     {
@@ -1323,8 +1153,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData
      */
     public function getValueSampledData(): null|FHIRSampledData
     {
@@ -1339,9 +1167,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSampledData $valueSampledData
-     * @return static
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -1360,8 +1185,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName
      */
     public function getValueHumanName(): null|FHIRHumanName
     {
@@ -1375,9 +1198,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName $valueHumanName
-     * @return static
      */
     public function setValueHumanName(null|FHIRHumanName $valueHumanName): self
     {
@@ -1397,8 +1217,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress
      */
     public function getValueAddress(): null|FHIRAddress
     {
@@ -1413,9 +1231,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $valueAddress
-     * @return static
      */
     public function setValueAddress(null|FHIRAddress $valueAddress): self
     {
@@ -1435,8 +1250,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact
      */
     public function getValueContact(): null|FHIRContact
     {
@@ -1451,9 +1264,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $valueContact
-     * @return static
      */
     public function setValueContact(null|FHIRContact $valueContact): self
     {
@@ -1473,8 +1283,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule
      */
     public function getValueSchedule(): null|FHIRSchedule
     {
@@ -1489,9 +1297,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $valueSchedule
-     * @return static
      */
     public function setValueSchedule(null|FHIRSchedule $valueSchedule): self
     {
@@ -1503,18 +1308,11 @@ class FHIRExtension extends FHIRElement
         return $this;
     }
 
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive
-     */
     public function getUrl(): null|FHIRUriPrimitive
     {
         return $this->url ?? null;
     }
 
-    /**
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive $url
-     * @return static
-     */
     public function setUrl(null|string|FHIRUriPrimitive $url): self
     {
         if (null === $url) {
@@ -1530,10 +1328,7 @@ class FHIRExtension extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1714,10 +1509,6 @@ class FHIRExtension extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1907,10 +1698,7 @@ class FHIRExtension extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

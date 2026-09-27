@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -121,8 +120,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * The value for this stratum, expressed as a string. When defining stratifiers on
      * complex values, the value must be rendered such that the value for each stratum
      * within the stratifier is unique.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $value;
@@ -144,8 +141,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The measure score for this stratum, calculated as appropriate for the measure
      * type and scoring method, and based on only the members of this stratum.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $measureScore;
@@ -154,11 +149,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     /**
      * FHIRMeasureReportStratum Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $value
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1> $population
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $measureScore
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -199,8 +191,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * The value for this stratum, expressed as a string. When defining stratifiers on
      * complex values, the value must be rendered such that the value for each stratum
      * within the stratifier is unique.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getValue(): null|FHIRString
     {
@@ -215,9 +205,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * The value for this stratum, expressed as a string. When defining stratifiers on
      * complex values, the value must be rendered such that the value for each stratum
      * within the stratifier is unique.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $value
-     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -261,9 +248,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The populations that make up the stratum, one for each type of population
      * appropriate to the measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1 $population
-     * @return static
      */
     public function addPopulation(FHIRMeasureReportPopulation1 $population): self
     {
@@ -279,9 +263,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The populations that make up the stratum, one for each type of population
      * appropriate to the measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1 ...$population
-     * @return static
      */
     public function setPopulation(FHIRMeasureReportPopulation1 ...$population): self
     {
@@ -301,8 +282,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The measure score for this stratum, calculated as appropriate for the measure
      * type and scoring method, and based on only the members of this stratum.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     public function getMeasureScore(): null|FHIRDecimal
     {
@@ -317,9 +296,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      *
      * The measure score for this stratum, calculated as appropriate for the measure
      * type and scoring method, and based on only the members of this stratum.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $measureScore
-     * @return static
      */
     public function setMeasureScore(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $measureScore): self
     {
@@ -336,10 +312,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -403,10 +376,6 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -441,10 +410,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

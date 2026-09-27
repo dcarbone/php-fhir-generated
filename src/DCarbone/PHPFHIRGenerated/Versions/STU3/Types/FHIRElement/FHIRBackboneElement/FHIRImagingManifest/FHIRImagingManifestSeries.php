@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -122,8 +121,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Series instance UID of the SOP instances in the selection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid
      */
     #[FHIROid]
     protected FHIROid $uid;
@@ -156,9 +153,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
     /**
      * FHIRImagingManifestSeries Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid $uid
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $endpoint
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestInstance> $instance
      * @param null|string[] $fhirComments
@@ -200,8 +195,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Series instance UID of the SOP instances in the selection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid
      */
     public function getUid(): null|FHIROid
     {
@@ -215,9 +208,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Series instance UID of the SOP instances in the selection.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIROid $uid
-     * @return static
      */
     public function setUid(null|string|FHIROidPrimitive|FHIROid $uid): self
     {
@@ -269,9 +259,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * series. See implementation notes for information about using DICOM endpoints. A
      * series-level endpoint, if present, has precedence over a study-level endpoint
      * with the same Endpoint.type.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $endpoint
-     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -291,9 +278,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * series. See implementation notes for information about using DICOM endpoints. A
      * series-level endpoint, if present, has precedence over a study-level endpoint
      * with the same Endpoint.type.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$endpoint
-     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {
@@ -334,9 +318,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * or the reason for, or significance of, the selection.
      *
      * Identity and locating information of the selected DICOM SOP instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestInstance $instance
-     * @return static
      */
     public function addInstance(FHIRImagingManifestInstance $instance): self
     {
@@ -352,9 +333,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * or the reason for, or significance of, the selection.
      *
      * Identity and locating information of the selected DICOM SOP instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestInstance ...$instance
-     * @return static
      */
     public function setInstance(FHIRImagingManifestInstance ...$instance): self
     {
@@ -368,10 +346,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -427,10 +402,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -462,10 +433,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

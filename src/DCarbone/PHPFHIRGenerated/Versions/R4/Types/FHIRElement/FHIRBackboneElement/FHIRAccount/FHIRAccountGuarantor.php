@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -119,8 +118,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity who is responsible.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $party;
@@ -130,8 +127,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      *
      * A guarantor may be placed on credit hold or otherwise have their role
      * temporarily suspended.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $onHold;
@@ -141,8 +136,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe during which the guarantor accepts responsibility for the account.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -151,11 +144,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
     /**
      * FHIRAccountGuarantor Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $party
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $onHold
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -194,8 +183,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity who is responsible.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getParty(): null|FHIRReference
     {
@@ -208,9 +195,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity who is responsible.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $party
-     * @return static
      */
     public function setParty(null|FHIRReference $party): self
     {
@@ -228,8 +212,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      *
      * A guarantor may be placed on credit hold or otherwise have their role
      * temporarily suspended.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getOnHold(): null|FHIRBoolean
     {
@@ -242,9 +224,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      *
      * A guarantor may be placed on credit hold or otherwise have their role
      * temporarily suspended.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $onHold
-     * @return static
      */
     public function setOnHold(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $onHold): self
     {
@@ -265,8 +244,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe during which the guarantor accepts responsibility for the account.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -279,9 +256,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe during which the guarantor accepts responsibility for the account.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -295,10 +269,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -354,10 +325,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -385,10 +352,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

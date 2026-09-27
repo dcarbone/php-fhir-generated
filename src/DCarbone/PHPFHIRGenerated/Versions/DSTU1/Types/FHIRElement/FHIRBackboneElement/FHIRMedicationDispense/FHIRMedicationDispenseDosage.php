@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -131,8 +131,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * Additional instructions such as "Swallow with plenty of water" which may or may
      * not be coded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $additionalInstructions;
@@ -147,8 +145,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $timingDateTime;
@@ -161,8 +157,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $timingPeriod;
@@ -176,8 +170,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule
      */
     #[FHIRSchedule]
     protected FHIRSchedule $timingSchedule;
@@ -189,8 +181,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * medication is only taken when needed within the specified schedule rather than
      * at every scheduled dose. If a CodeableConcept is present, it indicates the
      * pre-condition for taking the Medication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $asNeededBoolean;
@@ -204,8 +194,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * medication is only taken when needed within the specified schedule rather than
      * at every scheduled dose. If a CodeableConcept is present, it indicates the
      * pre-condition for taking the Medication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $asNeededCodeableConcept;
@@ -217,8 +205,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first enters the
      * body.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $site;
@@ -230,8 +216,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto a subject.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $route;
@@ -245,8 +229,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * or onto the body. Most commonly used for injections. Examples: Slow Push; Deep
      * IV. Terminologies used often pre-coordinate this term with the route and or form
      * of administration.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $method;
@@ -258,8 +240,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of therapeutic or other substance given at one administration event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -271,8 +251,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * Identifies the speed with which the substance is introduced into the subject.
      * Typically the rate for an infusion. 200ml in 2 hours.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $rate;
@@ -284,8 +262,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * The maximum total quantity of a therapeutic substance that may be administered
      * to a subject over the period of time, e.g. 1000mg in 24 hours.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $maxDosePerPeriod;
@@ -294,20 +270,7 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
     /**
      * FHIRMedicationDispenseDosage Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $additionalInstructions
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $timingDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $timingSchedule
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $asNeededBoolean
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $site
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $route
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $method
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $rate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $maxDosePerPeriod
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -384,8 +347,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * Additional instructions such as "Swallow with plenty of water" which may or may
      * not be coded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAdditionalInstructions(): null|FHIRCodeableConcept
     {
@@ -400,9 +361,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * Additional instructions such as "Swallow with plenty of water" which may or may
      * not be coded.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $additionalInstructions
-     * @return static
      */
     public function setAdditionalInstructions(null|FHIRCodeableConcept $additionalInstructions): self
     {
@@ -425,8 +383,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime(): null|FHIRDateTime
     {
@@ -444,9 +400,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $timingDateTime
-     * @return static
      */
     public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
     {
@@ -470,8 +423,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod(): null|FHIRPeriod
     {
@@ -487,9 +438,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -511,8 +459,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule
      */
     public function getTimingSchedule(): null|FHIRSchedule
     {
@@ -529,9 +475,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $timingSchedule
-     * @return static
      */
     public function setTimingSchedule(null|FHIRSchedule $timingSchedule): self
     {
@@ -551,8 +494,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * medication is only taken when needed within the specified schedule rather than
      * at every scheduled dose. If a CodeableConcept is present, it indicates the
      * pre-condition for taking the Medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getAsNeededBoolean(): null|FHIRBoolean
     {
@@ -567,9 +508,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * medication is only taken when needed within the specified schedule rather than
      * at every scheduled dose. If a CodeableConcept is present, it indicates the
      * pre-condition for taking the Medication.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $asNeededBoolean
-     * @return static
      */
     public function setAsNeededBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeededBoolean): self
     {
@@ -594,8 +532,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * medication is only taken when needed within the specified schedule rather than
      * at every scheduled dose. If a CodeableConcept is present, it indicates the
      * pre-condition for taking the Medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAsNeededCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -612,9 +548,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * medication is only taken when needed within the specified schedule rather than
      * at every scheduled dose. If a CodeableConcept is present, it indicates the
      * pre-condition for taking the Medication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
-     * @return static
      */
     public function setAsNeededCodeableConcept(null|FHIRCodeableConcept $asNeededCodeableConcept): self
     {
@@ -634,8 +567,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first enters the
      * body.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSite(): null|FHIRCodeableConcept
     {
@@ -650,9 +581,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first enters the
      * body.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $site
-     * @return static
      */
     public function setSite(null|FHIRCodeableConcept $site): self
     {
@@ -672,8 +600,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto a subject.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRoute(): null|FHIRCodeableConcept
     {
@@ -688,9 +614,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto a subject.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $route
-     * @return static
      */
     public function setRoute(null|FHIRCodeableConcept $route): self
     {
@@ -712,8 +635,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * or onto the body. Most commonly used for injections. Examples: Slow Push; Deep
      * IV. Terminologies used often pre-coordinate this term with the route and or form
      * of administration.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod(): null|FHIRCodeableConcept
     {
@@ -730,9 +651,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * or onto the body. Most commonly used for injections. Examples: Slow Push; Deep
      * IV. Terminologies used often pre-coordinate this term with the route and or form
      * of administration.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $method
-     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -752,8 +670,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of therapeutic or other substance given at one administration event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -768,9 +684,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of therapeutic or other substance given at one administration event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -790,8 +703,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * Identifies the speed with which the substance is introduced into the subject.
      * Typically the rate for an infusion. 200ml in 2 hours.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio
      */
     public function getRate(): null|FHIRRatio
     {
@@ -806,9 +717,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * Identifies the speed with which the substance is introduced into the subject.
      * Typically the rate for an infusion. 200ml in 2 hours.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $rate
-     * @return static
      */
     public function setRate(null|FHIRRatio $rate): self
     {
@@ -828,8 +736,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * The maximum total quantity of a therapeutic substance that may be administered
      * to a subject over the period of time, e.g. 1000mg in 24 hours.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio
      */
     public function getMaxDosePerPeriod(): null|FHIRRatio
     {
@@ -844,9 +750,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
      *
      * The maximum total quantity of a therapeutic substance that may be administered
      * to a subject over the period of time, e.g. 1000mg in 24 hours.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $maxDosePerPeriod
-     * @return static
      */
     public function setMaxDosePerPeriod(null|FHIRRatio $maxDosePerPeriod): self
     {
@@ -860,10 +763,7 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDosage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDosage
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -945,10 +845,6 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1026,10 +922,7 @@ class FHIRMedicationDispenseDosage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDosage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDosage
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -28,7 +28,6 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
 
 trait JSONSerializationOptionsTrait
 {
-    /** @var array */
     private array $_fieldElideMap = [];
 
     /**
@@ -45,8 +44,6 @@ trait JSONSerializationOptionsTrait
     /**
      * Returns whether the provided field should be JSON serialized as an object, rather than an array of objects, when
      * it contains a singular element.
-     *
-     * @return true
      */
     public function _getJSONFieldElideSingletonArray(string $field): bool
     {

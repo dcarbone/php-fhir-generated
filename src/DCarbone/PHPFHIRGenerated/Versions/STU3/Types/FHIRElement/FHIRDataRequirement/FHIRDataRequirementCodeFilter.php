@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequ
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequ
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -134,8 +133,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * multiple-cardinality sub-elements. Note that the index must be an integer
      * constant. The path must resolve to an element of type code, Coding, or
      * CodeableConcept.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -148,8 +145,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $valueSetString;
@@ -162,8 +157,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $valueSetReference;
@@ -216,10 +209,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     /**
      * FHIRDataRequirementCodeFilter Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $path
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $valueSetString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $valueSetReference
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode> $valueCode
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding> $valueCoding
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $valueCodeableConcept
@@ -276,8 +265,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * multiple-cardinality sub-elements. Note that the index must be an integer
      * constant. The path must resolve to an element of type code, Coding, or
      * CodeableConcept.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getPath(): null|FHIRString
     {
@@ -295,9 +282,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * multiple-cardinality sub-elements. Note that the index must be an integer
      * constant. The path must resolve to an element of type code, Coding, or
      * CodeableConcept.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $path
-     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -321,8 +305,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getValueSetString(): null|FHIRString
     {
@@ -338,9 +320,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $valueSetString
-     * @return static
      */
     public function setValueSetString(null|string|FHIRStringPrimitive|FHIRString $valueSetString): self
     {
@@ -364,8 +343,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getValueSetReference(): null|FHIRReference
     {
@@ -381,9 +358,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $valueSetReference
-     * @return static
      */
     public function setValueSetReference(null|FHIRReference $valueSetReference): self
     {
@@ -434,9 +408,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * valueCodeableConcept may be specified. If values are given, the filter will
      * return only those data items for which the code-valued attribute specified by
      * the path has a value that is one of the specified codes.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $valueCode
-     * @return static
      */
     public function addValueCode(string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -460,9 +431,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * valueCodeableConcept may be specified. If values are given, the filter will
      * return only those data items for which the code-valued attribute specified by
      * the path has a value that is one of the specified codes.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode ...$valueCode
-     * @return static
      */
     public function setValueCode(string|FHIRCodePrimitive|FHIRCode ...$valueCode): self
     {
@@ -518,9 +486,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * or valueCodeableConcept may be specified. If values are given, the filter will
      * return only those data items for which the code-valued attribute specified by
      * the path has a value that is one of the specified Codings.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $valueCoding
-     * @return static
      */
     public function addValueCoding(FHIRCoding $valueCoding): self
     {
@@ -540,9 +505,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * or valueCodeableConcept may be specified. If values are given, the filter will
      * return only those data items for which the code-valued attribute specified by
      * the path has a value that is one of the specified Codings.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding ...$valueCoding
-     * @return static
      */
     public function setValueCoding(FHIRCoding ...$valueCoding): self
     {
@@ -593,9 +555,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * valueConding, or valueCodeableConcept may be specified. If values are given, the
      * filter will return only those data items for which the code-valued attribute
      * specified by the path has a value that is one of the specified CodeableConcepts.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
      */
     public function addValueCodeableConcept(FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -616,9 +575,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * valueConding, or valueCodeableConcept may be specified. If values are given, the
      * filter will return only those data items for which the code-valued attribute
      * specified by the path has a value that is one of the specified CodeableConcepts.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$valueCodeableConcept
-     * @return static
      */
     public function setValueCodeableConcept(FHIRCodeableConcept ...$valueCodeableConcept): self
     {
@@ -632,10 +588,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -703,10 +656,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -760,10 +709,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

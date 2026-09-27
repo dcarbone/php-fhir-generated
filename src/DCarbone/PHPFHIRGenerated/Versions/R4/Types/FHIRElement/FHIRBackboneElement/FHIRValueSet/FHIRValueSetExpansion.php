@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -136,8 +135,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * and the underlying system code system versions etc. Systems may re-use the same
      * identifier as long as those factors remain the same, and the expansion is the
      * same, but are not required to do so. This is a business identifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $identifier;
@@ -150,8 +147,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the expansion was produced by the expanding system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $timestamp;
@@ -163,8 +158,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * The total number of concepts in the expansion. If the number of concept nodes in
      * this resource is less than the stated number, then the server can return more
      * using the offset parameter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $total;
@@ -176,8 +169,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * If paging is being used, the offset at which this resource starts. I.e. this
      * resource is a partial view into the expansion. If paging is not being used, this
      * element SHALL NOT be present.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $offset;
@@ -212,12 +203,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     /**
      * FHIRValueSetExpansion Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $identifier
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $timestamp
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $total
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $offset
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter> $parameter
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains> $contains
      * @param null|string[] $fhirComments
@@ -274,8 +260,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * and the underlying system code system versions etc. Systems may re-use the same
      * identifier as long as those factors remain the same, and the expansion is the
      * same, but are not required to do so. This is a business identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getIdentifier(): null|FHIRUri
     {
@@ -292,9 +276,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * and the underlying system code system versions etc. Systems may re-use the same
      * identifier as long as those factors remain the same, and the expansion is the
      * same, but are not required to do so. This is a business identifier.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $identifier
-     * @return static
      */
     public function setIdentifier(null|string|FHIRUriPrimitive|FHIRUri $identifier): self
     {
@@ -318,8 +299,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the expansion was produced by the expanding system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getTimestamp(): null|FHIRDateTime
     {
@@ -335,9 +314,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the expansion was produced by the expanding system.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $timestamp
-     * @return static
      */
     public function setTimestamp(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timestamp): self
     {
@@ -360,8 +336,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * The total number of concepts in the expansion. If the number of concept nodes in
      * this resource is less than the stated number, then the server can return more
      * using the offset parameter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getTotal(): null|FHIRInteger
     {
@@ -376,9 +350,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * The total number of concepts in the expansion. If the number of concept nodes in
      * this resource is less than the stated number, then the server can return more
      * using the offset parameter.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $total
-     * @return static
      */
     public function setTotal(null|string|float|FHIRIntegerPrimitive|FHIRInteger $total): self
     {
@@ -401,8 +372,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * If paging is being used, the offset at which this resource starts. I.e. this
      * resource is a partial view into the expansion. If paging is not being used, this
      * element SHALL NOT be present.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getOffset(): null|FHIRInteger
     {
@@ -417,9 +386,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * If paging is being used, the offset at which this resource starts. I.e. this
      * resource is a partial view into the expansion. If paging is not being used, this
      * element SHALL NOT be present.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $offset
-     * @return static
      */
     public function setOffset(null|string|float|FHIRIntegerPrimitive|FHIRInteger $offset): self
     {
@@ -471,9 +437,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * A parameter that controlled the expansion process. These parameters may be used
      * by users of expanded value sets to check whether the expansion is suitable for a
      * particular purpose, or to pick the correct expansion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter $parameter
-     * @return static
      */
     public function addParameter(FHIRValueSetParameter $parameter): self
     {
@@ -493,9 +456,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * A parameter that controlled the expansion process. These parameters may be used
      * by users of expanded value sets to check whether the expansion is suitable for a
      * particular purpose, or to pick the correct expansion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter ...$parameter
-     * @return static
      */
     public function setParameter(FHIRValueSetParameter ...$parameter): self
     {
@@ -540,9 +500,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * elements](terminologies.html).
      *
      * The codes that are contained in the value set expansion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains $contains
-     * @return static
      */
     public function addContains(FHIRValueSetContains $contains): self
     {
@@ -560,9 +517,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * elements](terminologies.html).
      *
      * The codes that are contained in the value set expansion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains ...$contains
-     * @return static
      */
     public function setContains(FHIRValueSetContains ...$contains): self
     {
@@ -576,10 +530,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -665,10 +616,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -730,10 +677,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

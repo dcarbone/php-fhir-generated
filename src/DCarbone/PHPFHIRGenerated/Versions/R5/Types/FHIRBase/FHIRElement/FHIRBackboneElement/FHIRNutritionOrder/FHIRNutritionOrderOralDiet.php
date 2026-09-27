@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -147,8 +147,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * supplement to a patient/resident.
      *
      * Schedule information for an oral diet.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSchedule
      */
     #[FHIRNutritionOrderSchedule]
     protected FHIRNutritionOrderSchedule $schedule;
@@ -193,8 +191,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text or additional instructions or information pertaining to the oral diet.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $instruction;
@@ -203,14 +199,11 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     /**
      * FHIRNutritionOrderOralDiet Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSchedule $schedule
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient> $nutrient
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture> $texture
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $fluidConsistencyType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $instruction
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -290,9 +283,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -311,9 +301,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -330,8 +317,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * supplement to a patient/resident.
      *
      * Schedule information for an oral diet.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSchedule
      */
     public function getSchedule(): null|FHIRNutritionOrderSchedule
     {
@@ -343,9 +328,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * supplement to a patient/resident.
      *
      * Schedule information for an oral diet.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSchedule $schedule
-     * @return static
      */
     public function setSchedule(null|FHIRNutritionOrderSchedule $schedule): self
     {
@@ -388,9 +370,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * Class that defines the quantity and type of nutrient modifications (for example
      * carbohydrate, fiber or sodium) required for the oral diet.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient $nutrient
-     * @return static
      */
     public function addNutrient(FHIRNutritionOrderNutrient $nutrient): self
     {
@@ -407,9 +386,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * Class that defines the quantity and type of nutrient modifications (for example
      * carbohydrate, fiber or sodium) required for the oral diet.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient ...$nutrient
-     * @return static
      */
     public function setNutrient(FHIRNutritionOrderNutrient ...$nutrient): self
     {
@@ -452,9 +428,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * Class that describes any texture modifications required for the patient to
      * safely consume various types of solid foods.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture $texture
-     * @return static
      */
     public function addTexture(FHIRNutritionOrderTexture $texture): self
     {
@@ -471,9 +444,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * Class that describes any texture modifications required for the patient to
      * safely consume various types of solid foods.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture ...$texture
-     * @return static
      */
     public function setTexture(FHIRNutritionOrderTexture ...$texture): self
     {
@@ -520,9 +490,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $fluidConsistencyType
-     * @return static
      */
     public function addFluidConsistencyType(FHIRCodeableConcept $fluidConsistencyType): self
     {
@@ -541,9 +508,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$fluidConsistencyType
-     * @return static
      */
     public function setFluidConsistencyType(FHIRCodeableConcept ...$fluidConsistencyType): self
     {
@@ -561,8 +525,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text or additional instructions or information pertaining to the oral diet.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getInstruction(): null|FHIRString
     {
@@ -575,9 +537,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text or additional instructions or information pertaining to the oral diet.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $instruction
-     * @return static
      */
     public function setInstruction(null|string|FHIRStringPrimitive|FHIRString $instruction): self
     {
@@ -594,10 +553,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -659,10 +615,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -713,10 +665,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

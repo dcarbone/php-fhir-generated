@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -151,8 +151,6 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
      *
      * Indicates whether the enteral formula is only taken when needed within a
      * specific dosing schedule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $asNeeded;
@@ -164,8 +162,6 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
      *
      * Indicates whether the enteral formula is only taken based on a precondition for
      * taking the enteral formula.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $asNeededFor;
@@ -174,11 +170,8 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
     /**
      * FHIRNutritionOrderSchedule2 Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming> $timing
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $asNeeded
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $asNeededFor
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -254,9 +247,6 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
      * The time period and frequency at which the enteral formula should be given. The
      * enteral formula should be given for the combination of all schedules if more
      * than one schedule is present.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $timing
-     * @return static
      */
     public function addTiming(FHIRTiming $timing): self
     {
@@ -279,9 +269,6 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
      * The time period and frequency at which the enteral formula should be given. The
      * enteral formula should be given for the combination of all schedules if more
      * than one schedule is present.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming ...$timing
-     * @return static
      */
     public function setTiming(FHIRTiming ...$timing): self
     {
@@ -299,8 +286,6 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
      *
      * Indicates whether the enteral formula is only taken when needed within a
      * specific dosing schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getAsNeeded(): null|FHIRBoolean
     {
@@ -313,9 +298,6 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
      *
      * Indicates whether the enteral formula is only taken when needed within a
      * specific dosing schedule.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $asNeeded
-     * @return static
      */
     public function setAsNeeded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeeded): self
     {
@@ -338,8 +320,6 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
      *
      * Indicates whether the enteral formula is only taken based on a precondition for
      * taking the enteral formula.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getAsNeededFor(): null|FHIRCodeableConcept
     {
@@ -354,9 +334,6 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
      *
      * Indicates whether the enteral formula is only taken based on a precondition for
      * taking the enteral formula.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $asNeededFor
-     * @return static
      */
     public function setAsNeededFor(null|FHIRCodeableConcept $asNeededFor): self
     {
@@ -370,10 +347,7 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSchedule2 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSchedule2
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -429,10 +403,6 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -462,10 +432,7 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSchedule2 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSchedule2
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

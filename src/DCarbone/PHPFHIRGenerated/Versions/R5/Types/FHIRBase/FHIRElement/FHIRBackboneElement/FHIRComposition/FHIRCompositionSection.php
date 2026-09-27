@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -148,8 +148,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * The label for this particular section. This will be part of the rendered content
      * for the document, and is often used to build a table of contents.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -161,8 +159,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A code identifying the kind of content contained within the section. This must
      * be consistent with the section title.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -191,8 +187,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * a focus SHALL only include resources where the logical subject (patient,
      * subject, focus, etc.) matches the section focus, or the resources have no
      * logical subject (few resources).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $focus;
@@ -206,8 +200,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * used to represent the content of the resource to a human. The narrative need not
      * encode all the structured data, but is required to contain sufficient detail to
      * make it "clinically safe" for a human to just read the narrative.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative
      */
     #[FHIRNarrative]
     protected FHIRNarrative $text;
@@ -218,8 +210,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order applied to the items in the section entries.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $orderedBy;
@@ -243,8 +233,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * If the section is empty, why the list is empty. An empty section typically has
      * some text explaining the empty reason.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $emptyReason;
@@ -270,16 +258,9 @@ class FHIRCompositionSection extends FHIRBackboneElement
     /**
      * FHIRCompositionSection Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $author
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $focus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $orderedBy
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $entry
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $emptyReason
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection> $section
      * @param null|string[] $fhirComments
      */
@@ -344,8 +325,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * The label for this particular section. This will be part of the rendered content
      * for the document, and is often used to build a table of contents.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -359,9 +338,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * The label for this particular section. This will be part of the rendered content
      * for the document, and is often used to build a table of contents.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -384,8 +360,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A code identifying the kind of content contained within the section. This must
      * be consistent with the section title.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -400,9 +374,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A code identifying the kind of content contained within the section. This must
      * be consistent with the section title.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -447,9 +418,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $author
-     * @return static
      */
     public function addAuthor(FHIRReference $author): self
     {
@@ -467,9 +435,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$author
-     * @return static
      */
     public function setAuthor(FHIRReference ...$author): self
     {
@@ -494,8 +459,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * a focus SHALL only include resources where the logical subject (patient,
      * subject, focus, etc.) matches the section focus, or the resources have no
      * logical subject (few resources).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getFocus(): null|FHIRReference
     {
@@ -515,9 +478,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * a focus SHALL only include resources where the logical subject (patient,
      * subject, focus, etc.) matches the section focus, or the resources have no
      * logical subject (few resources).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $focus
-     * @return static
      */
     public function setFocus(null|FHIRReference $focus): self
     {
@@ -539,8 +499,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * used to represent the content of the resource to a human. The narrative need not
      * encode all the structured data, but is required to contain sufficient detail to
      * make it "clinically safe" for a human to just read the narrative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative
      */
     public function getText(): null|FHIRNarrative
     {
@@ -557,9 +515,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * used to represent the content of the resource to a human. The narrative need not
      * encode all the structured data, but is required to contain sufficient detail to
      * make it "clinically safe" for a human to just read the narrative.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
-     * @return static
      */
     public function setText(null|FHIRNarrative $text): self
     {
@@ -578,8 +533,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order applied to the items in the section entries.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getOrderedBy(): null|FHIRCodeableConcept
     {
@@ -593,9 +546,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order applied to the items in the section entries.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $orderedBy
-     * @return static
      */
     public function setOrderedBy(null|FHIRCodeableConcept $orderedBy): self
     {
@@ -640,9 +590,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $entry
-     * @return static
      */
     public function addEntry(FHIRReference $entry): self
     {
@@ -660,9 +607,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$entry
-     * @return static
      */
     public function setEntry(FHIRReference ...$entry): self
     {
@@ -682,8 +626,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * If the section is empty, why the list is empty. An empty section typically has
      * some text explaining the empty reason.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getEmptyReason(): null|FHIRCodeableConcept
     {
@@ -698,9 +640,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * If the section is empty, why the list is empty. An empty section typically has
      * some text explaining the empty reason.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $emptyReason
-     * @return static
      */
     public function setEmptyReason(null|FHIRCodeableConcept $emptyReason): self
     {
@@ -755,9 +694,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * Patient, Practitioner, Encounter, etc.).
      *
      * A nested sub-section within this section.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection $section
-     * @return static
      */
     public function addSection(FHIRCompositionSection $section): self
     {
@@ -780,9 +716,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * Patient, Practitioner, Encounter, etc.).
      *
      * A nested sub-section within this section.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection ...$section
-     * @return static
      */
     public function setSection(FHIRCompositionSection ...$section): self
     {
@@ -796,10 +729,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -867,10 +797,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -934,10 +860,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

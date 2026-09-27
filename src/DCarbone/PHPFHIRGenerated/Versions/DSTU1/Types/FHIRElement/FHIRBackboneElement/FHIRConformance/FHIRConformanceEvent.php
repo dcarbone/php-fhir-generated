@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -148,8 +147,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded identifier of a supported messaging event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $code;
@@ -158,8 +155,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The impact of the content of the message.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMessageSignificanceCategory
      */
     #[FHIRMessageSignificanceCategory]
     protected FHIRMessageSignificanceCategory $category;
@@ -168,8 +163,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The mode of this event declaration - whether application is sender or receiver.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRConformanceEventMode
      */
     #[FHIRConformanceEventMode]
     protected FHIRConformanceEventMode $mode;
@@ -193,8 +186,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * A resource associated with the event. This is the resource that defines the
      * event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $focus;
@@ -204,8 +195,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the request for this event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $request;
@@ -215,8 +204,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the response for this event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $response;
@@ -226,8 +213,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * Guidance on how this event is handled, such as internal system trigger points,
      * business rules, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $documentation;
@@ -236,16 +221,8 @@ class FHIRConformanceEvent extends FHIRBackboneElement
     /**
      * FHIRConformanceEvent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMessageSignificanceCategoryList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMessageSignificanceCategory $category
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRConformanceEventModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRConformanceEventMode $mode
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding> $protocol
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $focus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $request
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $response
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $documentation
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -304,8 +281,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded identifier of a supported messaging event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding
      */
     public function getCode(): null|FHIRCoding
     {
@@ -318,9 +293,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded identifier of a supported messaging event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $code
-     * @return static
      */
     public function setCode(null|FHIRCoding $code): self
     {
@@ -337,8 +309,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The impact of the content of the message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMessageSignificanceCategory
      */
     public function getCategory(): null|FHIRMessageSignificanceCategory
     {
@@ -350,9 +320,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The impact of the content of the message.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMessageSignificanceCategoryList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMessageSignificanceCategory $category
-     * @return static
      */
     public function setCategory(null|string|FHIRMessageSignificanceCategoryList|FHIRMessageSignificanceCategory $category): self
     {
@@ -372,8 +339,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The mode of this event declaration - whether application is sender or receiver.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRConformanceEventMode
      */
     public function getMode(): null|FHIRConformanceEventMode
     {
@@ -385,9 +350,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The mode of this event declaration - whether application is sender or receiver.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRConformanceEventModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRConformanceEventMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRConformanceEventModeList|FHIRConformanceEventMode $mode): self
     {
@@ -435,9 +397,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * A list of the messaging transport protocol(s) identifiers, supported by this
      * endpoint.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $protocol
-     * @return static
      */
     public function addProtocol(FHIRCoding $protocol): self
     {
@@ -455,9 +414,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * A list of the messaging transport protocol(s) identifiers, supported by this
      * endpoint.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding ...$protocol
-     * @return static
      */
     public function setProtocol(FHIRCoding ...$protocol): self
     {
@@ -477,8 +433,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * A resource associated with the event. This is the resource that defines the
      * event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getFocus(): null|FHIRCode
     {
@@ -493,9 +447,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * A resource associated with the event. This is the resource that defines the
      * event.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $focus
-     * @return static
      */
     public function setFocus(null|string|FHIRCodePrimitive|FHIRCode $focus): self
     {
@@ -516,8 +467,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the request for this event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getRequest(): null|FHIRResourceReference
     {
@@ -530,9 +479,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the request for this event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $request
-     * @return static
      */
     public function setRequest(null|FHIRResourceReference $request): self
     {
@@ -550,8 +496,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the response for this event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getResponse(): null|FHIRResourceReference
     {
@@ -564,9 +508,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the response for this event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $response
-     * @return static
      */
     public function setResponse(null|FHIRResourceReference $response): self
     {
@@ -584,8 +525,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * Guidance on how this event is handled, such as internal system trigger points,
      * business rules, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDocumentation(): null|FHIRString
     {
@@ -598,9 +537,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      *
      * Guidance on how this event is handled, such as internal system trigger points,
      * business rules, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -617,10 +553,7 @@ class FHIRConformanceEvent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -710,10 +643,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -783,10 +712,7 @@ class FHIRConformanceEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

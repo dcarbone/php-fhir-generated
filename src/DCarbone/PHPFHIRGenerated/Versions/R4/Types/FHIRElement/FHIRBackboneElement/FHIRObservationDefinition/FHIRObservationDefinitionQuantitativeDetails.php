@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -120,8 +120,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Customary unit used to report quantitative results of observations conforming to
      * this ObservationDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $customaryUnit;
@@ -133,8 +131,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * SI unit used to report quantitative results of observations conforming to this
      * ObservationDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unit;
@@ -146,8 +142,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Factor for converting value expressed with SI unit to value expressed with
      * customary unit.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $conversionFactor;
@@ -158,8 +152,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Number of digits after decimal separator when the results of such observations
      * are of type Quantity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $decimalPrecision;
@@ -168,12 +160,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     /**
      * FHIRObservationDefinitionQuantitativeDetails Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $customaryUnit
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unit
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $conversionFactor
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $decimalPrecision
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -218,8 +205,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Customary unit used to report quantitative results of observations conforming to
      * this ObservationDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCustomaryUnit(): null|FHIRCodeableConcept
     {
@@ -234,9 +219,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Customary unit used to report quantitative results of observations conforming to
      * this ObservationDefinition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $customaryUnit
-     * @return static
      */
     public function setCustomaryUnit(null|FHIRCodeableConcept $customaryUnit): self
     {
@@ -256,8 +238,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * SI unit used to report quantitative results of observations conforming to this
      * ObservationDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getUnit(): null|FHIRCodeableConcept
     {
@@ -272,9 +252,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * SI unit used to report quantitative results of observations conforming to this
      * ObservationDefinition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unit
-     * @return static
      */
     public function setUnit(null|FHIRCodeableConcept $unit): self
     {
@@ -294,8 +271,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Factor for converting value expressed with SI unit to value expressed with
      * customary unit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     public function getConversionFactor(): null|FHIRDecimal
     {
@@ -310,9 +285,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Factor for converting value expressed with SI unit to value expressed with
      * customary unit.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $conversionFactor
-     * @return static
      */
     public function setConversionFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $conversionFactor): self
     {
@@ -334,8 +306,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Number of digits after decimal separator when the results of such observations
      * are of type Quantity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getDecimalPrecision(): null|FHIRInteger
     {
@@ -349,9 +319,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * Number of digits after decimal separator when the results of such observations
      * are of type Quantity.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $decimalPrecision
-     * @return static
      */
     public function setDecimalPrecision(null|string|float|FHIRIntegerPrimitive|FHIRInteger $decimalPrecision): self
     {
@@ -368,10 +335,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -437,10 +401,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -478,10 +438,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

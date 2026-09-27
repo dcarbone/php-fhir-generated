@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -145,8 +144,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Bundle.identifier of the message to which this message is a response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -155,8 +152,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      *
      * Code that identifies the type of response to the message - whether it was
      * successful or not, and whether it should be resent or not.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRResponseType
      */
     #[FHIRResponseType]
     protected FHIRResponseType $code;
@@ -166,8 +161,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Full details of any issues found in the message.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $details;
@@ -176,11 +169,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
     /**
      * FHIRMessageHeaderResponse Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRResponseTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRResponseType $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $details
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -220,8 +209,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Bundle.identifier of the message to which this message is a response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -235,9 +222,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Bundle.identifier of the message to which this message is a response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -254,8 +238,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      *
      * Code that identifies the type of response to the message - whether it was
      * successful or not, and whether it should be resent or not.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRResponseType
      */
     public function getCode(): null|FHIRResponseType
     {
@@ -267,9 +249,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      *
      * Code that identifies the type of response to the message - whether it was
      * successful or not, and whether it should be resent or not.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRResponseTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRResponseType $code
-     * @return static
      */
     public function setCode(null|string|FHIRResponseTypeEnum|FHIRResponseType $code): self
     {
@@ -290,8 +269,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Full details of any issues found in the message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getDetails(): null|FHIRReference
     {
@@ -304,9 +281,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Full details of any issues found in the message.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $details
-     * @return static
      */
     public function setDetails(null|FHIRReference $details): self
     {
@@ -320,10 +294,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -379,10 +350,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -410,10 +377,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

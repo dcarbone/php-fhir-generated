@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -127,8 +126,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of triggering event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTriggerType
      */
     #[FHIRTriggerType]
     protected FHIRTriggerType $type;
@@ -138,8 +135,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the event (if this is a named-event trigger).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $eventName;
@@ -153,8 +148,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $eventTimingTiming;
@@ -164,8 +157,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $eventTimingReference;
@@ -176,8 +167,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $eventTimingDate;
@@ -190,8 +179,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $eventTimingDateTime;
@@ -202,8 +189,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The triggering data of the event (if this is a data trigger).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $eventData;
@@ -212,14 +197,6 @@ class FHIRTriggerDefinition extends FHIRElement
     /**
      * FHIRTriggerDefinition Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRTriggerTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTriggerType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $eventName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $eventTimingTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $eventTimingReference
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $eventTimingDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $eventTimingDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement $eventData
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -271,8 +248,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of triggering event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTriggerType
      */
     public function getType(): null|FHIRTriggerType
     {
@@ -284,9 +259,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of triggering event.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRTriggerTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTriggerType $type
-     * @return static
      */
     public function setType(null|string|FHIRTriggerTypeList|FHIRTriggerType $type): self
     {
@@ -307,8 +279,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the event (if this is a named-event trigger).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getEventName(): null|FHIRString
     {
@@ -321,9 +291,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the event (if this is a named-event trigger).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $eventName
-     * @return static
      */
     public function setEventName(null|string|FHIRStringPrimitive|FHIRString $eventName): self
     {
@@ -348,8 +315,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming
      */
     public function getEventTimingTiming(): null|FHIRTiming
     {
@@ -366,9 +331,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $eventTimingTiming
-     * @return static
      */
     public function setEventTimingTiming(null|FHIRTiming $eventTimingTiming): self
     {
@@ -386,8 +348,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getEventTimingReference(): null|FHIRReference
     {
@@ -400,9 +360,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $eventTimingReference
-     * @return static
      */
     public function setEventTimingReference(null|FHIRReference $eventTimingReference): self
     {
@@ -421,8 +378,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     public function getEventTimingDate(): null|FHIRDate
     {
@@ -436,9 +391,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $eventTimingDate
-     * @return static
      */
     public function setEventTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $eventTimingDate): self
     {
@@ -462,8 +414,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getEventTimingDateTime(): null|FHIRDateTime
     {
@@ -479,9 +429,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing of the event (if this is a period trigger).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $eventTimingDateTime
-     * @return static
      */
     public function setEventTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $eventTimingDateTime): self
     {
@@ -503,8 +450,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The triggering data of the event (if this is a data trigger).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement
      */
     public function getEventData(): null|FHIRDataRequirement
     {
@@ -518,9 +463,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The triggering data of the event (if this is a data trigger).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDataRequirement $eventData
-     * @return static
      */
     public function setEventData(null|FHIRDataRequirement $eventData): self
     {
@@ -534,10 +476,7 @@ class FHIRTriggerDefinition extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTriggerDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTriggerDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -623,10 +562,6 @@ class FHIRTriggerDefinition extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -689,10 +624,7 @@ class FHIRTriggerDefinition extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTriggerDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTriggerDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

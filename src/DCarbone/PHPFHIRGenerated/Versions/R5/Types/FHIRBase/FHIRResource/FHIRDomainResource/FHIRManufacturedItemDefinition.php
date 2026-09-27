@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -110,7 +108,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomain
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -180,8 +177,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this item. Enables tracking the life-cycle of the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -191,8 +186,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A descriptive name applied to this item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -204,8 +197,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $manufacturedDoseForm;
@@ -217,8 +208,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * The “real-world” units in which the quantity of the manufactured item is
      * described.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unitOfPresentation;
@@ -285,19 +274,10 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
     /* constructor.php:61 */
     /**
      * FHIRManufacturedItemDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $manufacturedDoseForm
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $unitOfPresentation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $manufacturer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus> $marketingStatus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $ingredient
@@ -412,9 +392,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -432,9 +409,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -450,8 +424,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this item. Enables tracking the life-cycle of the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -462,9 +434,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this item. Enables tracking the life-cycle of the content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -485,8 +454,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A descriptive name applied to this item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -499,9 +466,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A descriptive name applied to this item.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -524,8 +488,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getManufacturedDoseForm(): null|FHIRCodeableConcept
     {
@@ -540,9 +502,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $manufacturedDoseForm
-     * @return static
      */
     public function setManufacturedDoseForm(null|FHIRCodeableConcept $manufacturedDoseForm): self
     {
@@ -562,8 +521,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * The “real-world” units in which the quantity of the manufactured item is
      * described.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getUnitOfPresentation(): null|FHIRCodeableConcept
     {
@@ -578,9 +535,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * The “real-world” units in which the quantity of the manufactured item is
      * described.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $unitOfPresentation
-     * @return static
      */
     public function setUnitOfPresentation(null|FHIRCodeableConcept $unitOfPresentation): self
     {
@@ -623,9 +577,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of the item, one of several possible.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $manufacturer
-     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -642,9 +593,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of the item, one of several possible.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$manufacturer
-     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -691,9 +639,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Allows specifying that an item is on the market for sale, or that it is not
      * available, and the dates and locations associated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus $marketingStatus
-     * @return static
      */
     public function addMarketingStatus(FHIRMarketingStatus $marketingStatus): self
     {
@@ -712,9 +657,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Allows specifying that an item is on the market for sale, or that it is not
      * available, and the dates and locations associated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus ...$marketingStatus
-     * @return static
      */
     public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
     {
@@ -763,9 +705,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * The ingredients of this manufactured item. This is only needed if the
      * ingredients are not specified by incoming references from the Ingredient
      * resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $ingredient
-     * @return static
      */
     public function addIngredient(FHIRCodeableConcept $ingredient): self
     {
@@ -785,9 +724,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * The ingredients of this manufactured item. This is only needed if the
      * ingredients are not specified by incoming references from the Ingredient
      * resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$ingredient
-     * @return static
      */
     public function setIngredient(FHIRCodeableConcept ...$ingredient): self
     {
@@ -828,9 +764,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionProperty $property
-     * @return static
      */
     public function addProperty(FHIRManufacturedItemDefinitionProperty $property): self
     {
@@ -846,9 +779,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionProperty ...$property
-     * @return static
      */
     public function setProperty(FHIRManufacturedItemDefinitionProperty ...$property): self
     {
@@ -891,9 +821,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Physical parts of the manufactured item, that it is intrisically made from. This
      * is distinct from the ingredients that are part of its chemical makeup.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent $component
-     * @return static
      */
     public function addComponent(FHIRManufacturedItemDefinitionComponent $component): self
     {
@@ -910,9 +837,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
      *
      * Physical parts of the manufactured item, that it is intrisically made from. This
      * is distinct from the ingredients that are part of its chemical makeup.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent ...$component
-     * @return static
      */
     public function setComponent(FHIRManufacturedItemDefinitionComponent ...$component): self
     {
@@ -926,10 +850,7 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRManufacturedItemDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRManufacturedItemDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1043,11 +964,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1151,10 +1067,7 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements Versi
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRManufacturedItemDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRManufacturedItemDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

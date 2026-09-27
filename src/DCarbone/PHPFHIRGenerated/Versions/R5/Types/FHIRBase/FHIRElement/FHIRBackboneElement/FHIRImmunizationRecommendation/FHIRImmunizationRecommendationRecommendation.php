@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -193,8 +192,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Indicates the patient status with respect to the path to immunity for the target
      * disease.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $forecastStatus;
@@ -232,8 +229,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -244,8 +239,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $series;
@@ -256,8 +249,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Nominal position of the recommended dose in a series as determined by the
      * evaluation and forecasting process (e.g. dose 2 is the next recommended dose).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $doseNumber;
@@ -268,8 +259,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * The recommended number of doses to achieve immunity as determined by the
      * evaluation and forecasting process.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $seriesDoses;
@@ -302,18 +291,12 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     /**
      * FHIRImmunizationRecommendationRecommendation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $vaccineCode
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $targetDisease
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $contraindicatedVaccineCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $forecastStatus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $forecastReason
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion> $dateCriterion
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $series
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $doseNumber
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $seriesDoses
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $supportingImmunization
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $supportingPatientInformation
      * @param null|string[] $fhirComments
@@ -417,9 +400,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Vaccine(s) or vaccine group that pertain to the recommendation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $vaccineCode
-     * @return static
      */
     public function addVaccineCode(FHIRCodeableConcept $vaccineCode): self
     {
@@ -437,9 +417,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Vaccine(s) or vaccine group that pertain to the recommendation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$vaccineCode
-     * @return static
      */
     public function setVaccineCode(FHIRCodeableConcept ...$vaccineCode): self
     {
@@ -484,9 +461,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The targeted disease for the recommendation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $targetDisease
-     * @return static
      */
     public function addTargetDisease(FHIRCodeableConcept $targetDisease): self
     {
@@ -504,9 +478,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The targeted disease for the recommendation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$targetDisease
-     * @return static
      */
     public function setTargetDisease(FHIRCodeableConcept ...$targetDisease): self
     {
@@ -551,9 +522,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Vaccine(s) which should not be used to fulfill the recommendation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $contraindicatedVaccineCode
-     * @return static
      */
     public function addContraindicatedVaccineCode(FHIRCodeableConcept $contraindicatedVaccineCode): self
     {
@@ -571,9 +539,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Vaccine(s) which should not be used to fulfill the recommendation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$contraindicatedVaccineCode
-     * @return static
      */
     public function setContraindicatedVaccineCode(FHIRCodeableConcept ...$contraindicatedVaccineCode): self
     {
@@ -593,8 +558,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Indicates the patient status with respect to the path to immunity for the target
      * disease.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getForecastStatus(): null|FHIRCodeableConcept
     {
@@ -609,9 +572,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Indicates the patient status with respect to the path to immunity for the target
      * disease.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $forecastStatus
-     * @return static
      */
     public function setForecastStatus(null|FHIRCodeableConcept $forecastStatus): self
     {
@@ -656,9 +616,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason for the assigned forecast status.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $forecastReason
-     * @return static
      */
     public function addForecastReason(FHIRCodeableConcept $forecastReason): self
     {
@@ -676,9 +633,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason for the assigned forecast status.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$forecastReason
-     * @return static
      */
     public function setForecastReason(FHIRCodeableConcept ...$forecastReason): self
     {
@@ -721,9 +675,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Vaccine date recommendations. For example, earliest date to administer, latest
      * date to administer, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion $dateCriterion
-     * @return static
      */
     public function addDateCriterion(FHIRImmunizationRecommendationDateCriterion $dateCriterion): self
     {
@@ -740,9 +691,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Vaccine date recommendations. For example, earliest date to administer, latest
      * date to administer, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion ...$dateCriterion
-     * @return static
      */
     public function setDateCriterion(FHIRImmunizationRecommendationDateCriterion ...$dateCriterion): self
     {
@@ -765,8 +713,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -784,9 +730,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -808,8 +751,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSeries(): null|FHIRString
     {
@@ -823,9 +764,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $series
-     * @return static
      */
     public function setSeries(null|string|FHIRStringPrimitive|FHIRString $series): self
     {
@@ -847,8 +785,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Nominal position of the recommended dose in a series as determined by the
      * evaluation and forecasting process (e.g. dose 2 is the next recommended dose).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDoseNumber(): null|FHIRString
     {
@@ -862,9 +798,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Nominal position of the recommended dose in a series as determined by the
      * evaluation and forecasting process (e.g. dose 2 is the next recommended dose).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $doseNumber
-     * @return static
      */
     public function setDoseNumber(null|string|FHIRStringPrimitive|FHIRString $doseNumber): self
     {
@@ -886,8 +819,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * The recommended number of doses to achieve immunity as determined by the
      * evaluation and forecasting process.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSeriesDoses(): null|FHIRString
     {
@@ -901,9 +832,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * The recommended number of doses to achieve immunity as determined by the
      * evaluation and forecasting process.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $seriesDoses
-     * @return static
      */
     public function setSeriesDoses(null|string|FHIRStringPrimitive|FHIRString $seriesDoses): self
     {
@@ -951,9 +879,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Immunization event history and/or evaluation that supports the status and
      * recommendation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $supportingImmunization
-     * @return static
      */
     public function addSupportingImmunization(FHIRReference $supportingImmunization): self
     {
@@ -971,9 +896,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Immunization event history and/or evaluation that supports the status and
      * recommendation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$supportingImmunization
-     * @return static
      */
     public function setSupportingImmunization(FHIRReference ...$supportingImmunization): self
     {
@@ -1018,9 +940,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Patient Information that supports the status and recommendation. This includes
      * patient observations, adverse reactions and allergy/intolerance information.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $supportingPatientInformation
-     * @return static
      */
     public function addSupportingPatientInformation(FHIRReference $supportingPatientInformation): self
     {
@@ -1038,9 +957,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Patient Information that supports the status and recommendation. This includes
      * patient observations, adverse reactions and allergy/intolerance information.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$supportingPatientInformation
-     * @return static
      */
     public function setSupportingPatientInformation(FHIRReference ...$supportingPatientInformation): self
     {
@@ -1054,10 +970,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1155,10 +1068,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1260,10 +1169,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

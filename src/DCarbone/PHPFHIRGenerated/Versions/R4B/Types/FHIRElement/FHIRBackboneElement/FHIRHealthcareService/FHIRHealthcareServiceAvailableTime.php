@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -149,8 +149,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $allDay;
@@ -160,8 +158,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      *
      * The opening time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $availableStartTime;
@@ -171,8 +167,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      *
      * The closing time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $availableEndTime;
@@ -181,12 +175,8 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
     /**
      * FHIRHealthcareServiceAvailableTime Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDaysOfWeekEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDaysOfWeek> $daysOfWeek
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $allDay
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $availableStartTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $availableEndTime
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -250,9 +240,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDaysOfWeekEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDaysOfWeek $daysOfWeek
-     * @return static
      */
     public function addDaysOfWeek(string|FHIRDaysOfWeekEnum|FHIRDaysOfWeek $daysOfWeek): self
     {
@@ -270,9 +257,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDaysOfWeekEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDaysOfWeek ...$daysOfWeek
-     * @return static
      */
     public function setDaysOfWeek(string|FHIRDaysOfWeekEnum|FHIRDaysOfWeek ...$daysOfWeek): self
     {
@@ -296,8 +280,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getAllDay(): null|FHIRBoolean
     {
@@ -309,9 +291,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $allDay
-     * @return static
      */
     public function setAllDay(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allDay): self
     {
@@ -332,8 +311,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      *
      * The opening time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime
      */
     public function getAvailableStartTime(): null|FHIRTime
     {
@@ -346,9 +323,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      *
      * The opening time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $availableStartTime
-     * @return static
      */
     public function setAvailableStartTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableStartTime): self
     {
@@ -369,8 +343,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      *
      * The closing time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime
      */
     public function getAvailableEndTime(): null|FHIRTime
     {
@@ -383,9 +355,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
      *
      * The closing time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $availableEndTime
-     * @return static
      */
     public function setAvailableEndTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableEndTime): self
     {
@@ -402,10 +371,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -479,10 +445,6 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -527,10 +489,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

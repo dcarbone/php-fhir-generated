@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -149,8 +148,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A text description or summary of the variable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -174,8 +171,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      *
      * population | subpopulation | exposure | referenceExposure | measuredVariable |
      * confounder.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $variableRole;
@@ -185,8 +180,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the actual variable related to the statistic(s).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $observed;
@@ -196,8 +189,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the intended variable related to the Evidence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $intended;
@@ -208,8 +199,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of quality of match between intended variable to actual variable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $directnessMatch;
@@ -218,14 +207,8 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
     /**
      * FHIREvidenceVariableDefinition Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $variableRole
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $observed
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $intended
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $directnessMatch
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -280,8 +263,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A text description or summary of the variable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -298,9 +279,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A text description or summary of the variable.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -348,9 +326,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -368,9 +343,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -390,8 +362,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      *
      * population | subpopulation | exposure | referenceExposure | measuredVariable |
      * confounder.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getVariableRole(): null|FHIRCodeableConcept
     {
@@ -406,9 +376,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      *
      * population | subpopulation | exposure | referenceExposure | measuredVariable |
      * confounder.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $variableRole
-     * @return static
      */
     public function setVariableRole(null|FHIRCodeableConcept $variableRole): self
     {
@@ -426,8 +393,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the actual variable related to the statistic(s).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getObserved(): null|FHIRReference
     {
@@ -440,9 +405,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the actual variable related to the statistic(s).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $observed
-     * @return static
      */
     public function setObserved(null|FHIRReference $observed): self
     {
@@ -460,8 +422,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the intended variable related to the Evidence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getIntended(): null|FHIRReference
     {
@@ -474,9 +434,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the intended variable related to the Evidence.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $intended
-     * @return static
      */
     public function setIntended(null|FHIRReference $intended): self
     {
@@ -495,8 +452,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of quality of match between intended variable to actual variable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getDirectnessMatch(): null|FHIRCodeableConcept
     {
@@ -510,9 +465,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of quality of match between intended variable to actual variable.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $directnessMatch
-     * @return static
      */
     public function setDirectnessMatch(null|FHIRCodeableConcept $directnessMatch): self
     {
@@ -526,10 +478,7 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariableDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariableDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -591,10 +540,6 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -639,10 +584,7 @@ class FHIREvidenceVariableDefinition extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariableDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariableDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

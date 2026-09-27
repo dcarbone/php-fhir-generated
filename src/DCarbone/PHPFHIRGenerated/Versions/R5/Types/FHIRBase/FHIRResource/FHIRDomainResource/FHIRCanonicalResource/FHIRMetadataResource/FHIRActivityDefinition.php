@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
@@ -138,7 +136,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -299,8 +296,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the activity definition is stored on different
      * servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -333,8 +328,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active assets.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -344,9 +337,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -356,9 +347,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -370,8 +359,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A natural language name identifying the activity definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -381,8 +368,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the activity definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -393,8 +378,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An explanatory or alternate title for the activity definition giving additional
      * information about its content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subtitle;
@@ -403,8 +386,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The status of this activity definition. Enables tracking the life-cycle of the
      * content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -415,8 +396,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A Boolean value to indicate that this activity definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -431,10 +410,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * allowed to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * or PackagedProductDefinition resource.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectCodeableConcept;
@@ -448,10 +424,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * allowed to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * or PackagedProductDefinition resource.
      */
     #[FHIRReference]
     protected FHIRReference $subjectReference;
@@ -466,10 +439,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * allowed to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * or PackagedProductDefinition resource.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $subjectCanonical;
@@ -486,8 +456,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the activity definition changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -498,8 +466,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the activity definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -526,8 +492,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A free text natural language description of the activity definition from a
      * consumer's perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -573,8 +537,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Explanation of why this activity definition is needed and why it has been
      * designed as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -589,8 +551,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A detailed description of how the activity definition is used from a clinical
      * perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $usage;
@@ -606,8 +566,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A copyright statement relating to the activity definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the activity definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -619,8 +577,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $copyrightLabel;
@@ -632,8 +588,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $approvalDate;
@@ -645,8 +599,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastReviewDate;
@@ -657,8 +609,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The period during which the activity definition content was or is planned to be
      * in active use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -755,8 +705,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A description of the kind of resource the activity definition is representing.
      * For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestResourceTypes
      */
     #[FHIRRequestResourceTypes]
     protected FHIRRequestResourceTypes $kind;
@@ -767,8 +715,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * the Narrative, or extensions
      *
      * A profile to which the target of the activity definition is expected to conform.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $profile;
@@ -780,8 +726,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Detailed description of the type of activity; e.g. What lab test, what
      * procedure, what kind of encounter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -790,8 +734,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Indicates the level of authority/intentionality associated with the activity and
      * where the request should fit into the workflow chain.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestIntent
      */
     #[FHIRRequestIntent]
     protected FHIRRequestIntent $intent;
@@ -800,8 +742,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Indicates how quickly the activity should be addressed with respect to other
      * requests.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     #[FHIRRequestPriority]
     protected FHIRRequestPriority $priority;
@@ -813,8 +753,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * should NOT be performed. If true, this element should be interpreted to
      * reinforce a negative coding. For example NPO as a code with a doNotPerform of
      * true would still indicate to NOT perform the action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $doNotPerform;
@@ -827,10 +765,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * The timing or frequency upon which the described activity is to occur.
      */
     #[FHIRTiming]
     protected FHIRTiming $timingTiming;
@@ -839,10 +774,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * The timing or frequency upon which the described activity is to occur.
      */
     #[FHIRAge]
     protected FHIRAge $timingAge;
@@ -851,10 +783,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * The timing or frequency upon which the described activity is to occur.
      */
     #[FHIRRange]
     protected FHIRRange $timingRange;
@@ -863,10 +792,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * The timing or frequency upon which the described activity is to occur.
      */
     #[FHIRDuration]
     protected FHIRDuration $timingDuration;
@@ -875,10 +801,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc. (choose any one of
-     * asNeeded*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * the service. For example "pain", "on flare-up", etc.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $asNeededBoolean;
@@ -889,10 +812,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc. (choose any one of
-     * asNeeded*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * the service. For example "pain", "on flare-up", etc.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $asNeededCodeableConcept;
@@ -904,8 +824,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Identifies the facility where the activity will occur; e.g. home, hospital,
      * specific clinic, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $location;
@@ -925,9 +843,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity. (choose any one of product*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * activity.
      */
     #[FHIRReference]
     protected FHIRReference $productReference;
@@ -938,9 +854,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity. (choose any one of product*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * activity.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $productCodeableConcept;
@@ -953,8 +867,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Identifies the quantity expected to be consumed at once (per dose, per meal,
      * etc.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -1030,8 +942,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $transform;
@@ -1053,40 +963,13 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
     /* constructor.php:61 */
     /**
      * FHIRActivityDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $versionAlgorithmString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $versionAlgorithmCoding
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $subtitle
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $experimental
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subjectCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subjectReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $subjectCanonical
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $usage
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $copyrightLabel
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $approvalDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $lastReviewDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectivePeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $topic
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $author
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $editor
@@ -1094,29 +977,12 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $endorser
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact> $relatedArtifact
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical> $library
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestResourceTypesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestResourceTypes $kind
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $profile
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestIntentEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestIntent $intent
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestPriorityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority $priority
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $doNotPerform
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $timingTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $timingAge
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $timingRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $timingDuration
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $asNeededBoolean
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $asNeededCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $location
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionParticipant> $participant
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $productReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $productCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage> $dosage
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $bodySite
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical> $specimenRequirement
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical> $observationRequirement
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical> $observationResultRequirement
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $transform
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue> $dynamicValue
      * @param null|string[] $fhirComments
      */
@@ -1394,8 +1260,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the activity definition is stored on different
      * servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -1414,9 +1278,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the activity definition is stored on different
      * servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -1468,9 +1329,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A formal identifier that is used to identify this activity definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -1490,9 +1348,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A formal identifier that is used to identify this activity definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -1519,8 +1374,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active assets.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -1542,9 +1395,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active assets.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -1565,9 +1415,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -1580,10 +1428,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $versionAlgorithmString
-     * @return static
+     * current.
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -1604,9 +1449,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -1619,10 +1462,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $versionAlgorithmCoding
-     * @return static
+     * current.
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -1642,8 +1482,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A natural language name identifying the activity definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -1658,9 +1496,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A natural language name identifying the activity definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1681,8 +1516,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the activity definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -1695,9 +1528,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the activity definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1719,8 +1549,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An explanatory or alternate title for the activity definition giving additional
      * information about its content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSubtitle(): null|FHIRString
     {
@@ -1734,9 +1562,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An explanatory or alternate title for the activity definition giving additional
      * information about its content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $subtitle
-     * @return static
      */
     public function setSubtitle(null|string|FHIRStringPrimitive|FHIRString $subtitle): self
     {
@@ -1756,8 +1581,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The status of this activity definition. Enables tracking the life-cycle of the
      * content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -1769,9 +1592,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The status of this activity definition. Enables tracking the life-cycle of the
      * content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1793,8 +1613,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A Boolean value to indicate that this activity definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -1808,9 +1626,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A Boolean value to indicate that this activity definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1836,10 +1651,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * allowed to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * or PackagedProductDefinition resource.
      */
     public function getSubjectCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1857,11 +1669,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * allowed to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subjectCodeableConcept
-     * @return static
+     * or PackagedProductDefinition resource.
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -1883,10 +1691,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * allowed to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * or PackagedProductDefinition resource.
      */
     public function getSubjectReference(): null|FHIRReference
     {
@@ -1903,11 +1708,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * allowed to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subjectReference
-     * @return static
+     * or PackagedProductDefinition resource.
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -1930,10 +1731,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * allowed to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * or PackagedProductDefinition resource.
      */
     public function getSubjectCanonical(): null|FHIRCanonical
     {
@@ -1951,11 +1749,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * allowed to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $subjectCanonical
-     * @return static
+     * or PackagedProductDefinition resource.
      */
     public function setSubjectCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $subjectCanonical): self
     {
@@ -1983,8 +1777,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the activity definition changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -2004,9 +1796,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the activity definition changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -2028,8 +1817,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the activity definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -2043,9 +1830,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the activity definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -2093,9 +1877,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -2113,9 +1894,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -2138,8 +1916,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A free text natural language description of the activity definition from a
      * consumer's perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -2157,9 +1933,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A free text natural language description of the activity definition from a
      * consumer's perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -2219,9 +1992,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate activity
      * definition instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -2245,9 +2015,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate activity
      * definition instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -2294,9 +2061,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A legal or geographic region in which the activity definition is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -2315,9 +2079,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A legal or geographic region in which the activity definition is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -2340,8 +2101,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Explanation of why this activity definition is needed and why it has been
      * designed as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -2359,9 +2118,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Explanation of why this activity definition is needed and why it has been
      * designed as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -2387,8 +2143,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A detailed description of how the activity definition is used from a clinical
      * perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getUsage(): null|FHIRMarkdown
     {
@@ -2406,9 +2160,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A detailed description of how the activity definition is used from a clinical
      * perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $usage
-     * @return static
      */
     public function setUsage(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $usage): self
     {
@@ -2435,8 +2186,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A copyright statement relating to the activity definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the activity definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -2455,9 +2204,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A copyright statement relating to the activity definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the activity definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -2480,8 +2226,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getCopyrightLabel(): null|FHIRString
     {
@@ -2496,9 +2240,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $copyrightLabel
-     * @return static
      */
     public function setCopyrightLabel(null|string|FHIRStringPrimitive|FHIRString $copyrightLabel): self
     {
@@ -2521,8 +2262,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     public function getApprovalDate(): null|FHIRDate
     {
@@ -2537,9 +2276,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $approvalDate
-     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -2562,8 +2298,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     public function getLastReviewDate(): null|FHIRDate
     {
@@ -2578,9 +2312,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $lastReviewDate
-     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -2602,8 +2333,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The period during which the activity definition content was or is planned to be
      * in active use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -2617,9 +2346,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * The period during which the activity definition content was or is planned to be
      * in active use.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectivePeriod
-     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -2668,9 +2394,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * Descriptive topics related to the content of the activity. Topics provide a
      * high-level categorization of the activity that can be useful for filtering and
      * searching.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $topic
-     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -2690,9 +2413,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * Descriptive topics related to the content of the activity. Topics provide a
      * high-level categorization of the activity that can be useful for filtering and
      * searching.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$topic
-     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -2737,9 +2457,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $author
-     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -2757,9 +2474,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$author
-     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -2804,9 +2518,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $editor
-     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -2824,9 +2535,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$editor
-     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -2871,9 +2579,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $reviewer
-     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -2891,9 +2596,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$reviewer
-     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -2938,9 +2640,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the content for use in some setting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $endorser
-     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -2958,9 +2657,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the content for use in some setting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$endorser
-     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -3007,9 +2703,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $relatedArtifact
-     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -3028,9 +2721,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$relatedArtifact
-     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -3077,9 +2767,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A reference to a Library resource containing any formal logic used by the
      * activity definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $library
-     * @return static
      */
     public function addLibrary(string|FHIRCanonicalPrimitive|FHIRCanonical $library): self
     {
@@ -3101,9 +2788,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A reference to a Library resource containing any formal logic used by the
      * activity definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$library
-     * @return static
      */
     public function setLibrary(string|FHIRCanonicalPrimitive|FHIRCanonical ...$library): self
     {
@@ -3127,8 +2811,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A description of the kind of resource the activity definition is representing.
      * For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestResourceTypes
      */
     public function getKind(): null|FHIRRequestResourceTypes
     {
@@ -3140,9 +2822,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * A description of the kind of resource the activity definition is representing.
      * For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestResourceTypesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestResourceTypes $kind
-     * @return static
      */
     public function setKind(null|string|FHIRRequestResourceTypesEnum|FHIRRequestResourceTypes $kind): self
     {
@@ -3164,8 +2843,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * the Narrative, or extensions
      *
      * A profile to which the target of the activity definition is expected to conform.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getProfile(): null|FHIRCanonical
     {
@@ -3179,9 +2856,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * the Narrative, or extensions
      *
      * A profile to which the target of the activity definition is expected to conform.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $profile
-     * @return static
      */
     public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -3204,8 +2878,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Detailed description of the type of activity; e.g. What lab test, what
      * procedure, what kind of encounter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -3220,9 +2892,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Detailed description of the type of activity; e.g. What lab test, what
      * procedure, what kind of encounter.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -3239,8 +2908,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Indicates the level of authority/intentionality associated with the activity and
      * where the request should fit into the workflow chain.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestIntent
      */
     public function getIntent(): null|FHIRRequestIntent
     {
@@ -3252,9 +2919,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Indicates the level of authority/intentionality associated with the activity and
      * where the request should fit into the workflow chain.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestIntentEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestIntent $intent
-     * @return static
      */
     public function setIntent(null|string|FHIRRequestIntentEnum|FHIRRequestIntent $intent): self
     {
@@ -3274,8 +2938,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Indicates how quickly the activity should be addressed with respect to other
      * requests.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     public function getPriority(): null|FHIRRequestPriority
     {
@@ -3287,9 +2949,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Indicates how quickly the activity should be addressed with respect to other
      * requests.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestPriorityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority $priority
-     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityEnum|FHIRRequestPriority $priority): self
     {
@@ -3312,8 +2971,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * should NOT be performed. If true, this element should be interpreted to
      * reinforce a negative coding. For example NPO as a code with a doNotPerform of
      * true would still indicate to NOT perform the action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getDoNotPerform(): null|FHIRBoolean
     {
@@ -3328,9 +2985,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * should NOT be performed. If true, this element should be interpreted to
      * reinforce a negative coding. For example NPO as a code with a doNotPerform of
      * true would still indicate to NOT perform the action.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $doNotPerform
-     * @return static
      */
     public function setDoNotPerform(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform): self
     {
@@ -3354,10 +3008,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * The timing or frequency upon which the described activity is to occur.
      */
     public function getTimingTiming(): null|FHIRTiming
     {
@@ -3373,11 +3024,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $timingTiming
-     * @return static
+     * The timing or frequency upon which the described activity is to occur.
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -3394,10 +3041,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * The timing or frequency upon which the described activity is to occur.
      */
     public function getTimingAge(): null|FHIRAge
     {
@@ -3409,11 +3053,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $timingAge
-     * @return static
+     * The timing or frequency upon which the described activity is to occur.
      */
     public function setTimingAge(null|FHIRAge $timingAge): self
     {
@@ -3430,10 +3070,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * The timing or frequency upon which the described activity is to occur.
      */
     public function getTimingRange(): null|FHIRRange
     {
@@ -3445,11 +3082,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $timingRange
-     * @return static
+     * The timing or frequency upon which the described activity is to occur.
      */
     public function setTimingRange(null|FHIRRange $timingRange): self
     {
@@ -3466,10 +3099,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * The timing or frequency upon which the described activity is to occur.
      */
     public function getTimingDuration(): null|FHIRDuration
     {
@@ -3481,11 +3111,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The timing or frequency upon which the described activity is to occur. (choose
-     * any one of timing*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $timingDuration
-     * @return static
+     * The timing or frequency upon which the described activity is to occur.
      */
     public function setTimingDuration(null|FHIRDuration $timingDuration): self
     {
@@ -3502,10 +3128,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc. (choose any one of
-     * asNeeded*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * the service. For example "pain", "on flare-up", etc.
      */
     public function getAsNeededBoolean(): null|FHIRBoolean
     {
@@ -3517,11 +3140,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc. (choose any one of
-     * asNeeded*, but only one)
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $asNeededBoolean
-     * @return static
+     * the service. For example "pain", "on flare-up", etc.
      */
     public function setAsNeededBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeededBoolean): self
     {
@@ -3543,10 +3162,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc. (choose any one of
-     * asNeeded*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * the service. For example "pain", "on flare-up", etc.
      */
     public function getAsNeededCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -3560,11 +3176,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
-     * the service. For example "pain", "on flare-up", etc. (choose any one of
-     * asNeeded*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $asNeededCodeableConcept
-     * @return static
+     * the service. For example "pain", "on flare-up", etc.
      */
     public function setAsNeededCodeableConcept(null|FHIRCodeableConcept $asNeededCodeableConcept): self
     {
@@ -3584,8 +3196,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Identifies the facility where the activity will occur; e.g. home, hospital,
      * specific clinic, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getLocation(): null|FHIRCodeableReference
     {
@@ -3600,9 +3210,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Identifies the facility where the activity will occur; e.g. home, hospital,
      * specific clinic, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $location
-     * @return static
      */
     public function setLocation(null|FHIRCodeableReference $location): self
     {
@@ -3643,9 +3250,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * independent of a particular patient, practitioner, or other performance context.
      *
      * Indicates who should participate in performing the action described.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionParticipant $participant
-     * @return static
      */
     public function addParticipant(FHIRActivityDefinitionParticipant $participant): self
     {
@@ -3661,9 +3265,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * independent of a particular patient, practitioner, or other performance context.
      *
      * Indicates who should participate in performing the action described.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionParticipant ...$participant
-     * @return static
      */
     public function setParticipant(FHIRActivityDefinitionParticipant ...$participant): self
     {
@@ -3681,9 +3282,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity. (choose any one of product*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * activity.
      */
     public function getProductReference(): null|FHIRReference
     {
@@ -3696,10 +3295,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity. (choose any one of product*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $productReference
-     * @return static
+     * activity.
      */
     public function setProductReference(null|FHIRReference $productReference): self
     {
@@ -3718,9 +3314,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity. (choose any one of product*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * activity.
      */
     public function getProductCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -3734,10 +3328,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the food, drug or other product being consumed or supplied in the
-     * activity. (choose any one of product*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $productCodeableConcept
-     * @return static
+     * activity.
      */
     public function setProductCodeableConcept(null|FHIRCodeableConcept $productCodeableConcept): self
     {
@@ -3758,8 +3349,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Identifies the quantity expected to be consumed at once (per dose, per meal,
      * etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -3775,9 +3364,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Identifies the quantity expected to be consumed at once (per dose, per meal,
      * etc.).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -3822,9 +3408,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Provides detailed dosage instructions in the same way that they are described
      * for MedicationRequest resources.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage $dosage
-     * @return static
      */
     public function addDosage(FHIRDosage $dosage): self
     {
@@ -3842,9 +3425,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Provides detailed dosage instructions in the same way that they are described
      * for MedicationRequest resources.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage ...$dosage
-     * @return static
      */
     public function setDosage(FHIRDosage ...$dosage): self
     {
@@ -3891,9 +3471,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $bodySite
-     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite): self
     {
@@ -3912,9 +3489,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$bodySite
-     * @return static
      */
     public function setBodySite(FHIRCodeableConcept ...$bodySite): self
     {
@@ -3961,9 +3535,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Defines specimen requirements for the action to be performed, such as required
      * specimens for a lab test.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $specimenRequirement
-     * @return static
      */
     public function addSpecimenRequirement(string|FHIRCanonicalPrimitive|FHIRCanonical $specimenRequirement): self
     {
@@ -3985,9 +3556,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Defines specimen requirements for the action to be performed, such as required
      * specimens for a lab test.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$specimenRequirement
-     * @return static
      */
     public function setSpecimenRequirement(string|FHIRCanonicalPrimitive|FHIRCanonical ...$specimenRequirement): self
     {
@@ -4041,9 +3609,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Defines observation requirements for the action to be performed, such as body
      * weight or surface area.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $observationRequirement
-     * @return static
      */
     public function addObservationRequirement(string|FHIRCanonicalPrimitive|FHIRCanonical $observationRequirement): self
     {
@@ -4065,9 +3630,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      *
      * Defines observation requirements for the action to be performed, such as body
      * weight or surface area.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$observationRequirement
-     * @return static
      */
     public function setObservationRequirement(string|FHIRCanonicalPrimitive|FHIRCanonical ...$observationRequirement): self
     {
@@ -4119,9 +3681,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * the Narrative, or extensions
      *
      * Defines the observations that are expected to be produced by the action.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $observationResultRequirement
-     * @return static
      */
     public function addObservationResultRequirement(string|FHIRCanonicalPrimitive|FHIRCanonical $observationResultRequirement): self
     {
@@ -4142,9 +3701,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * the Narrative, or extensions
      *
      * Defines the observations that are expected to be produced by the action.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$observationResultRequirement
-     * @return static
      */
     public function setObservationResultRequirement(string|FHIRCanonicalPrimitive|FHIRCanonical ...$observationResultRequirement): self
     {
@@ -4172,8 +3728,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getTransform(): null|FHIRCanonical
     {
@@ -4189,9 +3743,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $transform
-     * @return static
      */
     public function setTransform(null|string|FHIRCanonicalPrimitive|FHIRCanonical $transform): self
     {
@@ -4243,9 +3794,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * based on the patient's weight, a dynamic value would be used to specify an
      * expression that calculated the weight, and the path on the request resource that
      * would contain the result.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue $dynamicValue
-     * @return static
      */
     public function addDynamicValue(FHIRActivityDefinitionDynamicValue $dynamicValue): self
     {
@@ -4265,9 +3813,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
      * based on the patient's weight, a dynamic value would be used to specify an
      * expression that calculated the weight, and the path on the request resource that
      * would contain the result.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue ...$dynamicValue
-     * @return static
      */
     public function setDynamicValue(FHIRActivityDefinitionDynamicValue ...$dynamicValue): self
     {
@@ -4281,10 +3826,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRActivityDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRActivityDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -4676,11 +4218,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -5158,10 +4695,7 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements VersionCont
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRActivityDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRActivityDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

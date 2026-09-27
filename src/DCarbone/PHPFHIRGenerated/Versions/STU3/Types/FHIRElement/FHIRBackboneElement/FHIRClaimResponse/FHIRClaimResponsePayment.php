@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -119,8 +119,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this represents partial or complete payment of the claim.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -131,8 +129,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      *
      * Adjustment to the payment of this transaction which is not related to
      * adjudication of this transaction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $adjustment;
@@ -143,8 +139,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the payment adjustment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $adjustmentReason;
@@ -155,8 +149,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated payment data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $date;
@@ -166,8 +158,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payable less any payment adjustment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $amount;
@@ -177,8 +167,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payment identifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -187,14 +175,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
     /**
      * FHIRClaimResponsePayment Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $adjustment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $adjustmentReason
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $amount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -246,8 +227,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this represents partial or complete payment of the claim.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -261,9 +240,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this represents partial or complete payment of the claim.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -282,8 +258,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      *
      * Adjustment to the payment of this transaction which is not related to
      * adjudication of this transaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAdjustment(): null|FHIRMoney
     {
@@ -297,9 +271,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      *
      * Adjustment to the payment of this transaction which is not related to
      * adjudication of this transaction.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $adjustment
-     * @return static
      */
     public function setAdjustment(null|FHIRMoney $adjustment): self
     {
@@ -318,8 +289,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the payment adjustment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAdjustmentReason(): null|FHIRCodeableConcept
     {
@@ -333,9 +302,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the payment adjustment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $adjustmentReason
-     * @return static
      */
     public function setAdjustmentReason(null|FHIRCodeableConcept $adjustmentReason): self
     {
@@ -354,8 +320,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated payment data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     public function getDate(): null|FHIRDate
     {
@@ -369,9 +333,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated payment data.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
@@ -392,8 +353,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payable less any payment adjustment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAmount(): null|FHIRMoney
     {
@@ -406,9 +365,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payable less any payment adjustment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $amount
-     * @return static
      */
     public function setAmount(null|FHIRMoney $amount): self
     {
@@ -426,8 +382,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payment identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -440,9 +394,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payment identifier.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -456,10 +407,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -521,10 +469,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -567,10 +511,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -161,8 +160,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The use of this additional binding.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $purpose;
@@ -173,8 +170,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The valueSet that is being bound for the purpose.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $valueSet;
@@ -189,8 +184,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      *
      * Documentation of the purpose of use of the bindingproviding additional
      * information about how it is intended to be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $documentation;
@@ -200,8 +193,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Concise documentation - for summary tables.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $shortDoco;
@@ -229,8 +220,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      *
      * Whether the binding applies to all repeats, or just to any one of them. This is
      * only relevant for elements that can repeat.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $any;
@@ -239,14 +228,8 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
     /**
      * FHIRElementDefinitionAdditional Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueSet
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $documentation
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $shortDoco
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext> $usage
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $any
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -298,8 +281,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The use of this additional binding.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getPurpose(): null|FHIRCode
     {
@@ -313,9 +294,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The use of this additional binding.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRCodePrimitive|FHIRCode $purpose): self
     {
@@ -337,8 +315,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The valueSet that is being bound for the purpose.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getValueSet(): null|FHIRCanonical
     {
@@ -352,9 +328,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The valueSet that is being bound for the purpose.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueSet
-     * @return static
      */
     public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet): self
     {
@@ -380,8 +353,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      *
      * Documentation of the purpose of use of the bindingproviding additional
      * information about how it is intended to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDocumentation(): null|FHIRMarkdown
     {
@@ -399,9 +370,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      *
      * Documentation of the purpose of use of the bindingproviding additional
      * information about how it is intended to be used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation): self
     {
@@ -422,8 +390,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Concise documentation - for summary tables.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getShortDoco(): null|FHIRString
     {
@@ -436,9 +402,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Concise documentation - for summary tables.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $shortDoco
-     * @return static
      */
     public function setShortDoco(null|string|FHIRStringPrimitive|FHIRString $shortDoco): self
     {
@@ -498,9 +461,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * clinical domain etc. The information to decide whether a usege context applies
      * is usually outside the resource, determined by context, and this might present
      * challenges for validation tooling.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $usage
-     * @return static
      */
     public function addUsage(FHIRUsageContext $usage): self
     {
@@ -524,9 +484,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * clinical domain etc. The information to decide whether a usege context applies
      * is usually outside the resource, determined by context, and this might present
      * challenges for validation tooling.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$usage
-     * @return static
      */
     public function setUsage(FHIRUsageContext ...$usage): self
     {
@@ -544,8 +501,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      *
      * Whether the binding applies to all repeats, or just to any one of them. This is
      * only relevant for elements that can repeat.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getAny(): null|FHIRBoolean
     {
@@ -558,9 +513,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      *
      * Whether the binding applies to all repeats, or just to any one of them. This is
      * only relevant for elements that can repeat.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $any
-     * @return static
      */
     public function setAny(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $any): self
     {
@@ -577,10 +529,7 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionAdditional $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionAdditional
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -674,10 +623,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -742,10 +687,7 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionAdditional $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionAdditional
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

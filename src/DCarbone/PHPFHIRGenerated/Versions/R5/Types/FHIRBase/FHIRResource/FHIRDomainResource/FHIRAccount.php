@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -118,7 +116,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAccountSta
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -197,8 +194,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the account is presently used/usable or not.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAccountStatus
      */
     #[FHIRAccountStatus]
     protected FHIRAccountStatus $status;
@@ -211,8 +206,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * The BillingStatus tracks the lifecycle of the account through the billing
      * process. It indicates how transactions are treated when they are allocated to
      * the account.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $billingStatus;
@@ -223,8 +216,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the account for reporting and searching purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -234,8 +225,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name used for the account when displaying it to humans in reports, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -258,8 +247,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date range of services associated with this account.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $servicePeriod;
@@ -281,8 +268,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates the service area, hospital, department, etc. with responsibility for
      * managing the Account.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $owner;
@@ -297,8 +282,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides additional information about what the account tracks and how it is
      * used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -354,8 +337,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The default currency for the account.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $currency;
@@ -380,8 +361,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time the balance amount was calculated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $calculatedAt;
@@ -389,31 +368,17 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
     /* constructor.php:61 */
     /**
      * FHIRAccount Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAccountStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAccountStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $billingStatus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $servicePeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage> $coverage
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $owner
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor> $guarantor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountDiagnosis> $diagnosis
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountProcedure> $procedure
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountRelatedAccount> $relatedAccount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $currency
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountBalance> $balance
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $calculatedAt
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -553,9 +518,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Unique identifier used to reference the account. Might or might not be intended
      * for human use (e.g. credit card number).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -574,9 +536,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Unique identifier used to reference the account. Might or might not be intended
      * for human use (e.g. credit card number).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -592,8 +551,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the account is presently used/usable or not.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAccountStatus
      */
     public function getStatus(): null|FHIRAccountStatus
     {
@@ -604,9 +561,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the account is presently used/usable or not.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAccountStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAccountStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRAccountStatusEnum|FHIRAccountStatus $status): self
     {
@@ -630,8 +584,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * The BillingStatus tracks the lifecycle of the account through the billing
      * process. It indicates how transactions are treated when they are allocated to
      * the account.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getBillingStatus(): null|FHIRCodeableConcept
     {
@@ -647,9 +599,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * The BillingStatus tracks the lifecycle of the account through the billing
      * process. It indicates how transactions are treated when they are allocated to
      * the account.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $billingStatus
-     * @return static
      */
     public function setBillingStatus(null|FHIRCodeableConcept $billingStatus): self
     {
@@ -668,8 +617,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the account for reporting and searching purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -683,9 +630,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the account for reporting and searching purposes.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -703,8 +647,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name used for the account when displaying it to humans in reports, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -717,9 +659,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name used for the account when displaying it to humans in reports, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -769,9 +708,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * Identifies the entity which incurs the expenses. While the immediate recipients
      * of services or goods might be entities related to the subject, the expenses were
      * ultimately incurred by the subject of the Account.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -790,9 +726,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * Identifies the entity which incurs the expenses. While the immediate recipients
      * of services or goods might be entities related to the subject, the expenses were
      * ultimately incurred by the subject of the Account.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$subject
-     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -810,8 +743,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date range of services associated with this account.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getServicePeriod(): null|FHIRPeriod
     {
@@ -824,9 +755,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date range of services associated with this account.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $servicePeriod
-     * @return static
      */
     public function setServicePeriod(null|FHIRPeriod $servicePeriod): self
     {
@@ -869,9 +797,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The party(s) that are responsible for covering the payment of this account, and
      * what order should they be applied to the account.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage $coverage
-     * @return static
      */
     public function addCoverage(FHIRAccountCoverage $coverage): self
     {
@@ -888,9 +813,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The party(s) that are responsible for covering the payment of this account, and
      * what order should they be applied to the account.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage ...$coverage
-     * @return static
      */
     public function setCoverage(FHIRAccountCoverage ...$coverage): self
     {
@@ -909,8 +831,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates the service area, hospital, department, etc. with responsibility for
      * managing the Account.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getOwner(): null|FHIRReference
     {
@@ -924,9 +844,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates the service area, hospital, department, etc. with responsibility for
      * managing the Account.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $owner
-     * @return static
      */
     public function setOwner(null|FHIRReference $owner): self
     {
@@ -949,8 +866,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides additional information about what the account tracks and how it is
      * used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -968,9 +883,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides additional information about what the account tracks and how it is
      * used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1016,9 +928,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The parties responsible for balancing the account if other payment options fall
      * short.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor $guarantor
-     * @return static
      */
     public function addGuarantor(FHIRAccountGuarantor $guarantor): self
     {
@@ -1035,9 +944,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The parties responsible for balancing the account if other payment options fall
      * short.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor ...$guarantor
-     * @return static
      */
     public function setGuarantor(FHIRAccountGuarantor ...$guarantor): self
     {
@@ -1082,9 +988,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * When using an account for billing a specific Encounter the set of diagnoses that
      * are relevant for billing are stored here on the account where they are able to
      * be sequenced appropriately prior to processing to produce claim(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountDiagnosis $diagnosis
-     * @return static
      */
     public function addDiagnosis(FHIRAccountDiagnosis $diagnosis): self
     {
@@ -1102,9 +1005,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * When using an account for billing a specific Encounter the set of diagnoses that
      * are relevant for billing are stored here on the account where they are able to
      * be sequenced appropriately prior to processing to produce claim(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountDiagnosis ...$diagnosis
-     * @return static
      */
     public function setDiagnosis(FHIRAccountDiagnosis ...$diagnosis): self
     {
@@ -1149,9 +1049,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * When using an account for billing a specific Encounter the set of procedures
      * that are relevant for billing are stored here on the account where they are able
      * to be sequenced appropriately prior to processing to produce claim(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountProcedure $procedure
-     * @return static
      */
     public function addProcedure(FHIRAccountProcedure $procedure): self
     {
@@ -1169,9 +1066,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * When using an account for billing a specific Encounter the set of procedures
      * that are relevant for billing are stored here on the account where they are able
      * to be sequenced appropriately prior to processing to produce claim(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountProcedure ...$procedure
-     * @return static
      */
     public function setProcedure(FHIRAccountProcedure ...$procedure): self
     {
@@ -1212,9 +1106,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * healthcare field, used to track charges for a patient, cost centers, etc.
      *
      * Other associated accounts related to this account.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountRelatedAccount $relatedAccount
-     * @return static
      */
     public function addRelatedAccount(FHIRAccountRelatedAccount $relatedAccount): self
     {
@@ -1230,9 +1121,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * healthcare field, used to track charges for a patient, cost centers, etc.
      *
      * Other associated accounts related to this account.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountRelatedAccount ...$relatedAccount
-     * @return static
      */
     public function setRelatedAccount(FHIRAccountRelatedAccount ...$relatedAccount): self
     {
@@ -1251,8 +1139,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The default currency for the account.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCurrency(): null|FHIRCodeableConcept
     {
@@ -1266,9 +1152,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The default currency for the account.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $currency
-     * @return static
      */
     public function setCurrency(null|FHIRCodeableConcept $currency): self
     {
@@ -1313,9 +1196,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * The calculated account balances - these are calculated and processed by the
      * finance system. The balances with a `term` that is not current are usually
      * generated/updated by an invoicing or similar process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountBalance $balance
-     * @return static
      */
     public function addBalance(FHIRAccountBalance $balance): self
     {
@@ -1333,9 +1213,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * The calculated account balances - these are calculated and processed by the
      * finance system. The balances with a `term` that is not current are usually
      * generated/updated by an invoicing or similar process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountBalance ...$balance
-     * @return static
      */
     public function setBalance(FHIRAccountBalance ...$balance): self
     {
@@ -1356,8 +1233,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time the balance amount was calculated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     public function getCalculatedAt(): null|FHIRInstant
     {
@@ -1373,9 +1248,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time the balance amount was calculated.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $calculatedAt
-     * @return static
      */
     public function setCalculatedAt(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $calculatedAt): self
     {
@@ -1392,10 +1264,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAccount $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAccount
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1539,11 +1408,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1696,10 +1560,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAccount $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAccount
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

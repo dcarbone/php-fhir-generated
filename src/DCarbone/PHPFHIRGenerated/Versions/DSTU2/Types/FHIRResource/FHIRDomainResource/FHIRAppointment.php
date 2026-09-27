@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -91,7 +89,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAppointmentStatusList;
@@ -182,8 +179,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The overall status of the Appointment. Each of the participants has their own
      * participation status which indicates their involvement in the process, however
      * this status indicates the shared status.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAppointmentStatus
      */
     #[FHIRAppointmentStatus]
     protected FHIRAppointmentStatus $status;
@@ -195,8 +190,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The type of appointment that is being booked (This may also be associated with
      * participants for location, and/or a HealthcareService).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -208,8 +201,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The reason that this appointment is being scheduled. This is more clinical than
      * administrative.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reason;
@@ -221,8 +212,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The priority of the appointment. Can be used to make informed decisions if
      * needing to re-prioritize appointments. (The iCal Standard specifies as
      * undefined, 1 as highest, 9 as lowest priority).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $priority;
@@ -234,8 +223,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The brief description of the appointment as would be shown on a subject line in
      * a meeting request, or appointment list. Detailed or expanded information should
      * be put in the comment field.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -247,8 +234,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $start;
@@ -260,8 +245,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to conclude.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $end;
@@ -273,8 +256,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * Number of minutes that the appointment is to take. This can be less than the
      * duration between the start and end times (where actual time of appointment is
      * only an estimate or is a planned appointment request).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $minutesDuration;
@@ -297,8 +278,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $comment;
@@ -317,25 +296,11 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
     /* constructor.php:61 */
     /**
      * FHIRAppointment Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAppointmentStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAppointmentStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt $priority
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $start
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $end
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $minutesDuration
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference> $slot
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $comment
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant> $participant
      * @param null|string[] $fhirComments
      */
@@ -458,9 +423,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * defined by business processes and/or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -480,9 +442,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * defined by business processes and/or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -501,8 +460,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The overall status of the Appointment. Each of the participants has their own
      * participation status which indicates their involvement in the process, however
      * this status indicates the shared status.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAppointmentStatus
      */
     public function getStatus(): null|FHIRAppointmentStatus
     {
@@ -516,9 +473,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The overall status of the Appointment. Each of the participants has their own
      * participation status which indicates their involvement in the process, however
      * this status indicates the shared status.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAppointmentStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAppointmentStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRAppointmentStatusList|FHIRAppointmentStatus $status): self
     {
@@ -541,8 +495,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The type of appointment that is being booked (This may also be associated with
      * participants for location, and/or a HealthcareService).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -557,9 +509,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The type of appointment that is being booked (This may also be associated with
      * participants for location, and/or a HealthcareService).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -579,8 +528,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The reason that this appointment is being scheduled. This is more clinical than
      * administrative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReason(): null|FHIRCodeableConcept
     {
@@ -595,9 +542,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      *
      * The reason that this appointment is being scheduled. This is more clinical than
      * administrative.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -617,8 +561,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The priority of the appointment. Can be used to make informed decisions if
      * needing to re-prioritize appointments. (The iCal Standard specifies as
      * undefined, 1 as highest, 9 as lowest priority).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt
      */
     public function getPriority(): null|FHIRUnsignedInt
     {
@@ -633,9 +575,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The priority of the appointment. Can be used to make informed decisions if
      * needing to re-prioritize appointments. (The iCal Standard specifies as
      * undefined, 1 as highest, 9 as lowest priority).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt $priority
-     * @return static
      */
     public function setPriority(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $priority): self
     {
@@ -658,8 +597,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The brief description of the appointment as would be shown on a subject line in
      * a meeting request, or appointment list. Detailed or expanded information should
      * be put in the comment field.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -674,9 +611,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The brief description of the appointment as would be shown on a subject line in
      * a meeting request, or appointment list. Detailed or expanded information should
      * be put in the comment field.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -699,8 +633,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     public function getStart(): null|FHIRInstant
     {
@@ -715,9 +647,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $start
-     * @return static
      */
     public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start): self
     {
@@ -740,8 +669,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to conclude.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     public function getEnd(): null|FHIRInstant
     {
@@ -756,9 +683,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to conclude.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $end
-     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
     {
@@ -781,8 +705,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * Number of minutes that the appointment is to take. This can be less than the
      * duration between the start and end times (where actual time of appointment is
      * only an estimate or is a planned appointment request).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     public function getMinutesDuration(): null|FHIRPositiveInt
     {
@@ -797,9 +719,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * Number of minutes that the appointment is to take. This can be less than the
      * duration between the start and end times (where actual time of appointment is
      * only an estimate or is a planned appointment request).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $minutesDuration
-     * @return static
      */
     public function setMinutesDuration(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $minutesDuration): self
     {
@@ -849,9 +768,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The slot that this appointment is filling. If provided then the schedule will
      * not be provided as slots are not recursive, and the start/end values MUST be the
      * same as from the slot.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $slot
-     * @return static
      */
     public function addSlot(FHIRReference $slot): self
     {
@@ -870,9 +786,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * The slot that this appointment is filling. If provided then the schedule will
      * not be provided as slots are not recursive, and the start/end values MUST be the
      * same as from the slot.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference ...$slot
-     * @return static
      */
     public function setSlot(FHIRReference ...$slot): self
     {
@@ -890,8 +803,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getComment(): null|FHIRString
     {
@@ -904,9 +815,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the appointment.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $comment
-     * @return static
      */
     public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
     {
@@ -952,9 +860,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * more Encounter(s).
      *
      * List of participants involved in the appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant $participant
-     * @return static
      */
     public function addParticipant(FHIRAppointmentParticipant $participant): self
     {
@@ -971,9 +876,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * more Encounter(s).
      *
      * List of participants involved in the appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant ...$participant
-     * @return static
      */
     public function setParticipant(FHIRAppointmentParticipant ...$participant): self
     {
@@ -987,10 +889,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAppointment $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAppointment
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1148,11 +1047,6 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1285,10 +1179,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAppointment $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAppointment
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

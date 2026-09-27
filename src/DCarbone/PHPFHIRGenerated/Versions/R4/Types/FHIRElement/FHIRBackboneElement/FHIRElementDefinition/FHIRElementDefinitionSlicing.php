@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      * A human-readable text description of how the slicing works. If there is no
      * discriminator, this is required to be present to provide whatever information is
      * possible about how the slices can be differentiated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -154,8 +151,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $ordered;
@@ -165,8 +160,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSlicingRules
      */
     #[FHIRSlicingRules]
     protected FHIRSlicingRules $rules;
@@ -175,12 +168,8 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
     /**
      * FHIRElementDefinitionSlicing Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionDiscriminator> $discriminator
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $ordered
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSlicingRulesList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSlicingRules $rules
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -256,9 +245,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      * the child elements in the instance data SHALL completely distinguish which slice
      * the element in the resource matches based on the allowed values for those
      * elements in each of the slices.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionDiscriminator $discriminator
-     * @return static
      */
     public function addDiscriminator(FHIRElementDefinitionDiscriminator $discriminator): self
     {
@@ -279,9 +265,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      * the child elements in the instance data SHALL completely distinguish which slice
      * the element in the resource matches based on the allowed values for those
      * elements in each of the slices.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionDiscriminator ...$discriminator
-     * @return static
      */
     public function setDiscriminator(FHIRElementDefinitionDiscriminator ...$discriminator): self
     {
@@ -301,8 +284,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      * A human-readable text description of how the slicing works. If there is no
      * discriminator, this is required to be present to provide whatever information is
      * possible about how the slices can be differentiated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -317,9 +298,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      * A human-readable text description of how the slicing works. If there is no
      * discriminator, this is required to be present to provide whatever information is
      * possible about how the slices can be differentiated.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -340,8 +318,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getOrdered(): null|FHIRBoolean
     {
@@ -354,9 +330,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $ordered
-     * @return static
      */
     public function setOrdered(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $ordered): self
     {
@@ -377,8 +350,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSlicingRules
      */
     public function getRules(): null|FHIRSlicingRules
     {
@@ -391,9 +362,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSlicingRulesList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSlicingRules $rules
-     * @return static
      */
     public function setRules(null|string|FHIRSlicingRulesList|FHIRSlicingRules $rules): self
     {
@@ -410,10 +378,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionSlicing $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionSlicing
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -487,10 +452,6 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -535,10 +496,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionSlicing $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionSlicing
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

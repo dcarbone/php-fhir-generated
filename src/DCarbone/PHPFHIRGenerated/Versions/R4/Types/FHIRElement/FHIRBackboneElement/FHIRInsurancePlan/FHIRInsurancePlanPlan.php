@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -127,8 +127,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of plan. For example, "Platinum" or "High Deductable".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -177,10 +175,8 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
     /**
      * FHIRInsurancePlanPlan Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $coverageArea
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $network
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost> $generalCost
@@ -264,9 +260,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      *
      * Business identifiers assigned to this health insurance plan which remain
      * constant as the resource is updated and propagates from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -285,9 +278,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      *
      * Business identifiers assigned to this health insurance plan which remain
      * constant as the resource is updated and propagates from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -306,8 +296,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of plan. For example, "Platinum" or "High Deductable".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -321,9 +309,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of plan. For example, "Platinum" or "High Deductable".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -366,9 +351,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The geographic region in which a health insurance plan's benefits apply.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $coverageArea
-     * @return static
      */
     public function addCoverageArea(FHIRReference $coverageArea): self
     {
@@ -385,9 +367,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The geographic region in which a health insurance plan's benefits apply.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$coverageArea
-     * @return static
      */
     public function setCoverageArea(FHIRReference ...$coverageArea): self
     {
@@ -430,9 +409,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the network that providing the type of coverage.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $network
-     * @return static
      */
     public function addNetwork(FHIRReference $network): self
     {
@@ -449,9 +425,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the network that providing the type of coverage.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$network
-     * @return static
      */
     public function setNetwork(FHIRReference ...$network): self
     {
@@ -490,9 +463,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Overall costs associated with the plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost $generalCost
-     * @return static
      */
     public function addGeneralCost(FHIRInsurancePlanGeneralCost $generalCost): self
     {
@@ -507,9 +477,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Overall costs associated with the plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost ...$generalCost
-     * @return static
      */
     public function setGeneralCost(FHIRInsurancePlanGeneralCost ...$generalCost): self
     {
@@ -548,9 +515,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Costs associated with the coverage provided by the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost $specificCost
-     * @return static
      */
     public function addSpecificCost(FHIRInsurancePlanSpecificCost $specificCost): self
     {
@@ -565,9 +529,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Costs associated with the coverage provided by the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost ...$specificCost
-     * @return static
      */
     public function setSpecificCost(FHIRInsurancePlanSpecificCost ...$specificCost): self
     {
@@ -581,10 +542,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanPlan $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanPlan
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -638,10 +596,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -689,10 +643,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanPlan $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanPlan
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

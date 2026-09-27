@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * These are different ways of identifying nucleotides or amino acids within a
      * sequence. Different databases and file types may use different systems. For
      * detail definitions, see https://loinc.org/92822-6/ for more detail.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $coordinateSystem;
@@ -155,8 +152,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * Indicates the order in which the sequence should be considered when putting
      * multiple 'relative' elements together.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $ordinalPosition;
@@ -167,8 +162,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * Indicates the nucleotide range in the composed sequence when multiple 'relative'
      * elements are used together.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $sequenceRange;
@@ -177,8 +170,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * A sequence that is used as a starting sequence to describe variants that are
      * present in a sequence analyzed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStartingSequence
      */
     #[FHIRMolecularSequenceStartingSequence]
     protected FHIRMolecularSequenceStartingSequence $startingSequence;
@@ -196,12 +187,7 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
     /**
      * FHIRMolecularSequenceRelative Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $coordinateSystem
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $ordinalPosition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $sequenceRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStartingSequence $startingSequence
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceEdit> $edit
      * @param null|string[] $fhirComments
      */
@@ -252,8 +238,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * These are different ways of identifying nucleotides or amino acids within a
      * sequence. Different databases and file types may use different systems. For
      * detail definitions, see https://loinc.org/92822-6/ for more detail.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCoordinateSystem(): null|FHIRCodeableConcept
     {
@@ -269,9 +253,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * These are different ways of identifying nucleotides or amino acids within a
      * sequence. Different databases and file types may use different systems. For
      * detail definitions, see https://loinc.org/92822-6/ for more detail.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $coordinateSystem
-     * @return static
      */
     public function setCoordinateSystem(null|FHIRCodeableConcept $coordinateSystem): self
     {
@@ -290,8 +271,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * Indicates the order in which the sequence should be considered when putting
      * multiple 'relative' elements together.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     public function getOrdinalPosition(): null|FHIRInteger
     {
@@ -305,9 +284,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * Indicates the order in which the sequence should be considered when putting
      * multiple 'relative' elements together.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $ordinalPosition
-     * @return static
      */
     public function setOrdinalPosition(null|string|float|FHIRIntegerPrimitive|FHIRInteger $ordinalPosition): self
     {
@@ -329,8 +305,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * Indicates the nucleotide range in the composed sequence when multiple 'relative'
      * elements are used together.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     public function getSequenceRange(): null|FHIRRange
     {
@@ -344,9 +318,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * Indicates the nucleotide range in the composed sequence when multiple 'relative'
      * elements are used together.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $sequenceRange
-     * @return static
      */
     public function setSequenceRange(null|FHIRRange $sequenceRange): self
     {
@@ -363,8 +334,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * A sequence that is used as a starting sequence to describe variants that are
      * present in a sequence analyzed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStartingSequence
      */
     public function getStartingSequence(): null|FHIRMolecularSequenceStartingSequence
     {
@@ -376,9 +345,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * A sequence that is used as a starting sequence to describe variants that are
      * present in a sequence analyzed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStartingSequence $startingSequence
-     * @return static
      */
     public function setStartingSequence(null|FHIRMolecularSequenceStartingSequence $startingSequence): self
     {
@@ -417,9 +383,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * Representation of a molecular sequence.
      *
      * Changes in sequence from the starting sequence.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceEdit $edit
-     * @return static
      */
     public function addEdit(FHIRMolecularSequenceEdit $edit): self
     {
@@ -434,9 +397,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * Representation of a molecular sequence.
      *
      * Changes in sequence from the starting sequence.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceEdit ...$edit
-     * @return static
      */
     public function setEdit(FHIRMolecularSequenceEdit ...$edit): self
     {
@@ -450,10 +410,7 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRelative $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRelative
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -513,10 +470,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -556,10 +509,7 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRelative $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRelative
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

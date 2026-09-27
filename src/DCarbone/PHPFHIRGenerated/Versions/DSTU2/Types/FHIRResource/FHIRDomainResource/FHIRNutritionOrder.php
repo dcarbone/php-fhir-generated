@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -89,7 +87,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNutritionOrde
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRNutritionOrderStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
@@ -153,8 +150,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * The person (patient) who needs the nutrition order for an oral diet, nutritional
      * supplement and/or enteral or formula feeding.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -165,8 +160,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * The practitioner that holds legal responsibility for ordering the diet,
      * nutritional supplement, or formula feedings.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $orderer;
@@ -188,8 +181,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * An encounter that provides additional information about the healthcare context
      * in which this request is made.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -202,8 +193,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time that this nutrition order was requested.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $dateTime;
@@ -213,8 +202,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the nutrition order/request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNutritionOrderStatus
      */
     #[FHIRNutritionOrderStatus]
     protected FHIRNutritionOrderStatus $status;
@@ -271,8 +258,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * supplement to a patient/resident.
      *
      * Diet given orally in contrast to enteral (tube) feeding.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      */
     #[FHIRNutritionOrderOralDiet]
     protected FHIRNutritionOrderOralDiet $oralDiet;
@@ -293,8 +278,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * Feeding provided through the gastrointestinal tract via a tube, catheter, or
      * stoma that delivers nutrition distal to the oral cavity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
      */
     #[FHIRNutritionOrderEnteralFormula]
     protected FHIRNutritionOrderEnteralFormula $enteralFormula;
@@ -302,26 +285,14 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
     /* constructor.php:61 */
     /**
      * FHIRNutritionOrder Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $patient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $orderer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $dateTime
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRNutritionOrderStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNutritionOrderStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference> $allergyIntolerance
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $foodPreferenceModifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $excludeFoodModifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet $oralDiet
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement> $supplement
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula $enteralFormula
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -413,8 +384,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * The person (patient) who needs the nutrition order for an oral diet, nutritional
      * supplement and/or enteral or formula feeding.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -428,9 +397,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * The person (patient) who needs the nutrition order for an oral diet, nutritional
      * supplement and/or enteral or formula feeding.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -449,8 +415,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * The practitioner that holds legal responsibility for ordering the diet,
      * nutritional supplement, or formula feedings.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getOrderer(): null|FHIRReference
     {
@@ -464,9 +428,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * The practitioner that holds legal responsibility for ordering the diet,
      * nutritional supplement, or formula feedings.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $orderer
-     * @return static
      */
     public function setOrderer(null|FHIRReference $orderer): self
     {
@@ -509,9 +470,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order sender or by the order receiver.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -528,9 +486,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order sender or by the order receiver.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -549,8 +504,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * An encounter that provides additional information about the healthcare context
      * in which this request is made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -564,9 +517,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * An encounter that provides additional information about the healthcare context
      * in which this request is made.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -587,8 +537,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time that this nutrition order was requested.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getDateTime(): null|FHIRDateTime
     {
@@ -604,9 +552,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time that this nutrition order was requested.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $dateTime
-     * @return static
      */
     public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime): self
     {
@@ -627,8 +572,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the nutrition order/request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNutritionOrderStatus
      */
     public function getStatus(): null|FHIRNutritionOrderStatus
     {
@@ -641,9 +584,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the nutrition order/request.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRNutritionOrderStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNutritionOrderStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRNutritionOrderStatusList|FHIRNutritionOrderStatus $status): self
     {
@@ -691,9 +631,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * A link to a record of allergies or intolerances which should be included in the
      * nutrition order.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $allergyIntolerance
-     * @return static
      */
     public function addAllergyIntolerance(FHIRReference $allergyIntolerance): self
     {
@@ -711,9 +648,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * A link to a record of allergies or intolerances which should be included in the
      * nutrition order.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference ...$allergyIntolerance
-     * @return static
      */
     public function setAllergyIntolerance(FHIRReference ...$allergyIntolerance): self
     {
@@ -766,9 +700,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * or preferences such as Halal, Vegan or Kosher. This modifier applies to the
      * entire nutrition order inclusive of the oral diet, nutritional supplements and
      * enteral formula feedings.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $foodPreferenceModifier
-     * @return static
      */
     public function addFoodPreferenceModifier(FHIRCodeableConcept $foodPreferenceModifier): self
     {
@@ -790,9 +721,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * or preferences such as Halal, Vegan or Kosher. This modifier applies to the
      * entire nutrition order inclusive of the oral diet, nutritional supplements and
      * enteral formula feedings.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept ...$foodPreferenceModifier
-     * @return static
      */
     public function setFoodPreferenceModifier(FHIRCodeableConcept ...$foodPreferenceModifier): self
     {
@@ -853,9 +781,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * related to foods that should be eliminated from the patient’s diet for any
      * reason. This modifier applies to the entire nutrition order inclusive of the
      * oral diet, nutritional supplements and enteral formula feedings.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $excludeFoodModifier
-     * @return static
      */
     public function addExcludeFoodModifier(FHIRCodeableConcept $excludeFoodModifier): self
     {
@@ -881,9 +806,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * related to foods that should be eliminated from the patient’s diet for any
      * reason. This modifier applies to the entire nutrition order inclusive of the
      * oral diet, nutritional supplements and enteral formula feedings.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept ...$excludeFoodModifier
-     * @return static
      */
     public function setExcludeFoodModifier(FHIRCodeableConcept ...$excludeFoodModifier): self
     {
@@ -900,8 +822,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * supplement to a patient/resident.
      *
      * Diet given orally in contrast to enteral (tube) feeding.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      */
     public function getOralDiet(): null|FHIRNutritionOrderOralDiet
     {
@@ -913,9 +833,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * supplement to a patient/resident.
      *
      * Diet given orally in contrast to enteral (tube) feeding.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet $oralDiet
-     * @return static
      */
     public function setOralDiet(null|FHIRNutritionOrderOralDiet $oralDiet): self
     {
@@ -958,9 +875,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * Oral nutritional products given in order to add further nutritional value to the
      * patient's diet.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement $supplement
-     * @return static
      */
     public function addSupplement(FHIRNutritionOrderSupplement $supplement): self
     {
@@ -977,9 +891,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * Oral nutritional products given in order to add further nutritional value to the
      * patient's diet.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement ...$supplement
-     * @return static
      */
     public function setSupplement(FHIRNutritionOrderSupplement ...$supplement): self
     {
@@ -997,8 +908,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * Feeding provided through the gastrointestinal tract via a tube, catheter, or
      * stoma that delivers nutrition distal to the oral cavity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
      */
     public function getEnteralFormula(): null|FHIRNutritionOrderEnteralFormula
     {
@@ -1011,9 +920,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * Feeding provided through the gastrointestinal tract via a tube, catheter, or
      * stoma that delivers nutrition distal to the oral cavity.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula $enteralFormula
-     * @return static
      */
     public function setEnteralFormula(null|FHIRNutritionOrderEnteralFormula $enteralFormula): self
     {
@@ -1027,10 +933,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRNutritionOrder $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1148,11 +1051,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1264,10 +1162,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRNutritionOrder $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRNutritionOrder
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

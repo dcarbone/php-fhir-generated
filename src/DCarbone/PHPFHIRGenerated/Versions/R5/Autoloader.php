@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -86,13 +86,13 @@ abstract class Autoloader
     /** @var array */
     private const _CLASS_MAP = [
         // version core types
-        'DCarbone\PHPFHIRGenerated\Versions\R5\VersionResourceTypeEnum' => __DIR__ . '/VersionResourceTypeEnum.php',
+        'DCarbone\PHPFHIRGenerated\Versions\R5\Version' => __DIR__ . '/Version.php',
         'DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants' => __DIR__ . '/VersionConstants.php',
         'DCarbone\PHPFHIRGenerated\Versions\R5\VersionClient' => __DIR__ . '/VersionClient.php',
-        'DCarbone\PHPFHIRGenerated\Versions\R5\Version' => __DIR__ . '/Version.php',
-        'DCarbone\PHPFHIRGenerated\Versions\R5\VersionResourceTypeInterface' => __DIR__ . '/VersionResourceTypeInterface.php',
-        'DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap' => __DIR__ . '/VersionTypeMap.php',
         'DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface' => __DIR__ . '/VersionContainedTypeInterface.php',
+        'DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap' => __DIR__ . '/VersionTypeMap.php',
+        'DCarbone\PHPFHIRGenerated\Versions\R5\VersionResourceTypeEnum' => __DIR__ . '/VersionResourceTypeEnum.php',
+        'DCarbone\PHPFHIRGenerated\Versions\R5\VersionResourceTypeInterface' => __DIR__ . '/VersionResourceTypeInterface.php',
 
         // version fhir types
         'DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase' => __DIR__ . '/Types/FHIRBase.php',
@@ -1475,11 +1475,9 @@ abstract class Autoloader
         'DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRXHTML' => __DIR__ . '/Types/FHIRXHTML.php',
     ];
 
-    /** @var bool */
     private static bool $_registered = false;
 
     /**
-     * @return bool
      * @throws \Exception
      */
     public static function register(): bool
@@ -1490,9 +1488,6 @@ abstract class Autoloader
         return self::$_registered;
     }
 
-    /**
-     * @return bool
-     */
     public static function unregister(): bool
     {
         if (self::$_registered) {
@@ -1506,9 +1501,6 @@ abstract class Autoloader
 
     /**
      * Please see associated documentation for more information on what this method looks for.
-     *
-     * @param string $class
-     * @return bool|null
      */
     public static function loadClass(string $class): null|bool
     {

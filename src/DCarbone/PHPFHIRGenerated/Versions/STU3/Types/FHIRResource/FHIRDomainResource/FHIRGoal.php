@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -90,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -175,8 +172,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the goal has been reached and is still considered relevant.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRGoalStatus
      */
     #[FHIRGoalStatus]
     protected FHIRGoalStatus $status;
@@ -200,8 +195,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies the mutually agreed level of importance associated with
      * reaching/sustaining the goal.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $priority;
@@ -214,8 +207,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Human-readable and/or coded description of a specific desired objective of care,
      * such as "control blood pressure" or "negotiate an obstacle course" or "dance
      * with child at wedding".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $description;
@@ -226,8 +217,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies the patient, group or organization for whom the goal is being
      * established.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -238,8 +227,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or event after which the goal should begin being pursued.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $startDate;
@@ -250,8 +237,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or event after which the goal should begin being pursued.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $startCodeableConcept;
@@ -261,8 +246,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * immunity via immunization, meeting a process improvement objective, etc.
      *
      * Indicates what should be done by when.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
      */
     #[FHIRGoalTarget]
     protected FHIRGoalTarget $target;
@@ -274,8 +257,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies when the current status. I.e. When initially created, when achieved,
      * when cancelled, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $statusDate;
@@ -285,8 +266,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Captures the reason for the current status.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $statusReason;
@@ -296,8 +275,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $expressedBy;
@@ -353,26 +330,11 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
     /* constructor.php:61 */
     /**
      * FHIRGoal Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRGoalStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRGoalStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $priority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $startDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $startCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget $target
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $statusDate
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $statusReason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $expressedBy
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $addresses
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $outcomeCode
@@ -514,9 +476,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -536,9 +495,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -555,8 +511,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the goal has been reached and is still considered relevant.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRGoalStatus
      */
     public function getStatus(): null|FHIRGoalStatus
     {
@@ -568,9 +522,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the goal has been reached and is still considered relevant.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRGoalStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRGoalStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRGoalStatusList|FHIRGoalStatus $status): self
     {
@@ -618,9 +569,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a category the goal falls within.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -638,9 +586,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a category the goal falls within.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -660,8 +605,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies the mutually agreed level of importance associated with
      * reaching/sustaining the goal.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPriority(): null|FHIRCodeableConcept
     {
@@ -676,9 +619,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies the mutually agreed level of importance associated with
      * reaching/sustaining the goal.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $priority
-     * @return static
      */
     public function setPriority(null|FHIRCodeableConcept $priority): self
     {
@@ -699,8 +639,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Human-readable and/or coded description of a specific desired objective of care,
      * such as "control blood pressure" or "negotiate an obstacle course" or "dance
      * with child at wedding".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDescription(): null|FHIRCodeableConcept
     {
@@ -716,9 +654,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Human-readable and/or coded description of a specific desired objective of care,
      * such as "control blood pressure" or "negotiate an obstacle course" or "dance
      * with child at wedding".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $description
-     * @return static
      */
     public function setDescription(null|FHIRCodeableConcept $description): self
     {
@@ -737,8 +672,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies the patient, group or organization for whom the goal is being
      * established.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -752,9 +685,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies the patient, group or organization for whom the goal is being
      * established.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -773,8 +703,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or event after which the goal should begin being pursued.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     public function getStartDate(): null|FHIRDate
     {
@@ -788,9 +716,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or event after which the goal should begin being pursued.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $startDate
-     * @return static
      */
     public function setStartDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $startDate): self
     {
@@ -812,8 +737,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or event after which the goal should begin being pursued.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStartCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -827,9 +750,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or event after which the goal should begin being pursued.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $startCodeableConcept
-     * @return static
      */
     public function setStartCodeableConcept(null|FHIRCodeableConcept $startCodeableConcept): self
     {
@@ -847,8 +767,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * immunity via immunization, meeting a process improvement objective, etc.
      *
      * Indicates what should be done by when.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
      */
     public function getTarget(): null|FHIRGoalTarget
     {
@@ -861,9 +779,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * immunity via immunization, meeting a process improvement objective, etc.
      *
      * Indicates what should be done by when.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget $target
-     * @return static
      */
     public function setTarget(null|FHIRGoalTarget $target): self
     {
@@ -883,8 +798,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies when the current status. I.e. When initially created, when achieved,
      * when cancelled, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     public function getStatusDate(): null|FHIRDate
     {
@@ -899,9 +812,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies when the current status. I.e. When initially created, when achieved,
      * when cancelled, etc.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $statusDate
-     * @return static
      */
     public function setStatusDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $statusDate): self
     {
@@ -922,8 +832,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Captures the reason for the current status.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getStatusReason(): null|FHIRString
     {
@@ -936,9 +844,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Captures the reason for the current status.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $statusReason
-     * @return static
      */
     public function setStatusReason(null|string|FHIRStringPrimitive|FHIRString $statusReason): self
     {
@@ -959,8 +864,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getExpressedBy(): null|FHIRReference
     {
@@ -973,9 +876,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $expressedBy
-     * @return static
      */
     public function setExpressedBy(null|FHIRReference $expressedBy): self
     {
@@ -1020,9 +920,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The identified conditions and other health record elements that are intended to
      * be addressed by the goal.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $addresses
-     * @return static
      */
     public function addAddresses(FHIRReference $addresses): self
     {
@@ -1040,9 +937,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The identified conditions and other health record elements that are intended to
      * be addressed by the goal.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$addresses
-     * @return static
      */
     public function setAddresses(FHIRReference ...$addresses): self
     {
@@ -1087,9 +981,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any comments related to the goal.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1107,9 +998,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any comments related to the goal.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1156,9 +1044,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies the change (or lack of change) at the point when the status of the
      * goal is assessed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $outcomeCode
-     * @return static
      */
     public function addOutcomeCode(FHIRCodeableConcept $outcomeCode): self
     {
@@ -1177,9 +1062,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * Identifies the change (or lack of change) at the point when the status of the
      * goal is assessed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$outcomeCode
-     * @return static
      */
     public function setOutcomeCode(FHIRCodeableConcept ...$outcomeCode): self
     {
@@ -1222,9 +1104,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details of what's changed (or not changed).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $outcomeReference
-     * @return static
      */
     public function addOutcomeReference(FHIRReference $outcomeReference): self
     {
@@ -1241,9 +1120,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details of what's changed (or not changed).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$outcomeReference
-     * @return static
      */
     public function setOutcomeReference(FHIRReference ...$outcomeReference): self
     {
@@ -1257,10 +1133,7 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRGoal $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRGoal
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1402,11 +1275,6 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1550,10 +1418,7 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRGoal $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRGoal
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

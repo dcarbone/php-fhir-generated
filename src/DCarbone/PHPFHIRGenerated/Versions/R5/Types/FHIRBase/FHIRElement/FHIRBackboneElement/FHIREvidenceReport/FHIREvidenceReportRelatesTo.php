@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -139,8 +138,6 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
      *
      * The type of relationship that this composition has with anther composition or
      * document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRReportRelationshipType
      */
     #[FHIRReportRelationshipType]
     protected FHIRReportRelationshipType $code;
@@ -150,8 +147,6 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
      * EvidenceVariable, and Citation resources and related concepts.
      *
      * The target composition/document of this relationship.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportTarget
      */
     #[FHIREvidenceReportTarget]
     protected FHIREvidenceReportTarget $target;
@@ -160,10 +155,7 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
     /**
      * FHIREvidenceReportRelatesTo Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRReportRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRReportRelationshipType $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportTarget $target
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -197,8 +189,6 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
      *
      * The type of relationship that this composition has with anther composition or
      * document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRReportRelationshipType
      */
     public function getCode(): null|FHIRReportRelationshipType
     {
@@ -210,9 +200,6 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
      *
      * The type of relationship that this composition has with anther composition or
      * document.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRReportRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRReportRelationshipType $code
-     * @return static
      */
     public function setCode(null|string|FHIRReportRelationshipTypeEnum|FHIRReportRelationshipType $code): self
     {
@@ -233,8 +220,6 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
      * EvidenceVariable, and Citation resources and related concepts.
      *
      * The target composition/document of this relationship.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportTarget
      */
     public function getTarget(): null|FHIREvidenceReportTarget
     {
@@ -247,9 +232,6 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
      * EvidenceVariable, and Citation resources and related concepts.
      *
      * The target composition/document of this relationship.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportTarget $target
-     * @return static
      */
     public function setTarget(null|FHIREvidenceReportTarget $target): self
     {
@@ -263,10 +245,7 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -320,10 +299,6 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -346,10 +321,7 @@ class FHIREvidenceReportRelatesTo extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

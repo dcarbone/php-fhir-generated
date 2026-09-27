@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -267,6 +266,168 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
         self::FIELD_LABEL => [
             MinOccursRule::NAME => 1,
         ],
+        self::FIELD_VALUE_BASE_64BINARY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_BOOLEAN => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CANONICAL => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CODE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DATE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DATE_TIME => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DECIMAL => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_ID => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_INSTANT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_INTEGER => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_INTEGER_64 => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_MARKDOWN => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_OID => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_POSITIVE_INT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_STRING => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_TIME => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_UNSIGNED_INT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_URI => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_URL => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_UUID => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_ADDRESS => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_AGE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_ANNOTATION => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_ATTACHMENT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CODEABLE_CONCEPT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CODEABLE_REFERENCE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CODING => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CONTACT_POINT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_COUNT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DISTANCE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DURATION => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_HUMAN_NAME => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_IDENTIFIER => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_MONEY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_PERIOD => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_QUANTITY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_RANGE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_RATIO => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_RATIO_RANGE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_REFERENCE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_SAMPLED_DATA => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_SIGNATURE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_TIMING => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CONTACT_DETAIL => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DATA_REQUIREMENT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_EXPRESSION => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_PARAMETER_DEFINITION => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_RELATED_ARTIFACT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_TRIGGER_DEFINITION => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_USAGE_CONTEXT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_AVAILABILITY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_EXTENDED_CONTACT_DETAIL => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DOSAGE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_META => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -301,8 +462,6 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the purpose of this example among the set of examples.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $label;
@@ -312,9 +471,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
+     * this element.
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $valueBase64Binary;
@@ -323,9 +480,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * this element.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $valueBoolean;
@@ -336,9 +491,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * this element.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $valueCanonical;
@@ -349,9 +502,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
+     * this element.
      */
     #[FHIRCode]
     protected FHIRCode $valueCode;
@@ -362,9 +513,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * this element.
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -378,9 +527,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * this element.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -391,9 +538,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
+     * this element.
      */
     #[FHIRDecimal]
     protected FHIRDecimal $valueDecimal;
@@ -406,9 +551,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
+     * this element.
      */
     #[FHIRId]
     protected FHIRId $valueId;
@@ -421,9 +564,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
+     * this element.
      */
     #[FHIRInstant]
     protected FHIRInstant $valueInstant;
@@ -433,9 +574,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * this element.
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -445,9 +584,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
+     * this element.
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $valueInteger64;
@@ -461,9 +598,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
+     * this element.
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $valueMarkdown;
@@ -474,9 +609,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid
+     * this element.
      */
     #[FHIROid]
     protected FHIROid $valueOid;
@@ -486,9 +619,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
+     * this element.
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $valuePositiveInt;
@@ -498,9 +629,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * this element.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -509,9 +638,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
+     * this element.
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -521,9 +648,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
+     * this element.
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $valueUnsignedInt;
@@ -533,9 +658,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * this element.
      */
     #[FHIRUri]
     protected FHIRUri $valueUri;
@@ -545,9 +668,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * this element.
      */
     #[FHIRUrl]
     protected FHIRUrl $valueUrl;
@@ -558,9 +679,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid
+     * this element.
      */
     #[FHIRUuid]
     protected FHIRUuid $valueUuid;
@@ -575,9 +694,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
+     * this element.
      */
     #[FHIRAddress]
     protected FHIRAddress $valueAddress;
@@ -587,9 +704,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * this element.
      */
     #[FHIRAge]
     protected FHIRAge $valueAge;
@@ -600,9 +715,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
+     * this element.
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $valueAnnotation;
@@ -612,9 +725,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * this element.
      */
     #[FHIRAttachment]
     protected FHIRAttachment $valueAttachment;
@@ -625,9 +736,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * this element.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -638,9 +747,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
+     * this element.
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $valueCodeableReference;
@@ -650,9 +757,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * this element.
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -663,9 +768,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
+     * this element.
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $valueContactPoint;
@@ -677,9 +780,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
+     * this element.
      */
     #[FHIRCount]
     protected FHIRCount $valueCount;
@@ -689,9 +790,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance
+     * this element.
      */
     #[FHIRDistance]
     protected FHIRDistance $valueDistance;
@@ -701,9 +800,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * this element.
      */
     #[FHIRDuration]
     protected FHIRDuration $valueDuration;
@@ -715,9 +812,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
+     * this element.
      */
     #[FHIRHumanName]
     protected FHIRHumanName $valueHumanName;
@@ -728,9 +823,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
+     * this element.
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $valueIdentifier;
@@ -740,9 +833,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
+     * this element.
      */
     #[FHIRMoney]
     protected FHIRMoney $valueMoney;
@@ -752,9 +843,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * this element.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -766,9 +855,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * this element.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -778,9 +865,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * this element.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -791,9 +876,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * this element.
      */
     #[FHIRRatio]
     protected FHIRRatio $valueRatio;
@@ -803,9 +886,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
+     * this element.
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $valueRatioRange;
@@ -815,9 +896,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * this element.
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -828,9 +907,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
+     * this element.
      */
     #[FHIRSampledData]
     protected FHIRSampledData $valueSampledData;
@@ -844,9 +921,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
+     * this element.
      */
     #[FHIRSignature]
     protected FHIRSignature $valueSignature;
@@ -860,9 +935,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * this element.
      */
     #[FHIRTiming]
     protected FHIRTiming $valueTiming;
@@ -872,9 +945,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail
+     * this element.
      */
     #[FHIRContactDetail]
     protected FHIRContactDetail $valueContactDetail;
@@ -885,9 +956,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
+     * this element.
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $valueDataRequirement;
@@ -899,9 +968,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
+     * this element.
      */
     #[FHIRExpression]
     protected FHIRExpression $valueExpression;
@@ -913,9 +980,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition
+     * this element.
      */
     #[FHIRParameterDefinition]
     protected FHIRParameterDefinition $valueParameterDefinition;
@@ -926,9 +991,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
+     * this element.
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $valueRelatedArtifact;
@@ -939,9 +1002,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition
+     * this element.
      */
     #[FHIRTriggerDefinition]
     protected FHIRTriggerDefinition $valueTriggerDefinition;
@@ -954,9 +1015,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
+     * this element.
      */
     #[FHIRUsageContext]
     protected FHIRUsageContext $valueUsageContext;
@@ -966,9 +1025,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
+     * this element.
      */
     #[FHIRAvailability]
     protected FHIRAvailability $valueAvailability;
@@ -979,9 +1036,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
+     * this element.
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $valueExtendedContactDetail;
@@ -991,9 +1046,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage
+     * this element.
      */
     #[FHIRDosage]
     protected FHIRDosage $valueDosage;
@@ -1005,9 +1058,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta
+     * this element.
      */
     #[FHIRMeta]
     protected FHIRMeta $valueMeta;
@@ -1016,63 +1067,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
     /**
      * FHIRElementDefinitionExample Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $label
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueCanonical
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $valueCode
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $valueDecimal
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $valueId
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $valueInstant
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $valueInteger64
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $valueMarkdown
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid $valueOid
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $valuePositiveInt
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $valueTime
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $valueUrl
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid $valueUuid
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $valueAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $valueAge
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $valueAnnotation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $valueCodeableReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $valueContactPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount $valueCount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance $valueDistance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $valueHumanName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $valueIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $valueMoney
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $valueRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $valueRatioRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData $valueSampledData
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature $valueSignature
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $valueTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $valueContactDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement $valueDataRequirement
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $valueExpression
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition $valueParameterDefinition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $valueRelatedArtifact
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition $valueTriggerDefinition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $valueUsageContext
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability $valueAvailability
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $valueExtendedContactDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage $valueDosage
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $valueMeta
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -1319,8 +1314,6 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the purpose of this example among the set of examples.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getLabel(): null|FHIRString
     {
@@ -1333,9 +1326,6 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the purpose of this example among the set of examples.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $label
-     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -1356,9 +1346,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
+     * this element.
      */
     public function getValueBase64Binary(): null|FHIRBase64Binary
     {
@@ -1371,10 +1359,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $valueBase64Binary
-     * @return static
+     * this element.
      */
     public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary): self
     {
@@ -1394,9 +1379,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * this element.
      */
     public function getValueBoolean(): null|FHIRBoolean
     {
@@ -1408,10 +1391,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
+     * this element.
      */
     public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
     {
@@ -1433,9 +1413,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * this element.
      */
     public function getValueCanonical(): null|FHIRCanonical
     {
@@ -1449,10 +1427,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueCanonical
-     * @return static
+     * this element.
      */
     public function setValueCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueCanonical): self
     {
@@ -1474,9 +1449,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
+     * this element.
      */
     public function getValueCode(): null|FHIRCode
     {
@@ -1490,10 +1463,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $valueCode
-     * @return static
+     * this element.
      */
     public function setValueCode(null|string|FHIRCodePrimitive|FHIRCode $valueCode): self
     {
@@ -1515,9 +1485,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * this element.
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -1531,10 +1499,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
-     * @return static
+     * this element.
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -1559,9 +1524,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * this element.
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -1578,10 +1541,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @return static
+     * this element.
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -1603,9 +1563,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
+     * this element.
      */
     public function getValueDecimal(): null|FHIRDecimal
     {
@@ -1619,10 +1577,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $valueDecimal
-     * @return static
+     * this element.
      */
     public function setValueDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal): self
     {
@@ -1646,9 +1601,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
+     * this element.
      */
     public function getValueId(): null|FHIRId
     {
@@ -1664,10 +1617,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $valueId
-     * @return static
+     * this element.
      */
     public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId): self
     {
@@ -1691,9 +1641,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
+     * this element.
      */
     public function getValueInstant(): null|FHIRInstant
     {
@@ -1709,10 +1657,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $valueInstant
-     * @return static
+     * this element.
      */
     public function setValueInstant(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $valueInstant): self
     {
@@ -1733,9 +1678,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * this element.
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -1748,10 +1691,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @return static
+     * this element.
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -1772,9 +1712,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
+     * this element.
      */
     public function getValueInteger64(): null|FHIRInteger64
     {
@@ -1787,10 +1725,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $valueInteger64
-     * @return static
+     * this element.
      */
     public function setValueInteger64(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $valueInteger64): self
     {
@@ -1815,9 +1750,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
+     * this element.
      */
     public function getValueMarkdown(): null|FHIRMarkdown
     {
@@ -1834,10 +1767,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $valueMarkdown
-     * @return static
+     * this element.
      */
     public function setValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $valueMarkdown): self
     {
@@ -1859,9 +1789,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid
+     * this element.
      */
     public function getValueOid(): null|FHIROid
     {
@@ -1875,10 +1803,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIROidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROid $valueOid
-     * @return static
+     * this element.
      */
     public function setValueOid(null|string|FHIROidPrimitive|FHIROid $valueOid): self
     {
@@ -1899,9 +1824,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
+     * this element.
      */
     public function getValuePositiveInt(): null|FHIRPositiveInt
     {
@@ -1914,10 +1837,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $valuePositiveInt
-     * @return static
+     * this element.
      */
     public function setValuePositiveInt(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $valuePositiveInt): self
     {
@@ -1938,9 +1858,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * this element.
      */
     public function getValueString(): null|FHIRString
     {
@@ -1953,10 +1871,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @return static
+     * this element.
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -1976,9 +1891,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
+     * this element.
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -1990,10 +1903,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $valueTime
-     * @return static
+     * this element.
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -2014,9 +1924,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
+     * this element.
      */
     public function getValueUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -2029,10 +1937,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
-     * @return static
+     * this element.
      */
     public function setValueUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $valueUnsignedInt): self
     {
@@ -2053,9 +1958,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * this element.
      */
     public function getValueUri(): null|FHIRUri
     {
@@ -2068,10 +1971,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $valueUri
-     * @return static
+     * this element.
      */
     public function setValueUri(null|string|FHIRUriPrimitive|FHIRUri $valueUri): self
     {
@@ -2092,9 +1992,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * this element.
      */
     public function getValueUrl(): null|FHIRUrl
     {
@@ -2107,10 +2005,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $valueUrl
-     * @return static
+     * this element.
      */
     public function setValueUrl(null|string|FHIRUrlPrimitive|FHIRUrl $valueUrl): self
     {
@@ -2132,9 +2027,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid
+     * this element.
      */
     public function getValueUuid(): null|FHIRUuid
     {
@@ -2148,10 +2041,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUuidPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUuid $valueUuid
-     * @return static
+     * this element.
      */
     public function setValueUuid(null|string|FHIRUuidPrimitive|FHIRUuid $valueUuid): self
     {
@@ -2177,9 +2067,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
+     * this element.
      */
     public function getValueAddress(): null|FHIRAddress
     {
@@ -2197,10 +2085,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $valueAddress
-     * @return static
+     * this element.
      */
     public function setValueAddress(null|FHIRAddress $valueAddress): self
     {
@@ -2218,9 +2103,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * this element.
      */
     public function getValueAge(): null|FHIRAge
     {
@@ -2233,10 +2116,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $valueAge
-     * @return static
+     * this element.
      */
     public function setValueAge(null|FHIRAge $valueAge): self
     {
@@ -2255,9 +2135,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
+     * this element.
      */
     public function getValueAnnotation(): null|FHIRAnnotation
     {
@@ -2271,10 +2149,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $valueAnnotation
-     * @return static
+     * this element.
      */
     public function setValueAnnotation(null|FHIRAnnotation $valueAnnotation): self
     {
@@ -2292,9 +2167,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * this element.
      */
     public function getValueAttachment(): null|FHIRAttachment
     {
@@ -2307,10 +2180,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $valueAttachment
-     * @return static
+     * this element.
      */
     public function setValueAttachment(null|FHIRAttachment $valueAttachment): self
     {
@@ -2329,9 +2199,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * this element.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -2345,10 +2213,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
+     * this element.
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -2367,9 +2232,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
+     * this element.
      */
     public function getValueCodeableReference(): null|FHIRCodeableReference
     {
@@ -2383,10 +2246,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $valueCodeableReference
-     * @return static
+     * this element.
      */
     public function setValueCodeableReference(null|FHIRCodeableReference $valueCodeableReference): self
     {
@@ -2404,9 +2264,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * this element.
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -2419,10 +2277,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @return static
+     * this element.
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -2441,9 +2296,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
+     * this element.
      */
     public function getValueContactPoint(): null|FHIRContactPoint
     {
@@ -2457,10 +2310,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $valueContactPoint
-     * @return static
+     * this element.
      */
     public function setValueContactPoint(null|FHIRContactPoint $valueContactPoint): self
     {
@@ -2480,9 +2330,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
+     * this element.
      */
     public function getValueCount(): null|FHIRCount
     {
@@ -2497,10 +2345,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount $valueCount
-     * @return static
+     * this element.
      */
     public function setValueCount(null|FHIRCount $valueCount): self
     {
@@ -2518,9 +2363,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance
+     * this element.
      */
     public function getValueDistance(): null|FHIRDistance
     {
@@ -2533,10 +2376,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance $valueDistance
-     * @return static
+     * this element.
      */
     public function setValueDistance(null|FHIRDistance $valueDistance): self
     {
@@ -2554,9 +2394,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * this element.
      */
     public function getValueDuration(): null|FHIRDuration
     {
@@ -2569,10 +2407,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
-     * @return static
+     * this element.
      */
     public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
@@ -2592,9 +2427,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
+     * this element.
      */
     public function getValueHumanName(): null|FHIRHumanName
     {
@@ -2609,10 +2442,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $valueHumanName
-     * @return static
+     * this element.
      */
     public function setValueHumanName(null|FHIRHumanName $valueHumanName): self
     {
@@ -2631,9 +2461,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
+     * this element.
      */
     public function getValueIdentifier(): null|FHIRIdentifier
     {
@@ -2647,10 +2475,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $valueIdentifier
-     * @return static
+     * this element.
      */
     public function setValueIdentifier(null|FHIRIdentifier $valueIdentifier): self
     {
@@ -2668,9 +2493,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
+     * this element.
      */
     public function getValueMoney(): null|FHIRMoney
     {
@@ -2683,10 +2506,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $valueMoney
-     * @return static
+     * this element.
      */
     public function setValueMoney(null|FHIRMoney $valueMoney): self
     {
@@ -2704,9 +2524,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * this element.
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -2719,10 +2537,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @return static
+     * this element.
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -2742,9 +2557,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * this element.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -2759,10 +2572,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * this element.
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -2780,9 +2590,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * this element.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -2795,10 +2603,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @return static
+     * this element.
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -2817,9 +2622,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
+     * this element.
      */
     public function getValueRatio(): null|FHIRRatio
     {
@@ -2833,10 +2636,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $valueRatio
-     * @return static
+     * this element.
      */
     public function setValueRatio(null|FHIRRatio $valueRatio): self
     {
@@ -2854,9 +2654,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
+     * this element.
      */
     public function getValueRatioRange(): null|FHIRRatioRange
     {
@@ -2869,10 +2667,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange $valueRatioRange
-     * @return static
+     * this element.
      */
     public function setValueRatioRange(null|FHIRRatioRange $valueRatioRange): self
     {
@@ -2890,9 +2685,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * this element.
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -2905,10 +2698,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @return static
+     * this element.
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -2927,9 +2717,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
+     * this element.
      */
     public function getValueSampledData(): null|FHIRSampledData
     {
@@ -2943,10 +2731,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData $valueSampledData
-     * @return static
+     * this element.
      */
     public function setValueSampledData(null|FHIRSampledData $valueSampledData): self
     {
@@ -2968,9 +2753,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
+     * this element.
      */
     public function getValueSignature(): null|FHIRSignature
     {
@@ -2987,10 +2770,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature $valueSignature
-     * @return static
+     * this element.
      */
     public function setValueSignature(null|FHIRSignature $valueSignature): self
     {
@@ -3012,9 +2792,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * this element.
      */
     public function getValueTiming(): null|FHIRTiming
     {
@@ -3031,10 +2809,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $valueTiming
-     * @return static
+     * this element.
      */
     public function setValueTiming(null|FHIRTiming $valueTiming): self
     {
@@ -3052,9 +2827,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail
+     * this element.
      */
     public function getValueContactDetail(): null|FHIRContactDetail
     {
@@ -3067,10 +2840,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $valueContactDetail
-     * @return static
+     * this element.
      */
     public function setValueContactDetail(null|FHIRContactDetail $valueContactDetail): self
     {
@@ -3089,9 +2859,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
+     * this element.
      */
     public function getValueDataRequirement(): null|FHIRDataRequirement
     {
@@ -3105,10 +2873,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement $valueDataRequirement
-     * @return static
+     * this element.
      */
     public function setValueDataRequirement(null|FHIRDataRequirement $valueDataRequirement): self
     {
@@ -3128,9 +2893,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
+     * this element.
      */
     public function getValueExpression(): null|FHIRExpression
     {
@@ -3145,10 +2908,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $valueExpression
-     * @return static
+     * this element.
      */
     public function setValueExpression(null|FHIRExpression $valueExpression): self
     {
@@ -3168,9 +2928,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition
+     * this element.
      */
     public function getValueParameterDefinition(): null|FHIRParameterDefinition
     {
@@ -3185,10 +2943,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition $valueParameterDefinition
-     * @return static
+     * this element.
      */
     public function setValueParameterDefinition(null|FHIRParameterDefinition $valueParameterDefinition): self
     {
@@ -3207,9 +2962,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
+     * this element.
      */
     public function getValueRelatedArtifact(): null|FHIRRelatedArtifact
     {
@@ -3223,10 +2976,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $valueRelatedArtifact
-     * @return static
+     * this element.
      */
     public function setValueRelatedArtifact(null|FHIRRelatedArtifact $valueRelatedArtifact): self
     {
@@ -3245,9 +2995,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition
+     * this element.
      */
     public function getValueTriggerDefinition(): null|FHIRTriggerDefinition
     {
@@ -3261,10 +3009,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition $valueTriggerDefinition
-     * @return static
+     * this element.
      */
     public function setValueTriggerDefinition(null|FHIRTriggerDefinition $valueTriggerDefinition): self
     {
@@ -3285,9 +3030,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
+     * this element.
      */
     public function getValueUsageContext(): null|FHIRUsageContext
     {
@@ -3303,10 +3046,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $valueUsageContext
-     * @return static
+     * this element.
      */
     public function setValueUsageContext(null|FHIRUsageContext $valueUsageContext): self
     {
@@ -3324,9 +3064,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
+     * this element.
      */
     public function getValueAvailability(): null|FHIRAvailability
     {
@@ -3339,10 +3077,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability $valueAvailability
-     * @return static
+     * this element.
      */
     public function setValueAvailability(null|FHIRAvailability $valueAvailability): self
     {
@@ -3361,9 +3096,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
+     * this element.
      */
     public function getValueExtendedContactDetail(): null|FHIRExtendedContactDetail
     {
@@ -3377,10 +3110,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $valueExtendedContactDetail
-     * @return static
+     * this element.
      */
     public function setValueExtendedContactDetail(null|FHIRExtendedContactDetail $valueExtendedContactDetail): self
     {
@@ -3398,9 +3128,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage
+     * this element.
      */
     public function getValueDosage(): null|FHIRDosage
     {
@@ -3413,10 +3141,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage $valueDosage
-     * @return static
+     * this element.
      */
     public function setValueDosage(null|FHIRDosage $valueDosage): self
     {
@@ -3436,9 +3161,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta
+     * this element.
      */
     public function getValueMeta(): null|FHIRMeta
     {
@@ -3453,10 +3176,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value for the element, which must be one of the types allowed for
-     * this element. (choose any one of the elements, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $valueMeta
-     * @return static
+     * this element.
      */
     public function setValueMeta(null|FHIRMeta $valueMeta): self
     {
@@ -3470,10 +3190,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionExample $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionExample
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -3793,10 +3510,6 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -4184,10 +3897,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionExample $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionExample
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

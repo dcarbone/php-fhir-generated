@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -128,8 +127,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Type of resource this link refers to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $type;
@@ -139,8 +136,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A set of parameters to look up.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $params;
@@ -151,8 +146,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Profile for the target resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $profile;
@@ -183,11 +176,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
     /**
      * FHIRGraphDefinitionTarget Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $params
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $profile
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment> $compartment
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink> $link
      * @param null|string[] $fhirComments
@@ -237,8 +226,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Type of resource this link refers to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode
      */
     public function getType(): null|FHIRCode
     {
@@ -252,9 +239,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Type of resource this link refers to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $type
-     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -275,8 +259,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A set of parameters to look up.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getParams(): null|FHIRString
     {
@@ -289,9 +271,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A set of parameters to look up.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $params
-     * @return static
      */
     public function setParams(null|string|FHIRStringPrimitive|FHIRString $params): self
     {
@@ -313,8 +292,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Profile for the target resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical
      */
     public function getProfile(): null|FHIRCanonical
     {
@@ -328,9 +305,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Profile for the target resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $profile
-     * @return static
      */
     public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -376,9 +350,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Compartment Consistency Rules.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment $compartment
-     * @return static
      */
     public function addCompartment(FHIRGraphDefinitionCompartment $compartment): self
     {
@@ -395,9 +366,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Compartment Consistency Rules.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment ...$compartment
-     * @return static
      */
     public function setCompartment(FHIRGraphDefinitionCompartment ...$compartment): self
     {
@@ -440,9 +408,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Additional links from target resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink $link
-     * @return static
      */
     public function addLink(FHIRGraphDefinitionLink $link): self
     {
@@ -459,9 +424,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Additional links from target resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink ...$link
-     * @return static
      */
     public function setLink(FHIRGraphDefinitionLink ...$link): self
     {
@@ -475,10 +437,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -554,10 +513,6 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -609,10 +564,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionTarget
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

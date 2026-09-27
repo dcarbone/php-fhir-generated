@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -90,7 +88,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -169,8 +166,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $type;
@@ -182,8 +177,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * Whether the sequence is numbered starting at (0-based numbering or coordinates,
      * inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive
      * start and inclusive end).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $coordinateSystem;
@@ -193,8 +186,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient whose sequencing results are described by this resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -204,8 +195,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specimen used for sequencing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $specimen;
@@ -215,8 +204,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method for sequencing, for example, chip information.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $device;
@@ -226,8 +213,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization or lab that should be responsible for this result.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $performer;
@@ -239,8 +224,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of copies of the seqeunce of interest. (RNASeq).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -249,8 +232,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A sequence that is used as a reference to describe variants that are present in
      * a sequence analyzed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq
      */
     #[FHIRSequenceReferenceSeq]
     protected FHIRSequenceReferenceSeq $referenceSeq;
@@ -275,8 +256,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * Sequence that was observed. It is the result marked by referenceSeq along with
      * variant records on referenceSeq. This shall starts from referenceSeq.windowStart
      * and end by referenceSeq.windowEnd.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $observedSeq;
@@ -298,8 +277,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Coverage (read depth or depth) is the average number of reads representing a
      * given nucleotide in the reconstructed sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $readCoverage;
@@ -328,27 +305,12 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
     /* constructor.php:61 */
     /**
      * FHIRSequence Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $type
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $coordinateSystem
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $specimen
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $device
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $performer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq $referenceSeq
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant> $variant
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $observedSeq
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality> $quality
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $readCoverage
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository> $repository
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference> $pointer
      * @param null|string[] $fhirComments
@@ -480,9 +442,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A unique identifier for this particular sequence instance. This is a
      * FHIR-defined id.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -500,9 +459,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A unique identifier for this particular sequence instance. This is a
      * FHIR-defined id.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -521,8 +477,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode
      */
     public function getType(): null|FHIRCode
     {
@@ -536,9 +490,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $type
-     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -561,8 +512,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * Whether the sequence is numbered starting at (0-based numbering or coordinates,
      * inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive
      * start and inclusive end).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     public function getCoordinateSystem(): null|FHIRInteger
     {
@@ -577,9 +526,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * Whether the sequence is numbered starting at (0-based numbering or coordinates,
      * inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive
      * start and inclusive end).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $coordinateSystem
-     * @return static
      */
     public function setCoordinateSystem(null|string|float|FHIRIntegerPrimitive|FHIRInteger $coordinateSystem): self
     {
@@ -600,8 +546,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient whose sequencing results are described by this resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -614,9 +558,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient whose sequencing results are described by this resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -634,8 +575,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specimen used for sequencing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getSpecimen(): null|FHIRReference
     {
@@ -648,9 +587,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specimen used for sequencing.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $specimen
-     * @return static
      */
     public function setSpecimen(null|FHIRReference $specimen): self
     {
@@ -668,8 +604,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method for sequencing, for example, chip information.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getDevice(): null|FHIRReference
     {
@@ -682,9 +616,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method for sequencing, for example, chip information.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $device
-     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -702,8 +633,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization or lab that should be responsible for this result.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getPerformer(): null|FHIRReference
     {
@@ -716,9 +645,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization or lab that should be responsible for this result.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $performer
-     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -738,8 +664,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of copies of the seqeunce of interest. (RNASeq).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -754,9 +678,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of copies of the seqeunce of interest. (RNASeq).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -773,8 +694,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A sequence that is used as a reference to describe variants that are present in
      * a sequence analyzed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq
      */
     public function getReferenceSeq(): null|FHIRSequenceReferenceSeq
     {
@@ -786,9 +705,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A sequence that is used as a reference to describe variants that are present in
      * a sequence analyzed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceReferenceSeq $referenceSeq
-     * @return static
      */
     public function setReferenceSeq(null|FHIRSequenceReferenceSeq $referenceSeq): self
     {
@@ -835,9 +751,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * This element can represent amino acid or nucleic sequence change(including
      * insertion,deletion,SNP,etc.) It can represent some complex mutation or segment
      * variation with the assist of CIGAR string.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant $variant
-     * @return static
      */
     public function addVariant(FHIRSequenceVariant $variant): self
     {
@@ -856,9 +769,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * This element can represent amino acid or nucleic sequence change(including
      * insertion,deletion,SNP,etc.) It can represent some complex mutation or segment
      * variation with the assist of CIGAR string.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant ...$variant
-     * @return static
      */
     public function setVariant(FHIRSequenceVariant ...$variant): self
     {
@@ -878,8 +788,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * Sequence that was observed. It is the result marked by referenceSeq along with
      * variant records on referenceSeq. This shall starts from referenceSeq.windowStart
      * and end by referenceSeq.windowEnd.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getObservedSeq(): null|FHIRString
     {
@@ -894,9 +802,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * Sequence that was observed. It is the result marked by referenceSeq along with
      * variant records on referenceSeq. This shall starts from referenceSeq.windowStart
      * and end by referenceSeq.windowEnd.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $observedSeq
-     * @return static
      */
     public function setObservedSeq(null|string|FHIRStringPrimitive|FHIRString $observedSeq): self
     {
@@ -942,9 +847,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * An experimental feature attribute that defines the quality of the feature in a
      * quantitative way, such as a phred quality score
      * ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality $quality
-     * @return static
      */
     public function addQuality(FHIRSequenceQuality $quality): self
     {
@@ -961,9 +863,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * An experimental feature attribute that defines the quality of the feature in a
      * quantitative way, such as a phred quality score
      * ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality ...$quality
-     * @return static
      */
     public function setQuality(FHIRSequenceQuality ...$quality): self
     {
@@ -982,8 +881,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Coverage (read depth or depth) is the average number of reads representing a
      * given nucleotide in the reconstructed sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     public function getReadCoverage(): null|FHIRInteger
     {
@@ -997,9 +894,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Coverage (read depth or depth) is the average number of reads representing a
      * given nucleotide in the reconstructed sequence.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $readCoverage
-     * @return static
      */
     public function setReadCoverage(null|string|float|FHIRIntegerPrimitive|FHIRInteger $readCoverage): self
     {
@@ -1043,9 +937,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Configurations of the external repository. The repository shall store target's
      * observedSeq or records related with target's observedSeq.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository $repository
-     * @return static
      */
     public function addRepository(FHIRSequenceRepository $repository): self
     {
@@ -1061,9 +952,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Configurations of the external repository. The repository shall store target's
      * observedSeq or records related with target's observedSeq.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository ...$repository
-     * @return static
      */
     public function setRepository(FHIRSequenceRepository ...$repository): self
     {
@@ -1106,9 +994,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to next atomic sequence which at most contains one variant.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $pointer
-     * @return static
      */
     public function addPointer(FHIRReference $pointer): self
     {
@@ -1125,9 +1010,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to next atomic sequence which at most contains one variant.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference ...$pointer
-     * @return static
      */
     public function setPointer(FHIRReference ...$pointer): self
     {
@@ -1141,10 +1023,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRSequence $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRSequence
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1284,11 +1163,6 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1425,10 +1299,7 @@ class FHIRSequence extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRSequence $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRSequence
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

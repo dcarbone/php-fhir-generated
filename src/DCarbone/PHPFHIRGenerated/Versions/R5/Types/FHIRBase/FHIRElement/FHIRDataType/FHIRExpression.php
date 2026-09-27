@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -148,8 +148,6 @@ class FHIRExpression extends FHIRDataType
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -161,8 +159,6 @@ class FHIRExpression extends FHIRDataType
      *
      * A short name assigned to the expression to allow for multiple reuse of the
      * expression in the context where it is defined.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $name;
@@ -173,8 +169,6 @@ class FHIRExpression extends FHIRDataType
      * the Narrative, or extensions
      *
      * The media type of the language for the expression.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $language;
@@ -184,8 +178,6 @@ class FHIRExpression extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression in the specified language that returns a value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $expression;
@@ -195,8 +187,6 @@ class FHIRExpression extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that defines where the expression is found.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $reference;
@@ -205,12 +195,6 @@ class FHIRExpression extends FHIRDataType
     /**
      * FHIRExpression Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $expression
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $reference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -256,8 +240,6 @@ class FHIRExpression extends FHIRDataType
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -271,9 +253,6 @@ class FHIRExpression extends FHIRDataType
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -296,8 +275,6 @@ class FHIRExpression extends FHIRDataType
      *
      * A short name assigned to the expression to allow for multiple reuse of the
      * expression in the context where it is defined.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getName(): null|FHIRCode
     {
@@ -312,9 +289,6 @@ class FHIRExpression extends FHIRDataType
      *
      * A short name assigned to the expression to allow for multiple reuse of the
      * expression in the context where it is defined.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $name
-     * @return static
      */
     public function setName(null|string|FHIRCodePrimitive|FHIRCode $name): self
     {
@@ -336,8 +310,6 @@ class FHIRExpression extends FHIRDataType
      * the Narrative, or extensions
      *
      * The media type of the language for the expression.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getLanguage(): null|FHIRCode
     {
@@ -351,9 +323,6 @@ class FHIRExpression extends FHIRDataType
      * the Narrative, or extensions
      *
      * The media type of the language for the expression.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @return static
      */
     public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -374,8 +343,6 @@ class FHIRExpression extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression in the specified language that returns a value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getExpression(): null|FHIRString
     {
@@ -388,9 +355,6 @@ class FHIRExpression extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression in the specified language that returns a value.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $expression
-     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -411,8 +375,6 @@ class FHIRExpression extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that defines where the expression is found.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getReference(): null|FHIRUri
     {
@@ -425,9 +387,6 @@ class FHIRExpression extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that defines where the expression is found.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $reference
-     * @return static
      */
     public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference): self
     {
@@ -444,10 +403,7 @@ class FHIRExpression extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -537,10 +493,6 @@ class FHIRExpression extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -598,10 +550,7 @@ class FHIRExpression extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

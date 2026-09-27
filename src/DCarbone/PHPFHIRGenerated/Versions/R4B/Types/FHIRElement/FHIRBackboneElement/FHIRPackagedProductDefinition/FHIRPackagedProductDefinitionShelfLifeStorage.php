@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -139,8 +139,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * bottle, etc. The shelf life type shall be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -153,8 +151,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $periodDuration;
@@ -167,8 +163,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $periodString;
@@ -191,11 +185,7 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
     /**
      * FHIRPackagedProductDefinitionShelfLifeStorage Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $periodDuration
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $periodString
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $specialPrecautionsForStorage
      * @param null|string[] $fhirComments
      */
@@ -245,8 +235,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * bottle, etc. The shelf life type shall be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -265,9 +253,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * bottle, etc. The shelf life type shall be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -288,8 +273,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getPeriodDuration(): null|FHIRDuration
     {
@@ -305,9 +288,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $periodDuration
-     * @return static
      */
     public function setPeriodDuration(null|FHIRDuration $periodDuration): self
     {
@@ -328,8 +308,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getPeriodString(): null|FHIRString
     {
@@ -345,9 +323,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $periodString
-     * @return static
      */
     public function setPeriodString(null|string|FHIRStringPrimitive|FHIRString $periodString): self
     {
@@ -399,9 +374,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary. The controlled term and the controlled term identifier
      * shall be specified.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $specialPrecautionsForStorage
-     * @return static
      */
     public function addSpecialPrecautionsForStorage(FHIRCodeableConcept $specialPrecautionsForStorage): self
     {
@@ -421,9 +393,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary. The controlled term and the controlled term identifier
      * shall be specified.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$specialPrecautionsForStorage
-     * @return static
      */
     public function setSpecialPrecautionsForStorage(FHIRCodeableConcept ...$specialPrecautionsForStorage): self
     {
@@ -437,10 +406,7 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionShelfLifeStorage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionShelfLifeStorage
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -498,10 +464,6 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -536,10 +498,7 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionShelfLifeStorage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionShelfLifeStorage
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

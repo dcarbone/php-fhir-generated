@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
@@ -87,7 +85,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAccountStatusList;
@@ -158,8 +155,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name used for the account when displaying it to humans in reports, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -170,8 +165,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the account for reporting and searching purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -180,8 +173,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the account is presently used/useable or not.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAccountStatus
      */
     #[FHIRAccountStatus]
     protected FHIRAccountStatus $status;
@@ -191,8 +182,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time over which the account is allowed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $activePeriod;
@@ -203,16 +192,12 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the currency to which transactions must be converted when crediting
      * or debiting the account.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $currency;
     /**
      * Represents the sum of all credits less all debits associated with the account.
      * Might be positive, zero or negative.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $balance;
@@ -223,8 +208,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the period of time the account applies to; e.g. accounts created per
      * fiscal year, quarter, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $coveragePeriod;
@@ -235,8 +218,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the patient, device, practitioner, location or other object the
      * account is associated with.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -247,8 +228,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates the organization, department, etc. with responsibility for the
      * account.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $owner;
@@ -259,8 +238,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides additional information about what the account tracks and how it is
      * used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -268,25 +245,10 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
     /* constructor.php:61 */
     /**
      * FHIRAccount Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAccountStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAccountStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $activePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $currency
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $balance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $coveragePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $owner
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -400,9 +362,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Unique identifier used to reference the account. May or may not be intended for
      * human use (e.g. credit card number).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -420,9 +379,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Unique identifier used to reference the account. May or may not be intended for
      * human use (e.g. credit card number).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -440,8 +396,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name used for the account when displaying it to humans in reports, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -454,9 +408,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name used for the account when displaying it to humans in reports, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -478,8 +429,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the account for reporting and searching purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -493,9 +442,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the account for reporting and searching purposes.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -512,8 +458,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the account is presently used/useable or not.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAccountStatus
      */
     public function getStatus(): null|FHIRAccountStatus
     {
@@ -525,9 +469,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the account is presently used/useable or not.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAccountStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAccountStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRAccountStatusList|FHIRAccountStatus $status): self
     {
@@ -548,8 +489,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time over which the account is allowed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getActivePeriod(): null|FHIRPeriod
     {
@@ -562,9 +501,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time over which the account is allowed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $activePeriod
-     * @return static
      */
     public function setActivePeriod(null|FHIRPeriod $activePeriod): self
     {
@@ -583,8 +519,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the currency to which transactions must be converted when crediting
      * or debiting the account.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getCurrency(): null|FHIRCoding
     {
@@ -598,9 +532,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the currency to which transactions must be converted when crediting
      * or debiting the account.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $currency
-     * @return static
      */
     public function setCurrency(null|FHIRCoding $currency): self
     {
@@ -615,8 +546,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
     /**
      * Represents the sum of all credits less all debits associated with the account.
      * Might be positive, zero or negative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getBalance(): null|FHIRMoney
     {
@@ -626,9 +555,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
     /**
      * Represents the sum of all credits less all debits associated with the account.
      * Might be positive, zero or negative.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRMoney $balance
-     * @return static
      */
     public function setBalance(null|FHIRMoney $balance): self
     {
@@ -647,8 +573,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the period of time the account applies to; e.g. accounts created per
      * fiscal year, quarter, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getCoveragePeriod(): null|FHIRPeriod
     {
@@ -662,9 +586,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the period of time the account applies to; e.g. accounts created per
      * fiscal year, quarter, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $coveragePeriod
-     * @return static
      */
     public function setCoveragePeriod(null|FHIRPeriod $coveragePeriod): self
     {
@@ -683,8 +604,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the patient, device, practitioner, location or other object the
      * account is associated with.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -698,9 +617,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifies the patient, device, practitioner, location or other object the
      * account is associated with.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -719,8 +635,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates the organization, department, etc. with responsibility for the
      * account.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getOwner(): null|FHIRReference
     {
@@ -734,9 +648,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates the organization, department, etc. with responsibility for the
      * account.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $owner
-     * @return static
      */
     public function setOwner(null|FHIRReference $owner): self
     {
@@ -755,8 +666,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides additional information about what the account tracks and how it is
      * used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -770,9 +679,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Provides additional information about what the account tracks and how it is
      * used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -789,10 +695,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAccount $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAccount
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -916,11 +819,6 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1024,10 +922,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAccount $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRAccount
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -115,7 +113,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -195,8 +192,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * address at which at which an authoritative instance of this summary is (or will
      * be) published. This URL can be the target of a canonical reference. It SHALL
      * remain the same when the summary is stored on different servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -204,8 +199,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this summary. Enables tracking the life-cycle of the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -260,8 +253,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Citation Resource or display of suggested citation for this report.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $citeAsReference;
@@ -275,8 +266,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * the Narrative, or extensions
      *
      * Citation Resource or display of suggested citation for this report.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $citeAsMarkdown;
@@ -288,8 +277,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Specifies the kind of report, such as grouping of classifiers, search results,
      * or human-compiled expression.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -324,8 +311,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Specifies the subject or focus of the report. Answers "What is this report
      * about?".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSubject
      */
     #[FHIREvidenceReportSubject]
     protected FHIREvidenceReportSubject $subject;
@@ -335,8 +320,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the evidence report.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -427,26 +410,14 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
     /* constructor.php:61 */
     /**
      * FHIREvidenceReport Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $relatedIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $citeAsReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $citeAsMarkdown
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact> $relatedArtifact
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSubject $subject
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $contact
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $author
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $editor
@@ -577,8 +548,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * address at which at which an authoritative instance of this summary is (or will
      * be) published. This URL can be the target of a canonical reference. It SHALL
      * remain the same when the summary is stored on different servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -596,9 +565,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * address at which at which an authoritative instance of this summary is (or will
      * be) published. This URL can be the target of a canonical reference. It SHALL
      * remain the same when the summary is stored on different servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -617,8 +583,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this summary. Enables tracking the life-cycle of the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -629,9 +593,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this summary. Enables tracking the life-cycle of the content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -691,9 +652,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence report
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -717,9 +675,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence report
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -768,9 +723,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * A formal identifier that is used to identify this EvidenceReport when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -790,9 +742,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * A formal identifier that is used to identify this EvidenceReport when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -839,9 +788,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * A formal identifier that is used to identify things closely related to this
      * EvidenceReport.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $relatedIdentifier
-     * @return static
      */
     public function addRelatedIdentifier(FHIRIdentifier $relatedIdentifier): self
     {
@@ -860,9 +806,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * A formal identifier that is used to identify things closely related to this
      * EvidenceReport.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$relatedIdentifier
-     * @return static
      */
     public function setRelatedIdentifier(FHIRIdentifier ...$relatedIdentifier): self
     {
@@ -880,8 +823,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Citation Resource or display of suggested citation for this report.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getCiteAsReference(): null|FHIRReference
     {
@@ -894,9 +835,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Citation Resource or display of suggested citation for this report.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $citeAsReference
-     * @return static
      */
     public function setCiteAsReference(null|FHIRReference $citeAsReference): self
     {
@@ -918,8 +856,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * the Narrative, or extensions
      *
      * Citation Resource or display of suggested citation for this report.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getCiteAsMarkdown(): null|FHIRMarkdown
     {
@@ -936,9 +872,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * the Narrative, or extensions
      *
      * Citation Resource or display of suggested citation for this report.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $citeAsMarkdown
-     * @return static
      */
     public function setCiteAsMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $citeAsMarkdown): self
     {
@@ -961,8 +894,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Specifies the kind of report, such as grouping of classifiers, search results,
      * or human-compiled expression.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -977,9 +908,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Specifies the kind of report, such as grouping of classifiers, search results,
      * or human-compiled expression.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -1024,9 +952,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used for footnotes and annotations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1044,9 +969,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used for footnotes and annotations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1091,9 +1013,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link, description or reference to artifact associated with the report.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact $relatedArtifact
-     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -1111,9 +1030,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link, description or reference to artifact associated with the report.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact ...$relatedArtifact
-     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -1132,8 +1048,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Specifies the subject or focus of the report. Answers "What is this report
      * about?".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSubject
      */
     public function getSubject(): null|FHIREvidenceReportSubject
     {
@@ -1147,9 +1061,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Specifies the subject or focus of the report. Answers "What is this report
      * about?".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSubject $subject
-     * @return static
      */
     public function setSubject(null|FHIREvidenceReportSubject $subject): self
     {
@@ -1167,8 +1078,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the evidence report.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1181,9 +1090,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the evidence report.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1231,9 +1137,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1251,9 +1154,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1298,9 +1198,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily involved in the creation and
      * maintenance of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $author
-     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -1318,9 +1215,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily involved in the creation and
      * maintenance of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$author
-     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -1365,9 +1259,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily responsible for internal
      * coherence of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $editor
-     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -1385,9 +1276,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily responsible for internal
      * coherence of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$editor
-     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -1432,9 +1320,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily responsible for review of some
      * aspect of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $reviewer
-     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -1452,9 +1337,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device primarily responsible for review of some
      * aspect of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$reviewer
-     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -1499,9 +1381,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device responsible for officially endorsing the
      * content for use in some setting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $endorser
-     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -1519,9 +1398,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * An individiual, organization, or device responsible for officially endorsing the
      * content for use in some setting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$endorser
-     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -1566,9 +1442,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Relationships that this composition has with other compositions or documents
      * that already exist.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo $relatesTo
-     * @return static
      */
     public function addRelatesTo(FHIREvidenceReportRelatesTo $relatesTo): self
     {
@@ -1586,9 +1459,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      *
      * Relationships that this composition has with other compositions or documents
      * that already exist.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportRelatesTo ...$relatesTo
-     * @return static
      */
     public function setRelatesTo(FHIREvidenceReportRelatesTo ...$relatesTo): self
     {
@@ -1631,9 +1501,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * EvidenceVariable, and Citation resources and related concepts.
      *
      * The root of the sections that make up the composition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection $section
-     * @return static
      */
     public function addSection(FHIREvidenceReportSection $section): self
     {
@@ -1650,9 +1517,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
      * EvidenceVariable, and Citation resources and related concepts.
      *
      * The root of the sections that make up the composition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection ...$section
-     * @return static
      */
     public function setSection(FHIREvidenceReportSection ...$section): self
     {
@@ -1666,10 +1530,7 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIREvidenceReport $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIREvidenceReport
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1817,11 +1678,6 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1992,10 +1848,7 @@ class FHIREvidenceReport extends FHIRDomainResource implements VersionContainedT
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIREvidenceReport $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIREvidenceReport
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

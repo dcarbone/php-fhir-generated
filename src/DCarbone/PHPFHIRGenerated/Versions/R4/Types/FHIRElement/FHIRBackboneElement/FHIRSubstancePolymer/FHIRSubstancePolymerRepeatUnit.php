@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -115,8 +115,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $orientationOfPolymerisation;
@@ -126,8 +124,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $repeatUnit;
@@ -142,8 +138,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
      */
     #[FHIRSubstanceAmount]
     protected FHIRSubstanceAmount $amount;
@@ -170,11 +164,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     /**
      * FHIRSubstancePolymerRepeatUnit Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $orientationOfPolymerisation
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $repeatUnit
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount $amount
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation> $degreeOfPolymerisation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation> $structuralRepresentation
      * @param null|string[] $fhirComments
@@ -224,8 +214,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getOrientationOfPolymerisation(): null|FHIRCodeableConcept
     {
@@ -239,9 +227,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $orientationOfPolymerisation
-     * @return static
      */
     public function setOrientationOfPolymerisation(null|FHIRCodeableConcept $orientationOfPolymerisation): self
     {
@@ -259,8 +244,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getRepeatUnit(): null|FHIRString
     {
@@ -273,9 +256,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $repeatUnit
-     * @return static
      */
     public function setRepeatUnit(null|string|FHIRStringPrimitive|FHIRString $repeatUnit): self
     {
@@ -301,8 +281,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
      */
     public function getAmount(): null|FHIRSubstanceAmount
     {
@@ -320,9 +298,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount $amount
-     * @return static
      */
     public function setAmount(null|FHIRSubstanceAmount $amount): self
     {
@@ -361,9 +336,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Todo.
      *
      * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation $degreeOfPolymerisation
-     * @return static
      */
     public function addDegreeOfPolymerisation(FHIRSubstancePolymerDegreeOfPolymerisation $degreeOfPolymerisation): self
     {
@@ -378,9 +350,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Todo.
      *
      * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation ...$degreeOfPolymerisation
-     * @return static
      */
     public function setDegreeOfPolymerisation(FHIRSubstancePolymerDegreeOfPolymerisation ...$degreeOfPolymerisation): self
     {
@@ -419,9 +388,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Todo.
      *
      * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation $structuralRepresentation
-     * @return static
      */
     public function addStructuralRepresentation(FHIRSubstancePolymerStructuralRepresentation $structuralRepresentation): self
     {
@@ -436,9 +402,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Todo.
      *
      * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation ...$structuralRepresentation
-     * @return static
      */
     public function setStructuralRepresentation(FHIRSubstancePolymerStructuralRepresentation ...$structuralRepresentation): self
     {
@@ -452,10 +415,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -515,10 +475,6 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -560,10 +516,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

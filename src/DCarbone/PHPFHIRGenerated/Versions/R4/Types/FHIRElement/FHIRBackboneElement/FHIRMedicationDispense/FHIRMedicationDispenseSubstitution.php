@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -122,8 +121,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      *
      * True if the dispenser dispensed a different drug or product from what was
      * prescribed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $wasSubstituted;
@@ -135,8 +132,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      *
      * A code signifying whether a different drug was dispensed from what was
      * prescribed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -169,10 +164,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
     /**
      * FHIRMedicationDispenseSubstitution Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $wasSubstituted
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $reason
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $responsibleParty
      * @param null|string[] $fhirComments
@@ -217,8 +209,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      *
      * True if the dispenser dispensed a different drug or product from what was
      * prescribed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getWasSubstituted(): null|FHIRBoolean
     {
@@ -231,9 +221,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      *
      * True if the dispenser dispensed a different drug or product from what was
      * prescribed.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $wasSubstituted
-     * @return static
      */
     public function setWasSubstituted(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wasSubstituted): self
     {
@@ -256,8 +243,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      *
      * A code signifying whether a different drug was dispensed from what was
      * prescribed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -272,9 +257,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      *
      * A code signifying whether a different drug was dispensed from what was
      * prescribed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -321,9 +303,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      *
      * Indicates the reason for the substitution (or lack of substitution) from what
      * was prescribed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason): self
     {
@@ -342,9 +321,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      *
      * Indicates the reason for the substitution (or lack of substitution) from what
      * was prescribed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$reason
-     * @return static
      */
     public function setReason(FHIRCodeableConcept ...$reason): self
     {
@@ -387,9 +363,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or organization that has primary responsibility for the substitution.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $responsibleParty
-     * @return static
      */
     public function addResponsibleParty(FHIRReference $responsibleParty): self
     {
@@ -406,9 +379,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or organization that has primary responsibility for the substitution.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$responsibleParty
-     * @return static
      */
     public function setResponsibleParty(FHIRReference ...$responsibleParty): self
     {
@@ -422,10 +392,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -483,10 +450,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -523,10 +486,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

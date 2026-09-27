@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionLegalStatusOfSupply;
@@ -115,7 +113,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -192,8 +189,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * A name for this package. Typically what it would be listed as in a drug
      * formulary or catalogue, inventory etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -205,8 +200,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * A high level category e.g. medicinal product, raw material, shipping/transport
      * container, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -231,8 +224,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * The status within the lifecycle of this item. A high level status, this is not
      * intended to duplicate details carried elsewhere such as legal status, or
      * authorization or marketing status.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -246,8 +237,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status became applicable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $statusDate;
@@ -285,8 +274,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * the Narrative, or extensions
      *
      * Textual description. Note that this is not the name of the package or product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -318,8 +305,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Identifies if the package contains different items, such as when a drug product
      * is supplied with another item e.g. a diluent or adjuvant.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $copackagedIndicator;
@@ -352,8 +337,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A packaging item, as a container for medically related items, possibly with
      * other packaging items within, or a packaging component, such as bottle cap
      * (which is not a device or a medication manufactured item).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionPackaging
      */
     #[FHIRPackagedProductDefinitionPackaging]
     protected FHIRPackagedProductDefinitionPackaging $packaging;
@@ -371,28 +354,16 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
     /* constructor.php:61 */
     /**
      * FHIRPackagedProductDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $packageFor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $statusDate
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity> $containedItemQuantity
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionLegalStatusOfSupply> $legalStatusOfSupply
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus> $marketingStatus
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $copackagedIndicator
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $manufacturer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $attachedDocument
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionPackaging $packaging
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionProperty> $characteristic
      * @param null|string[] $fhirComments
      */
@@ -527,9 +498,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A unique identifier for this package as whole - not the the content of the
      * package. Unique instance identifiers assigned to a package by manufacturers,
      * regulators, drug catalogue custodians or other organizations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -549,9 +517,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A unique identifier for this package as whole - not the the content of the
      * package. Unique instance identifiers assigned to a package by manufacturers,
      * regulators, drug catalogue custodians or other organizations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -570,8 +535,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * A name for this package. Typically what it would be listed as in a drug
      * formulary or catalogue, inventory etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -585,9 +548,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * A name for this package. Typically what it would be listed as in a drug
      * formulary or catalogue, inventory etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -610,8 +570,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * A high level category e.g. medicinal product, raw material, shipping/transport
      * container, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -626,9 +584,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * A high level category e.g. medicinal product, raw material, shipping/transport
      * container, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -673,9 +628,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * The product this package model relates to, not the contents of the package (for
      * which see package.containedItem).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $packageFor
-     * @return static
      */
     public function addPackageFor(FHIRReference $packageFor): self
     {
@@ -693,9 +645,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * The product this package model relates to, not the contents of the package (for
      * which see package.containedItem).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$packageFor
-     * @return static
      */
     public function setPackageFor(FHIRReference ...$packageFor): self
     {
@@ -716,8 +665,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * The status within the lifecycle of this item. A high level status, this is not
      * intended to duplicate details carried elsewhere such as legal status, or
      * authorization or marketing status.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -733,9 +680,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * The status within the lifecycle of this item. A high level status, this is not
      * intended to duplicate details carried elsewhere such as legal status, or
      * authorization or marketing status.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -757,8 +701,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status became applicable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getStatusDate(): null|FHIRDateTime
     {
@@ -775,9 +717,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status became applicable.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $statusDate
-     * @return static
      */
     public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
     {
@@ -849,9 +788,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * allow different counts of similar items (e.g. not '2 tubes and 3 tubes').
      * Repeats are not to be used to represent different pack sizes (e.g. 20 pack vs.
      * 50 pack) - which would be different instances of this resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $containedItemQuantity
-     * @return static
      */
     public function addContainedItemQuantity(FHIRQuantity $containedItemQuantity): self
     {
@@ -881,9 +817,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * allow different counts of similar items (e.g. not '2 tubes and 3 tubes').
      * Repeats are not to be used to represent different pack sizes (e.g. 20 pack vs.
      * 50 pack) - which would be different instances of this resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$containedItemQuantity
-     * @return static
      */
     public function setContainedItemQuantity(FHIRQuantity ...$containedItemQuantity): self
     {
@@ -905,8 +838,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * the Narrative, or extensions
      *
      * Textual description. Note that this is not the name of the package or product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -923,9 +854,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * the Narrative, or extensions
      *
      * Textual description. Note that this is not the name of the package or product.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -967,9 +895,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A medically related item or items, in a container or package.
      *
      * The legal status of supply of the packaged item as classified by the regulator.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionLegalStatusOfSupply $legalStatusOfSupply
-     * @return static
      */
     public function addLegalStatusOfSupply(FHIRPackagedProductDefinitionLegalStatusOfSupply $legalStatusOfSupply): self
     {
@@ -984,9 +909,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A medically related item or items, in a container or package.
      *
      * The legal status of supply of the packaged item as classified by the regulator.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionLegalStatusOfSupply ...$legalStatusOfSupply
-     * @return static
      */
     public function setLegalStatusOfSupply(FHIRPackagedProductDefinitionLegalStatusOfSupply ...$legalStatusOfSupply): self
     {
@@ -1033,9 +955,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Allows specifying that an item is on the market for sale, or that it is not
      * available, and the dates and locations associated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus $marketingStatus
-     * @return static
      */
     public function addMarketingStatus(FHIRMarketingStatus $marketingStatus): self
     {
@@ -1054,9 +973,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Allows specifying that an item is on the market for sale, or that it is not
      * available, and the dates and locations associated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus ...$marketingStatus
-     * @return static
      */
     public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
     {
@@ -1074,8 +990,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Identifies if the package contains different items, such as when a drug product
      * is supplied with another item e.g. a diluent or adjuvant.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getCopackagedIndicator(): null|FHIRBoolean
     {
@@ -1088,9 +1002,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Identifies if the package contains different items, such as when a drug product
      * is supplied with another item e.g. a diluent or adjuvant.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $copackagedIndicator
-     * @return static
      */
     public function setCopackagedIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $copackagedIndicator): self
     {
@@ -1138,9 +1049,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Manufacturer of this package type. When there are multiple it means these are
      * all possible manufacturers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $manufacturer
-     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -1158,9 +1066,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Manufacturer of this package type. When there are multiple it means these are
      * all possible manufacturers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$manufacturer
-     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -1203,9 +1108,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information or supporting documentation about the packaged product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $attachedDocument
-     * @return static
      */
     public function addAttachedDocument(FHIRReference $attachedDocument): self
     {
@@ -1222,9 +1124,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information or supporting documentation about the packaged product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$attachedDocument
-     * @return static
      */
     public function setAttachedDocument(FHIRReference ...$attachedDocument): self
     {
@@ -1242,8 +1141,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A packaging item, as a container for medically related items, possibly with
      * other packaging items within, or a packaging component, such as bottle cap
      * (which is not a device or a medication manufactured item).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionPackaging
      */
     public function getPackaging(): null|FHIRPackagedProductDefinitionPackaging
     {
@@ -1256,9 +1153,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * A packaging item, as a container for medically related items, possibly with
      * other packaging items within, or a packaging component, such as bottle cap
      * (which is not a device or a medication manufactured item).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionPackaging $packaging
-     * @return static
      */
     public function setPackaging(null|FHIRPackagedProductDefinitionPackaging $packaging): self
     {
@@ -1299,9 +1193,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Allows the key features to be recorded, such as "hospital pack", "nurse
      * prescribable", "calendar pack".
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionProperty $characteristic
-     * @return static
      */
     public function addCharacteristic(FHIRPackagedProductDefinitionProperty $characteristic): self
     {
@@ -1317,9 +1208,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      *
      * Allows the key features to be recorded, such as "hospital pack", "nurse
      * prescribable", "calendar pack".
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionProperty ...$characteristic
-     * @return static
      */
     public function setCharacteristic(FHIRPackagedProductDefinitionProperty ...$characteristic): self
     {
@@ -1333,10 +1221,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRPackagedProductDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRPackagedProductDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1476,11 +1361,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1623,10 +1503,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRPackagedProductDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRPackagedProductDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

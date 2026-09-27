@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -134,8 +133,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * References are URLs that are relative to http://hl7.org/fhir/StructureDefinition
      * e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string.
      * Absolute URLs are only allowed in logical models.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $code;
@@ -195,8 +192,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      *
      * Whether this reference needs to be version specific or version independent, or
      * whether either can be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReferenceVersionRules
      */
     #[FHIRReferenceVersionRules]
     protected FHIRReferenceVersionRules $versioning;
@@ -205,13 +200,10 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     /**
      * FHIRElementDefinitionType Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $code
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical> $profile
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical> $targetProfile
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAggregationModeList>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAggregationMode> $aggregation
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRReferenceVersionRulesList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReferenceVersionRules $versioning
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -261,8 +253,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * References are URLs that are relative to http://hl7.org/fhir/StructureDefinition
      * e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string.
      * Absolute URLs are only allowed in logical models.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getCode(): null|FHIRUri
     {
@@ -278,9 +268,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * References are URLs that are relative to http://hl7.org/fhir/StructureDefinition
      * e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string.
      * Absolute URLs are only allowed in logical models.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $code
-     * @return static
      */
     public function setCode(null|string|FHIRUriPrimitive|FHIRUri $code): self
     {
@@ -340,9 +327,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the type SHALL conform to at least one profile defined in the
      * implementation guide.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $profile
-     * @return static
      */
     public function addProfile(string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -369,9 +353,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the type SHALL conform to at least one profile defined in the
      * implementation guide.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical ...$profile
-     * @return static
      */
     public function setProfile(string|FHIRCanonicalPrimitive|FHIRCanonical ...$profile): self
     {
@@ -437,9 +418,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the target resource SHALL conform to at least one profile defined in
      * the implementation guide.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $targetProfile
-     * @return static
      */
     public function addTargetProfile(string|FHIRCanonicalPrimitive|FHIRCanonical $targetProfile): self
     {
@@ -467,9 +445,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the target resource SHALL conform to at least one profile defined in
      * the implementation guide.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical ...$targetProfile
-     * @return static
      */
     public function setTargetProfile(string|FHIRCanonicalPrimitive|FHIRCanonical ...$targetProfile): self
     {
@@ -521,9 +496,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAggregationModeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAggregationMode $aggregation
-     * @return static
      */
     public function addAggregation(string|FHIRAggregationModeList|FHIRAggregationMode $aggregation): self
     {
@@ -544,9 +516,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAggregationModeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAggregationMode ...$aggregation
-     * @return static
      */
     public function setAggregation(string|FHIRAggregationModeList|FHIRAggregationMode ...$aggregation): self
     {
@@ -572,8 +541,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      *
      * Whether this reference needs to be version specific or version independent, or
      * whether either can be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReferenceVersionRules
      */
     public function getVersioning(): null|FHIRReferenceVersionRules
     {
@@ -587,9 +554,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
      *
      * Whether this reference needs to be version specific or version independent, or
      * whether either can be used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRReferenceVersionRulesList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReferenceVersionRules $versioning
-     * @return static
      */
     public function setVersioning(null|string|FHIRReferenceVersionRulesList|FHIRReferenceVersionRules $versioning): self
     {
@@ -606,10 +570,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -677,10 +638,6 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -729,10 +686,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionType
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

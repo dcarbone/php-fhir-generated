@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -142,8 +140,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * patient, but diagnostic tests can also be requested on animals, groups of humans
      * or animals, devices such as dialysis machines, or even locations (typically for
      * environmental scans).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $subject;
@@ -153,8 +149,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the investigation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $orderer;
@@ -176,8 +170,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      *
      * An encounter that provides additional informaton about the healthcare context in
      * which this request is made.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $encounter;
@@ -187,8 +179,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      *
      * An explanation or justification for why this diagnostic investigation is being
      * requested.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $clinicalNotes;
@@ -208,8 +198,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticOrderStatus
      */
     #[FHIRDiagnosticOrderStatus]
     protected FHIRDiagnosticOrderStatus $status;
@@ -218,8 +206,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticOrderPriority
      */
     #[FHIRDiagnosticOrderPriority]
     protected FHIRDiagnosticOrderPriority $priority;
@@ -249,20 +235,11 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
     /* constructor.php:61 */
     /**
      * FHIRDiagnosticOrder Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $orderer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $encounter
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $clinicalNotes
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $specimen
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRDiagnosticOrderStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticOrderStatus $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRDiagnosticOrderPriorityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticOrderPriority $priority
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent> $event
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem> $item
      * @param null|string[] $fhirComments
@@ -346,8 +323,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * patient, but diagnostic tests can also be requested on animals, groups of humans
      * or animals, devices such as dialysis machines, or even locations (typically for
      * environmental scans).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getSubject(): null|FHIRResourceReference
     {
@@ -363,9 +338,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * patient, but diagnostic tests can also be requested on animals, groups of humans
      * or animals, devices such as dialysis machines, or even locations (typically for
      * environmental scans).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -383,8 +355,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the investigation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getOrderer(): null|FHIRResourceReference
     {
@@ -397,9 +367,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the investigation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $orderer
-     * @return static
      */
     public function setOrderer(null|FHIRResourceReference $orderer): self
     {
@@ -442,9 +409,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -461,9 +425,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -482,8 +443,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      *
      * An encounter that provides additional informaton about the healthcare context in
      * which this request is made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getEncounter(): null|FHIRResourceReference
     {
@@ -497,9 +456,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      *
      * An encounter that provides additional informaton about the healthcare context in
      * which this request is made.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRResourceReference $encounter): self
     {
@@ -517,8 +473,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      *
      * An explanation or justification for why this diagnostic investigation is being
      * requested.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getClinicalNotes(): null|FHIRString
     {
@@ -531,9 +485,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      *
      * An explanation or justification for why this diagnostic investigation is being
      * requested.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $clinicalNotes
-     * @return static
      */
     public function setClinicalNotes(null|string|FHIRStringPrimitive|FHIRString $clinicalNotes): self
     {
@@ -579,9 +530,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the diagnostic investigation is about.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $specimen
-     * @return static
      */
     public function addSpecimen(FHIRResourceReference $specimen): self
     {
@@ -598,9 +546,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the diagnostic investigation is about.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$specimen
-     * @return static
      */
     public function setSpecimen(FHIRResourceReference ...$specimen): self
     {
@@ -617,8 +562,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticOrderStatus
      */
     public function getStatus(): null|FHIRDiagnosticOrderStatus
     {
@@ -630,9 +573,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRDiagnosticOrderStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticOrderStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRDiagnosticOrderStatusList|FHIRDiagnosticOrderStatus $status): self
     {
@@ -652,8 +592,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticOrderPriority
      */
     public function getPriority(): null|FHIRDiagnosticOrderPriority
     {
@@ -665,9 +603,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRDiagnosticOrderPriorityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticOrderPriority $priority
-     * @return static
      */
     public function setPriority(null|string|FHIRDiagnosticOrderPriorityList|FHIRDiagnosticOrderPriority $priority): self
     {
@@ -713,9 +648,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * A summary of the events of interest that have occurred as the request is
      * processed. E.g. when the order was made, various processing steps (specimens
      * received), when it was completed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent $event
-     * @return static
      */
     public function addEvent(FHIRDiagnosticOrderEvent $event): self
     {
@@ -732,9 +664,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * A summary of the events of interest that have occurred as the request is
      * processed. E.g. when the order was made, various processing steps (specimens
      * received), when it was completed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent ...$event
-     * @return static
      */
     public function setEvent(FHIRDiagnosticOrderEvent ...$event): self
     {
@@ -777,9 +706,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * The specific diagnostic investigations that are requested as part of this
      * request. Sometimes, there can only be one item per request, but in most
      * contexts, more than one investigation can be requested.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem $item
-     * @return static
      */
     public function addItem(FHIRDiagnosticOrderItem $item): self
     {
@@ -796,9 +722,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * The specific diagnostic investigations that are requested as part of this
      * request. Sometimes, there can only be one item per request, but in most
      * contexts, more than one investigation can be requested.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem ...$item
-     * @return static
      */
     public function setItem(FHIRDiagnosticOrderItem ...$item): self
     {
@@ -812,10 +735,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDiagnosticOrder $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDiagnosticOrder
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -925,11 +845,6 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1034,10 +949,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDiagnosticOrder $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDiagnosticOrder
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

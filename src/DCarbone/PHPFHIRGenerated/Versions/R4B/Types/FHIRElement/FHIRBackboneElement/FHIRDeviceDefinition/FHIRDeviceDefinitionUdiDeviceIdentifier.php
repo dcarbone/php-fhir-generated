@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -150,8 +149,6 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * The identifier that is to be associated with every Device that references this
      * DeviceDefintiion for the issuer and jurisdication porvided in the
      * DeviceDefinition.udiDeviceIdentifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $deviceIdentifier;
@@ -161,8 +158,6 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The organization that assigns the identifier algorithm.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $issuer;
@@ -172,8 +167,6 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The jurisdiction to which the deviceIdentifier applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $jurisdiction;
@@ -182,11 +175,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     /**
      * FHIRDeviceDefinitionUdiDeviceIdentifier Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $deviceIdentifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $issuer
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $jurisdiction
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -227,8 +216,6 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * The identifier that is to be associated with every Device that references this
      * DeviceDefintiion for the issuer and jurisdication porvided in the
      * DeviceDefinition.udiDeviceIdentifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDeviceIdentifier(): null|FHIRString
     {
@@ -243,9 +230,6 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * The identifier that is to be associated with every Device that references this
      * DeviceDefintiion for the issuer and jurisdication porvided in the
      * DeviceDefinition.udiDeviceIdentifier.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $deviceIdentifier
-     * @return static
      */
     public function setDeviceIdentifier(null|string|FHIRStringPrimitive|FHIRString $deviceIdentifier): self
     {
@@ -266,8 +250,6 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The organization that assigns the identifier algorithm.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getIssuer(): null|FHIRUri
     {
@@ -280,9 +262,6 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The organization that assigns the identifier algorithm.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $issuer
-     * @return static
      */
     public function setIssuer(null|string|FHIRUriPrimitive|FHIRUri $issuer): self
     {
@@ -303,8 +282,6 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The jurisdiction to which the deviceIdentifier applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getJurisdiction(): null|FHIRUri
     {
@@ -317,9 +294,6 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The jurisdiction to which the deviceIdentifier applies.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $jurisdiction
-     * @return static
      */
     public function setJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $jurisdiction): self
     {
@@ -336,10 +310,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -411,10 +382,6 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -452,10 +419,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

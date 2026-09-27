@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -96,7 +94,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRFamilyHistoryStatusList;
@@ -201,8 +198,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this history concerns.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -215,8 +210,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) when the family member history was taken.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -225,8 +218,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying a state of a Family Member History record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRFamilyHistoryStatus
      */
     #[FHIRFamilyHistoryStatus]
     protected FHIRFamilyHistoryStatus $status;
@@ -237,8 +228,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with
      * the red hair".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -250,8 +239,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * The type of relationship this person has to the patient (father, mother, brother
      * etc.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $relationship;
@@ -263,8 +250,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Administrative Gender - the gender that the relative is considered to have for
      * administration and record keeping purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $gender;
@@ -274,8 +259,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $bornPeriod;
@@ -286,8 +269,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $bornDate;
@@ -297,16 +278,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $bornString;
     /**
      * The actual or approximate age of the relative at the time the family member
      * history is recorded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     #[FHIRAge]
     protected FHIRAge $ageQuantity;
@@ -317,8 +294,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * The actual or approximate age of the relative at the time the family member
      * history is recorded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $ageRange;
@@ -329,8 +304,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * The actual or approximate age of the relative at the time the family member
      * history is recorded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $ageString;
@@ -340,16 +313,12 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $deceasedBoolean;
     /**
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     #[FHIRAge]
     protected FHIRAge $deceasedQuantity;
@@ -360,8 +329,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $deceasedRange;
@@ -373,8 +340,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $deceasedDate;
@@ -385,8 +350,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $deceasedString;
@@ -399,8 +362,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * This property allows a non condition-specific note to the made about the related
      * person. Ideally, the note would be in the condition property, but this is not
      * always possible.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation
      */
     #[FHIRAnnotation]
     protected FHIRAnnotation $note;
@@ -421,33 +382,10 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     /* constructor.php:61 */
     /**
      * FHIRFamilyMemberHistory Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $patient
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRFamilyHistoryStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRFamilyHistoryStatus $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $relationship
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $gender
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $bornPeriod
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $bornDate
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $bornString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRAge $ageQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $ageRange
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $ageString
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $deceasedBoolean
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $deceasedRange
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $deceasedDate
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $deceasedString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation $note
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition> $condition
      * @param null|string[] $fhirComments
      */
@@ -602,9 +540,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * are defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -624,9 +559,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * are defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -644,8 +576,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this history concerns.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -658,9 +588,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this history concerns.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -681,8 +608,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) when the family member history was taken.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -698,9 +623,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) when the family member history was taken.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -720,8 +642,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying a state of a Family Member History record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRFamilyHistoryStatus
      */
     public function getStatus(): null|FHIRFamilyHistoryStatus
     {
@@ -733,9 +653,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying a state of a Family Member History record.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRFamilyHistoryStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRFamilyHistoryStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRFamilyHistoryStatusList|FHIRFamilyHistoryStatus $status): self
     {
@@ -757,8 +674,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with
      * the red hair".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -772,9 +687,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with
      * the red hair".
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -797,8 +709,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * The type of relationship this person has to the patient (father, mother, brother
      * etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRelationship(): null|FHIRCodeableConcept
     {
@@ -813,9 +723,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * The type of relationship this person has to the patient (father, mother, brother
      * etc.).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $relationship
-     * @return static
      */
     public function setRelationship(null|FHIRCodeableConcept $relationship): self
     {
@@ -835,8 +742,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Administrative Gender - the gender that the relative is considered to have for
      * administration and record keeping purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     public function getGender(): null|FHIRCode
     {
@@ -851,9 +756,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Administrative Gender - the gender that the relative is considered to have for
      * administration and record keeping purposes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $gender
-     * @return static
      */
     public function setGender(null|string|FHIRCodePrimitive|FHIRCode $gender): self
     {
@@ -874,8 +776,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getBornPeriod(): null|FHIRPeriod
     {
@@ -888,9 +788,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $bornPeriod
-     * @return static
      */
     public function setBornPeriod(null|FHIRPeriod $bornPeriod): self
     {
@@ -909,8 +806,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate
      */
     public function getBornDate(): null|FHIRDate
     {
@@ -924,9 +819,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $bornDate
-     * @return static
      */
     public function setBornDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $bornDate): self
     {
@@ -947,8 +839,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getBornString(): null|FHIRString
     {
@@ -961,9 +851,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $bornString
-     * @return static
      */
     public function setBornString(null|string|FHIRStringPrimitive|FHIRString $bornString): self
     {
@@ -981,8 +868,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     /**
      * The actual or approximate age of the relative at the time the family member
      * history is recorded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getAgeQuantity(): null|FHIRAge
     {
@@ -992,9 +877,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     /**
      * The actual or approximate age of the relative at the time the family member
      * history is recorded.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRAge $ageQuantity
-     * @return static
      */
     public function setAgeQuantity(null|FHIRAge $ageQuantity): self
     {
@@ -1013,8 +895,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * The actual or approximate age of the relative at the time the family member
      * history is recorded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange
      */
     public function getAgeRange(): null|FHIRRange
     {
@@ -1028,9 +908,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * The actual or approximate age of the relative at the time the family member
      * history is recorded.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $ageRange
-     * @return static
      */
     public function setAgeRange(null|FHIRRange $ageRange): self
     {
@@ -1049,8 +926,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * The actual or approximate age of the relative at the time the family member
      * history is recorded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getAgeString(): null|FHIRString
     {
@@ -1064,9 +939,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * The actual or approximate age of the relative at the time the family member
      * history is recorded.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $ageString
-     * @return static
      */
     public function setAgeString(null|string|FHIRStringPrimitive|FHIRString $ageString): self
     {
@@ -1087,8 +959,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     public function getDeceasedBoolean(): null|FHIRBoolean
     {
@@ -1101,9 +971,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $deceasedBoolean
-     * @return static
      */
     public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean): self
     {
@@ -1121,8 +988,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     /**
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getDeceasedQuantity(): null|FHIRAge
     {
@@ -1132,9 +997,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     /**
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedQuantity
-     * @return static
      */
     public function setDeceasedQuantity(null|FHIRAge $deceasedQuantity): self
     {
@@ -1153,8 +1015,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange
      */
     public function getDeceasedRange(): null|FHIRRange
     {
@@ -1168,9 +1028,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $deceasedRange
-     * @return static
      */
     public function setDeceasedRange(null|FHIRRange $deceasedRange): self
     {
@@ -1190,8 +1047,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate
      */
     public function getDeceasedDate(): null|FHIRDate
     {
@@ -1206,9 +1061,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $deceasedDate
-     * @return static
      */
     public function setDeceasedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $deceasedDate): self
     {
@@ -1230,8 +1082,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDeceasedString(): null|FHIRString
     {
@@ -1245,9 +1095,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $deceasedString
-     * @return static
      */
     public function setDeceasedString(null|string|FHIRStringPrimitive|FHIRString $deceasedString): self
     {
@@ -1271,8 +1118,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * This property allows a non condition-specific note to the made about the related
      * person. Ideally, the note would be in the condition property, but this is not
      * always possible.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation
      */
     public function getNote(): null|FHIRAnnotation
     {
@@ -1288,9 +1133,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * This property allows a non condition-specific note to the made about the related
      * person. Ideally, the note would be in the condition property, but this is not
      * always possible.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function setNote(null|FHIRAnnotation $note): self
     {
@@ -1337,9 +1179,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * repeating section to allow a system to represent more than one condition per
      * resource, though there is nothing stopping multiple resources - one per
      * condition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition $condition
-     * @return static
      */
     public function addCondition(FHIRFamilyMemberHistoryCondition $condition): self
     {
@@ -1358,9 +1197,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * repeating section to allow a system to represent more than one condition per
      * resource, though there is nothing stopping multiple resources - one per
      * condition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition ...$condition
-     * @return static
      */
     public function setCondition(FHIRFamilyMemberHistoryCondition ...$condition): self
     {
@@ -1374,10 +1210,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1575,11 +1408,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1765,10 +1593,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRFamilyMemberHistory
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

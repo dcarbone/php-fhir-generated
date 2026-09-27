@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -119,7 +117,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -204,8 +201,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the Invoice.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInvoiceStatus
      */
     #[FHIRInvoiceStatus]
     protected FHIRInvoiceStatus $status;
@@ -216,8 +211,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * In case of Invoice cancellation a reason must be given (entered in error,
      * superseded by corrected invoice etc.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $cancelledReason;
@@ -229,8 +222,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external,
      * dental, preliminary).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -241,8 +232,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The individual or set of individuals receiving the goods and services billed in
      * this invoice.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -252,8 +241,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or Organization responsible for balancing of this invoice.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $recipient;
@@ -267,8 +254,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Depricared by the element below.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -282,8 +267,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) of when this Invoice was posted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $creation;
@@ -293,10 +276,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range of services included in this invoice. (choose any one of
-     * period*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * Date/time(s) range of services included in this invoice.
      */
     #[FHIRDate]
     protected FHIRDate $periodDate;
@@ -305,10 +285,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range of services included in this invoice. (choose any one of
-     * period*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * Date/time(s) range of services included in this invoice.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $periodPeriod;
@@ -328,8 +305,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organizationissuing the Invoice.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $issuer;
@@ -339,8 +314,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account which is supposed to be balanced with this Invoice.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $account;
@@ -376,8 +349,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total , taxes excluded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $totalNet;
@@ -387,8 +358,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total, tax included.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $totalGross;
@@ -403,8 +372,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Payment details such as banking details, period of payment, deductibles, methods
      * of payment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $paymentTerms;
@@ -424,32 +391,13 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
     /* constructor.php:61 */
     /**
      * FHIRInvoice Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInvoiceStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInvoiceStatus $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $cancelledReason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $recipient
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $creation
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $periodDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $periodPeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceParticipant> $participant
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $issuer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $account
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem> $lineItem
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent> $totalPriceComponent
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $totalNet
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $totalGross
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $paymentTerms
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
      * @param null|string[] $fhirComments
      */
@@ -598,9 +546,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifier of this Invoice, often used for reference in correspondence about
      * this invoice or for tracking of payments.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -619,9 +564,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Identifier of this Invoice, often used for reference in correspondence about
      * this invoice or for tracking of payments.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -637,8 +579,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the Invoice.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInvoiceStatus
      */
     public function getStatus(): null|FHIRInvoiceStatus
     {
@@ -649,9 +589,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the Invoice.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInvoiceStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInvoiceStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRInvoiceStatusEnum|FHIRInvoiceStatus $status): self
     {
@@ -673,8 +610,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * In case of Invoice cancellation a reason must be given (entered in error,
      * superseded by corrected invoice etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getCancelledReason(): null|FHIRString
     {
@@ -688,9 +623,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * In case of Invoice cancellation a reason must be given (entered in error,
      * superseded by corrected invoice etc.).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $cancelledReason
-     * @return static
      */
     public function setCancelledReason(null|string|FHIRStringPrimitive|FHIRString $cancelledReason): self
     {
@@ -713,8 +645,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external,
      * dental, preliminary).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -729,9 +659,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external,
      * dental, preliminary).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -750,8 +677,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The individual or set of individuals receiving the goods and services billed in
      * this invoice.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -765,9 +690,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The individual or set of individuals receiving the goods and services billed in
      * this invoice.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -785,8 +707,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or Organization responsible for balancing of this invoice.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getRecipient(): null|FHIRReference
     {
@@ -799,9 +719,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or Organization responsible for balancing of this invoice.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $recipient
-     * @return static
      */
     public function setRecipient(null|FHIRReference $recipient): self
     {
@@ -823,8 +740,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Depricared by the element below.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -841,9 +756,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Depricared by the element below.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -868,8 +780,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) of when this Invoice was posted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getCreation(): null|FHIRDateTime
     {
@@ -886,9 +796,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/time(s) of when this Invoice was posted.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $creation
-     * @return static
      */
     public function setCreation(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $creation): self
     {
@@ -909,10 +816,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range of services included in this invoice. (choose any one of
-     * period*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * Date/time(s) range of services included in this invoice.
      */
     public function getPeriodDate(): null|FHIRDate
     {
@@ -925,11 +829,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range of services included in this invoice. (choose any one of
-     * period*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $periodDate
-     * @return static
+     * Date/time(s) range of services included in this invoice.
      */
     public function setPeriodDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $periodDate): self
     {
@@ -949,10 +849,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range of services included in this invoice. (choose any one of
-     * period*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * Date/time(s) range of services included in this invoice.
      */
     public function getPeriodPeriod(): null|FHIRPeriod
     {
@@ -964,11 +861,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range of services included in this invoice. (choose any one of
-     * period*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $periodPeriod
-     * @return static
+     * Date/time(s) range of services included in this invoice.
      */
     public function setPeriodPeriod(null|FHIRPeriod $periodPeriod): self
     {
@@ -1009,9 +902,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * individual and total price for Billing purpose.
      *
      * Indicates who or what performed or participated in the charged service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceParticipant $participant
-     * @return static
      */
     public function addParticipant(FHIRInvoiceParticipant $participant): self
     {
@@ -1027,9 +917,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * individual and total price for Billing purpose.
      *
      * Indicates who or what performed or participated in the charged service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceParticipant ...$participant
-     * @return static
      */
     public function setParticipant(FHIRInvoiceParticipant ...$participant): self
     {
@@ -1047,8 +934,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organizationissuing the Invoice.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getIssuer(): null|FHIRReference
     {
@@ -1061,9 +946,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organizationissuing the Invoice.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $issuer
-     * @return static
      */
     public function setIssuer(null|FHIRReference $issuer): self
     {
@@ -1081,8 +963,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account which is supposed to be balanced with this Invoice.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getAccount(): null|FHIRReference
     {
@@ -1095,9 +975,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Account which is supposed to be balanced with this Invoice.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $account
-     * @return static
      */
     public function setAccount(null|FHIRReference $account): self
     {
@@ -1142,9 +1019,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * Each line item represents one charge for goods and services rendered. Details
      * such.ofType(date), code and amount are found in the referenced ChargeItem
      * resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem $lineItem
-     * @return static
      */
     public function addLineItem(FHIRInvoiceLineItem $lineItem): self
     {
@@ -1162,9 +1036,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * Each line item represents one charge for goods and services rendered. Details
      * such.ofType(date), code and amount are found in the referenced ChargeItem
      * resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem ...$lineItem
-     * @return static
      */
     public function setLineItem(FHIRInvoiceLineItem ...$lineItem): self
     {
@@ -1213,9 +1084,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * with surcharges/deductions that apply in certain conditions. The priceComponent
      * element can be used to offer transparency to the recipient of the Invoice of how
      * the total price was calculated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent $totalPriceComponent
-     * @return static
      */
     public function addTotalPriceComponent(FHIRMonetaryComponent $totalPriceComponent): self
     {
@@ -1235,9 +1103,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * with surcharges/deductions that apply in certain conditions. The priceComponent
      * element can be used to offer transparency to the recipient of the Invoice of how
      * the total price was calculated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent ...$totalPriceComponent
-     * @return static
      */
     public function setTotalPriceComponent(FHIRMonetaryComponent ...$totalPriceComponent): self
     {
@@ -1255,8 +1120,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total , taxes excluded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     public function getTotalNet(): null|FHIRMoney
     {
@@ -1269,9 +1132,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total , taxes excluded.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $totalNet
-     * @return static
      */
     public function setTotalNet(null|FHIRMoney $totalNet): self
     {
@@ -1289,8 +1149,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total, tax included.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     public function getTotalGross(): null|FHIRMoney
     {
@@ -1303,9 +1161,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Invoice total, tax included.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $totalGross
-     * @return static
      */
     public function setTotalGross(null|FHIRMoney $totalGross): self
     {
@@ -1328,8 +1183,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Payment details such as banking details, period of payment, deductibles, methods
      * of payment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getPaymentTerms(): null|FHIRMarkdown
     {
@@ -1347,9 +1200,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Payment details such as banking details, period of payment, deductibles, methods
      * of payment.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $paymentTerms
-     * @return static
      */
     public function setPaymentTerms(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $paymentTerms): self
     {
@@ -1397,9 +1247,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the invoice by the issuer, subject, or other participants.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1417,9 +1264,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the invoice by the issuer, subject, or other participants.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1433,10 +1277,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRInvoice $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRInvoice
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1600,11 +1441,6 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1771,10 +1607,7 @@ class FHIRInvoice extends FHIRDomainResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRInvoice $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRInvoice
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

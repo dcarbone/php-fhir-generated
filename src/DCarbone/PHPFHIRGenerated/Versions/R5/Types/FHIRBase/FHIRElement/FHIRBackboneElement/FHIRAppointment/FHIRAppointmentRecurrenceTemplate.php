@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -154,8 +153,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timezone of the recurring appointment occurrences.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $timezone;
@@ -166,8 +163,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the appointment series should recur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $recurrenceType;
@@ -178,8 +173,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Recurring appointments will not occur after this date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastOccurrenceDate;
@@ -189,8 +182,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * How many appointments are planned in the recurrence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $occurrenceCount;
@@ -212,8 +203,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about weekly recurring appointments.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentWeeklyTemplate
      */
     #[FHIRAppointmentWeeklyTemplate]
     protected FHIRAppointmentWeeklyTemplate $weeklyTemplate;
@@ -223,8 +212,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about monthly recurring appointments.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate
      */
     #[FHIRAppointmentMonthlyTemplate]
     protected FHIRAppointmentMonthlyTemplate $monthlyTemplate;
@@ -234,8 +221,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about yearly recurring appointments.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentYearlyTemplate
      */
     #[FHIRAppointmentYearlyTemplate]
     protected FHIRAppointmentYearlyTemplate $yearlyTemplate;
@@ -267,16 +252,8 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
     /**
      * FHIRAppointmentRecurrenceTemplate Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $timezone
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $recurrenceType
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $lastOccurrenceDate
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $occurrenceCount
      * @param null|iterable<string>|iterable<\DateTimeInterface>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate> $occurrenceDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentWeeklyTemplate $weeklyTemplate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate $monthlyTemplate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentYearlyTemplate $yearlyTemplate
      * @param null|iterable<string>|iterable<\DateTimeInterface>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate> $excludingDate
      * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt> $excludingRecurrenceId
      * @param null|string[] $fhirComments
@@ -346,8 +323,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timezone of the recurring appointment occurrences.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getTimezone(): null|FHIRCodeableConcept
     {
@@ -361,9 +336,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timezone of the recurring appointment occurrences.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $timezone
-     * @return static
      */
     public function setTimezone(null|FHIRCodeableConcept $timezone): self
     {
@@ -382,8 +354,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the appointment series should recur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getRecurrenceType(): null|FHIRCodeableConcept
     {
@@ -397,9 +367,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the appointment series should recur.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $recurrenceType
-     * @return static
      */
     public function setRecurrenceType(null|FHIRCodeableConcept $recurrenceType): self
     {
@@ -418,8 +385,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Recurring appointments will not occur after this date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     public function getLastOccurrenceDate(): null|FHIRDate
     {
@@ -433,9 +398,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Recurring appointments will not occur after this date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $lastOccurrenceDate
-     * @return static
      */
     public function setLastOccurrenceDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastOccurrenceDate): self
     {
@@ -456,8 +418,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * How many appointments are planned in the recurrence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getOccurrenceCount(): null|FHIRPositiveInt
     {
@@ -470,9 +430,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * How many appointments are planned in the recurrence.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $occurrenceCount
-     * @return static
      */
     public function setOccurrenceCount(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $occurrenceCount): self
     {
@@ -520,9 +477,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The list of specific dates that will have appointments generated.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $occurrenceDate
-     * @return static
      */
     public function addOccurrenceDate(string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $occurrenceDate): self
     {
@@ -543,9 +497,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The list of specific dates that will have appointments generated.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate ...$occurrenceDate
-     * @return static
      */
     public function setOccurrenceDate(string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate ...$occurrenceDate): self
     {
@@ -570,8 +521,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about weekly recurring appointments.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentWeeklyTemplate
      */
     public function getWeeklyTemplate(): null|FHIRAppointmentWeeklyTemplate
     {
@@ -584,9 +533,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about weekly recurring appointments.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentWeeklyTemplate $weeklyTemplate
-     * @return static
      */
     public function setWeeklyTemplate(null|FHIRAppointmentWeeklyTemplate $weeklyTemplate): self
     {
@@ -604,8 +550,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about monthly recurring appointments.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate
      */
     public function getMonthlyTemplate(): null|FHIRAppointmentMonthlyTemplate
     {
@@ -618,9 +562,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about monthly recurring appointments.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate $monthlyTemplate
-     * @return static
      */
     public function setMonthlyTemplate(null|FHIRAppointmentMonthlyTemplate $monthlyTemplate): self
     {
@@ -638,8 +579,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about yearly recurring appointments.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentYearlyTemplate
      */
     public function getYearlyTemplate(): null|FHIRAppointmentYearlyTemplate
     {
@@ -652,9 +591,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about yearly recurring appointments.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentYearlyTemplate $yearlyTemplate
-     * @return static
      */
     public function setYearlyTemplate(null|FHIRAppointmentYearlyTemplate $yearlyTemplate): self
     {
@@ -699,9 +635,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any dates, such as holidays, that should be excluded from the recurrence.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $excludingDate
-     * @return static
      */
     public function addExcludingDate(string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $excludingDate): self
     {
@@ -722,9 +655,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any dates, such as holidays, that should be excluded from the recurrence.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate ...$excludingDate
-     * @return static
      */
     public function setExcludingDate(string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate ...$excludingDate): self
     {
@@ -774,9 +704,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Any dates, such as holidays, that should be excluded from the recurrence.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $excludingRecurrenceId
-     * @return static
      */
     public function addExcludingRecurrenceId(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $excludingRecurrenceId): self
     {
@@ -796,9 +723,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Any dates, such as holidays, that should be excluded from the recurrence.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt ...$excludingRecurrenceId
-     * @return static
      */
     public function setExcludingRecurrenceId(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$excludingRecurrenceId): self
     {
@@ -819,10 +743,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentRecurrenceTemplate $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentRecurrenceTemplate
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -900,10 +821,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -977,10 +894,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentRecurrenceTemplate $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentRecurrenceTemplate
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

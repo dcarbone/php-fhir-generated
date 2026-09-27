@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -166,8 +164,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * The identifier that is used to identify this concept map when it is referenced
      * in a specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $identifier;
@@ -179,8 +175,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the profile author manually and the value should be a
      * timestamp.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -189,8 +183,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the concept map.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -199,8 +191,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the concept map.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -223,8 +213,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      *
      * A free text natural language description of the use of the concept map - reason
      * for definition, conditions of use, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -233,8 +221,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the concept map and/or its contents.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $copyright;
@@ -242,8 +228,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the concept map.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRValueSetStatus
      */
     #[FHIRValueSetStatus]
     protected FHIRValueSetStatus $status;
@@ -254,8 +238,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * This ConceptMap was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -267,8 +249,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the concept map status was last changed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -278,8 +258,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $source;
@@ -291,8 +269,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
      * important context about how the concept mapping choices are made.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $target;
@@ -310,24 +286,10 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
     /* constructor.php:61 */
     /**
      * FHIRConceptMap Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact> $telecom
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $copyright
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRValueSetStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRValueSetStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $source
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $target
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapConcept> $concept
      * @param null|string[] $fhirComments
      */
@@ -420,8 +382,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * The identifier that is used to identify this concept map when it is referenced
      * in a specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getIdentifier(): null|FHIRString
     {
@@ -435,9 +395,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * The identifier that is used to identify this concept map when it is referenced
      * in a specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $identifier
-     * @return static
      */
     public function setIdentifier(null|string|FHIRStringPrimitive|FHIRString $identifier): self
     {
@@ -460,8 +417,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the profile author manually and the value should be a
      * timestamp.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -476,9 +431,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the profile author manually and the value should be a
      * timestamp.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -498,8 +450,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the concept map.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -511,9 +461,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the concept map.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -533,8 +480,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the concept map.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -546,9 +491,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the concept map.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -598,9 +540,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      *
      * Contacts of the publisher to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $telecom
-     * @return static
      */
     public function addTelecom(FHIRContact $telecom): self
     {
@@ -619,9 +558,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      *
      * Contacts of the publisher to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContact ...$telecom): self
     {
@@ -639,8 +575,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      *
      * A free text natural language description of the use of the concept map - reason
      * for definition, conditions of use, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -653,9 +587,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      *
      * A free text natural language description of the use of the concept map - reason
      * for definition, conditions of use, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -675,8 +606,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the concept map and/or its contents.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getCopyright(): null|FHIRString
     {
@@ -688,9 +617,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the concept map and/or its contents.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRStringPrimitive|FHIRString $copyright): self
     {
@@ -709,8 +635,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the concept map.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRValueSetStatus
      */
     public function getStatus(): null|FHIRValueSetStatus
     {
@@ -721,9 +645,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the concept map.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRValueSetStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRValueSetStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRValueSetStatusList|FHIRValueSetStatus $status): self
     {
@@ -745,8 +666,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * This ConceptMap was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -760,9 +679,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * This ConceptMap was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -785,8 +701,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the concept map status was last changed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -801,9 +715,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the concept map status was last changed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -824,8 +735,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getSource(): null|FHIRResourceReference
     {
@@ -838,9 +747,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $source
-     * @return static
      */
     public function setSource(null|FHIRResourceReference $source): self
     {
@@ -860,8 +766,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
      * important context about how the concept mapping choices are made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getTarget(): null|FHIRResourceReference
     {
@@ -876,9 +780,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
      * important context about how the concept mapping choices are made.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $target
-     * @return static
      */
     public function setTarget(null|FHIRResourceReference $target): self
     {
@@ -919,9 +820,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * concept systems.
      *
      * Mappings for a concept from the source valueset.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapConcept $concept
-     * @return static
      */
     public function addConcept(FHIRConceptMapConcept $concept): self
     {
@@ -937,9 +835,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
      * concept systems.
      *
      * Mappings for a concept from the source valueset.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapConcept ...$concept
-     * @return static
      */
     public function setConcept(FHIRConceptMapConcept ...$concept): self
     {
@@ -953,10 +848,7 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRConceptMap $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRConceptMap
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1120,11 +1012,6 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1270,10 +1157,7 @@ class FHIRConceptMap extends FHIRResource implements VersionContainedTypeInterfa
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRConceptMap $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRConceptMap
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

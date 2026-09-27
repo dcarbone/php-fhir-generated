@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -119,8 +118,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
      * The list of references to document content, or Attachment that consist of the
      * parts of this document manifest. Usually, these would be document references,
      * but direct references to Media or Attachments are also allowed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $pAttachment;
@@ -132,8 +129,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
      * The list of references to document content, or Attachment that consist of the
      * parts of this document manifest. Usually, these would be document references,
      * but direct references to Media or Attachments are also allowed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $pReference;
@@ -142,10 +137,7 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
     /**
      * FHIRDocumentManifestContent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $pAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $pReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -182,8 +174,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
      * The list of references to document content, or Attachment that consist of the
      * parts of this document manifest. Usually, these would be document references,
      * but direct references to Media or Attachments are also allowed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     public function getPAttachment(): null|FHIRAttachment
     {
@@ -198,9 +188,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
      * The list of references to document content, or Attachment that consist of the
      * parts of this document manifest. Usually, these would be document references,
      * but direct references to Media or Attachments are also allowed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $pAttachment
-     * @return static
      */
     public function setPAttachment(null|FHIRAttachment $pAttachment): self
     {
@@ -220,8 +207,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
      * The list of references to document content, or Attachment that consist of the
      * parts of this document manifest. Usually, these would be document references,
      * but direct references to Media or Attachments are also allowed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getPReference(): null|FHIRReference
     {
@@ -236,9 +221,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
      * The list of references to document content, or Attachment that consist of the
      * parts of this document manifest. Usually, these would be document references,
      * but direct references to Media or Attachments are also allowed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $pReference
-     * @return static
      */
     public function setPReference(null|FHIRReference $pReference): self
     {
@@ -252,10 +234,7 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentManifest\FHIRDocumentManifestContent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentManifest\FHIRDocumentManifestContent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -301,10 +280,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -322,10 +297,7 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentManifest\FHIRDocumentManifestContent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentManifest\FHIRDocumentManifestContent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

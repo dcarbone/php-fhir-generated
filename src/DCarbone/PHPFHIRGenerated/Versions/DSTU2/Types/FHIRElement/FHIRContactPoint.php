@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -127,8 +127,6 @@ class FHIRContactPoint extends FHIRElement
      *
      * Telecommunications form for contact point - what communications system is
      * required to make use of the contact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPointSystem
      */
     #[FHIRContactPointSystem]
     protected FHIRContactPointSystem $system;
@@ -139,8 +137,6 @@ class FHIRContactPoint extends FHIRElement
      *
      * The actual contact point details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $value;
@@ -149,8 +145,6 @@ class FHIRContactPoint extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for the contact point.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPointUse
      */
     #[FHIRContactPointUse]
     protected FHIRContactPointUse $use;
@@ -161,8 +155,6 @@ class FHIRContactPoint extends FHIRElement
      *
      * Specifies a preferred order in which to use a set of contacts. Contacts are
      * ranked with lower values coming before higher values.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $rank;
@@ -172,8 +164,6 @@ class FHIRContactPoint extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when the contact point was/is in use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -182,12 +172,6 @@ class FHIRContactPoint extends FHIRElement
     /**
      * FHIRContactPoint Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRContactPointSystemList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPointSystem $system
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $value
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRContactPointUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPointUse $use
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $rank
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -232,8 +216,6 @@ class FHIRContactPoint extends FHIRElement
      *
      * Telecommunications form for contact point - what communications system is
      * required to make use of the contact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPointSystem
      */
     public function getSystem(): null|FHIRContactPointSystem
     {
@@ -246,9 +228,6 @@ class FHIRContactPoint extends FHIRElement
      *
      * Telecommunications form for contact point - what communications system is
      * required to make use of the contact.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRContactPointSystemList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPointSystem $system
-     * @return static
      */
     public function setSystem(null|string|FHIRContactPointSystemList|FHIRContactPointSystem $system): self
     {
@@ -270,8 +249,6 @@ class FHIRContactPoint extends FHIRElement
      *
      * The actual contact point details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getValue(): null|FHIRString
     {
@@ -285,9 +262,6 @@ class FHIRContactPoint extends FHIRElement
      *
      * The actual contact point details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $value
-     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -307,8 +281,6 @@ class FHIRContactPoint extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for the contact point.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPointUse
      */
     public function getUse(): null|FHIRContactPointUse
     {
@@ -320,9 +292,6 @@ class FHIRContactPoint extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for the contact point.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRContactPointUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPointUse $use
-     * @return static
      */
     public function setUse(null|string|FHIRContactPointUseList|FHIRContactPointUse $use): self
     {
@@ -344,8 +313,6 @@ class FHIRContactPoint extends FHIRElement
      *
      * Specifies a preferred order in which to use a set of contacts. Contacts are
      * ranked with lower values coming before higher values.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     public function getRank(): null|FHIRPositiveInt
     {
@@ -359,9 +326,6 @@ class FHIRContactPoint extends FHIRElement
      *
      * Specifies a preferred order in which to use a set of contacts. Contacts are
      * ranked with lower values coming before higher values.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $rank
-     * @return static
      */
     public function setRank(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $rank): self
     {
@@ -382,8 +346,6 @@ class FHIRContactPoint extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when the contact point was/is in use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -396,9 +358,6 @@ class FHIRContactPoint extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when the contact point was/is in use.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -412,10 +371,7 @@ class FHIRContactPoint extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -497,10 +453,6 @@ class FHIRContactPoint extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -553,10 +505,7 @@ class FHIRContactPoint extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRContactPoint
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

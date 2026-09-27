@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -125,8 +124,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The diagram title of the group of operations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -140,8 +137,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A longer description of the group of operations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -155,8 +150,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of initial status before the process starts.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $preConditions;
@@ -170,8 +163,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of final status after the process ends.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $postConditions;
@@ -189,12 +180,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
     /**
      * FHIRExampleScenarioProcess Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $preConditions
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $postConditions
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep> $step
      * @param null|string[] $fhirComments
      */
@@ -242,8 +228,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The diagram title of the group of operations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -256,9 +240,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The diagram title of the group of operations.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -283,8 +264,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A longer description of the group of operations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -301,9 +280,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A longer description of the group of operations.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -328,8 +304,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of initial status before the process starts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getPreConditions(): null|FHIRMarkdown
     {
@@ -346,9 +320,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of initial status before the process starts.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $preConditions
-     * @return static
      */
     public function setPreConditions(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $preConditions): self
     {
@@ -373,8 +344,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of final status after the process ends.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getPostConditions(): null|FHIRMarkdown
     {
@@ -391,9 +360,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of final status after the process ends.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $postConditions
-     * @return static
      */
     public function setPostConditions(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $postConditions): self
     {
@@ -435,9 +401,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Each step of the process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep $step
-     * @return static
      */
     public function addStep(FHIRExampleScenarioStep $step): self
     {
@@ -452,9 +415,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Each step of the process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep ...$step
-     * @return static
      */
     public function setStep(FHIRExampleScenarioStep ...$step): self
     {
@@ -468,10 +428,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -555,10 +512,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -613,10 +566,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

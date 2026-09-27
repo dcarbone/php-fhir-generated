@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -156,8 +156,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the contact person.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
      */
     #[FHIRHumanName]
     protected FHIRHumanName $name;
@@ -184,8 +182,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address for the contact person.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $address;
@@ -194,8 +190,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * Administrative Gender - the gender that the contact person is considered to have
      * for administration and record keeping purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender
      */
     #[FHIRAdministrativeGender]
     protected FHIRAdministrativeGender $gender;
@@ -206,8 +200,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * Organization on behalf of which the contact is acting or for which the contact
      * is working.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $organization;
@@ -218,8 +210,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * The period during which this contact person or organization is valid to be
      * contacted relating to this patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -228,15 +218,9 @@ class FHIRPatientContact extends FHIRBackboneElement
     /**
      * FHIRPatientContact Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $relationship
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $name
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint> $telecom
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $address
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdministrativeGenderEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender $gender
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $organization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -318,9 +302,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nature of the relationship between the patient and the contact person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $relationship
-     * @return static
      */
     public function addRelationship(FHIRCodeableConcept $relationship): self
     {
@@ -338,9 +319,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nature of the relationship between the patient and the contact person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$relationship
-     * @return static
      */
     public function setRelationship(FHIRCodeableConcept ...$relationship): self
     {
@@ -360,8 +338,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the contact person.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
      */
     public function getName(): null|FHIRHumanName
     {
@@ -376,9 +352,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the contact person.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName $name
-     * @return static
      */
     public function setName(null|FHIRHumanName $name): self
     {
@@ -423,9 +396,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $telecom
-     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -443,9 +413,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -468,8 +435,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address for the contact person.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     public function getAddress(): null|FHIRAddress
     {
@@ -487,9 +452,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address for the contact person.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $address
-     * @return static
      */
     public function setAddress(null|FHIRAddress $address): self
     {
@@ -506,8 +468,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * Administrative Gender - the gender that the contact person is considered to have
      * for administration and record keeping purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender(): null|FHIRAdministrativeGender
     {
@@ -519,9 +479,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * Administrative Gender - the gender that the contact person is considered to have
      * for administration and record keeping purposes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdministrativeGenderEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender $gender
-     * @return static
      */
     public function setGender(null|string|FHIRAdministrativeGenderEnum|FHIRAdministrativeGender $gender): self
     {
@@ -543,8 +500,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * Organization on behalf of which the contact is acting or for which the contact
      * is working.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getOrganization(): null|FHIRReference
     {
@@ -558,9 +513,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * Organization on behalf of which the contact is acting or for which the contact
      * is working.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $organization
-     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -579,8 +531,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * The period during which this contact person or organization is valid to be
      * contacted relating to this patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -594,9 +544,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * The period during which this contact person or organization is valid to be
      * contacted relating to this patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -610,10 +557,7 @@ class FHIRPatientContact extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -677,10 +621,6 @@ class FHIRPatientContact extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -732,10 +672,7 @@ class FHIRPatientContact extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

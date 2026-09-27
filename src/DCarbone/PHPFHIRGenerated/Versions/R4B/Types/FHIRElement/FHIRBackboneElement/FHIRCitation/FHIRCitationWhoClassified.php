@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -140,8 +140,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the classification.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $person;
@@ -151,8 +149,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization who created the classification.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $organization;
@@ -163,8 +159,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      *
      * The publisher of the classification, not the publisher of the article or
      * artifact being cited.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $publisher;
@@ -174,8 +168,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Rights management statement for the classification.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $classifierCopyright;
@@ -184,8 +176,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Acceptable to re-use the classification.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $freeToShare;
@@ -194,13 +184,7 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
     /**
      * FHIRCitationWhoClassified Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $person
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $organization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $publisher
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $classifierCopyright
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $freeToShare
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -247,8 +231,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the classification.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getPerson(): null|FHIRReference
     {
@@ -261,9 +243,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the classification.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $person
-     * @return static
      */
     public function setPerson(null|FHIRReference $person): self
     {
@@ -281,8 +260,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization who created the classification.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getOrganization(): null|FHIRReference
     {
@@ -295,9 +272,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization who created the classification.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $organization
-     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -316,8 +290,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      *
      * The publisher of the classification, not the publisher of the article or
      * artifact being cited.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getPublisher(): null|FHIRReference
     {
@@ -331,9 +303,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      *
      * The publisher of the classification, not the publisher of the article or
      * artifact being cited.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $publisher
-     * @return static
      */
     public function setPublisher(null|FHIRReference $publisher): self
     {
@@ -351,8 +320,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Rights management statement for the classification.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getClassifierCopyright(): null|FHIRString
     {
@@ -365,9 +332,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Rights management statement for the classification.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $classifierCopyright
-     * @return static
      */
     public function setClassifierCopyright(null|string|FHIRStringPrimitive|FHIRString $classifierCopyright): self
     {
@@ -387,8 +351,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Acceptable to re-use the classification.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getFreeToShare(): null|FHIRBoolean
     {
@@ -400,9 +362,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Acceptable to re-use the classification.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $freeToShare
-     * @return static
      */
     public function setFreeToShare(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $freeToShare): self
     {
@@ -419,10 +378,7 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationWhoClassified $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationWhoClassified
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -490,10 +446,6 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -536,10 +488,7 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationWhoClassified $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationWhoClassified
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

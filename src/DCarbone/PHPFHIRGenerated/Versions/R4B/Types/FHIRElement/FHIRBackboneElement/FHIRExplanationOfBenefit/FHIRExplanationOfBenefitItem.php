@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -183,8 +182,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify item entries.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequence;
@@ -240,8 +237,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of revenue or cost center providing the product and/or service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $revenue;
@@ -253,8 +248,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -267,8 +260,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * When the value is a group code then this item collects a set of related claim
      * details, otherwise this contains the product, service, drug or other billing
      * code for the item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $productOrService;
@@ -305,8 +296,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The date or dates when the service or product was supplied, performed or
      * completed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $servicedDate;
@@ -317,8 +306,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The date or dates when the service or product was supplied, performed or
      * completed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $servicedPeriod;
@@ -329,8 +316,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $locationCodeableConcept;
@@ -344,8 +329,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $locationAddress;
@@ -355,8 +338,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $locationReference;
@@ -368,8 +349,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -380,8 +359,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $unitPrice;
@@ -394,8 +371,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $factor;
@@ -406,8 +381,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The quantity times the unit price for an additional service or product or
      * charge.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $net;
@@ -429,8 +402,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical service site on the patient (limb, tooth, etc.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $bodySite;
@@ -498,29 +469,14 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     /**
      * FHIRExplanationOfBenefitItem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $sequence
      * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt> $careTeamSequence
      * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt> $diagnosisSequence
      * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt> $procedureSequence
      * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt> $informationSequence
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $revenue
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $productOrService
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $modifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $programCode
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $servicedDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $servicedPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $locationCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress $locationAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $locationReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $unitPrice
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $factor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $net
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $udi
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $bodySite
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $subSite
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $encounter
      * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt> $noteNumber
@@ -656,8 +612,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify item entries.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     public function getSequence(): null|FHIRPositiveInt
     {
@@ -670,9 +624,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify item entries.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -718,9 +669,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Care team members related to this service or product.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $careTeamSequence
-     * @return static
      */
     public function addCareTeamSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $careTeamSequence): self
     {
@@ -740,9 +688,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Care team members related to this service or product.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt ...$careTeamSequence
-     * @return static
      */
     public function setCareTeamSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$careTeamSequence): self
     {
@@ -792,9 +737,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Diagnoses applicable for this service or product.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $diagnosisSequence
-     * @return static
      */
     public function addDiagnosisSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $diagnosisSequence): self
     {
@@ -814,9 +756,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Diagnoses applicable for this service or product.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt ...$diagnosisSequence
-     * @return static
      */
     public function setDiagnosisSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$diagnosisSequence): self
     {
@@ -866,9 +805,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Procedures applicable for this service or product.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $procedureSequence
-     * @return static
      */
     public function addProcedureSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $procedureSequence): self
     {
@@ -888,9 +824,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Procedures applicable for this service or product.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt ...$procedureSequence
-     * @return static
      */
     public function setProcedureSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$procedureSequence): self
     {
@@ -942,9 +875,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Exceptions, special conditions and supporting information applicable for this
      * service or product.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $informationSequence
-     * @return static
      */
     public function addInformationSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $informationSequence): self
     {
@@ -965,9 +895,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Exceptions, special conditions and supporting information applicable for this
      * service or product.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt ...$informationSequence
-     * @return static
      */
     public function setInformationSequence(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$informationSequence): self
     {
@@ -993,8 +920,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of revenue or cost center providing the product and/or service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRevenue(): null|FHIRCodeableConcept
     {
@@ -1008,9 +933,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of revenue or cost center providing the product and/or service.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $revenue
-     * @return static
      */
     public function setRevenue(null|FHIRCodeableConcept $revenue): self
     {
@@ -1030,8 +952,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -1046,9 +966,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -1069,8 +986,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * When the value is a group code then this item collects a set of related claim
      * details, otherwise this contains the product, service, drug or other billing
      * code for the item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getProductOrService(): null|FHIRCodeableConcept
     {
@@ -1086,9 +1001,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * When the value is a group code then this item collects a set of related claim
      * details, otherwise this contains the product, service, drug or other billing
      * code for the item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $productOrService
-     * @return static
      */
     public function setProductOrService(null|FHIRCodeableConcept $productOrService): self
     {
@@ -1135,9 +1047,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $modifier
-     * @return static
      */
     public function addModifier(FHIRCodeableConcept $modifier): self
     {
@@ -1156,9 +1065,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$modifier
-     * @return static
      */
     public function setModifier(FHIRCodeableConcept ...$modifier): self
     {
@@ -1203,9 +1109,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the program under which this may be recovered.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $programCode
-     * @return static
      */
     public function addProgramCode(FHIRCodeableConcept $programCode): self
     {
@@ -1223,9 +1126,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the program under which this may be recovered.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$programCode
-     * @return static
      */
     public function setProgramCode(FHIRCodeableConcept ...$programCode): self
     {
@@ -1245,8 +1145,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The date or dates when the service or product was supplied, performed or
      * completed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     public function getServicedDate(): null|FHIRDate
     {
@@ -1261,9 +1159,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The date or dates when the service or product was supplied, performed or
      * completed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $servicedDate
-     * @return static
      */
     public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate): self
     {
@@ -1285,8 +1180,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The date or dates when the service or product was supplied, performed or
      * completed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getServicedPeriod(): null|FHIRPeriod
     {
@@ -1300,9 +1193,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The date or dates when the service or product was supplied, performed or
      * completed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $servicedPeriod
-     * @return static
      */
     public function setServicedPeriod(null|FHIRPeriod $servicedPeriod): self
     {
@@ -1321,8 +1211,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getLocationCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1336,9 +1224,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $locationCodeableConcept
-     * @return static
      */
     public function setLocationCodeableConcept(null|FHIRCodeableConcept $locationCodeableConcept): self
     {
@@ -1360,8 +1245,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress
      */
     public function getLocationAddress(): null|FHIRAddress
     {
@@ -1378,9 +1261,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress $locationAddress
-     * @return static
      */
     public function setLocationAddress(null|FHIRAddress $locationAddress): self
     {
@@ -1398,8 +1278,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getLocationReference(): null|FHIRReference
     {
@@ -1412,9 +1290,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $locationReference
-     * @return static
      */
     public function setLocationReference(null|FHIRReference $locationReference): self
     {
@@ -1434,8 +1309,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -1450,9 +1323,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -1471,8 +1341,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney
      */
     public function getUnitPrice(): null|FHIRMoney
     {
@@ -1486,9 +1354,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $unitPrice
-     * @return static
      */
     public function setUnitPrice(null|FHIRMoney $unitPrice): self
     {
@@ -1509,8 +1374,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal
      */
     public function getFactor(): null|FHIRDecimal
     {
@@ -1526,9 +1389,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDecimal $factor
-     * @return static
      */
     public function setFactor(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $factor): self
     {
@@ -1550,8 +1410,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The quantity times the unit price for an additional service or product or
      * charge.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney
      */
     public function getNet(): null|FHIRMoney
     {
@@ -1565,9 +1423,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The quantity times the unit price for an additional service or product or
      * charge.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMoney $net
-     * @return static
      */
     public function setNet(null|FHIRMoney $net): self
     {
@@ -1610,9 +1465,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique Device Identifiers associated with this line item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $udi
-     * @return static
      */
     public function addUdi(FHIRReference $udi): self
     {
@@ -1629,9 +1481,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique Device Identifiers associated with this line item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$udi
-     * @return static
      */
     public function setUdi(FHIRReference ...$udi): self
     {
@@ -1650,8 +1499,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical service site on the patient (limb, tooth, etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySite(): null|FHIRCodeableConcept
     {
@@ -1665,9 +1512,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical service site on the patient (limb, tooth, etc.).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return static
      */
     public function setBodySite(null|FHIRCodeableConcept $bodySite): self
     {
@@ -1712,9 +1556,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $subSite
-     * @return static
      */
     public function addSubSite(FHIRCodeableConcept $subSite): self
     {
@@ -1732,9 +1573,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$subSite
-     * @return static
      */
     public function setSubSite(FHIRCodeableConcept ...$subSite): self
     {
@@ -1777,9 +1615,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A billed item may include goods or services provided in multiple encounters.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function addEncounter(FHIRReference $encounter): self
     {
@@ -1796,9 +1631,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A billed item may include goods or services provided in multiple encounters.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$encounter
-     * @return static
      */
     public function setEncounter(FHIRReference ...$encounter): self
     {
@@ -1843,9 +1675,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $noteNumber
-     * @return static
      */
     public function addNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber): self
     {
@@ -1866,9 +1695,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt ...$noteNumber
-     * @return static
      */
     public function setNoteNumber(string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt ...$noteNumber): self
     {
@@ -1922,9 +1748,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If this item is a group then the values here are a summary of the adjudication
      * of the detail items. If this item is a simple product or service then this is
      * the result of the adjudication of this item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication $adjudication
-     * @return static
      */
     public function addAdjudication(FHIRExplanationOfBenefitAdjudication $adjudication): self
     {
@@ -1943,9 +1766,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If this item is a group then the values here are a summary of the adjudication
      * of the detail items. If this item is a simple product or service then this is
      * the result of the adjudication of this item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication ...$adjudication
-     * @return static
      */
     public function setAdjudication(FHIRExplanationOfBenefitAdjudication ...$adjudication): self
     {
@@ -1988,9 +1808,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * Second-tier of goods and services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail $detail
-     * @return static
      */
     public function addDetail(FHIRExplanationOfBenefitDetail $detail): self
     {
@@ -2007,9 +1824,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * Second-tier of goods and services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail ...$detail
-     * @return static
      */
     public function setDetail(FHIRExplanationOfBenefitDetail ...$detail): self
     {
@@ -2023,10 +1837,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -2144,10 +1955,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -2324,10 +2131,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

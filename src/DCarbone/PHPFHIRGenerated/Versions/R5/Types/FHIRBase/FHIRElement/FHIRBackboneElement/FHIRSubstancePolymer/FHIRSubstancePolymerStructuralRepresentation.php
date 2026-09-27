@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -134,8 +134,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of structure (e.g. Full, Partial, Representative).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -146,8 +144,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      *
      * The structural representation as text string in a standard format e.g. InChI,
      * SMILES, MOLFILE, CDX, SDF, PDB, mmCIF.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $representation;
@@ -159,8 +155,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      *
      * The format of the representation e.g. InChI, SMILES, MOLFILE, CDX, SDF, PDB,
      * mmCIF.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $format;
@@ -170,8 +164,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An attached file with the structural representation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $attachment;
@@ -180,12 +172,7 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
     /**
      * FHIRSubstancePolymerStructuralRepresentation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $representation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $format
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $attachment
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -229,8 +216,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of structure (e.g. Full, Partial, Representative).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -244,9 +229,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of structure (e.g. Full, Partial, Representative).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -265,8 +247,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      *
      * The structural representation as text string in a standard format e.g. InChI,
      * SMILES, MOLFILE, CDX, SDF, PDB, mmCIF.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getRepresentation(): null|FHIRString
     {
@@ -280,9 +260,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      *
      * The structural representation as text string in a standard format e.g. InChI,
      * SMILES, MOLFILE, CDX, SDF, PDB, mmCIF.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $representation
-     * @return static
      */
     public function setRepresentation(null|string|FHIRStringPrimitive|FHIRString $representation): self
     {
@@ -305,8 +282,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      *
      * The format of the representation e.g. InChI, SMILES, MOLFILE, CDX, SDF, PDB,
      * mmCIF.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getFormat(): null|FHIRCodeableConcept
     {
@@ -321,9 +296,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      *
      * The format of the representation e.g. InChI, SMILES, MOLFILE, CDX, SDF, PDB,
      * mmCIF.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $format
-     * @return static
      */
     public function setFormat(null|FHIRCodeableConcept $format): self
     {
@@ -341,8 +313,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An attached file with the structural representation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      */
     public function getAttachment(): null|FHIRAttachment
     {
@@ -355,9 +325,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An attached file with the structural representation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $attachment
-     * @return static
      */
     public function setAttachment(null|FHIRAttachment $attachment): self
     {
@@ -371,10 +338,7 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -432,10 +396,6 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -468,10 +428,7 @@ class FHIRSubstancePolymerStructuralRepresentation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

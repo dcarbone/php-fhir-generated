@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive;
@@ -87,7 +85,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRCommunicationRequestStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
@@ -165,8 +162,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * The type of message to be sent such as alert, notification, reminder,
      * instruction, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -177,8 +172,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which is to be the source of the communication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $sender;
@@ -225,8 +218,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * The responsible person who authorizes this order, e.g. physician. This may be
      * different than the author of the order statement, e.g. clerk, who may have
      * entered the statement into the order entry application.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $requester;
@@ -235,8 +226,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the proposal or order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCommunicationRequestStatus
      */
     #[FHIRCommunicationRequestStatus]
     protected FHIRCommunicationRequestStatus $status;
@@ -246,8 +235,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the communication request was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -260,8 +247,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication is to occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $scheduledDateTime;
@@ -271,8 +256,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time when this communication is to occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $scheduledPeriod;
@@ -297,8 +280,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $requestedOn;
@@ -308,8 +289,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the focus of this communication request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -321,8 +300,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * Characterizes how quickly the proposed act must be initiated. Includes concepts
      * such as stat, urgent, routine.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $priority;
@@ -330,29 +307,14 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
     /* constructor.php:61 */
     /**
      * FHIRCommunicationRequest Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $sender
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference> $recipient
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload> $payload
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $medium
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $requester
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRCommunicationRequestStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCommunicationRequestStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $scheduledDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $scheduledPeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $reason
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $requestedOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $priority
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -484,9 +446,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * A unique ID of this request for reference purposes. It must be provided if user
      * wants it returned as part of any output, otherwise it will be autogenerated, if
      * needed, by CDS system. Does not need to be the actual ID of the source system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -505,9 +464,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * A unique ID of this request for reference purposes. It must be provided if user
      * wants it returned as part of any output, otherwise it will be autogenerated, if
      * needed, by CDS system. Does not need to be the actual ID of the source system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -527,8 +483,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * The type of message to be sent such as alert, notification, reminder,
      * instruction, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -543,9 +497,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * The type of message to be sent such as alert, notification, reminder,
      * instruction, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -564,8 +515,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which is to be the source of the communication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSender(): null|FHIRReference
     {
@@ -579,9 +528,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which is to be the source of the communication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $sender
-     * @return static
      */
     public function setSender(null|FHIRReference $sender): self
     {
@@ -626,9 +572,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which is the intended target of the communication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $recipient
-     * @return static
      */
     public function addRecipient(FHIRReference $recipient): self
     {
@@ -646,9 +589,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which is the intended target of the communication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference ...$recipient
-     * @return static
      */
     public function setRecipient(FHIRReference ...$recipient): self
     {
@@ -691,9 +631,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * agency be notified about a reportable condition.
      *
      * Text, attachment(s), or resource(s) to be communicated to the recipient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload $payload
-     * @return static
      */
     public function addPayload(FHIRCommunicationRequestPayload $payload): self
     {
@@ -710,9 +647,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * agency be notified about a reportable condition.
      *
      * Text, attachment(s), or resource(s) to be communicated to the recipient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload ...$payload
-     * @return static
      */
     public function setPayload(FHIRCommunicationRequestPayload ...$payload): self
     {
@@ -757,9 +691,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $medium
-     * @return static
      */
     public function addMedium(FHIRCodeableConcept $medium): self
     {
@@ -777,9 +708,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept ...$medium
-     * @return static
      */
     public function setMedium(FHIRCodeableConcept ...$medium): self
     {
@@ -799,8 +727,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * The responsible person who authorizes this order, e.g. physician. This may be
      * different than the author of the order statement, e.g. clerk, who may have
      * entered the statement into the order entry application.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getRequester(): null|FHIRReference
     {
@@ -815,9 +741,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * The responsible person who authorizes this order, e.g. physician. This may be
      * different than the author of the order statement, e.g. clerk, who may have
      * entered the statement into the order entry application.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $requester
-     * @return static
      */
     public function setRequester(null|FHIRReference $requester): self
     {
@@ -834,8 +757,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the proposal or order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCommunicationRequestStatus
      */
     public function getStatus(): null|FHIRCommunicationRequestStatus
     {
@@ -847,9 +768,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the proposal or order.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRCommunicationRequestStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCommunicationRequestStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRCommunicationRequestStatusList|FHIRCommunicationRequestStatus $status): self
     {
@@ -870,8 +788,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the communication request was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -884,9 +800,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the communication request was created.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -907,8 +820,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication is to occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getScheduledDateTime(): null|FHIRDateTime
     {
@@ -924,9 +835,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication is to occur.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $scheduledDateTime
-     * @return static
      */
     public function setScheduledDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $scheduledDateTime): self
     {
@@ -947,8 +855,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time when this communication is to occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getScheduledPeriod(): null|FHIRPeriod
     {
@@ -961,9 +867,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time when this communication is to occur.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $scheduledPeriod
-     * @return static
      */
     public function setScheduledPeriod(null|FHIRPeriod $scheduledPeriod): self
     {
@@ -1008,9 +911,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason or justification for the communication request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason): self
     {
@@ -1028,9 +928,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason or justification for the communication request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept ...$reason
-     * @return static
      */
     public function setReason(FHIRCodeableConcept ...$reason): self
     {
@@ -1051,8 +948,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getRequestedOn(): null|FHIRDateTime
     {
@@ -1068,9 +963,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $requestedOn
-     * @return static
      */
     public function setRequestedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $requestedOn): self
     {
@@ -1091,8 +983,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the focus of this communication request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -1105,9 +995,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the focus of this communication request.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1127,8 +1014,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * Characterizes how quickly the proposed act must be initiated. Includes concepts
      * such as stat, urgent, routine.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPriority(): null|FHIRCodeableConcept
     {
@@ -1143,9 +1028,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
      *
      * Characterizes how quickly the proposed act must be initiated. Includes concepts
      * such as stat, urgent, routine.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $priority
-     * @return static
      */
     public function setPriority(null|FHIRCodeableConcept $priority): self
     {
@@ -1159,10 +1041,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1294,11 +1173,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1430,10 +1304,7 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements VersionCont
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRCommunicationRequest
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

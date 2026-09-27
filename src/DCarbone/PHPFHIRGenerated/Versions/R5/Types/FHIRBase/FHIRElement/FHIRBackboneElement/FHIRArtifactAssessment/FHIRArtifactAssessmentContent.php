@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -153,8 +153,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of information this component of the content represents.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentInformationType
      */
     #[FHIRArtifactAssessmentInformationType]
     protected FHIRArtifactAssessmentInformationType $informationType;
@@ -168,8 +166,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A brief summary of the content of this component.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $summary;
@@ -180,8 +176,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what type of content this component represents.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -205,8 +199,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A quantitative rating of the artifact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -216,8 +208,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who or what authored the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $author;
@@ -251,8 +241,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Acceptable to publicly share the comment, classifier or rating.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $freeToShare;
@@ -272,17 +260,10 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
     /**
      * FHIRArtifactAssessmentContent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRArtifactAssessmentInformationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentInformationType $informationType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $summary
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $classifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $author
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri> $path
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact> $relatedArtifact
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $freeToShare
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent> $component
      * @param null|string[] $fhirComments
      */
@@ -348,8 +329,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of information this component of the content represents.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentInformationType
      */
     public function getInformationType(): null|FHIRArtifactAssessmentInformationType
     {
@@ -360,9 +339,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of information this component of the content represents.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRArtifactAssessmentInformationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentInformationType $informationType
-     * @return static
      */
     public function setInformationType(null|string|FHIRArtifactAssessmentInformationTypeEnum|FHIRArtifactAssessmentInformationType $informationType): self
     {
@@ -387,8 +363,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A brief summary of the content of this component.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getSummary(): null|FHIRMarkdown
     {
@@ -405,9 +379,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A brief summary of the content of this component.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $summary
-     * @return static
      */
     public function setSummary(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $summary): self
     {
@@ -429,8 +400,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what type of content this component represents.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -444,9 +413,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates what type of content this component represents.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -491,9 +457,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Represents a rating, classifier, or assessment of the artifact.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $classifier
-     * @return static
      */
     public function addClassifier(FHIRCodeableConcept $classifier): self
     {
@@ -511,9 +474,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Represents a rating, classifier, or assessment of the artifact.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$classifier
-     * @return static
      */
     public function setClassifier(FHIRCodeableConcept ...$classifier): self
     {
@@ -533,8 +493,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A quantitative rating of the artifact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -549,9 +507,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A quantitative rating of the artifact.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -569,8 +524,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who or what authored the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getAuthor(): null|FHIRReference
     {
@@ -583,9 +536,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who or what authored the content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $author
-     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -630,9 +580,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      *
      * A URI that points to what the comment is about, such as a line of text in the
      * CQL, or a specific element in a resource.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $path
-     * @return static
      */
     public function addPath(string|FHIRUriPrimitive|FHIRUri $path): self
     {
@@ -653,9 +600,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      *
      * A URI that points to what the comment is about, such as a line of text in the
      * CQL, or a specific element in a resource.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri ...$path
-     * @return static
      */
     public function setPath(string|FHIRUriPrimitive|FHIRUri ...$path): self
     {
@@ -709,9 +653,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      *
      * Additional related artifacts that provide supporting documentation, additional
      * evidence, or further information related to the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $relatedArtifact
-     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -730,9 +671,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      *
      * Additional related artifacts that provide supporting documentation, additional
      * evidence, or further information related to the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$relatedArtifact
-     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -749,8 +687,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Acceptable to publicly share the comment, classifier or rating.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getFreeToShare(): null|FHIRBoolean
     {
@@ -762,9 +698,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Acceptable to publicly share the comment, classifier or rating.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $freeToShare
-     * @return static
      */
     public function setFreeToShare(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $freeToShare): self
     {
@@ -810,9 +743,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * content.
      *
      * If the informationType is container, the components of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent $component
-     * @return static
      */
     public function addComponent(FHIRArtifactAssessmentContent $component): self
     {
@@ -829,9 +759,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * content.
      *
      * If the informationType is container, the components of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent ...$component
-     * @return static
      */
     public function setComponent(FHIRArtifactAssessmentContent ...$component): self
     {
@@ -845,10 +772,7 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -934,10 +858,6 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1018,10 +938,7 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -150,8 +149,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Identifies whether this portion of the statement is describing the ability to
      * initiate or receive restful operations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRestfulCapabilityMode
      */
     #[FHIRRestfulCapabilityMode]
     protected FHIRRestfulCapabilityMode $mode;
@@ -166,8 +163,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $documentation;
@@ -179,8 +174,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Information about security implementation from an interface perspective - what a
      * client needs to know.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
      */
     #[FHIRCapabilityStatementSecurity]
     protected FHIRCapabilityStatementSecurity $security;
@@ -257,11 +250,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
     /**
      * FHIRCapabilityStatementRest Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRestfulCapabilityModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRestfulCapabilityMode $mode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $documentation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity $security
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource> $resource
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1> $interaction
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam> $searchParam
@@ -324,8 +313,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Identifies whether this portion of the statement is describing the ability to
      * initiate or receive restful operations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRestfulCapabilityMode
      */
     public function getMode(): null|FHIRRestfulCapabilityMode
     {
@@ -337,9 +324,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Identifies whether this portion of the statement is describing the ability to
      * initiate or receive restful operations.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRestfulCapabilityModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRestfulCapabilityMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRRestfulCapabilityModeEnum|FHIRRestfulCapabilityMode $mode): self
     {
@@ -365,8 +349,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDocumentation(): null|FHIRMarkdown
     {
@@ -384,9 +366,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation): self
     {
@@ -409,8 +388,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Information about security implementation from an interface perspective - what a
      * client needs to know.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
      */
     public function getSecurity(): null|FHIRCapabilityStatementSecurity
     {
@@ -425,9 +402,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Information about security implementation from an interface perspective - what a
      * client needs to know.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity $security
-     * @return static
      */
     public function setSecurity(null|FHIRCapabilityStatementSecurity $security): self
     {
@@ -474,9 +448,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource $resource
-     * @return static
      */
     public function addResource(FHIRCapabilityStatementResource $resource): self
     {
@@ -495,9 +466,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource ...$resource
-     * @return static
      */
     public function setResource(FHIRCapabilityStatementResource ...$resource): self
     {
@@ -542,9 +510,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * server implementation.
      *
      * A specification of restful operations supported by the system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1 $interaction
-     * @return static
      */
     public function addInteraction(FHIRCapabilityStatementInteraction1 $interaction): self
     {
@@ -562,9 +527,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * server implementation.
      *
      * A specification of restful operations supported by the system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1 ...$interaction
-     * @return static
      */
     public function setInteraction(FHIRCapabilityStatementInteraction1 ...$interaction): self
     {
@@ -617,9 +579,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * defined in the specification, or additional ones defined for/by the
      * implementation. This is only for searches executed against the system-level
      * endpoint.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam $searchParam
-     * @return static
      */
     public function addSearchParam(FHIRCapabilityStatementSearchParam $searchParam): self
     {
@@ -641,9 +600,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * defined in the specification, or additional ones defined for/by the
      * implementation. This is only for searches executed against the system-level
      * endpoint.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam ...$searchParam
-     * @return static
      */
     public function setSearchParam(FHIRCapabilityStatementSearchParam ...$searchParam): self
     {
@@ -690,9 +646,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Definition of an operation or a named query together with its parameters and
      * their meaning and type.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $operation
-     * @return static
      */
     public function addOperation(FHIRCapabilityStatementOperation $operation): self
     {
@@ -711,9 +664,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Definition of an operation or a named query together with its parameters and
      * their meaning and type.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation ...$operation
-     * @return static
      */
     public function setOperation(FHIRCapabilityStatementOperation ...$operation): self
     {
@@ -762,9 +712,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * An absolute URI which is a reference to the definition of a compartment that the
      * system supports. The reference is to a CompartmentDefinition resource by its
      * canonical URL .
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $compartment
-     * @return static
      */
     public function addCompartment(string|FHIRCanonicalPrimitive|FHIRCanonical $compartment): self
     {
@@ -787,9 +734,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * An absolute URI which is a reference to the definition of a compartment that the
      * system supports. The reference is to a CompartmentDefinition resource by its
      * canonical URL .
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$compartment
-     * @return static
      */
     public function setCompartment(string|FHIRCanonicalPrimitive|FHIRCanonical ...$compartment): self
     {
@@ -810,10 +754,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -887,10 +828,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -958,10 +895,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

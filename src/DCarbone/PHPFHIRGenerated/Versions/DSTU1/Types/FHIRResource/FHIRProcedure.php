@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -159,8 +157,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person on whom the procedure was performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $subject;
@@ -172,8 +168,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * The specific procedure that is performed. Use text if the exact nature of the
      * procedure can't be coded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -221,8 +215,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * The dates over which the procedure was performed. Allows a period to support
      * complex procedures that span more that one date, and also allows for the length
      * of the procedure to be captured.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $date;
@@ -232,8 +224,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which the procedure was performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $encounter;
@@ -243,8 +233,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * What was the outcome of the procedure - did it resolve reasons why the procedure
      * was performed?.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $outcome;
@@ -282,8 +270,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * If the procedure required specific follow up - e.g. removal of sutures. The
      * followup may be represented as a simple note, or potentially could be more
      * complex in which case the CarePlan resource can be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $followUp;
@@ -303,8 +289,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any other notes about the procedure - e.g. the operative notes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $notes;
@@ -312,26 +296,16 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
     /* constructor.php:61 */
     /**
      * FHIRProcedure Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $bodySite
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $indication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer> $performer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $encounter
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $outcome
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $report
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $complication
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $followUp
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureRelatedItem> $relatedItem
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $notes
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRCodePrimitive|FHIRCode $language = null,
@@ -457,9 +431,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * business processed and/ or used to refer to it when a direct URL reference to
      * the resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -479,9 +450,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * business processed and/ or used to refer to it when a direct URL reference to
      * the resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -499,8 +467,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person on whom the procedure was performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getSubject(): null|FHIRResourceReference
     {
@@ -513,9 +479,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person on whom the procedure was performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -535,8 +498,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * The specific procedure that is performed. Use text if the exact nature of the
      * procedure can't be coded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -551,9 +512,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * The specific procedure that is performed. Use text if the exact nature of the
      * procedure can't be coded.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -600,9 +558,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite): self
     {
@@ -621,9 +576,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$bodySite
-     * @return static
      */
     public function setBodySite(FHIRCodeableConcept ...$bodySite): self
     {
@@ -670,9 +622,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * The reason why the procedure was performed. This may be due to a Condition, may
      * be coded entity of some type, or may simply be present as text.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $indication
-     * @return static
      */
     public function addIndication(FHIRCodeableConcept $indication): self
     {
@@ -691,9 +640,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * The reason why the procedure was performed. This may be due to a Condition, may
      * be coded entity of some type, or may simply be present as text.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$indication
-     * @return static
      */
     public function setIndication(FHIRCodeableConcept ...$indication): self
     {
@@ -734,9 +680,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * operation, or less invasive like counseling or hypnotherapy.
      *
      * Limited to 'real' people rather than equipment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer $performer
-     * @return static
      */
     public function addPerformer(FHIRProcedurePerformer $performer): self
     {
@@ -752,9 +695,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * operation, or less invasive like counseling or hypnotherapy.
      *
      * Limited to 'real' people rather than equipment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer ...$performer
-     * @return static
      */
     public function setPerformer(FHIRProcedurePerformer ...$performer): self
     {
@@ -774,8 +714,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * The dates over which the procedure was performed. Allows a period to support
      * complex procedures that span more that one date, and also allows for the length
      * of the procedure to be captured.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getDate(): null|FHIRPeriod
     {
@@ -790,9 +728,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * The dates over which the procedure was performed. Allows a period to support
      * complex procedures that span more that one date, and also allows for the length
      * of the procedure to be captured.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $date
-     * @return static
      */
     public function setDate(null|FHIRPeriod $date): self
     {
@@ -810,8 +745,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which the procedure was performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getEncounter(): null|FHIRResourceReference
     {
@@ -824,9 +757,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which the procedure was performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRResourceReference $encounter): self
     {
@@ -844,8 +774,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * What was the outcome of the procedure - did it resolve reasons why the procedure
      * was performed?.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getOutcome(): null|FHIRString
     {
@@ -858,9 +786,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * What was the outcome of the procedure - did it resolve reasons why the procedure
      * was performed?.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $outcome
-     * @return static
      */
     public function setOutcome(null|string|FHIRStringPrimitive|FHIRString $outcome): self
     {
@@ -908,9 +833,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * This could be a histology result. There could potentially be multiple reports -
      * e.g. if this was a procedure that made multiple biopsies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $report
-     * @return static
      */
     public function addReport(FHIRResourceReference $report): self
     {
@@ -928,9 +850,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * This could be a histology result. There could potentially be multiple reports -
      * e.g. if this was a procedure that made multiple biopsies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$report
-     * @return static
      */
     public function setReport(FHIRResourceReference ...$report): self
     {
@@ -981,9 +900,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * post-operative period. These are generally tracked separately from the notes,
      * which typically will describe the procedure itself rather than any 'post
      * procedure' issues.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $complication
-     * @return static
      */
     public function addComplication(FHIRCodeableConcept $complication): self
     {
@@ -1004,9 +920,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * post-operative period. These are generally tracked separately from the notes,
      * which typically will describe the procedure itself rather than any 'post
      * procedure' issues.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$complication
-     * @return static
      */
     public function setComplication(FHIRCodeableConcept ...$complication): self
     {
@@ -1025,8 +938,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * If the procedure required specific follow up - e.g. removal of sutures. The
      * followup may be represented as a simple note, or potentially could be more
      * complex in which case the CarePlan resource can be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getFollowUp(): null|FHIRString
     {
@@ -1040,9 +951,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * If the procedure required specific follow up - e.g. removal of sutures. The
      * followup may be represented as a simple note, or potentially could be more
      * complex in which case the CarePlan resource can be used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $followUp
-     * @return static
      */
     public function setFollowUp(null|string|FHIRStringPrimitive|FHIRString $followUp): self
     {
@@ -1088,9 +996,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * Procedures may be related to other items such as procedures or medications. For
      * example treating wound dehiscence following a previous procedure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureRelatedItem $relatedItem
-     * @return static
      */
     public function addRelatedItem(FHIRProcedureRelatedItem $relatedItem): self
     {
@@ -1107,9 +1012,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      *
      * Procedures may be related to other items such as procedures or medications. For
      * example treating wound dehiscence following a previous procedure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureRelatedItem ...$relatedItem
-     * @return static
      */
     public function setRelatedItem(FHIRProcedureRelatedItem ...$relatedItem): self
     {
@@ -1126,8 +1028,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any other notes about the procedure - e.g. the operative notes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getNotes(): null|FHIRString
     {
@@ -1139,9 +1039,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any other notes about the procedure - e.g. the operative notes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $notes
-     * @return static
      */
     public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes): self
     {
@@ -1158,10 +1055,7 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRProcedure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRProcedure
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1279,11 +1173,6 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1414,10 +1303,7 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRProcedure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRProcedure
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

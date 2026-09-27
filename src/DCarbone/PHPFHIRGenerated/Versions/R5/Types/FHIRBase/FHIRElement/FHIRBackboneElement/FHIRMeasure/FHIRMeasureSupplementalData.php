@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -144,8 +143,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent item in a MeasureReport resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $linkId;
@@ -158,8 +155,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * Indicates a meaning for the supplemental data. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
      * terminology, allowing supplemental data to be correlated across measures.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -189,8 +184,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this supplemental data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -205,8 +198,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * expression defined within a referenced library, but it may also be a path to a
      * specific data element. The criteria defines the data to be returned for this
      * element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     #[FHIRExpression]
     protected FHIRExpression $criteria;
@@ -215,13 +206,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
     /**
      * FHIRMeasureSupplementalData Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $usage
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $criteria
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -269,8 +255,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent item in a MeasureReport resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getLinkId(): null|FHIRString
     {
@@ -284,9 +268,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent item in a MeasureReport resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -310,8 +291,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * Indicates a meaning for the supplemental data. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
      * terminology, allowing supplemental data to be correlated across measures.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -327,9 +306,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * Indicates a meaning for the supplemental data. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
      * terminology, allowing supplemental data to be correlated across measures.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -382,9 +358,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * augment the measure information. Risk adjustment factor indicates the data is
      * additional information used to calculate risk adjustment factors when applying a
      * risk model to the measure calculation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $usage
-     * @return static
      */
     public function addUsage(FHIRCodeableConcept $usage): self
     {
@@ -406,9 +379,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * augment the measure information. Risk adjustment factor indicates the data is
      * additional information used to calculate risk adjustment factors when applying a
      * risk model to the measure calculation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$usage
-     * @return static
      */
     public function setUsage(FHIRCodeableConcept ...$usage): self
     {
@@ -430,8 +400,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this supplemental data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -448,9 +416,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this supplemental data.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -476,8 +441,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * expression defined within a referenced library, but it may also be a path to a
      * specific data element. The criteria defines the data to be returned for this
      * element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     public function getCriteria(): null|FHIRExpression
     {
@@ -495,9 +458,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * expression defined within a referenced library, but it may also be a path to a
      * specific data element. The criteria defines the data to be returned for this
      * element.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $criteria
-     * @return static
      */
     public function setCriteria(null|FHIRExpression $criteria): self
     {
@@ -511,10 +471,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -582,10 +539,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -630,10 +583,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

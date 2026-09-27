@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -153,8 +152,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identity of the individual contributor.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $contributor;
@@ -164,8 +161,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For citation styles that use initials.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $forenameInitials;
@@ -200,8 +195,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role of the contributor (e.g. author, editor, reviewer, funder).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
@@ -222,8 +215,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the contributor is the corresponding contributor for the role.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $correspondingContact;
@@ -234,8 +225,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Provides a numerical ranking to represent the degree of contributorship relative
      * to other contributors, such as 1 for first author and 2 for second author.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $rankingOrder;
@@ -244,16 +233,10 @@ class FHIRCitationEntry extends FHIRBackboneElement
     /**
      * FHIRCitationEntry Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $contributor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $forenameInitials
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $affiliation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $contributionType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $role
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance> $contributionInstance
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $correspondingContact
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $rankingOrder
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -312,8 +295,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identity of the individual contributor.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getContributor(): null|FHIRReference
     {
@@ -326,9 +307,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identity of the individual contributor.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $contributor
-     * @return static
      */
     public function setContributor(null|FHIRReference $contributor): self
     {
@@ -346,8 +324,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For citation styles that use initials.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getForenameInitials(): null|FHIRString
     {
@@ -360,9 +336,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For citation styles that use initials.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $forenameInitials
-     * @return static
      */
     public function setForenameInitials(null|string|FHIRStringPrimitive|FHIRString $forenameInitials): self
     {
@@ -408,9 +381,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization affiliated with the contributor.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $affiliation
-     * @return static
      */
     public function addAffiliation(FHIRReference $affiliation): self
     {
@@ -427,9 +397,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization affiliated with the contributor.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$affiliation
-     * @return static
      */
     public function setAffiliation(FHIRReference ...$affiliation): self
     {
@@ -476,9 +443,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $contributionType
-     * @return static
      */
     public function addContributionType(FHIRCodeableConcept $contributionType): self
     {
@@ -497,9 +461,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$contributionType
-     * @return static
      */
     public function setContributionType(FHIRCodeableConcept ...$contributionType): self
     {
@@ -518,8 +479,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role of the contributor (e.g. author, editor, reviewer, funder).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getRole(): null|FHIRCodeableConcept
     {
@@ -533,9 +492,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role of the contributor (e.g. author, editor, reviewer, funder).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $role
-     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -580,9 +536,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Contributions with accounting for time or number.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance $contributionInstance
-     * @return static
      */
     public function addContributionInstance(FHIRCitationContributionInstance $contributionInstance): self
     {
@@ -600,9 +553,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Contributions with accounting for time or number.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance ...$contributionInstance
-     * @return static
      */
     public function setContributionInstance(FHIRCitationContributionInstance ...$contributionInstance): self
     {
@@ -619,8 +569,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the contributor is the corresponding contributor for the role.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getCorrespondingContact(): null|FHIRBoolean
     {
@@ -632,9 +580,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the contributor is the corresponding contributor for the role.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $correspondingContact
-     * @return static
      */
     public function setCorrespondingContact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $correspondingContact): self
     {
@@ -656,8 +601,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Provides a numerical ranking to represent the degree of contributorship relative
      * to other contributors, such as 1 for first author and 2 for second author.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getRankingOrder(): null|FHIRPositiveInt
     {
@@ -671,9 +614,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Provides a numerical ranking to represent the degree of contributorship relative
      * to other contributors, such as 1 for first author and 2 for second author.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $rankingOrder
-     * @return static
      */
     public function setRankingOrder(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $rankingOrder): self
     {
@@ -690,10 +630,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -775,10 +712,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -847,10 +780,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

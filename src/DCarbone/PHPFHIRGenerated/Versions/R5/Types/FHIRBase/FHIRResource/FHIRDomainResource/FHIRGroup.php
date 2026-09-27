@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -116,7 +114,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGroupMembe
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGroupTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
@@ -202,8 +199,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Indicates whether the record for the group is available for use or is merely
      * being retained for historical purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $active;
@@ -211,8 +206,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the broad classification of the kind of resources the group includes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGroupType
      */
     #[FHIRGroupType]
     protected FHIRGroupType $type;
@@ -227,8 +220,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * list cannot be presumed to be complete. * 'enumerated': The
      * Group.characteristics are necessary but not sufficient to determine membership.
      * Membership is determined by being listed as one of the Group.member.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGroupMembershipBasis
      */
     #[FHIRGroupMembershipBasis]
     protected FHIRGroupMembershipBasis $membership;
@@ -240,8 +231,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe",
      * etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -251,8 +240,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label assigned to the group for human identification and communication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -266,8 +253,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * Explanation of what the group represents and how it is intended to be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -277,8 +262,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * A count of the number of resource instances that are part of the group.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $quantity;
@@ -289,8 +272,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Entity responsible for defining and maintaining Group characteristics and/or
      * registered members.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $managingEntity;
@@ -322,23 +303,10 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
     /* constructor.php:61 */
     /**
      * FHIRGroup Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $active
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGroupTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGroupType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGroupMembershipBasisEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGroupMembershipBasis $membership
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $managingEntity
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic> $characteristic
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember> $member
      * @param null|string[] $fhirComments
@@ -458,9 +426,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * Business identifiers assigned to this participant by one of the applications
      * involved. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -480,9 +445,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * Business identifiers assigned to this participant by one of the applications
      * involved. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -500,8 +462,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Indicates whether the record for the group is available for use or is merely
      * being retained for historical purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getActive(): null|FHIRBoolean
     {
@@ -514,9 +474,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Indicates whether the record for the group is available for use or is merely
      * being retained for historical purposes.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $active
-     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -535,8 +492,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the broad classification of the kind of resources the group includes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGroupType
      */
     public function getType(): null|FHIRGroupType
     {
@@ -547,9 +502,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the broad classification of the kind of resources the group includes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGroupTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGroupType $type
-     * @return static
      */
     public function setType(null|string|FHIRGroupTypeEnum|FHIRGroupType $type): self
     {
@@ -575,8 +527,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * list cannot be presumed to be complete. * 'enumerated': The
      * Group.characteristics are necessary but not sufficient to determine membership.
      * Membership is determined by being listed as one of the Group.member.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGroupMembershipBasis
      */
     public function getMembership(): null|FHIRGroupMembershipBasis
     {
@@ -594,9 +544,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * list cannot be presumed to be complete. * 'enumerated': The
      * Group.characteristics are necessary but not sufficient to determine membership.
      * Membership is determined by being listed as one of the Group.member.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGroupMembershipBasisEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGroupMembershipBasis $membership
-     * @return static
      */
     public function setMembership(null|string|FHIRGroupMembershipBasisEnum|FHIRGroupMembershipBasis $membership): self
     {
@@ -619,8 +566,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe",
      * etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -635,9 +580,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe",
      * etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -655,8 +597,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label assigned to the group for human identification and communication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -669,9 +609,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label assigned to the group for human identification and communication.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -696,8 +633,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * Explanation of what the group represents and how it is intended to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -714,9 +649,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * Explanation of what the group represents and how it is intended to be used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -737,8 +669,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * A count of the number of resource instances that are part of the group.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     public function getQuantity(): null|FHIRUnsignedInt
     {
@@ -751,9 +681,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * the Narrative, or extensions
      *
      * A count of the number of resource instances that are part of the group.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $quantity
-     * @return static
      */
     public function setQuantity(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $quantity): self
     {
@@ -775,8 +702,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Entity responsible for defining and maintaining Group characteristics and/or
      * registered members.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getManagingEntity(): null|FHIRReference
     {
@@ -790,9 +715,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Entity responsible for defining and maintaining Group characteristics and/or
      * registered members.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $managingEntity
-     * @return static
      */
     public function setManagingEntity(null|FHIRReference $managingEntity): self
     {
@@ -837,9 +759,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * Organization.
      *
      * Identifies traits whose presence r absence is shared by members of the group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic $characteristic
-     * @return static
      */
     public function addCharacteristic(FHIRGroupCharacteristic $characteristic): self
     {
@@ -857,9 +776,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * Organization.
      *
      * Identifies traits whose presence r absence is shared by members of the group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic ...$characteristic
-     * @return static
      */
     public function setCharacteristic(FHIRGroupCharacteristic ...$characteristic): self
     {
@@ -904,9 +820,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * Organization.
      *
      * Identifies the resource instances that are members of the group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember $member
-     * @return static
      */
     public function addMember(FHIRGroupMember $member): self
     {
@@ -924,9 +837,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
      * Organization.
      *
      * Identifies the resource instances that are members of the group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember ...$member
-     * @return static
      */
     public function setMember(FHIRGroupMember ...$member): self
     {
@@ -940,10 +850,7 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRGroup
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1091,11 +998,6 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1218,10 +1120,7 @@ class FHIRGroup extends FHIRDomainResource implements VersionContainedTypeInterf
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRGroup
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

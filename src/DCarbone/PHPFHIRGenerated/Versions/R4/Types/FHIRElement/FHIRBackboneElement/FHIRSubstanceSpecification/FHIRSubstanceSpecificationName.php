@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -130,8 +129,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual name.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -142,8 +139,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Name type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -154,8 +149,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the name.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -164,8 +157,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the preferred name for this substance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $preferred;
@@ -252,12 +243,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
     /**
      * FHIRSubstanceSpecificationName Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $preferred
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $language
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $domain
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
@@ -335,8 +321,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual name.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -349,9 +333,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual name.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -373,8 +354,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Name type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -388,9 +367,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Name type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -409,8 +385,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the name.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -424,9 +398,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the name.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -443,8 +414,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the preferred name for this substance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getPreferred(): null|FHIRBoolean
     {
@@ -456,9 +425,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the preferred name for this substance.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $preferred
-     * @return static
      */
     public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred): self
     {
@@ -506,9 +472,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language of the name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $language
-     * @return static
      */
     public function addLanguage(FHIRCodeableConcept $language): self
     {
@@ -526,9 +489,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language of the name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$language
-     * @return static
      */
     public function setLanguage(FHIRCodeableConcept ...$language): self
     {
@@ -575,9 +535,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      *
      * The use context of this name for example if there is a different name a drug
      * active ingredient as opposed to a food colour additive.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $domain
-     * @return static
      */
     public function addDomain(FHIRCodeableConcept $domain): self
     {
@@ -596,9 +553,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      *
      * The use context of this name for example if there is a different name a drug
      * active ingredient as opposed to a food colour additive.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$domain
-     * @return static
      */
     public function setDomain(FHIRCodeableConcept ...$domain): self
     {
@@ -643,9 +597,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The jurisdiction where this name applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -663,9 +614,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The jurisdiction where this name applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -706,9 +654,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * used for prescribing.
      *
      * A synonym of this name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $synonym
-     * @return static
      */
     public function addSynonym(FHIRSubstanceSpecificationName $synonym): self
     {
@@ -724,9 +669,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * used for prescribing.
      *
      * A synonym of this name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName ...$synonym
-     * @return static
      */
     public function setSynonym(FHIRSubstanceSpecificationName ...$synonym): self
     {
@@ -767,9 +709,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * used for prescribing.
      *
      * A translation for this name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $translation
-     * @return static
      */
     public function addTranslation(FHIRSubstanceSpecificationName $translation): self
     {
@@ -785,9 +724,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * used for prescribing.
      *
      * A translation for this name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName ...$translation
-     * @return static
      */
     public function setTranslation(FHIRSubstanceSpecificationName ...$translation): self
     {
@@ -828,9 +764,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * used for prescribing.
      *
      * Details of the official nature of this name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial $official
-     * @return static
      */
     public function addOfficial(FHIRSubstanceSpecificationOfficial $official): self
     {
@@ -846,9 +779,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * used for prescribing.
      *
      * Details of the official nature of this name.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial ...$official
-     * @return static
      */
     public function setOfficial(FHIRSubstanceSpecificationOfficial ...$official): self
     {
@@ -891,9 +821,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $source
-     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -910,9 +837,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$source
-     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {
@@ -926,10 +850,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1009,10 +930,6 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1099,10 +1016,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

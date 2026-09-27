@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -119,8 +119,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * Describes the clinical encounter or type of care that the document content is
      * associated with.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -146,8 +144,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * The time period over which the service that is described by the document was
      * provided.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -158,8 +154,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of facility where the patient was seen.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $facilityType;
@@ -171,8 +165,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * This property may convey specifics about the practice setting where the content
      * was created, often reflecting the clinical specialty.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $practiceSetting;
@@ -183,8 +175,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * The Patient Information as known when the document was published. May be a
      * reference to a version specific, or contained.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $sourcePatientInfo;
@@ -202,14 +192,8 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
     /**
      * FHIRDocumentReferenceContext Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $event
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $facilityType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $practiceSetting
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $sourcePatientInfo
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelated> $related
      * @param null|string[] $fhirComments
      */
@@ -266,8 +250,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * Describes the clinical encounter or type of care that the document content is
      * associated with.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -281,9 +263,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * Describes the clinical encounter or type of care that the document content is
      * associated with.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -334,9 +313,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * typeCode, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $event
-     * @return static
      */
     public function addEvent(FHIRCodeableConcept $event): self
     {
@@ -357,9 +333,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * typeCode, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept ...$event
-     * @return static
      */
     public function setEvent(FHIRCodeableConcept ...$event): self
     {
@@ -378,8 +351,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * The time period over which the service that is described by the document was
      * provided.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -393,9 +364,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * The time period over which the service that is described by the document was
      * provided.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -414,8 +382,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of facility where the patient was seen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getFacilityType(): null|FHIRCodeableConcept
     {
@@ -429,9 +395,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of facility where the patient was seen.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $facilityType
-     * @return static
      */
     public function setFacilityType(null|FHIRCodeableConcept $facilityType): self
     {
@@ -451,8 +414,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * This property may convey specifics about the practice setting where the content
      * was created, often reflecting the clinical specialty.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPracticeSetting(): null|FHIRCodeableConcept
     {
@@ -467,9 +428,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * This property may convey specifics about the practice setting where the content
      * was created, often reflecting the clinical specialty.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $practiceSetting
-     * @return static
      */
     public function setPracticeSetting(null|FHIRCodeableConcept $practiceSetting): self
     {
@@ -488,8 +446,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * The Patient Information as known when the document was published. May be a
      * reference to a version specific, or contained.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSourcePatientInfo(): null|FHIRReference
     {
@@ -503,9 +459,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * The Patient Information as known when the document was published. May be a
      * reference to a version specific, or contained.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $sourcePatientInfo
-     * @return static
      */
     public function setSourcePatientInfo(null|FHIRReference $sourcePatientInfo): self
     {
@@ -544,9 +497,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * A reference to a document .
      *
      * Related identifiers or resources associated with the DocumentReference.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelated $related
-     * @return static
      */
     public function addRelated(FHIRDocumentReferenceRelated $related): self
     {
@@ -561,9 +511,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * A reference to a document .
      *
      * Related identifiers or resources associated with the DocumentReference.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelated ...$related
-     * @return static
      */
     public function setRelated(FHIRDocumentReferenceRelated ...$related): self
     {
@@ -577,10 +524,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -636,10 +580,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -686,10 +626,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

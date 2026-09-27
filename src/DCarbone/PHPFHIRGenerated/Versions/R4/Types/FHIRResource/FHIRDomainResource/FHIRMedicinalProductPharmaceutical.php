@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -85,7 +83,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
@@ -150,8 +147,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The administrable dose form, after necessary reconstitution.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $administrableDoseForm;
@@ -162,8 +157,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unitOfPresentation;
@@ -212,17 +205,10 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
     /* constructor.php:61 */
     /**
      * FHIRMedicinalProductPharmaceutical Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $administrableDoseForm
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unitOfPresentation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $ingredient
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $device
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalCharacteristics> $characteristics
@@ -324,9 +310,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the pharmaceutical medicinal product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -344,9 +327,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the pharmaceutical medicinal product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -365,8 +345,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The administrable dose form, after necessary reconstitution.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAdministrableDoseForm(): null|FHIRCodeableConcept
     {
@@ -380,9 +358,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The administrable dose form, after necessary reconstitution.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $administrableDoseForm
-     * @return static
      */
     public function setAdministrableDoseForm(null|FHIRCodeableConcept $administrableDoseForm): self
     {
@@ -401,8 +376,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getUnitOfPresentation(): null|FHIRCodeableConcept
     {
@@ -416,9 +389,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unitOfPresentation
-     * @return static
      */
     public function setUnitOfPresentation(null|FHIRCodeableConcept $unitOfPresentation): self
     {
@@ -461,9 +431,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $ingredient
-     * @return static
      */
     public function addIngredient(FHIRReference $ingredient): self
     {
@@ -480,9 +447,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$ingredient
-     * @return static
      */
     public function setIngredient(FHIRReference ...$ingredient): self
     {
@@ -525,9 +489,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Accompanying device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $device
-     * @return static
      */
     public function addDevice(FHIRReference $device): self
     {
@@ -544,9 +505,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Accompanying device.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$device
-     * @return static
      */
     public function setDevice(FHIRReference ...$device): self
     {
@@ -585,9 +543,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * A pharmaceutical product described in terms of its composition and dose form.
      *
      * Characteristics e.g. a products onset of action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalCharacteristics $characteristics
-     * @return static
      */
     public function addCharacteristics(FHIRMedicinalProductPharmaceuticalCharacteristics $characteristics): self
     {
@@ -602,9 +557,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      * A pharmaceutical product described in terms of its composition and dose form.
      *
      * Characteristics e.g. a products onset of action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalCharacteristics ...$characteristics
-     * @return static
      */
     public function setCharacteristics(FHIRMedicinalProductPharmaceuticalCharacteristics ...$characteristics): self
     {
@@ -645,9 +597,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      *
      * The path by which the pharmaceutical product is taken into or makes contact with
      * the body.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration $routeOfAdministration
-     * @return static
      */
     public function addRouteOfAdministration(FHIRMedicinalProductPharmaceuticalRouteOfAdministration $routeOfAdministration): self
     {
@@ -663,9 +612,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
      *
      * The path by which the pharmaceutical product is taken into or makes contact with
      * the body.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration ...$routeOfAdministration
-     * @return static
      */
     public function setRouteOfAdministration(FHIRMedicinalProductPharmaceuticalRouteOfAdministration ...$routeOfAdministration): self
     {
@@ -679,10 +625,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPharmaceutical $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPharmaceutical
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -774,11 +717,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -855,10 +793,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPharmaceutical $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductPharmaceutical
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

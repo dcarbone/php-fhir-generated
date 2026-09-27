@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -87,7 +85,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
@@ -140,8 +137,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -152,8 +147,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient role e.g. Active ingredient, excipient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
@@ -162,8 +155,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ingredient is a known or suspected allergen.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $allergenicIndicator;
@@ -191,8 +182,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * The ingredient substance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance
      */
     #[FHIRMedicinalProductIngredientSubstance]
     protected FHIRMedicinalProductIngredientSubstance $substance;
@@ -200,20 +189,11 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
     /* constructor.php:61 */
     /**
      * FHIRMedicinalProductIngredient Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $role
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $allergenicIndicator
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $manufacturer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance> $specifiedSubstance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance $substance
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -283,8 +263,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -300,9 +278,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -321,8 +296,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient role e.g. Active ingredient, excipient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRole(): null|FHIRCodeableConcept
     {
@@ -336,9 +309,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient role e.g. Active ingredient, excipient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -355,8 +325,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ingredient is a known or suspected allergen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getAllergenicIndicator(): null|FHIRBoolean
     {
@@ -368,9 +336,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ingredient is a known or suspected allergen.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $allergenicIndicator
-     * @return static
      */
     public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator): self
     {
@@ -416,9 +381,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $manufacturer
-     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -435,9 +397,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$manufacturer
-     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -476,9 +435,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * A specified substance that comprises this ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance $specifiedSubstance
-     * @return static
      */
     public function addSpecifiedSubstance(FHIRMedicinalProductIngredientSpecifiedSubstance $specifiedSubstance): self
     {
@@ -493,9 +449,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * A specified substance that comprises this ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance ...$specifiedSubstance
-     * @return static
      */
     public function setSpecifiedSubstance(FHIRMedicinalProductIngredientSpecifiedSubstance ...$specifiedSubstance): self
     {
@@ -511,8 +464,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * The ingredient substance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance
      */
     public function getSubstance(): null|FHIRMedicinalProductIngredientSubstance
     {
@@ -523,9 +474,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * The ingredient substance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance $substance
-     * @return static
      */
     public function setSubstance(null|FHIRMedicinalProductIngredientSubstance $substance): self
     {
@@ -539,10 +487,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -640,11 +585,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -715,10 +655,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements Versi
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

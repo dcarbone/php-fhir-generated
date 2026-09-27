@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription;
@@ -106,7 +104,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -176,8 +173,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * General high level classification of the source material specific to the origin
      * of the material.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $sourceMaterialClass;
@@ -190,8 +185,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * The type of the source material shall be specified based on a controlled
      * vocabulary. For vaccines, this subclause refers to the class of infectious
      * agent.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $sourceMaterialType;
@@ -202,8 +195,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The state of the source material when extracted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $sourceMaterialState;
@@ -215,8 +206,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The unique identifier associated with the source material parent organism shall
      * be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $organismId;
@@ -227,8 +216,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The organism accepted Scientific name shall be provided based on the organism
      * taxonomy.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $organismName;
@@ -293,8 +280,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * Stage of life for animals, plants, insects and microorganisms. This information
      * shall be provided only when the substance is significantly different in these
      * stages (e.g. foetal bovine serum).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $developmentStage;
@@ -345,8 +330,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * vaccines, the parent organism shall be specified based on these subclause
      * elements. As an example, full taxonomy will be described for the Substance Name:
      * ., Leaf.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
      */
     #[FHIRSubstanceSourceMaterialOrganism]
     protected FHIRSubstanceSourceMaterialOrganism $organism;
@@ -375,26 +358,14 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
     /* constructor.php:61 */
     /**
      * FHIRSubstanceSourceMaterial Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sourceMaterialClass
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sourceMaterialType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sourceMaterialState
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $organismId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $organismName
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $parentSubstanceId
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $parentSubstanceName
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $countryOfOrigin
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $geographicalLocation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $developmentStage
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription> $fractionDescription
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism $organism
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription> $partDescription
      * @param null|string[] $fhirComments
      */
@@ -492,8 +463,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * General high level classification of the source material specific to the origin
      * of the material.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getSourceMaterialClass(): null|FHIRCodeableConcept
     {
@@ -508,9 +477,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * General high level classification of the source material specific to the origin
      * of the material.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sourceMaterialClass
-     * @return static
      */
     public function setSourceMaterialClass(null|FHIRCodeableConcept $sourceMaterialClass): self
     {
@@ -531,8 +497,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * The type of the source material shall be specified based on a controlled
      * vocabulary. For vaccines, this subclause refers to the class of infectious
      * agent.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getSourceMaterialType(): null|FHIRCodeableConcept
     {
@@ -548,9 +512,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * The type of the source material shall be specified based on a controlled
      * vocabulary. For vaccines, this subclause refers to the class of infectious
      * agent.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sourceMaterialType
-     * @return static
      */
     public function setSourceMaterialType(null|FHIRCodeableConcept $sourceMaterialType): self
     {
@@ -569,8 +530,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The state of the source material when extracted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getSourceMaterialState(): null|FHIRCodeableConcept
     {
@@ -584,9 +543,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The state of the source material when extracted.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $sourceMaterialState
-     * @return static
      */
     public function setSourceMaterialState(null|FHIRCodeableConcept $sourceMaterialState): self
     {
@@ -606,8 +562,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The unique identifier associated with the source material parent organism shall
      * be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     public function getOrganismId(): null|FHIRIdentifier
     {
@@ -622,9 +576,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The unique identifier associated with the source material parent organism shall
      * be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $organismId
-     * @return static
      */
     public function setOrganismId(null|FHIRIdentifier $organismId): self
     {
@@ -643,8 +594,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The organism accepted Scientific name shall be provided based on the organism
      * taxonomy.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getOrganismName(): null|FHIRString
     {
@@ -658,9 +607,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The organism accepted Scientific name shall be provided based on the organism
      * taxonomy.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $organismName
-     * @return static
      */
     public function setOrganismName(null|string|FHIRStringPrimitive|FHIRString $organismName): self
     {
@@ -710,9 +656,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $parentSubstanceId
-     * @return static
      */
     public function addParentSubstanceId(FHIRIdentifier $parentSubstanceId): self
     {
@@ -731,9 +674,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$parentSubstanceId
-     * @return static
      */
     public function setParentSubstanceId(FHIRIdentifier ...$parentSubstanceId): self
     {
@@ -776,9 +716,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The parent substance of the Herbal Drug, or Herbal preparation.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $parentSubstanceName
-     * @return static
      */
     public function addParentSubstanceName(string|FHIRStringPrimitive|FHIRString $parentSubstanceName): self
     {
@@ -798,9 +735,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The parent substance of the Herbal Drug, or Herbal preparation.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$parentSubstanceName
-     * @return static
      */
     public function setParentSubstanceName(string|FHIRStringPrimitive|FHIRString ...$parentSubstanceName): self
     {
@@ -860,9 +794,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * For “Plasma-derived substances” the attribute country of origin provides
      * information about the countries used for the manufacturing of the Cryopoor plama
      * or Crioprecipitate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $countryOfOrigin
-     * @return static
      */
     public function addCountryOfOrigin(FHIRCodeableConcept $countryOfOrigin): self
     {
@@ -884,9 +815,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * For “Plasma-derived substances” the attribute country of origin provides
      * information about the countries used for the manufacturing of the Cryopoor plama
      * or Crioprecipitate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$countryOfOrigin
-     * @return static
      */
     public function setCountryOfOrigin(FHIRCodeableConcept ...$countryOfOrigin): self
     {
@@ -931,9 +859,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The place/region where the plant is harvested or the places/regions where the
      * animal source material has its habitat.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $geographicalLocation
-     * @return static
      */
     public function addGeographicalLocation(string|FHIRStringPrimitive|FHIRString $geographicalLocation): self
     {
@@ -954,9 +879,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      *
      * The place/region where the plant is harvested or the places/regions where the
      * animal source material has its habitat.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$geographicalLocation
-     * @return static
      */
     public function setGeographicalLocation(string|FHIRStringPrimitive|FHIRString ...$geographicalLocation): self
     {
@@ -984,8 +906,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * Stage of life for animals, plants, insects and microorganisms. This information
      * shall be provided only when the substance is significantly different in these
      * stages (e.g. foetal bovine serum).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getDevelopmentStage(): null|FHIRCodeableConcept
     {
@@ -1001,9 +921,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * Stage of life for animals, plants, insects and microorganisms. This information
      * shall be provided only when the substance is significantly different in these
      * stages (e.g. foetal bovine serum).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $developmentStage
-     * @return static
      */
     public function setDevelopmentStage(null|FHIRCodeableConcept $developmentStage): self
     {
@@ -1080,9 +997,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * composition, will be captured at the Specified Substance Group 1 information
      * level. For plasma-derived products fraction information will be captured at the
      * Substance and the Specified Substance Group 1 levels.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription $fractionDescription
-     * @return static
      */
     public function addFractionDescription(FHIRSubstanceSourceMaterialFractionDescription $fractionDescription): self
     {
@@ -1116,9 +1030,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * composition, will be captured at the Specified Substance Group 1 information
      * level. For plasma-derived products fraction information will be captured at the
      * Substance and the Specified Substance Group 1 levels.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription ...$fractionDescription
-     * @return static
      */
     public function setFractionDescription(FHIRSubstanceSourceMaterialFractionDescription ...$fractionDescription): self
     {
@@ -1149,8 +1060,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * vaccines, the parent organism shall be specified based on these subclause
      * elements. As an example, full taxonomy will be described for the Substance Name:
      * ., Leaf.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
      */
     public function getOrganism(): null|FHIRSubstanceSourceMaterialOrganism
     {
@@ -1176,9 +1085,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * vaccines, the parent organism shall be specified based on these subclause
      * elements. As an example, full taxonomy will be described for the Substance Name:
      * ., Leaf.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism $organism
-     * @return static
      */
     public function setOrganism(null|FHIRSubstanceSourceMaterialOrganism $organism): self
     {
@@ -1241,9 +1147,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * To do.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription $partDescription
-     * @return static
      */
     public function addPartDescription(FHIRSubstanceSourceMaterialPartDescription $partDescription): self
     {
@@ -1270,9 +1173,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * To do.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription ...$partDescription
-     * @return static
      */
     public function setPartDescription(FHIRSubstanceSourceMaterialPartDescription ...$partDescription): self
     {
@@ -1286,10 +1186,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1401,11 +1298,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1519,10 +1411,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements VersionC
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

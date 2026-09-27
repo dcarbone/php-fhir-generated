@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -145,8 +144,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Has the instruction been verified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $verified;
@@ -158,8 +155,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      *
      * Extensible list of verification type starting with verification and
      * re-validation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $verificationType;
@@ -169,8 +164,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who conducted the verification/validation of the Grantor decision.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $verifiedBy;
@@ -180,8 +173,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who verified the instruction (Patient, Relative or other Authorized Person).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $verifiedWith;
@@ -205,12 +196,7 @@ class FHIRConsentVerification extends FHIRBackboneElement
     /**
      * FHIRConsentVerification Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $verified
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $verificationType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $verifiedBy
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $verifiedWith
      * @param null|iterable<string>|iterable<\DateTimeInterface>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime> $verificationDate
      * @param null|string[] $fhirComments
      */
@@ -257,8 +243,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Has the instruction been verified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getVerified(): null|FHIRBoolean
     {
@@ -270,9 +254,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Has the instruction been verified.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $verified
-     * @return static
      */
     public function setVerified(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $verified): self
     {
@@ -295,8 +276,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      *
      * Extensible list of verification type starting with verification and
      * re-validation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getVerificationType(): null|FHIRCodeableConcept
     {
@@ -311,9 +290,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      *
      * Extensible list of verification type starting with verification and
      * re-validation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $verificationType
-     * @return static
      */
     public function setVerificationType(null|FHIRCodeableConcept $verificationType): self
     {
@@ -331,8 +307,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who conducted the verification/validation of the Grantor decision.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getVerifiedBy(): null|FHIRReference
     {
@@ -345,9 +319,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who conducted the verification/validation of the Grantor decision.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $verifiedBy
-     * @return static
      */
     public function setVerifiedBy(null|FHIRReference $verifiedBy): self
     {
@@ -365,8 +336,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who verified the instruction (Patient, Relative or other Authorized Person).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getVerifiedWith(): null|FHIRReference
     {
@@ -379,9 +348,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who verified the instruction (Patient, Relative or other Authorized Person).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $verifiedWith
-     * @return static
      */
     public function setVerifiedWith(null|FHIRReference $verifiedWith): self
     {
@@ -432,9 +398,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date(s) verification was collected.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $verificationDate
-     * @return static
      */
     public function addVerificationDate(string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $verificationDate): self
     {
@@ -458,9 +421,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date(s) verification was collected.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime ...$verificationDate
-     * @return static
      */
     public function setVerificationDate(string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime ...$verificationDate): self
     {
@@ -481,10 +441,7 @@ class FHIRConsentVerification extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -544,10 +501,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -587,10 +540,7 @@ class FHIRConsentVerification extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

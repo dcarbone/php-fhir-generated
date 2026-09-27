@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -88,7 +86,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReferralStatu
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRReferralStatusList;
@@ -156,8 +153,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the referral or transfer of care request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReferralStatus
      */
     #[FHIRReferralStatus]
     protected FHIRReferralStatus $status;
@@ -183,8 +178,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Date/DateTime of creation for draft requests and date of activation for active
      * requests.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -196,8 +189,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * An indication of the type of referral (or where applicable the type of transfer
      * of care) request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -210,8 +201,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * Indication of the clinical domain or discipline to which the referral or
      * transfer of care request is sent. For example: Cardiology Gastroenterology
      * Diabetology.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $specialty;
@@ -223,8 +212,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * An indication of the urgency of referral (or where applicable the type of
      * transfer of care) request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $priority;
@@ -234,8 +221,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the subject of a referral or transfer of care request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -246,8 +231,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The healthcare provider or provider organization who/which initiated the
      * referral/transfer of care request. Can also be Patient (a self referral).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $requester;
@@ -270,8 +253,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The encounter at which the request for referral or transfer of care is
      * initiated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -285,8 +266,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Date/DateTime the request for referral or transfer of care is sent by the
      * author.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $dateSent;
@@ -299,8 +278,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * Description of clinical condition indicating why referral/transfer of care is
      * requested. For example: Pathological Anomalies, Disabled (physical or mental),
      * Behavioral Management.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reason;
@@ -311,8 +288,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The reason element gives a short description of why the referral is being made,
      * the description expands on this to support a more complete clinical summary.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -351,8 +326,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The period of time within which the services identified in the referral/transfer
      * of care is specified or required to occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $fulfillmentTime;
@@ -360,30 +333,13 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
     /* constructor.php:61 */
     /**
      * FHIRReferralRequest Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRReferralStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReferralStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $specialty
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $priority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $patient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $requester
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference> $recipient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $dateSent
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $serviceRequested
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference> $supportingInformation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $fulfillmentTime
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -489,8 +445,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the referral or transfer of care request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReferralStatus
      */
     public function getStatus(): null|FHIRReferralStatus
     {
@@ -502,9 +456,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the referral or transfer of care request.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRReferralStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReferralStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRReferralStatusList|FHIRReferralStatus $status): self
     {
@@ -552,9 +503,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Business identifier that uniquely identifies the referral/care transfer request
      * instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -572,9 +520,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Business identifier that uniquely identifies the referral/care transfer request
      * instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -596,8 +541,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Date/DateTime of creation for draft requests and date of activation for active
      * requests.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -614,9 +557,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Date/DateTime of creation for draft requests and date of activation for active
      * requests.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -639,8 +579,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * An indication of the type of referral (or where applicable the type of transfer
      * of care) request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -655,9 +593,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * An indication of the type of referral (or where applicable the type of transfer
      * of care) request.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -678,8 +613,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * Indication of the clinical domain or discipline to which the referral or
      * transfer of care request is sent. For example: Cardiology Gastroenterology
      * Diabetology.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSpecialty(): null|FHIRCodeableConcept
     {
@@ -695,9 +628,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * Indication of the clinical domain or discipline to which the referral or
      * transfer of care request is sent. For example: Cardiology Gastroenterology
      * Diabetology.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $specialty
-     * @return static
      */
     public function setSpecialty(null|FHIRCodeableConcept $specialty): self
     {
@@ -717,8 +647,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * An indication of the urgency of referral (or where applicable the type of
      * transfer of care) request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPriority(): null|FHIRCodeableConcept
     {
@@ -733,9 +661,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * An indication of the urgency of referral (or where applicable the type of
      * transfer of care) request.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $priority
-     * @return static
      */
     public function setPriority(null|FHIRCodeableConcept $priority): self
     {
@@ -753,8 +678,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the subject of a referral or transfer of care request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -767,9 +690,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the subject of a referral or transfer of care request.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -788,8 +708,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The healthcare provider or provider organization who/which initiated the
      * referral/transfer of care request. Can also be Patient (a self referral).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getRequester(): null|FHIRReference
     {
@@ -803,9 +721,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The healthcare provider or provider organization who/which initiated the
      * referral/transfer of care request. Can also be Patient (a self referral).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $requester
-     * @return static
      */
     public function setRequester(null|FHIRReference $requester): self
     {
@@ -850,9 +765,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The healthcare provider(s) or provider organization(s) who/which is to receive
      * the referral/transfer of care request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $recipient
-     * @return static
      */
     public function addRecipient(FHIRReference $recipient): self
     {
@@ -870,9 +782,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The healthcare provider(s) or provider organization(s) who/which is to receive
      * the referral/transfer of care request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference ...$recipient
-     * @return static
      */
     public function setRecipient(FHIRReference ...$recipient): self
     {
@@ -891,8 +800,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The encounter at which the request for referral or transfer of care is
      * initiated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -906,9 +813,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The encounter at which the request for referral or transfer of care is
      * initiated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -930,8 +834,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Date/DateTime the request for referral or transfer of care is sent by the
      * author.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getDateSent(): null|FHIRDateTime
     {
@@ -948,9 +850,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * Date/DateTime the request for referral or transfer of care is sent by the
      * author.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $dateSent
-     * @return static
      */
     public function setDateSent(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateSent): self
     {
@@ -974,8 +873,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * Description of clinical condition indicating why referral/transfer of care is
      * requested. For example: Pathological Anomalies, Disabled (physical or mental),
      * Behavioral Management.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReason(): null|FHIRCodeableConcept
     {
@@ -991,9 +888,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * Description of clinical condition indicating why referral/transfer of care is
      * requested. For example: Pathological Anomalies, Disabled (physical or mental),
      * Behavioral Management.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -1012,8 +906,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The reason element gives a short description of why the referral is being made,
      * the description expands on this to support a more complete clinical summary.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -1027,9 +919,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The reason element gives a short description of why the referral is being made,
      * the description expands on this to support a more complete clinical summary.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1079,9 +968,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The service(s) that is/are requested to be provided to the patient. For example:
      * cardiac pacemaker insertion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $serviceRequested
-     * @return static
      */
     public function addServiceRequested(FHIRCodeableConcept $serviceRequested): self
     {
@@ -1100,9 +986,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The service(s) that is/are requested to be provided to the patient. For example:
      * cardiac pacemaker insertion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept ...$serviceRequested
-     * @return static
      */
     public function setServiceRequested(FHIRCodeableConcept ...$serviceRequested): self
     {
@@ -1153,9 +1036,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * problems/chief complaints Medical History Family History Alerts
      * Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments
      * (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $supportingInformation
-     * @return static
      */
     public function addSupportingInformation(FHIRReference $supportingInformation): self
     {
@@ -1176,9 +1056,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      * problems/chief complaints Medical History Family History Alerts
      * Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments
      * (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference ...$supportingInformation
-     * @return static
      */
     public function setSupportingInformation(FHIRReference ...$supportingInformation): self
     {
@@ -1197,8 +1074,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The period of time within which the services identified in the referral/transfer
      * of care is specified or required to occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getFulfillmentTime(): null|FHIRPeriod
     {
@@ -1212,9 +1087,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
      *
      * The period of time within which the services identified in the referral/transfer
      * of care is specified or required to occur.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $fulfillmentTime
-     * @return static
      */
     public function setFulfillmentTime(null|FHIRPeriod $fulfillmentTime): self
     {
@@ -1228,10 +1100,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRReferralRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRReferralRequest
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1373,11 +1242,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1517,10 +1381,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements VersionContained
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRReferralRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRReferralRequest
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

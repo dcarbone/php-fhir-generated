@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -147,8 +146,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Direct reference to a resource that identifies the participant.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $reference;
@@ -157,8 +154,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Unique identifier for the user actively participating in the event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $userId;
@@ -169,8 +164,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * Alternative Participant Identifier. For a human, this should be a user
      * identifier text string from authentication system. This identifier would be one
      * known to a common authentication system (e.g., single sign-on), if available.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $altId;
@@ -179,8 +172,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-meaningful name for the user.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -190,8 +181,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Indicator that the user is or is not the requestor, or initiator, for the event
      * being audited.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $requestor;
@@ -202,8 +191,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Type of media involved. Used when the event is about exporting/importing onto
      * media.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $media;
@@ -214,8 +201,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Logical network location for application activity, if the activity has a network
      * location.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventNetwork
      */
     #[FHIRSecurityEventNetwork]
     protected FHIRSecurityEventNetwork $network;
@@ -224,16 +209,8 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
     /**
      * FHIRSecurityEventParticipant Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $reference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $userId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $altId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $requestor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $media
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventNetwork $network
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -323,9 +300,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * Specification of the role(s) the user plays when performing the event. Usually
      * the codes used in this element are local codes defined by the role-based access
      * control security system used in the local context.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -345,9 +319,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * Specification of the role(s) the user plays when performing the event. Usually
      * the codes used in this element are local codes defined by the role-based access
      * control security system used in the local context.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$role
-     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -365,8 +336,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Direct reference to a resource that identifies the participant.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getReference(): null|FHIRResourceReference
     {
@@ -379,9 +348,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Direct reference to a resource that identifies the participant.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $reference
-     * @return static
      */
     public function setReference(null|FHIRResourceReference $reference): self
     {
@@ -398,8 +364,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Unique identifier for the user actively participating in the event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getUserId(): null|FHIRString
     {
@@ -411,9 +375,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Unique identifier for the user actively participating in the event.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $userId
-     * @return static
      */
     public function setUserId(null|string|FHIRStringPrimitive|FHIRString $userId): self
     {
@@ -435,8 +396,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * Alternative Participant Identifier. For a human, this should be a user
      * identifier text string from authentication system. This identifier would be one
      * known to a common authentication system (e.g., single sign-on), if available.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getAltId(): null|FHIRString
     {
@@ -450,9 +409,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * Alternative Participant Identifier. For a human, this should be a user
      * identifier text string from authentication system. This identifier would be one
      * known to a common authentication system (e.g., single sign-on), if available.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $altId
-     * @return static
      */
     public function setAltId(null|string|FHIRStringPrimitive|FHIRString $altId): self
     {
@@ -472,8 +428,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-meaningful name for the user.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -485,9 +439,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-meaningful name for the user.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -508,8 +459,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Indicator that the user is or is not the requestor, or initiator, for the event
      * being audited.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getRequestor(): null|FHIRBoolean
     {
@@ -522,9 +471,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Indicator that the user is or is not the requestor, or initiator, for the event
      * being audited.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $requestor
-     * @return static
      */
     public function setRequestor(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requestor): self
     {
@@ -546,8 +492,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Type of media involved. Used when the event is about exporting/importing onto
      * media.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding
      */
     public function getMedia(): null|FHIRCoding
     {
@@ -561,9 +505,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Type of media involved. Used when the event is about exporting/importing onto
      * media.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCoding $media
-     * @return static
      */
     public function setMedia(null|FHIRCoding $media): self
     {
@@ -582,8 +523,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Logical network location for application activity, if the activity has a network
      * location.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventNetwork
      */
     public function getNetwork(): null|FHIRSecurityEventNetwork
     {
@@ -597,9 +536,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
      *
      * Logical network location for application activity, if the activity has a network
      * location.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventNetwork $network
-     * @return static
      */
     public function setNetwork(null|FHIRSecurityEventNetwork $network): self
     {
@@ -613,10 +549,7 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventParticipant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventParticipant
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -706,10 +639,6 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -779,10 +708,7 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventParticipant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventParticipant
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

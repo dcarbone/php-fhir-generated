@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -127,8 +126,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A canonical reference to the Implementation guide for the dependency.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $uri;
@@ -141,8 +138,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The NPM package name for the Implementation Guide that this IG depends on.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $packageId;
@@ -153,8 +148,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      *
      * The version of the IG that is depended on, when the correct version is required
      * to understand the IG correctly.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -163,11 +156,7 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
     /**
      * FHIRImplementationGuideDependsOn Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $uri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $packageId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $version
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -207,8 +196,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A canonical reference to the Implementation guide for the dependency.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical
      */
     public function getUri(): null|FHIRCanonical
     {
@@ -222,9 +209,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A canonical reference to the Implementation guide for the dependency.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $uri
-     * @return static
      */
     public function setUri(null|string|FHIRCanonicalPrimitive|FHIRCanonical $uri): self
     {
@@ -248,8 +232,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The NPM package name for the Implementation Guide that this IG depends on.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId
      */
     public function getPackageId(): null|FHIRId
     {
@@ -265,9 +247,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The NPM package name for the Implementation Guide that this IG depends on.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $packageId
-     * @return static
      */
     public function setPackageId(null|string|FHIRIdPrimitive|FHIRId $packageId): self
     {
@@ -289,8 +268,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      *
      * The version of the IG that is depended on, when the correct version is required
      * to understand the IG correctly.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -304,9 +281,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      *
      * The version of the IG that is depended on, when the correct version is required
      * to understand the IG correctly.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -323,10 +297,7 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -398,10 +369,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -439,10 +406,7 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -146,8 +146,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * The FHIR query based rules are applied to the previous resource state (e.g.,
      * state before an update).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $previous;
@@ -156,8 +154,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * For "create" interactions, should the "previous" criteria count as an automatic
      * pass or an automatic fail.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior
      */
     #[FHIRCriteriaNotExistsBehavior]
     protected FHIRCriteriaNotExistsBehavior $resultForCreate;
@@ -168,8 +164,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * The FHIR query based rules are applied to the current resource state (e.g.,
      * state after an update).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $current;
@@ -178,8 +172,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * For "delete" interactions, should the "current" criteria count as an automatic
      * pass or an automatic fail.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior
      */
     #[FHIRCriteriaNotExistsBehavior]
     protected FHIRCriteriaNotExistsBehavior $resultForDelete;
@@ -190,8 +182,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * If set to true, both current and previous criteria must evaluate true to trigger
      * a notification for this topic. Otherwise a notification for this topic will be
      * triggered if either one evaluates to true.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $requireBoth;
@@ -200,13 +190,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
     /**
      * FHIRSubscriptionTopicQueryCriteria Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $previous
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCriteriaNotExistsBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForCreate
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $current
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCriteriaNotExistsBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForDelete
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $requireBoth
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -254,8 +238,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * The FHIR query based rules are applied to the previous resource state (e.g.,
      * state before an update).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getPrevious(): null|FHIRString
     {
@@ -269,9 +251,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * The FHIR query based rules are applied to the previous resource state (e.g.,
      * state before an update).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $previous
-     * @return static
      */
     public function setPrevious(null|string|FHIRStringPrimitive|FHIRString $previous): self
     {
@@ -291,8 +270,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * For "create" interactions, should the "previous" criteria count as an automatic
      * pass or an automatic fail.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior
      */
     public function getResultForCreate(): null|FHIRCriteriaNotExistsBehavior
     {
@@ -304,9 +281,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * For "create" interactions, should the "previous" criteria count as an automatic
      * pass or an automatic fail.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCriteriaNotExistsBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForCreate
-     * @return static
      */
     public function setResultForCreate(null|string|FHIRCriteriaNotExistsBehaviorEnum|FHIRCriteriaNotExistsBehavior $resultForCreate): self
     {
@@ -328,8 +302,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * The FHIR query based rules are applied to the current resource state (e.g.,
      * state after an update).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getCurrent(): null|FHIRString
     {
@@ -343,9 +315,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * The FHIR query based rules are applied to the current resource state (e.g.,
      * state after an update).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $current
-     * @return static
      */
     public function setCurrent(null|string|FHIRStringPrimitive|FHIRString $current): self
     {
@@ -365,8 +334,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * For "delete" interactions, should the "current" criteria count as an automatic
      * pass or an automatic fail.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior
      */
     public function getResultForDelete(): null|FHIRCriteriaNotExistsBehavior
     {
@@ -378,9 +345,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * For "delete" interactions, should the "current" criteria count as an automatic
      * pass or an automatic fail.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCriteriaNotExistsBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForDelete
-     * @return static
      */
     public function setResultForDelete(null|string|FHIRCriteriaNotExistsBehaviorEnum|FHIRCriteriaNotExistsBehavior $resultForDelete): self
     {
@@ -402,8 +366,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * If set to true, both current and previous criteria must evaluate true to trigger
      * a notification for this topic. Otherwise a notification for this topic will be
      * triggered if either one evaluates to true.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getRequireBoth(): null|FHIRBoolean
     {
@@ -417,9 +379,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * If set to true, both current and previous criteria must evaluate true to trigger
      * a notification for this topic. Otherwise a notification for this topic will be
      * triggered if either one evaluates to true.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $requireBoth
-     * @return static
      */
     public function setRequireBoth(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requireBoth): self
     {
@@ -436,10 +395,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -531,10 +487,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -592,10 +544,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -151,8 +150,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIssueSeverity
      */
     #[FHIRIssueSeverity]
     protected FHIRIssueSeverity $severity;
@@ -162,8 +159,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * Describes the type of the issue. The system that creates an OperationOutcome
      * SHALL choose the most applicable code from the IssueType value set, and may
      * additional provide its own code for the error in the details element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIssueType
      */
     #[FHIRIssueType]
     protected FHIRIssueType $code;
@@ -175,8 +170,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * Additional details about the error. This may be a text description of the error
      * or a system code that identifies the error.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $details;
@@ -186,8 +179,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional diagnostic information about the issue.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $diagnostics;
@@ -225,12 +216,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     /**
      * FHIROperationOutcomeIssue Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRIssueSeverityEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIssueSeverity $severity
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRIssueTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIssueType $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $details
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $diagnostics
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> $location
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> $expression
      * @param null|string[] $fhirComments
@@ -281,8 +267,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIssueSeverity
      */
     public function getSeverity(): null|FHIRIssueSeverity
     {
@@ -293,9 +277,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRIssueSeverityEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIssueSeverity $severity
-     * @return static
      */
     public function setSeverity(null|string|FHIRIssueSeverityEnum|FHIRIssueSeverity $severity): self
     {
@@ -316,8 +297,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * Describes the type of the issue. The system that creates an OperationOutcome
      * SHALL choose the most applicable code from the IssueType value set, and may
      * additional provide its own code for the error in the details element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIssueType
      */
     public function getCode(): null|FHIRIssueType
     {
@@ -330,9 +309,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * Describes the type of the issue. The system that creates an OperationOutcome
      * SHALL choose the most applicable code from the IssueType value set, and may
      * additional provide its own code for the error in the details element.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRIssueTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIssueType $code
-     * @return static
      */
     public function setCode(null|string|FHIRIssueTypeEnum|FHIRIssueType $code): self
     {
@@ -355,8 +331,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * Additional details about the error. This may be a text description of the error
      * or a system code that identifies the error.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDetails(): null|FHIRCodeableConcept
     {
@@ -371,9 +345,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * Additional details about the error. This may be a text description of the error
      * or a system code that identifies the error.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $details
-     * @return static
      */
     public function setDetails(null|FHIRCodeableConcept $details): self
     {
@@ -391,8 +362,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional diagnostic information about the issue.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDiagnostics(): null|FHIRString
     {
@@ -405,9 +374,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional diagnostic information about the issue.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $diagnostics
-     * @return static
      */
     public function setDiagnostics(null|string|FHIRStringPrimitive|FHIRString $diagnostics): self
     {
@@ -463,9 +429,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * repetition indicators and the default child accessor that identifies one of the
      * elements in the resource that caused this issue to be raised. For HTTP errors,
      * will be "http." + the parameter name.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $location
-     * @return static
      */
     public function addLocation(string|FHIRStringPrimitive|FHIRString $location): self
     {
@@ -490,9 +453,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * repetition indicators and the default child accessor that identifies one of the
      * elements in the resource that caused this issue to be raised. For HTTP errors,
      * will be "http." + the parameter name.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString ...$location
-     * @return static
      */
     public function setLocation(string|FHIRStringPrimitive|FHIRString ...$location): self
     {
@@ -546,9 +506,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names,
      * repetition indicators and the default child accessor that identifies one of the
      * elements in the resource that caused this issue to be raised.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $expression
-     * @return static
      */
     public function addExpression(string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -570,9 +527,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names,
      * repetition indicators and the default child accessor that identifies one of the
      * elements in the resource that caused this issue to be raised.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString ...$expression
-     * @return static
      */
     public function setExpression(string|FHIRStringPrimitive|FHIRString ...$expression): self
     {
@@ -593,10 +547,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -674,10 +625,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -734,10 +681,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

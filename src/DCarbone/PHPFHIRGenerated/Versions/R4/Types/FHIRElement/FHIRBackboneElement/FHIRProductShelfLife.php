@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -123,8 +122,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the packaged Medicinal Product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -140,8 +137,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * bottle, etc. The shelf life type shall be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -156,8 +151,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $period;
@@ -180,11 +173,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
     /**
      * FHIRProductShelfLife Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $specialPrecautionsForStorage
      * @param null|string[] $fhirComments
      */
@@ -229,8 +218,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the packaged Medicinal Product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -244,9 +231,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the packaged Medicinal Product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -270,8 +254,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * bottle, etc. The shelf life type shall be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -290,9 +272,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * bottle, etc. The shelf life type shall be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -315,8 +294,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     public function getPeriod(): null|FHIRQuantity
     {
@@ -334,9 +311,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $period
-     * @return static
      */
     public function setPeriod(null|FHIRQuantity $period): self
     {
@@ -385,9 +359,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $specialPrecautionsForStorage
-     * @return static
      */
     public function addSpecialPrecautionsForStorage(FHIRCodeableConcept $specialPrecautionsForStorage): self
     {
@@ -407,9 +378,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$specialPrecautionsForStorage
-     * @return static
      */
     public function setSpecialPrecautionsForStorage(FHIRCodeableConcept ...$specialPrecautionsForStorage): self
     {
@@ -423,10 +391,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -476,10 +441,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -509,10 +470,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

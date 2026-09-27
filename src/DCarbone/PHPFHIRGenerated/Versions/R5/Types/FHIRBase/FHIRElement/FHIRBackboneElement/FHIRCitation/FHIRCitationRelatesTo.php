@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -158,8 +157,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship to the related artifact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRelatedArtifactTypeExpanded
      */
     #[FHIRRelatedArtifactTypeExpanded]
     protected FHIRRelatedArtifactTypeExpanded $type;
@@ -182,8 +179,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A short label that can be used to reference the related artifact from elsewhere
      * in the containing artifact, such as a footnote index.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $label;
@@ -194,8 +189,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A brief description of the document or knowledge resource being referenced,
      * suitable for display to a consumer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $display;
@@ -210,8 +203,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A bibliographic citation for the related artifact. This text SHOULD be formatted
      * according to an accepted citation format.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $citation;
@@ -223,8 +214,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * The document being referenced, represented as an attachment. Do not use this
      * element if using the resource element to provide the canonical to the related
      * artifact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $document;
@@ -236,8 +225,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * The related artifact, such as a library, value set, profile, or other knowledge
      * resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $resource;
@@ -248,8 +235,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * The related artifact, if the artifact is not a canonical resource, or a resource
      * reference to a canonical resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $resourceReference;
@@ -258,16 +243,8 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
     /**
      * FHIRCitationRelatesTo Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRelatedArtifactTypeExpandedEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRelatedArtifactTypeExpanded $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $classifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $label
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $display
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $citation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $document
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $resource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $resourceReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -324,8 +301,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship to the related artifact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRelatedArtifactTypeExpanded
      */
     public function getType(): null|FHIRRelatedArtifactTypeExpanded
     {
@@ -336,9 +311,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship to the related artifact.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRelatedArtifactTypeExpandedEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRelatedArtifactTypeExpanded $type
-     * @return static
      */
     public function setType(null|string|FHIRRelatedArtifactTypeExpandedEnum|FHIRRelatedArtifactTypeExpanded $type): self
     {
@@ -386,9 +358,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides additional classifiers of the related artifact.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $classifier
-     * @return static
      */
     public function addClassifier(FHIRCodeableConcept $classifier): self
     {
@@ -406,9 +375,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides additional classifiers of the related artifact.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$classifier
-     * @return static
      */
     public function setClassifier(FHIRCodeableConcept ...$classifier): self
     {
@@ -427,8 +393,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A short label that can be used to reference the related artifact from elsewhere
      * in the containing artifact, such as a footnote index.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getLabel(): null|FHIRString
     {
@@ -442,9 +406,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A short label that can be used to reference the related artifact from elsewhere
      * in the containing artifact, such as a footnote index.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $label
-     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -466,8 +427,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A brief description of the document or knowledge resource being referenced,
      * suitable for display to a consumer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDisplay(): null|FHIRString
     {
@@ -481,9 +440,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A brief description of the document or knowledge resource being referenced,
      * suitable for display to a consumer.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $display
-     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -509,8 +465,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A bibliographic citation for the related artifact. This text SHOULD be formatted
      * according to an accepted citation format.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getCitation(): null|FHIRMarkdown
     {
@@ -528,9 +482,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * A bibliographic citation for the related artifact. This text SHOULD be formatted
      * according to an accepted citation format.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $citation
-     * @return static
      */
     public function setCitation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $citation): self
     {
@@ -553,8 +504,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * The document being referenced, represented as an attachment. Do not use this
      * element if using the resource element to provide the canonical to the related
      * artifact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      */
     public function getDocument(): null|FHIRAttachment
     {
@@ -569,9 +518,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * The document being referenced, represented as an attachment. Do not use this
      * element if using the resource element to provide the canonical to the related
      * artifact.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $document
-     * @return static
      */
     public function setDocument(null|FHIRAttachment $document): self
     {
@@ -591,8 +537,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * The related artifact, such as a library, value set, profile, or other knowledge
      * resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getResource(): null|FHIRCanonical
     {
@@ -607,9 +551,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * The related artifact, such as a library, value set, profile, or other knowledge
      * resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $resource
-     * @return static
      */
     public function setResource(null|string|FHIRCanonicalPrimitive|FHIRCanonical $resource): self
     {
@@ -631,8 +572,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * The related artifact, if the artifact is not a canonical resource, or a resource
      * reference to a canonical resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getResourceReference(): null|FHIRReference
     {
@@ -646,9 +585,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * The related artifact, if the artifact is not a canonical resource, or a resource
      * reference to a canonical resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $resourceReference
-     * @return static
      */
     public function setResourceReference(null|FHIRReference $resourceReference): self
     {
@@ -662,10 +598,7 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationRelatesTo $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationRelatesTo
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -763,10 +696,6 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -841,10 +770,7 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationRelatesTo $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationRelatesTo
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

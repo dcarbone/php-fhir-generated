@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -138,8 +137,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $structure;
@@ -150,8 +147,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure laterality.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $laterality;
@@ -194,10 +189,7 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
     /**
      * FHIRBodyStructureIncludedStructure Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $structure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $laterality
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureBodyLandmarkOrientation> $bodyLandmarkOrientation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $spatialReference
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $qualifier
@@ -248,8 +240,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getStructure(): null|FHIRCodeableConcept
     {
@@ -263,9 +253,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $structure
-     * @return static
      */
     public function setStructure(null|FHIRCodeableConcept $structure): self
     {
@@ -284,8 +271,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure laterality.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getLaterality(): null|FHIRCodeableConcept
     {
@@ -299,9 +284,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure laterality.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $laterality
-     * @return static
      */
     public function setLaterality(null|FHIRCodeableConcept $laterality): self
     {
@@ -344,9 +326,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      *
      * Body locations in relation to a specific body landmark (tatoo, scar, other body
      * structure).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureBodyLandmarkOrientation $bodyLandmarkOrientation
-     * @return static
      */
     public function addBodyLandmarkOrientation(FHIRBodyStructureBodyLandmarkOrientation $bodyLandmarkOrientation): self
     {
@@ -363,9 +342,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      *
      * Body locations in relation to a specific body landmark (tatoo, scar, other body
      * structure).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureBodyLandmarkOrientation ...$bodyLandmarkOrientation
-     * @return static
      */
     public function setBodyLandmarkOrientation(FHIRBodyStructureBodyLandmarkOrientation ...$bodyLandmarkOrientation): self
     {
@@ -408,9 +384,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * XY or XYZ-coordinate orientation for structure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $spatialReference
-     * @return static
      */
     public function addSpatialReference(FHIRReference $spatialReference): self
     {
@@ -427,9 +400,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * XY or XYZ-coordinate orientation for structure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$spatialReference
-     * @return static
      */
     public function setSpatialReference(FHIRReference ...$spatialReference): self
     {
@@ -474,9 +444,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure qualifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $qualifier
-     * @return static
      */
     public function addQualifier(FHIRCodeableConcept $qualifier): self
     {
@@ -494,9 +461,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure qualifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$qualifier
-     * @return static
      */
     public function setQualifier(FHIRCodeableConcept ...$qualifier): self
     {
@@ -510,10 +474,7 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureIncludedStructure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureIncludedStructure
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -565,10 +526,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -607,10 +564,7 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureIncludedStructure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureIncludedStructure
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

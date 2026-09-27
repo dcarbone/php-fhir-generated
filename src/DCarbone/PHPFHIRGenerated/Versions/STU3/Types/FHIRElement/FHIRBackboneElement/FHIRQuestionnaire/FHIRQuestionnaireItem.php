@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -196,8 +195,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent item in a QuestionnaireResponse resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $linkId;
@@ -213,8 +210,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * (ElementDefinition.max) * maxLength (ElementDefinition.maxLength) * options
      * (ElementDefinition.binding) Any information provided in these elements on a
      * Questionnaire Item overrides the information from the definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $definition;
@@ -237,8 +232,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A short label for a particular group, question or set of display text within the
      * questionnaire used for reference by the individual completing the questionnaire.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $prefix;
@@ -249,8 +242,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The name of a section, the text of a question or text content for a display
      * item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -262,8 +253,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * The type of questionnaire item this is - whether text for display, a grouping of
      * other items or a particular type of data to be captured (string, integer, coded
      * choice, etc.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuestionnaireItemType
      */
     #[FHIRQuestionnaireItemType]
     protected FHIRQuestionnaireItemType $type;
@@ -286,8 +275,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An indication, if true, that the item must be present in a "completed"
      * QuestionnaireResponse. If false, the item may be skipped when answering the
      * questionnaire.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $required;
@@ -298,8 +285,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An indication, if true, that the item may occur multiple times in the response,
      * collecting multiple answers answers for questions or multiple sets of answers
      * for groups.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $repeats;
@@ -309,8 +294,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * An indication, when true, that the value cannot be changed by a human respondent
      * to the Questionnaire.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $readOnly;
@@ -321,8 +304,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The maximum number of characters that are permitted in the answer to be
      * considered a "valid" QuestionnaireResponse.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $maxLength;
@@ -333,8 +314,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A reference to a value set containing a list of codes representing permitted
      * answers for a "choice" or "open-choice" question.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $options;
@@ -355,8 +334,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $initialBoolean;
@@ -368,8 +345,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $initialDecimal;
@@ -380,8 +355,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $initialInteger;
@@ -393,8 +366,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $initialDate;
@@ -408,8 +379,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $initialDateTime;
@@ -419,8 +388,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $initialTime;
@@ -431,8 +398,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $initialString;
@@ -443,8 +408,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $initialUri;
@@ -455,8 +418,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $initialAttachment;
@@ -467,8 +428,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $initialCoding;
@@ -481,8 +440,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $initialQuantity;
@@ -493,8 +450,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $initialReference;
@@ -514,33 +469,10 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     /**
      * FHIRQuestionnaireItem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $linkId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $definition
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding> $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $prefix
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $text
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRQuestionnaireItemTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuestionnaireItemType $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen> $enableWhen
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $required
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $repeats
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $readOnly
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $maxLength
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $options
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption> $option
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $initialBoolean
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $initialDecimal
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $initialInteger
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $initialDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $initialDateTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime $initialTime
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $initialString
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $initialUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $initialAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $initialCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $initialQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $initialReference
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem> $item
      * @param null|string[] $fhirComments
      */
@@ -673,8 +605,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent item in a QuestionnaireResponse resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getLinkId(): null|FHIRString
     {
@@ -688,9 +618,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent item in a QuestionnaireResponse resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $linkId
-     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -717,8 +644,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * (ElementDefinition.max) * maxLength (ElementDefinition.maxLength) * options
      * (ElementDefinition.binding) Any information provided in these elements on a
      * Questionnaire Item overrides the information from the definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getDefinition(): null|FHIRUri
     {
@@ -737,9 +662,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * (ElementDefinition.max) * maxLength (ElementDefinition.maxLength) * options
      * (ElementDefinition.binding) Any information provided in these elements on a
      * Questionnaire Item overrides the information from the definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $definition
-     * @return static
      */
     public function setDefinition(null|string|FHIRUriPrimitive|FHIRUri $definition): self
     {
@@ -787,9 +709,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A terminology code that corresponds to this group or question (e.g. a code from
      * LOINC, which defines many questions and answers).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $code
-     * @return static
      */
     public function addCode(FHIRCoding $code): self
     {
@@ -807,9 +726,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A terminology code that corresponds to this group or question (e.g. a code from
      * LOINC, which defines many questions and answers).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding ...$code
-     * @return static
      */
     public function setCode(FHIRCoding ...$code): self
     {
@@ -828,8 +744,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A short label for a particular group, question or set of display text within the
      * questionnaire used for reference by the individual completing the questionnaire.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getPrefix(): null|FHIRString
     {
@@ -843,9 +757,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A short label for a particular group, question or set of display text within the
      * questionnaire used for reference by the individual completing the questionnaire.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $prefix
-     * @return static
      */
     public function setPrefix(null|string|FHIRStringPrimitive|FHIRString $prefix): self
     {
@@ -867,8 +778,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The name of a section, the text of a question or text content for a display
      * item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -882,9 +791,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The name of a section, the text of a question or text content for a display
      * item.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -907,8 +813,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * The type of questionnaire item this is - whether text for display, a grouping of
      * other items or a particular type of data to be captured (string, integer, coded
      * choice, etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuestionnaireItemType
      */
     public function getType(): null|FHIRQuestionnaireItemType
     {
@@ -923,9 +827,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * The type of questionnaire item this is - whether text for display, a grouping of
      * other items or a particular type of data to be captured (string, integer, coded
      * choice, etc.).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRQuestionnaireItemTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuestionnaireItemType $type
-     * @return static
      */
     public function setType(null|string|FHIRQuestionnaireItemTypeList|FHIRQuestionnaireItemType $type): self
     {
@@ -973,9 +874,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A constraint indicating that this item should only be enabled (displayed/allow
      * answers to be captured) when the specified condition is true.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $enableWhen
-     * @return static
      */
     public function addEnableWhen(FHIRQuestionnaireEnableWhen $enableWhen): self
     {
@@ -993,9 +891,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A constraint indicating that this item should only be enabled (displayed/allow
      * answers to be captured) when the specified condition is true.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen ...$enableWhen
-     * @return static
      */
     public function setEnableWhen(FHIRQuestionnaireEnableWhen ...$enableWhen): self
     {
@@ -1014,8 +909,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An indication, if true, that the item must be present in a "completed"
      * QuestionnaireResponse. If false, the item may be skipped when answering the
      * questionnaire.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getRequired(): null|FHIRBoolean
     {
@@ -1029,9 +922,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An indication, if true, that the item must be present in a "completed"
      * QuestionnaireResponse. If false, the item may be skipped when answering the
      * questionnaire.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $required
-     * @return static
      */
     public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required): self
     {
@@ -1053,8 +943,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An indication, if true, that the item may occur multiple times in the response,
      * collecting multiple answers answers for questions or multiple sets of answers
      * for groups.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getRepeats(): null|FHIRBoolean
     {
@@ -1068,9 +956,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An indication, if true, that the item may occur multiple times in the response,
      * collecting multiple answers answers for questions or multiple sets of answers
      * for groups.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $repeats
-     * @return static
      */
     public function setRepeats(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $repeats): self
     {
@@ -1091,8 +976,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * An indication, when true, that the value cannot be changed by a human respondent
      * to the Questionnaire.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getReadOnly(): null|FHIRBoolean
     {
@@ -1105,9 +988,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * An indication, when true, that the value cannot be changed by a human respondent
      * to the Questionnaire.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $readOnly
-     * @return static
      */
     public function setReadOnly(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readOnly): self
     {
@@ -1129,8 +1009,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The maximum number of characters that are permitted in the answer to be
      * considered a "valid" QuestionnaireResponse.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     public function getMaxLength(): null|FHIRInteger
     {
@@ -1144,9 +1022,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The maximum number of characters that are permitted in the answer to be
      * considered a "valid" QuestionnaireResponse.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $maxLength
-     * @return static
      */
     public function setMaxLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $maxLength): self
     {
@@ -1168,8 +1043,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A reference to a value set containing a list of codes representing permitted
      * answers for a "choice" or "open-choice" question.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getOptions(): null|FHIRReference
     {
@@ -1183,9 +1056,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A reference to a value set containing a list of codes representing permitted
      * answers for a "choice" or "open-choice" question.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $options
-     * @return static
      */
     public function setOptions(null|FHIRReference $options): self
     {
@@ -1228,9 +1098,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * phraseology and grouping to allow coherent, consistent data collection.
      *
      * One of the permitted answers for a "choice" or "open-choice" question.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption $option
-     * @return static
      */
     public function addOption(FHIRQuestionnaireOption $option): self
     {
@@ -1247,9 +1114,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * phraseology and grouping to allow coherent, consistent data collection.
      *
      * One of the permitted answers for a "choice" or "open-choice" question.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption ...$option
-     * @return static
      */
     public function setOption(FHIRQuestionnaireOption ...$option): self
     {
@@ -1267,8 +1131,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getInitialBoolean(): null|FHIRBoolean
     {
@@ -1281,9 +1143,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $initialBoolean
-     * @return static
      */
     public function setInitialBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $initialBoolean): self
     {
@@ -1306,8 +1165,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     public function getInitialDecimal(): null|FHIRDecimal
     {
@@ -1322,9 +1179,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $initialDecimal
-     * @return static
      */
     public function setInitialDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $initialDecimal): self
     {
@@ -1346,8 +1200,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     public function getInitialInteger(): null|FHIRInteger
     {
@@ -1361,9 +1213,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $initialInteger
-     * @return static
      */
     public function setInitialInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $initialInteger): self
     {
@@ -1386,8 +1235,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     public function getInitialDate(): null|FHIRDate
     {
@@ -1402,9 +1249,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $initialDate
-     * @return static
      */
     public function setInitialDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $initialDate): self
     {
@@ -1429,8 +1273,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getInitialDateTime(): null|FHIRDateTime
     {
@@ -1447,9 +1289,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $initialDateTime
-     * @return static
      */
     public function setInitialDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $initialDateTime): self
     {
@@ -1470,8 +1309,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime
      */
     public function getInitialTime(): null|FHIRTime
     {
@@ -1484,9 +1321,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime $initialTime
-     * @return static
      */
     public function setInitialTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $initialTime): self
     {
@@ -1508,8 +1342,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getInitialString(): null|FHIRString
     {
@@ -1523,9 +1355,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $initialString
-     * @return static
      */
     public function setInitialString(null|string|FHIRStringPrimitive|FHIRString $initialString): self
     {
@@ -1547,8 +1376,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getInitialUri(): null|FHIRUri
     {
@@ -1562,9 +1389,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $initialUri
-     * @return static
      */
     public function setInitialUri(null|string|FHIRUriPrimitive|FHIRUri $initialUri): self
     {
@@ -1586,8 +1410,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     public function getInitialAttachment(): null|FHIRAttachment
     {
@@ -1601,9 +1423,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $initialAttachment
-     * @return static
      */
     public function setInitialAttachment(null|FHIRAttachment $initialAttachment): self
     {
@@ -1622,8 +1441,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding
      */
     public function getInitialCoding(): null|FHIRCoding
     {
@@ -1637,9 +1454,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $initialCoding
-     * @return static
      */
     public function setInitialCoding(null|FHIRCoding $initialCoding): self
     {
@@ -1660,8 +1474,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     public function getInitialQuantity(): null|FHIRQuantity
     {
@@ -1677,9 +1489,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $initialQuantity
-     * @return static
      */
     public function setInitialQuantity(null|FHIRQuantity $initialQuantity): self
     {
@@ -1698,8 +1507,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getInitialReference(): null|FHIRReference
     {
@@ -1713,9 +1520,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $initialReference
-     * @return static
      */
     public function setInitialReference(null|FHIRReference $initialReference): self
     {
@@ -1758,9 +1562,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * phraseology and grouping to allow coherent, consistent data collection.
      *
      * Text, questions and other groups to be nested beneath a question or group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem $item
-     * @return static
      */
     public function addItem(FHIRQuestionnaireItem $item): self
     {
@@ -1777,9 +1578,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * phraseology and grouping to allow coherent, consistent data collection.
      *
      * Text, questions and other groups to be nested beneath a question or group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem ...$item
-     * @return static
      */
     public function setItem(FHIRQuestionnaireItem ...$item): self
     {
@@ -1793,10 +1591,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -2026,10 +1821,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -2260,10 +2051,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -156,8 +155,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The element id of the target related action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $targetId;
@@ -165,8 +162,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of the start of this action to the related action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType
      */
     #[FHIRActionRelationshipType]
     protected FHIRActionRelationshipType $relationship;
@@ -174,8 +169,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of the end of this action to the related action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType
      */
     #[FHIRActionRelationshipType]
     protected FHIRActionRelationshipType $endRelationship;
@@ -185,9 +178,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * 30-60 minutes before.
      */
     #[FHIRDuration]
     protected FHIRDuration $offsetDuration;
@@ -197,9 +188,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * 30-60 minutes before.
      */
     #[FHIRRange]
     protected FHIRRange $offsetRange;
@@ -208,13 +197,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     /**
      * FHIRPlanDefinitionRelatedAction Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $targetId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $relationship
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $endRelationship
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $offsetDuration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $offsetRange
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -264,8 +247,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The element id of the target related action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getTargetId(): null|FHIRId
     {
@@ -281,9 +262,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The element id of the target related action.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $targetId
-     * @return static
      */
     public function setTargetId(null|string|FHIRIdPrimitive|FHIRId $targetId): self
     {
@@ -302,8 +280,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of the start of this action to the related action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType
      */
     public function getRelationship(): null|FHIRActionRelationshipType
     {
@@ -314,9 +290,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of the start of this action to the related action.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $relationship
-     * @return static
      */
     public function setRelationship(null|string|FHIRActionRelationshipTypeEnum|FHIRActionRelationshipType $relationship): self
     {
@@ -335,8 +308,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of the end of this action to the related action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType
      */
     public function getEndRelationship(): null|FHIRActionRelationshipType
     {
@@ -347,9 +318,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of the end of this action to the related action.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $endRelationship
-     * @return static
      */
     public function setEndRelationship(null|string|FHIRActionRelationshipTypeEnum|FHIRActionRelationshipType $endRelationship): self
     {
@@ -370,9 +338,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * 30-60 minutes before.
      */
     public function getOffsetDuration(): null|FHIRDuration
     {
@@ -385,10 +351,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $offsetDuration
-     * @return static
+     * 30-60 minutes before.
      */
     public function setOffsetDuration(null|FHIRDuration $offsetDuration): self
     {
@@ -406,9 +369,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * 30-60 minutes before.
      */
     public function getOffsetRange(): null|FHIRRange
     {
@@ -421,10 +382,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A duration or range of durations to apply to the relationship. For example,
-     * 30-60 minutes before. (choose any one of offset*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $offsetRange
-     * @return static
+     * 30-60 minutes before.
      */
     public function setOffsetRange(null|FHIRRange $offsetRange): self
     {
@@ -438,10 +396,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -517,10 +472,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -568,10 +519,7 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

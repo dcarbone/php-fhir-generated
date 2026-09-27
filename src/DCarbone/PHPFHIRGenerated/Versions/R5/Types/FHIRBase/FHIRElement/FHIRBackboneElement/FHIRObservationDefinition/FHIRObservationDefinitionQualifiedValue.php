@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -161,8 +161,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A concept defining the context for this set of qualified values.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $context;
@@ -182,8 +180,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The gender this set of qualified values applies to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender
      */
     #[FHIRAdministrativeGender]
     protected FHIRAdministrativeGender $gender;
@@ -193,8 +189,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age range this set of qualified values applies to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $age;
@@ -204,8 +198,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The gestational age this set of qualified values applies to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $gestationalAge;
@@ -215,8 +207,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text based condition for which the the set of qualified values is valid.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $condition;
@@ -225,8 +215,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The category of range of values for continuous or ordinal observations that
      * match the criteria of this set of qualified values.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationRangeCategory
      */
     #[FHIRObservationRangeCategory]
     protected FHIRObservationRangeCategory $rangeCategory;
@@ -237,8 +225,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The range of values defined for continuous or ordinal observations that match
      * the criteria of this set of qualified values.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $range;
@@ -250,8 +236,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of valid coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $validCodedValueSet;
@@ -263,8 +247,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of normal coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $normalCodedValueSet;
@@ -276,8 +258,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of abnormal coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $abnormalCodedValueSet;
@@ -289,8 +269,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of critical coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $criticalCodedValueSet;
@@ -299,20 +277,8 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
     /**
      * FHIRObservationDefinitionQualifiedValue Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $context
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $appliesTo
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdministrativeGenderEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender $gender
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $age
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $gestationalAge
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $condition
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRObservationRangeCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationRangeCategory $rangeCategory
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $range
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $validCodedValueSet
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $normalCodedValueSet
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $abnormalCodedValueSet
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $criticalCodedValueSet
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -388,8 +354,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A concept defining the context for this set of qualified values.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getContext(): null|FHIRCodeableConcept
     {
@@ -403,9 +367,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A concept defining the context for this set of qualified values.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $context
-     * @return static
      */
     public function setContext(null|FHIRCodeableConcept $context): self
     {
@@ -450,9 +411,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target population this set of qualified values applies to.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $appliesTo
-     * @return static
      */
     public function addAppliesTo(FHIRCodeableConcept $appliesTo): self
     {
@@ -470,9 +428,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target population this set of qualified values applies to.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$appliesTo
-     * @return static
      */
     public function setAppliesTo(FHIRCodeableConcept ...$appliesTo): self
     {
@@ -488,8 +443,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The gender this set of qualified values applies to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender(): null|FHIRAdministrativeGender
     {
@@ -500,9 +453,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The gender this set of qualified values applies to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdministrativeGenderEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdministrativeGender $gender
-     * @return static
      */
     public function setGender(null|string|FHIRAdministrativeGenderEnum|FHIRAdministrativeGender $gender): self
     {
@@ -523,8 +473,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age range this set of qualified values applies to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     public function getAge(): null|FHIRRange
     {
@@ -537,9 +485,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age range this set of qualified values applies to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $age
-     * @return static
      */
     public function setAge(null|FHIRRange $age): self
     {
@@ -557,8 +502,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The gestational age this set of qualified values applies to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     public function getGestationalAge(): null|FHIRRange
     {
@@ -571,9 +514,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The gestational age this set of qualified values applies to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $gestationalAge
-     * @return static
      */
     public function setGestationalAge(null|FHIRRange $gestationalAge): self
     {
@@ -591,8 +531,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text based condition for which the the set of qualified values is valid.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getCondition(): null|FHIRString
     {
@@ -605,9 +543,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text based condition for which the the set of qualified values is valid.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $condition
-     * @return static
      */
     public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition): self
     {
@@ -627,8 +562,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The category of range of values for continuous or ordinal observations that
      * match the criteria of this set of qualified values.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationRangeCategory
      */
     public function getRangeCategory(): null|FHIRObservationRangeCategory
     {
@@ -640,9 +573,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The category of range of values for continuous or ordinal observations that
      * match the criteria of this set of qualified values.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRObservationRangeCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationRangeCategory $rangeCategory
-     * @return static
      */
     public function setRangeCategory(null|string|FHIRObservationRangeCategoryEnum|FHIRObservationRangeCategory $rangeCategory): self
     {
@@ -664,8 +594,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The range of values defined for continuous or ordinal observations that match
      * the criteria of this set of qualified values.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     public function getRange(): null|FHIRRange
     {
@@ -679,9 +607,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The range of values defined for continuous or ordinal observations that match
      * the criteria of this set of qualified values.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $range
-     * @return static
      */
     public function setRange(null|FHIRRange $range): self
     {
@@ -701,8 +626,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of valid coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getValidCodedValueSet(): null|FHIRCanonical
     {
@@ -717,9 +640,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of valid coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $validCodedValueSet
-     * @return static
      */
     public function setValidCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $validCodedValueSet): self
     {
@@ -742,8 +662,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of normal coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getNormalCodedValueSet(): null|FHIRCanonical
     {
@@ -758,9 +676,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of normal coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $normalCodedValueSet
-     * @return static
      */
     public function setNormalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $normalCodedValueSet): self
     {
@@ -783,8 +698,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of abnormal coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getAbnormalCodedValueSet(): null|FHIRCanonical
     {
@@ -799,9 +712,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of abnormal coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $abnormalCodedValueSet
-     * @return static
      */
     public function setAbnormalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $abnormalCodedValueSet): self
     {
@@ -824,8 +734,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of critical coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getCriticalCodedValueSet(): null|FHIRCanonical
     {
@@ -840,9 +748,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      *
      * The set of critical coded results for qualitative observations that match the
      * criteria of this set of qualified values.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $criticalCodedValueSet
-     * @return static
      */
     public function setCriticalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $criticalCodedValueSet): self
     {
@@ -859,10 +764,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -984,10 +886,6 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1092,10 +990,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

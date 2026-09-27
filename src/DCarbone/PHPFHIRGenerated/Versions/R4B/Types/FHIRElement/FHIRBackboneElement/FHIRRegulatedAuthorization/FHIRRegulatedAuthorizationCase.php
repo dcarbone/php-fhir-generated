@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -141,8 +141,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this case can be referenced.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -153,8 +151,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The defining type of case.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -165,8 +161,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status associated with the case.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -176,8 +170,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant date for this case.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $datePeriod;
@@ -190,8 +182,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Relevant date for this case.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $dateDateTime;
@@ -216,13 +206,7 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
     /**
      * FHIRRegulatedAuthorizationCase Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $datePeriod
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $dateDateTime
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase> $application
      * @param null|string[] $fhirComments
      */
@@ -275,8 +259,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this case can be referenced.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -290,9 +272,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this case can be referenced.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -311,8 +290,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The defining type of case.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -326,9 +303,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The defining type of case.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -347,8 +321,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status associated with the case.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -362,9 +334,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status associated with the case.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -382,8 +351,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant date for this case.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getDatePeriod(): null|FHIRPeriod
     {
@@ -396,9 +363,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant date for this case.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $datePeriod
-     * @return static
      */
     public function setDatePeriod(null|FHIRPeriod $datePeriod): self
     {
@@ -419,8 +383,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Relevant date for this case.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getDateDateTime(): null|FHIRDateTime
     {
@@ -436,9 +398,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Relevant date for this case.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $dateDateTime
-     * @return static
      */
     public function setDateDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateDateTime): self
     {
@@ -494,9 +453,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * different information to support or modify the submission or the authorization.
      * The applications can be considered as steps within the longer running case or
      * procedure for this authorization process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase $application
-     * @return static
      */
     public function addApplication(FHIRRegulatedAuthorizationCase $application): self
     {
@@ -518,9 +474,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * different information to support or modify the submission or the authorization.
      * The applications can be considered as steps within the longer running case or
      * procedure for this authorization process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase ...$application
-     * @return static
      */
     public function setApplication(FHIRRegulatedAuthorizationCase ...$application): self
     {
@@ -534,10 +487,7 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -599,10 +549,6 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -647,10 +593,7 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

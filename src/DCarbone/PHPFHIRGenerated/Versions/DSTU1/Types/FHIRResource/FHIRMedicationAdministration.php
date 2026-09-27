@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -172,8 +170,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * some long running administrations such as infusions it is possible for an
      * administration to be started but not completed or it may be paused while some
      * other process is under way.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationAdministrationStatus
      */
     #[FHIRMedicationAdministrationStatus]
     protected FHIRMedicationAdministrationStatus $status;
@@ -183,8 +179,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal to whom the medication was given.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $patient;
@@ -194,8 +188,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual who was responsible for giving the medication to the patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $practitioner;
@@ -206,8 +198,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      *
      * The visit or admission the or other contact between patient and health care
      * provider the medication administration was performed as part of.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $encounter;
@@ -217,8 +207,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The original request, instruction or authority to perform the administration.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $prescription;
@@ -228,8 +216,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      *
      * Set this to true if the record is saying that the medication was NOT
      * administered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $wasNotGiven;
@@ -253,8 +239,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * An interval of time during which the administration took place. For many
      * administrations, such as swallowing a tablet the lower and upper values of the
      * interval will be the same.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $whenGiven;
@@ -266,8 +250,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $medication;
@@ -299,22 +281,11 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
     /* constructor.php:61 */
     /**
      * FHIRMedicationAdministration Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationAdministrationStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationAdministrationStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $patient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $practitioner
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $encounter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $prescription
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $wasNotGiven
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $reasonNotGiven
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $whenGiven
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $medication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $device
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage> $dosage
      * @param null|string[] $fhirComments
@@ -440,9 +411,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * while the patient was off the ward might be made with a different system and
      * entered after the event. Particularly important if these records have to be
      * updated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -465,9 +433,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * while the patient was off the ward might be made with a different system and
      * entered after the event. Particularly important if these records have to be
      * updated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -487,8 +452,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * some long running administrations such as infusions it is possible for an
      * administration to be started but not completed or it may be paused while some
      * other process is under way.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationAdministrationStatus
      */
     public function getStatus(): null|FHIRMedicationAdministrationStatus
     {
@@ -503,9 +466,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * some long running administrations such as infusions it is possible for an
      * administration to be started but not completed or it may be paused while some
      * other process is under way.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationAdministrationStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationAdministrationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRMedicationAdministrationStatusList|FHIRMedicationAdministrationStatus $status): self
     {
@@ -526,8 +486,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal to whom the medication was given.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getPatient(): null|FHIRResourceReference
     {
@@ -540,9 +498,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal to whom the medication was given.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRResourceReference $patient): self
     {
@@ -560,8 +515,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual who was responsible for giving the medication to the patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getPractitioner(): null|FHIRResourceReference
     {
@@ -574,9 +527,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual who was responsible for giving the medication to the patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $practitioner
-     * @return static
      */
     public function setPractitioner(null|FHIRResourceReference $practitioner): self
     {
@@ -595,8 +545,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      *
      * The visit or admission the or other contact between patient and health care
      * provider the medication administration was performed as part of.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getEncounter(): null|FHIRResourceReference
     {
@@ -610,9 +558,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      *
      * The visit or admission the or other contact between patient and health care
      * provider the medication administration was performed as part of.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRResourceReference $encounter): self
     {
@@ -630,8 +575,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The original request, instruction or authority to perform the administration.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getPrescription(): null|FHIRResourceReference
     {
@@ -644,9 +587,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The original request, instruction or authority to perform the administration.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $prescription
-     * @return static
      */
     public function setPrescription(null|FHIRResourceReference $prescription): self
     {
@@ -664,8 +604,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      *
      * Set this to true if the record is saying that the medication was NOT
      * administered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getWasNotGiven(): null|FHIRBoolean
     {
@@ -678,9 +616,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      *
      * Set this to true if the record is saying that the medication was NOT
      * administered.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $wasNotGiven
-     * @return static
      */
     public function setWasNotGiven(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wasNotGiven): self
     {
@@ -728,9 +663,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the administration was not performed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $reasonNotGiven
-     * @return static
      */
     public function addReasonNotGiven(FHIRCodeableConcept $reasonNotGiven): self
     {
@@ -748,9 +680,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the administration was not performed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$reasonNotGiven
-     * @return static
      */
     public function setReasonNotGiven(FHIRCodeableConcept ...$reasonNotGiven): self
     {
@@ -770,8 +699,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * An interval of time during which the administration took place. For many
      * administrations, such as swallowing a tablet the lower and upper values of the
      * interval will be the same.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getWhenGiven(): null|FHIRPeriod
     {
@@ -786,9 +713,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * An interval of time during which the administration took place. For many
      * administrations, such as swallowing a tablet the lower and upper values of the
      * interval will be the same.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $whenGiven
-     * @return static
      */
     public function setWhenGiven(null|FHIRPeriod $whenGiven): self
     {
@@ -808,8 +732,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getMedication(): null|FHIRResourceReference
     {
@@ -824,9 +746,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $medication
-     * @return static
      */
     public function setMedication(null|FHIRResourceReference $medication): self
     {
@@ -871,9 +790,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      *
      * The device used in administering the medication to the patient. E.g. a
      * particular infusion pump.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $device
-     * @return static
      */
     public function addDevice(FHIRResourceReference $device): self
     {
@@ -891,9 +807,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      *
      * The device used in administering the medication to the patient. E.g. a
      * particular infusion pump.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$device
-     * @return static
      */
     public function setDevice(FHIRResourceReference ...$device): self
     {
@@ -938,9 +851,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * encounter between patient and health care practitioner.
      *
      * Provides details of how much of the medication was administered.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage $dosage
-     * @return static
      */
     public function addDosage(FHIRMedicationAdministrationDosage $dosage): self
     {
@@ -958,9 +868,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
      * encounter between patient and health care practitioner.
      *
      * Provides details of how much of the medication was administered.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage ...$dosage
-     * @return static
      */
     public function setDosage(FHIRMedicationAdministrationDosage ...$dosage): self
     {
@@ -974,10 +881,7 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationAdministration $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationAdministration
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1083,11 +987,6 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1197,10 +1096,7 @@ class FHIRMedicationAdministration extends FHIRResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationAdministration $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationAdministration
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

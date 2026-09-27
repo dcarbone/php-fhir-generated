@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -120,8 +120,6 @@ class FHIRSchedule extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a repeating pattern to the intended time periods.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
      */
     #[FHIRScheduleRepeat]
     protected FHIRScheduleRepeat $repeat;
@@ -130,9 +128,7 @@ class FHIRSchedule extends FHIRElement
     /**
      * FHIRSchedule Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod> $event
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule\FHIRScheduleRepeat $repeat
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -190,9 +186,6 @@ class FHIRSchedule extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies specific time periods when the event should occur.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $event
-     * @return static
      */
     public function addEvent(FHIRPeriod $event): self
     {
@@ -209,9 +202,6 @@ class FHIRSchedule extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies specific time periods when the event should occur.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod ...$event
-     * @return static
      */
     public function setEvent(FHIRPeriod ...$event): self
     {
@@ -230,8 +220,6 @@ class FHIRSchedule extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a repeating pattern to the intended time periods.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule\FHIRScheduleRepeat
      */
     public function getRepeat(): null|FHIRScheduleRepeat
     {
@@ -245,9 +233,6 @@ class FHIRSchedule extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies a repeating pattern to the intended time periods.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule\FHIRScheduleRepeat $repeat
-     * @return static
      */
     public function setRepeat(null|FHIRScheduleRepeat $repeat): self
     {
@@ -261,10 +246,7 @@ class FHIRSchedule extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -308,10 +290,6 @@ class FHIRSchedule extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -331,10 +309,7 @@ class FHIRSchedule extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

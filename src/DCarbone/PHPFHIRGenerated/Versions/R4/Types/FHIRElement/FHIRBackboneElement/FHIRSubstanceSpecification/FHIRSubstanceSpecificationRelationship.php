@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -128,8 +128,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $substanceReference;
@@ -140,8 +138,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $substanceCodeableConcept;
@@ -152,8 +148,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example "salt to parent", "active moiety", "starting material".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $relationship;
@@ -164,8 +158,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * For example where an enzyme strongly bonds with a particular substance, this is
      * a defining relationship for that enzyme, out of several possible substance
      * relationships.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $isDefining;
@@ -179,8 +171,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $amountQuantity;
@@ -192,8 +182,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $amountRange;
@@ -206,8 +194,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $amountRatio;
@@ -219,8 +205,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $amountString;
@@ -231,8 +215,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For use when the numeric.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $amountRatioLowLimit;
@@ -243,8 +225,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An operator for the amount, for example "average", "approximately", "less than".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $amountType;
@@ -264,18 +244,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
     /**
      * FHIRSubstanceSpecificationRelationship Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $substanceReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $substanceCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $relationship
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $isDefining
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $amountRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $amountRatio
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $amountRatioLowLimit
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $amountType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $source
      * @param null|string[] $fhirComments
      */
@@ -347,8 +316,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getSubstanceReference(): null|FHIRReference
     {
@@ -361,9 +328,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $substanceReference
-     * @return static
      */
     public function setSubstanceReference(null|FHIRReference $substanceReference): self
     {
@@ -382,8 +346,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSubstanceCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -397,9 +359,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another substance, as a resource or just a representational code.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $substanceCodeableConcept
-     * @return static
      */
     public function setSubstanceCodeableConcept(null|FHIRCodeableConcept $substanceCodeableConcept): self
     {
@@ -418,8 +377,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example "salt to parent", "active moiety", "starting material".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRelationship(): null|FHIRCodeableConcept
     {
@@ -433,9 +390,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example "salt to parent", "active moiety", "starting material".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $relationship
-     * @return static
      */
     public function setRelationship(null|FHIRCodeableConcept $relationship): self
     {
@@ -454,8 +408,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * For example where an enzyme strongly bonds with a particular substance, this is
      * a defining relationship for that enzyme, out of several possible substance
      * relationships.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getIsDefining(): null|FHIRBoolean
     {
@@ -469,9 +421,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * For example where an enzyme strongly bonds with a particular substance, this is
      * a defining relationship for that enzyme, out of several possible substance
      * relationships.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $isDefining
-     * @return static
      */
     public function setIsDefining(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDefining): self
     {
@@ -496,8 +445,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     public function getAmountQuantity(): null|FHIRQuantity
     {
@@ -514,9 +461,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
-     * @return static
      */
     public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
     {
@@ -536,8 +480,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     public function getAmountRange(): null|FHIRRange
     {
@@ -552,9 +494,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $amountRange
-     * @return static
      */
     public function setAmountRange(null|FHIRRange $amountRange): self
     {
@@ -575,8 +514,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio
      */
     public function getAmountRatio(): null|FHIRRatio
     {
@@ -592,9 +529,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $amountRatio
-     * @return static
      */
     public function setAmountRatio(null|FHIRRatio $amountRatio): self
     {
@@ -614,8 +548,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getAmountString(): null|FHIRString
     {
@@ -630,9 +562,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * A numeric factor for the relationship, for instance to express that the salt of
      * a substance has some percentage of the active substance in relation to some
      * other.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
-     * @return static
      */
     public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
@@ -654,8 +583,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For use when the numeric.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio
      */
     public function getAmountRatioLowLimit(): null|FHIRRatio
     {
@@ -669,9 +596,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For use when the numeric.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $amountRatioLowLimit
-     * @return static
      */
     public function setAmountRatioLowLimit(null|FHIRRatio $amountRatioLowLimit): self
     {
@@ -690,8 +614,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An operator for the amount, for example "average", "approximately", "less than".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAmountType(): null|FHIRCodeableConcept
     {
@@ -705,9 +627,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An operator for the amount, for example "average", "approximately", "less than".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $amountType
-     * @return static
      */
     public function setAmountType(null|FHIRCodeableConcept $amountType): self
     {
@@ -750,9 +669,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $source
-     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -769,9 +685,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$source
-     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {
@@ -785,10 +698,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -868,10 +778,6 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -946,10 +852,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

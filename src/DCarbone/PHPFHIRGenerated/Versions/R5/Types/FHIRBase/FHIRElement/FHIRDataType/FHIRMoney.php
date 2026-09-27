@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -136,8 +136,6 @@ class FHIRMoney extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Numerical value (with implicit precision).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $value;
@@ -148,8 +146,6 @@ class FHIRMoney extends FHIRDataType
      * the Narrative, or extensions
      *
      * ISO 4217 Currency Code.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $currency;
@@ -158,9 +154,6 @@ class FHIRMoney extends FHIRDataType
     /**
      * FHIRMoney Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $value
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $currency
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -194,8 +187,6 @@ class FHIRMoney extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Numerical value (with implicit precision).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     public function getValue(): null|FHIRDecimal
     {
@@ -209,9 +200,6 @@ class FHIRMoney extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Numerical value (with implicit precision).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $value
-     * @return static
      */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $value): self
     {
@@ -233,8 +221,6 @@ class FHIRMoney extends FHIRDataType
      * the Narrative, or extensions
      *
      * ISO 4217 Currency Code.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getCurrency(): null|FHIRCode
     {
@@ -248,9 +234,6 @@ class FHIRMoney extends FHIRDataType
      * the Narrative, or extensions
      *
      * ISO 4217 Currency Code.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $currency
-     * @return static
      */
     public function setCurrency(null|string|FHIRCodePrimitive|FHIRCode $currency): self
     {
@@ -267,10 +250,7 @@ class FHIRMoney extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -330,10 +310,6 @@ class FHIRMoney extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -361,10 +337,7 @@ class FHIRMoney extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -134,8 +134,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to additional information about the storage guidelines.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $reference;
@@ -158,8 +156,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      *
      * Duration that the medication remains stable if the environmentalSetting is
      * respected.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $stabilityDuration;
@@ -179,11 +175,8 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
     /**
      * FHIRMedicationKnowledgeStorageGuideline Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $reference
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $stabilityDuration
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeEnvironmentalSetting> $environmentalSetting
      * @param null|string[] $fhirComments
      */
@@ -227,8 +220,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to additional information about the storage guidelines.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getReference(): null|FHIRUri
     {
@@ -241,9 +232,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to additional information about the storage guidelines.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $reference
-     * @return static
      */
     public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference): self
     {
@@ -291,9 +279,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional notes about the storage.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -311,9 +296,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional notes about the storage.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -332,8 +314,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      *
      * Duration that the medication remains stable if the environmentalSetting is
      * respected.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     public function getStabilityDuration(): null|FHIRDuration
     {
@@ -347,9 +327,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      *
      * Duration that the medication remains stable if the environmentalSetting is
      * respected.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $stabilityDuration
-     * @return static
      */
     public function setStabilityDuration(null|FHIRDuration $stabilityDuration): self
     {
@@ -392,9 +369,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * Describes a setting/value on the environment for the adequate storage of the
      * medication and other substances. Environment settings may involve temperature,
      * humidity, or exposure to light.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeEnvironmentalSetting $environmentalSetting
-     * @return static
      */
     public function addEnvironmentalSetting(FHIRMedicationKnowledgeEnvironmentalSetting $environmentalSetting): self
     {
@@ -411,9 +385,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * Describes a setting/value on the environment for the adequate storage of the
      * medication and other substances. Environment settings may involve temperature,
      * humidity, or exposure to light.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeEnvironmentalSetting ...$environmentalSetting
-     * @return static
      */
     public function setEnvironmentalSetting(FHIRMedicationKnowledgeEnvironmentalSetting ...$environmentalSetting): self
     {
@@ -427,10 +398,7 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeStorageGuideline $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeStorageGuideline
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -488,10 +456,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -528,10 +492,7 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeStorageGuideline $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeStorageGuideline
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

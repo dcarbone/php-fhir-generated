@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -120,7 +118,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -219,8 +216,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * address at which at which an authoritative instance of this evidence variable is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the evidence variable is stored on different servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -253,8 +248,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -266,8 +259,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * A natural language name identifying the evidence variable. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -277,8 +268,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the evidence variable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -289,8 +278,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * The short title provides an alternate title for use in informal descriptive
      * contexts where the full, formal title is not necessary.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $shortTitle;
@@ -301,8 +288,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An explanatory or alternate title for the EvidenceVariable giving additional
      * information about its content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subtitle;
@@ -311,8 +296,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * The status of this evidence variable. Enables tracking the life-cycle of the
      * content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -328,8 +311,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the evidence variable changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -344,8 +325,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A free text natural language description of the evidence variable from a
      * consumer's perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -385,8 +364,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the evidence variable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -469,8 +446,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * True if the actual variable measured, false if a conceptual representation of
      * the intended variable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $actual;
@@ -478,8 +453,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to specify if two or more characteristics are combined with OR or AND.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCharacteristicCombination
      */
     #[FHIRCharacteristicCombination]
     protected FHIRCharacteristicCombination $characteristicCombination;
@@ -498,8 +471,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for an outcome to classify.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREvidenceVariableHandling
      */
     #[FHIREvidenceVariableHandling]
     protected FHIREvidenceVariableHandling $handling;
@@ -518,37 +489,19 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
     /* constructor.php:61 */
     /**
      * FHIREvidenceVariable Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $shortTitle
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $subtitle
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext> $useContext
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $contact
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $author
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $editor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $reviewer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $endorser
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact> $relatedArtifact
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $actual
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCharacteristicCombinationEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCharacteristicCombination $characteristicCombination
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic> $characteristic
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREvidenceVariableHandlingEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREvidenceVariableHandling $handling
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCategory> $category
      * @param null|string[] $fhirComments
      */
@@ -693,8 +646,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * address at which at which an authoritative instance of this evidence variable is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the evidence variable is stored on different servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -712,9 +663,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * address at which at which an authoritative instance of this evidence variable is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the evidence variable is stored on different servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -766,9 +714,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * A formal identifier that is used to identify this evidence variable when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -788,9 +733,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * A formal identifier that is used to identify this evidence variable when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -817,8 +759,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -840,9 +780,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -865,8 +802,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * A natural language name identifying the evidence variable. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -881,9 +816,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * A natural language name identifying the evidence variable. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -904,8 +836,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the evidence variable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -918,9 +848,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the evidence variable.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -942,8 +869,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * The short title provides an alternate title for use in informal descriptive
      * contexts where the full, formal title is not necessary.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getShortTitle(): null|FHIRString
     {
@@ -957,9 +882,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * The short title provides an alternate title for use in informal descriptive
      * contexts where the full, formal title is not necessary.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $shortTitle
-     * @return static
      */
     public function setShortTitle(null|string|FHIRStringPrimitive|FHIRString $shortTitle): self
     {
@@ -981,8 +903,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An explanatory or alternate title for the EvidenceVariable giving additional
      * information about its content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getSubtitle(): null|FHIRString
     {
@@ -996,9 +916,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An explanatory or alternate title for the EvidenceVariable giving additional
      * information about its content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $subtitle
-     * @return static
      */
     public function setSubtitle(null|string|FHIRStringPrimitive|FHIRString $subtitle): self
     {
@@ -1018,8 +935,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * The status of this evidence variable. Enables tracking the life-cycle of the
      * content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -1031,9 +946,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * The status of this evidence variable. Enables tracking the life-cycle of the
      * content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1060,8 +972,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the evidence variable changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1080,9 +990,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the evidence variable changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1108,8 +1015,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A free text natural language description of the evidence variable from a
      * consumer's perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1127,9 +1032,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A free text natural language description of the evidence variable from a
      * consumer's perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1177,9 +1079,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1197,9 +1096,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1256,9 +1152,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence variable
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1282,9 +1175,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence variable
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1302,8 +1192,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the evidence variable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1316,9 +1204,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the evidence variable.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1366,9 +1251,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1386,9 +1268,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1433,9 +1312,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $author
-     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -1453,9 +1329,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$author
-     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -1500,9 +1373,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $editor
-     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -1520,9 +1390,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$editor
-     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -1567,9 +1434,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $reviewer
-     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -1587,9 +1451,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$reviewer
-     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -1634,9 +1495,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $endorser
-     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -1654,9 +1512,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$endorser
-     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -1703,9 +1558,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact $relatedArtifact
-     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -1724,9 +1576,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRelatedArtifact ...$relatedArtifact
-     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -1744,8 +1593,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * True if the actual variable measured, false if a conceptual representation of
      * the intended variable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getActual(): null|FHIRBoolean
     {
@@ -1758,9 +1605,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * True if the actual variable measured, false if a conceptual representation of
      * the intended variable.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $actual
-     * @return static
      */
     public function setActual(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $actual): self
     {
@@ -1779,8 +1623,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to specify if two or more characteristics are combined with OR or AND.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCharacteristicCombination
      */
     public function getCharacteristicCombination(): null|FHIRCharacteristicCombination
     {
@@ -1791,9 +1633,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to specify if two or more characteristics are combined with OR or AND.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCharacteristicCombinationEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCharacteristicCombination $characteristicCombination
-     * @return static
      */
     public function setCharacteristicCombination(null|string|FHIRCharacteristicCombinationEnum|FHIRCharacteristicCombination $characteristicCombination): self
     {
@@ -1839,9 +1678,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A characteristic that defines the members of the evidence element. Multiple
      * characteristics are applied with "and" semantics.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic $characteristic
-     * @return static
      */
     public function addCharacteristic(FHIREvidenceVariableCharacteristic $characteristic): self
     {
@@ -1858,9 +1694,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A characteristic that defines the members of the evidence element. Multiple
      * characteristics are applied with "and" semantics.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic ...$characteristic
-     * @return static
      */
     public function setCharacteristic(FHIREvidenceVariableCharacteristic ...$characteristic): self
     {
@@ -1876,8 +1709,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for an outcome to classify.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREvidenceVariableHandling
      */
     public function getHandling(): null|FHIREvidenceVariableHandling
     {
@@ -1888,9 +1719,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for an outcome to classify.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREvidenceVariableHandlingEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREvidenceVariableHandling $handling
-     * @return static
      */
     public function setHandling(null|string|FHIREvidenceVariableHandlingEnum|FHIREvidenceVariableHandling $handling): self
     {
@@ -1936,9 +1764,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A grouping (or set of values) described along with other groupings to specify
      * the set of groupings allowed for the variable.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCategory $category
-     * @return static
      */
     public function addCategory(FHIREvidenceVariableCategory $category): self
     {
@@ -1955,9 +1780,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
      *
      * A grouping (or set of values) described along with other groupings to specify
      * the set of groupings allowed for the variable.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCategory ...$category
-     * @return static
      */
     public function setCategory(FHIREvidenceVariableCategory ...$category): self
     {
@@ -1971,10 +1793,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIREvidenceVariable $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIREvidenceVariable
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2204,11 +2023,6 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2447,10 +2261,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIREvidenceVariable $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIREvidenceVariable
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

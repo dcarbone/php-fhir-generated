@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -145,8 +145,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      *
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction,
      * drug-lab test interaction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -158,8 +156,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      *
      * The effect of the interaction, for example "reduced gastric absorption of
      * primary medication".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $effect;
@@ -170,8 +166,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The incidence of the interaction, e.g. theoretical, observed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $incidence;
@@ -192,12 +186,8 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
     /**
      * FHIRClinicalUseDefinitionInteraction Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteractant> $interactant
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $effect
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $incidence
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $management
      * @param null|string[] $fhirComments
      */
@@ -270,9 +260,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      *
      * The specific medication, product, food, substance etc. or laboratory test that
      * interacts.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteractant $interactant
-     * @return static
      */
     public function addInteractant(FHIRClinicalUseDefinitionInteractant $interactant): self
     {
@@ -289,9 +276,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      *
      * The specific medication, product, food, substance etc. or laboratory test that
      * interacts.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteractant ...$interactant
-     * @return static
      */
     public function setInteractant(FHIRClinicalUseDefinitionInteractant ...$interactant): self
     {
@@ -311,8 +295,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      *
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction,
      * drug-lab test interaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -327,9 +309,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      *
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction,
      * drug-lab test interaction.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -349,8 +328,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      *
      * The effect of the interaction, for example "reduced gastric absorption of
      * primary medication".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getEffect(): null|FHIRCodeableReference
     {
@@ -365,9 +342,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      *
      * The effect of the interaction, for example "reduced gastric absorption of
      * primary medication".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $effect
-     * @return static
      */
     public function setEffect(null|FHIRCodeableReference $effect): self
     {
@@ -386,8 +360,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The incidence of the interaction, e.g. theoretical, observed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getIncidence(): null|FHIRCodeableConcept
     {
@@ -401,9 +373,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The incidence of the interaction, e.g. theoretical, observed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $incidence
-     * @return static
      */
     public function setIncidence(null|FHIRCodeableConcept $incidence): self
     {
@@ -448,9 +417,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions for managing the interaction.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $management
-     * @return static
      */
     public function addManagement(FHIRCodeableConcept $management): self
     {
@@ -468,9 +434,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions for managing the interaction.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$management
-     * @return static
      */
     public function setManagement(FHIRCodeableConcept ...$management): self
     {
@@ -484,10 +447,7 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteraction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteraction
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -539,10 +499,6 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -579,10 +535,7 @@ class FHIRClinicalUseDefinitionInteraction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteraction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteraction
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

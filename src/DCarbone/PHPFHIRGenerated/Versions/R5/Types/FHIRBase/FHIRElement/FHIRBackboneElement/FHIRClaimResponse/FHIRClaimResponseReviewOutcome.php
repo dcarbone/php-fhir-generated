@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,8 +135,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The result of the claim, predetermination, or preauthorization adjudication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $decision;
@@ -160,8 +158,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      *
      * Reference from the Insurer which is used in later communications which refers to
      * this adjudication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $preAuthRef;
@@ -171,8 +167,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time frame during which this authorization is effective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $preAuthPeriod;
@@ -181,12 +175,8 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
     /**
      * FHIRClaimResponseReviewOutcome Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $decision
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $reason
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $preAuthRef
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $preAuthPeriod
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -230,8 +220,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The result of the claim, predetermination, or preauthorization adjudication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getDecision(): null|FHIRCodeableConcept
     {
@@ -245,9 +233,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The result of the claim, predetermination, or preauthorization adjudication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $decision
-     * @return static
      */
     public function setDecision(null|FHIRCodeableConcept $decision): self
     {
@@ -294,9 +279,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      *
      * The reasons for the result of the claim, predetermination, or preauthorization
      * adjudication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $reason
-     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason): self
     {
@@ -315,9 +297,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      *
      * The reasons for the result of the claim, predetermination, or preauthorization
      * adjudication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$reason
-     * @return static
      */
     public function setReason(FHIRCodeableConcept ...$reason): self
     {
@@ -336,8 +315,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      *
      * Reference from the Insurer which is used in later communications which refers to
      * this adjudication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPreAuthRef(): null|FHIRString
     {
@@ -351,9 +328,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      *
      * Reference from the Insurer which is used in later communications which refers to
      * this adjudication.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $preAuthRef
-     * @return static
      */
     public function setPreAuthRef(null|string|FHIRStringPrimitive|FHIRString $preAuthRef): self
     {
@@ -374,8 +348,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time frame during which this authorization is effective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPreAuthPeriod(): null|FHIRPeriod
     {
@@ -388,9 +360,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time frame during which this authorization is effective.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $preAuthPeriod
-     * @return static
      */
     public function setPreAuthPeriod(null|FHIRPeriod $preAuthPeriod): self
     {
@@ -404,10 +373,7 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseReviewOutcome $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseReviewOutcome
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -465,10 +431,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -503,10 +465,7 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseReviewOutcome $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseReviewOutcome
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

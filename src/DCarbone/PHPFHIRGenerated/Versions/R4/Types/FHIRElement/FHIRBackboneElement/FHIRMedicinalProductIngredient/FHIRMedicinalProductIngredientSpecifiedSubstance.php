@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -118,8 +117,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specified substance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -130,8 +127,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The group of specified substance, e.g. group 1 to 4.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $group;
@@ -142,8 +137,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Confidentiality level of the specified substance as the ingredient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $confidentiality;
@@ -162,11 +155,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
     /**
      * FHIRMedicinalProductIngredientSpecifiedSubstance Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $group
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $confidentiality
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength> $strength
      * @param null|string[] $fhirComments
      */
@@ -211,8 +200,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specified substance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -226,9 +213,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specified substance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -247,8 +231,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The group of specified substance, e.g. group 1 to 4.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getGroup(): null|FHIRCodeableConcept
     {
@@ -262,9 +244,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The group of specified substance, e.g. group 1 to 4.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $group
-     * @return static
      */
     public function setGroup(null|FHIRCodeableConcept $group): self
     {
@@ -283,8 +262,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Confidentiality level of the specified substance as the ingredient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getConfidentiality(): null|FHIRCodeableConcept
     {
@@ -298,9 +275,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Confidentiality level of the specified substance as the ingredient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $confidentiality
-     * @return static
      */
     public function setConfidentiality(null|FHIRCodeableConcept $confidentiality): self
     {
@@ -341,9 +315,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      *
      * Quantity of the substance or specified substance present in the manufactured
      * item or pharmaceutical product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength $strength
-     * @return static
      */
     public function addStrength(FHIRMedicinalProductIngredientStrength $strength): self
     {
@@ -359,9 +330,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      *
      * Quantity of the substance or specified substance present in the manufactured
      * item or pharmaceutical product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength ...$strength
-     * @return static
      */
     public function setStrength(FHIRMedicinalProductIngredientStrength ...$strength): self
     {
@@ -375,10 +343,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -428,10 +393,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -461,10 +422,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -113,7 +111,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStatus;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -203,8 +200,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The frequency with which the target must be validated (none; initial; periodic).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $need;
@@ -213,8 +208,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * The validation status of the target (attested; validated; in process; requires
      * revalidation; validation failed; revalidation failed).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStatus
      */
     #[FHIRStatus]
     protected FHIRStatus $status;
@@ -227,8 +220,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the validation status was updated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $statusDate;
@@ -240,8 +231,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * What the target is validated against (nothing; primary source; multiple
      * sources).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $validationType;
@@ -268,8 +257,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Frequency of revalidation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $frequency;
@@ -282,8 +269,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time validation was last completed (including failed validations).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $lastPerformed;
@@ -294,8 +279,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when target is next validated, if appropriate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $nextScheduled;
@@ -306,8 +289,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The result if validation fails (fatal; warning; record only; none).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $failureAction;
@@ -326,8 +307,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the entity attesting to information.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
      */
     #[FHIRVerificationResultAttestation]
     protected FHIRVerificationResultAttestation $attestation;
@@ -345,27 +324,13 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
     /* constructor.php:61 */
     /**
      * FHIRVerificationResult Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $target
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> $targetLocation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $need
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStatus $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $statusDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $validationType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $validationProcess
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $frequency
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $lastPerformed
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $nextScheduled
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $failureAction
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource> $primarySource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation $attestation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultValidator> $validator
      * @param null|string[] $fhirComments
      */
@@ -490,9 +455,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource that was validated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $target
-     * @return static
      */
     public function addTarget(FHIRReference $target): self
     {
@@ -509,9 +471,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource that was validated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$target
-     * @return static
      */
     public function setTarget(FHIRReference ...$target): self
     {
@@ -554,9 +513,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fhirpath location(s) within the resource that was validated.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $targetLocation
-     * @return static
      */
     public function addTargetLocation(string|FHIRStringPrimitive|FHIRString $targetLocation): self
     {
@@ -576,9 +532,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fhirpath location(s) within the resource that was validated.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString ...$targetLocation
-     * @return static
      */
     public function setTargetLocation(string|FHIRStringPrimitive|FHIRString ...$targetLocation): self
     {
@@ -604,8 +557,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The frequency with which the target must be validated (none; initial; periodic).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getNeed(): null|FHIRCodeableConcept
     {
@@ -619,9 +570,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The frequency with which the target must be validated (none; initial; periodic).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $need
-     * @return static
      */
     public function setNeed(null|FHIRCodeableConcept $need): self
     {
@@ -638,8 +586,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * The validation status of the target (attested; validated; in process; requires
      * revalidation; validation failed; revalidation failed).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStatus
      */
     public function getStatus(): null|FHIRStatus
     {
@@ -651,9 +597,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * The validation status of the target (attested; validated; in process; requires
      * revalidation; validation failed; revalidation failed).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRStatusEnum|FHIRStatus $status): self
     {
@@ -677,8 +620,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the validation status was updated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getStatusDate(): null|FHIRDateTime
     {
@@ -694,9 +635,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the validation status was updated.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $statusDate
-     * @return static
      */
     public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
     {
@@ -719,8 +657,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * What the target is validated against (nothing; primary source; multiple
      * sources).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getValidationType(): null|FHIRCodeableConcept
     {
@@ -735,9 +671,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * What the target is validated against (nothing; primary source; multiple
      * sources).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $validationType
-     * @return static
      */
     public function setValidationType(null|FHIRCodeableConcept $validationType): self
     {
@@ -784,9 +717,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * The primary process by which the target is validated (edit check; value set;
      * primary source; multiple sources; standalone; in context).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $validationProcess
-     * @return static
      */
     public function addValidationProcess(FHIRCodeableConcept $validationProcess): self
     {
@@ -805,9 +735,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      *
      * The primary process by which the target is validated (edit check; value set;
      * primary source; multiple sources; standalone; in context).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$validationProcess
-     * @return static
      */
     public function setValidationProcess(FHIRCodeableConcept ...$validationProcess): self
     {
@@ -829,8 +756,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Frequency of revalidation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     public function getFrequency(): null|FHIRTiming
     {
@@ -847,9 +772,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Frequency of revalidation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $frequency
-     * @return static
      */
     public function setFrequency(null|FHIRTiming $frequency): self
     {
@@ -870,8 +792,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time validation was last completed (including failed validations).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getLastPerformed(): null|FHIRDateTime
     {
@@ -887,9 +807,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time validation was last completed (including failed validations).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $lastPerformed
-     * @return static
      */
     public function setLastPerformed(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastPerformed): self
     {
@@ -911,8 +828,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when target is next validated, if appropriate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate
      */
     public function getNextScheduled(): null|FHIRDate
     {
@@ -926,9 +841,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when target is next validated, if appropriate.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $nextScheduled
-     * @return static
      */
     public function setNextScheduled(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $nextScheduled): self
     {
@@ -950,8 +862,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The result if validation fails (fatal; warning; record only; none).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getFailureAction(): null|FHIRCodeableConcept
     {
@@ -965,9 +875,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The result if validation fails (fatal; warning; record only; none).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $failureAction
-     * @return static
      */
     public function setFailureAction(null|FHIRCodeableConcept $failureAction): self
     {
@@ -1008,9 +915,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the primary source(s) involved in validation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource $primarySource
-     * @return static
      */
     public function addPrimarySource(FHIRVerificationResultPrimarySource $primarySource): self
     {
@@ -1026,9 +930,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the primary source(s) involved in validation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource ...$primarySource
-     * @return static
      */
     public function setPrimarySource(FHIRVerificationResultPrimarySource ...$primarySource): self
     {
@@ -1045,8 +946,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the entity attesting to information.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
      */
     public function getAttestation(): null|FHIRVerificationResultAttestation
     {
@@ -1058,9 +957,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the entity attesting to information.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation $attestation
-     * @return static
      */
     public function setAttestation(null|FHIRVerificationResultAttestation $attestation): self
     {
@@ -1101,9 +997,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the entity validating information.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultValidator $validator
-     * @return static
      */
     public function addValidator(FHIRVerificationResultValidator $validator): self
     {
@@ -1119,9 +1012,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
      * elements.
      *
      * Information about the entity validating information.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultValidator ...$validator
-     * @return static
      */
     public function setValidator(FHIRVerificationResultValidator ...$validator): self
     {
@@ -1135,10 +1025,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRVerificationResult $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRVerificationResult
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1276,11 +1163,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1412,10 +1294,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRVerificationResult $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRVerificationResult
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -125,8 +124,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Name of Data type or Resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -137,8 +134,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * Identifies a profile that SHALL hold for resources or datatypes referenced as
      * the type of this element. Can be a local reference - to another structure in
      * this profile, or a reference to a structure in another profile.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $profile;
@@ -159,10 +154,7 @@ class FHIRProfileType extends FHIRBackboneElement
     /**
      * FHIRProfileType Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $profile
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRAggregationModeList>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAggregationMode> $aggregation
      * @param null|string[] $fhirComments
      */
@@ -203,8 +195,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Name of Data type or Resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -218,9 +208,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Name of Data type or Resource.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -242,8 +229,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * Identifies a profile that SHALL hold for resources or datatypes referenced as
      * the type of this element. Can be a local reference - to another structure in
      * this profile, or a reference to a structure in another profile.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     public function getProfile(): null|FHIRUri
     {
@@ -257,9 +242,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * Identifies a profile that SHALL hold for resources or datatypes referenced as
      * the type of this element. Can be a local reference - to another structure in
      * this profile, or a reference to a structure in another profile.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $profile
-     * @return static
      */
     public function setProfile(null|string|FHIRUriPrimitive|FHIRUri $profile): self
     {
@@ -307,9 +289,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * If the type is a reference to another resource, how the resource is or can be
      * aggreated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRAggregationModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAggregationMode $aggregation
-     * @return static
      */
     public function addAggregation(string|FHIRAggregationModeList|FHIRAggregationMode $aggregation): self
     {
@@ -330,9 +309,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * If the type is a reference to another resource, how the resource is or can be
      * aggreated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRAggregationModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAggregationMode ...$aggregation
-     * @return static
      */
     public function setAggregation(string|FHIRAggregationModeList|FHIRAggregationMode ...$aggregation): self
     {
@@ -353,10 +329,7 @@ class FHIRProfileType extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -420,10 +393,6 @@ class FHIRProfileType extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -458,10 +427,7 @@ class FHIRProfileType extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

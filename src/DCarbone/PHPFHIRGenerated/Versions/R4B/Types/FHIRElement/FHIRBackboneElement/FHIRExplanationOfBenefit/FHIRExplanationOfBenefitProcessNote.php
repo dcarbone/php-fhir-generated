@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -142,8 +142,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify a note entry.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $number;
@@ -151,8 +149,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business purpose of the note text.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNoteType
      */
     #[FHIRNoteType]
     protected FHIRNoteType $type;
@@ -162,8 +158,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The explanation or description associated with the processing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -174,8 +168,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to define the language used in the text of the note.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $language;
@@ -184,12 +176,7 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
     /**
      * FHIRExplanationOfBenefitProcessNote Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $number
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRNoteTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNoteType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $language
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -232,8 +219,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify a note entry.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     public function getNumber(): null|FHIRPositiveInt
     {
@@ -246,9 +231,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify a note entry.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $number
-     * @return static
      */
     public function setNumber(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $number): self
     {
@@ -267,8 +249,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business purpose of the note text.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNoteType
      */
     public function getType(): null|FHIRNoteType
     {
@@ -279,9 +259,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business purpose of the note text.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRNoteTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNoteType $type
-     * @return static
      */
     public function setType(null|string|FHIRNoteTypeEnum|FHIRNoteType $type): self
     {
@@ -302,8 +279,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The explanation or description associated with the processing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -316,9 +291,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The explanation or description associated with the processing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -340,8 +312,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to define the language used in the text of the note.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getLanguage(): null|FHIRCodeableConcept
     {
@@ -355,9 +325,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to define the language used in the text of the note.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $language
-     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {
@@ -371,10 +338,7 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcessNote $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcessNote
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -448,10 +412,6 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -494,10 +454,7 @@ class FHIRExplanationOfBenefitProcessNote extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcessNote $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcessNote
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

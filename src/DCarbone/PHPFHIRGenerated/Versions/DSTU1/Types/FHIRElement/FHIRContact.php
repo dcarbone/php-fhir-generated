@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -118,8 +118,6 @@ class FHIRContact extends FHIRElement
      *
      * Telecommunications form for contact - what communications system is required to
      * make use of the contact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContactSystem
      */
     #[FHIRContactSystem]
     protected FHIRContactSystem $system;
@@ -129,8 +127,6 @@ class FHIRContact extends FHIRElement
      *
      * The actual contact details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $value;
@@ -139,8 +135,6 @@ class FHIRContact extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for the address.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContactUse
      */
     #[FHIRContactUse]
     protected FHIRContactUse $use;
@@ -150,8 +144,6 @@ class FHIRContact extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when the contact was/is in use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -160,11 +152,6 @@ class FHIRContact extends FHIRElement
     /**
      * FHIRContact Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRContactSystemList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContactSystem $system
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $value
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRContactUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContactUse $use
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -205,8 +192,6 @@ class FHIRContact extends FHIRElement
      *
      * Telecommunications form for contact - what communications system is required to
      * make use of the contact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContactSystem
      */
     public function getSystem(): null|FHIRContactSystem
     {
@@ -219,9 +204,6 @@ class FHIRContact extends FHIRElement
      *
      * Telecommunications form for contact - what communications system is required to
      * make use of the contact.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRContactSystemList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContactSystem $system
-     * @return static
      */
     public function setSystem(null|string|FHIRContactSystemList|FHIRContactSystem $system): self
     {
@@ -242,8 +224,6 @@ class FHIRContact extends FHIRElement
      *
      * The actual contact details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getValue(): null|FHIRString
     {
@@ -256,9 +236,6 @@ class FHIRContact extends FHIRElement
      *
      * The actual contact details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $value
-     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -278,8 +255,6 @@ class FHIRContact extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for the address.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContactUse
      */
     public function getUse(): null|FHIRContactUse
     {
@@ -291,9 +266,6 @@ class FHIRContact extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for the address.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRContactUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContactUse $use
-     * @return static
      */
     public function setUse(null|string|FHIRContactUseList|FHIRContactUse $use): self
     {
@@ -314,8 +286,6 @@ class FHIRContact extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when the contact was/is in use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -328,9 +298,6 @@ class FHIRContact extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when the contact was/is in use.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -344,10 +311,7 @@ class FHIRContact extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -419,10 +383,6 @@ class FHIRContact extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -465,10 +425,7 @@ class FHIRContact extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

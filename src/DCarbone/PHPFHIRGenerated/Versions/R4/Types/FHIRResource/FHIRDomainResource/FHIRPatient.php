@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
@@ -99,7 +97,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
@@ -186,8 +183,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * of time based on an organization's business rules. It is often used to filter
      * patient lists to exclude inactive patients Deceased patients may also be marked
      * as inactive for the same reasons, but may be active for some time after death.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $active;
@@ -220,8 +215,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Administrative Gender - the gender that the patient is considered to have for
      * administration and record keeping purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender
      */
     #[FHIRAdministrativeGender]
     protected FHIRAdministrativeGender $gender;
@@ -232,8 +225,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the individual.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $birthDate;
@@ -242,8 +233,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $deceasedBoolean;
@@ -256,8 +245,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $deceasedDateTime;
@@ -283,8 +270,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This field contains a patient's most recent marital (civil) status.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $maritalStatus;
@@ -294,8 +279,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $multipleBirthBoolean;
@@ -306,8 +289,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $multipleBirthInteger;
@@ -360,8 +341,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that is the custodian of the patient record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $managingOrganization;
@@ -379,31 +358,17 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
     /* constructor.php:61 */
     /**
      * FHIRPatient Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $active
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRHumanName> $name
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint> $telecom
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender $gender
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $birthDate
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $deceasedBoolean
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $deceasedDateTime
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress> $address
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $maritalStatus
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $multipleBirthBoolean
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $multipleBirthInteger
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment> $photo
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact> $contact
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication> $communication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $generalPractitioner
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $managingOrganization
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink> $link
      * @param null|string[] $fhirComments
      */
@@ -546,9 +511,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for this patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -566,9 +528,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for this patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -589,8 +548,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * of time based on an organization's business rules. It is often used to filter
      * patient lists to exclude inactive patients Deceased patients may also be marked
      * as inactive for the same reasons, but may be active for some time after death.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getActive(): null|FHIRBoolean
     {
@@ -606,9 +563,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * of time based on an organization's business rules. It is often used to filter
      * patient lists to exclude inactive patients Deceased patients may also be marked
      * as inactive for the same reasons, but may be active for some time after death.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $active
-     * @return static
      */
     public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
     {
@@ -654,9 +608,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRHumanName $name
-     * @return static
      */
     public function addName(FHIRHumanName $name): self
     {
@@ -673,9 +624,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRHumanName ...$name
-     * @return static
      */
     public function setName(FHIRHumanName ...$name): self
     {
@@ -722,9 +670,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A contact detail (e.g. a telephone number or an email address) by which the
      * individual may be contacted.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint $telecom
-     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -743,9 +688,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A contact detail (e.g. a telephone number or an email address) by which the
      * individual may be contacted.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactPoint ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -762,8 +704,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Administrative Gender - the gender that the patient is considered to have for
      * administration and record keeping purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender(): null|FHIRAdministrativeGender
     {
@@ -775,9 +715,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Administrative Gender - the gender that the patient is considered to have for
      * administration and record keeping purposes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender $gender
-     * @return static
      */
     public function setGender(null|string|FHIRAdministrativeGenderList|FHIRAdministrativeGender $gender): self
     {
@@ -799,8 +736,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the individual.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     public function getBirthDate(): null|FHIRDate
     {
@@ -814,9 +749,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the individual.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $birthDate
-     * @return static
      */
     public function setBirthDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $birthDate): self
     {
@@ -836,8 +768,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getDeceasedBoolean(): null|FHIRBoolean
     {
@@ -849,9 +779,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $deceasedBoolean
-     * @return static
      */
     public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean): self
     {
@@ -875,8 +802,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getDeceasedDateTime(): null|FHIRDateTime
     {
@@ -892,9 +817,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $deceasedDateTime
-     * @return static
      */
     public function setDeceasedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $deceasedDateTime): self
     {
@@ -948,9 +870,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the individual.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress $address
-     * @return static
      */
     public function addAddress(FHIRAddress $address): self
     {
@@ -971,9 +890,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the individual.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress ...$address
-     * @return static
      */
     public function setAddress(FHIRAddress ...$address): self
     {
@@ -992,8 +908,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This field contains a patient's most recent marital (civil) status.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMaritalStatus(): null|FHIRCodeableConcept
     {
@@ -1007,9 +921,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This field contains a patient's most recent marital (civil) status.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $maritalStatus
-     * @return static
      */
     public function setMaritalStatus(null|FHIRCodeableConcept $maritalStatus): self
     {
@@ -1027,8 +938,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getMultipleBirthBoolean(): null|FHIRBoolean
     {
@@ -1041,9 +950,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $multipleBirthBoolean
-     * @return static
      */
     public function setMultipleBirthBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $multipleBirthBoolean): self
     {
@@ -1065,8 +971,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getMultipleBirthInteger(): null|FHIRInteger
     {
@@ -1080,9 +984,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates whether the patient is part of a multiple (boolean) or indicates the
      * actual birth order (integer).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $multipleBirthInteger
-     * @return static
      */
     public function setMultipleBirthInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $multipleBirthInteger): self
     {
@@ -1128,9 +1029,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $photo
-     * @return static
      */
     public function addPhoto(FHIRAttachment $photo): self
     {
@@ -1147,9 +1045,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment ...$photo
-     * @return static
      */
     public function setPhoto(FHIRAttachment ...$photo): self
     {
@@ -1190,9 +1085,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * receiving care or other health-related services.
      *
      * A contact party (e.g. guardian, partner, friend) for the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact $contact
-     * @return static
      */
     public function addContact(FHIRPatientContact $contact): self
     {
@@ -1208,9 +1100,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * receiving care or other health-related services.
      *
      * A contact party (e.g. guardian, partner, friend) for the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact ...$contact
-     * @return static
      */
     public function setContact(FHIRPatientContact ...$contact): self
     {
@@ -1253,9 +1142,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A language which may be used to communicate with the patient about his or her
      * health.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication $communication
-     * @return static
      */
     public function addCommunication(FHIRPatientCommunication $communication): self
     {
@@ -1272,9 +1158,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A language which may be used to communicate with the patient about his or her
      * health.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication ...$communication
-     * @return static
      */
     public function setCommunication(FHIRPatientCommunication ...$communication): self
     {
@@ -1317,9 +1200,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient's nominated care provider.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $generalPractitioner
-     * @return static
      */
     public function addGeneralPractitioner(FHIRReference $generalPractitioner): self
     {
@@ -1336,9 +1216,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient's nominated care provider.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$generalPractitioner
-     * @return static
      */
     public function setGeneralPractitioner(FHIRReference ...$generalPractitioner): self
     {
@@ -1356,8 +1233,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that is the custodian of the patient record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getManagingOrganization(): null|FHIRReference
     {
@@ -1370,9 +1245,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that is the custodian of the patient record.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $managingOrganization
-     * @return static
      */
     public function setManagingOrganization(null|FHIRReference $managingOrganization): self
     {
@@ -1413,9 +1285,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * receiving care or other health-related services.
      *
      * Link to another patient resource that concerns the same actual patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink $link
-     * @return static
      */
     public function addLink(FHIRPatientLink $link): self
     {
@@ -1431,9 +1300,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
      * receiving care or other health-related services.
      *
      * Link to another patient resource that concerns the same actual patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink ...$link
-     * @return static
      */
     public function setLink(FHIRPatientLink ...$link): self
     {
@@ -1447,10 +1313,7 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPatient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPatient
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1620,11 +1483,6 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1799,10 +1657,7 @@ class FHIRPatient extends FHIRDomainResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPatient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRPatient
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

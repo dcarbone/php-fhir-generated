@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -120,8 +120,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is <=2.3).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     #[FHIRSimpleQuantity]
     protected FHIRSimpleQuantity $low;
@@ -130,8 +128,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is >= 2.3).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     #[FHIRSimpleQuantity]
     protected FHIRSimpleQuantity $high;
@@ -142,8 +138,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code for the meaning of the reference range.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $meaning;
@@ -154,8 +148,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $age;
@@ -167,8 +159,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * Text based reference range in an observation which may be used when a
      * quantitative range is not appropriate for an observation. An example would be a
      * reference value of "Negative" or a list or table of 'normals'.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -177,13 +167,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     /**
      * FHIRObservationReferenceRange Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $low
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $high
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $meaning
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $age
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $text
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -229,8 +213,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is <=2.3).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getLow(): null|FHIRSimpleQuantity
     {
@@ -242,9 +224,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is <=2.3).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $low
-     * @return static
      */
     public function setLow(null|FHIRSimpleQuantity $low): self
     {
@@ -261,8 +240,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is >= 2.3).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getHigh(): null|FHIRSimpleQuantity
     {
@@ -274,9 +251,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is >= 2.3).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $high
-     * @return static
      */
     public function setHigh(null|FHIRSimpleQuantity $high): self
     {
@@ -295,8 +269,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code for the meaning of the reference range.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMeaning(): null|FHIRCodeableConcept
     {
@@ -310,9 +282,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code for the meaning of the reference range.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $meaning
-     * @return static
      */
     public function setMeaning(null|FHIRCodeableConcept $meaning): self
     {
@@ -331,8 +300,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange
      */
     public function getAge(): null|FHIRRange
     {
@@ -346,9 +313,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $age
-     * @return static
      */
     public function setAge(null|FHIRRange $age): self
     {
@@ -368,8 +332,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * Text based reference range in an observation which may be used when a
      * quantitative range is not appropriate for an observation. An example would be a
      * reference value of "Negative" or a list or table of 'normals'.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -384,9 +346,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * Text based reference range in an observation which may be used when a
      * quantitative range is not appropriate for an observation. An example would be a
      * reference value of "Negative" or a list or table of 'normals'.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -403,10 +362,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -466,10 +422,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -507,10 +459,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

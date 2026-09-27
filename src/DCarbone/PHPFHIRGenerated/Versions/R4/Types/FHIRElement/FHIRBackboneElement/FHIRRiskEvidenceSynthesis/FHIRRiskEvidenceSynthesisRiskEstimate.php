@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -127,8 +127,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable summary of risk estimate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -139,8 +137,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Examples include proportion and mean.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -151,8 +147,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point estimate of the risk estimate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $value;
@@ -163,8 +157,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the UCUM unit for the outcome.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unitOfMeasure;
@@ -174,8 +166,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sample size for the group that was measured for this risk estimate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $denominatorCount;
@@ -185,8 +175,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of group members with the outcome of interest.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $numeratorCount;
@@ -206,14 +194,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
     /**
      * FHIRRiskEvidenceSynthesisRiskEstimate Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unitOfMeasure
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $denominatorCount
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $numeratorCount
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate> $precisionEstimate
      * @param null|string[] $fhirComments
      */
@@ -269,8 +250,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable summary of risk estimate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -283,9 +262,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable summary of risk estimate.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -307,8 +283,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Examples include proportion and mean.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -322,9 +296,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Examples include proportion and mean.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -343,8 +314,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point estimate of the risk estimate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     public function getValue(): null|FHIRDecimal
     {
@@ -358,9 +327,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point estimate of the risk estimate.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
-     * @return static
      */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $value): self
     {
@@ -382,8 +348,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the UCUM unit for the outcome.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getUnitOfMeasure(): null|FHIRCodeableConcept
     {
@@ -397,9 +361,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the UCUM unit for the outcome.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unitOfMeasure
-     * @return static
      */
     public function setUnitOfMeasure(null|FHIRCodeableConcept $unitOfMeasure): self
     {
@@ -417,8 +378,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sample size for the group that was measured for this risk estimate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getDenominatorCount(): null|FHIRInteger
     {
@@ -431,9 +390,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sample size for the group that was measured for this risk estimate.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $denominatorCount
-     * @return static
      */
     public function setDenominatorCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $denominatorCount): self
     {
@@ -454,8 +410,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of group members with the outcome of interest.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getNumeratorCount(): null|FHIRInteger
     {
@@ -468,9 +422,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of group members with the outcome of interest.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $numeratorCount
-     * @return static
      */
     public function setNumeratorCount(null|string|float|FHIRIntegerPrimitive|FHIRInteger $numeratorCount): self
     {
@@ -516,9 +467,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * combination of research studies.
      *
      * A description of the precision of the estimate for the effect.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate $precisionEstimate
-     * @return static
      */
     public function addPrecisionEstimate(FHIRRiskEvidenceSynthesisPrecisionEstimate $precisionEstimate): self
     {
@@ -535,9 +483,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * combination of research studies.
      *
      * A description of the precision of the estimate for the effect.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate ...$precisionEstimate
-     * @return static
      */
     public function setPrecisionEstimate(FHIRRiskEvidenceSynthesisPrecisionEstimate ...$precisionEstimate): self
     {
@@ -551,10 +496,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -642,10 +584,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -710,10 +648,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

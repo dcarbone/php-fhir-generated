@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -119,8 +119,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of manufacturing operation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $operationType;
@@ -131,8 +129,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory authorization reference number.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $authorisationReferenceNumber;
@@ -145,8 +141,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Regulatory authorization date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $effectiveDate;
@@ -157,8 +151,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To indicate if this proces is commercially confidential.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $confidentialityIndicator;
@@ -179,8 +171,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A regulator which oversees the operation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $regulator;
@@ -189,14 +179,8 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
     /**
      * FHIRMedicinalProductManufacturingBusinessOperation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $operationType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $effectiveDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $confidentialityIndicator
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $manufacturer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $regulator
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -248,8 +232,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of manufacturing operation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getOperationType(): null|FHIRCodeableConcept
     {
@@ -263,9 +245,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of manufacturing operation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $operationType
-     * @return static
      */
     public function setOperationType(null|FHIRCodeableConcept $operationType): self
     {
@@ -284,8 +263,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory authorization reference number.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     public function getAuthorisationReferenceNumber(): null|FHIRIdentifier
     {
@@ -299,9 +276,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory authorization reference number.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
-     * @return static
      */
     public function setAuthorisationReferenceNumber(null|FHIRIdentifier $authorisationReferenceNumber): self
     {
@@ -322,8 +296,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Regulatory authorization date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDate(): null|FHIRDateTime
     {
@@ -339,9 +311,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Regulatory authorization date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $effectiveDate
-     * @return static
      */
     public function setEffectiveDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDate): self
     {
@@ -363,8 +332,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To indicate if this proces is commercially confidential.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getConfidentialityIndicator(): null|FHIRCodeableConcept
     {
@@ -378,9 +345,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To indicate if this proces is commercially confidential.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $confidentialityIndicator
-     * @return static
      */
     public function setConfidentialityIndicator(null|FHIRCodeableConcept $confidentialityIndicator): self
     {
@@ -423,9 +387,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The manufacturer or establishment associated with the process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $manufacturer
-     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -442,9 +403,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The manufacturer or establishment associated with the process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$manufacturer
-     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -462,8 +420,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A regulator which oversees the operation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getRegulator(): null|FHIRReference
     {
@@ -476,9 +432,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A regulator which oversees the operation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $regulator
-     * @return static
      */
     public function setRegulator(null|FHIRReference $regulator): self
     {
@@ -492,10 +445,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -557,10 +507,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -605,10 +551,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

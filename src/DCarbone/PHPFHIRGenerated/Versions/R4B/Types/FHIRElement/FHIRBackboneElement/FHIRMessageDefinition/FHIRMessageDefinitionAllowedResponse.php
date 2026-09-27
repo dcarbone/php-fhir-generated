@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      *
      * A reference to the message definition that must be adhered to by this supported
      * response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $message;
@@ -159,8 +156,6 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      *
      * Provides a description of the circumstances in which this response should be
      * used (as opposed to one of the alternative responses).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $situation;
@@ -169,10 +164,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
     /**
      * FHIRMessageDefinitionAllowedResponse Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $message
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $situation
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -209,8 +201,6 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      *
      * A reference to the message definition that must be adhered to by this supported
      * response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     public function getMessage(): null|FHIRCanonical
     {
@@ -225,9 +215,6 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      *
      * A reference to the message definition that must be adhered to by this supported
      * response.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $message
-     * @return static
      */
     public function setMessage(null|string|FHIRCanonicalPrimitive|FHIRCanonical $message): self
     {
@@ -253,8 +240,6 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      *
      * Provides a description of the circumstances in which this response should be
      * used (as opposed to one of the alternative responses).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getSituation(): null|FHIRMarkdown
     {
@@ -272,9 +257,6 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      *
      * Provides a description of the circumstances in which this response should be
      * used (as opposed to one of the alternative responses).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $situation
-     * @return static
      */
     public function setSituation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $situation): self
     {
@@ -291,10 +273,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -356,10 +335,6 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -387,10 +362,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

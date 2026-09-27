@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -103,7 +101,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
@@ -212,8 +209,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * capabilities is (or will be) published. This URL can be the target of a
      * canonical reference. It SHALL remain the same when the terminology capabilities
      * is stored on different servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -228,8 +223,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * author and is not expected to be globally unique. For example, it might be a
      * timestamp (e.g. yyyymmdd) if a managed version is not available. There is also
      * no expectation that versions can be placed in a lexicographical sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -241,8 +234,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * A natural language name identifying the terminology capabilities. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -252,8 +243,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the terminology capabilities.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -262,8 +251,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * The status of this terminology capabilities. Enables tracking the life-cycle of
      * the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -274,8 +261,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * A Boolean value to indicate that this terminology capabilities is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -291,8 +276,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the terminology capabilities changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -303,8 +286,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * The name of the organization or individual that published the terminology
      * capabilities.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -333,8 +314,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * consumer's perspective. Typically, this is used when the capability statement
      * describes a desired rather than an actual solution, for example as a formal
      * expression of requirements as part of an RFP.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -380,8 +359,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Explanation of why this terminology capabilities is needed and why it has been
      * designed as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -397,8 +374,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * A copyright statement relating to the terminology capabilities and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the terminology capabilities.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -409,8 +384,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
      * software) or a class of implementation (e.g. a desired purchase).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCapabilityStatementKind
      */
     #[FHIRCapabilityStatementKind]
     protected FHIRCapabilityStatementKind $kind;
@@ -422,8 +395,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * Software that is covered by this terminology capability statement. It is used
      * when the statement describes the capabilities of a particular software version,
      * independent of an installation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware
      */
     #[FHIRTerminologyCapabilitiesSoftware]
     protected FHIRTerminologyCapabilitiesSoftware $software;
@@ -435,8 +406,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * Identifies a specific implementation instance that is described by the
      * terminology capability statement - i.e. a particular installation, rather than
      * the capabilities of a software program.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation
      */
     #[FHIRTerminologyCapabilitiesImplementation]
     protected FHIRTerminologyCapabilitiesImplementation $implementation;
@@ -445,8 +414,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports lockedDate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $lockedDate;
@@ -470,8 +437,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Information about the [ValueSet/$expand](valueset-operation-expand.html)
      * operation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
      */
     #[FHIRTerminologyCapabilitiesExpansion]
     protected FHIRTerminologyCapabilitiesExpansion $expansion;
@@ -482,8 +447,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * The degree to which the server supports the code search parameter on ValueSet,
      * if it is supported.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeSearchSupport
      */
     #[FHIRCodeSearchSupport]
     protected FHIRCodeSearchSupport $codeSearch;
@@ -494,8 +457,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Information about the
      * [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode
      */
     #[FHIRTerminologyCapabilitiesValidateCode]
     protected FHIRTerminologyCapabilitiesValidateCode $validateCode;
@@ -506,8 +467,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Information about the
      * [ConceptMap/$translate](conceptmap-operation-translate.html) operation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation
      */
     #[FHIRTerminologyCapabilitiesTranslation]
     protected FHIRTerminologyCapabilitiesTranslation $translation;
@@ -517,8 +476,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * functionality or a statement of required or desired server implementation.
      *
      * Whether the $closure operation is supported.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure
      */
     #[FHIRTerminologyCapabilitiesClosure]
     protected FHIRTerminologyCapabilitiesClosure $closure;
@@ -526,38 +483,13 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
     /* constructor.php:61 */
     /**
      * FHIRTerminologyCapabilities Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $url
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCapabilityStatementKindList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCapabilityStatementKind $kind
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware $software
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation $implementation
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $lockedDate
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem> $codeSystem
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion $expansion
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCodeSearchSupportList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeSearchSupport $codeSearch
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode $validateCode
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation $translation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure $closure
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -702,8 +634,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * capabilities is (or will be) published. This URL can be the target of a
      * canonical reference. It SHALL remain the same when the terminology capabilities
      * is stored on different servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -722,9 +652,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * capabilities is (or will be) published. This URL can be the target of a
      * canonical reference. It SHALL remain the same when the terminology capabilities
      * is stored on different servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -750,8 +677,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * author and is not expected to be globally unique. For example, it might be a
      * timestamp (e.g. yyyymmdd) if a managed version is not available. There is also
      * no expectation that versions can be placed in a lexicographical sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -769,9 +694,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * author and is not expected to be globally unique. For example, it might be a
      * timestamp (e.g. yyyymmdd) if a managed version is not available. There is also
      * no expectation that versions can be placed in a lexicographical sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -794,8 +716,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * A natural language name identifying the terminology capabilities. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -810,9 +730,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * A natural language name identifying the terminology capabilities. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -833,8 +750,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the terminology capabilities.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -847,9 +762,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the terminology capabilities.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -869,8 +781,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * The status of this terminology capabilities. Enables tracking the life-cycle of
      * the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -882,9 +792,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * The status of this terminology capabilities. Enables tracking the life-cycle of
      * the content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -906,8 +813,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * A Boolean value to indicate that this terminology capabilities is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -921,9 +826,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * A Boolean value to indicate that this terminology capabilities is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -950,8 +852,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the terminology capabilities changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -970,9 +870,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the terminology capabilities changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -994,8 +891,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * The name of the organization or individual that published the terminology
      * capabilities.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1009,9 +904,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * The name of the organization or individual that published the terminology
      * capabilities.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1059,9 +951,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1079,9 +968,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1106,8 +992,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * consumer's perspective. Typically, this is used when the capability statement
      * describes a desired rather than an actual solution, for example as a formal
      * expression of requirements as part of an RFP.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1127,9 +1011,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * consumer's perspective. Typically, this is used when the capability statement
      * describes a desired rather than an actual solution, for example as a formal
      * expression of requirements as part of an RFP.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1189,9 +1070,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate terminology
      * capabilities instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1215,9 +1093,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate terminology
      * capabilities instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1264,9 +1139,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * A legal or geographic region in which the terminology capabilities is intended
      * to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1285,9 +1157,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * A legal or geographic region in which the terminology capabilities is intended
      * to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1310,8 +1179,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Explanation of why this terminology capabilities is needed and why it has been
      * designed as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1329,9 +1196,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Explanation of why this terminology capabilities is needed and why it has been
      * designed as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1358,8 +1222,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * A copyright statement relating to the terminology capabilities and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the terminology capabilities.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1378,9 +1240,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * A copyright statement relating to the terminology capabilities and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the terminology capabilities.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1402,8 +1261,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
      * software) or a class of implementation (e.g. a desired purchase).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCapabilityStatementKind
      */
     public function getKind(): null|FHIRCapabilityStatementKind
     {
@@ -1417,9 +1274,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
      * software) or a class of implementation (e.g. a desired purchase).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCapabilityStatementKindList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCapabilityStatementKind $kind
-     * @return static
      */
     public function setKind(null|string|FHIRCapabilityStatementKindList|FHIRCapabilityStatementKind $kind): self
     {
@@ -1442,8 +1296,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * Software that is covered by this terminology capability statement. It is used
      * when the statement describes the capabilities of a particular software version,
      * independent of an installation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware
      */
     public function getSoftware(): null|FHIRTerminologyCapabilitiesSoftware
     {
@@ -1458,9 +1310,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * Software that is covered by this terminology capability statement. It is used
      * when the statement describes the capabilities of a particular software version,
      * independent of an installation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware $software
-     * @return static
      */
     public function setSoftware(null|FHIRTerminologyCapabilitiesSoftware $software): self
     {
@@ -1480,8 +1329,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * Identifies a specific implementation instance that is described by the
      * terminology capability statement - i.e. a particular installation, rather than
      * the capabilities of a software program.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation
      */
     public function getImplementation(): null|FHIRTerminologyCapabilitiesImplementation
     {
@@ -1496,9 +1343,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * Identifies a specific implementation instance that is described by the
      * terminology capability statement - i.e. a particular installation, rather than
      * the capabilities of a software program.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation $implementation
-     * @return static
      */
     public function setImplementation(null|FHIRTerminologyCapabilitiesImplementation $implementation): self
     {
@@ -1515,8 +1359,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports lockedDate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getLockedDate(): null|FHIRBoolean
     {
@@ -1528,9 +1370,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports lockedDate.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $lockedDate
-     * @return static
      */
     public function setLockedDate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $lockedDate): self
     {
@@ -1580,9 +1419,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * Identifies a code system that is supported by the server. If there is a no code
      * system URL, then this declares the general assumptions a client can make about
      * support for any CodeSystem resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem $codeSystem
-     * @return static
      */
     public function addCodeSystem(FHIRTerminologyCapabilitiesCodeSystem $codeSystem): self
     {
@@ -1601,9 +1437,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * Identifies a code system that is supported by the server. If there is a no code
      * system URL, then this declares the general assumptions a client can make about
      * support for any CodeSystem resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem ...$codeSystem
-     * @return static
      */
     public function setCodeSystem(FHIRTerminologyCapabilitiesCodeSystem ...$codeSystem): self
     {
@@ -1622,8 +1455,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Information about the [ValueSet/$expand](valueset-operation-expand.html)
      * operation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
      */
     public function getExpansion(): null|FHIRTerminologyCapabilitiesExpansion
     {
@@ -1637,9 +1468,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Information about the [ValueSet/$expand](valueset-operation-expand.html)
      * operation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion $expansion
-     * @return static
      */
     public function setExpansion(null|FHIRTerminologyCapabilitiesExpansion $expansion): self
     {
@@ -1658,8 +1486,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * The degree to which the server supports the code search parameter on ValueSet,
      * if it is supported.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeSearchSupport
      */
     public function getCodeSearch(): null|FHIRCodeSearchSupport
     {
@@ -1673,9 +1499,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * The degree to which the server supports the code search parameter on ValueSet,
      * if it is supported.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCodeSearchSupportList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeSearchSupport $codeSearch
-     * @return static
      */
     public function setCodeSearch(null|string|FHIRCodeSearchSupportList|FHIRCodeSearchSupport $codeSearch): self
     {
@@ -1697,8 +1520,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Information about the
      * [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode
      */
     public function getValidateCode(): null|FHIRTerminologyCapabilitiesValidateCode
     {
@@ -1712,9 +1533,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Information about the
      * [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode $validateCode
-     * @return static
      */
     public function setValidateCode(null|FHIRTerminologyCapabilitiesValidateCode $validateCode): self
     {
@@ -1733,8 +1551,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Information about the
      * [ConceptMap/$translate](conceptmap-operation-translate.html) operation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation
      */
     public function getTranslation(): null|FHIRTerminologyCapabilitiesTranslation
     {
@@ -1748,9 +1564,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      *
      * Information about the
      * [ConceptMap/$translate](conceptmap-operation-translate.html) operation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation $translation
-     * @return static
      */
     public function setTranslation(null|FHIRTerminologyCapabilitiesTranslation $translation): self
     {
@@ -1768,8 +1581,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * functionality or a statement of required or desired server implementation.
      *
      * Whether the $closure operation is supported.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure
      */
     public function getClosure(): null|FHIRTerminologyCapabilitiesClosure
     {
@@ -1782,9 +1593,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
      * functionality or a statement of required or desired server implementation.
      *
      * Whether the $closure operation is supported.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure $closure
-     * @return static
      */
     public function setClosure(null|FHIRTerminologyCapabilitiesClosure $closure): self
     {
@@ -1798,10 +1606,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2039,11 +1844,6 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2273,10 +2073,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements VersionC
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRTerminologyCapabilities
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
@@ -126,7 +124,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -253,8 +250,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * ObservationDefinition is (or will be) published. The URL SHOULD include the
      * major version of the ObservationDefinition. For more information see Technical
      * and Business Versions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -267,8 +262,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * Business identifiers assigned to this ObservationDefinition. by the performer
      * and/or other systems. These identifiers remain constant as the resource is
      * updated and propagates from server to server.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -283,8 +276,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * and is not expected to be globally unique. For example, it might be a timestamp
      * (e.g. yyyymmdd) if a managed version is not available. There is also no
      * expectation that versions are orderable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -294,9 +285,7 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * current.
      */
     #[FHIRString]
     protected FHIRString $versionAlgorithmString;
@@ -306,9 +295,7 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * current.
      */
     #[FHIRCoding]
     protected FHIRCoding $versionAlgorithmCoding;
@@ -320,8 +307,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A natural language name identifying the ObservationDefinition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -331,8 +316,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the ObservationDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -340,8 +323,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ObservationDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -352,8 +333,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A flag to indicate that this ObservationDefinition is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -370,8 +349,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the ObservationDefinition changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -382,8 +359,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Helps establish the "authority/credibility" of the ObservationDefinition. May
      * also allow for contact.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -410,8 +385,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * A free text natural language description of the ObservationDefinition from the
      * consumer's perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -456,8 +429,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Explains why this ObservationDefinition is needed and why it has been designed
      * as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -473,8 +444,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * Copyright statement relating to the ObservationDefinition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the ObservationDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -486,8 +455,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $copyrightLabel;
@@ -499,8 +466,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $approvalDate;
@@ -512,8 +477,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastReviewDate;
@@ -524,8 +487,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The period during which the ObservationDefinition content was or is planned to
      * be effective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -575,8 +536,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The type of individual/organization/device that is expected to act upon
      * instances of this definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $performerType;
@@ -600,8 +559,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -621,8 +578,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Multiple results allowed for observations conforming to this
      * ObservationDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $multipleResultsAllowed;
@@ -633,8 +588,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The site on the subject's body where the observation is to be made.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $bodySite;
@@ -645,8 +598,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method or technique used to perform the observation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $method;
@@ -680,8 +631,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The preferred name to be used when reporting the results of observations
      * conforming to this ObservationDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $preferredReportName;
@@ -737,48 +686,19 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
     /* constructor.php:61 */
     /**
      * FHIRObservationDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $versionAlgorithmString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $versionAlgorithmCoding
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $copyrightLabel
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $approvalDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $lastReviewDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectivePeriod
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical> $derivedFromCanonical
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri> $derivedFromUri
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $performerType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationDataType> $permittedDataType
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $multipleResultsAllowed
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $bodySite
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $method
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $specimen
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $device
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $preferredReportName
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding> $permittedUnit
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue> $qualifiedValue
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $hasMember
@@ -982,8 +902,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * ObservationDefinition is (or will be) published. The URL SHOULD include the
      * major version of the ObservationDefinition. For more information see Technical
      * and Business Versions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -1001,9 +919,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * ObservationDefinition is (or will be) published. The URL SHOULD include the
      * major version of the ObservationDefinition. For more information see Technical
      * and Business Versions.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -1027,8 +942,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * Business identifiers assigned to this ObservationDefinition. by the performer
      * and/or other systems. These identifiers remain constant as the resource is
      * updated and propagates from server to server.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -1044,9 +957,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * Business identifiers assigned to this ObservationDefinition. by the performer
      * and/or other systems. These identifiers remain constant as the resource is
      * updated and propagates from server to server.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -1069,8 +979,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * and is not expected to be globally unique. For example, it might be a timestamp
      * (e.g. yyyymmdd) if a managed version is not available. There is also no
      * expectation that versions are orderable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -1088,9 +996,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * and is not expected to be globally unique. For example, it might be a timestamp
      * (e.g. yyyymmdd) if a managed version is not available. There is also no
      * expectation that versions are orderable.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -1111,9 +1016,7 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * current.
      */
     public function getVersionAlgorithmString(): null|FHIRString
     {
@@ -1126,10 +1029,7 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $versionAlgorithmString
-     * @return static
+     * current.
      */
     public function setVersionAlgorithmString(null|string|FHIRStringPrimitive|FHIRString $versionAlgorithmString): self
     {
@@ -1150,9 +1050,7 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * current.
      */
     public function getVersionAlgorithmCoding(): null|FHIRCoding
     {
@@ -1165,10 +1063,7 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to compare versions to determine which is more
-     * current. (choose any one of versionAlgorithm*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $versionAlgorithmCoding
-     * @return static
+     * current.
      */
     public function setVersionAlgorithmCoding(null|FHIRCoding $versionAlgorithmCoding): self
     {
@@ -1188,8 +1083,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A natural language name identifying the ObservationDefinition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -1204,9 +1097,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A natural language name identifying the ObservationDefinition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1227,8 +1117,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the ObservationDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -1241,9 +1129,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the ObservationDefinition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1262,8 +1147,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ObservationDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -1274,9 +1157,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ObservationDefinition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -1298,8 +1178,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A flag to indicate that this ObservationDefinition is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -1313,9 +1191,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A flag to indicate that this ObservationDefinition is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1343,8 +1218,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the ObservationDefinition changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1364,9 +1237,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the ObservationDefinition changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1388,8 +1258,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Helps establish the "authority/credibility" of the ObservationDefinition. May
      * also allow for contact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1403,9 +1271,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Helps establish the "authority/credibility" of the ObservationDefinition. May
      * also allow for contact.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1453,9 +1318,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1473,9 +1335,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1498,8 +1357,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * A free text natural language description of the ObservationDefinition from the
      * consumer's perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1517,9 +1374,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * A free text natural language description of the ObservationDefinition from the
      * consumer's perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1579,9 +1433,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate
      * ObservationDefinition instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1605,9 +1456,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate
      * ObservationDefinition instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1652,9 +1500,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the ObservationDefinition is intended to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1672,9 +1517,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the ObservationDefinition is intended to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1697,8 +1539,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Explains why this ObservationDefinition is needed and why it has been designed
      * as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1716,9 +1556,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Explains why this ObservationDefinition is needed and why it has been designed
      * as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1745,8 +1582,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * Copyright statement relating to the ObservationDefinition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the ObservationDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1765,9 +1600,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * Copyright statement relating to the ObservationDefinition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the ObservationDefinition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1790,8 +1622,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getCopyrightLabel(): null|FHIRString
     {
@@ -1806,9 +1636,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $copyrightLabel
-     * @return static
      */
     public function setCopyrightLabel(null|string|FHIRStringPrimitive|FHIRString $copyrightLabel): self
     {
@@ -1831,8 +1658,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     public function getApprovalDate(): null|FHIRDate
     {
@@ -1847,9 +1672,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $approvalDate
-     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1872,8 +1694,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     public function getLastReviewDate(): null|FHIRDate
     {
@@ -1888,9 +1708,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $lastReviewDate
-     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1912,8 +1729,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The period during which the ObservationDefinition content was or is planned to
      * be effective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -1927,9 +1742,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The period during which the ObservationDefinition content was or is planned to
      * be effective.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectivePeriod
-     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1976,9 +1788,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The canonical URL pointing to another FHIR-defined ObservationDefinition that is
      * adhered to in whole or in part by this definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $derivedFromCanonical
-     * @return static
      */
     public function addDerivedFromCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $derivedFromCanonical): self
     {
@@ -2000,9 +1809,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The canonical URL pointing to another FHIR-defined ObservationDefinition that is
      * adhered to in whole or in part by this definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$derivedFromCanonical
-     * @return static
      */
     public function setDerivedFromCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$derivedFromCanonical): self
     {
@@ -2054,9 +1860,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The URL pointing to an externally-defined observation definition, guideline or
      * other definition that is adhered to in whole or in part by this definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $derivedFromUri
-     * @return static
      */
     public function addDerivedFromUri(string|FHIRUriPrimitive|FHIRUri $derivedFromUri): self
     {
@@ -2077,9 +1880,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The URL pointing to an externally-defined observation definition, guideline or
      * other definition that is adhered to in whole or in part by this definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri ...$derivedFromUri
-     * @return static
      */
     public function setDerivedFromUri(string|FHIRUriPrimitive|FHIRUri ...$derivedFromUri): self
     {
@@ -2133,9 +1933,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * A code that describes the intended kind of subject of Observation instances
      * conforming to this ObservationDefinition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subject
-     * @return static
      */
     public function addSubject(FHIRCodeableConcept $subject): self
     {
@@ -2154,9 +1951,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * A code that describes the intended kind of subject of Observation instances
      * conforming to this ObservationDefinition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$subject
-     * @return static
      */
     public function setSubject(FHIRCodeableConcept ...$subject): self
     {
@@ -2176,8 +1970,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The type of individual/organization/device that is expected to act upon
      * instances of this definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getPerformerType(): null|FHIRCodeableConcept
     {
@@ -2192,9 +1984,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The type of individual/organization/device that is expected to act upon
      * instances of this definition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $performerType
-     * @return static
      */
     public function setPerformerType(null|FHIRCodeableConcept $performerType): self
     {
@@ -2239,9 +2028,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -2259,9 +2045,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -2281,8 +2064,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -2297,9 +2078,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -2340,9 +2118,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationDataType $permittedDataType
-     * @return static
      */
     public function addPermittedDataType(string|FHIRObservationDataTypeEnum|FHIRObservationDataType $permittedDataType): self
     {
@@ -2361,9 +2136,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRObservationDataType ...$permittedDataType
-     * @return static
      */
     public function setPermittedDataType(string|FHIRObservationDataTypeEnum|FHIRObservationDataType ...$permittedDataType): self
     {
@@ -2388,8 +2160,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Multiple results allowed for observations conforming to this
      * ObservationDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getMultipleResultsAllowed(): null|FHIRBoolean
     {
@@ -2402,9 +2172,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Multiple results allowed for observations conforming to this
      * ObservationDefinition.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $multipleResultsAllowed
-     * @return static
      */
     public function setMultipleResultsAllowed(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $multipleResultsAllowed): self
     {
@@ -2426,8 +2193,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The site on the subject's body where the observation is to be made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getBodySite(): null|FHIRCodeableConcept
     {
@@ -2441,9 +2206,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The site on the subject's body where the observation is to be made.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $bodySite
-     * @return static
      */
     public function setBodySite(null|FHIRCodeableConcept $bodySite): self
     {
@@ -2462,8 +2224,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method or technique used to perform the observation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getMethod(): null|FHIRCodeableConcept
     {
@@ -2477,9 +2237,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method or technique used to perform the observation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $method
-     * @return static
      */
     public function setMethod(null|FHIRCodeableConcept $method): self
     {
@@ -2522,9 +2279,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen that this type of observation is produced on.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $specimen
-     * @return static
      */
     public function addSpecimen(FHIRReference $specimen): self
     {
@@ -2541,9 +2295,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen that this type of observation is produced on.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$specimen
-     * @return static
      */
     public function setSpecimen(FHIRReference ...$specimen): self
     {
@@ -2588,9 +2339,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The measurement model of device or actual device used to produce observations of
      * this type.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $device
-     * @return static
      */
     public function addDevice(FHIRReference $device): self
     {
@@ -2608,9 +2356,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The measurement model of device or actual device used to produce observations of
      * this type.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$device
-     * @return static
      */
     public function setDevice(FHIRReference ...$device): self
     {
@@ -2629,8 +2374,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The preferred name to be used when reporting the results of observations
      * conforming to this ObservationDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPreferredReportName(): null|FHIRString
     {
@@ -2644,9 +2387,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * The preferred name to be used when reporting the results of observations
      * conforming to this ObservationDefinition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $preferredReportName
-     * @return static
      */
     public function setPreferredReportName(null|string|FHIRStringPrimitive|FHIRString $preferredReportName): self
     {
@@ -2694,9 +2434,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Units allowed for the valueQuantity element in the instance observations
      * conforming to this ObservationDefinition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $permittedUnit
-     * @return static
      */
     public function addPermittedUnit(FHIRCoding $permittedUnit): self
     {
@@ -2714,9 +2451,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Units allowed for the valueQuantity element in the instance observations
      * conforming to this ObservationDefinition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$permittedUnit
-     * @return static
      */
     public function setPermittedUnit(FHIRCoding ...$permittedUnit): self
     {
@@ -2761,9 +2495,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A set of qualified values associated with a context and a set of conditions -
      * provides a range for quantitative and ordinal observations and a collection of
      * value sets for qualitative observations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue $qualifiedValue
-     * @return static
      */
     public function addQualifiedValue(FHIRObservationDefinitionQualifiedValue $qualifiedValue): self
     {
@@ -2781,9 +2512,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * A set of qualified values associated with a context and a set of conditions -
      * provides a range for quantitative and ordinal observations and a collection of
      * value sets for qualitative observations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue ...$qualifiedValue
-     * @return static
      */
     public function setQualifiedValue(FHIRObservationDefinitionQualifiedValue ...$qualifiedValue): self
     {
@@ -2830,9 +2558,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * This ObservationDefinition defines a group observation (e.g. a battery, a panel
      * of tests, a set of vital sign measurements) that includes the target as a member
      * of the group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $hasMember
-     * @return static
      */
     public function addHasMember(FHIRReference $hasMember): self
     {
@@ -2851,9 +2576,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      * This ObservationDefinition defines a group observation (e.g. a battery, a panel
      * of tests, a set of vital sign measurements) that includes the target as a member
      * of the group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$hasMember
-     * @return static
      */
     public function setHasMember(FHIRReference ...$hasMember): self
     {
@@ -2896,9 +2618,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Some observations have multiple component observations, expressed as separate
      * code value pairs.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionComponent $component
-     * @return static
      */
     public function addComponent(FHIRObservationDefinitionComponent $component): self
     {
@@ -2915,9 +2634,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
      *
      * Some observations have multiple component observations, expressed as separate
      * code value pairs.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionComponent ...$component
-     * @return static
      */
     public function setComponent(FHIRObservationDefinitionComponent ...$component): self
     {
@@ -2931,10 +2647,7 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRObservationDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRObservationDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -3224,11 +2937,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -3563,10 +3271,7 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements VersionC
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRObservationDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource\FHIRMetadataResource\FHIRObservationDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

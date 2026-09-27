@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -144,8 +143,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * resource for this shape definition. It will be the same, a generality, or a
      * specificity of SubscriptionTopic.resourceTrigger.resource or
      * SubscriptionTopic.eventTrigger.resource when they are present.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $resource;
@@ -182,9 +179,7 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
     /**
      * FHIRSubscriptionTopicNotificationShape Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $resource
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $include
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $revInclude
      * @param null|string[] $fhirComments
@@ -229,8 +224,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * resource for this shape definition. It will be the same, a generality, or a
      * specificity of SubscriptionTopic.resourceTrigger.resource or
      * SubscriptionTopic.eventTrigger.resource when they are present.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getResource(): null|FHIRUri
     {
@@ -247,9 +240,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * resource for this shape definition. It will be the same, a generality, or a
      * specificity of SubscriptionTopic.resourceTrigger.resource or
      * SubscriptionTopic.eventTrigger.resource when they are present.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $resource
-     * @return static
      */
     public function setResource(null|string|FHIRUriPrimitive|FHIRUri $resource): self
     {
@@ -301,9 +291,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * SHOULD include resources listed here, if they exist and the user is authorized
      * to receive them. Clients SHOULD be prepared to receive these additional
      * resources, but SHALL function properly without them.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $include
-     * @return static
      */
     public function addInclude(string|FHIRStringPrimitive|FHIRString $include): self
     {
@@ -326,9 +313,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * SHOULD include resources listed here, if they exist and the user is authorized
      * to receive them. Clients SHOULD be prepared to receive these additional
      * resources, but SHALL function properly without them.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$include
-     * @return static
      */
     public function setInclude(string|FHIRStringPrimitive|FHIRString ...$include): self
     {
@@ -384,9 +368,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * Servers SHOULD include resources listed here, if they exist and the user is
      * authorized to receive them. Clients SHOULD be prepared to receive these
      * additional resources, but SHALL function properly without them.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $revInclude
-     * @return static
      */
     public function addRevInclude(string|FHIRStringPrimitive|FHIRString $revInclude): self
     {
@@ -409,9 +390,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * Servers SHOULD include resources listed here, if they exist and the user is
      * authorized to receive them. Clients SHOULD be prepared to receive these
      * additional resources, but SHALL function properly without them.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$revInclude
-     * @return static
      */
     public function setRevInclude(string|FHIRStringPrimitive|FHIRString ...$revInclude): self
     {
@@ -432,10 +410,7 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicNotificationShape $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicNotificationShape
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -491,10 +466,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -526,10 +497,7 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicNotificationShape $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicNotificationShape
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

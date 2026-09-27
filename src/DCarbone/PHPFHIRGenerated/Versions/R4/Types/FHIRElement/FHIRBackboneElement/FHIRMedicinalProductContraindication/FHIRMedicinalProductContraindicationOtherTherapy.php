@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -123,8 +122,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * The type of relationship between the medicinal product indication or
      * contraindication and another therapy.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $therapyRelationshipType;
@@ -136,8 +133,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $medicationCodeableConcept;
@@ -148,8 +143,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $medicationReference;
@@ -158,11 +151,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
     /**
      * FHIRMedicinalProductContraindicationOtherTherapy Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $therapyRelationshipType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $medicationReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -203,8 +192,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * The type of relationship between the medicinal product indication or
      * contraindication and another therapy.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getTherapyRelationshipType(): null|FHIRCodeableConcept
     {
@@ -219,9 +206,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * The type of relationship between the medicinal product indication or
      * contraindication and another therapy.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $therapyRelationshipType
-     * @return static
      */
     public function setTherapyRelationshipType(null|FHIRCodeableConcept $therapyRelationshipType): self
     {
@@ -241,8 +225,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMedicationCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -257,9 +239,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
-     * @return static
      */
     public function setMedicationCodeableConcept(null|FHIRCodeableConcept $medicationCodeableConcept): self
     {
@@ -278,8 +257,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getMedicationReference(): null|FHIRReference
     {
@@ -293,9 +270,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      *
      * Reference to a specific medication (active substance, medicinal product or class
      * of products) as part of an indication or contraindication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $medicationReference
-     * @return static
      */
     public function setMedicationReference(null|FHIRReference $medicationReference): self
     {
@@ -309,10 +283,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -360,10 +331,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -386,10 +353,7 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

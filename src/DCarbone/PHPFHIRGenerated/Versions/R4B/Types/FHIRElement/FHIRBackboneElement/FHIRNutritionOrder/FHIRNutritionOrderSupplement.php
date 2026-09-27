@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -140,8 +140,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * The kind of nutritional supplement product required such as a high protein or
      * pediatric clear liquid supplement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -152,8 +150,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * The product or brand name of the nutritional supplement such as "Acme Protein
      * Shake".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $productName;
@@ -182,8 +178,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of the nutritional supplement to be given.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -194,8 +188,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * Free text or additional instructions or information pertaining to the oral
      * supplement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $instruction;
@@ -204,13 +196,8 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
     /**
      * FHIRNutritionOrderSupplement Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $productName
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming> $schedule
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $instruction
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -259,8 +246,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * The kind of nutritional supplement product required such as a high protein or
      * pediatric clear liquid supplement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -275,9 +260,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * The kind of nutritional supplement product required such as a high protein or
      * pediatric clear liquid supplement.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -296,8 +278,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * The product or brand name of the nutritional supplement such as "Acme Protein
      * Shake".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getProductName(): null|FHIRString
     {
@@ -311,9 +291,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * The product or brand name of the nutritional supplement such as "Acme Protein
      * Shake".
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $productName
-     * @return static
      */
     public function setProductName(null|string|FHIRStringPrimitive|FHIRString $productName): self
     {
@@ -371,9 +348,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * The time period and frequency at which the supplement(s) should be given. The
      * supplement should be given for the combination of all schedules if more than one
      * schedule is present.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $schedule
-     * @return static
      */
     public function addSchedule(FHIRTiming $schedule): self
     {
@@ -396,9 +370,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * The time period and frequency at which the supplement(s) should be given. The
      * supplement should be given for the combination of all schedules if more than one
      * schedule is present.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming ...$schedule
-     * @return static
      */
     public function setSchedule(FHIRTiming ...$schedule): self
     {
@@ -418,8 +389,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of the nutritional supplement to be given.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -434,9 +403,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of the nutritional supplement to be given.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -455,8 +421,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * Free text or additional instructions or information pertaining to the oral
      * supplement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getInstruction(): null|FHIRString
     {
@@ -470,9 +434,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * Free text or additional instructions or information pertaining to the oral
      * supplement.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $instruction
-     * @return static
      */
     public function setInstruction(null|string|FHIRStringPrimitive|FHIRString $instruction): self
     {
@@ -489,10 +450,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -560,10 +518,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -608,10 +562,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

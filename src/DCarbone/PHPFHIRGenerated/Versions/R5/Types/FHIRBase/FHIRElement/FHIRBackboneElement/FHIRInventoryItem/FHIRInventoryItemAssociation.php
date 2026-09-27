@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -145,8 +144,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * This attribute defined the type of association when establishing associations or
      * relations between items, e.g. 'packaged within' or 'used with' or 'to be mixed
      * with.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $associationType;
@@ -156,8 +153,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The related item or product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $relatedItem;
@@ -172,8 +167,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * example a value of 20 means that this product contains 20 units of the related
      * product; a value of 1:20 means the inverse - that the contained product contains
      * 20 units of the present product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $quantity;
@@ -182,11 +175,7 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
     /**
      * FHIRInventoryItemAssociation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $associationType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $relatedItem
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $quantity
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -228,8 +217,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * This attribute defined the type of association when establishing associations or
      * relations between items, e.g. 'packaged within' or 'used with' or 'to be mixed
      * with.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getAssociationType(): null|FHIRCodeableConcept
     {
@@ -245,9 +232,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * This attribute defined the type of association when establishing associations or
      * relations between items, e.g. 'packaged within' or 'used with' or 'to be mixed
      * with.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $associationType
-     * @return static
      */
     public function setAssociationType(null|FHIRCodeableConcept $associationType): self
     {
@@ -265,8 +249,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The related item or product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getRelatedItem(): null|FHIRReference
     {
@@ -279,9 +261,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The related item or product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $relatedItem
-     * @return static
      */
     public function setRelatedItem(null|FHIRReference $relatedItem): self
     {
@@ -304,8 +283,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * example a value of 20 means that this product contains 20 units of the related
      * product; a value of 1:20 means the inverse - that the contained product contains
      * 20 units of the present product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     public function getQuantity(): null|FHIRRatio
     {
@@ -323,9 +300,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * example a value of 20 means that this product contains 20 units of the related
      * product; a value of 1:20 means the inverse - that the contained product contains
      * 20 units of the present product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRRatio $quantity): self
     {
@@ -339,10 +313,7 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -390,10 +361,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -416,10 +383,7 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

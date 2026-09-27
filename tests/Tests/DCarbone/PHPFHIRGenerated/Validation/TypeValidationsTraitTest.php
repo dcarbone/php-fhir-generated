@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -26,11 +26,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Validation;
  *
  */
 
-use DCarbone\PHPFHIRGenerated\Validation\Rules\MaxOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMaxLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueMinLengthRule;
-use DCarbone\PHPFHIRGenerated\Validation\Rules\ValueOneOfRule;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\ValuePatternMatchRule;
 use Tests\DCarbone\PHPFHIRGenerated\Mock\MockElementType;
 use Tests\DCarbone\PHPFHIRGenerated\Mock\MockPrimitiveContainerType;

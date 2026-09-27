@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -108,7 +106,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
@@ -178,8 +175,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
      * to the EventDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $eventCoding;
@@ -192,8 +187,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
      * to the EventDefinition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $eventUri;
@@ -215,8 +208,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the sending system to allow the use of a trust relationship.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $sender;
@@ -228,8 +219,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The person or device that performed the data entry leading to this message. When
      * there is more than one candidate, pick the most proximal to the message. Can
      * provide other enterers in extensions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $enterer;
@@ -241,8 +230,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The logical author of the message - the person or device that decided the
      * described event should happen. When there is more than one candidate, pick the
      * most proximal to the MessageHeader. Can provide other authors in extensions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $author;
@@ -253,8 +240,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the MessageHeader resource instance is the first resource in the bundle.
      *
      * The source application from which this message originated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource
      */
     #[FHIRMessageHeaderSource]
     protected FHIRMessageHeaderSource $source;
@@ -266,8 +251,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The person or organization that accepts overall responsibility for the contents
      * of the message. The implication is that the message event happened under the
      * policies of the responsible party.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $responsible;
@@ -279,8 +262,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Coded indication of the cause for the event - indicates a reason for the
      * occurrence of the event that is a focus of this message.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reason;
@@ -292,8 +273,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Information about the message that this message is a response to. Only present
      * if this message is a response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
      */
     #[FHIRMessageHeaderResponse]
     protected FHIRMessageHeaderResponse $response;
@@ -316,8 +295,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * Permanent link to the MessageDefinition for this message.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $definition;
@@ -325,26 +302,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
     /* constructor.php:61 */
     /**
      * FHIRMessageHeader Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $eventCoding
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $eventUri
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination> $destination
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $sender
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $enterer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $author
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource $source
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $responsible
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse $response
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $focus
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $definition
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -438,8 +400,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
      * to the EventDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding
      */
     public function getEventCoding(): null|FHIRCoding
     {
@@ -455,9 +415,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
      * to the EventDefinition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $eventCoding
-     * @return static
      */
     public function setEventCoding(null|FHIRCoding $eventCoding): self
     {
@@ -478,8 +435,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
      * to the EventDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getEventUri(): null|FHIRUri
     {
@@ -495,9 +450,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://terminology.hl7.org/CodeSystem/message-events". Alternatively uri
      * to the EventDefinition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $eventUri
-     * @return static
      */
     public function setEventUri(null|string|FHIRUriPrimitive|FHIRUri $eventUri): self
     {
@@ -545,9 +497,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the MessageHeader resource instance is the first resource in the bundle.
      *
      * The destination application which the message is intended for.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination $destination
-     * @return static
      */
     public function addDestination(FHIRMessageHeaderDestination $destination): self
     {
@@ -565,9 +514,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the MessageHeader resource instance is the first resource in the bundle.
      *
      * The destination application which the message is intended for.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination ...$destination
-     * @return static
      */
     public function setDestination(FHIRMessageHeaderDestination ...$destination): self
     {
@@ -585,8 +531,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the sending system to allow the use of a trust relationship.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getSender(): null|FHIRReference
     {
@@ -599,9 +543,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the sending system to allow the use of a trust relationship.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $sender
-     * @return static
      */
     public function setSender(null|FHIRReference $sender): self
     {
@@ -621,8 +562,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The person or device that performed the data entry leading to this message. When
      * there is more than one candidate, pick the most proximal to the message. Can
      * provide other enterers in extensions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getEnterer(): null|FHIRReference
     {
@@ -637,9 +576,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The person or device that performed the data entry leading to this message. When
      * there is more than one candidate, pick the most proximal to the message. Can
      * provide other enterers in extensions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $enterer
-     * @return static
      */
     public function setEnterer(null|FHIRReference $enterer): self
     {
@@ -659,8 +595,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The logical author of the message - the person or device that decided the
      * described event should happen. When there is more than one candidate, pick the
      * most proximal to the MessageHeader. Can provide other authors in extensions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getAuthor(): null|FHIRReference
     {
@@ -675,9 +609,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The logical author of the message - the person or device that decided the
      * described event should happen. When there is more than one candidate, pick the
      * most proximal to the MessageHeader. Can provide other authors in extensions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $author
-     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -696,8 +627,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the MessageHeader resource instance is the first resource in the bundle.
      *
      * The source application from which this message originated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource
      */
     public function getSource(): null|FHIRMessageHeaderSource
     {
@@ -711,9 +640,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the MessageHeader resource instance is the first resource in the bundle.
      *
      * The source application from which this message originated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource $source
-     * @return static
      */
     public function setSource(null|FHIRMessageHeaderSource $source): self
     {
@@ -733,8 +659,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The person or organization that accepts overall responsibility for the contents
      * of the message. The implication is that the message event happened under the
      * policies of the responsible party.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getResponsible(): null|FHIRReference
     {
@@ -749,9 +673,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * The person or organization that accepts overall responsibility for the contents
      * of the message. The implication is that the message event happened under the
      * policies of the responsible party.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $responsible
-     * @return static
      */
     public function setResponsible(null|FHIRReference $responsible): self
     {
@@ -771,8 +692,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Coded indication of the cause for the event - indicates a reason for the
      * occurrence of the event that is a focus of this message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReason(): null|FHIRCodeableConcept
     {
@@ -787,9 +706,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Coded indication of the cause for the event - indicates a reason for the
      * occurrence of the event that is a focus of this message.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $reason
-     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -809,8 +725,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Information about the message that this message is a response to. Only present
      * if this message is a response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
      */
     public function getResponse(): null|FHIRMessageHeaderResponse
     {
@@ -825,9 +739,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * Information about the message that this message is a response to. Only present
      * if this message is a response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse $response
-     * @return static
      */
     public function setResponse(null|FHIRMessageHeaderResponse $response): self
     {
@@ -872,9 +783,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * The actual data of the message - a reference to the root/focus class of the
      * event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $focus
-     * @return static
      */
     public function addFocus(FHIRReference $focus): self
     {
@@ -892,9 +800,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      *
      * The actual data of the message - a reference to the root/focus class of the
      * event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$focus
-     * @return static
      */
     public function setFocus(FHIRReference ...$focus): self
     {
@@ -913,8 +818,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * Permanent link to the MessageDefinition for this message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     public function getDefinition(): null|FHIRCanonical
     {
@@ -928,9 +831,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * Permanent link to the MessageDefinition for this message.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $definition
-     * @return static
      */
     public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition): self
     {
@@ -947,10 +847,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMessageHeader $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMessageHeader
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1068,11 +965,6 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1178,10 +1070,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMessageHeader $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMessageHeader
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

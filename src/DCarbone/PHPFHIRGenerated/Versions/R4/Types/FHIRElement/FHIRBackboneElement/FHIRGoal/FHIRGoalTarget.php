@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $measure;
@@ -156,8 +154,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $detailQuantity;
@@ -172,8 +168,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $detailRange;
@@ -189,8 +183,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $detailCodeableConcept;
@@ -205,8 +197,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $detailString;
@@ -220,8 +210,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $detailBoolean;
@@ -236,8 +224,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $detailInteger;
@@ -253,8 +239,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $detailRatio;
@@ -266,8 +250,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $dueDate;
@@ -278,8 +260,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $dueDuration;
@@ -288,18 +268,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
     /**
      * FHIRGoalTarget Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $measure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $detailQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $detailRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $detailString
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $detailBoolean
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $detailInteger
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $detailRatio
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $dueDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -368,8 +337,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMeasure(): null|FHIRCodeableConcept
     {
@@ -384,9 +351,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $measure
-     * @return static
      */
     public function setMeasure(null|FHIRCodeableConcept $measure): self
     {
@@ -411,8 +375,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     public function getDetailQuantity(): null|FHIRQuantity
     {
@@ -432,9 +394,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $detailQuantity
-     * @return static
      */
     public function setDetailQuantity(null|FHIRQuantity $detailQuantity): self
     {
@@ -457,8 +416,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     public function getDetailRange(): null|FHIRRange
     {
@@ -476,9 +433,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $detailRange
-     * @return static
      */
     public function setDetailRange(null|FHIRRange $detailRange): self
     {
@@ -502,8 +456,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDetailCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -522,9 +474,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
-     * @return static
      */
     public function setDetailCodeableConcept(null|FHIRCodeableConcept $detailCodeableConcept): self
     {
@@ -547,8 +496,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDetailString(): null|FHIRString
     {
@@ -566,9 +513,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $detailString
-     * @return static
      */
     public function setDetailString(null|string|FHIRStringPrimitive|FHIRString $detailString): self
     {
@@ -593,8 +537,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getDetailBoolean(): null|FHIRBoolean
     {
@@ -611,9 +553,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $detailBoolean
-     * @return static
      */
     public function setDetailBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $detailBoolean): self
     {
@@ -639,8 +578,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getDetailInteger(): null|FHIRInteger
     {
@@ -658,9 +595,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $detailInteger
-     * @return static
      */
     public function setDetailInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $detailInteger): self
     {
@@ -687,8 +621,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio
      */
     public function getDetailRatio(): null|FHIRRatio
     {
@@ -707,9 +639,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * achieved at any focus value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any focus value at
      * or above the low value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRatio $detailRatio
-     * @return static
      */
     public function setDetailRatio(null|FHIRRatio $detailRatio): self
     {
@@ -729,8 +658,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     public function getDueDate(): null|FHIRDate
     {
@@ -745,9 +672,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $dueDate
-     * @return static
      */
     public function setDueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $dueDate): self
     {
@@ -769,8 +693,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDueDuration(): null|FHIRDuration
     {
@@ -784,9 +706,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * Indicates either the date or the duration after start by which the goal should
      * be met.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
-     * @return static
      */
     public function setDueDuration(null|FHIRDuration $dueDuration): self
     {
@@ -800,10 +719,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -897,10 +813,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -978,10 +890,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

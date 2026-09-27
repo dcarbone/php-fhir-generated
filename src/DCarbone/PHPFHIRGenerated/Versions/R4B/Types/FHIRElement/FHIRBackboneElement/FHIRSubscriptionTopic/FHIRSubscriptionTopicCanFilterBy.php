@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -155,8 +154,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of how this filtering parameter is intended to be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -169,8 +166,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * the topic (or one of them if there are more than one). It will be the same, a
      * generality, or a specificity of SubscriptionTopic.resourceTrigger.resource or
      * SubscriptionTopic.eventTrigger.resource when they are present.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $resource;
@@ -182,8 +177,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * Either the canonical URL to a search parameter (like
      * "http://hl7.org/fhir/SearchParameter/encounter-patient") or topic-defined
      * parameter (like "hub.event") which is a label for the filter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $filterParameter;
@@ -196,8 +189,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * "http://hl7.org/fhir/SearchParameter/encounter-patient") or the
      * officially-defined URI for a shared filter concept (like
      * "http://example.org/concepts/shared-common-event").
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $filterDefinition;
@@ -220,12 +211,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
     /**
      * FHIRSubscriptionTopicCanFilterBy Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $resource
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $filterParameter
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $filterDefinition
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode> $modifier
      * @param null|string[] $fhirComments
      */
@@ -277,8 +263,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of how this filtering parameter is intended to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -295,9 +279,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of how this filtering parameter is intended to be used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -321,8 +302,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * the topic (or one of them if there are more than one). It will be the same, a
      * generality, or a specificity of SubscriptionTopic.resourceTrigger.resource or
      * SubscriptionTopic.eventTrigger.resource when they are present.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getResource(): null|FHIRUri
     {
@@ -338,9 +317,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * the topic (or one of them if there are more than one). It will be the same, a
      * generality, or a specificity of SubscriptionTopic.resourceTrigger.resource or
      * SubscriptionTopic.eventTrigger.resource when they are present.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $resource
-     * @return static
      */
     public function setResource(null|string|FHIRUriPrimitive|FHIRUri $resource): self
     {
@@ -363,8 +339,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * Either the canonical URL to a search parameter (like
      * "http://hl7.org/fhir/SearchParameter/encounter-patient") or topic-defined
      * parameter (like "hub.event") which is a label for the filter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getFilterParameter(): null|FHIRString
     {
@@ -379,9 +353,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * Either the canonical URL to a search parameter (like
      * "http://hl7.org/fhir/SearchParameter/encounter-patient") or topic-defined
      * parameter (like "hub.event") which is a label for the filter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $filterParameter
-     * @return static
      */
     public function setFilterParameter(null|string|FHIRStringPrimitive|FHIRString $filterParameter): self
     {
@@ -405,8 +376,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * "http://hl7.org/fhir/SearchParameter/encounter-patient") or the
      * officially-defined URI for a shared filter concept (like
      * "http://example.org/concepts/shared-common-event").
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getFilterDefinition(): null|FHIRUri
     {
@@ -422,9 +391,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * "http://hl7.org/fhir/SearchParameter/encounter-patient") or the
      * officially-defined URI for a shared filter concept (like
      * "http://example.org/concepts/shared-common-event").
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $filterDefinition
-     * @return static
      */
     public function setFilterDefinition(null|string|FHIRUriPrimitive|FHIRUri $filterDefinition): self
     {
@@ -476,9 +442,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * Allowable operators to apply when determining matches (Search Modifiers). If the
      * filterParameter is a SearchParameter, this list of modifiers SHALL be a strict
      * subset of the modifiers defined on that SearchParameter.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $modifier
-     * @return static
      */
     public function addModifier(string|FHIRCodePrimitive|FHIRCode $modifier): self
     {
@@ -501,9 +464,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * Allowable operators to apply when determining matches (Search Modifiers). If the
      * filterParameter is a SearchParameter, this list of modifiers SHALL be a strict
      * subset of the modifiers defined on that SearchParameter.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode ...$modifier
-     * @return static
      */
     public function setModifier(string|FHIRCodePrimitive|FHIRCode ...$modifier): self
     {
@@ -524,10 +484,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -611,10 +568,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -669,10 +622,7 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

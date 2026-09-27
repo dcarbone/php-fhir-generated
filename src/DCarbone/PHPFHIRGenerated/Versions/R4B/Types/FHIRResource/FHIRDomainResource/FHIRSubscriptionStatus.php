@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -110,7 +108,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionNot
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -171,8 +168,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      *
      * The status of the subscription, which marks the server state for managing the
      * subscription.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes
      */
     #[FHIRSubscriptionStatusCodes]
     protected FHIRSubscriptionStatusCodes $status;
@@ -180,8 +175,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of event being conveyed with this notificaiton.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionNotificationType
      */
     #[FHIRSubscriptionNotificationType]
     protected FHIRSubscriptionNotificationType $type;
@@ -194,8 +187,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * Subscription was created (inclusive of this notification) - regardless of how
      * many have been successfully communicated. This number is NOT incremented for
      * handshake and heartbeat notifications.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $eventsSinceSubscriptionStart;
@@ -215,8 +206,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the Subscription which generated this notification.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subscription;
@@ -228,8 +217,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      *
      * The reference to the SubscriptionTopic for the Subscription which generated this
      * notification.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $topic;
@@ -249,20 +236,10 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
     /* constructor.php:61 */
     /**
      * FHIRSubscriptionStatus Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionNotificationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionNotificationType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $eventsSinceSubscriptionStart
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent> $notificationEvent
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $subscription
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $topic
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $error
      * @param null|string[] $fhirComments
      */
@@ -333,8 +310,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      *
      * The status of the subscription, which marks the server state for managing the
      * subscription.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes
      */
     public function getStatus(): null|FHIRSubscriptionStatusCodes
     {
@@ -346,9 +321,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      *
      * The status of the subscription, which marks the server state for managing the
      * subscription.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes $status
-     * @return static
      */
     public function setStatus(null|string|FHIRSubscriptionStatusCodesEnum|FHIRSubscriptionStatusCodes $status): self
     {
@@ -367,8 +339,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of event being conveyed with this notificaiton.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionNotificationType
      */
     public function getType(): null|FHIRSubscriptionNotificationType
     {
@@ -379,9 +349,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of event being conveyed with this notificaiton.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionNotificationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionNotificationType $type
-     * @return static
      */
     public function setType(null|string|FHIRSubscriptionNotificationTypeEnum|FHIRSubscriptionNotificationType $type): self
     {
@@ -405,8 +372,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * Subscription was created (inclusive of this notification) - regardless of how
      * many have been successfully communicated. This number is NOT incremented for
      * handshake and heartbeat notifications.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getEventsSinceSubscriptionStart(): null|FHIRString
     {
@@ -422,9 +387,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * Subscription was created (inclusive of this notification) - regardless of how
      * many have been successfully communicated. This number is NOT incremented for
      * handshake and heartbeat notifications.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $eventsSinceSubscriptionStart
-     * @return static
      */
     public function setEventsSinceSubscriptionStart(null|string|FHIRStringPrimitive|FHIRString $eventsSinceSubscriptionStart): self
     {
@@ -468,9 +430,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * notifications.
      *
      * Detailed information about events relevant to this subscription notification.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent $notificationEvent
-     * @return static
      */
     public function addNotificationEvent(FHIRSubscriptionStatusNotificationEvent $notificationEvent): self
     {
@@ -486,9 +445,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * notifications.
      *
      * Detailed information about events relevant to this subscription notification.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent ...$notificationEvent
-     * @return static
      */
     public function setNotificationEvent(FHIRSubscriptionStatusNotificationEvent ...$notificationEvent): self
     {
@@ -506,8 +462,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the Subscription which generated this notification.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getSubscription(): null|FHIRReference
     {
@@ -520,9 +474,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the Subscription which generated this notification.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $subscription
-     * @return static
      */
     public function setSubscription(null|FHIRReference $subscription): self
     {
@@ -542,8 +493,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      *
      * The reference to the SubscriptionTopic for the Subscription which generated this
      * notification.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     public function getTopic(): null|FHIRCanonical
     {
@@ -558,9 +507,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      *
      * The reference to the SubscriptionTopic for the Subscription which generated this
      * notification.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $topic
-     * @return static
      */
     public function setTopic(null|string|FHIRCanonicalPrimitive|FHIRCanonical $topic): self
     {
@@ -608,9 +554,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A record of errors that occurred when the server processed a notification.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $error
-     * @return static
      */
     public function addError(FHIRCodeableConcept $error): self
     {
@@ -628,9 +571,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A record of errors that occurred when the server processed a notification.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$error
-     * @return static
      */
     public function setError(FHIRCodeableConcept ...$error): self
     {
@@ -644,10 +584,7 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubscriptionStatus $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubscriptionStatus
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -771,11 +708,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -866,10 +798,7 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubscriptionStatus $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSubscriptionStatus
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

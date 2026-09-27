@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -118,8 +117,6 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is being ordered of the indicated item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -132,8 +129,6 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $itemCodeableConcept;
@@ -145,8 +140,6 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $itemReference;
@@ -155,11 +148,7 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
     /**
      * FHIRSupplyRequestOrderedItem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $itemReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -200,8 +189,6 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is being ordered of the indicated item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -216,9 +203,6 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is being ordered of the indicated item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -239,8 +223,6 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getItemCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -256,9 +238,6 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
-     * @return static
      */
     public function setItemCodeableConcept(null|FHIRCodeableConcept $itemCodeableConcept): self
     {
@@ -278,8 +257,6 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getItemReference(): null|FHIRReference
     {
@@ -294,9 +271,6 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $itemReference
-     * @return static
      */
     public function setItemReference(null|FHIRReference $itemReference): self
     {
@@ -310,10 +284,7 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -361,10 +332,6 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -387,10 +354,7 @@ class FHIRSupplyRequestOrderedItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

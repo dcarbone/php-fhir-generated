@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -31,16 +31,12 @@ use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 
 class VersionConfig implements VersionConfigInterface
 {
-    /** @var \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig */
     private UnserializeConfig $_unserializeConfig;
 
-    /** @var \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig */
     private SerializeConfig $_serializeConfig;
 
     /**
      * VersionConfig constructor.
-     * @param null|array|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $serializeConfig
-     * @param null|array|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $unserializeConfig
      */
     public function __construct(null|array|UnserializeConfig $unserializeConfig = null,
                                 null|array|SerializeConfig $serializeConfig = null)
@@ -55,10 +51,6 @@ class VersionConfig implements VersionConfigInterface
         $this->setSerializeConfig($serializeConfig);
     }
 
-    /**
-     * @param array|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
-     * @return self
-     */
     public function setUnserializeConfig(array|UnserializeConfig $config): self
     {
         if (is_array($config)) {
@@ -72,18 +64,11 @@ class VersionConfig implements VersionConfigInterface
         return $this;
     }
 
-    /**
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig
-     */
     public function getUnserializeConfig(): UnserializeConfig
     {
         return $this->_unserializeConfig;
     }
 
-    /**
-     * @param array|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return self
-     */
     public function setSerializeConfig(array|SerializeConfig $config): self
     {
         if (is_array($config)) {
@@ -97,9 +82,6 @@ class VersionConfig implements VersionConfigInterface
         return $this;
     }
 
-    /**
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig
-     */
     public function getSerializeConfig(): SerializeConfig
     {
         return $this->_serializeConfig;

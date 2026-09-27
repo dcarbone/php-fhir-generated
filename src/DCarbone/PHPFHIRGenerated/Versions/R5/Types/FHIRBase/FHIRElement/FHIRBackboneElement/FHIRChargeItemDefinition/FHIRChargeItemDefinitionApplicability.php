@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * satisfied. When using FHIRPath expressions, the %context environment variable
      * must be replaced at runtime with the ChargeItem resource to which this
      * definition is applied.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     #[FHIRExpression]
     protected FHIRExpression $condition;
@@ -150,8 +148,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * The period during which the charge item definition content was or is planned to
      * be in active use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -162,8 +158,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to / quotation of the external source of the group of properties.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
      */
     #[FHIRRelatedArtifact]
     protected FHIRRelatedArtifact $relatedArtifact;
@@ -172,11 +166,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     /**
      * FHIRChargeItemDefinitionApplicability Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $condition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectivePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $relatedArtifact
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -220,8 +210,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * satisfied. When using FHIRPath expressions, the %context environment variable
      * must be replaced at runtime with the ChargeItem resource to which this
      * definition is applied.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     public function getCondition(): null|FHIRExpression
     {
@@ -239,9 +227,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * satisfied. When using FHIRPath expressions, the %context environment variable
      * must be replaced at runtime with the ChargeItem resource to which this
      * definition is applied.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression $condition
-     * @return static
      */
     public function setCondition(null|FHIRExpression $condition): self
     {
@@ -260,8 +245,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * The period during which the charge item definition content was or is planned to
      * be in active use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -275,9 +258,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * The period during which the charge item definition content was or is planned to
      * be in active use.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectivePeriod
-     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -296,8 +276,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to / quotation of the external source of the group of properties.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
      */
     public function getRelatedArtifact(): null|FHIRRelatedArtifact
     {
@@ -311,9 +289,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to / quotation of the external source of the group of properties.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $relatedArtifact
-     * @return static
      */
     public function setRelatedArtifact(null|FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -327,10 +302,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -378,10 +350,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -404,10 +372,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

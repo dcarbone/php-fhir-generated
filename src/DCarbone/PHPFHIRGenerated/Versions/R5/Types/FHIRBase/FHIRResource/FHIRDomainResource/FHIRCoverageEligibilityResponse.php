@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -119,7 +117,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFinancialR
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -220,8 +217,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     #[FHIRFinancialResourceStatusCodes]
     protected FHIRFinancialResourceStatusCodes $status;
@@ -245,8 +240,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * The party who is the beneficiary of the supplied coverage and for whom
      * eligibility is sought.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -267,9 +260,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * completed.
      */
     #[FHIRDate]
     protected FHIRDate $servicedDate;
@@ -279,9 +270,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * completed.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $servicedPeriod;
@@ -295,8 +284,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $created;
@@ -306,8 +293,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $requestor;
@@ -317,8 +302,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the original request resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $request;
@@ -326,8 +309,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The outcome of the request processing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityOutcome
      */
     #[FHIREligibilityOutcome]
     protected FHIREligibilityOutcome $outcome;
@@ -337,8 +318,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human readable description of the status of the adjudication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $disposition;
@@ -349,8 +328,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * The Insurer who issued the coverage in question and is the author of the
      * response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $insurer;
@@ -372,8 +349,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * A reference from the Insurer to which these services pertain to be used on
      * further communication and as proof that the request occurred.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $preAuthRef;
@@ -384,8 +359,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code for the form to be used for printing the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $form;
@@ -403,30 +376,13 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
     /* constructor.php:61 */
     /**
      * FHIRCoverageEligibilityResponse Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREligibilityResponsePurposeEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityResponsePurpose> $purpose
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseEvent> $event
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $servicedDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $servicedPeriod
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $created
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $requestor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $request
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREligibilityOutcomeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityOutcome $outcome
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $disposition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $insurer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance> $insurance
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $preAuthRef
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $form
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseError> $error
      * @param null|string[] $fhirComments
      */
@@ -565,9 +521,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this coverage eligiblity request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -585,9 +538,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this coverage eligiblity request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -603,8 +553,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus(): null|FHIRFinancialResourceStatusCodes
     {
@@ -615,9 +563,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
-     * @return static
      */
     public function setStatus(null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status): self
     {
@@ -667,9 +612,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * discovered; discovery and return of coverages for the patient; and/or validation
      * that the specified coverage is in-force at the date/period specified or 'now' if
      * not specified.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREligibilityResponsePurposeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityResponsePurpose $purpose
-     * @return static
      */
     public function addPurpose(string|FHIREligibilityResponsePurposeEnum|FHIREligibilityResponsePurpose $purpose): self
     {
@@ -691,9 +633,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * discovered; discovery and return of coverages for the patient; and/or validation
      * that the specified coverage is in-force at the date/period specified or 'now' if
      * not specified.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREligibilityResponsePurposeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityResponsePurpose ...$purpose
-     * @return static
      */
     public function setPurpose(string|FHIREligibilityResponsePurposeEnum|FHIREligibilityResponsePurpose ...$purpose): self
     {
@@ -719,8 +658,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * The party who is the beneficiary of the supplied coverage and for whom
      * eligibility is sought.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -734,9 +671,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * The party who is the beneficiary of the supplied coverage and for whom
      * eligibility is sought.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -777,9 +711,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * CoverageEligibilityRequest resource.
      *
      * Information code for an event with a corresponding date or period.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseEvent $event
-     * @return static
      */
     public function addEvent(FHIRCoverageEligibilityResponseEvent $event): self
     {
@@ -795,9 +726,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * CoverageEligibilityRequest resource.
      *
      * Information code for an event with a corresponding date or period.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseEvent ...$event
-     * @return static
      */
     public function setEvent(FHIRCoverageEligibilityResponseEvent ...$event): self
     {
@@ -816,9 +744,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * completed.
      */
     public function getServicedDate(): null|FHIRDate
     {
@@ -832,10 +758,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $servicedDate
-     * @return static
+     * completed.
      */
     public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate): self
     {
@@ -856,9 +779,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * completed.
      */
     public function getServicedPeriod(): null|FHIRPeriod
     {
@@ -871,10 +792,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or dates when the enclosed suite of services were performed or
-     * completed. (choose any one of serviced*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $servicedPeriod
-     * @return static
+     * completed.
      */
     public function setServicedPeriod(null|FHIRPeriod $servicedPeriod): self
     {
@@ -896,8 +814,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getCreated(): null|FHIRDateTime
     {
@@ -914,9 +830,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $created
-     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -937,8 +850,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getRequestor(): null|FHIRReference
     {
@@ -951,9 +862,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the request.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $requestor
-     * @return static
      */
     public function setRequestor(null|FHIRReference $requestor): self
     {
@@ -971,8 +879,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the original request resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getRequest(): null|FHIRReference
     {
@@ -985,9 +891,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the original request resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $request
-     * @return static
      */
     public function setRequest(null|FHIRReference $request): self
     {
@@ -1003,8 +906,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The outcome of the request processing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityOutcome
      */
     public function getOutcome(): null|FHIREligibilityOutcome
     {
@@ -1015,9 +916,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The outcome of the request processing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREligibilityOutcomeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityOutcome $outcome
-     * @return static
      */
     public function setOutcome(null|string|FHIREligibilityOutcomeEnum|FHIREligibilityOutcome $outcome): self
     {
@@ -1038,8 +936,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human readable description of the status of the adjudication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDisposition(): null|FHIRString
     {
@@ -1052,9 +948,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human readable description of the status of the adjudication.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $disposition
-     * @return static
      */
     public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition): self
     {
@@ -1076,8 +969,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * The Insurer who issued the coverage in question and is the author of the
      * response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getInsurer(): null|FHIRReference
     {
@@ -1091,9 +982,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * The Insurer who issued the coverage in question and is the author of the
      * response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $insurer
-     * @return static
      */
     public function setInsurer(null|FHIRReference $insurer): self
     {
@@ -1136,9 +1024,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * Financial instruments for reimbursement for the health care products and
      * services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance $insurance
-     * @return static
      */
     public function addInsurance(FHIRCoverageEligibilityResponseInsurance $insurance): self
     {
@@ -1155,9 +1040,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * Financial instruments for reimbursement for the health care products and
      * services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance ...$insurance
-     * @return static
      */
     public function setInsurance(FHIRCoverageEligibilityResponseInsurance ...$insurance): self
     {
@@ -1176,8 +1058,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * A reference from the Insurer to which these services pertain to be used on
      * further communication and as proof that the request occurred.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPreAuthRef(): null|FHIRString
     {
@@ -1191,9 +1071,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      *
      * A reference from the Insurer to which these services pertain to be used on
      * further communication and as proof that the request occurred.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $preAuthRef
-     * @return static
      */
     public function setPreAuthRef(null|string|FHIRStringPrimitive|FHIRString $preAuthRef): self
     {
@@ -1215,8 +1092,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code for the form to be used for printing the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getForm(): null|FHIRCodeableConcept
     {
@@ -1230,9 +1105,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code for the form to be used for printing the content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $form
-     * @return static
      */
     public function setForm(null|FHIRCodeableConcept $form): self
     {
@@ -1273,9 +1145,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * CoverageEligibilityRequest resource.
      *
      * Errors encountered during the processing of the request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseError $error
-     * @return static
      */
     public function addError(FHIRCoverageEligibilityResponseError $error): self
     {
@@ -1291,9 +1160,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
      * CoverageEligibilityRequest resource.
      *
      * Errors encountered during the processing of the request.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseError ...$error
-     * @return static
      */
     public function setError(FHIRCoverageEligibilityResponseError ...$error): self
     {
@@ -1307,10 +1173,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1470,11 +1333,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1631,10 +1489,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements Vers
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCoverageEligibilityResponse
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

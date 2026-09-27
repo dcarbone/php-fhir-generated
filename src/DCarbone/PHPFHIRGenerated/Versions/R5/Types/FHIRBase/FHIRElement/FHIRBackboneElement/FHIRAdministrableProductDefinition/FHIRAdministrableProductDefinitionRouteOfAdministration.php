@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded expression for the route.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -157,8 +154,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * The first dose (dose quantity) administered can be specified for the product,
      * using a numerical value and its unit of measurement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $firstDose;
@@ -171,8 +166,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * The maximum single dose that can be administered, specified using a numerical
      * value and its unit of measurement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $maxSingleDose;
@@ -185,8 +178,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * The maximum dose per day (maximum dose quantity to be administered in any one
      * 24-h period) that can be administered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $maxDosePerDay;
@@ -197,8 +188,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum dose per treatment period that can be administered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $maxDosePerTreatmentPeriod;
@@ -208,8 +197,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum treatment period during which the product can be administered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $maxTreatmentPeriod;
@@ -229,14 +216,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
     /**
      * FHIRAdministrableProductDefinitionRouteOfAdministration Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $firstDose
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxSingleDose
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxDosePerDay
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $maxDosePerTreatmentPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $maxTreatmentPeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies> $targetSpecies
      * @param null|string[] $fhirComments
      */
@@ -293,8 +273,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded expression for the route.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -308,9 +286,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded expression for the route.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -331,8 +306,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * The first dose (dose quantity) administered can be specified for the product,
      * using a numerical value and its unit of measurement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getFirstDose(): null|FHIRQuantity
     {
@@ -348,9 +321,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * The first dose (dose quantity) administered can be specified for the product,
      * using a numerical value and its unit of measurement.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $firstDose
-     * @return static
      */
     public function setFirstDose(null|FHIRQuantity $firstDose): self
     {
@@ -371,8 +341,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * The maximum single dose that can be administered, specified using a numerical
      * value and its unit of measurement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getMaxSingleDose(): null|FHIRQuantity
     {
@@ -388,9 +356,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * The maximum single dose that can be administered, specified using a numerical
      * value and its unit of measurement.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxSingleDose
-     * @return static
      */
     public function setMaxSingleDose(null|FHIRQuantity $maxSingleDose): self
     {
@@ -411,8 +376,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * The maximum dose per day (maximum dose quantity to be administered in any one
      * 24-h period) that can be administered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getMaxDosePerDay(): null|FHIRQuantity
     {
@@ -428,9 +391,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      *
      * The maximum dose per day (maximum dose quantity to be administered in any one
      * 24-h period) that can be administered.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $maxDosePerDay
-     * @return static
      */
     public function setMaxDosePerDay(null|FHIRQuantity $maxDosePerDay): self
     {
@@ -449,8 +409,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum dose per treatment period that can be administered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     public function getMaxDosePerTreatmentPeriod(): null|FHIRRatio
     {
@@ -464,9 +422,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum dose per treatment period that can be administered.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio $maxDosePerTreatmentPeriod
-     * @return static
      */
     public function setMaxDosePerTreatmentPeriod(null|FHIRRatio $maxDosePerTreatmentPeriod): self
     {
@@ -484,8 +439,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum treatment period during which the product can be administered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     public function getMaxTreatmentPeriod(): null|FHIRDuration
     {
@@ -498,9 +451,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum treatment period during which the product can be administered.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $maxTreatmentPeriod
-     * @return static
      */
     public function setMaxTreatmentPeriod(null|FHIRDuration $maxTreatmentPeriod): self
     {
@@ -543,9 +493,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * performed).
      *
      * A species for which this route applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies $targetSpecies
-     * @return static
      */
     public function addTargetSpecies(FHIRAdministrableProductDefinitionTargetSpecies $targetSpecies): self
     {
@@ -562,9 +509,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * performed).
      *
      * A species for which this route applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies ...$targetSpecies
-     * @return static
      */
     public function setTargetSpecies(FHIRAdministrableProductDefinitionTargetSpecies ...$targetSpecies): self
     {
@@ -578,10 +522,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionRouteOfAdministration $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionRouteOfAdministration
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -637,10 +578,6 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -685,10 +622,7 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionRouteOfAdministration $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionRouteOfAdministration
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

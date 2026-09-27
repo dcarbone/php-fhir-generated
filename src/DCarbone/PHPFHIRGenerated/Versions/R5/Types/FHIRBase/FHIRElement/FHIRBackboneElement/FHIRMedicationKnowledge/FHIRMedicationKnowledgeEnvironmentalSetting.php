@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -123,6 +122,15 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
         self::FIELD_TYPE => [
             MinOccursRule::NAME => 1,
         ],
+        self::FIELD_VALUE_QUANTITY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_RANGE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CODEABLE_CONCEPT => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -138,8 +146,6 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      *
      * Identifies the category or type of setting (e.g., type of location, temperature,
      * humidity).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -150,10 +156,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
-     * any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Value associated to the setting. E.g., 40° – 50°F for temperature.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -162,10 +165,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
-     * any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Value associated to the setting. E.g., 40° – 50°F for temperature.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -175,10 +175,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
-     * any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * Value associated to the setting. E.g., 40° – 50°F for temperature.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -187,12 +184,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
     /**
      * FHIRMedicationKnowledgeEnvironmentalSetting Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -237,8 +229,6 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      *
      * Identifies the category or type of setting (e.g., type of location, temperature,
      * humidity).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -253,9 +243,6 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      *
      * Identifies the category or type of setting (e.g., type of location, temperature,
      * humidity).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -274,10 +261,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
-     * any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * Value associated to the setting. E.g., 40° – 50°F for temperature.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -291,11 +275,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
-     * any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * Value associated to the setting. E.g., 40° – 50°F for temperature.
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -312,10 +292,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
-     * any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * Value associated to the setting. E.g., 40° – 50°F for temperature.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -327,11 +304,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
-     * any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @return static
+     * Value associated to the setting. E.g., 40° – 50°F for temperature.
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -349,10 +322,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
-     * any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * Value associated to the setting. E.g., 40° – 50°F for temperature.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -365,11 +335,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Value associated to the setting. E.g., 40° – 50°F for temperature. (choose
-     * any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
+     * Value associated to the setting. E.g., 40° – 50°F for temperature.
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -383,10 +349,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeEnvironmentalSetting $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeEnvironmentalSetting
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -436,10 +399,6 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -467,10 +426,7 @@ class FHIRMedicationKnowledgeEnvironmentalSetting extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeEnvironmentalSetting $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeEnvironmentalSetting
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

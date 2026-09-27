@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -107,7 +105,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStat
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
@@ -177,8 +174,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      *
      * The status of this administrable product. Enables tracking the life-cycle of the
      * content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -210,8 +205,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * manufactured form was 'powder for solution for injection', the administrable
      * dose form could be 'solution for injection' (once mixed with another item having
      * manufactured form 'solvent for solution for injection').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $administrableDoseForm;
@@ -224,8 +217,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * The presentation type in which this item is given to a patient. e.g. for a spray
      * - 'puff' (as in 'contains 100 mcg per puff'), or for a liquid - 'vial' (as in
      * 'contains 5 ml per vial').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unitOfPresentation;
@@ -272,8 +263,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * A device that is integral to the medicinal product, in effect being considered
      * as an "ingredient" of the medicinal product. This is not intended for devices
      * that are just co-packaged.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $device;
@@ -306,22 +295,13 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
     /* constructor.php:61 */
     /**
      * FHIRAdministrableProductDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $formOf
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $administrableDoseForm
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $unitOfPresentation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $producedFrom
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $ingredient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $device
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionProperty> $property
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionRouteOfAdministration> $routeOfAdministration
      * @param null|string[] $fhirComments
@@ -433,9 +413,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the administrable product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -453,9 +430,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the administrable product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -472,8 +446,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      *
      * The status of this administrable product. Enables tracking the life-cycle of the
      * content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -485,9 +457,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      *
      * The status of this administrable product. Enables tracking the life-cycle of the
      * content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -545,9 +514,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * possibly also a cream. This is distinct from the 'producedFrom' which refers to
      * the specific components of the product that are used in this preparation, rather
      * than the product as a whole.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $formOf
-     * @return static
      */
     public function addFormOf(FHIRReference $formOf): self
     {
@@ -570,9 +536,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * possibly also a cream. This is distinct from the 'producedFrom' which refers to
      * the specific components of the product that are used in this preparation, rather
      * than the product as a whole.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$formOf
-     * @return static
      */
     public function setFormOf(FHIRReference ...$formOf): self
     {
@@ -595,8 +558,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * manufactured form was 'powder for solution for injection', the administrable
      * dose form could be 'solution for injection' (once mixed with another item having
      * manufactured form 'solvent for solution for injection').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAdministrableDoseForm(): null|FHIRCodeableConcept
     {
@@ -614,9 +575,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * manufactured form was 'powder for solution for injection', the administrable
      * dose form could be 'solution for injection' (once mixed with another item having
      * manufactured form 'solvent for solution for injection').
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $administrableDoseForm
-     * @return static
      */
     public function setAdministrableDoseForm(null|FHIRCodeableConcept $administrableDoseForm): self
     {
@@ -637,8 +595,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * The presentation type in which this item is given to a patient. e.g. for a spray
      * - 'puff' (as in 'contains 100 mcg per puff'), or for a liquid - 'vial' (as in
      * 'contains 5 ml per vial').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getUnitOfPresentation(): null|FHIRCodeableConcept
     {
@@ -654,9 +610,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * The presentation type in which this item is given to a patient. e.g. for a spray
      * - 'puff' (as in 'contains 100 mcg per puff'), or for a liquid - 'vial' (as in
      * 'contains 5 ml per vial').
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $unitOfPresentation
-     * @return static
      */
     public function setUnitOfPresentation(null|FHIRCodeableConcept $unitOfPresentation): self
     {
@@ -713,9 +666,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * example, an administrable form might involve combining a liquid and a powder
      * available as part of an overall product, but not involve applying the also
      * supplied cream.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $producedFrom
-     * @return static
      */
     public function addProducedFrom(FHIRReference $producedFrom): self
     {
@@ -739,9 +689,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * example, an administrable form might involve combining a liquid and a powder
      * available as part of an overall product, but not involve applying the also
      * supplied cream.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$producedFrom
-     * @return static
      */
     public function setProducedFrom(FHIRReference ...$producedFrom): self
     {
@@ -796,9 +743,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * used to make this, or using by incoming references from the Ingredient resource,
      * to state in detail which substances exist within this. This element allows a
      * basic coded ingredient to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $ingredient
-     * @return static
      */
     public function addIngredient(FHIRCodeableConcept $ingredient): self
     {
@@ -821,9 +765,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * used to make this, or using by incoming references from the Ingredient resource,
      * to state in detail which substances exist within this. This element allows a
      * basic coded ingredient to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$ingredient
-     * @return static
      */
     public function setIngredient(FHIRCodeableConcept ...$ingredient): self
     {
@@ -843,8 +784,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * A device that is integral to the medicinal product, in effect being considered
      * as an "ingredient" of the medicinal product. This is not intended for devices
      * that are just co-packaged.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getDevice(): null|FHIRReference
     {
@@ -859,9 +798,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * A device that is integral to the medicinal product, in effect being considered
      * as an "ingredient" of the medicinal product. This is not intended for devices
      * that are just co-packaged.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $device
-     * @return static
      */
     public function setDevice(null|FHIRReference $device): self
     {
@@ -904,9 +840,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * performed).
      *
      * Characteristics e.g. a product's onset of action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionProperty $property
-     * @return static
      */
     public function addProperty(FHIRAdministrableProductDefinitionProperty $property): self
     {
@@ -923,9 +856,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * performed).
      *
      * Characteristics e.g. a product's onset of action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionProperty ...$property
-     * @return static
      */
     public function setProperty(FHIRAdministrableProductDefinitionProperty ...$property): self
     {
@@ -974,9 +904,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * some regions this is referred to as the licenced or approved route.
      * RouteOfAdministration cannot be used when the 'formOf' product already uses
      * MedicinalProductDefinition.route (and vice versa).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionRouteOfAdministration $routeOfAdministration
-     * @return static
      */
     public function addRouteOfAdministration(FHIRAdministrableProductDefinitionRouteOfAdministration $routeOfAdministration): self
     {
@@ -996,9 +923,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
      * some regions this is referred to as the licenced or approved route.
      * RouteOfAdministration cannot be used when the 'formOf' product already uses
      * MedicinalProductDefinition.route (and vice versa).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionRouteOfAdministration ...$routeOfAdministration
-     * @return static
      */
     public function setRouteOfAdministration(FHIRAdministrableProductDefinitionRouteOfAdministration ...$routeOfAdministration): self
     {
@@ -1012,10 +936,7 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRAdministrableProductDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRAdministrableProductDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1121,11 +1042,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1224,10 +1140,7 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements V
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRAdministrableProductDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRAdministrableProductDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

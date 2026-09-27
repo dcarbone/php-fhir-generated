@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -104,7 +104,6 @@ class FHIRResourceVersionPolicy extends FHIRElement implements PrimitiveContaine
     ];
 
     /* class_default.php:112 */
-    /** @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRResourceVersionPolicyList */
     #[FHIRResourceVersionPolicyList]
     protected FHIRResourceVersionPolicyList $value;
 
@@ -112,8 +111,6 @@ class FHIRResourceVersionPolicy extends FHIRElement implements PrimitiveContaine
     /**
      * FHIRResourceVersionPolicy Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRResourceVersionPolicyList $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -136,18 +133,11 @@ class FHIRResourceVersionPolicy extends FHIRElement implements PrimitiveContaine
     }
 
     /* class_default.php:174 */
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRResourceVersionPolicyList
-     */
     public function getValue(): null|FHIRResourceVersionPolicyList
     {
         return $this->value ?? null;
     }
 
-    /**
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRResourceVersionPolicyList $value
-     * @return static
-     */
     public function setValue(null|string|FHIRResourceVersionPolicyList $value): self
     {
         if (null === $value) {
@@ -170,10 +160,7 @@ class FHIRResourceVersionPolicy extends FHIRElement implements PrimitiveContaine
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRResourceVersionPolicy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRResourceVersionPolicy
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -226,11 +213,6 @@ class FHIRResourceVersionPolicy extends FHIRElement implements PrimitiveContaine
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config,
                                  null|ValueXMLLocationEnum $valueLocation = null): void
@@ -254,10 +236,7 @@ class FHIRResourceVersionPolicy extends FHIRElement implements PrimitiveContaine
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRResourceVersionPolicy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRResourceVersionPolicy
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

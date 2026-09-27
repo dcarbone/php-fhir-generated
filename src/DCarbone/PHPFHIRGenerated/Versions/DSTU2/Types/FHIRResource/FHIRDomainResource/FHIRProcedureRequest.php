@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -92,7 +90,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRProcedureRequestPriorityList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRProcedureRequestStatusList;
@@ -178,8 +175,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group that should receive the procedure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -191,8 +186,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The specific procedure that is ordered. Use text if the exact nature of the
      * procedure cannot be coded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -217,8 +210,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reasonCodeableConcept;
@@ -229,8 +220,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $reasonReference;
@@ -246,8 +235,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $scheduledDateTime;
@@ -260,8 +247,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $scheduledPeriod;
@@ -277,8 +262,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $scheduledTiming;
@@ -288,8 +271,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the procedure proposal or request was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -299,8 +280,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example, the surgeon, anaethetist, endoscopist, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $performer;
@@ -309,8 +288,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRProcedureRequestStatus
      */
     #[FHIRProcedureRequestStatus]
     protected FHIRProcedureRequestStatus $status;
@@ -333,8 +310,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $asNeededBoolean;
@@ -346,8 +321,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $asNeededCodeableConcept;
@@ -360,8 +333,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $orderedOn;
@@ -371,8 +342,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for proposing or ordering the procedure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $orderer;
@@ -381,8 +350,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRProcedureRequestPriority
      */
     #[FHIRProcedureRequestPriority]
     protected FHIRProcedureRequestPriority $priority;
@@ -390,32 +357,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
     /* constructor.php:61 */
     /**
      * FHIRProcedureRequest Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $bodySite
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $reasonReference
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $scheduledDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $scheduledPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming $scheduledTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $performer
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRProcedureRequestStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRProcedureRequestStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation> $notes
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $asNeededBoolean
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $orderedOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $orderer
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRProcedureRequestPriorityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRProcedureRequestPriority $priority
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -555,9 +502,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -574,9 +518,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -594,8 +535,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group that should receive the procedure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -608,9 +547,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group that should receive the procedure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -630,8 +566,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The specific procedure that is ordered. Use text if the exact nature of the
      * procedure cannot be coded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -646,9 +580,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The specific procedure that is ordered. Use text if the exact nature of the
      * procedure cannot be coded.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -695,9 +626,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return static
      */
     public function addBodySite(FHIRCodeableConcept $bodySite): self
     {
@@ -716,9 +644,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept ...$bodySite
-     * @return static
      */
     public function setBodySite(FHIRCodeableConcept ...$bodySite): self
     {
@@ -738,8 +663,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -754,9 +677,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
-     * @return static
      */
     public function setReasonCodeableConcept(null|FHIRCodeableConcept $reasonCodeableConcept): self
     {
@@ -775,8 +695,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getReasonReference(): null|FHIRReference
     {
@@ -790,9 +708,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $reasonReference
-     * @return static
      */
     public function setReasonReference(null|FHIRReference $reasonReference): self
     {
@@ -816,8 +731,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getScheduledDateTime(): null|FHIRDateTime
     {
@@ -836,9 +749,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $scheduledDateTime
-     * @return static
      */
     public function setScheduledDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $scheduledDateTime): self
     {
@@ -862,8 +772,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getScheduledPeriod(): null|FHIRPeriod
     {
@@ -879,9 +787,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $scheduledPeriod
-     * @return static
      */
     public function setScheduledPeriod(null|FHIRPeriod $scheduledPeriod): self
     {
@@ -905,8 +810,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming
      */
     public function getScheduledTiming(): null|FHIRTiming
     {
@@ -925,9 +828,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTiming $scheduledTiming
-     * @return static
      */
     public function setScheduledTiming(null|FHIRTiming $scheduledTiming): self
     {
@@ -945,8 +845,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the procedure proposal or request was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -959,9 +857,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the procedure proposal or request was created.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -979,8 +874,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example, the surgeon, anaethetist, endoscopist, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getPerformer(): null|FHIRReference
     {
@@ -993,9 +886,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example, the surgeon, anaethetist, endoscopist, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $performer
-     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -1012,8 +902,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRProcedureRequestStatus
      */
     public function getStatus(): null|FHIRProcedureRequestStatus
     {
@@ -1025,9 +913,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRProcedureRequestStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRProcedureRequestStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRProcedureRequestStatusList|FHIRProcedureRequestStatus $status): self
     {
@@ -1077,9 +962,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Any other notes associated with this proposal or order - e.g. provider
      * instructions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation $notes
-     * @return static
      */
     public function addNotes(FHIRAnnotation $notes): self
     {
@@ -1098,9 +980,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * Any other notes associated with this proposal or order - e.g. provider
      * instructions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation ...$notes
-     * @return static
      */
     public function setNotes(FHIRAnnotation ...$notes): self
     {
@@ -1118,8 +997,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     public function getAsNeededBoolean(): null|FHIRBoolean
     {
@@ -1132,9 +1009,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $asNeededBoolean
-     * @return static
      */
     public function setAsNeededBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeededBoolean): self
     {
@@ -1157,8 +1031,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAsNeededCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1173,9 +1045,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
-     * @return static
      */
     public function setAsNeededCodeableConcept(null|FHIRCodeableConcept $asNeededCodeableConcept): self
     {
@@ -1196,8 +1065,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getOrderedOn(): null|FHIRDateTime
     {
@@ -1213,9 +1080,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $orderedOn
-     * @return static
      */
     public function setOrderedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $orderedOn): self
     {
@@ -1236,8 +1100,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for proposing or ordering the procedure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getOrderer(): null|FHIRReference
     {
@@ -1250,9 +1112,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for proposing or ordering the procedure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $orderer
-     * @return static
      */
     public function setOrderer(null|FHIRReference $orderer): self
     {
@@ -1269,8 +1128,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRProcedureRequestPriority
      */
     public function getPriority(): null|FHIRProcedureRequestPriority
     {
@@ -1282,9 +1139,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRProcedureRequestPriorityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRProcedureRequestPriority $priority
-     * @return static
      */
     public function setPriority(null|string|FHIRProcedureRequestPriorityList|FHIRProcedureRequestPriority $priority): self
     {
@@ -1301,10 +1155,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRProcedureRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1458,11 +1309,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1615,10 +1461,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRProcedureRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRProcedureRequest
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

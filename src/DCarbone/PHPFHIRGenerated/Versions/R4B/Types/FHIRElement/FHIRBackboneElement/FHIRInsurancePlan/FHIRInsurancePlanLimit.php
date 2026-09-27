@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -131,8 +131,6 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
      *
      * The maximum amount of a service item a plan will pay for a covered benefit. For
      * examples. wellness visits, or eyeglasses.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $value;
@@ -143,8 +141,6 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific limit on the benefit.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -153,10 +149,7 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
     /**
      * FHIRInsurancePlanLimit Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $value
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -194,8 +187,6 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
      *
      * The maximum amount of a service item a plan will pay for a covered benefit. For
      * examples. wellness visits, or eyeglasses.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getValue(): null|FHIRQuantity
     {
@@ -211,9 +202,6 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
      *
      * The maximum amount of a service item a plan will pay for a covered benefit. For
      * examples. wellness visits, or eyeglasses.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $value
-     * @return static
      */
     public function setValue(null|FHIRQuantity $value): self
     {
@@ -232,8 +220,6 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific limit on the benefit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -247,9 +233,6 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific limit on the benefit.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -263,10 +246,7 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanLimit $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanLimit
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -312,10 +292,6 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -333,10 +309,7 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanLimit $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanLimit
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

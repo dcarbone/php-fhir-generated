@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -128,8 +127,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence of the careTeam which serves to order and provide a link.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequence;
@@ -139,8 +136,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Member of the team who provided the overall service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $provider;
@@ -150,8 +145,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      *
      * The party who is billing and responsible for the claimed good or service
      * rendered to the patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $responsible;
@@ -163,8 +156,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      *
      * The lead, assisting or supervising practitioner and their discipline if a
      * multidisiplinary team.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
@@ -175,8 +166,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The qualification which is applicable for this service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $qualification;
@@ -185,13 +174,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
     /**
      * FHIRClaimCareTeam Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $provider
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $responsible
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $qualification
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -238,8 +221,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence of the careTeam which serves to order and provide a link.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     public function getSequence(): null|FHIRPositiveInt
     {
@@ -252,9 +233,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence of the careTeam which serves to order and provide a link.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -275,8 +253,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Member of the team who provided the overall service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getProvider(): null|FHIRReference
     {
@@ -289,9 +265,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Member of the team who provided the overall service.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $provider
-     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -309,8 +282,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      *
      * The party who is billing and responsible for the claimed good or service
      * rendered to the patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getResponsible(): null|FHIRBoolean
     {
@@ -323,9 +294,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      *
      * The party who is billing and responsible for the claimed good or service
      * rendered to the patient.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $responsible
-     * @return static
      */
     public function setResponsible(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $responsible): self
     {
@@ -348,8 +316,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      *
      * The lead, assisting or supervising practitioner and their discipline if a
      * multidisiplinary team.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRole(): null|FHIRCodeableConcept
     {
@@ -364,9 +330,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      *
      * The lead, assisting or supervising practitioner and their discipline if a
      * multidisiplinary team.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -385,8 +348,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The qualification which is applicable for this service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getQualification(): null|FHIRCodeableConcept
     {
@@ -400,9 +361,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The qualification which is applicable for this service.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $qualification
-     * @return static
      */
     public function setQualification(null|FHIRCodeableConcept $qualification): self
     {
@@ -416,10 +374,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCareTeam $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCareTeam
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -487,10 +442,6 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -533,10 +484,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCareTeam $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCareTeam
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

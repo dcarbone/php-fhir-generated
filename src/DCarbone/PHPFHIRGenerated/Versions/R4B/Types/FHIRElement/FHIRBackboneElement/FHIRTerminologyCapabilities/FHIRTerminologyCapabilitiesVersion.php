@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -146,8 +146,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      *
      * For version-less code systems, there should be a single version with no
      * identifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $code;
@@ -156,8 +154,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the default version for this code system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $isDefault;
@@ -166,8 +162,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the compositional grammar defined by the code system is supported.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $compositional;
@@ -211,11 +205,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
     /**
      * FHIRTerminologyCapabilitiesVersion Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $code
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $isDefault
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $compositional
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode> $language
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter> $filter
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode> $property
@@ -270,8 +260,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      *
      * For version-less code systems, there should be a single version with no
      * identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getCode(): null|FHIRString
     {
@@ -285,9 +273,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      *
      * For version-less code systems, there should be a single version with no
      * identifier.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $code
-     * @return static
      */
     public function setCode(null|string|FHIRStringPrimitive|FHIRString $code): self
     {
@@ -307,8 +292,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the default version for this code system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getIsDefault(): null|FHIRBoolean
     {
@@ -320,9 +303,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the default version for this code system.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $isDefault
-     * @return static
      */
     public function setIsDefault(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDefault): self
     {
@@ -342,8 +322,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the compositional grammar defined by the code system is supported.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getCompositional(): null|FHIRBoolean
     {
@@ -355,9 +333,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the compositional grammar defined by the code system is supported.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $compositional
-     * @return static
      */
     public function setCompositional(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $compositional): self
     {
@@ -405,9 +380,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Language Displays supported.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @return static
      */
     public function addLanguage(string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -428,9 +400,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Language Displays supported.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode ...$language
-     * @return static
      */
     public function setLanguage(string|FHIRCodePrimitive|FHIRCode ...$language): self
     {
@@ -480,9 +449,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * Filter Properties supported.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter $filter
-     * @return static
      */
     public function addFilter(FHIRTerminologyCapabilitiesFilter $filter): self
     {
@@ -499,9 +465,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * Filter Properties supported.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter ...$filter
-     * @return static
      */
     public function setFilter(FHIRTerminologyCapabilitiesFilter ...$filter): self
     {
@@ -546,9 +509,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Properties supported for $lookup.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $property
-     * @return static
      */
     public function addProperty(string|FHIRCodePrimitive|FHIRCode $property): self
     {
@@ -569,9 +529,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Properties supported for $lookup.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode ...$property
-     * @return static
      */
     public function setProperty(string|FHIRCodePrimitive|FHIRCode ...$property): self
     {
@@ -592,10 +549,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -673,10 +627,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -735,10 +685,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

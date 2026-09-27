@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -134,8 +133,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The type of the required data, specified as the type name of a resource. For
      * profiles, this value is set to the type of the base resource of the profile.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $type;
@@ -160,8 +157,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectCodeableConcept;
@@ -172,8 +167,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subjectReference;
@@ -230,8 +223,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * Specifies a maximum number of results that are required (uses the _count search
      * parameter).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $limit;
@@ -252,15 +243,10 @@ class FHIRDataRequirement extends FHIRElement
     /**
      * FHIRDataRequirement Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $type
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical> $profile
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subjectReference
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString> $mustSupport
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter> $codeFilter
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter> $dateFilter
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $limit
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort> $sort
      * @param null|string[] $fhirComments
      */
@@ -324,8 +310,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The type of the required data, specified as the type name of a resource. For
      * profiles, this value is set to the type of the base resource of the profile.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode
      */
     public function getType(): null|FHIRCode
     {
@@ -340,9 +324,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The type of the required data, specified as the type name of a resource. For
      * profiles, this value is set to the type of the base resource of the profile.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $type
-     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -392,9 +373,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The profile of the required data, specified as the uri of the profile
      * definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $profile
-     * @return static
      */
     public function addProfile(string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -416,9 +394,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The profile of the required data, specified as the uri of the profile
      * definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical ...$profile
-     * @return static
      */
     public function setProfile(string|FHIRCanonicalPrimitive|FHIRCanonical ...$profile): self
     {
@@ -445,8 +420,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSubjectCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -461,9 +434,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
-     * @return static
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -482,8 +452,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getSubjectReference(): null|FHIRReference
     {
@@ -497,9 +465,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subjectReference
-     * @return static
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -556,9 +521,6 @@ class FHIRDataRequirement extends FHIRElement
      * FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist
      * only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath
      * Profile](fhirpath.html#simple) for full details).
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $mustSupport
-     * @return static
      */
     public function addMustSupport(string|FHIRStringPrimitive|FHIRString $mustSupport): self
     {
@@ -585,9 +547,6 @@ class FHIRDataRequirement extends FHIRElement
      * FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist
      * only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath
      * Profile](fhirpath.html#simple) for full details).
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString ...$mustSupport
-     * @return static
      */
     public function setMustSupport(string|FHIRStringPrimitive|FHIRString ...$mustSupport): self
     {
@@ -643,9 +602,6 @@ class FHIRDataRequirement extends FHIRElement
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data. Each code filter defines
      * an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter $codeFilter
-     * @return static
      */
     public function addCodeFilter(FHIRDataRequirementCodeFilter $codeFilter): self
     {
@@ -665,9 +621,6 @@ class FHIRDataRequirement extends FHIRElement
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data. Each code filter defines
      * an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter ...$codeFilter
-     * @return static
      */
     public function setCodeFilter(FHIRDataRequirementCodeFilter ...$codeFilter): self
     {
@@ -716,9 +669,6 @@ class FHIRDataRequirement extends FHIRElement
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements. Each date filter specifies an
      * additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter $dateFilter
-     * @return static
      */
     public function addDateFilter(FHIRDataRequirementDateFilter $dateFilter): self
     {
@@ -738,9 +688,6 @@ class FHIRDataRequirement extends FHIRElement
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements. Each date filter specifies an
      * additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter ...$dateFilter
-     * @return static
      */
     public function setDateFilter(FHIRDataRequirementDateFilter ...$dateFilter): self
     {
@@ -759,8 +706,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * Specifies a maximum number of results that are required (uses the _count search
      * parameter).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt
      */
     public function getLimit(): null|FHIRPositiveInt
     {
@@ -774,9 +719,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * Specifies a maximum number of results that are required (uses the _count search
      * parameter).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $limit
-     * @return static
      */
     public function setLimit(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $limit): self
     {
@@ -824,9 +766,6 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order of the results to be returned.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort $sort
-     * @return static
      */
     public function addSort(FHIRDataRequirementSort $sort): self
     {
@@ -844,9 +783,6 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order of the results to be returned.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort ...$sort
-     * @return static
      */
     public function setSort(FHIRDataRequirementSort ...$sort): self
     {
@@ -860,10 +796,7 @@ class FHIRDataRequirement extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -937,10 +870,6 @@ class FHIRDataRequirement extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1013,10 +942,7 @@ class FHIRDataRequirement extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequirement
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

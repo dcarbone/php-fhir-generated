@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -91,7 +89,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
@@ -189,8 +186,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * referenced in a specification, model, design or an instance. This SHALL be a
      * URL, SHOULD be globally unique, and SHOULD be an address at which this
      * implementation guide is (or will be) published.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -202,8 +197,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * The identifier that is used to identify this version of the Implementation Guide
      * when it is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the Implementation Guide author manually.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -213,8 +206,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Implementation Guide.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -225,8 +216,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * the Narrative, or extensions
      *
      * The status of the Implementation Guide.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $status;
@@ -237,8 +226,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * This Implementation Guide was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -249,8 +236,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * The name of the individual or organization that published the implementation
      * guide.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -277,8 +262,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * change when the business version changes, if it does, and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the implementation guide changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -289,8 +272,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * A free text natural language description of the Implementation Guide and its
      * use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -317,8 +298,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * A copyright statement relating to the implementation guide and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the details of the constraints and mappings.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $copyright;
@@ -333,8 +312,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * The version of the FHIR specification on which this ImplementationGuide is based
      * - this is the formal version of the specification, without the revision number,
      * e.g. [publication].[major].[minor], which is 1.0.2 for this version.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $fhirVersion;
@@ -392,8 +369,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * A page / section in the implementation guide. The root page is the
      * implementation guide home page.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
     #[FHIRImplementationGuidePage]
     protected FHIRImplementationGuidePage $page;
@@ -401,31 +376,15 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
     /* constructor.php:61 */
     /**
      * FHIRImplementationGuide Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $url
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideContact> $contact
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $useContext
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $copyright
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $fhirVersion
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependency> $dependency
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage> $package
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal> $global
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri> $binary
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -539,8 +498,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * referenced in a specification, model, design or an instance. This SHALL be a
      * URL, SHOULD be globally unique, and SHOULD be an address at which this
      * implementation guide is (or will be) published.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -556,9 +513,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * referenced in a specification, model, design or an instance. This SHALL be a
      * URL, SHOULD be globally unique, and SHOULD be an address at which this
      * implementation guide is (or will be) published.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -581,8 +535,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * The identifier that is used to identify this version of the Implementation Guide
      * when it is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the Implementation Guide author manually.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -597,9 +549,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * The identifier that is used to identify this version of the Implementation Guide
      * when it is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the Implementation Guide author manually.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -620,8 +569,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Implementation Guide.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -634,9 +581,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Implementation Guide.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -658,8 +602,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * the Narrative, or extensions
      *
      * The status of the Implementation Guide.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     public function getStatus(): null|FHIRCode
     {
@@ -673,9 +615,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * the Narrative, or extensions
      *
      * The status of the Implementation Guide.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $status
-     * @return static
      */
     public function setStatus(null|string|FHIRCodePrimitive|FHIRCode $status): self
     {
@@ -697,8 +636,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * This Implementation Guide was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -712,9 +649,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * This Implementation Guide was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -736,8 +670,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * The name of the individual or organization that published the implementation
      * guide.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -751,9 +683,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * The name of the individual or organization that published the implementation
      * guide.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -799,9 +728,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * and to publish a computable definition of all the parts.
      *
      * Contacts to assist a user in finding and communicating with the publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideContact $contact
-     * @return static
      */
     public function addContact(FHIRImplementationGuideContact $contact): self
     {
@@ -818,9 +744,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * and to publish a computable definition of all the parts.
      *
      * Contacts to assist a user in finding and communicating with the publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideContact ...$contact
-     * @return static
      */
     public function setContact(FHIRImplementationGuideContact ...$contact): self
     {
@@ -844,8 +767,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * change when the business version changes, if it does, and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the implementation guide changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -864,9 +785,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * change when the business version changes, if it does, and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the implementation guide changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -888,8 +806,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * A free text natural language description of the Implementation Guide and its
      * use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -903,9 +819,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * A free text natural language description of the Implementation Guide and its
      * use.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -959,9 +872,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * that are listed. These terms may be used to assist with indexing and searching
      * of implementation guides. The most common use of this element is to represent
      * the country / jurisdiction for which this implementation guide was defined.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $useContext
-     * @return static
      */
     public function addUseContext(FHIRCodeableConcept $useContext): self
     {
@@ -982,9 +892,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * that are listed. These terms may be used to assist with indexing and searching
      * of implementation guides. The most common use of this element is to represent
      * the country / jurisdiction for which this implementation guide was defined.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRCodeableConcept ...$useContext): self
     {
@@ -1004,8 +911,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * A copyright statement relating to the implementation guide and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the details of the constraints and mappings.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getCopyright(): null|FHIRString
     {
@@ -1020,9 +925,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * A copyright statement relating to the implementation guide and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the details of the constraints and mappings.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRStringPrimitive|FHIRString $copyright): self
     {
@@ -1048,8 +950,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * The version of the FHIR specification on which this ImplementationGuide is based
      * - this is the formal version of the specification, without the revision number,
      * e.g. [publication].[major].[minor], which is 1.0.2 for this version.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId
      */
     public function getFhirVersion(): null|FHIRId
     {
@@ -1067,9 +967,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * The version of the FHIR specification on which this ImplementationGuide is based
      * - this is the formal version of the specification, without the revision number,
      * e.g. [publication].[major].[minor], which is 1.0.2 for this version.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $fhirVersion
-     * @return static
      */
     public function setFhirVersion(null|string|FHIRIdPrimitive|FHIRId $fhirVersion): self
     {
@@ -1119,9 +1016,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * Another implementation guide that this implementation depends on. Typically, an
      * implementation guide uses value sets, profiles etc.defined in other
      * implementation guides.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependency $dependency
-     * @return static
      */
     public function addDependency(FHIRImplementationGuideDependency $dependency): self
     {
@@ -1140,9 +1034,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * Another implementation guide that this implementation depends on. Typically, an
      * implementation guide uses value sets, profiles etc.defined in other
      * implementation guides.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependency ...$dependency
-     * @return static
      */
     public function setDependency(FHIRImplementationGuideDependency ...$dependency): self
     {
@@ -1185,9 +1076,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * and to publish a computable definition of all the parts.
      *
      * A logical group of resources. Logical groups can be used when building pages.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage $package
-     * @return static
      */
     public function addPackage(FHIRImplementationGuidePackage $package): self
     {
@@ -1204,9 +1092,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * and to publish a computable definition of all the parts.
      *
      * A logical group of resources. Logical groups can be used when building pages.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage ...$package
-     * @return static
      */
     public function setPackage(FHIRImplementationGuidePackage ...$package): self
     {
@@ -1251,9 +1136,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * A set of profiles that all resources covered by this implementation guide must
      * conform to.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal $global
-     * @return static
      */
     public function addGlobal(FHIRImplementationGuideGlobal $global): self
     {
@@ -1271,9 +1153,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * A set of profiles that all resources covered by this implementation guide must
      * conform to.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal ...$global
-     * @return static
      */
     public function setGlobal(FHIRImplementationGuideGlobal ...$global): self
     {
@@ -1316,9 +1195,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A binary file that is included in the implementation guide when it is published.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $binary
-     * @return static
      */
     public function addBinary(string|FHIRUriPrimitive|FHIRUri $binary): self
     {
@@ -1338,9 +1214,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A binary file that is included in the implementation guide when it is published.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri ...$binary
-     * @return static
      */
     public function setBinary(string|FHIRUriPrimitive|FHIRUri ...$binary): self
     {
@@ -1366,8 +1239,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * A page / section in the implementation guide. The root page is the
      * implementation guide home page.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
     public function getPage(): null|FHIRImplementationGuidePage
     {
@@ -1381,9 +1252,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
      *
      * A page / section in the implementation guide. The root page is the
      * implementation guide home page.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
-     * @return static
      */
     public function setPage(null|FHIRImplementationGuidePage $page): self
     {
@@ -1397,10 +1265,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRImplementationGuide $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1592,11 +1457,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1775,10 +1635,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements VersionConta
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRImplementationGuide $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRImplementationGuide
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

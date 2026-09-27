@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,8 +135,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professional who is performing the collection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $collector;
@@ -147,8 +145,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      *
      * The patient or entity, such as a hospital or vendor in the case of a
      * processed/manipulated/manufactured product, providing the product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $source;
@@ -161,8 +157,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time of product collection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $collectedDateTime;
@@ -172,8 +166,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time of product collection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $collectedPeriod;
@@ -182,12 +174,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     /**
      * FHIRBiologicallyDerivedProductCollection Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $collector
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $source
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $collectedDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $collectedPeriod
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -230,8 +217,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professional who is performing the collection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getCollector(): null|FHIRReference
     {
@@ -244,9 +229,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professional who is performing the collection.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $collector
-     * @return static
      */
     public function setCollector(null|FHIRReference $collector): self
     {
@@ -265,8 +247,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      *
      * The patient or entity, such as a hospital or vendor in the case of a
      * processed/manipulated/manufactured product, providing the product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getSource(): null|FHIRReference
     {
@@ -280,9 +260,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      *
      * The patient or entity, such as a hospital or vendor in the case of a
      * processed/manipulated/manufactured product, providing the product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $source
-     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -303,8 +280,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time of product collection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getCollectedDateTime(): null|FHIRDateTime
     {
@@ -320,9 +295,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time of product collection.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $collectedDateTime
-     * @return static
      */
     public function setCollectedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $collectedDateTime): self
     {
@@ -343,8 +315,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time of product collection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getCollectedPeriod(): null|FHIRPeriod
     {
@@ -357,9 +327,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time of product collection.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $collectedPeriod
-     * @return static
      */
     public function setCollectedPeriod(null|FHIRPeriod $collectedPeriod): self
     {
@@ -373,10 +340,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -434,10 +398,6 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -470,10 +430,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

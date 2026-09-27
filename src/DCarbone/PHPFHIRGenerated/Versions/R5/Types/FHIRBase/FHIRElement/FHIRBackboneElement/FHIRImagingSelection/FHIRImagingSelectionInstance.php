@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -152,8 +151,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The SOP Instance UID for the selected DICOM instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $uid;
@@ -163,8 +160,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Instance Number for the selected DICOM instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $number;
@@ -174,8 +169,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The SOP Class UID for the selected DICOM instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $sopClass;
@@ -229,11 +222,7 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
     /**
      * FHIRImagingSelectionInstance Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $uid
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $number
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $sopClass
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $subset
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion2D> $imageRegion2D
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion3D> $imageRegion3D
@@ -290,8 +279,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The SOP Instance UID for the selected DICOM instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getUid(): null|FHIRId
     {
@@ -307,9 +294,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The SOP Instance UID for the selected DICOM instance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $uid
-     * @return static
      */
     public function setUid(null|string|FHIRIdPrimitive|FHIRId $uid): self
     {
@@ -330,8 +314,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Instance Number for the selected DICOM instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     public function getNumber(): null|FHIRUnsignedInt
     {
@@ -344,9 +326,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Instance Number for the selected DICOM instance.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $number
-     * @return static
      */
     public function setNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number): self
     {
@@ -367,8 +346,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The SOP Class UID for the selected DICOM instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     public function getSopClass(): null|FHIRCoding
     {
@@ -381,9 +358,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The SOP Class UID for the selected DICOM instance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $sopClass
-     * @return static
      */
     public function setSopClass(null|FHIRCoding $sopClass): self
     {
@@ -438,9 +412,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * document SOP Instance. - A list of segment numbers selected from a segmentation
      * SOP Instance. - A list of Region of Interest (ROI) numbers selected from a
      * radiotherapy structure set SOP Instance.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $subset
-     * @return static
      */
     public function addSubset(string|FHIRStringPrimitive|FHIRString $subset): self
     {
@@ -466,9 +437,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * document SOP Instance. - A list of segment numbers selected from a segmentation
      * SOP Instance. - A list of Region of Interest (ROI) numbers selected from a
      * radiotherapy structure set SOP Instance.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$subset
-     * @return static
      */
     public function setSubset(string|FHIRStringPrimitive|FHIRString ...$subset): self
     {
@@ -526,9 +494,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * specified by a region type and a set of 2D coordinates. If the parent
      * imagingSelection.instance contains a subset element of type frame, the image
      * region applies to all frames in the subset list.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion2D $imageRegion2D
-     * @return static
      */
     public function addImageRegion2D(FHIRImagingSelectionImageRegion2D $imageRegion2D): self
     {
@@ -549,9 +514,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * specified by a region type and a set of 2D coordinates. If the parent
      * imagingSelection.instance contains a subset element of type frame, the image
      * region applies to all frames in the subset list.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion2D ...$imageRegion2D
-     * @return static
      */
     public function setImageRegion2D(FHIRImagingSelectionImageRegion2D ...$imageRegion2D): self
     {
@@ -598,9 +560,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      *
      * Each imaging selection might includes a 3D image region, specified by a region
      * type and a set of 3D coordinates.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion3D $imageRegion3D
-     * @return static
      */
     public function addImageRegion3D(FHIRImagingSelectionImageRegion3D $imageRegion3D): self
     {
@@ -619,9 +578,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      *
      * Each imaging selection might includes a 3D image region, specified by a region
      * type and a set of 3D coordinates.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion3D ...$imageRegion3D
-     * @return static
      */
     public function setImageRegion3D(FHIRImagingSelectionImageRegion3D ...$imageRegion3D): self
     {
@@ -635,10 +591,7 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionInstance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionInstance
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -708,10 +661,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -765,10 +714,7 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionInstance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionInstance
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

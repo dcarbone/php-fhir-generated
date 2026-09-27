@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -134,8 +133,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The authority that is specifying the regulations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $regulatoryAuthority;
@@ -162,8 +159,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The maximum number of units of the medication that can be dispensed in a period.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
      */
     #[FHIRMedicationKnowledgeMaxDispense]
     protected FHIRMedicationKnowledgeMaxDispense $maxDispense;
@@ -172,12 +167,9 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     /**
      * FHIRMedicationKnowledgeRegulatory Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $regulatoryAuthority
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution> $substitution
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule> $schedule
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense $maxDispense
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -220,8 +212,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The authority that is specifying the regulations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getRegulatoryAuthority(): null|FHIRReference
     {
@@ -234,9 +224,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The authority that is specifying the regulations.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $regulatoryAuthority
-     * @return static
      */
     public function setRegulatoryAuthority(null|FHIRReference $regulatoryAuthority): self
     {
@@ -277,9 +264,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      *
      * Specifies if changes are allowed when dispensing a medication from a regulatory
      * perspective.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution $substitution
-     * @return static
      */
     public function addSubstitution(FHIRMedicationKnowledgeSubstitution $substitution): self
     {
@@ -295,9 +279,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      *
      * Specifies if changes are allowed when dispensing a medication from a regulatory
      * perspective.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution ...$substitution
-     * @return static
      */
     public function setSubstitution(FHIRMedicationKnowledgeSubstitution ...$substitution): self
     {
@@ -336,9 +317,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * Specifies the schedule of a medication in jurisdiction.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule $schedule
-     * @return static
      */
     public function addSchedule(FHIRMedicationKnowledgeSchedule $schedule): self
     {
@@ -353,9 +331,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * Specifies the schedule of a medication in jurisdiction.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule ...$schedule
-     * @return static
      */
     public function setSchedule(FHIRMedicationKnowledgeSchedule ...$schedule): self
     {
@@ -371,8 +346,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The maximum number of units of the medication that can be dispensed in a period.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
      */
     public function getMaxDispense(): null|FHIRMedicationKnowledgeMaxDispense
     {
@@ -383,9 +356,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The maximum number of units of the medication that can be dispensed in a period.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense $maxDispense
-     * @return static
      */
     public function setMaxDispense(null|FHIRMedicationKnowledgeMaxDispense $maxDispense): self
     {
@@ -399,10 +369,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -452,10 +419,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -487,10 +450,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

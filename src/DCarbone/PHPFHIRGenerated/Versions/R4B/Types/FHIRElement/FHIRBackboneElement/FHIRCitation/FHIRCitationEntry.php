@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -157,8 +157,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName
      */
     #[FHIRHumanName]
     protected FHIRHumanName $name;
@@ -168,8 +166,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Initials for forename.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $initials;
@@ -179,8 +175,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for collective or corporate name as an author.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $collectiveName;
@@ -255,8 +249,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role of the contributor (e.g. author, editor, reviewer).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
@@ -277,8 +269,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indication of which contributor is the corresponding contributor for the role.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $correspondingContact;
@@ -288,8 +278,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Used to code order of authors.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $listOrder;
@@ -298,20 +286,13 @@ class FHIRCitationEntry extends FHIRBackboneElement
     /**
      * FHIRCitationEntry Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $initials
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $collectiveName
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo> $affiliationInfo
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress> $address
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint> $telecom
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $contributionType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $role
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance> $contributionInstance
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $correspondingContact
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $listOrder
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -386,8 +367,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName
      */
     public function getName(): null|FHIRHumanName
     {
@@ -400,9 +379,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName $name
-     * @return static
      */
     public function setName(null|FHIRHumanName $name): self
     {
@@ -420,8 +396,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Initials for forename.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getInitials(): null|FHIRString
     {
@@ -434,9 +408,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Initials for forename.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $initials
-     * @return static
      */
     public function setInitials(null|string|FHIRStringPrimitive|FHIRString $initials): self
     {
@@ -457,8 +428,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for collective or corporate name as an author.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getCollectiveName(): null|FHIRString
     {
@@ -471,9 +440,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for collective or corporate name as an author.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $collectiveName
-     * @return static
      */
     public function setCollectiveName(null|string|FHIRStringPrimitive|FHIRString $collectiveName): self
     {
@@ -521,9 +487,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique person identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -541,9 +504,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique person identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -588,9 +548,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Organization affiliated with the entity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo $affiliationInfo
-     * @return static
      */
     public function addAffiliationInfo(FHIRCitationAffiliationInfo $affiliationInfo): self
     {
@@ -608,9 +565,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Organization affiliated with the entity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo ...$affiliationInfo
-     * @return static
      */
     public function setAffiliationInfo(FHIRCitationAffiliationInfo ...$affiliationInfo): self
     {
@@ -661,9 +615,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical mailing address for the author or contributor.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress $address
-     * @return static
      */
     public function addAddress(FHIRAddress $address): self
     {
@@ -684,9 +635,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical mailing address for the author or contributor.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress ...$address
-     * @return static
      */
     public function setAddress(FHIRAddress ...$address): self
     {
@@ -731,9 +679,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Email or telephone contact methods for the author or contributor.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $telecom
-     * @return static
      */
     public function addTelecom(FHIRContactPoint $telecom): self
     {
@@ -751,9 +696,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Email or telephone contact methods for the author or contributor.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint ...$telecom
-     * @return static
      */
     public function setTelecom(FHIRContactPoint ...$telecom): self
     {
@@ -800,9 +742,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $contributionType
-     * @return static
      */
     public function addContributionType(FHIRCodeableConcept $contributionType): self
     {
@@ -821,9 +760,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$contributionType
-     * @return static
      */
     public function setContributionType(FHIRCodeableConcept ...$contributionType): self
     {
@@ -842,8 +778,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role of the contributor (e.g. author, editor, reviewer).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRole(): null|FHIRCodeableConcept
     {
@@ -857,9 +791,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role of the contributor (e.g. author, editor, reviewer).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -904,9 +835,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Contributions with accounting for time or number.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance $contributionInstance
-     * @return static
      */
     public function addContributionInstance(FHIRCitationContributionInstance $contributionInstance): self
     {
@@ -924,9 +852,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Contributions with accounting for time or number.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance ...$contributionInstance
-     * @return static
      */
     public function setContributionInstance(FHIRCitationContributionInstance ...$contributionInstance): self
     {
@@ -943,8 +868,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indication of which contributor is the corresponding contributor for the role.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getCorrespondingContact(): null|FHIRBoolean
     {
@@ -956,9 +879,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indication of which contributor is the corresponding contributor for the role.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $correspondingContact
-     * @return static
      */
     public function setCorrespondingContact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $correspondingContact): self
     {
@@ -979,8 +899,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Used to code order of authors.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     public function getListOrder(): null|FHIRPositiveInt
     {
@@ -993,9 +911,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Used to code order of authors.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $listOrder
-     * @return static
      */
     public function setListOrder(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $listOrder): self
     {
@@ -1012,10 +927,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1113,10 +1025,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1216,10 +1124,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

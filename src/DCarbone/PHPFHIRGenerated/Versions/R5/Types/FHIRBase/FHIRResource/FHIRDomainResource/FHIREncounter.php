@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -117,7 +115,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREncounterStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -206,8 +203,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The current state of the encounter (not the state of the patient within the
      * encounter - that is subjectState).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREncounterStatus
      */
     #[FHIREncounterStatus]
     protected FHIREncounterStatus $status;
@@ -232,8 +227,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the urgency of the encounter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $priority;
@@ -270,8 +263,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * The patient or group related to this encounter. In some use-cases the patient
      * MAY not be present, such as a case meeting about a patient between several
      * practitioners or a careteam.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -284,8 +275,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * The subjectStatus value can be used to track the patient's status within the
      * encounter. It details whether the patient has arrived or departed, has been
      * triaged or is currently in a waiting status.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectStatus;
@@ -338,8 +327,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Another Encounter of which this encounter is a part of (administratively or in
      * time).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $partOf;
@@ -353,8 +340,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * be different, such as if the actor performing the services was from an external
      * organization (which may be billed seperately) for an external consultation.
      * Refer to the colonoscopy example on the Encounter examples tab.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $serviceProvider;
@@ -398,8 +383,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual start and end time of the encounter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $actualPeriod;
@@ -413,8 +396,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The planned start date/time (or admission date) of the encounter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $plannedStartDate;
@@ -428,8 +409,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The planned end date/time (or discharge date) of the encounter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $plannedEndDate;
@@ -441,8 +420,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * Actual quantity of time the encounter lasted. This excludes the time during
      * leaves of absence. When missing it is the time in between the start and end
      * values.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $length;
@@ -529,8 +506,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * Details about the stay during which a healthcare service is provided. This does
      * not describe the event of admitting the patient, but rather any information that
      * is relevant from the time of admittance until the time of discharge.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAdmission
      */
     #[FHIREncounterAdmission]
     protected FHIREncounterAdmission $admission;
@@ -550,41 +525,25 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
     /* constructor.php:61 */
     /**
      * FHIREncounter Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREncounterStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREncounterStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $class
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $priority
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $serviceType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subjectStatus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $episodeOfCare
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $basedOn
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $careTeam
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $partOf
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $serviceProvider
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant> $participant
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $appointment
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail> $virtualService
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $actualPeriod
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $plannedStartDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $plannedEndDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $length
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterReason> $reason
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis> $diagnosis
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $account
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $dietPreference
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $specialArrangement
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $specialCourtesy
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAdmission $admission
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterLocation> $location
      * @param null|string[] $fhirComments
      */
@@ -767,9 +726,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -787,9 +743,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -806,8 +759,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The current state of the encounter (not the state of the patient within the
      * encounter - that is subjectState).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREncounterStatus
      */
     public function getStatus(): null|FHIREncounterStatus
     {
@@ -819,9 +770,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The current state of the encounter (not the state of the patient within the
      * encounter - that is subjectState).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREncounterStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREncounterStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIREncounterStatusEnum|FHIREncounterStatus $status): self
     {
@@ -873,9 +821,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * Concepts representing classification of patient encounter such as ambulatory
      * (outpatient), inpatient, emergency, home health or others due to local
      * variations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $class
-     * @return static
      */
     public function addClass(FHIRCodeableConcept $class): self
     {
@@ -895,9 +840,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * Concepts representing classification of patient encounter such as ambulatory
      * (outpatient), inpatient, emergency, home health or others due to local
      * variations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$class
-     * @return static
      */
     public function setClass(FHIRCodeableConcept ...$class): self
     {
@@ -916,8 +858,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the urgency of the encounter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getPriority(): null|FHIRCodeableConcept
     {
@@ -931,9 +871,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the urgency of the encounter.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $priority
-     * @return static
      */
     public function setPriority(null|FHIRCodeableConcept $priority): self
     {
@@ -980,9 +917,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -1001,9 +935,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -1048,9 +979,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Broad categorization of the service that is to be provided (e.g. cardiology).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $serviceType
-     * @return static
      */
     public function addServiceType(FHIRCodeableReference $serviceType): self
     {
@@ -1068,9 +996,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Broad categorization of the service that is to be provided (e.g. cardiology).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$serviceType
-     * @return static
      */
     public function setServiceType(FHIRCodeableReference ...$serviceType): self
     {
@@ -1090,8 +1015,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * The patient or group related to this encounter. In some use-cases the patient
      * MAY not be present, such as a case meeting about a patient between several
      * practitioners or a careteam.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -1106,9 +1029,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * The patient or group related to this encounter. In some use-cases the patient
      * MAY not be present, such as a case meeting about a patient between several
      * practitioners or a careteam.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1129,8 +1049,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * The subjectStatus value can be used to track the patient's status within the
      * encounter. It details whether the patient has arrived or departed, has been
      * triaged or is currently in a waiting status.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getSubjectStatus(): null|FHIRCodeableConcept
     {
@@ -1146,9 +1064,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * The subjectStatus value can be used to track the patient's status within the
      * encounter. It details whether the patient has arrived or departed, has been
      * triaged or is currently in a waiting status.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subjectStatus
-     * @return static
      */
     public function setSubjectStatus(null|FHIRCodeableConcept $subjectStatus): self
     {
@@ -1203,9 +1118,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * association is recorded on the encounter as these are typically created after
      * the episode of care and grouped on entry rather than editing the episode of care
      * to append another encounter to it (the episode of care could span years).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $episodeOfCare
-     * @return static
      */
     public function addEpisodeOfCare(FHIRReference $episodeOfCare): self
     {
@@ -1228,9 +1140,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * association is recorded on the encounter as these are typically created after
      * the episode of care and grouped on entry rather than editing the episode of care
      * to append another encounter to it (the episode of care could span years).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$episodeOfCare
-     * @return static
      */
     public function setEpisodeOfCare(FHIRReference ...$episodeOfCare): self
     {
@@ -1275,9 +1184,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The request this encounter satisfies (e.g. incoming referral or procedure
      * request).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -1295,9 +1201,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The request this encounter satisfies (e.g. incoming referral or procedure
      * request).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -1344,9 +1247,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * The group(s) of individuals, organizations that are allocated to participate in
      * this encounter. The participants backbone will record the actuals of when these
      * individuals participated during the encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $careTeam
-     * @return static
      */
     public function addCareTeam(FHIRReference $careTeam): self
     {
@@ -1365,9 +1265,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * The group(s) of individuals, organizations that are allocated to participate in
      * this encounter. The participants backbone will record the actuals of when these
      * individuals participated during the encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$careTeam
-     * @return static
      */
     public function setCareTeam(FHIRReference ...$careTeam): self
     {
@@ -1386,8 +1283,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Another Encounter of which this encounter is a part of (administratively or in
      * time).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getPartOf(): null|FHIRReference
     {
@@ -1401,9 +1296,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Another Encounter of which this encounter is a part of (administratively or in
      * time).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $partOf
-     * @return static
      */
     public function setPartOf(null|FHIRReference $partOf): self
     {
@@ -1425,8 +1317,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * be different, such as if the actor performing the services was from an external
      * organization (which may be billed seperately) for an external consultation.
      * Refer to the colonoscopy example on the Encounter examples tab.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getServiceProvider(): null|FHIRReference
     {
@@ -1443,9 +1333,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * be different, such as if the actor performing the services was from an external
      * organization (which may be billed seperately) for an external consultation.
      * Refer to the colonoscopy example on the Encounter examples tab.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $serviceProvider
-     * @return static
      */
     public function setServiceProvider(null|FHIRReference $serviceProvider): self
     {
@@ -1490,9 +1377,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * that occurred, where Appointment is used to record planned activities.
      *
      * The list of people responsible for providing the service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant $participant
-     * @return static
      */
     public function addParticipant(FHIREncounterParticipant $participant): self
     {
@@ -1510,9 +1394,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * that occurred, where Appointment is used to record planned activities.
      *
      * The list of people responsible for providing the service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant ...$participant
-     * @return static
      */
     public function setParticipant(FHIREncounterParticipant ...$participant): self
     {
@@ -1555,9 +1436,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The appointment that scheduled this encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $appointment
-     * @return static
      */
     public function addAppointment(FHIRReference $appointment): self
     {
@@ -1574,9 +1452,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The appointment that scheduled this encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$appointment
-     * @return static
      */
     public function setAppointment(FHIRReference ...$appointment): self
     {
@@ -1619,9 +1494,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Connection details of a virtual service (e.g. conference call).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail $virtualService
-     * @return static
      */
     public function addVirtualService(FHIRVirtualServiceDetail $virtualService): self
     {
@@ -1638,9 +1510,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Connection details of a virtual service (e.g. conference call).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail ...$virtualService
-     * @return static
      */
     public function setVirtualService(FHIRVirtualServiceDetail ...$virtualService): self
     {
@@ -1658,8 +1527,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual start and end time of the encounter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getActualPeriod(): null|FHIRPeriod
     {
@@ -1672,9 +1539,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual start and end time of the encounter.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $actualPeriod
-     * @return static
      */
     public function setActualPeriod(null|FHIRPeriod $actualPeriod): self
     {
@@ -1696,8 +1560,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The planned start date/time (or admission date) of the encounter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getPlannedStartDate(): null|FHIRDateTime
     {
@@ -1714,9 +1576,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The planned start date/time (or admission date) of the encounter.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $plannedStartDate
-     * @return static
      */
     public function setPlannedStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $plannedStartDate): self
     {
@@ -1741,8 +1600,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The planned end date/time (or discharge date) of the encounter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getPlannedEndDate(): null|FHIRDateTime
     {
@@ -1759,9 +1616,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The planned end date/time (or discharge date) of the encounter.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $plannedEndDate
-     * @return static
      */
     public function setPlannedEndDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $plannedEndDate): self
     {
@@ -1784,8 +1638,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * Actual quantity of time the encounter lasted. This excludes the time during
      * leaves of absence. When missing it is the time in between the start and end
      * values.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     public function getLength(): null|FHIRDuration
     {
@@ -1800,9 +1652,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * Actual quantity of time the encounter lasted. This excludes the time during
      * leaves of absence. When missing it is the time in between the start and end
      * values.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $length
-     * @return static
      */
     public function setLength(null|FHIRDuration $length): self
     {
@@ -1849,9 +1698,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The list of medical reasons that are expected to be addressed during the episode
      * of care.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterReason $reason
-     * @return static
      */
     public function addReason(FHIREncounterReason $reason): self
     {
@@ -1870,9 +1716,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * The list of medical reasons that are expected to be addressed during the episode
      * of care.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterReason ...$reason
-     * @return static
      */
     public function setReason(FHIREncounterReason ...$reason): self
     {
@@ -1917,9 +1760,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * that occurred, where Appointment is used to record planned activities.
      *
      * The list of diagnosis relevant to this encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis $diagnosis
-     * @return static
      */
     public function addDiagnosis(FHIREncounterDiagnosis $diagnosis): self
     {
@@ -1937,9 +1777,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * that occurred, where Appointment is used to record planned activities.
      *
      * The list of diagnosis relevant to this encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis ...$diagnosis
-     * @return static
      */
     public function setDiagnosis(FHIREncounterDiagnosis ...$diagnosis): self
     {
@@ -1982,9 +1819,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this Encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $account
-     * @return static
      */
     public function addAccount(FHIRReference $account): self
     {
@@ -2001,9 +1835,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this Encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$account
-     * @return static
      */
     public function setAccount(FHIRReference ...$account): self
     {
@@ -2048,9 +1879,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Diet preferences reported by the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $dietPreference
-     * @return static
      */
     public function addDietPreference(FHIRCodeableConcept $dietPreference): self
     {
@@ -2068,9 +1896,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Diet preferences reported by the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$dietPreference
-     * @return static
      */
     public function setDietPreference(FHIRCodeableConcept ...$dietPreference): self
     {
@@ -2117,9 +1942,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Any special requests that have been made for this encounter, such as the
      * provision of specific equipment or other things.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $specialArrangement
-     * @return static
      */
     public function addSpecialArrangement(FHIRCodeableConcept $specialArrangement): self
     {
@@ -2138,9 +1960,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Any special requests that have been made for this encounter, such as the
      * provision of specific equipment or other things.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$specialArrangement
-     * @return static
      */
     public function setSpecialArrangement(FHIRCodeableConcept ...$specialArrangement): self
     {
@@ -2187,9 +2006,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Special courtesies that may be provided to the patient during the encounter
      * (VIP, board member, professional courtesy).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $specialCourtesy
-     * @return static
      */
     public function addSpecialCourtesy(FHIRCodeableConcept $specialCourtesy): self
     {
@@ -2208,9 +2024,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      *
      * Special courtesies that may be provided to the patient during the encounter
      * (VIP, board member, professional courtesy).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$specialCourtesy
-     * @return static
      */
     public function setSpecialCourtesy(FHIRCodeableConcept ...$specialCourtesy): self
     {
@@ -2231,8 +2044,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * Details about the stay during which a healthcare service is provided. This does
      * not describe the event of admitting the patient, but rather any information that
      * is relevant from the time of admittance until the time of discharge.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAdmission
      */
     public function getAdmission(): null|FHIREncounterAdmission
     {
@@ -2248,9 +2059,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * Details about the stay during which a healthcare service is provided. This does
      * not describe the event of admitting the patient, but rather any information that
      * is relevant from the time of admittance until the time of discharge.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAdmission $admission
-     * @return static
      */
     public function setAdmission(null|FHIREncounterAdmission $admission): self
     {
@@ -2295,9 +2103,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * that occurred, where Appointment is used to record planned activities.
      *
      * List of locations where the patient has been during this encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterLocation $location
-     * @return static
      */
     public function addLocation(FHIREncounterLocation $location): self
     {
@@ -2315,9 +2120,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
      * that occurred, where Appointment is used to record planned activities.
      *
      * List of locations where the patient has been during this encounter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterLocation ...$location
-     * @return static
      */
     public function setLocation(FHIREncounterLocation ...$location): self
     {
@@ -2331,10 +2133,7 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIREncounter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIREncounter
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2492,11 +2291,6 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2717,10 +2511,7 @@ class FHIREncounter extends FHIRDomainResource implements VersionContainedTypeIn
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIREncounter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIREncounter
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

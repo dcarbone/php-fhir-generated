@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -143,8 +143,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $doseForm;
@@ -184,10 +182,8 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
     /**
      * FHIRMedicationKnowledgeDefinitional Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $definition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $doseForm
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $intendedRoute
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient> $ingredient
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic> $drugCharacteristic
@@ -262,9 +258,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated definitions for this medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $definition
-     * @return static
      */
     public function addDefinition(FHIRReference $definition): self
     {
@@ -281,9 +274,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated definitions for this medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$definition
-     * @return static
      */
     public function setDefinition(FHIRReference ...$definition): self
     {
@@ -302,8 +292,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getDoseForm(): null|FHIRCodeableConcept
     {
@@ -317,9 +305,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $doseForm
-     * @return static
      */
     public function setDoseForm(null|FHIRCodeableConcept $doseForm): self
     {
@@ -364,9 +349,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $intendedRoute
-     * @return static
      */
     public function addIntendedRoute(FHIRCodeableConcept $intendedRoute): self
     {
@@ -384,9 +366,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$intendedRoute
-     * @return static
      */
     public function setIntendedRoute(FHIRCodeableConcept ...$intendedRoute): self
     {
@@ -425,9 +404,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * Identifies a particular constituent of interest in the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient $ingredient
-     * @return static
      */
     public function addIngredient(FHIRMedicationKnowledgeIngredient $ingredient): self
     {
@@ -442,9 +418,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * Identifies a particular constituent of interest in the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient ...$ingredient
-     * @return static
      */
     public function setIngredient(FHIRMedicationKnowledgeIngredient ...$ingredient): self
     {
@@ -485,9 +458,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      *
      * Specifies descriptive properties of the medicine, such as color, shape,
      * imprints, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic $drugCharacteristic
-     * @return static
      */
     public function addDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic $drugCharacteristic): self
     {
@@ -503,9 +473,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      *
      * Specifies descriptive properties of the medicine, such as color, shape,
      * imprints, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic ...$drugCharacteristic
-     * @return static
      */
     public function setDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic ...$drugCharacteristic): self
     {
@@ -519,10 +486,7 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDefinitional $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDefinitional
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -574,10 +538,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -618,10 +578,7 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDefinitional $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDefinitional
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

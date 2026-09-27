@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -113,8 +112,6 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A number appearing on the outer packaging of a specific batch.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $outerPackaging;
@@ -125,8 +122,6 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A number appearing on the immediate packaging (and not the outer packaging).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $immediatePackaging;
@@ -135,10 +130,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     /**
      * FHIRMedicinalProductPackagedBatchIdentifier Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $outerPackaging
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $immediatePackaging
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -174,8 +166,6 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A number appearing on the outer packaging of a specific batch.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     public function getOuterPackaging(): null|FHIRIdentifier
     {
@@ -189,9 +179,6 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A number appearing on the outer packaging of a specific batch.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $outerPackaging
-     * @return static
      */
     public function setOuterPackaging(null|FHIRIdentifier $outerPackaging): self
     {
@@ -210,8 +197,6 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A number appearing on the immediate packaging (and not the outer packaging).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
      */
     public function getImmediatePackaging(): null|FHIRIdentifier
     {
@@ -225,9 +210,6 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A number appearing on the immediate packaging (and not the outer packaging).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $immediatePackaging
-     * @return static
      */
     public function setImmediatePackaging(null|FHIRIdentifier $immediatePackaging): self
     {
@@ -241,10 +223,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -290,10 +269,6 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -311,10 +286,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

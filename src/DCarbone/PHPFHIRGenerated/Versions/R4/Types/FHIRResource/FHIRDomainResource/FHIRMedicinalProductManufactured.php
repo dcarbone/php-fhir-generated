@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -84,7 +82,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
@@ -138,8 +135,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $manufacturedDoseForm;
@@ -151,8 +146,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * The “real world” units in which the quantity of the manufactured item is
      * described.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unitOfPresentation;
@@ -164,8 +157,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity or "count number" of the manufactured item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -199,8 +190,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
      */
     #[FHIRProdCharacteristic]
     protected FHIRProdCharacteristic $physicalCharacteristics;
@@ -220,20 +209,11 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
     /* constructor.php:61 */
     /**
      * FHIRMedicinalProductManufactured Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $manufacturedDoseForm
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unitOfPresentation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $quantity
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $manufacturer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $ingredient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic $physicalCharacteristics
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $otherCharacteristics
      * @param null|string[] $fhirComments
      */
@@ -307,8 +287,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getManufacturedDoseForm(): null|FHIRCodeableConcept
     {
@@ -323,9 +301,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $manufacturedDoseForm
-     * @return static
      */
     public function setManufacturedDoseForm(null|FHIRCodeableConcept $manufacturedDoseForm): self
     {
@@ -345,8 +320,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * The “real world” units in which the quantity of the manufactured item is
      * described.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getUnitOfPresentation(): null|FHIRCodeableConcept
     {
@@ -361,9 +334,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * The “real world” units in which the quantity of the manufactured item is
      * described.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unitOfPresentation
-     * @return static
      */
     public function setUnitOfPresentation(null|FHIRCodeableConcept $unitOfPresentation): self
     {
@@ -383,8 +353,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity or "count number" of the manufactured item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -399,9 +367,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity or "count number" of the manufactured item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -446,9 +411,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $manufacturer
-     * @return static
      */
     public function addManufacturer(FHIRReference $manufacturer): self
     {
@@ -466,9 +428,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$manufacturer
-     * @return static
      */
     public function setManufacturer(FHIRReference ...$manufacturer): self
     {
@@ -511,9 +470,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $ingredient
-     * @return static
      */
     public function addIngredient(FHIRReference $ingredient): self
     {
@@ -530,9 +486,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$ingredient
-     * @return static
      */
     public function setIngredient(FHIRReference ...$ingredient): self
     {
@@ -551,8 +504,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
      */
     public function getPhysicalCharacteristics(): null|FHIRProdCharacteristic
     {
@@ -566,9 +517,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic $physicalCharacteristics
-     * @return static
      */
     public function setPhysicalCharacteristics(null|FHIRProdCharacteristic $physicalCharacteristics): self
     {
@@ -613,9 +561,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $otherCharacteristics
-     * @return static
      */
     public function addOtherCharacteristics(FHIRCodeableConcept $otherCharacteristics): self
     {
@@ -633,9 +578,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$otherCharacteristics
-     * @return static
      */
     public function setOtherCharacteristics(FHIRCodeableConcept ...$otherCharacteristics): self
     {
@@ -649,10 +591,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -744,11 +683,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -821,10 +755,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

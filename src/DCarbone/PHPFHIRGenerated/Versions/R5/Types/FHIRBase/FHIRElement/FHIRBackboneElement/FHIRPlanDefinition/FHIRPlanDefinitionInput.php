@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -141,8 +141,6 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
      * A human-readable label for the data requirement used to label data flows in BPMN
      * or similar diagrams. Also provides a human readable label when rendering the
      * data requirement that conveys its purpose to human readers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -153,8 +151,6 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the data that is to be provided as input to the action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $requirement;
@@ -167,8 +163,6 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Points to an existing input or output element that provides data to this input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $relatedData;
@@ -177,11 +171,7 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
     /**
      * FHIRPlanDefinitionInput Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement $requirement
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $relatedData
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -222,8 +212,6 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
      * A human-readable label for the data requirement used to label data flows in BPMN
      * or similar diagrams. Also provides a human readable label when rendering the
      * data requirement that conveys its purpose to human readers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -238,9 +226,6 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
      * A human-readable label for the data requirement used to label data flows in BPMN
      * or similar diagrams. Also provides a human readable label when rendering the
      * data requirement that conveys its purpose to human readers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -262,8 +247,6 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the data that is to be provided as input to the action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
      */
     public function getRequirement(): null|FHIRDataRequirement
     {
@@ -277,9 +260,6 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the data that is to be provided as input to the action.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement $requirement
-     * @return static
      */
     public function setRequirement(null|FHIRDataRequirement $requirement): self
     {
@@ -300,8 +280,6 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Points to an existing input or output element that provides data to this input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getRelatedData(): null|FHIRId
     {
@@ -317,9 +295,6 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Points to an existing input or output element that provides data to this input.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $relatedData
-     * @return static
      */
     public function setRelatedData(null|string|FHIRIdPrimitive|FHIRId $relatedData): self
     {
@@ -336,10 +311,7 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionInput $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionInput
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -403,10 +375,6 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -439,10 +407,7 @@ class FHIRPlanDefinitionInput extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionInput $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionInput
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

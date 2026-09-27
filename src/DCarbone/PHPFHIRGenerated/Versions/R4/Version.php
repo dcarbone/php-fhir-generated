@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -80,7 +80,6 @@ class Version implements VersionInterface
 
     private static FHIRVersion $_fhirVersion;
 
-    /** @var \DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface */
     private VersionConfigInterface $_config;
 
     /** @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionTypeMap */
@@ -88,7 +87,6 @@ class Version implements VersionInterface
 
     /**
      * Version Constructor
-     * @param null|array|\DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface $config
      */
     public function __construct(null|array|VersionConfigInterface $config = null)
     {
@@ -104,17 +102,11 @@ class Version implements VersionInterface
         $this->_config = $config;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return self::NAME;
     }
 
-    /**
-     * @return \DCarbone\PHPFHIRGenerated\FHIRVersion
-     */
     public static function getFHIRVersion(): FHIRVersion
     {
         if (!isset(self::$_fhirVersion)) {
@@ -129,57 +121,36 @@ class Version implements VersionInterface
         return self::$_fhirVersion;
     }
 
-    /**
-     * @return string
-     */
     public function getFHIRSemanticVersion(): string
     {
         return self::FHIR_SEMANTIC_VERSION;
     }
 
-    /**
-     * @return string
-     */
     public function getFHIRShortVersion(): string
     {
         return self::FHIR_SHORT_VERSION;
     }
 
-    /**
-     * @return int
-     */
     public function getFHIRVersionInteger(): int
     {
         return self::FHIR_VERSION_INTEGER;
     }
 
-    /**
-     * @return null|string
-     */
     public function getFHIRPreRelease(): null|string
     {
         return self::FHIR_PRE_RELEASE;
     }
 
-    /**
-     * @return bool
-     */
     public function isFHIRPreRelease(): bool
     {
         return null !== self::FHIR_PRE_RELEASE;
     }
 
-    /**
-     * @return string
-     */
     public function getFHIRGenerationDate(): string
     {
         return self::FHIR_GENERATION_DATE;
     }
 
-    /**
-     * @return \DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface
-     */
     public function getConfig(): VersionConfigInterface
     {
         return $this->_config;

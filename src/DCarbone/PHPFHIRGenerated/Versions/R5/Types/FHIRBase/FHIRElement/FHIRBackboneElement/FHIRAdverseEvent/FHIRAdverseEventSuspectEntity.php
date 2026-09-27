@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -127,6 +128,12 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_INSTANCE_CODEABLE_CONCEPT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_INSTANCE_REFERENCE => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -142,9 +149,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * device.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $instanceCodeableConcept;
@@ -155,9 +160,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * device.
      */
     #[FHIRReference]
     protected FHIRReference $instanceReference;
@@ -176,8 +179,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * implementation guides include specific extensions, value sets and constraints.
      *
      * Information on the possible cause of the event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality
      */
     #[FHIRAdverseEventCausality]
     protected FHIRAdverseEventCausality $causality;
@@ -186,11 +187,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     /**
      * FHIRAdverseEventSuspectEntity Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $instanceCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $instanceReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality $causality
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -231,9 +228,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * device.
      */
     public function getInstanceCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -248,10 +243,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $instanceCodeableConcept
-     * @return static
+     * device.
      */
     public function setInstanceCodeableConcept(null|FHIRCodeableConcept $instanceCodeableConcept): self
     {
@@ -270,9 +262,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * device.
      */
     public function getInstanceReference(): null|FHIRReference
     {
@@ -286,10 +276,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * Identifies the actual instance of what caused the adverse event. May be a
      * substance, medication, medication administration, medication statement or a
-     * device. (choose any one of instance*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $instanceReference
-     * @return static
+     * device.
      */
     public function setInstanceReference(null|FHIRReference $instanceReference): self
     {
@@ -316,8 +303,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * implementation guides include specific extensions, value sets and constraints.
      *
      * Information on the possible cause of the event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality
      */
     public function getCausality(): null|FHIRAdverseEventCausality
     {
@@ -339,9 +324,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * implementation guides include specific extensions, value sets and constraints.
      *
      * Information on the possible cause of the event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality $causality
-     * @return static
      */
     public function setCausality(null|FHIRAdverseEventCausality $causality): self
     {
@@ -355,10 +337,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -406,10 +385,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -432,10 +407,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

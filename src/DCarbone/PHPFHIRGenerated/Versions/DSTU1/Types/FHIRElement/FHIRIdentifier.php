@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -120,8 +120,6 @@ class FHIRIdentifier extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifierUse
      */
     #[FHIRIdentifierUse]
     protected FHIRIdentifierUse $use;
@@ -131,8 +129,6 @@ class FHIRIdentifier extends FHIRElement
      *
      * A text string for the identifier that can be displayed to a human so they can
      * recognize the identifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $label;
@@ -141,8 +137,6 @@ class FHIRIdentifier extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Establishes the namespace in which set of possible id values is unique.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $system;
@@ -152,8 +146,6 @@ class FHIRIdentifier extends FHIRElement
      *
      * The portion of the identifier typically displayed to the user and which is
      * unique within the context of the system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $value;
@@ -163,8 +155,6 @@ class FHIRIdentifier extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -174,8 +164,6 @@ class FHIRIdentifier extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $assigner;
@@ -184,13 +172,6 @@ class FHIRIdentifier extends FHIRElement
     /**
      * FHIRIdentifier Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRIdentifierUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifierUse $use
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $label
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $system
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $value
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $assigner
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -238,8 +219,6 @@ class FHIRIdentifier extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifierUse
      */
     public function getUse(): null|FHIRIdentifierUse
     {
@@ -251,9 +230,6 @@ class FHIRIdentifier extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRIdentifierUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifierUse $use
-     * @return static
      */
     public function setUse(null|string|FHIRIdentifierUseList|FHIRIdentifierUse $use): self
     {
@@ -274,8 +250,6 @@ class FHIRIdentifier extends FHIRElement
      *
      * A text string for the identifier that can be displayed to a human so they can
      * recognize the identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getLabel(): null|FHIRString
     {
@@ -288,9 +262,6 @@ class FHIRIdentifier extends FHIRElement
      *
      * A text string for the identifier that can be displayed to a human so they can
      * recognize the identifier.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $label
-     * @return static
      */
     public function setLabel(null|string|FHIRStringPrimitive|FHIRString $label): self
     {
@@ -310,8 +281,6 @@ class FHIRIdentifier extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Establishes the namespace in which set of possible id values is unique.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     public function getSystem(): null|FHIRUri
     {
@@ -323,9 +292,6 @@ class FHIRIdentifier extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Establishes the namespace in which set of possible id values is unique.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $system
-     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -346,8 +312,6 @@ class FHIRIdentifier extends FHIRElement
      *
      * The portion of the identifier typically displayed to the user and which is
      * unique within the context of the system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getValue(): null|FHIRString
     {
@@ -360,9 +324,6 @@ class FHIRIdentifier extends FHIRElement
      *
      * The portion of the identifier typically displayed to the user and which is
      * unique within the context of the system.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $value
-     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -383,8 +344,6 @@ class FHIRIdentifier extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -397,9 +356,6 @@ class FHIRIdentifier extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -417,8 +373,6 @@ class FHIRIdentifier extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getAssigner(): null|FHIRResourceReference
     {
@@ -431,9 +385,6 @@ class FHIRIdentifier extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $assigner
-     * @return static
      */
     public function setAssigner(null|FHIRResourceReference $assigner): self
     {
@@ -447,10 +398,7 @@ class FHIRIdentifier extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -534,10 +482,6 @@ class FHIRIdentifier extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -595,10 +539,7 @@ class FHIRIdentifier extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

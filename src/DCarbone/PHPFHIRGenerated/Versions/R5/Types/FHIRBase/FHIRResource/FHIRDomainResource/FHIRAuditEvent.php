@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -116,7 +114,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAuditEvent
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -203,8 +200,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what happened. The most specific code for the event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -215,8 +210,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAuditEventAction
      */
     #[FHIRAuditEventAction]
     protected FHIRAuditEventAction $action;
@@ -226,8 +219,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicates and enables segmentation of various severity including debugging from
      * critical.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAuditEventSeverity
      */
     #[FHIRAuditEventSeverity]
     protected FHIRAuditEventSeverity $severity;
@@ -236,10 +227,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * The time or period during which the activity occurred.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurredPeriod;
@@ -252,10 +240,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * The time or period during which the activity occurred.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurredDateTime;
@@ -268,8 +253,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event was recorded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $recorded;
@@ -279,8 +262,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicates whether the event succeeded or failed. A free text descripiton can be
      * given in outcome.text.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventOutcome
      */
     #[FHIRAuditEventOutcome]
     protected FHIRAuditEventOutcome $outcome;
@@ -316,8 +297,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The patient element is available to enable deterministic tracking of activities
      * that involve the patient as the subject of the data used in an activity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -329,8 +308,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * This will typically be the encounter the event occurred, but some events may be
      * initiated prior to or after the official completion of an encounter but still be
      * tied to the context of the encounter (e.g. pre-admission lab tests).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -349,8 +326,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * The actor that is reporting the event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource
      */
     #[FHIRAuditEventSource]
     protected FHIRAuditEventSource $source;
@@ -368,28 +343,13 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
     /* constructor.php:61 */
     /**
      * FHIRAuditEvent Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAuditEventActionEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAuditEventAction $action
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAuditEventSeverityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAuditEventSeverity $severity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $occurredPeriod
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $occurredDateTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $recorded
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventOutcome $outcome
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $authorization
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $basedOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent> $agent
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource $source
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity> $entity
      * @param null|string[] $fhirComments
      */
@@ -520,9 +480,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of the type of event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -540,9 +497,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of the type of event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -561,8 +515,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what happened. The most specific code for the event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -576,9 +528,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what happened. The most specific code for the event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -597,8 +546,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAuditEventAction
      */
     public function getAction(): null|FHIRAuditEventAction
     {
@@ -612,9 +559,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAuditEventActionEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAuditEventAction $action
-     * @return static
      */
     public function setAction(null|string|FHIRAuditEventActionEnum|FHIRAuditEventAction $action): self
     {
@@ -635,8 +579,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicates and enables segmentation of various severity including debugging from
      * critical.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAuditEventSeverity
      */
     public function getSeverity(): null|FHIRAuditEventSeverity
     {
@@ -649,9 +591,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicates and enables segmentation of various severity including debugging from
      * critical.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAuditEventSeverityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAuditEventSeverity $severity
-     * @return static
      */
     public function setSeverity(null|string|FHIRAuditEventSeverityEnum|FHIRAuditEventSeverity $severity): self
     {
@@ -671,10 +610,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * The time or period during which the activity occurred.
      */
     public function getOccurredPeriod(): null|FHIRPeriod
     {
@@ -686,11 +622,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $occurredPeriod
-     * @return static
+     * The time or period during which the activity occurred.
      */
     public function setOccurredPeriod(null|FHIRPeriod $occurredPeriod): self
     {
@@ -711,10 +643,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * The time or period during which the activity occurred.
      */
     public function getOccurredDateTime(): null|FHIRDateTime
     {
@@ -730,11 +659,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The time or period during which the activity occurred. (choose any one of
-     * occurred*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $occurredDateTime
-     * @return static
+     * The time or period during which the activity occurred.
      */
     public function setOccurredDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurredDateTime): self
     {
@@ -758,8 +683,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event was recorded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     public function getRecorded(): null|FHIRInstant
     {
@@ -775,9 +698,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event was recorded.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $recorded
-     * @return static
      */
     public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded): self
     {
@@ -798,8 +718,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicates whether the event succeeded or failed. A free text descripiton can be
      * given in outcome.text.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventOutcome
      */
     public function getOutcome(): null|FHIRAuditEventOutcome
     {
@@ -812,9 +730,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Indicates whether the event succeeded or failed. A free text descripiton can be
      * given in outcome.text.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventOutcome $outcome
-     * @return static
      */
     public function setOutcome(null|FHIRAuditEventOutcome $outcome): self
     {
@@ -861,9 +776,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $authorization
-     * @return static
      */
     public function addAuthorization(FHIRCodeableConcept $authorization): self
     {
@@ -882,9 +794,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$authorization
-     * @return static
      */
     public function setAuthorization(FHIRCodeableConcept ...$authorization): self
     {
@@ -929,9 +838,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Allows tracing of authorizatino for the events and tracking whether
      * proposals/recommendations were acted upon.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -949,9 +855,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Allows tracing of authorizatino for the events and tracking whether
      * proposals/recommendations were acted upon.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -970,8 +873,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The patient element is available to enable deterministic tracking of activities
      * that involve the patient as the subject of the data used in an activity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -985,9 +886,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The patient element is available to enable deterministic tracking of activities
      * that involve the patient as the subject of the data used in an activity.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -1007,8 +905,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * This will typically be the encounter the event occurred, but some events may be
      * initiated prior to or after the official completion of an encounter but still be
      * tied to the context of the encounter (e.g. pre-admission lab tests).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -1023,9 +919,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * This will typically be the encounter the event occurred, but some events may be
      * initiated prior to or after the official completion of an encounter but still be
      * tied to the context of the encounter (e.g. pre-admission lab tests).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1066,9 +959,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * An actor taking an active role in the event or activity that is logged.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent $agent
-     * @return static
      */
     public function addAgent(FHIRAuditEventAgent $agent): self
     {
@@ -1084,9 +974,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * An actor taking an active role in the event or activity that is logged.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent ...$agent
-     * @return static
      */
     public function setAgent(FHIRAuditEventAgent ...$agent): self
     {
@@ -1103,8 +990,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * The actor that is reporting the event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource
      */
     public function getSource(): null|FHIRAuditEventSource
     {
@@ -1116,9 +1001,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * The actor that is reporting the event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource $source
-     * @return static
      */
     public function setSource(null|FHIRAuditEventSource $source): self
     {
@@ -1159,9 +1041,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * Specific instances of data or objects that have been accessed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity $entity
-     * @return static
      */
     public function addEntity(FHIRAuditEventEntity $entity): self
     {
@@ -1177,9 +1056,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * Specific instances of data or objects that have been accessed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity ...$entity
-     * @return static
      */
     public function setEntity(FHIRAuditEventEntity ...$entity): self
     {
@@ -1193,10 +1069,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAuditEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAuditEvent
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1336,11 +1209,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1477,10 +1345,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAuditEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAuditEvent
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

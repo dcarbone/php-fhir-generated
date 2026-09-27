@@ -6,7 +6,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -43,7 +43,6 @@ class FHIRResourceContainer implements ResourceContainerTypeInterface
 
     private const _FHIR_VALIDATION_RULES = [];
 
-    /** @var null|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface */
     private null|VersionContainedTypeInterface $containedType = null;
 
     public function __construct(null|VersionContainedTypeInterface $containedType = null)
@@ -74,7 +73,6 @@ class FHIRResourceContainer implements ResourceContainerTypeInterface
 
     /**
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $containedType
-     * @return static
      */
     public function setContainedType(null|ContainedTypeInterface $containedType): self
     {
@@ -98,9 +96,6 @@ class FHIRResourceContainer implements ResourceContainerTypeInterface
         return (string)($this->containedType ?? self::FHIR_TYPE_NAME);
     }
 
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface
-     */
     public function jsonSerialize(): null|VersionContainedTypeInterface
     {
         return $this->containedType ?? null;

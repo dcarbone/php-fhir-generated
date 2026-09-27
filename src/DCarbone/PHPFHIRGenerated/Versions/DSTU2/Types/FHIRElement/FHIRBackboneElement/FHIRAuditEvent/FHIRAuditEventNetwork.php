@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -121,8 +121,6 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
      *
      * An identifier for the network access point of the user device for the audit
      * event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $address;
@@ -132,8 +130,6 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
      *
      * An identifier for the type of network access point that originated the audit
      * event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventParticipantNetworkType
      */
     #[FHIRAuditEventParticipantNetworkType]
     protected FHIRAuditEventParticipantNetworkType $type;
@@ -142,10 +138,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
     /**
      * FHIRAuditEventNetwork Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $address
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventParticipantNetworkTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventParticipantNetworkType $type
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -181,8 +174,6 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
      *
      * An identifier for the network access point of the user device for the audit
      * event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getAddress(): null|FHIRString
     {
@@ -196,9 +187,6 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
      *
      * An identifier for the network access point of the user device for the audit
      * event.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $address
-     * @return static
      */
     public function setAddress(null|string|FHIRStringPrimitive|FHIRString $address): self
     {
@@ -219,8 +207,6 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
      *
      * An identifier for the type of network access point that originated the audit
      * event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventParticipantNetworkType
      */
     public function getType(): null|FHIRAuditEventParticipantNetworkType
     {
@@ -233,9 +219,6 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
      *
      * An identifier for the type of network access point that originated the audit
      * event.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventParticipantNetworkTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventParticipantNetworkType $type
-     * @return static
      */
     public function setType(null|string|FHIRAuditEventParticipantNetworkTypeList|FHIRAuditEventParticipantNetworkType $type): self
     {
@@ -252,10 +235,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -317,10 +297,6 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -348,10 +324,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

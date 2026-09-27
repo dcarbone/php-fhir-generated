@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -32,22 +32,16 @@ interface VersionInterface
 {
     /**
      * Must return the "name" of this version.
-     *
-     * @return string
      */
     public function getName(): string;
 
     /**
      * Must return source's reported version of FHIR
-     *
-     * @return \DCarbone\PHPFHIRGenerated\FHIRVersion
      */
     public static function getFHIRVersion(): FHIRVersion;
 
     /**
      * Must return source's reported version of FHIR
-     *
-     * @return string
      */
     public function getFHIRSemanticVersion(): string;
 
@@ -60,44 +54,32 @@ interface VersionInterface
 
     /**
      * Must return an integer representation of the source's semantic version.
-     *
-     * @return int
      */
     public function getFHIRVersionInteger(): int;
 
     /**
      * Must return the pre-release identifier from the FHIR version string (e.g. 'ballot4'),
      * or null when this is a GA release.
-     *
-     * @return null|string
      */
     public function getFHIRPreRelease(): null|string;
 
     /**
      * Must return true when the FHIR source version is a pre-release (e.g. a ballot build).
-     *
-     * @return bool
      */
     public function isFHIRPreRelease(): bool;
 
     /**
      * Must return the date this FHIR version's source was generated
-     *
-     * @return string
      */
     public function getFHIRGenerationDate(): string;
 
     /**
      * Must return config for this version
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface
      */
     public function getConfig(): VersionConfigInterface;
 
     /**
      * Must return the type map class for this version
-     *
-     * @return \DCarbone\PHPFHIRGenerated\Versions\VersionTypeMapInterface
      */
     public function getTypeMap(): VersionTypeMapInterface;
 }

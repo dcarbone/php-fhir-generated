@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -136,8 +136,6 @@ class FHIRTiming extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of rules that describe when the event is scheduled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming\FHIRTimingRepeat
      */
     #[FHIRTimingRepeat]
     protected FHIRTimingRepeat $repeat;
@@ -153,8 +151,6 @@ class FHIRTiming extends FHIRBackboneElement
      * whatever is specified in the structured timing data, and either the code or the
      * data may be used to interpret the Timing, with the exception that .repeat.bounds
      * still applies over the code (and is not contained in the code).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -163,11 +159,8 @@ class FHIRTiming extends FHIRBackboneElement
     /**
      * FHIRTiming Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<string>|iterable<\DateTimeInterface>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime> $event
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming\FHIRTimingRepeat $repeat
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -237,9 +230,6 @@ class FHIRTiming extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies specific times when the event occurs.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $event
-     * @return static
      */
     public function addEvent(string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $event): self
     {
@@ -262,9 +252,6 @@ class FHIRTiming extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies specific times when the event occurs.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime ...$event
-     * @return static
      */
     public function setEvent(string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime ...$event): self
     {
@@ -293,8 +280,6 @@ class FHIRTiming extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of rules that describe when the event is scheduled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming\FHIRTimingRepeat
      */
     public function getRepeat(): null|FHIRTimingRepeat
     {
@@ -311,9 +296,6 @@ class FHIRTiming extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of rules that describe when the event is scheduled.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming\FHIRTimingRepeat $repeat
-     * @return static
      */
     public function setRepeat(null|FHIRTimingRepeat $repeat): self
     {
@@ -337,8 +319,6 @@ class FHIRTiming extends FHIRBackboneElement
      * whatever is specified in the structured timing data, and either the code or the
      * data may be used to interpret the Timing, with the exception that .repeat.bounds
      * still applies over the code (and is not contained in the code).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -357,9 +337,6 @@ class FHIRTiming extends FHIRBackboneElement
      * whatever is specified in the structured timing data, and either the code or the
      * data may be used to interpret the Timing, with the exception that .repeat.bounds
      * still applies over the code (and is not contained in the code).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -373,10 +350,7 @@ class FHIRTiming extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -424,10 +398,6 @@ class FHIRTiming extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -452,10 +422,7 @@ class FHIRTiming extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

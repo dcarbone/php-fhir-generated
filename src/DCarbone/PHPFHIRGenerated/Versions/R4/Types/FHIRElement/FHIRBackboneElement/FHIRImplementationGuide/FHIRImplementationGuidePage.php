@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -138,8 +137,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The source address for the page.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl
      */
     #[FHIRUrl]
     protected FHIRUrl $nameUrl;
@@ -149,8 +146,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source address for the page.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $nameReference;
@@ -161,8 +156,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A short title used to represent this page in navigational structures such as
      * table of contents, bread crumbs, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -171,8 +164,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the page is generated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGuidePageGeneration
      */
     #[FHIRGuidePageGeneration]
     protected FHIRGuidePageGeneration $generation;
@@ -193,12 +184,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     /**
      * FHIRImplementationGuidePage Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl $nameUrl
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $nameReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRGuidePageGenerationList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGuidePageGeneration $generation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage> $page
      * @param null|string[] $fhirComments
      */
@@ -246,8 +232,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The source address for the page.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl
      */
     public function getNameUrl(): null|FHIRUrl
     {
@@ -260,9 +244,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The source address for the page.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl $nameUrl
-     * @return static
      */
     public function setNameUrl(null|string|FHIRUrlPrimitive|FHIRUrl $nameUrl): self
     {
@@ -283,8 +264,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source address for the page.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getNameReference(): null|FHIRReference
     {
@@ -297,9 +276,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source address for the page.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $nameReference
-     * @return static
      */
     public function setNameReference(null|FHIRReference $nameReference): self
     {
@@ -318,8 +294,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A short title used to represent this page in navigational structures such as
      * table of contents, bread crumbs, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -333,9 +307,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A short title used to represent this page in navigational structures such as
      * table of contents, bread crumbs, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -355,8 +326,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the page is generated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGuidePageGeneration
      */
     public function getGeneration(): null|FHIRGuidePageGeneration
     {
@@ -368,9 +337,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the page is generated.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRGuidePageGenerationList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRGuidePageGeneration $generation
-     * @return static
      */
     public function setGeneration(null|string|FHIRGuidePageGenerationList|FHIRGuidePageGeneration $generation): self
     {
@@ -418,9 +384,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Nested Pages/Sections under this page.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
-     * @return static
      */
     public function addPage(FHIRImplementationGuidePage $page): self
     {
@@ -438,9 +401,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Nested Pages/Sections under this page.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage ...$page
-     * @return static
      */
     public function setPage(FHIRImplementationGuidePage ...$page): self
     {
@@ -454,10 +414,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -533,10 +490,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -586,10 +539,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

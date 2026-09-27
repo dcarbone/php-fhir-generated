@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -38,9 +38,6 @@ class ResourceParser
     /**
      * Attempts to parse the provided input into FHIR objects.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
-     * @param null|string|array|\stdClass|\SimpleXMLElement|\DOMDocument $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      * @throws \Exception
      */
     public static function parse(VersionInterface $version,
@@ -57,11 +54,6 @@ class ResourceParser
         }
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
-     * @param array $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
-     */
     public static function parseArray(VersionInterface $version, array $input): null|ResourceTypeInterface
     {
         if ([] === $input) {
@@ -70,11 +62,6 @@ class ResourceParser
         return static::parseStdClass($version, (object)$input);
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
-     * @param \stdClass $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
-     */
     public static function parseStdClass(VersionInterface $version, \stdClass $input): null|ResourceTypeInterface
     {
         if (isset($input->resourceType)) {
@@ -97,11 +84,6 @@ class ResourceParser
         ));
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
-     * @param \SimpleXMLElement $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
-     */
     public static function parseSimpleXMLElement(VersionInterface $version, \SimpleXMLElement $input): null|ResourceTypeInterface
     {
         $elementName = $input->getName();
@@ -117,21 +99,11 @@ class ResourceParser
         return $fhirType::xmlUnserialize($input, $version->getConfig()->getUnserializeConfig());
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
-     * @param \DOMDocument $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
-     */
     public static function parseDOMDocument(VersionInterface $version, \DOMDocument $input): null|ResourceTypeInterface
     {
         return static::parseSimpleXMLElement($version, simplexml_import_dom($input));
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
-     * @param \stdClass|\SimpleXMLElement|\DOMDocument $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
-     */
     public static function parseObject(VersionInterface $version,
                                        \stdClass|\SimpleXMLElement|\DOMDocument $input): null|ResourceTypeInterface
     {
@@ -145,9 +117,6 @@ class ResourceParser
     }
 
     /**
-     * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
-     * @param string $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      * @throws \Exception
      */
     public static function parseXML(VersionInterface $version, string $input): null|ResourceTypeInterface
@@ -157,11 +126,6 @@ class ResourceParser
             new \SimpleXMLElement($input, $version->getConfig()->getUnserializeConfig()->getLibxmlOpts()));
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
-     * @param string $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
-     */
     public static function parseJSON(VersionInterface $version, string $input): null|ResourceTypeInterface
     {
         $config = $version->getConfig()->getUnserializeConfig();
@@ -184,9 +148,6 @@ class ResourceParser
     }
 
     /**
-     * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
-     * @param string $input
-     * @return null|\DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      * @throws \Exception
      */
     public static function parseString(VersionInterface $version, string $input): null|ResourceTypeInterface
@@ -206,10 +167,6 @@ class ResourceParser
         ));
     }
 
-    /**
-     * @param string $input
-     * @return string
-     */
     protected static function getPrintableStringInput(string $input): string
     {
         if (strlen($input) > 100) {

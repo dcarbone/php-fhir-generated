@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -114,8 +114,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The identifier for the stratifier used to coordinate the reported data back to
      * this stratifier.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -126,8 +124,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The criteria for the stratifier. This must be the name of an expression defined
      * within a referenced library.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $criteria;
@@ -138,8 +134,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The path to an element that defines the stratifier, specified as a valid FHIR
      * resource path.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -148,11 +142,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
     /**
      * FHIRMeasureStratifier Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $criteria
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $path
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -192,8 +182,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The identifier for the stratifier used to coordinate the reported data back to
      * this stratifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -207,9 +195,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The identifier for the stratifier used to coordinate the reported data back to
      * this stratifier.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -228,8 +213,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The criteria for the stratifier. This must be the name of an expression defined
      * within a referenced library.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getCriteria(): null|FHIRString
     {
@@ -243,9 +226,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The criteria for the stratifier. This must be the name of an expression defined
      * within a referenced library.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $criteria
-     * @return static
      */
     public function setCriteria(null|string|FHIRStringPrimitive|FHIRString $criteria): self
     {
@@ -267,8 +247,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The path to an element that defines the stratifier, specified as a valid FHIR
      * resource path.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getPath(): null|FHIRString
     {
@@ -282,9 +260,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      *
      * The path to an element that defines the stratifier, specified as a valid FHIR
      * resource path.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $path
-     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -301,10 +276,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -368,10 +340,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -404,10 +372,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch;
@@ -108,7 +106,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomain
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMedicationStatusCodesEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -176,8 +173,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * if no code is available. Usage note: This could be a standard medication code
      * such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or
      * local formulary code, optionally with translations to other code systems.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -185,8 +180,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the medication is in active use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMedicationStatusCodes
      */
     #[FHIRMedicationStatusCodes]
     protected FHIRMedicationStatusCodes $status;
@@ -200,8 +193,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * Typically abbreviated MAH.Note: The MAH may manufacture the product and may also
      * contract the manufacturing of the product to one or more companies
      * (organizations).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $marketingAuthorizationHolder;
@@ -212,8 +203,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $doseForm;
@@ -229,8 +218,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * that has the same strength (For example, Insulin glargine 100 unit per mL
      * solution for injection), this attribute provides additional clarification of the
      * package amount (For example, 3 mL, 10mL, etc.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $totalVolume;
@@ -253,8 +240,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * use.
      *
      * Information that only applies to packages (not products).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch
      */
     #[FHIRMedicationBatch]
     protected FHIRMedicationBatch $batch;
@@ -265,8 +250,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A reference to a knowledge resource that provides more information about this
      * medication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $definition;
@@ -274,23 +257,11 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
     /* constructor.php:61 */
     /**
      * FHIRMedication Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMedicationStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMedicationStatusCodes $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $marketingAuthorizationHolder
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $doseForm
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $totalVolume
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient> $ingredient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch $batch
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $definition
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -396,9 +367,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -416,9 +384,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -440,8 +405,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * if no code is available. Usage note: This could be a standard medication code
      * such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or
      * local formulary code, optionally with translations to other code systems.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -458,9 +421,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * if no code is available. Usage note: This could be a standard medication code
      * such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or
      * local formulary code, optionally with translations to other code systems.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -476,8 +436,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the medication is in active use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMedicationStatusCodes
      */
     public function getStatus(): null|FHIRMedicationStatusCodes
     {
@@ -488,9 +446,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the medication is in active use.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMedicationStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMedicationStatusCodes $status
-     * @return static
      */
     public function setStatus(null|string|FHIRMedicationStatusCodesEnum|FHIRMedicationStatusCodes $status): self
     {
@@ -515,8 +470,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * Typically abbreviated MAH.Note: The MAH may manufacture the product and may also
      * contract the manufacturing of the product to one or more companies
      * (organizations).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getMarketingAuthorizationHolder(): null|FHIRReference
     {
@@ -533,9 +486,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * Typically abbreviated MAH.Note: The MAH may manufacture the product and may also
      * contract the manufacturing of the product to one or more companies
      * (organizations).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $marketingAuthorizationHolder
-     * @return static
      */
     public function setMarketingAuthorizationHolder(null|FHIRReference $marketingAuthorizationHolder): self
     {
@@ -554,8 +504,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getDoseForm(): null|FHIRCodeableConcept
     {
@@ -569,9 +517,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $doseForm
-     * @return static
      */
     public function setDoseForm(null|FHIRCodeableConcept $doseForm): self
     {
@@ -595,8 +540,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * that has the same strength (For example, Insulin glargine 100 unit per mL
      * solution for injection), this attribute provides additional clarification of the
      * package amount (For example, 3 mL, 10mL, etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     public function getTotalVolume(): null|FHIRQuantity
     {
@@ -615,9 +558,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * that has the same strength (For example, Insulin glargine 100 unit per mL
      * solution for injection), this attribute provides additional clarification of the
      * package amount (For example, 3 mL, 10mL, etc.).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $totalVolume
-     * @return static
      */
     public function setTotalVolume(null|FHIRQuantity $totalVolume): self
     {
@@ -662,9 +602,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * use.
      *
      * Identifies a particular constituent of interest in the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient $ingredient
-     * @return static
      */
     public function addIngredient(FHIRMedicationIngredient $ingredient): self
     {
@@ -682,9 +619,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * use.
      *
      * Identifies a particular constituent of interest in the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient ...$ingredient
-     * @return static
      */
     public function setIngredient(FHIRMedicationIngredient ...$ingredient): self
     {
@@ -703,8 +637,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * use.
      *
      * Information that only applies to packages (not products).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch
      */
     public function getBatch(): null|FHIRMedicationBatch
     {
@@ -718,9 +650,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * use.
      *
      * Information that only applies to packages (not products).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch $batch
-     * @return static
      */
     public function setBatch(null|FHIRMedicationBatch $batch): self
     {
@@ -739,8 +668,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A reference to a knowledge resource that provides more information about this
      * medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getDefinition(): null|FHIRReference
     {
@@ -754,9 +681,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A reference to a knowledge resource that provides more information about this
      * medication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $definition
-     * @return static
      */
     public function setDefinition(null|FHIRReference $definition): self
     {
@@ -770,10 +694,7 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedication $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedication
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -877,11 +798,6 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -967,10 +883,7 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedication $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMedication
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

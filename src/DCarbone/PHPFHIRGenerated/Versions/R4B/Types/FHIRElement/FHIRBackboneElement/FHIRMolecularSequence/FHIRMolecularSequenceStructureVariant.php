@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -139,8 +139,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about chromosome structure variation DNA change type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $variantType;
@@ -149,8 +147,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to indicate if the outer and inner start-end values have the same meaning.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $exact;
@@ -160,8 +156,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of the variant chromosome.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $length;
@@ -169,8 +163,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Raw data describing a biological sequence.
      *
      * Structural variant outer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceOuter
      */
     #[FHIRMolecularSequenceOuter]
     protected FHIRMolecularSequenceOuter $outer;
@@ -178,8 +170,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Raw data describing a biological sequence.
      *
      * Structural variant inner.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceInner
      */
     #[FHIRMolecularSequenceInner]
     protected FHIRMolecularSequenceInner $inner;
@@ -188,13 +178,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
     /**
      * FHIRMolecularSequenceStructureVariant Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $variantType
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $exact
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $length
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceOuter $outer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceInner $inner
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -242,8 +226,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about chromosome structure variation DNA change type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getVariantType(): null|FHIRCodeableConcept
     {
@@ -257,9 +239,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about chromosome structure variation DNA change type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $variantType
-     * @return static
      */
     public function setVariantType(null|FHIRCodeableConcept $variantType): self
     {
@@ -276,8 +255,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to indicate if the outer and inner start-end values have the same meaning.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getExact(): null|FHIRBoolean
     {
@@ -289,9 +266,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to indicate if the outer and inner start-end values have the same meaning.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $exact
-     * @return static
      */
     public function setExact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exact): self
     {
@@ -312,8 +286,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of the variant chromosome.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     public function getLength(): null|FHIRInteger
     {
@@ -326,9 +298,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of the variant chromosome.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $length
-     * @return static
      */
     public function setLength(null|string|float|FHIRIntegerPrimitive|FHIRInteger $length): self
     {
@@ -347,8 +316,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Raw data describing a biological sequence.
      *
      * Structural variant outer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceOuter
      */
     public function getOuter(): null|FHIRMolecularSequenceOuter
     {
@@ -359,9 +326,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Raw data describing a biological sequence.
      *
      * Structural variant outer.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceOuter $outer
-     * @return static
      */
     public function setOuter(null|FHIRMolecularSequenceOuter $outer): self
     {
@@ -377,8 +341,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Raw data describing a biological sequence.
      *
      * Structural variant inner.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceInner
      */
     public function getInner(): null|FHIRMolecularSequenceInner
     {
@@ -389,9 +351,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Raw data describing a biological sequence.
      *
      * Structural variant inner.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceInner $inner
-     * @return static
      */
     public function setInner(null|FHIRMolecularSequenceInner $inner): self
     {
@@ -405,10 +364,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -476,10 +432,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -522,10 +474,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

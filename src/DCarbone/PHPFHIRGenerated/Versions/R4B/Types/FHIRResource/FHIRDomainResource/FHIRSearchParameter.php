@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -125,7 +123,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRXPathUsageType;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -257,8 +254,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * address at which at which an authoritative instance of this search parameter is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the search parameter is stored on different servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -273,8 +268,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -286,8 +279,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * A natural language name identifying the search parameter. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -302,8 +293,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * from which it is defined. i.e. the parameter should have the same meaning, and
      * (usually) the functionality should be a proper subset of the underlying search
      * parameter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $derivedFrom;
@@ -312,8 +301,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * The status of this search parameter. Enables tracking the life-cycle of the
      * content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -324,8 +311,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * A Boolean value to indicate that this search parameter is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -341,8 +326,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * search parameter changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -352,8 +335,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the search parameter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -379,8 +360,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * the Narrative, or extensions
      *
      * And how it used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -426,8 +405,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Explanation of why this search parameter is needed and why it has been designed
      * as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $purpose;
@@ -439,8 +416,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * The code used in the URL or the parameter name in a parameters resource for this
      * search parameter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -458,8 +433,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * The type of value that a search parameter may contain, and how the content is
      * interpreted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchParamType
      */
     #[FHIRSearchParamType]
     protected FHIRSearchParamType $type;
@@ -469,8 +442,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression that returns a set of elements for the search parameter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $expression;
@@ -480,8 +451,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An XPath expression that returns a set of elements for the search parameter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $xpath;
@@ -490,8 +459,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * How the search parameter relates to the set of elements returned by evaluating
      * the xpath query.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRXPathUsageType
      */
     #[FHIRXPathUsageType]
     protected FHIRXPathUsageType $xpathUsage;
@@ -510,8 +477,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Whether multiple values are allowed for each time the parameter exists. Values
      * are separated by commas, and the parameter matches if any of the values match.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $multipleOr;
@@ -521,8 +486,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Whether multiple parameters are allowed - e.g. more than one parameter with the
      * same name. The search matches if all the parameters match.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $multipleAnd;
@@ -574,36 +537,14 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
     /* constructor.php:61 */
     /**
      * FHIRSearchParameter Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $derivedFrom
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $code
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType> $base
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSearchParamTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchParamType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $expression
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $xpath
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRXPathUsageTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRXPathUsageType $xpathUsage
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType> $target
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $multipleOr
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $multipleAnd
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSearchComparatorEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchComparator> $comparator
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSearchModifierCodeEnum>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchModifierCode> $modifier
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> $chain
@@ -759,8 +700,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * address at which at which an authoritative instance of this search parameter is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the search parameter is stored on different servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -778,9 +717,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * address at which at which an authoritative instance of this search parameter is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the search parameter is stored on different servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -806,8 +742,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -825,9 +759,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -850,8 +781,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * A natural language name identifying the search parameter. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -866,9 +795,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * A natural language name identifying the search parameter. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -894,8 +820,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * from which it is defined. i.e. the parameter should have the same meaning, and
      * (usually) the functionality should be a proper subset of the underlying search
      * parameter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     public function getDerivedFrom(): null|FHIRCanonical
     {
@@ -913,9 +837,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * from which it is defined. i.e. the parameter should have the same meaning, and
      * (usually) the functionality should be a proper subset of the underlying search
      * parameter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $derivedFrom
-     * @return static
      */
     public function setDerivedFrom(null|string|FHIRCanonicalPrimitive|FHIRCanonical $derivedFrom): self
     {
@@ -935,8 +856,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * The status of this search parameter. Enables tracking the life-cycle of the
      * content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -948,9 +867,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * The status of this search parameter. Enables tracking the life-cycle of the
      * content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status): self
     {
@@ -972,8 +888,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * A Boolean value to indicate that this search parameter is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -987,9 +901,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * A Boolean value to indicate that this search parameter is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -1016,8 +927,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * search parameter changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1036,9 +945,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * search parameter changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1059,8 +965,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the search parameter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1073,9 +977,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the search parameter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1123,9 +1024,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1143,9 +1041,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1167,8 +1062,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * the Narrative, or extensions
      *
      * And how it used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1185,9 +1078,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * the Narrative, or extensions
      *
      * And how it used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1247,9 +1137,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate search parameter
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1273,9 +1160,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate search parameter
      * instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1322,9 +1206,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * A legal or geographic region in which the search parameter is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1343,9 +1224,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * A legal or geographic region in which the search parameter is intended to be
      * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1368,8 +1246,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Explanation of why this search parameter is needed and why it has been designed
      * as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getPurpose(): null|FHIRMarkdown
     {
@@ -1387,9 +1263,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Explanation of why this search parameter is needed and why it has been designed
      * as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose): self
     {
@@ -1412,8 +1285,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * The code used in the URL or the parameter name in a parameters resource for this
      * search parameter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -1428,9 +1299,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * The code used in the URL or the parameter name in a parameters resource for this
      * search parameter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -1472,9 +1340,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The base resource type(s) that this search parameter can be used against.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType $base
-     * @return static
      */
     public function addBase(string|FHIRResourceTypeEnum|FHIRResourceType $base): self
     {
@@ -1492,9 +1357,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The base resource type(s) that this search parameter can be used against.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType ...$base
-     * @return static
      */
     public function setBase(string|FHIRResourceTypeEnum|FHIRResourceType ...$base): self
     {
@@ -1518,8 +1380,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * The type of value that a search parameter may contain, and how the content is
      * interpreted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchParamType
      */
     public function getType(): null|FHIRSearchParamType
     {
@@ -1531,9 +1391,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * The type of value that a search parameter may contain, and how the content is
      * interpreted.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSearchParamTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchParamType $type
-     * @return static
      */
     public function setType(null|string|FHIRSearchParamTypeEnum|FHIRSearchParamType $type): self
     {
@@ -1554,8 +1411,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression that returns a set of elements for the search parameter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getExpression(): null|FHIRString
     {
@@ -1568,9 +1423,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression that returns a set of elements for the search parameter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $expression
-     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -1591,8 +1443,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An XPath expression that returns a set of elements for the search parameter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getXpath(): null|FHIRString
     {
@@ -1605,9 +1455,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An XPath expression that returns a set of elements for the search parameter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $xpath
-     * @return static
      */
     public function setXpath(null|string|FHIRStringPrimitive|FHIRString $xpath): self
     {
@@ -1627,8 +1474,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * How the search parameter relates to the set of elements returned by evaluating
      * the xpath query.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRXPathUsageType
      */
     public function getXpathUsage(): null|FHIRXPathUsageType
     {
@@ -1640,9 +1485,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * How the search parameter relates to the set of elements returned by evaluating
      * the xpath query.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRXPathUsageTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRXPathUsageType $xpathUsage
-     * @return static
      */
     public function setXpathUsage(null|string|FHIRXPathUsageTypeEnum|FHIRXPathUsageType $xpathUsage): self
     {
@@ -1684,9 +1526,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Types of resource (if a resource is referenced).
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType $target
-     * @return static
      */
     public function addTarget(string|FHIRResourceTypeEnum|FHIRResourceType $target): self
     {
@@ -1704,9 +1543,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Types of resource (if a resource is referenced).
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType ...$target
-     * @return static
      */
     public function setTarget(string|FHIRResourceTypeEnum|FHIRResourceType ...$target): self
     {
@@ -1731,8 +1567,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Whether multiple values are allowed for each time the parameter exists. Values
      * are separated by commas, and the parameter matches if any of the values match.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getMultipleOr(): null|FHIRBoolean
     {
@@ -1745,9 +1579,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Whether multiple values are allowed for each time the parameter exists. Values
      * are separated by commas, and the parameter matches if any of the values match.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $multipleOr
-     * @return static
      */
     public function setMultipleOr(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $multipleOr): self
     {
@@ -1768,8 +1599,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Whether multiple parameters are allowed - e.g. more than one parameter with the
      * same name. The search matches if all the parameters match.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getMultipleAnd(): null|FHIRBoolean
     {
@@ -1782,9 +1611,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      *
      * Whether multiple parameters are allowed - e.g. more than one parameter with the
      * same name. The search matches if all the parameters match.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $multipleAnd
-     * @return static
      */
     public function setMultipleAnd(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $multipleAnd): self
     {
@@ -1826,9 +1652,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparators supported for the search parameter.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSearchComparatorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchComparator $comparator
-     * @return static
      */
     public function addComparator(string|FHIRSearchComparatorEnum|FHIRSearchComparator $comparator): self
     {
@@ -1846,9 +1669,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparators supported for the search parameter.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSearchComparatorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchComparator ...$comparator
-     * @return static
      */
     public function setComparator(string|FHIRSearchComparatorEnum|FHIRSearchComparator ...$comparator): self
     {
@@ -1894,9 +1714,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSearchModifierCodeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchModifierCode $modifier
-     * @return static
      */
     public function addModifier(string|FHIRSearchModifierCodeEnum|FHIRSearchModifierCode $modifier): self
     {
@@ -1914,9 +1731,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSearchModifierCodeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSearchModifierCode ...$modifier
-     * @return static
      */
     public function setModifier(string|FHIRSearchModifierCodeEnum|FHIRSearchModifierCode ...$modifier): self
     {
@@ -1976,9 +1790,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * they contain a reference to a resource which matches the chained parameter
      * value. Values for this field should be drawn from SearchParameter.code for a
      * parameter on the target resource type.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $chain
-     * @return static
      */
     public function addChain(string|FHIRStringPrimitive|FHIRString $chain): self
     {
@@ -2003,9 +1814,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * they contain a reference to a resource which matches the chained parameter
      * value. Values for this field should be drawn from SearchParameter.code for a
      * parameter on the target resource type.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString ...$chain
-     * @return static
      */
     public function setChain(string|FHIRStringPrimitive|FHIRString ...$chain): self
     {
@@ -2053,9 +1861,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * search/filter on a resource.
      *
      * Used to define the parts of a composite search parameter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent $component
-     * @return static
      */
     public function addComponent(FHIRSearchParameterComponent $component): self
     {
@@ -2071,9 +1876,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
      * search/filter on a resource.
      *
      * Used to define the parts of a composite search parameter.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent ...$component
-     * @return static
      */
     public function setComponent(FHIRSearchParameterComponent ...$component): self
     {
@@ -2087,10 +1889,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSearchParameter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSearchParameter
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2356,11 +2155,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2625,10 +2419,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements VersionContained
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSearchParameter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRSearchParameter
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

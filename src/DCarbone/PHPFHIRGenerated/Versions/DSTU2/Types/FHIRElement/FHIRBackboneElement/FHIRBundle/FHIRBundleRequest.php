@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -142,8 +141,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * The HTTP verb for this entry in either a update history, or a transaction/
      * transaction response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHTTPVerb
      */
     #[FHIRHTTPVerb]
     protected FHIRHTTPVerb $method;
@@ -154,8 +151,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * The URL for this entry, relative to the root (the address to which the request
      * is posted).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -166,8 +161,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * If the ETag values match, return a 304 Not modified status. See the API
      * documentation for ["Conditional Read"](http.html#cread).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $ifNoneMatch;
@@ -180,8 +173,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * Only perform the operation if the last updated date matches. See the API
      * documentation for ["Conditional Read"](http.html#cread).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $ifModifiedSince;
@@ -192,8 +183,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * Only perform the operation if the Etag value matches. For more information, see
      * the API section ["Managing Resource Contention"](http.html#concurrency).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $ifMatch;
@@ -206,8 +195,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * exists. For further information, see the API documentation for ["Conditional
      * Create"](http.html#ccreate). This is just the query portion of the URL - what
      * follows the "?" (not including the "?").
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $ifNoneExist;
@@ -216,14 +203,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     /**
      * FHIRBundleRequest Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRHTTPVerbList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHTTPVerb $method
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $url
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $ifNoneMatch
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $ifModifiedSince
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $ifMatch
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $ifNoneExist
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -274,8 +254,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * The HTTP verb for this entry in either a update history, or a transaction/
      * transaction response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHTTPVerb
      */
     public function getMethod(): null|FHIRHTTPVerb
     {
@@ -288,9 +266,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * The HTTP verb for this entry in either a update history, or a transaction/
      * transaction response.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRHTTPVerbList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRHTTPVerb $method
-     * @return static
      */
     public function setMethod(null|string|FHIRHTTPVerbList|FHIRHTTPVerb $method): self
     {
@@ -312,8 +287,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * The URL for this entry, relative to the root (the address to which the request
      * is posted).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -327,9 +300,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * The URL for this entry, relative to the root (the address to which the request
      * is posted).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -351,8 +321,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * If the ETag values match, return a 304 Not modified status. See the API
      * documentation for ["Conditional Read"](http.html#cread).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getIfNoneMatch(): null|FHIRString
     {
@@ -366,9 +334,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * If the ETag values match, return a 304 Not modified status. See the API
      * documentation for ["Conditional Read"](http.html#cread).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $ifNoneMatch
-     * @return static
      */
     public function setIfNoneMatch(null|string|FHIRStringPrimitive|FHIRString $ifNoneMatch): self
     {
@@ -392,8 +357,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * Only perform the operation if the last updated date matches. See the API
      * documentation for ["Conditional Read"](http.html#cread).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     public function getIfModifiedSince(): null|FHIRInstant
     {
@@ -409,9 +372,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * Only perform the operation if the last updated date matches. See the API
      * documentation for ["Conditional Read"](http.html#cread).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $ifModifiedSince
-     * @return static
      */
     public function setIfModifiedSince(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $ifModifiedSince): self
     {
@@ -433,8 +393,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * Only perform the operation if the Etag value matches. For more information, see
      * the API section ["Managing Resource Contention"](http.html#concurrency).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getIfMatch(): null|FHIRString
     {
@@ -448,9 +406,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * Only perform the operation if the Etag value matches. For more information, see
      * the API section ["Managing Resource Contention"](http.html#concurrency).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $ifMatch
-     * @return static
      */
     public function setIfMatch(null|string|FHIRStringPrimitive|FHIRString $ifMatch): self
     {
@@ -474,8 +429,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * exists. For further information, see the API documentation for ["Conditional
      * Create"](http.html#ccreate). This is just the query portion of the URL - what
      * follows the "?" (not including the "?").
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getIfNoneExist(): null|FHIRString
     {
@@ -491,9 +444,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * exists. For further information, see the API documentation for ["Conditional
      * Create"](http.html#ccreate). This is just the query portion of the URL - what
      * follows the "?" (not including the "?").
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $ifNoneExist
-     * @return static
      */
     public function setIfNoneExist(null|string|FHIRStringPrimitive|FHIRString $ifNoneExist): self
     {
@@ -510,10 +460,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -615,10 +562,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -686,10 +629,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * URI for the Code System.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $uri;
@@ -159,8 +157,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if subsumption is supported for this version of the code system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $subsumption;
@@ -169,11 +165,8 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
     /**
      * FHIRTerminologyCapabilitiesCodeSystem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $uri
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion> $version
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $subsumption
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -213,8 +206,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * URI for the Code System.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     public function getUri(): null|FHIRCanonical
     {
@@ -228,9 +219,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * URI for the Code System.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $uri
-     * @return static
      */
     public function setUri(null|string|FHIRCanonicalPrimitive|FHIRCanonical $uri): self
     {
@@ -276,9 +264,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * For the code system, a list of versions that are supported by the server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion $version
-     * @return static
      */
     public function addVersion(FHIRTerminologyCapabilitiesVersion $version): self
     {
@@ -295,9 +280,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * For the code system, a list of versions that are supported by the server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion ...$version
-     * @return static
      */
     public function setVersion(FHIRTerminologyCapabilitiesVersion ...$version): self
     {
@@ -314,8 +296,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if subsumption is supported for this version of the code system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getSubsumption(): null|FHIRBoolean
     {
@@ -327,9 +307,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if subsumption is supported for this version of the code system.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $subsumption
-     * @return static
      */
     public function setSubsumption(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $subsumption): self
     {
@@ -346,10 +323,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -413,10 +387,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -451,10 +421,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

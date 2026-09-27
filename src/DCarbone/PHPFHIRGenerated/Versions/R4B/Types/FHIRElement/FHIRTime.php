@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -129,7 +128,6 @@ class FHIRTime extends FHIRElement implements PrimitiveContainerTypeInterface
     ];
 
     /* class_default.php:112 */
-    /** @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive */
     #[FHIRTimePrimitive]
     protected FHIRTimePrimitive $value;
 
@@ -137,8 +135,6 @@ class FHIRTime extends FHIRElement implements PrimitiveContainerTypeInterface
     /**
      * FHIRTime Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -161,18 +157,11 @@ class FHIRTime extends FHIRElement implements PrimitiveContainerTypeInterface
     }
 
     /* class_default.php:174 */
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive
-     */
     public function getValue(): null|FHIRTimePrimitive
     {
         return $this->value ?? null;
     }
 
-    /**
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive $value
-     * @return static
-     */
     public function setValue(null|string|\DateTimeInterface|FHIRTimePrimitive $value): self
     {
         if (null === $value) {
@@ -195,10 +184,7 @@ class FHIRTime extends FHIRElement implements PrimitiveContainerTypeInterface
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -251,11 +237,6 @@ class FHIRTime extends FHIRElement implements PrimitiveContainerTypeInterface
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config,
                                  null|ValueXMLLocationEnum $valueLocation = null): void
@@ -279,10 +260,7 @@ class FHIRTime extends FHIRElement implements PrimitiveContainerTypeInterface
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

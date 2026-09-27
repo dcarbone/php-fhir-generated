@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -91,7 +89,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
@@ -170,8 +167,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this consent.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRConsentState
      */
     #[FHIRConsentState]
     protected FHIRConsentState $status;
@@ -183,8 +178,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A selector of the type of consent being presented: ADR, Privacy, Treatment,
      * Research. This list is now extensible.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $scope;
@@ -207,8 +200,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient/healthcare consumer to whom this consent applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -221,8 +212,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Consent was issued / created / indexed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $dateTime;
@@ -261,8 +250,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
      * original consent document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $sourceAttachment;
@@ -275,8 +262,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
      * original consent document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $sourceReference;
@@ -299,8 +284,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the specific base computable regulation or policy.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $policyRule;
@@ -323,8 +306,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * An exception to the base policy of this consent. An exception can be an addition
      * or removal of access permissions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
      */
     #[FHIRConsentProvision]
     protected FHIRConsentProvision $provision;
@@ -332,28 +313,15 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
     /* constructor.php:61 */
     /**
      * FHIRConsent Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRConsentStateList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRConsentState $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $scope
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $patient
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $dateTime
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $performer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $organization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $sourceAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $sourceReference
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicy> $policy
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $policyRule
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification> $verification
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision $provision
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -479,9 +447,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this copy of the Consent Statement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -499,9 +464,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this copy of the Consent Statement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -518,8 +480,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this consent.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRConsentState
      */
     public function getStatus(): null|FHIRConsentState
     {
@@ -531,9 +491,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this consent.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRConsentStateList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRConsentState $status
-     * @return static
      */
     public function setStatus(null|string|FHIRConsentStateList|FHIRConsentState $status): self
     {
@@ -556,8 +513,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A selector of the type of consent being presented: ADR, Privacy, Treatment,
      * Research. This list is now extensible.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getScope(): null|FHIRCodeableConcept
     {
@@ -572,9 +527,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A selector of the type of consent being presented: ADR, Privacy, Treatment,
      * Research. This list is now extensible.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $scope
-     * @return static
      */
     public function setScope(null|FHIRCodeableConcept $scope): self
     {
@@ -621,9 +573,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A classification of the type of consents found in the statement. This element
      * supports indexing and retrieval of consent statements.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -642,9 +591,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * A classification of the type of consents found in the statement. This element
      * supports indexing and retrieval of consent statements.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -662,8 +608,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient/healthcare consumer to whom this consent applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -676,9 +620,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient/healthcare consumer to whom this consent applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -699,8 +640,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Consent was issued / created / indexed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getDateTime(): null|FHIRDateTime
     {
@@ -716,9 +655,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Consent was issued / created / indexed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $dateTime
-     * @return static
      */
     public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime): self
     {
@@ -770,9 +706,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * listed in a Consent Directive or the Grantee, which is the entity responsible
      * for complying with the Consent Directive, including any obligations or
      * limitations on authorizations and enforcement of prohibitions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $performer
-     * @return static
      */
     public function addPerformer(FHIRReference $performer): self
     {
@@ -792,9 +725,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * listed in a Consent Directive or the Grantee, which is the entity responsible
      * for complying with the Consent Directive, including any obligations or
      * limitations on authorizations and enforcement of prohibitions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$performer
-     * @return static
      */
     public function setPerformer(FHIRReference ...$performer): self
     {
@@ -839,9 +769,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The organization that manages the consent, and the framework within which it is
      * executed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $organization
-     * @return static
      */
     public function addOrganization(FHIRReference $organization): self
     {
@@ -859,9 +786,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The organization that manages the consent, and the framework within which it is
      * executed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$organization
-     * @return static
      */
     public function setOrganization(FHIRReference ...$organization): self
     {
@@ -882,8 +806,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
      * original consent document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment
      */
     public function getSourceAttachment(): null|FHIRAttachment
     {
@@ -899,9 +821,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
      * original consent document.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAttachment $sourceAttachment
-     * @return static
      */
     public function setSourceAttachment(null|FHIRAttachment $sourceAttachment): self
     {
@@ -922,8 +841,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
      * original consent document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getSourceReference(): null|FHIRReference
     {
@@ -939,9 +856,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * scanned original paper form, or a reference to a consent that links back to such
      * a source, a reference to a document repository (e.g. XDS) that stores the
      * original consent document.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $sourceReference
-     * @return static
      */
     public function setSourceReference(null|FHIRReference $sourceReference): self
     {
@@ -986,9 +900,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The references to the policies that are included in this consent scope. Policies
      * may be organizational, but are often defined jurisdictionally, or in law.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicy $policy
-     * @return static
      */
     public function addPolicy(FHIRConsentPolicy $policy): self
     {
@@ -1006,9 +917,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * The references to the policies that are included in this consent scope. Policies
      * may be organizational, but are often defined jurisdictionally, or in law.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicy ...$policy
-     * @return static
      */
     public function setPolicy(FHIRConsentPolicy ...$policy): self
     {
@@ -1027,8 +935,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the specific base computable regulation or policy.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getPolicyRule(): null|FHIRCodeableConcept
     {
@@ -1042,9 +948,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the specific base computable regulation or policy.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $policyRule
-     * @return static
      */
     public function setPolicyRule(null|FHIRCodeableConcept $policyRule): self
     {
@@ -1089,9 +992,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Whether a treatment instruction (e.g. artificial respiration yes or no) was
      * verified with the patient, his/her family or another authorized person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification $verification
-     * @return static
      */
     public function addVerification(FHIRConsentVerification $verification): self
     {
@@ -1109,9 +1009,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Whether a treatment instruction (e.g. artificial respiration yes or no) was
      * verified with the patient, his/her family or another authorized person.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification ...$verification
-     * @return static
      */
     public function setVerification(FHIRConsentVerification ...$verification): self
     {
@@ -1130,8 +1027,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * An exception to the base policy of this consent. An exception can be an addition
      * or removal of access permissions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision
      */
     public function getProvision(): null|FHIRConsentProvision
     {
@@ -1145,9 +1040,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * An exception to the base policy of this consent. An exception can be an addition
      * or removal of access permissions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision $provision
-     * @return static
      */
     public function setProvision(null|FHIRConsentProvision $provision): self
     {
@@ -1161,10 +1053,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRConsent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRConsent
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1286,11 +1175,6 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1414,10 +1298,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRConsent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRConsent
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

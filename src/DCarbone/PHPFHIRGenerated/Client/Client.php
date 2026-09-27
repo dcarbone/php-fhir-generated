@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -28,7 +28,6 @@ namespace DCarbone\PHPFHIRGenerated\Client;
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum;
 use DCarbone\PHPFHIRGenerated\FHIRVersion;
-use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 
 /**
  * Class Client
@@ -44,7 +43,7 @@ class Client implements ClientInterface
     private const _BASE_CURL_OPTS = [
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_USERAGENT => 'php-fhir client (build: June 19th, 2026 14:32+0000;)',
+        CURLOPT_USERAGENT => 'php-fhir client (build: September 27th, 2026 01:12+0000;)',
     ];
 
     protected Config $_config;
@@ -67,10 +66,6 @@ class Client implements ClientInterface
         return $this->_config;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Client\Request $request
-     * @return \DCarbone\PHPFHIRGenerated\Client\Response
-     */
     public function exec(Request $request): Response
     {
         $queryParams = array_merge($this->_config->getDefaultQueryParams(), $request->queryParams ?? []);

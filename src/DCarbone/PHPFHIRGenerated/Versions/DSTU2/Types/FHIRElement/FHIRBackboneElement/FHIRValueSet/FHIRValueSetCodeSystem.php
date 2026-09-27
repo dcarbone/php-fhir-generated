@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -133,8 +132,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * An absolute URI that is used to reference this code system, including in
      * [Coding]{datatypes.html#Coding}.system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $system;
@@ -148,8 +145,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * and therefore the version does not need to be maintained. However many code
      * systems are not well maintained, and the version needs to be defined and
      * tracked.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -159,8 +154,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $caseSensitive;
@@ -180,11 +173,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
     /**
      * FHIRValueSetCodeSystem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $system
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $version
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $caseSensitive
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept> $concept
      * @param null|string[] $fhirComments
      */
@@ -229,8 +218,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * An absolute URI that is used to reference this code system, including in
      * [Coding]{datatypes.html#Coding}.system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getSystem(): null|FHIRUri
     {
@@ -244,9 +231,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * An absolute URI that is used to reference this code system, including in
      * [Coding]{datatypes.html#Coding}.system.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $system
-     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -271,8 +255,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * and therefore the version does not need to be maintained. However many code
      * systems are not well maintained, and the version needs to be defined and
      * tracked.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -289,9 +271,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * and therefore the version does not need to be maintained. However many code
      * systems are not well maintained, and the version needs to be defined and
      * tracked.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -312,8 +291,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     public function getCaseSensitive(): null|FHIRBoolean
     {
@@ -326,9 +303,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $caseSensitive
-     * @return static
      */
     public function setCaseSensitive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $caseSensitive): self
     {
@@ -374,9 +348,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * Concepts that are in the code system. The concept definitions are inherently
      * hierarchical, but the definitions must be consulted to determine what the
      * meaning of the hierarchical relationships are.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept $concept
-     * @return static
      */
     public function addConcept(FHIRValueSetConcept $concept): self
     {
@@ -393,9 +364,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * Concepts that are in the code system. The concept definitions are inherently
      * hierarchical, but the definitions must be consulted to determine what the
      * meaning of the hierarchical relationships are.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept ...$concept
-     * @return static
      */
     public function setConcept(FHIRValueSetConcept ...$concept): self
     {
@@ -409,10 +377,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -486,10 +451,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -534,10 +495,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

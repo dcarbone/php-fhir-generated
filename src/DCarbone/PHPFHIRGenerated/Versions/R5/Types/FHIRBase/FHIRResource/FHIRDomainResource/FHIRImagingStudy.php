@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -113,7 +111,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImagingStudyStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
@@ -202,8 +199,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The current state of the ImagingStudy resource. This is not the status of any
      * ServiceRequest or Task resources associated with the ImagingStudy.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingStudyStatus
      */
     #[FHIRImagingStudyStatus]
     protected FHIRImagingStudyStatus $status;
@@ -226,8 +221,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject, typically a patient, of the imaging study.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -238,8 +231,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this ImagingStudy is made.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -253,8 +244,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time the study started.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $started;
@@ -288,8 +277,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The requesting/referring physician.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $referrer;
@@ -316,8 +303,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * series elements this Resource contains due to resource availability, security,
      * or other factors. This element should be present if any series elements are
      * present.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $numberOfSeries;
@@ -330,8 +315,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * of instance elements this resource contains due to resource availability,
      * security, or other factors. This element should be present if any instance
      * elements are present.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $numberOfInstances;
@@ -354,8 +337,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the ImagingStudy was performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $location;
@@ -394,8 +375,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The Imaging Manager description of the study. Institution-generated description
      * or classification of the Study (component) performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -416,31 +395,17 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
     /* constructor.php:61 */
     /**
      * FHIRImagingStudy Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImagingStudyStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingStudyStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $modality
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $started
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $basedOn
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $partOf
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $referrer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $endpoint
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $numberOfSeries
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $numberOfInstances
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $procedure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $reason
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries> $series
      * @param null|string[] $fhirComments
      */
@@ -583,9 +548,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -603,9 +565,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -622,8 +581,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The current state of the ImagingStudy resource. This is not the status of any
      * ServiceRequest or Task resources associated with the ImagingStudy.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingStudyStatus
      */
     public function getStatus(): null|FHIRImagingStudyStatus
     {
@@ -635,9 +592,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The current state of the ImagingStudy resource. This is not the status of any
      * ServiceRequest or Task resources associated with the ImagingStudy.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImagingStudyStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingStudyStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRImagingStudyStatusEnum|FHIRImagingStudyStatus $status): self
     {
@@ -687,9 +641,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of all the distinct values of series.modality. This may include both
      * acquisition and non-acquisition modalities.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $modality
-     * @return static
      */
     public function addModality(FHIRCodeableConcept $modality): self
     {
@@ -708,9 +659,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of all the distinct values of series.modality. This may include both
      * acquisition and non-acquisition modalities.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$modality
-     * @return static
      */
     public function setModality(FHIRCodeableConcept ...$modality): self
     {
@@ -728,8 +676,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject, typically a patient, of the imaging study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -742,9 +688,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject, typically a patient, of the imaging study.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -763,8 +706,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this ImagingStudy is made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -778,9 +719,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this ImagingStudy is made.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -802,8 +740,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time the study started.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getStarted(): null|FHIRDateTime
     {
@@ -820,9 +756,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time the study started.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $started
-     * @return static
      */
     public function setStarted(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $started): self
     {
@@ -870,9 +803,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of the diagnostic requests that resulted in this imaging study being
      * performed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -890,9 +820,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * A list of the diagnostic requests that resulted in this imaging study being
      * performed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -937,9 +864,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * A larger event of which this particular ImagingStudy is a component or step. For
      * example, an ImagingStudy as part of a procedure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $partOf
-     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -957,9 +881,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * A larger event of which this particular ImagingStudy is a component or step. For
      * example, an ImagingStudy as part of a procedure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$partOf
-     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -977,8 +898,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The requesting/referring physician.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getReferrer(): null|FHIRReference
     {
@@ -991,9 +910,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The requesting/referring physician.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $referrer
-     * @return static
      */
     public function setReferrer(null|FHIRReference $referrer): self
     {
@@ -1042,9 +958,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * study. See implementation notes for information about using DICOM endpoints. A
      * study-level endpoint applies to each series in the study, unless overridden by a
      * series-level endpoint with the same Endpoint.connectionType.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $endpoint
-     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -1064,9 +977,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * study. See implementation notes for information about using DICOM endpoints. A
      * study-level endpoint applies to each series in the study, unless overridden by a
      * series-level endpoint with the same Endpoint.connectionType.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$endpoint
-     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {
@@ -1087,8 +997,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * series elements this Resource contains due to resource availability, security,
      * or other factors. This element should be present if any series elements are
      * present.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     public function getNumberOfSeries(): null|FHIRUnsignedInt
     {
@@ -1104,9 +1012,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * series elements this Resource contains due to resource availability, security,
      * or other factors. This element should be present if any series elements are
      * present.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $numberOfSeries
-     * @return static
      */
     public function setNumberOfSeries(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfSeries): self
     {
@@ -1130,8 +1035,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * of instance elements this resource contains due to resource availability,
      * security, or other factors. This element should be present if any instance
      * elements are present.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     public function getNumberOfInstances(): null|FHIRUnsignedInt
     {
@@ -1147,9 +1050,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * of instance elements this resource contains due to resource availability,
      * security, or other factors. This element should be present if any instance
      * elements are present.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $numberOfInstances
-     * @return static
      */
     public function setNumberOfInstances(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfInstances): self
     {
@@ -1199,9 +1099,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * This field corresponds to the DICOM Procedure Code Sequence (0008,1032). This is
      * different from the FHIR Procedure resource that may include the ImagingStudy.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $procedure
-     * @return static
      */
     public function addProcedure(FHIRCodeableReference $procedure): self
     {
@@ -1220,9 +1117,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * This field corresponds to the DICOM Procedure Code Sequence (0008,1032). This is
      * different from the FHIR Procedure resource that may include the ImagingStudy.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$procedure
-     * @return static
      */
     public function setProcedure(FHIRCodeableReference ...$procedure): self
     {
@@ -1240,8 +1134,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the ImagingStudy was performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getLocation(): null|FHIRReference
     {
@@ -1254,9 +1146,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the ImagingStudy was performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
-     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -1303,9 +1192,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * Description of clinical condition indicating why the ImagingStudy was requested,
      * and/or Indicates another resource whose existence justifies this Study.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $reason
-     * @return static
      */
     public function addReason(FHIRCodeableReference $reason): self
     {
@@ -1324,9 +1210,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * Description of clinical condition indicating why the ImagingStudy was requested,
      * and/or Indicates another resource whose existence justifies this Study.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$reason
-     * @return static
      */
     public function setReason(FHIRCodeableReference ...$reason): self
     {
@@ -1377,9 +1260,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * Description attribute (0008,1030). Observations or findings about the imaging
      * study should be recorded in another resource, e.g. Observation, and not in this
      * element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1400,9 +1280,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * Description attribute (0008,1030). Observations or findings about the imaging
      * study should be recorded in another resource, e.g. Observation, and not in this
      * element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1421,8 +1298,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The Imaging Manager description of the study. Institution-generated description
      * or classification of the Study (component) performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -1436,9 +1311,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      *
      * The Imaging Manager description of the study. Institution-generated description
      * or classification of the Study (component) performed.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1488,9 +1360,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * ultrasound), but a study may have multiple series of different modalities.
      *
      * Each study has one or more series of images or other content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries $series
-     * @return static
      */
     public function addSeries(FHIRImagingStudySeries $series): self
     {
@@ -1509,9 +1378,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
      * ultrasound), but a study may have multiple series of different modalities.
      *
      * Each study has one or more series of images or other content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries ...$series
-     * @return static
      */
     public function setSeries(FHIRImagingStudySeries ...$series): self
     {
@@ -1525,10 +1391,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRImagingStudy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRImagingStudy
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1682,11 +1545,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1851,10 +1709,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements VersionContainedTyp
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRImagingStudy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRImagingStudy
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

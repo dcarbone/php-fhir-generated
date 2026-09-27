@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -157,8 +156,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * A resource listed in the `SubscriptionTopic` this `Subscription` references
      * (`SubscriptionTopic.canFilterBy.resource`). This element can be used to
      * differentiate filters for topics that include more than one resource type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $resourceType;
@@ -169,8 +166,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      *
      * The filter as defined in the `SubscriptionTopic.canFilterBy.filterParameter`
      * element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $filterParameter;
@@ -178,8 +173,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparator applied to this filter parameter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator
      */
     #[FHIRSearchComparator]
     protected FHIRSearchComparator $comparator;
@@ -187,8 +180,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Modifier applied to this filter parameter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode
      */
     #[FHIRSearchModifierCode]
     protected FHIRSearchModifierCode $modifier;
@@ -199,8 +190,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      *
      * The literal value or resource path as is legal in search - for example,
      * `Patient/123` or `le1950`.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $value;
@@ -209,13 +198,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
     /**
      * FHIRSubscriptionFilterBy Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $resourceType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $filterParameter
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchComparatorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator $comparator
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchModifierCodeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode $modifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -264,8 +247,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * A resource listed in the `SubscriptionTopic` this `Subscription` references
      * (`SubscriptionTopic.canFilterBy.resource`). This element can be used to
      * differentiate filters for topics that include more than one resource type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getResourceType(): null|FHIRUri
     {
@@ -280,9 +261,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * A resource listed in the `SubscriptionTopic` this `Subscription` references
      * (`SubscriptionTopic.canFilterBy.resource`). This element can be used to
      * differentiate filters for topics that include more than one resource type.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $resourceType
-     * @return static
      */
     public function setResourceType(null|string|FHIRUriPrimitive|FHIRUri $resourceType): self
     {
@@ -304,8 +282,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      *
      * The filter as defined in the `SubscriptionTopic.canFilterBy.filterParameter`
      * element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getFilterParameter(): null|FHIRString
     {
@@ -319,9 +295,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      *
      * The filter as defined in the `SubscriptionTopic.canFilterBy.filterParameter`
      * element.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $filterParameter
-     * @return static
      */
     public function setFilterParameter(null|string|FHIRStringPrimitive|FHIRString $filterParameter): self
     {
@@ -340,8 +313,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparator applied to this filter parameter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator
      */
     public function getComparator(): null|FHIRSearchComparator
     {
@@ -352,9 +323,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparator applied to this filter parameter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchComparatorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator $comparator
-     * @return static
      */
     public function setComparator(null|string|FHIRSearchComparatorEnum|FHIRSearchComparator $comparator): self
     {
@@ -373,8 +341,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Modifier applied to this filter parameter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode
      */
     public function getModifier(): null|FHIRSearchModifierCode
     {
@@ -385,9 +351,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Modifier applied to this filter parameter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchModifierCodeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode $modifier
-     * @return static
      */
     public function setModifier(null|string|FHIRSearchModifierCodeEnum|FHIRSearchModifierCode $modifier): self
     {
@@ -409,8 +372,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      *
      * The literal value or resource path as is legal in search - for example,
      * `Patient/123` or `le1950`.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getValue(): null|FHIRString
     {
@@ -424,9 +385,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      *
      * The literal value or resource path as is legal in search - for example,
      * `Patient/123` or `le1950`.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
-     * @return static
      */
     public function setValue(null|string|FHIRStringPrimitive|FHIRString $value): self
     {
@@ -443,10 +401,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -538,10 +493,6 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -599,10 +550,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

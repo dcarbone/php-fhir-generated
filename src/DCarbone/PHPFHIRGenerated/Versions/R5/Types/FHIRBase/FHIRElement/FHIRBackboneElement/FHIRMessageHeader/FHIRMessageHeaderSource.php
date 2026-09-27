@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -145,10 +145,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to. (choose any one of
-     * endpoint*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * Identifies the routing target to send acknowledgements to.
      */
     #[FHIRUrl]
     protected FHIRUrl $endpointUrl;
@@ -157,10 +154,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to. (choose any one of
-     * endpoint*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Identifies the routing target to send acknowledgements to.
      */
     #[FHIRReference]
     protected FHIRReference $endpointReference;
@@ -170,8 +164,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable name for the source system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -181,8 +173,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * May include configuration or other information useful in debugging.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $software;
@@ -193,8 +183,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      *
      * Can convey versions of multiple systems in situations where a message passes
      * through multiple hands.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -206,8 +194,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      *
      * An e-mail, phone, website or other contact point to use to resolve issues with
      * message communications.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $contact;
@@ -216,14 +202,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
     /**
      * FHIRMessageHeaderSource Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $endpointUrl
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $endpointReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $software
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $contact
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -273,10 +252,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to. (choose any one of
-     * endpoint*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * Identifies the routing target to send acknowledgements to.
      */
     public function getEndpointUrl(): null|FHIRUrl
     {
@@ -288,11 +264,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to. (choose any one of
-     * endpoint*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $endpointUrl
-     * @return static
+     * Identifies the routing target to send acknowledgements to.
      */
     public function setEndpointUrl(null|string|FHIRUrlPrimitive|FHIRUrl $endpointUrl): self
     {
@@ -312,10 +284,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to. (choose any one of
-     * endpoint*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Identifies the routing target to send acknowledgements to.
      */
     public function getEndpointReference(): null|FHIRReference
     {
@@ -327,11 +296,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Identifies the routing target to send acknowledgements to. (choose any one of
-     * endpoint*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $endpointReference
-     * @return static
+     * Identifies the routing target to send acknowledgements to.
      */
     public function setEndpointReference(null|FHIRReference $endpointReference): self
     {
@@ -349,8 +314,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable name for the source system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -363,9 +326,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable name for the source system.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -386,8 +346,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * May include configuration or other information useful in debugging.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSoftware(): null|FHIRString
     {
@@ -400,9 +358,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * May include configuration or other information useful in debugging.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $software
-     * @return static
      */
     public function setSoftware(null|string|FHIRStringPrimitive|FHIRString $software): self
     {
@@ -424,8 +379,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      *
      * Can convey versions of multiple systems in situations where a message passes
      * through multiple hands.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -439,9 +392,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      *
      * Can convey versions of multiple systems in situations where a message passes
      * through multiple hands.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -464,8 +414,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      *
      * An e-mail, phone, website or other contact point to use to resolve issues with
      * message communications.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
      */
     public function getContact(): null|FHIRContactPoint
     {
@@ -480,9 +428,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      *
      * An e-mail, phone, website or other contact point to use to resolve issues with
      * message communications.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $contact
-     * @return static
      */
     public function setContact(null|FHIRContactPoint $contact): self
     {
@@ -496,10 +441,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -585,10 +527,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -646,10 +584,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -136,8 +136,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      * A human-readable label for the data requirement used to label data flows in BPMN
      * or similar diagrams. Also provides a human readable label when rendering the
      * data requirement that conveys its purpose to human readers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -148,8 +146,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the data that results as output from the action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
      */
     #[FHIRDataRequirement]
     protected FHIRDataRequirement $requirement;
@@ -160,8 +156,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      *
      * Points to an existing input or output element that is results as output from the
      * action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $relatedData;
@@ -170,11 +164,7 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
     /**
      * FHIRRequestOrchestrationOutput Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement $requirement
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $relatedData
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -215,8 +205,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      * A human-readable label for the data requirement used to label data flows in BPMN
      * or similar diagrams. Also provides a human readable label when rendering the
      * data requirement that conveys its purpose to human readers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -231,9 +219,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      * A human-readable label for the data requirement used to label data flows in BPMN
      * or similar diagrams. Also provides a human readable label when rendering the
      * data requirement that conveys its purpose to human readers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -255,8 +240,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the data that results as output from the action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
      */
     public function getRequirement(): null|FHIRDataRequirement
     {
@@ -270,9 +253,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the data that results as output from the action.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement $requirement
-     * @return static
      */
     public function setRequirement(null|FHIRDataRequirement $requirement): self
     {
@@ -291,8 +271,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      *
      * Points to an existing input or output element that is results as output from the
      * action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getRelatedData(): null|FHIRString
     {
@@ -306,9 +284,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      *
      * Points to an existing input or output element that is results as output from the
      * action.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $relatedData
-     * @return static
      */
     public function setRelatedData(null|string|FHIRStringPrimitive|FHIRString $relatedData): self
     {
@@ -325,10 +300,7 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationOutput $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationOutput
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -392,10 +364,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -428,10 +396,7 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationOutput $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationOutput
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -119,8 +118,6 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
      *
      * The type of relation to the related item: child, parent, packageContent,
      * containerPackage, usedIn, uses, requires, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCatalogEntryRelationType
      */
     #[FHIRCatalogEntryRelationType]
     protected FHIRCatalogEntryRelationType $relationtype;
@@ -130,8 +127,6 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the related item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $item;
@@ -140,10 +135,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
     /**
      * FHIRCatalogEntryRelatedEntry Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCatalogEntryRelationTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCatalogEntryRelationType $relationtype
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $item
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -178,8 +170,6 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
      *
      * The type of relation to the related item: child, parent, packageContent,
      * containerPackage, usedIn, uses, requires, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCatalogEntryRelationType
      */
     public function getRelationtype(): null|FHIRCatalogEntryRelationType
     {
@@ -192,9 +182,6 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
      *
      * The type of relation to the related item: child, parent, packageContent,
      * containerPackage, usedIn, uses, requires, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCatalogEntryRelationTypeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCatalogEntryRelationType $relationtype
-     * @return static
      */
     public function setRelationtype(null|string|FHIRCatalogEntryRelationTypeList|FHIRCatalogEntryRelationType $relationtype): self
     {
@@ -215,8 +202,6 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the related item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getItem(): null|FHIRReference
     {
@@ -229,9 +214,6 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the related item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $item
-     * @return static
      */
     public function setItem(null|FHIRReference $item): self
     {
@@ -245,10 +227,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -302,10 +281,6 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -328,10 +303,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -136,8 +135,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * Sequence of coverage which serves to provide a link and convey coordination of
      * benefit order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequence;
@@ -147,8 +144,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * A flag to indicate that this Coverage is the focus for adjudication. The
      * Coverage against which the claim is to be adjudicated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $focal;
@@ -158,8 +153,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the program or plan identification, underwriter or payor.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $coverage;
@@ -170,8 +163,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * The contract number of a business agreement which describes the terms and
      * conditions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $businessArrangement;
@@ -192,8 +183,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Coverages adjudication details.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $claimResponse;
@@ -202,14 +191,8 @@ class FHIRClaimInsurance extends FHIRBackboneElement
     /**
      * FHIRClaimInsurance Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $focal
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $coverage
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $businessArrangement
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString> $preAuthRef
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $claimResponse
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -261,8 +244,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * Sequence of coverage which serves to provide a link and convey coordination of
      * benefit order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     public function getSequence(): null|FHIRPositiveInt
     {
@@ -276,9 +257,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * Sequence of coverage which serves to provide a link and convey coordination of
      * benefit order.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -299,8 +277,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * A flag to indicate that this Coverage is the focus for adjudication. The
      * Coverage against which the claim is to be adjudicated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getFocal(): null|FHIRBoolean
     {
@@ -313,9 +289,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * A flag to indicate that this Coverage is the focus for adjudication. The
      * Coverage against which the claim is to be adjudicated.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $focal
-     * @return static
      */
     public function setFocal(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $focal): self
     {
@@ -336,8 +309,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the program or plan identification, underwriter or payor.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getCoverage(): null|FHIRReference
     {
@@ -350,9 +321,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the program or plan identification, underwriter or payor.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $coverage
-     * @return static
      */
     public function setCoverage(null|FHIRReference $coverage): self
     {
@@ -371,8 +339,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * The contract number of a business agreement which describes the terms and
      * conditions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getBusinessArrangement(): null|FHIRString
     {
@@ -386,9 +352,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * The contract number of a business agreement which describes the terms and
      * conditions.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $businessArrangement
-     * @return static
      */
     public function setBusinessArrangement(null|string|FHIRStringPrimitive|FHIRString $businessArrangement): self
     {
@@ -434,9 +397,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of references from the Insurer to which these services pertain.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $preAuthRef
-     * @return static
      */
     public function addPreAuthRef(string|FHIRStringPrimitive|FHIRString $preAuthRef): self
     {
@@ -456,9 +416,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of references from the Insurer to which these services pertain.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString ...$preAuthRef
-     * @return static
      */
     public function setPreAuthRef(string|FHIRStringPrimitive|FHIRString ...$preAuthRef): self
     {
@@ -483,8 +440,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Coverages adjudication details.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getClaimResponse(): null|FHIRReference
     {
@@ -497,9 +452,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Coverages adjudication details.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $claimResponse
-     * @return static
      */
     public function setClaimResponse(null|FHIRReference $claimResponse): self
     {
@@ -513,10 +465,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInsurance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInsurance
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -594,10 +543,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -652,10 +597,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInsurance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimInsurance
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

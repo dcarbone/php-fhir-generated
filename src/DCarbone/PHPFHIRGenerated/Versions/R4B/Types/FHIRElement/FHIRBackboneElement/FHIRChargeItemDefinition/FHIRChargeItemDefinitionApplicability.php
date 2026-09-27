@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -150,8 +148,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * The media type of the language for the expression, e.g. "text/cql" for Clinical
      * Query Language expressions or "text/fhirpath" for FHIRPath expressions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $language;
@@ -164,8 +160,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * satisfied. When using FHIRPath expressions, the %context environment variable
      * must be replaced at runtime with the ChargeItem resource to which this
      * definition is applied.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $expression;
@@ -174,11 +168,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     /**
      * FHIRChargeItemDefinitionApplicability Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $language
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $expression
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -218,8 +208,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -233,9 +221,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -257,8 +242,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * The media type of the language for the expression, e.g. "text/cql" for Clinical
      * Query Language expressions or "text/fhirpath" for FHIRPath expressions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getLanguage(): null|FHIRString
     {
@@ -272,9 +255,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * The media type of the language for the expression, e.g. "text/cql" for Clinical
      * Query Language expressions or "text/fhirpath" for FHIRPath expressions.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $language
-     * @return static
      */
     public function setLanguage(null|string|FHIRStringPrimitive|FHIRString $language): self
     {
@@ -298,8 +278,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * satisfied. When using FHIRPath expressions, the %context environment variable
      * must be replaced at runtime with the ChargeItem resource to which this
      * definition is applied.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getExpression(): null|FHIRString
     {
@@ -315,9 +293,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * satisfied. When using FHIRPath expressions, the %context environment variable
      * must be replaced at runtime with the ChargeItem resource to which this
      * definition is applied.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $expression
-     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -334,10 +309,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -409,10 +381,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -450,10 +418,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

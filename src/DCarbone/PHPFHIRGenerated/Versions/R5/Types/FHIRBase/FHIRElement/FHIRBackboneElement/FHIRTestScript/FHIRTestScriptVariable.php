@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -157,8 +156,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Descriptive name for this variable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -168,8 +165,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A default, hard-coded, or user-defined value for this variable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $defaultValue;
@@ -179,8 +174,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the variable and its purpose.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -192,8 +185,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * The FHIRPath expression for a specific value to evaluate against the fixture
      * body. When variables are defined, only one of either expression, headerField or
      * path must be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $expression;
@@ -204,8 +195,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Will be used to grab the HTTP header field value from the headers that sourceId
      * is pointing to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $headerField;
@@ -216,8 +205,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Displayable text string with hint help information to the user when entering a
      * default value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $hint;
@@ -228,8 +215,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * XPath or JSONPath to evaluate against the fixture body. When variables are
      * defined, only one of either expression, headerField or path must be specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -243,8 +228,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Fixture to evaluate the XPath/JSONPath expression or the headerField against
      * within this variable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $sourceId;
@@ -253,16 +236,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
     /**
      * FHIRTestScriptVariable Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $defaultValue
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $expression
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $headerField
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $hint
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $path
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $sourceId
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -321,8 +295,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Descriptive name for this variable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -335,9 +307,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Descriptive name for this variable.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -358,8 +327,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A default, hard-coded, or user-defined value for this variable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDefaultValue(): null|FHIRString
     {
@@ -372,9 +339,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A default, hard-coded, or user-defined value for this variable.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $defaultValue
-     * @return static
      */
     public function setDefaultValue(null|string|FHIRStringPrimitive|FHIRString $defaultValue): self
     {
@@ -395,8 +359,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the variable and its purpose.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -409,9 +371,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the variable and its purpose.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -434,8 +393,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * The FHIRPath expression for a specific value to evaluate against the fixture
      * body. When variables are defined, only one of either expression, headerField or
      * path must be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getExpression(): null|FHIRString
     {
@@ -450,9 +407,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * The FHIRPath expression for a specific value to evaluate against the fixture
      * body. When variables are defined, only one of either expression, headerField or
      * path must be specified.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $expression
-     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -474,8 +428,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Will be used to grab the HTTP header field value from the headers that sourceId
      * is pointing to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getHeaderField(): null|FHIRString
     {
@@ -489,9 +441,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Will be used to grab the HTTP header field value from the headers that sourceId
      * is pointing to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $headerField
-     * @return static
      */
     public function setHeaderField(null|string|FHIRStringPrimitive|FHIRString $headerField): self
     {
@@ -513,8 +462,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Displayable text string with hint help information to the user when entering a
      * default value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getHint(): null|FHIRString
     {
@@ -528,9 +475,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Displayable text string with hint help information to the user when entering a
      * default value.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $hint
-     * @return static
      */
     public function setHint(null|string|FHIRStringPrimitive|FHIRString $hint): self
     {
@@ -552,8 +496,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * XPath or JSONPath to evaluate against the fixture body. When variables are
      * defined, only one of either expression, headerField or path must be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPath(): null|FHIRString
     {
@@ -567,9 +509,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * XPath or JSONPath to evaluate against the fixture body. When variables are
      * defined, only one of either expression, headerField or path must be specified.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $path
-     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -594,8 +533,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Fixture to evaluate the XPath/JSONPath expression or the headerField against
      * within this variable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getSourceId(): null|FHIRId
     {
@@ -612,9 +549,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Fixture to evaluate the XPath/JSONPath expression or the headerField against
      * within this variable.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $sourceId
-     * @return static
      */
     public function setSourceId(null|string|FHIRIdPrimitive|FHIRId $sourceId): self
     {
@@ -631,10 +565,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -756,10 +687,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -847,10 +774,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

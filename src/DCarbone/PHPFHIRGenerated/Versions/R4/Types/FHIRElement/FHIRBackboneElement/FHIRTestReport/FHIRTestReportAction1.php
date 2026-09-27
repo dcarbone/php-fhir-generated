@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -104,8 +104,6 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
      * A summary of information based on the results of executing a TestScript.
      *
      * An operation would involve a REST request to a server.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportOperation
      */
     #[FHIRTestReportOperation]
     protected FHIRTestReportOperation $operation;
@@ -113,8 +111,6 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
      * A summary of information based on the results of executing a TestScript.
      *
      * The results of the assertion performed on the previous operations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert
      */
     #[FHIRTestReportAssert]
     protected FHIRTestReportAssert $assert;
@@ -123,10 +119,7 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
     /**
      * FHIRTestReportAction1 Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportOperation $operation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert $assert
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -159,8 +152,6 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
      * A summary of information based on the results of executing a TestScript.
      *
      * An operation would involve a REST request to a server.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportOperation
      */
     public function getOperation(): null|FHIRTestReportOperation
     {
@@ -171,9 +162,6 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
      * A summary of information based on the results of executing a TestScript.
      *
      * An operation would involve a REST request to a server.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportOperation $operation
-     * @return static
      */
     public function setOperation(null|FHIRTestReportOperation $operation): self
     {
@@ -189,8 +177,6 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
      * A summary of information based on the results of executing a TestScript.
      *
      * The results of the assertion performed on the previous operations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert
      */
     public function getAssert(): null|FHIRTestReportAssert
     {
@@ -201,9 +187,6 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
      * A summary of information based on the results of executing a TestScript.
      *
      * The results of the assertion performed on the previous operations.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert $assert
-     * @return static
      */
     public function setAssert(null|FHIRTestReportAssert $assert): self
     {
@@ -217,10 +200,7 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -266,10 +246,6 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -287,10 +263,7 @@ class FHIRTestReportAction1 extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1 $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAction1
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

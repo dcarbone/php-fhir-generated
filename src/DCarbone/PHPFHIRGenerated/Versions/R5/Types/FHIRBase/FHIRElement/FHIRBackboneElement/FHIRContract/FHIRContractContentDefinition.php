@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -156,8 +155,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * Precusory content structure and use, i.e., a boilerplate, template, application
      * for a contract such as an insurance policy or benefits under a program, e.g.,
      * workers compensation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -168,8 +165,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed Precusory content type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subType;
@@ -179,8 +174,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that published the Contract precursor content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $publisher;
@@ -197,8 +190,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the contract changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $publicationDate;
@@ -206,8 +197,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * amended | appended | cancelled | disputed | entered-in-error | executable +.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRContractResourcePublicationStatusCodes
      */
     #[FHIRContractResourcePublicationStatusCodes]
     protected FHIRContractResourcePublicationStatusCodes $publicationStatus;
@@ -223,8 +212,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * A copyright statement relating to Contract precursor content. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * Contract precursor content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -233,14 +220,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
     /**
      * FHIRContractContentDefinition Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $publisher
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $publicationDate
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRContractResourcePublicationStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRContractResourcePublicationStatusCodes $publicationStatus
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -294,8 +274,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * Precusory content structure and use, i.e., a boilerplate, template, application
      * for a contract such as an insurance policy or benefits under a program, e.g.,
      * workers compensation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -311,9 +289,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * Precusory content structure and use, i.e., a boilerplate, template, application
      * for a contract such as an insurance policy or benefits under a program, e.g.,
      * workers compensation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -332,8 +307,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed Precusory content type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getSubType(): null|FHIRCodeableConcept
     {
@@ -347,9 +320,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed Precusory content type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subType
-     * @return static
      */
     public function setSubType(null|FHIRCodeableConcept $subType): self
     {
@@ -367,8 +337,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that published the Contract precursor content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getPublisher(): null|FHIRReference
     {
@@ -381,9 +349,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that published the Contract precursor content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $publisher
-     * @return static
      */
     public function setPublisher(null|FHIRReference $publisher): self
     {
@@ -408,8 +373,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the contract changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getPublicationDate(): null|FHIRDateTime
     {
@@ -429,9 +392,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the contract changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $publicationDate
-     * @return static
      */
     public function setPublicationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $publicationDate): self
     {
@@ -450,8 +410,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * amended | appended | cancelled | disputed | entered-in-error | executable +.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRContractResourcePublicationStatusCodes
      */
     public function getPublicationStatus(): null|FHIRContractResourcePublicationStatusCodes
     {
@@ -462,9 +420,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * amended | appended | cancelled | disputed | entered-in-error | executable +.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRContractResourcePublicationStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRContractResourcePublicationStatusCodes $publicationStatus
-     * @return static
      */
     public function setPublicationStatus(null|string|FHIRContractResourcePublicationStatusCodesEnum|FHIRContractResourcePublicationStatusCodes $publicationStatus): self
     {
@@ -491,8 +446,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * A copyright statement relating to Contract precursor content. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * Contract precursor content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -511,9 +464,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * A copyright statement relating to Contract precursor content. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * Contract precursor content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -530,10 +480,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -611,10 +558,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -667,10 +610,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

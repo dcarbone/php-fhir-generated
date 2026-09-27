@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -88,7 +86,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Version;
@@ -149,8 +146,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The locally assigned unique identification by the software. For example: handle
      * ID.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -162,8 +157,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The component type as defined in the object-oriented or metric nomenclature
      * partition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -176,8 +169,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The timestamp for the most recent system change which includes device
      * configuration or setting change.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $lastSystemChange;
@@ -188,8 +179,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The link to the source Device that contains administrative device information
      * such as manufacture, serial number, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $source;
@@ -200,8 +189,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The link to the parent resource. For example: Channel is linked to its VMD
      * parent.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $parent;
@@ -226,8 +213,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The parameter group supported by the current device component that is based on
      * some nomenclature, e.g. cardiovascular.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $parameterGroup;
@@ -237,8 +222,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The physical principle of the measurement. For example: thermal, chemical,
      * acoustical, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeasmntPrinciple
      */
     #[FHIRMeasmntPrinciple]
     protected FHIRMeasmntPrinciple $measurementPrinciple;
@@ -260,8 +243,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The language code for the human-readable text string produced by the device.
      * This language code will follow the IETF language tag. Example: en-US.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $languageCode;
@@ -269,24 +250,11 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
     /* constructor.php:61 */
     /**
      * FHIRDeviceComponent Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $lastSystemChange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $source
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $parent
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $operationalStatus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $parameterGroup
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRMeasmntPrincipleList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeasmntPrinciple $measurementPrinciple
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification> $productionSpecification
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $languageCode
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -370,8 +338,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The locally assigned unique identification by the software. For example: handle
      * ID.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -385,9 +351,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The locally assigned unique identification by the software. For example: handle
      * ID.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -407,8 +370,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The component type as defined in the object-oriented or metric nomenclature
      * partition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -423,9 +384,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The component type as defined in the object-oriented or metric nomenclature
      * partition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -446,8 +404,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The timestamp for the most recent system change which includes device
      * configuration or setting change.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant
      */
     public function getLastSystemChange(): null|FHIRInstant
     {
@@ -463,9 +419,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The timestamp for the most recent system change which includes device
      * configuration or setting change.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $lastSystemChange
-     * @return static
      */
     public function setLastSystemChange(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastSystemChange): self
     {
@@ -487,8 +440,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The link to the source Device that contains administrative device information
      * such as manufacture, serial number, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getSource(): null|FHIRReference
     {
@@ -502,9 +453,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The link to the source Device that contains administrative device information
      * such as manufacture, serial number, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $source
-     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -523,8 +471,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The link to the parent resource. For example: Channel is linked to its VMD
      * parent.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getParent(): null|FHIRReference
     {
@@ -538,9 +484,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The link to the parent resource. For example: Channel is linked to its VMD
      * parent.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $parent
-     * @return static
      */
     public function setParent(null|FHIRReference $parent): self
     {
@@ -587,9 +530,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The current operational status of the device. For example: On, Off, Standby,
      * etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $operationalStatus
-     * @return static
      */
     public function addOperationalStatus(FHIRCodeableConcept $operationalStatus): self
     {
@@ -608,9 +548,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The current operational status of the device. For example: On, Off, Standby,
      * etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$operationalStatus
-     * @return static
      */
     public function setOperationalStatus(FHIRCodeableConcept ...$operationalStatus): self
     {
@@ -630,8 +567,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The parameter group supported by the current device component that is based on
      * some nomenclature, e.g. cardiovascular.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getParameterGroup(): null|FHIRCodeableConcept
     {
@@ -646,9 +581,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The parameter group supported by the current device component that is based on
      * some nomenclature, e.g. cardiovascular.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $parameterGroup
-     * @return static
      */
     public function setParameterGroup(null|FHIRCodeableConcept $parameterGroup): self
     {
@@ -666,8 +598,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The physical principle of the measurement. For example: thermal, chemical,
      * acoustical, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeasmntPrinciple
      */
     public function getMeasurementPrinciple(): null|FHIRMeasmntPrinciple
     {
@@ -680,9 +610,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The physical principle of the measurement. For example: thermal, chemical,
      * acoustical, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRMeasmntPrincipleList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeasmntPrinciple $measurementPrinciple
-     * @return static
      */
     public function setMeasurementPrinciple(null|string|FHIRMeasmntPrincipleList|FHIRMeasmntPrinciple $measurementPrinciple): self
     {
@@ -726,9 +653,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      * component of a medical device.
      *
      * The production specification such as component revision, serial number, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification $productionSpecification
-     * @return static
      */
     public function addProductionSpecification(FHIRDeviceComponentProductionSpecification $productionSpecification): self
     {
@@ -744,9 +668,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      * component of a medical device.
      *
      * The production specification such as component revision, serial number, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification ...$productionSpecification
-     * @return static
      */
     public function setProductionSpecification(FHIRDeviceComponentProductionSpecification ...$productionSpecification): self
     {
@@ -766,8 +687,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The language code for the human-readable text string produced by the device.
      * This language code will follow the IETF language tag. Example: en-US.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getLanguageCode(): null|FHIRCodeableConcept
     {
@@ -782,9 +701,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      *
      * The language code for the human-readable text string produced by the device.
      * This language code will follow the IETF language tag. Example: en-US.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $languageCode
-     * @return static
      */
     public function setLanguageCode(null|FHIRCodeableConcept $languageCode): self
     {
@@ -798,10 +714,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRDeviceComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRDeviceComponent
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -915,11 +828,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1015,10 +923,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRDeviceComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRDeviceComponent
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

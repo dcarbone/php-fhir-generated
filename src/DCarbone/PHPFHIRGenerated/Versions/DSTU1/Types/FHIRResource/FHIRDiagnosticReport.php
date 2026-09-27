@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -173,8 +171,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or name that describes this diagnostic report.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $name;
@@ -183,8 +179,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the diagnostic report as a whole.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticReportStatus
      */
     #[FHIRDiagnosticReportStatus]
     protected FHIRDiagnosticReportStatus $status;
@@ -197,8 +191,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * The date and/or time that this version of the report was released from the
      * source diagnostic service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $issued;
@@ -210,8 +202,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * The subject of the report. Usually, but not always, this is a patient. However
      * diagnostic services also perform analyses on specimens collected from a variety
      * of other sources.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $subject;
@@ -221,8 +211,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The diagnostic service that is responsible for issuing the report.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $performer;
@@ -233,8 +221,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * The local ID assigned to the report by the order filler, usually by the
      * Information System of the diagnostic service provider.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -257,8 +243,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * The section of the diagnostic service that performs the examination e.g.
      * biochemistry, hematology, MRI.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $serviceCategory;
@@ -272,8 +256,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * The time or time-period the observed values are related to. This is usually
      * either the time of the procedure or of specimen collection(s), but very often
      * the source of the date/time is not known, only the date/time itself.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $diagnosticDateTime;
@@ -285,8 +267,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * The time or time-period the observed values are related to. This is usually
      * either the time of the procedure or of specimen collection(s), but very often
      * the source of the date/time is not known, only the date/time itself.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $diagnosticPeriod;
@@ -349,8 +329,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * Concise and clinically contextualized narrative interpretation of the diagnostic
      * report.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $conclusion;
@@ -382,27 +360,14 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
     /* constructor.php:61 */
     /**
      * FHIRDiagnosticReport Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRDiagnosticReportStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticReportStatus $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $issued
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $performer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $requestDetail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $serviceCategory
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $diagnosticDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $diagnosticPeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $specimen
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $result
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $imagingStudy
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage> $image
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $conclusion
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept> $codedDiagnosis
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment> $presentedForm
      * @param null|string[] $fhirComments
@@ -512,8 +477,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or name that describes this diagnostic report.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getName(): null|FHIRCodeableConcept
     {
@@ -527,9 +490,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or name that describes this diagnostic report.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $name
-     * @return static
      */
     public function setName(null|FHIRCodeableConcept $name): self
     {
@@ -546,8 +506,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the diagnostic report as a whole.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticReportStatus
      */
     public function getStatus(): null|FHIRDiagnosticReportStatus
     {
@@ -559,9 +517,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the diagnostic report as a whole.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRDiagnosticReportStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDiagnosticReportStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRDiagnosticReportStatusList|FHIRDiagnosticReportStatus $status): self
     {
@@ -585,8 +540,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * The date and/or time that this version of the report was released from the
      * source diagnostic service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getIssued(): null|FHIRDateTime
     {
@@ -602,9 +555,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * The date and/or time that this version of the report was released from the
      * source diagnostic service.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $issued
-     * @return static
      */
     public function setIssued(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $issued): self
     {
@@ -627,8 +577,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * The subject of the report. Usually, but not always, this is a patient. However
      * diagnostic services also perform analyses on specimens collected from a variety
      * of other sources.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getSubject(): null|FHIRResourceReference
     {
@@ -643,9 +591,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * The subject of the report. Usually, but not always, this is a patient. However
      * diagnostic services also perform analyses on specimens collected from a variety
      * of other sources.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -663,8 +608,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The diagnostic service that is responsible for issuing the report.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getPerformer(): null|FHIRResourceReference
     {
@@ -677,9 +620,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The diagnostic service that is responsible for issuing the report.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $performer
-     * @return static
      */
     public function setPerformer(null|FHIRResourceReference $performer): self
     {
@@ -698,8 +638,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * The local ID assigned to the report by the order filler, usually by the
      * Information System of the diagnostic service provider.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -713,9 +651,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * The local ID assigned to the report by the order filler, usually by the
      * Information System of the diagnostic service provider.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -758,9 +693,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details concerning a test requested.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $requestDetail
-     * @return static
      */
     public function addRequestDetail(FHIRResourceReference $requestDetail): self
     {
@@ -777,9 +709,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details concerning a test requested.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$requestDetail
-     * @return static
      */
     public function setRequestDetail(FHIRResourceReference ...$requestDetail): self
     {
@@ -799,8 +728,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * The section of the diagnostic service that performs the examination e.g.
      * biochemistry, hematology, MRI.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getServiceCategory(): null|FHIRCodeableConcept
     {
@@ -815,9 +742,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * The section of the diagnostic service that performs the examination e.g.
      * biochemistry, hematology, MRI.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $serviceCategory
-     * @return static
      */
     public function setServiceCategory(null|FHIRCodeableConcept $serviceCategory): self
     {
@@ -839,8 +763,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * The time or time-period the observed values are related to. This is usually
      * either the time of the procedure or of specimen collection(s), but very often
      * the source of the date/time is not known, only the date/time itself.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getDiagnosticDateTime(): null|FHIRDateTime
     {
@@ -857,9 +779,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * The time or time-period the observed values are related to. This is usually
      * either the time of the procedure or of specimen collection(s), but very often
      * the source of the date/time is not known, only the date/time itself.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $diagnosticDateTime
-     * @return static
      */
     public function setDiagnosticDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $diagnosticDateTime): self
     {
@@ -882,8 +801,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * The time or time-period the observed values are related to. This is usually
      * either the time of the procedure or of specimen collection(s), but very often
      * the source of the date/time is not known, only the date/time itself.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getDiagnosticPeriod(): null|FHIRPeriod
     {
@@ -898,9 +815,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * The time or time-period the observed values are related to. This is usually
      * either the time of the procedure or of specimen collection(s), but very often
      * the source of the date/time is not known, only the date/time itself.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $diagnosticPeriod
-     * @return static
      */
     public function setDiagnosticPeriod(null|FHIRPeriod $diagnosticPeriod): self
     {
@@ -943,9 +857,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details about the specimens on which this Disagnostic report is based.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $specimen
-     * @return static
      */
     public function addSpecimen(FHIRResourceReference $specimen): self
     {
@@ -962,9 +873,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details about the specimens on which this Disagnostic report is based.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$specimen
-     * @return static
      */
     public function setSpecimen(FHIRResourceReference ...$specimen): self
     {
@@ -1011,9 +919,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * Observations that are part of this diagnostic report. Observations can be simple
      * name/value pairs (e.g. "atomic" results), or they can be grouping observations
      * that include references to other members of the group (e.g. "panels").
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $result
-     * @return static
      */
     public function addResult(FHIRResourceReference $result): self
     {
@@ -1032,9 +937,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * Observations that are part of this diagnostic report. Observations can be simple
      * name/value pairs (e.g. "atomic" results), or they can be grouping observations
      * that include references to other members of the group (e.g. "panels").
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$result
-     * @return static
      */
     public function setResult(FHIRResourceReference ...$result): self
     {
@@ -1083,9 +985,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * investigation. Typically, this is imaging performed by DICOM enabled modalities,
      * but this is not required. A fully enabled PACS viewer can use this information
      * to provide views of the source images.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $imagingStudy
-     * @return static
      */
     public function addImagingStudy(FHIRResourceReference $imagingStudy): self
     {
@@ -1105,9 +1004,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * investigation. Typically, this is imaging performed by DICOM enabled modalities,
      * but this is not required. A fully enabled PACS viewer can use this information
      * to provide views of the source images.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$imagingStudy
-     * @return static
      */
     public function setImagingStudy(FHIRResourceReference ...$imagingStudy): self
     {
@@ -1158,9 +1054,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * A list of key images associated with this report. The images are generally
      * created during the diagnostic process, and may be directly of the patient, or of
      * treated specimens (i.e. slides of interest).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage $image
-     * @return static
      */
     public function addImage(FHIRDiagnosticReportImage $image): self
     {
@@ -1181,9 +1074,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * A list of key images associated with this report. The images are generally
      * created during the diagnostic process, and may be directly of the patient, or of
      * treated specimens (i.e. slides of interest).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage ...$image
-     * @return static
      */
     public function setImage(FHIRDiagnosticReportImage ...$image): self
     {
@@ -1201,8 +1091,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * Concise and clinically contextualized narrative interpretation of the diagnostic
      * report.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getConclusion(): null|FHIRString
     {
@@ -1215,9 +1103,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * Concise and clinically contextualized narrative interpretation of the diagnostic
      * report.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $conclusion
-     * @return static
      */
     public function setConclusion(null|string|FHIRStringPrimitive|FHIRString $conclusion): self
     {
@@ -1265,9 +1150,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Codes for the conclusion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $codedDiagnosis
-     * @return static
      */
     public function addCodedDiagnosis(FHIRCodeableConcept $codedDiagnosis): self
     {
@@ -1285,9 +1167,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Codes for the conclusion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept ...$codedDiagnosis
-     * @return static
      */
     public function setCodedDiagnosis(FHIRCodeableConcept ...$codedDiagnosis): self
     {
@@ -1332,9 +1211,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * Rich text representation of the entire result as issued by the diagnostic
      * service. Multiple formats are allowed but they SHALL be semantically equivalent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment $presentedForm
-     * @return static
      */
     public function addPresentedForm(FHIRAttachment $presentedForm): self
     {
@@ -1352,9 +1228,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
      *
      * Rich text representation of the entire result as issued by the diagnostic
      * service. Multiple formats are allowed but they SHALL be semantically equivalent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAttachment ...$presentedForm
-     * @return static
      */
     public function setPresentedForm(FHIRAttachment ...$presentedForm): self
     {
@@ -1368,10 +1241,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDiagnosticReport $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDiagnosticReport
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1503,11 +1373,6 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1658,10 +1523,7 @@ class FHIRDiagnosticReport extends FHIRResource implements VersionContainedTypeI
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDiagnosticReport $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRDiagnosticReport
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

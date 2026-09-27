@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Validation;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -32,15 +32,11 @@ trait TypeValidationsTrait
 {
     /**
      * Map of custom vlaidation rules for a given Type.
-     *
-     * @var array
      */
     private array $_customValidationRules = [];
 
     /**
      * Returns the pre-defined validations as extracted from the source FHIR schema.
-     *
-     * @return array
      */
     public function _getFHIRValidationRules(): array
     {
@@ -49,8 +45,6 @@ trait TypeValidationsTrait
 
     /**
      * Return all custom validation rules
-     *
-     * @return array
      */
     public function _getCustomValidationRules(): array
     {
@@ -62,8 +56,6 @@ trait TypeValidationsTrait
      * FHIR schema during generation.
      *
      * The returned map has the structure: ["fieldname" => ["rule" => {constraint}]].
-     *
-     * @return array
      */
     public function _getCombinedValidationRules(): array
     {
@@ -106,8 +98,6 @@ trait TypeValidationsTrait
      *
      * The returned map is keyed by the field and valued by a list of validation failures.  An empty array must be seen
      * as no validation errors occurring.
-     *
-     * @return array
      */
     public function _getValidationErrors(): array
     {

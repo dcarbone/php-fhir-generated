@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -141,8 +141,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sequential number of the step, e.g. 1.2.5.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $number;
@@ -150,8 +148,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Indicates that the step is a complex sub-process with its own steps.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess
      */
     #[FHIRExampleScenarioProcess]
     protected FHIRExampleScenarioProcess $process;
@@ -162,8 +158,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates that the step is defined by a seaparate scenario instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $workflow;
@@ -171,8 +165,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * The step represents a single operation invoked on receiver by sender.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation
      */
     #[FHIRExampleScenarioOperation]
     protected FHIRExampleScenarioOperation $operation;
@@ -193,8 +185,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      *
      * If true, indicates that, following this step, there is a pause in the flow and
      * the subsequent step will occur at some later time (triggered by some event).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $pause;
@@ -203,14 +193,8 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     /**
      * FHIRExampleScenarioStep Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $number
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess $process
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $workflow
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation $operation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative> $alternative
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $pause
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -261,8 +245,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sequential number of the step, e.g. 1.2.5.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getNumber(): null|FHIRString
     {
@@ -275,9 +257,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sequential number of the step, e.g. 1.2.5.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $number
-     * @return static
      */
     public function setNumber(null|string|FHIRStringPrimitive|FHIRString $number): self
     {
@@ -296,8 +275,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Indicates that the step is a complex sub-process with its own steps.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess
      */
     public function getProcess(): null|FHIRExampleScenarioProcess
     {
@@ -308,9 +285,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Indicates that the step is a complex sub-process with its own steps.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess $process
-     * @return static
      */
     public function setProcess(null|FHIRExampleScenarioProcess $process): self
     {
@@ -329,8 +303,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates that the step is defined by a seaparate scenario instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getWorkflow(): null|FHIRCanonical
     {
@@ -344,9 +316,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates that the step is defined by a seaparate scenario instance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $workflow
-     * @return static
      */
     public function setWorkflow(null|string|FHIRCanonicalPrimitive|FHIRCanonical $workflow): self
     {
@@ -365,8 +334,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * The step represents a single operation invoked on receiver by sender.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation
      */
     public function getOperation(): null|FHIRExampleScenarioOperation
     {
@@ -377,9 +344,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * The step represents a single operation invoked on receiver by sender.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation $operation
-     * @return static
      */
     public function setOperation(null|FHIRExampleScenarioOperation $operation): self
     {
@@ -422,9 +386,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Indicates an alternative step that can be taken instead of the sub-process,
      * scenario or operation. E.g. to represent non-happy-path/exceptional/atypical
      * circumstances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative $alternative
-     * @return static
      */
     public function addAlternative(FHIRExampleScenarioAlternative $alternative): self
     {
@@ -441,9 +402,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Indicates an alternative step that can be taken instead of the sub-process,
      * scenario or operation. E.g. to represent non-happy-path/exceptional/atypical
      * circumstances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative ...$alternative
-     * @return static
      */
     public function setAlternative(FHIRExampleScenarioAlternative ...$alternative): self
     {
@@ -461,8 +419,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      *
      * If true, indicates that, following this step, there is a pause in the flow and
      * the subsequent step will occur at some later time (triggered by some event).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getPause(): null|FHIRBoolean
     {
@@ -475,9 +431,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      *
      * If true, indicates that, following this step, there is a pause in the flow and
      * the subsequent step will occur at some later time (triggered by some event).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $pause
-     * @return static
      */
     public function setPause(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $pause): self
     {
@@ -494,10 +447,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -575,10 +525,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -633,10 +579,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -89,7 +87,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSpecimenStatus;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRSpecimenStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
@@ -156,8 +153,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The availability of the specimen.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSpecimenStatus
      */
     #[FHIRSpecimenStatus]
     protected FHIRSpecimenStatus $status;
@@ -168,8 +163,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of material that forms the specimen.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -192,8 +185,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Where the specimen came from. This may be from the patient(s) or from the
      * environment or a device.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -205,8 +196,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * The identifier assigned by the lab when accessioning specimen(s). This is not
      * necessarily the same as the specimen identifier, depending on local lab
      * procedures.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $accessionIdentifier;
@@ -219,8 +208,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time when specimen was received for processing or testing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $receivedTime;
@@ -228,8 +215,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * A sample to be used for analysis.
      *
      * Details concerning the specimen collection.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
      */
     #[FHIRSpecimenCollection]
     protected FHIRSpecimenCollection $collection;
@@ -256,22 +241,11 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
     /* constructor.php:61 */
     /**
      * FHIRSpecimen Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRSpecimenStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSpecimenStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference> $parent
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $accessionIdentifier
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $receivedTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection $collection
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenTreatment> $treatment
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer> $container
      * @param null|string[] $fhirComments
@@ -381,9 +355,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Id for specimen.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -400,9 +371,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Id for specimen.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -419,8 +387,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The availability of the specimen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSpecimenStatus
      */
     public function getStatus(): null|FHIRSpecimenStatus
     {
@@ -432,9 +398,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The availability of the specimen.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRSpecimenStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRSpecimenStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRSpecimenStatusList|FHIRSpecimenStatus $status): self
     {
@@ -456,8 +419,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of material that forms the specimen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -471,9 +432,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of material that forms the specimen.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -518,9 +476,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Reference to the parent (source) specimen which is used when the specimen was
      * either derived from or a component of another specimen.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $parent
-     * @return static
      */
     public function addParent(FHIRReference $parent): self
     {
@@ -538,9 +493,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Reference to the parent (source) specimen which is used when the specimen was
      * either derived from or a component of another specimen.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference ...$parent
-     * @return static
      */
     public function setParent(FHIRReference ...$parent): self
     {
@@ -559,8 +511,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Where the specimen came from. This may be from the patient(s) or from the
      * environment or a device.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -574,9 +524,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Where the specimen came from. This may be from the patient(s) or from the
      * environment or a device.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -596,8 +543,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * The identifier assigned by the lab when accessioning specimen(s). This is not
      * necessarily the same as the specimen identifier, depending on local lab
      * procedures.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     public function getAccessionIdentifier(): null|FHIRIdentifier
     {
@@ -612,9 +557,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * The identifier assigned by the lab when accessioning specimen(s). This is not
      * necessarily the same as the specimen identifier, depending on local lab
      * procedures.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $accessionIdentifier
-     * @return static
      */
     public function setAccessionIdentifier(null|FHIRIdentifier $accessionIdentifier): self
     {
@@ -635,8 +577,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time when specimen was received for processing or testing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getReceivedTime(): null|FHIRDateTime
     {
@@ -652,9 +592,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time when specimen was received for processing or testing.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $receivedTime
-     * @return static
      */
     public function setReceivedTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $receivedTime): self
     {
@@ -673,8 +610,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * A sample to be used for analysis.
      *
      * Details concerning the specimen collection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
      */
     public function getCollection(): null|FHIRSpecimenCollection
     {
@@ -685,9 +620,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * A sample to be used for analysis.
      *
      * Details concerning the specimen collection.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection $collection
-     * @return static
      */
     public function setCollection(null|FHIRSpecimenCollection $collection): self
     {
@@ -726,9 +658,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * A sample to be used for analysis.
      *
      * Details concerning treatment and processing steps for the specimen.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenTreatment $treatment
-     * @return static
      */
     public function addTreatment(FHIRSpecimenTreatment $treatment): self
     {
@@ -743,9 +672,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      * A sample to be used for analysis.
      *
      * Details concerning treatment and processing steps for the specimen.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenTreatment ...$treatment
-     * @return static
      */
     public function setTreatment(FHIRSpecimenTreatment ...$treatment): self
     {
@@ -786,9 +712,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The container holding the specimen. The recursive nature of containers; i.e.
      * blood in tube in tray in rack is not addressed here.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer $container
-     * @return static
      */
     public function addContainer(FHIRSpecimenContainer $container): self
     {
@@ -804,9 +727,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The container holding the specimen. The recursive nature of containers; i.e.
      * blood in tube in tray in rack is not addressed here.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer ...$container
-     * @return static
      */
     public function setContainer(FHIRSpecimenContainer ...$container): self
     {
@@ -820,10 +740,7 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRSpecimen $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRSpecimen
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -937,11 +854,6 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1041,10 +953,7 @@ class FHIRSpecimen extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRSpecimen $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRSpecimen
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

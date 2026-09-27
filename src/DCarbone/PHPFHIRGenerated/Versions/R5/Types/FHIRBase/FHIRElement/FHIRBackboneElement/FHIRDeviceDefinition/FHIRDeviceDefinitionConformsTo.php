@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -139,8 +138,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the standard, specification, or formal guidance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -153,8 +150,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * Code that identifies the specific standard, specification, protocol, formal
      * guidance, regulation, legislation, or certification scheme to which the device
      * adheres.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $specification;
@@ -189,10 +184,7 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
     /**
      * FHIRDeviceDefinitionConformsTo Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $specification
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $version
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact> $source
      * @param null|string[] $fhirComments
@@ -238,8 +230,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the standard, specification, or formal guidance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -253,9 +243,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the standard, specification, or formal guidance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -276,8 +263,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * Code that identifies the specific standard, specification, protocol, formal
      * guidance, regulation, legislation, or certification scheme to which the device
      * adheres.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getSpecification(): null|FHIRCodeableConcept
     {
@@ -293,9 +278,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * Code that identifies the specific standard, specification, protocol, formal
      * guidance, regulation, legislation, or certification scheme to which the device
      * adheres.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $specification
-     * @return static
      */
     public function setSpecification(null|FHIRCodeableConcept $specification): self
     {
@@ -342,9 +324,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * Identifies the specific form or variant of the standard, specification, or
      * formal guidance. This may be a 'version number', release, document edition,
      * publication year, or other label.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @return static
      */
     public function addVersion(string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -366,9 +345,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * Identifies the specific form or variant of the standard, specification, or
      * formal guidance. This may be a 'version number', release, document edition,
      * publication year, or other label.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$version
-     * @return static
      */
     public function setVersion(string|FHIRStringPrimitive|FHIRString ...$version): self
     {
@@ -422,9 +398,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      *
      * Standard, regulation, certification, or guidance website, document, or other
      * publication, or similar, supporting the conformance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $source
-     * @return static
      */
     public function addSource(FHIRRelatedArtifact $source): self
     {
@@ -443,9 +416,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      *
      * Standard, regulation, certification, or guidance website, document, or other
      * publication, or similar, supporting the conformance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$source
-     * @return static
      */
     public function setSource(FHIRRelatedArtifact ...$source): self
     {
@@ -459,10 +429,7 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionConformsTo $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionConformsTo
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -512,10 +479,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -547,10 +510,7 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionConformsTo $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionConformsTo
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -122,8 +122,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the type of the calibration method.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationType
      */
     #[FHIRDeviceMetricCalibrationType]
     protected FHIRDeviceMetricCalibrationType $type;
@@ -132,8 +130,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the state of the calibration.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationState
      */
     #[FHIRDeviceMetricCalibrationState]
     protected FHIRDeviceMetricCalibrationState $state;
@@ -145,8 +141,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the time last calibration has been performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $time;
@@ -155,11 +149,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
     /**
      * FHIRDeviceMetricCalibration Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDeviceMetricCalibrationTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDeviceMetricCalibrationStateList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationState $state
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $time
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -197,8 +187,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the type of the calibration method.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationType
      */
     public function getType(): null|FHIRDeviceMetricCalibrationType
     {
@@ -210,9 +198,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the type of the calibration method.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDeviceMetricCalibrationTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationType $type
-     * @return static
      */
     public function setType(null|string|FHIRDeviceMetricCalibrationTypeList|FHIRDeviceMetricCalibrationType $type): self
     {
@@ -232,8 +217,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the state of the calibration.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationState
      */
     public function getState(): null|FHIRDeviceMetricCalibrationState
     {
@@ -245,9 +228,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the state of the calibration.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDeviceMetricCalibrationStateList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDeviceMetricCalibrationState $state
-     * @return static
      */
     public function setState(null|string|FHIRDeviceMetricCalibrationStateList|FHIRDeviceMetricCalibrationState $state): self
     {
@@ -270,8 +250,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the time last calibration has been performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     public function getTime(): null|FHIRInstant
     {
@@ -286,9 +264,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the time last calibration has been performed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $time
-     * @return static
      */
     public function setTime(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $time): self
     {
@@ -305,10 +280,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -380,10 +352,6 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -421,10 +389,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

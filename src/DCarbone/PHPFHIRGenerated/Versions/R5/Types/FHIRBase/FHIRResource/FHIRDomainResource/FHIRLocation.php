@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition;
@@ -116,7 +114,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRLocationMo
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRLocationStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -195,8 +192,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * The status property covers the general availability of the resource, not the
      * current value which may be covered by the operationStatus, or by a
      * schedule/slots if they are configured for the location.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLocationStatus
      */
     #[FHIRLocationStatus]
     protected FHIRLocationStatus $status;
@@ -209,8 +204,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair).
      * This typically covers concepts such as contamination, housekeeping, and other
      * activities like maintenance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $operationalStatus;
@@ -220,8 +213,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the location as used by humans. Does not need to be unique.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -247,8 +238,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * Description of the Location, which helps in finding or referencing the place.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -257,8 +246,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates whether a resource instance represents a specific location or a class
      * of locations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLocationMode
      */
     #[FHIRLocationMode]
     protected FHIRLocationMode $mode;
@@ -299,8 +286,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical location.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $address;
@@ -311,8 +296,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical form of the location, e.g. building, room, vehicle, road, virtual.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $form;
@@ -322,8 +305,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The absolute geographic location of the Location, expressed using the WGS84
      * datum (This is the same co-ordinate system used in KML).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
      */
     #[FHIRLocationPosition]
     protected FHIRLocationPosition $position;
@@ -333,8 +314,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization responsible for the provisioning and upkeep of the location.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $managingOrganization;
@@ -344,8 +323,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another Location of which this Location is physically a part of.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $partOf;
@@ -400,28 +377,13 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
     /* constructor.php:61 */
     /**
      * FHIRLocation Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRLocationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLocationStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $operationalStatus
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $alias
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRLocationModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLocationMode $mode
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail> $contact
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $address
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $form
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition $position
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $managingOrganization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $partOf
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $characteristic
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability> $hoursOfOperation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail> $virtualService
@@ -567,9 +529,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique code or number identifying the location to its users.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -587,9 +546,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique code or number identifying the location to its users.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -607,8 +563,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * The status property covers the general availability of the resource, not the
      * current value which may be covered by the operationStatus, or by a
      * schedule/slots if they are configured for the location.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLocationStatus
      */
     public function getStatus(): null|FHIRLocationStatus
     {
@@ -621,9 +575,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * The status property covers the general availability of the resource, not the
      * current value which may be covered by the operationStatus, or by a
      * schedule/slots if they are configured for the location.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRLocationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLocationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRLocationStatusEnum|FHIRLocationStatus $status): self
     {
@@ -647,8 +598,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair).
      * This typically covers concepts such as contamination, housekeeping, and other
      * activities like maintenance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     public function getOperationalStatus(): null|FHIRCoding
     {
@@ -664,9 +613,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair).
      * This typically covers concepts such as contamination, housekeeping, and other
      * activities like maintenance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $operationalStatus
-     * @return static
      */
     public function setOperationalStatus(null|FHIRCoding $operationalStatus): self
     {
@@ -684,8 +630,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the location as used by humans. Does not need to be unique.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -698,9 +642,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the location as used by humans. Does not need to be unique.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -748,9 +689,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A list of alternate names that the location is known as, or was known as, in the
      * past.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $alias
-     * @return static
      */
     public function addAlias(string|FHIRStringPrimitive|FHIRString $alias): self
     {
@@ -771,9 +709,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A list of alternate names that the location is known as, or was known as, in the
      * past.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$alias
-     * @return static
      */
     public function setAlias(string|FHIRStringPrimitive|FHIRString ...$alias): self
     {
@@ -802,8 +737,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * Description of the Location, which helps in finding or referencing the place.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -820,9 +753,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * Description of the Location, which helps in finding or referencing the place.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -842,8 +772,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates whether a resource instance represents a specific location or a class
      * of locations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLocationMode
      */
     public function getMode(): null|FHIRLocationMode
     {
@@ -855,9 +783,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates whether a resource instance represents a specific location or a class
      * of locations.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRLocationModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLocationMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRLocationModeEnum|FHIRLocationMode $mode): self
     {
@@ -905,9 +830,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of function performed at the location.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function addType(FHIRCodeableConcept $type): self
     {
@@ -925,9 +847,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of function performed at the location.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$type
-     * @return static
      */
     public function setType(FHIRCodeableConcept ...$type): self
     {
@@ -976,9 +895,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * The contact details of communication devices available at the location. This can
      * include addresses, phone numbers, fax numbers, mobile numbers, email addresses
      * and web sites.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRExtendedContactDetail $contact): self
     {
@@ -998,9 +914,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * The contact details of communication devices available at the location. This can
      * include addresses, phone numbers, fax numbers, mobile numbers, email addresses
      * and web sites.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRExtendedContactDetail ...$contact): self
     {
@@ -1023,8 +936,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical location.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     public function getAddress(): null|FHIRAddress
     {
@@ -1042,9 +953,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical location.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress $address
-     * @return static
      */
     public function setAddress(null|FHIRAddress $address): self
     {
@@ -1063,8 +971,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical form of the location, e.g. building, room, vehicle, road, virtual.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getForm(): null|FHIRCodeableConcept
     {
@@ -1078,9 +984,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical form of the location, e.g. building, room, vehicle, road, virtual.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $form
-     * @return static
      */
     public function setForm(null|FHIRCodeableConcept $form): self
     {
@@ -1098,8 +1001,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The absolute geographic location of the Location, expressed using the WGS84
      * datum (This is the same co-ordinate system used in KML).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
      */
     public function getPosition(): null|FHIRLocationPosition
     {
@@ -1112,9 +1013,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The absolute geographic location of the Location, expressed using the WGS84
      * datum (This is the same co-ordinate system used in KML).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition $position
-     * @return static
      */
     public function setPosition(null|FHIRLocationPosition $position): self
     {
@@ -1132,8 +1030,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization responsible for the provisioning and upkeep of the location.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getManagingOrganization(): null|FHIRReference
     {
@@ -1146,9 +1042,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization responsible for the provisioning and upkeep of the location.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $managingOrganization
-     * @return static
      */
     public function setManagingOrganization(null|FHIRReference $managingOrganization): self
     {
@@ -1166,8 +1059,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another Location of which this Location is physically a part of.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getPartOf(): null|FHIRReference
     {
@@ -1180,9 +1071,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another Location of which this Location is physically a part of.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $partOf
-     * @return static
      */
     public function setPartOf(null|FHIRReference $partOf): self
     {
@@ -1227,9 +1115,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $characteristic
-     * @return static
      */
     public function addCharacteristic(FHIRCodeableConcept $characteristic): self
     {
@@ -1247,9 +1132,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$characteristic
-     * @return static
      */
     public function setCharacteristic(FHIRCodeableConcept ...$characteristic): self
     {
@@ -1294,9 +1176,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * What days/times during a week is this location usually open, and any exceptions
      * where the location is not available.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability $hoursOfOperation
-     * @return static
      */
     public function addHoursOfOperation(FHIRAvailability $hoursOfOperation): self
     {
@@ -1314,9 +1193,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * What days/times during a week is this location usually open, and any exceptions
      * where the location is not available.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability ...$hoursOfOperation
-     * @return static
      */
     public function setHoursOfOperation(FHIRAvailability ...$hoursOfOperation): self
     {
@@ -1361,9 +1237,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Connection details of a virtual service (e.g. shared conference call facility
      * with dedicated number/details).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail $virtualService
-     * @return static
      */
     public function addVirtualService(FHIRVirtualServiceDetail $virtualService): self
     {
@@ -1381,9 +1254,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Connection details of a virtual service (e.g. shared conference call facility
      * with dedicated number/details).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail ...$virtualService
-     * @return static
      */
     public function setVirtualService(FHIRVirtualServiceDetail ...$virtualService): self
     {
@@ -1426,9 +1296,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the location.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $endpoint
-     * @return static
      */
     public function addEndpoint(FHIRReference $endpoint): self
     {
@@ -1445,9 +1312,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for the location.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$endpoint
-     * @return static
      */
     public function setEndpoint(FHIRReference ...$endpoint): self
     {
@@ -1461,10 +1325,7 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRLocation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRLocation
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1610,11 +1471,6 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1772,10 +1628,7 @@ class FHIRLocation extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRLocation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRLocation
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

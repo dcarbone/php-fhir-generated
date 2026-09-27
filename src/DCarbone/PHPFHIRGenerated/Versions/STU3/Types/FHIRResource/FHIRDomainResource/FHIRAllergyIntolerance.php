@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -101,7 +99,6 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -197,8 +194,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical status of the allergy or intolerance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceClinicalStatus
      */
     #[FHIRAllergyIntoleranceClinicalStatus]
     protected FHIRAllergyIntoleranceClinicalStatus $clinicalStatus;
@@ -209,8 +204,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Assertion about certainty associated with the propensity, or potential risk, of
      * a reaction to the identified substance (including pharmaceutical product).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceVerificationStatus
      */
     #[FHIRAllergyIntoleranceVerificationStatus]
     protected FHIRAllergyIntoleranceVerificationStatus $verificationStatus;
@@ -219,8 +212,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identification of the underlying physiological mechanism for the reaction risk.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceType
      */
     #[FHIRAllergyIntoleranceType]
     protected FHIRAllergyIntoleranceType $type;
@@ -241,8 +232,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the
      * identified substance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceCriticality
      */
     #[FHIRAllergyIntoleranceCriticality]
     protected FHIRAllergyIntoleranceCriticality $criticality;
@@ -259,8 +248,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * allergy"), or a negated/excluded code for a specific substance or class (e.g.,
      * "No latex allergy") or a general or categorical negated statement (e.g., "No
      * known allergy", "No known drug allergies").
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -270,8 +257,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -285,8 +270,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $onsetDateTime;
@@ -297,8 +280,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     #[FHIRAge]
     protected FHIRAge $onsetAge;
@@ -309,8 +290,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $onsetPeriod;
@@ -321,8 +300,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $onsetRange;
@@ -333,8 +310,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $onsetString;
@@ -348,8 +323,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * The date on which the existance of the AllergyIntolerance was first asserted or
      * acknowledged.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $assertedDate;
@@ -359,8 +332,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $recorder;
@@ -370,8 +341,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source of the information about the allergy that is recorded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $asserter;
@@ -385,8 +354,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Represents the date and/or time of the last known occurrence of a reaction
      * event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $lastOccurrence;
@@ -418,31 +385,11 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
     /* constructor.php:61 */
     /**
      * FHIRAllergyIntolerance Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceClinicalStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceClinicalStatus $clinicalStatus
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceVerificationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceVerificationStatus $verificationStatus
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceType $type
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceCategoryList>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceCategory> $category
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceCriticalityList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceCriticality $criticality
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $onsetDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $onsetPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $onsetRange
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $onsetString
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $assertedDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $recorder
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $asserter
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $lastOccurrence
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction> $reaction
      * @param null|string[] $fhirComments
@@ -594,9 +541,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * are defined by business processes and/or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -616,9 +560,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * are defined by business processes and/or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -635,8 +576,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical status of the allergy or intolerance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceClinicalStatus
      */
     public function getClinicalStatus(): null|FHIRAllergyIntoleranceClinicalStatus
     {
@@ -648,9 +587,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical status of the allergy or intolerance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceClinicalStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceClinicalStatus $clinicalStatus
-     * @return static
      */
     public function setClinicalStatus(null|string|FHIRAllergyIntoleranceClinicalStatusList|FHIRAllergyIntoleranceClinicalStatus $clinicalStatus): self
     {
@@ -672,8 +608,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Assertion about certainty associated with the propensity, or potential risk, of
      * a reaction to the identified substance (including pharmaceutical product).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceVerificationStatus
      */
     public function getVerificationStatus(): null|FHIRAllergyIntoleranceVerificationStatus
     {
@@ -687,9 +621,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Assertion about certainty associated with the propensity, or potential risk, of
      * a reaction to the identified substance (including pharmaceutical product).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceVerificationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceVerificationStatus $verificationStatus
-     * @return static
      */
     public function setVerificationStatus(null|string|FHIRAllergyIntoleranceVerificationStatusList|FHIRAllergyIntoleranceVerificationStatus $verificationStatus): self
     {
@@ -709,8 +640,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identification of the underlying physiological mechanism for the reaction risk.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceType
      */
     public function getType(): null|FHIRAllergyIntoleranceType
     {
@@ -722,9 +651,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identification of the underlying physiological mechanism for the reaction risk.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceType $type
-     * @return static
      */
     public function setType(null|string|FHIRAllergyIntoleranceTypeList|FHIRAllergyIntoleranceType $type): self
     {
@@ -768,9 +694,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Category of the identified substance.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceCategoryList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceCategory $category
-     * @return static
      */
     public function addCategory(string|FHIRAllergyIntoleranceCategoryList|FHIRAllergyIntoleranceCategory $category): self
     {
@@ -789,9 +712,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Category of the identified substance.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceCategoryList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceCategory ...$category
-     * @return static
      */
     public function setCategory(string|FHIRAllergyIntoleranceCategoryList|FHIRAllergyIntoleranceCategory ...$category): self
     {
@@ -817,8 +737,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the
      * identified substance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceCriticality
      */
     public function getCriticality(): null|FHIRAllergyIntoleranceCriticality
     {
@@ -832,9 +750,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the
      * identified substance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceCriticalityList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAllergyIntoleranceCriticality $criticality
-     * @return static
      */
     public function setCriticality(null|string|FHIRAllergyIntoleranceCriticalityList|FHIRAllergyIntoleranceCriticality $criticality): self
     {
@@ -862,8 +777,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * allergy"), or a negated/excluded code for a specific substance or class (e.g.,
      * "No latex allergy") or a general or categorical negated statement (e.g., "No
      * known allergy", "No known drug allergies").
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -883,9 +796,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * allergy"), or a negated/excluded code for a specific substance or class (e.g.,
      * "No latex allergy") or a general or categorical negated statement (e.g., "No
      * known allergy", "No known drug allergies").
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -903,8 +813,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -917,9 +825,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -941,8 +846,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getOnsetDateTime(): null|FHIRDateTime
     {
@@ -959,9 +862,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $onsetDateTime
-     * @return static
      */
     public function setOnsetDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $onsetDateTime): self
     {
@@ -983,8 +883,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getOnsetAge(): null|FHIRAge
     {
@@ -998,9 +896,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
-     * @return static
      */
     public function setOnsetAge(null|FHIRAge $onsetAge): self
     {
@@ -1019,8 +914,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getOnsetPeriod(): null|FHIRPeriod
     {
@@ -1034,9 +927,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $onsetPeriod
-     * @return static
      */
     public function setOnsetPeriod(null|FHIRPeriod $onsetPeriod): self
     {
@@ -1055,8 +945,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange
      */
     public function getOnsetRange(): null|FHIRRange
     {
@@ -1070,9 +958,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $onsetRange
-     * @return static
      */
     public function setOnsetRange(null|FHIRRange $onsetRange): self
     {
@@ -1091,8 +976,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getOnsetString(): null|FHIRString
     {
@@ -1106,9 +989,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $onsetString
-     * @return static
      */
     public function setOnsetString(null|string|FHIRStringPrimitive|FHIRString $onsetString): self
     {
@@ -1133,8 +1013,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * The date on which the existance of the AllergyIntolerance was first asserted or
      * acknowledged.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getAssertedDate(): null|FHIRDateTime
     {
@@ -1151,9 +1029,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * The date on which the existance of the AllergyIntolerance was first asserted or
      * acknowledged.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $assertedDate
-     * @return static
      */
     public function setAssertedDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $assertedDate): self
     {
@@ -1174,8 +1049,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getRecorder(): null|FHIRReference
     {
@@ -1188,9 +1061,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $recorder
-     * @return static
      */
     public function setRecorder(null|FHIRReference $recorder): self
     {
@@ -1208,8 +1078,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source of the information about the allergy that is recorded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getAsserter(): null|FHIRReference
     {
@@ -1222,9 +1090,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source of the information about the allergy that is recorded.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $asserter
-     * @return static
      */
     public function setAsserter(null|FHIRReference $asserter): self
     {
@@ -1246,8 +1111,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Represents the date and/or time of the last known occurrence of a reaction
      * event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getLastOccurrence(): null|FHIRDateTime
     {
@@ -1264,9 +1127,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Represents the date and/or time of the last known occurrence of a reaction
      * event.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $lastOccurrence
-     * @return static
      */
     public function setLastOccurrence(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastOccurrence): self
     {
@@ -1316,9 +1176,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Additional narrative about the propensity for the Adverse Reaction, not captured
      * in other fields.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1337,9 +1194,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Additional narrative about the propensity for the Adverse Reaction, not captured
      * in other fields.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1382,9 +1236,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Details about each adverse reaction event linked to exposure to the identified
      * substance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction $reaction
-     * @return static
      */
     public function addReaction(FHIRAllergyIntoleranceReaction $reaction): self
     {
@@ -1401,9 +1252,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
      *
      * Details about each adverse reaction event linked to exposure to the identified
      * substance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction ...$reaction
-     * @return static
      */
     public function setReaction(FHIRAllergyIntoleranceReaction ...$reaction): self
     {
@@ -1417,10 +1265,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1600,11 +1445,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1779,10 +1619,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainResource\FHIRAllergyIntolerance
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

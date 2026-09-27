@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -132,8 +131,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Links response to source query.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $identifier;
@@ -142,8 +139,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Outcome of processing the query.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQueryOutcome
      */
     #[FHIRQueryOutcome]
     protected FHIRQueryOutcome $outcome;
@@ -152,8 +147,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Total number of matching records.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $total;
@@ -228,11 +221,7 @@ class FHIRQueryResponse extends FHIRBackboneElement
     /**
      * FHIRQueryResponse Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRQueryOutcomeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQueryOutcome $outcome
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $total
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $parameter
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $first
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $previous
@@ -300,8 +289,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Links response to source query.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri
      */
     public function getIdentifier(): null|FHIRUri
     {
@@ -313,9 +300,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Links response to source query.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $identifier
-     * @return static
      */
     public function setIdentifier(null|string|FHIRUriPrimitive|FHIRUri $identifier): self
     {
@@ -335,8 +319,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Outcome of processing the query.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQueryOutcome
      */
     public function getOutcome(): null|FHIRQueryOutcome
     {
@@ -348,9 +330,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Outcome of processing the query.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRQueryOutcomeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQueryOutcome $outcome
-     * @return static
      */
     public function setOutcome(null|string|FHIRQueryOutcomeList|FHIRQueryOutcome $outcome): self
     {
@@ -370,8 +349,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Total number of matching records.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger
      */
     public function getTotal(): null|FHIRInteger
     {
@@ -383,9 +360,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Total number of matching records.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $total
-     * @return static
      */
     public function setTotal(null|string|float|FHIRIntegerPrimitive|FHIRInteger $total): self
     {
@@ -431,9 +405,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parameters server used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension $parameter
-     * @return static
      */
     public function addParameter(FHIRExtension $parameter): self
     {
@@ -450,9 +421,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parameters server used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension ...$parameter
-     * @return static
      */
     public function setParameter(FHIRExtension ...$parameter): self
     {
@@ -495,9 +463,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get first page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension $first
-     * @return static
      */
     public function addFirst(FHIRExtension $first): self
     {
@@ -514,9 +479,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get first page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension ...$first
-     * @return static
      */
     public function setFirst(FHIRExtension ...$first): self
     {
@@ -559,9 +521,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get previous page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension $previous
-     * @return static
      */
     public function addPrevious(FHIRExtension $previous): self
     {
@@ -578,9 +537,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get previous page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension ...$previous
-     * @return static
      */
     public function setPrevious(FHIRExtension ...$previous): self
     {
@@ -623,9 +579,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get next page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension $next
-     * @return static
      */
     public function addNext(FHIRExtension $next): self
     {
@@ -642,9 +595,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get next page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension ...$next
-     * @return static
      */
     public function setNext(FHIRExtension ...$next): self
     {
@@ -687,9 +637,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get last page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension $last
-     * @return static
      */
     public function addLast(FHIRExtension $last): self
     {
@@ -706,9 +653,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get last page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension ...$last
-     * @return static
      */
     public function setLast(FHIRExtension ...$last): self
     {
@@ -751,9 +695,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Resources that are the results of the search.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $reference
-     * @return static
      */
     public function addReference(FHIRResourceReference $reference): self
     {
@@ -770,9 +711,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Resources that are the results of the search.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$reference
-     * @return static
      */
     public function setReference(FHIRResourceReference ...$reference): self
     {
@@ -786,10 +724,7 @@ class FHIRQueryResponse extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuery\FHIRQueryResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuery\FHIRQueryResponse
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -873,10 +808,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -956,10 +887,7 @@ class FHIRQueryResponse extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuery\FHIRQueryResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRQuery\FHIRQueryResponse
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

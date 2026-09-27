@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -122,6 +123,12 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_ALLOWED_BOOLEAN => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_ALLOWED_CODEABLE_CONCEPT => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -135,9 +142,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * prescribed.
      */
     #[FHIRBoolean]
     protected FHIRBoolean $allowedBoolean;
@@ -148,9 +153,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * prescribed.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $allowedCodeableConcept;
@@ -162,8 +165,6 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      *
      * Indicates the reason for the substitution, or why substitution must or must not
      * be performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reason;
@@ -172,11 +173,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
     /**
      * FHIRMedicationRequestSubstitution Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $allowedBoolean
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $allowedCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $reason
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -214,9 +211,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     * prescribed.
      */
     public function getAllowedBoolean(): null|FHIRBoolean
     {
@@ -228,10 +223,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $allowedBoolean
-     * @return static
+     * prescribed.
      */
     public function setAllowedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allowedBoolean): self
     {
@@ -253,9 +245,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * prescribed.
      */
     public function getAllowedCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -269,10 +259,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $allowedCodeableConcept
-     * @return static
+     * prescribed.
      */
     public function setAllowedCodeableConcept(null|FHIRCodeableConcept $allowedCodeableConcept): self
     {
@@ -292,8 +279,6 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      *
      * Indicates the reason for the substitution, or why substitution must or must not
      * be performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getReason(): null|FHIRCodeableConcept
     {
@@ -308,9 +293,6 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      *
      * Indicates the reason for the substitution, or why substitution must or must not
      * be performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $reason
-     * @return static
      */
     public function setReason(null|FHIRCodeableConcept $reason): self
     {
@@ -324,10 +306,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -383,10 +362,6 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -414,10 +389,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

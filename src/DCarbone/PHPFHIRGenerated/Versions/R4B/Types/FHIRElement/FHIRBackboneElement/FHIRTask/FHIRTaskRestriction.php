@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -133,8 +133,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates the number of times the requested action should occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $repetitions;
@@ -144,8 +142,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Over what time-period is fulfillment sought.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -166,10 +162,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement
     /**
      * FHIRTaskRestriction Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $repetitions
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $recipient
      * @param null|string[] $fhirComments
      */
@@ -209,8 +202,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates the number of times the requested action should occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     public function getRepetitions(): null|FHIRPositiveInt
     {
@@ -223,9 +214,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates the number of times the requested action should occur.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $repetitions
-     * @return static
      */
     public function setRepetitions(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $repetitions): self
     {
@@ -246,8 +234,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Over what time-period is fulfillment sought.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -260,9 +246,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Over what time-period is fulfillment sought.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -307,9 +290,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      *
      * For requests that are targeted to more than on potential recipient/target, for
      * whom is fulfillment sought?
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $recipient
-     * @return static
      */
     public function addRecipient(FHIRReference $recipient): self
     {
@@ -327,9 +307,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      *
      * For requests that are targeted to more than on potential recipient/target, for
      * whom is fulfillment sought?
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$recipient
-     * @return static
      */
     public function setRecipient(FHIRReference ...$recipient): self
     {
@@ -343,10 +320,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -402,10 +376,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -435,10 +405,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

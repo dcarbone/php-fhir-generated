@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -114,8 +113,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $item;
@@ -127,8 +124,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * Specifies how many (or how much) of the items there are in this Medication. E.g.
      * 250 mg per tablet.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $amount;
@@ -137,10 +132,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
     /**
      * FHIRMedicationIngredient Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $item
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $amount
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -176,8 +168,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getItem(): null|FHIRResourceReference
     {
@@ -191,9 +181,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $item
-     * @return static
      */
     public function setItem(null|FHIRResourceReference $item): self
     {
@@ -213,8 +200,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * Specifies how many (or how much) of the items there are in this Medication. E.g.
      * 250 mg per tablet.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio
      */
     public function getAmount(): null|FHIRRatio
     {
@@ -229,9 +214,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * Specifies how many (or how much) of the items there are in this Medication. E.g.
      * 250 mg per tablet.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRatio $amount
-     * @return static
      */
     public function setAmount(null|FHIRRatio $amount): self
     {
@@ -245,10 +227,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -294,10 +273,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -315,10 +290,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

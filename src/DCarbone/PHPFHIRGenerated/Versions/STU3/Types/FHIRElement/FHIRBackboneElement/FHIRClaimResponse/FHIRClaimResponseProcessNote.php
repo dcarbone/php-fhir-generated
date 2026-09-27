@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -118,8 +118,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      *
      * An integer associated with each note which may be referred to from each service
      * line item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $number;
@@ -130,8 +128,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The note purpose: Print/Display.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -141,8 +137,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The note text.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -156,8 +150,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
      * "en" for English, or "en-US" for American English versus "en-EN" for England
      * English.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $language;
@@ -166,12 +158,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
     /**
      * FHIRClaimResponseProcessNote Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $number
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $language
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -215,8 +202,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      *
      * An integer associated with each note which may be referred to from each service
      * line item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     public function getNumber(): null|FHIRPositiveInt
     {
@@ -230,9 +215,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      *
      * An integer associated with each note which may be referred to from each service
      * line item.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $number
-     * @return static
      */
     public function setNumber(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $number): self
     {
@@ -254,8 +236,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The note purpose: Print/Display.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -269,9 +249,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The note purpose: Print/Display.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -289,8 +266,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The note text.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -303,9 +278,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The note text.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -330,8 +302,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
      * "en" for English, or "en-US" for American English versus "en-EN" for England
      * English.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getLanguage(): null|FHIRCodeableConcept
     {
@@ -348,9 +318,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
      * "en" for English, or "en-US" for American English versus "en-EN" for England
      * English.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $language
-     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {
@@ -364,10 +331,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -433,10 +397,6 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -474,10 +434,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

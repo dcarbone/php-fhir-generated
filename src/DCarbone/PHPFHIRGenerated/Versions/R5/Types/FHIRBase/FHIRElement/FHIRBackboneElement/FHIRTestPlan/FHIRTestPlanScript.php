@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -133,8 +133,6 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The language for the test cases e.g. 'gherkin', 'testscript'.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $language;
@@ -144,9 +142,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * defined content.
      */
     #[FHIRString]
     protected FHIRString $sourceString;
@@ -156,9 +152,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * defined content.
      */
     #[FHIRReference]
     protected FHIRReference $sourceReference;
@@ -167,11 +161,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
     /**
      * FHIRTestPlanScript Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $language
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sourceString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $sourceReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -211,8 +201,6 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The language for the test cases e.g. 'gherkin', 'testscript'.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getLanguage(): null|FHIRCodeableConcept
     {
@@ -226,9 +214,6 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The language for the test cases e.g. 'gherkin', 'testscript'.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $language
-     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {
@@ -246,9 +231,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * defined content.
      */
     public function getSourceString(): null|FHIRString
     {
@@ -261,10 +244,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sourceString
-     * @return static
+     * defined content.
      */
     public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
@@ -285,9 +265,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * defined content.
      */
     public function getSourceReference(): null|FHIRReference
     {
@@ -300,10 +278,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual content of the cases - references to TestScripts or externally
-     * defined content. (choose any one of source*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $sourceReference
-     * @return static
+     * defined content.
      */
     public function setSourceReference(null|FHIRReference $sourceReference): self
     {
@@ -317,10 +292,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanScript $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanScript
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -376,10 +348,6 @@ class FHIRTestPlanScript extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -407,10 +375,7 @@ class FHIRTestPlanScript extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanScript $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanScript
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

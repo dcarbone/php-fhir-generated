@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -156,8 +155,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * A code that is used to identify this additional data attribute. The code is used
      * internally in ConceptMap.group.element.target.dependsOn.attribute and
      * ConceptMap.group.element.target.product.attribute.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -169,8 +166,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * Reference to the formal definition of the source/target data element. For
      * elements defined by the FHIR specification, or using a FHIR logical model, the
      * correct format is {canonical-url}#{element-id}.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $uri;
@@ -182,8 +177,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * A description of the additional attribute and/or the data element it refers to -
      * why it is defined, and how the value might be used in mappings, and a discussion
      * of issues associated with the use of the data element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -191,8 +184,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the source data contained in this concept map for this data element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRConceptMapAttributeType
      */
     #[FHIRConceptMapAttributeType]
     protected FHIRConceptMapAttributeType $type;
@@ -201,12 +192,7 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
     /**
      * FHIRConceptMapAdditionalAttribute Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $uri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRConceptMapAttributeTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRConceptMapAttributeType $type
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -252,8 +238,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * A code that is used to identify this additional data attribute. The code is used
      * internally in ConceptMap.group.element.target.dependsOn.attribute and
      * ConceptMap.group.element.target.product.attribute.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -269,9 +253,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * A code that is used to identify this additional data attribute. The code is used
      * internally in ConceptMap.group.element.target.dependsOn.attribute and
      * ConceptMap.group.element.target.product.attribute.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -294,8 +275,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * Reference to the formal definition of the source/target data element. For
      * elements defined by the FHIR specification, or using a FHIR logical model, the
      * correct format is {canonical-url}#{element-id}.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getUri(): null|FHIRUri
     {
@@ -310,9 +289,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * Reference to the formal definition of the source/target data element. For
      * elements defined by the FHIR specification, or using a FHIR logical model, the
      * correct format is {canonical-url}#{element-id}.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $uri
-     * @return static
      */
     public function setUri(null|string|FHIRUriPrimitive|FHIRUri $uri): self
     {
@@ -335,8 +311,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * A description of the additional attribute and/or the data element it refers to -
      * why it is defined, and how the value might be used in mappings, and a discussion
      * of issues associated with the use of the data element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -351,9 +325,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * A description of the additional attribute and/or the data element it refers to -
      * why it is defined, and how the value might be used in mappings, and a discussion
      * of issues associated with the use of the data element.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -372,8 +343,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the source data contained in this concept map for this data element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRConceptMapAttributeType
      */
     public function getType(): null|FHIRConceptMapAttributeType
     {
@@ -384,9 +353,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the source data contained in this concept map for this data element.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRConceptMapAttributeTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRConceptMapAttributeType $type
-     * @return static
      */
     public function setType(null|string|FHIRConceptMapAttributeTypeEnum|FHIRConceptMapAttributeType $type): self
     {
@@ -403,10 +369,7 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapAdditionalAttribute $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapAdditionalAttribute
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -488,10 +451,6 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -539,10 +498,7 @@ class FHIRConceptMapAdditionalAttribute extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapAdditionalAttribute $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapAdditionalAttribute
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

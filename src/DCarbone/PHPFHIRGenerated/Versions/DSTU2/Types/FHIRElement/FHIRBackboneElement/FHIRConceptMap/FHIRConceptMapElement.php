@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -121,8 +121,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      *
      * An absolute URI that identifies the Code System (if the source is a value set
      * that crosses more than one code system).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $codeSystem;
@@ -133,8 +131,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item being mapped.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -153,10 +149,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement
     /**
      * FHIRConceptMapElement Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $codeSystem
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $code
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget> $target
      * @param null|string[] $fhirComments
      */
@@ -197,8 +190,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      *
      * An absolute URI that identifies the Code System (if the source is a value set
      * that crosses more than one code system).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getCodeSystem(): null|FHIRUri
     {
@@ -212,9 +203,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      *
      * An absolute URI that identifies the Code System (if the source is a value set
      * that crosses more than one code system).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $codeSystem
-     * @return static
      */
     public function setCodeSystem(null|string|FHIRUriPrimitive|FHIRUri $codeSystem): self
     {
@@ -236,8 +224,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item being mapped.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -251,9 +237,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item being mapped.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -297,9 +280,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      * concepts - either code systems or data elements, or classes in class models.
      *
      * A concept from the target value set that this concept maps to.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget $target
-     * @return static
      */
     public function addTarget(FHIRConceptMapTarget $target): self
     {
@@ -315,9 +295,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      * concepts - either code systems or data elements, or classes in class models.
      *
      * A concept from the target value set that this concept maps to.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget ...$target
-     * @return static
      */
     public function setTarget(FHIRConceptMapTarget ...$target): self
     {
@@ -331,10 +308,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -398,10 +372,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -436,10 +406,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -148,8 +148,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * The type of virtual service to connect to (i.e. Teams, Zoom, Specific VMR
      * technology, WhatsApp).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $channelType;
@@ -160,10 +158,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * use (requires knowledge of the specific type).
      */
     #[FHIRUrl]
     protected FHIRUrl $addressUrl;
@@ -174,10 +169,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * use (requires knowledge of the specific type).
      */
     #[FHIRString]
     protected FHIRString $addressString;
@@ -189,10 +181,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
+     * use (requires knowledge of the specific type).
      */
     #[FHIRContactPoint]
     protected FHIRContactPoint $addressContactPoint;
@@ -204,10 +193,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
+     * use (requires knowledge of the specific type).
      */
     #[FHIRExtendedContactDetail]
     protected FHIRExtendedContactDetail $addressExtendedContactDetail;
@@ -228,8 +214,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * the Narrative, or extensions
      *
      * Maximum number of participants supported by the virtual service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $maxParticipants;
@@ -239,8 +223,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Session Key required by the virtual service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $sessionKey;
@@ -249,15 +231,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
     /**
      * FHIRVirtualServiceDetail Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $channelType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $addressUrl
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $addressString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $addressContactPoint
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $addressExtendedContactDetail
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl> $additionalInfo
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $maxParticipants
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sessionKey
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -315,8 +289,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * The type of virtual service to connect to (i.e. Teams, Zoom, Specific VMR
      * technology, WhatsApp).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     public function getChannelType(): null|FHIRCoding
     {
@@ -330,9 +302,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * The type of virtual service to connect to (i.e. Teams, Zoom, Specific VMR
      * technology, WhatsApp).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $channelType
-     * @return static
      */
     public function setChannelType(null|FHIRCoding $channelType): self
     {
@@ -351,10 +320,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
+     * use (requires knowledge of the specific type).
      */
     public function getAddressUrl(): null|FHIRUrl
     {
@@ -368,11 +334,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $addressUrl
-     * @return static
+     * use (requires knowledge of the specific type).
      */
     public function setAddressUrl(null|string|FHIRUrlPrimitive|FHIRUrl $addressUrl): self
     {
@@ -394,10 +356,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * use (requires knowledge of the specific type).
      */
     public function getAddressString(): null|FHIRString
     {
@@ -411,11 +370,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $addressString
-     * @return static
+     * use (requires knowledge of the specific type).
      */
     public function setAddressString(null|string|FHIRStringPrimitive|FHIRString $addressString): self
     {
@@ -438,10 +393,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
+     * use (requires knowledge of the specific type).
      */
     public function getAddressContactPoint(): null|FHIRContactPoint
     {
@@ -456,11 +408,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $addressContactPoint
-     * @return static
+     * use (requires knowledge of the specific type).
      */
     public function setAddressContactPoint(null|FHIRContactPoint $addressContactPoint): self
     {
@@ -480,10 +428,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
+     * use (requires knowledge of the specific type).
      */
     public function getAddressExtendedContactDetail(): null|FHIRExtendedContactDetail
     {
@@ -498,11 +443,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      *
      * What address or number needs to be used for a user to connect to the virtual
      * service to join. The channelType informs as to which datatype is appropriate to
-     * use (requires knowledge of the specific type). (choose any one of address*, but
-     * only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $addressExtendedContactDetail
-     * @return static
+     * use (requires knowledge of the specific type).
      */
     public function setAddressExtendedContactDetail(null|FHIRExtendedContactDetail $addressExtendedContactDetail): self
     {
@@ -545,9 +486,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * the Narrative, or extensions
      *
      * Address to see alternative connection details.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $additionalInfo
-     * @return static
      */
     public function addAdditionalInfo(string|FHIRUrlPrimitive|FHIRUrl $additionalInfo): self
     {
@@ -567,9 +505,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * the Narrative, or extensions
      *
      * Address to see alternative connection details.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl ...$additionalInfo
-     * @return static
      */
     public function setAdditionalInfo(string|FHIRUrlPrimitive|FHIRUrl ...$additionalInfo): self
     {
@@ -594,8 +529,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * the Narrative, or extensions
      *
      * Maximum number of participants supported by the virtual service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getMaxParticipants(): null|FHIRPositiveInt
     {
@@ -608,9 +541,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * the Narrative, or extensions
      *
      * Maximum number of participants supported by the virtual service.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $maxParticipants
-     * @return static
      */
     public function setMaxParticipants(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $maxParticipants): self
     {
@@ -631,8 +561,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Session Key required by the virtual service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSessionKey(): null|FHIRString
     {
@@ -645,9 +573,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Session Key required by the virtual service.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sessionKey
-     * @return static
      */
     public function setSessionKey(null|string|FHIRStringPrimitive|FHIRString $sessionKey): self
     {
@@ -664,10 +589,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -755,10 +677,6 @@ class FHIRVirtualServiceDetail extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -828,10 +746,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -149,8 +149,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the content value of the statistic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -173,8 +171,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of statistic, eg relative risk.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $statisticType;
@@ -186,8 +182,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * When the measured variable is handled categorically, the category element is
      * used to define which category the statistic is reporting.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -199,8 +193,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Statistic value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -212,8 +204,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * The number of events associated with the statistic, where the unit of analysis
      * is different from numberAffected, sampleSize.knownDataCount and
      * sampleSize.numberOfParticipants.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $numberOfEvents;
@@ -224,8 +214,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * The number of participants affected where the unit of analysis is the same as
      * sampleSize.knownDataCount and sampleSize.numberOfParticipants.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $numberAffected;
@@ -236,8 +224,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * Number of samples in the statistic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize
      */
     #[FHIREvidenceSampleSize]
     protected FHIREvidenceSampleSize $sampleSize;
@@ -270,16 +256,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
     /**
      * FHIREvidenceStatistic Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation> $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $statisticType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $numberOfEvents
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $numberAffected
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize $sampleSize
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceAttributeEstimate> $attributeEstimate
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic> $modelCharacteristic
      * @param null|string[] $fhirComments
@@ -348,8 +326,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the content value of the statistic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -362,9 +338,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the content value of the statistic.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -412,9 +385,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -432,9 +402,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -453,8 +420,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of statistic, eg relative risk.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStatisticType(): null|FHIRCodeableConcept
     {
@@ -468,9 +433,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of statistic, eg relative risk.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $statisticType
-     * @return static
      */
     public function setStatisticType(null|FHIRCodeableConcept $statisticType): self
     {
@@ -490,8 +452,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * When the measured variable is handled categorically, the category element is
      * used to define which category the statistic is reporting.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -506,9 +466,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * When the measured variable is handled categorically, the category element is
      * used to define which category the statistic is reporting.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -528,8 +485,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Statistic value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -544,9 +499,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Statistic value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -566,8 +518,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * The number of events associated with the statistic, where the unit of analysis
      * is different from numberAffected, sampleSize.knownDataCount and
      * sampleSize.numberOfParticipants.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt
      */
     public function getNumberOfEvents(): null|FHIRUnsignedInt
     {
@@ -582,9 +532,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * The number of events associated with the statistic, where the unit of analysis
      * is different from numberAffected, sampleSize.knownDataCount and
      * sampleSize.numberOfParticipants.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $numberOfEvents
-     * @return static
      */
     public function setNumberOfEvents(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfEvents): self
     {
@@ -606,8 +553,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * The number of participants affected where the unit of analysis is the same as
      * sampleSize.knownDataCount and sampleSize.numberOfParticipants.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt
      */
     public function getNumberAffected(): null|FHIRUnsignedInt
     {
@@ -621,9 +566,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * The number of participants affected where the unit of analysis is the same as
      * sampleSize.knownDataCount and sampleSize.numberOfParticipants.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUnsignedInt $numberAffected
-     * @return static
      */
     public function setNumberAffected(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberAffected): self
     {
@@ -645,8 +587,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * Number of samples in the statistic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize
      */
     public function getSampleSize(): null|FHIREvidenceSampleSize
     {
@@ -660,9 +600,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * Number of samples in the statistic.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize $sampleSize
-     * @return static
      */
     public function setSampleSize(null|FHIREvidenceSampleSize $sampleSize): self
     {
@@ -707,9 +644,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A statistical attribute of the statistic such as a measure of heterogeneity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceAttributeEstimate $attributeEstimate
-     * @return static
      */
     public function addAttributeEstimate(FHIREvidenceAttributeEstimate $attributeEstimate): self
     {
@@ -727,9 +661,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A statistical attribute of the statistic such as a measure of heterogeneity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceAttributeEstimate ...$attributeEstimate
-     * @return static
      */
     public function setAttributeEstimate(FHIREvidenceAttributeEstimate ...$attributeEstimate): self
     {
@@ -774,9 +705,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A component of the method to generate the statistic.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic $modelCharacteristic
-     * @return static
      */
     public function addModelCharacteristic(FHIREvidenceModelCharacteristic $modelCharacteristic): self
     {
@@ -794,9 +722,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A component of the method to generate the statistic.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic ...$modelCharacteristic
-     * @return static
      */
     public function setModelCharacteristic(FHIREvidenceModelCharacteristic ...$modelCharacteristic): self
     {
@@ -810,10 +735,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceStatistic $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceStatistic
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -899,10 +821,6 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -981,10 +899,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceStatistic $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceStatistic
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

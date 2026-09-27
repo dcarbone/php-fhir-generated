@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -129,8 +129,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Identifier assigned by the dispensing facility. This is an identifier assigned
      * outside FHIR.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -139,8 +137,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationDispenseStatus
      */
     #[FHIRMedicationDispenseStatus]
     protected FHIRMedicationDispenseStatus $status;
@@ -152,8 +148,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Indicates the type of dispensing event that is performed. Examples include:
      * Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -165,8 +159,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication that has been dispensed. Includes unit of measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -178,8 +170,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $medication;
@@ -191,8 +181,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $whenPrepared;
@@ -205,8 +193,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * The time the dispensed product was provided to the patient or their
      * representative.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $whenHandedOver;
@@ -217,8 +203,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Identification of the facility/location where the medication was shipped to, as
      * part of the dispense event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $destination;
@@ -250,16 +234,7 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
     /**
      * FHIRMedicationDispenseDispense Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationDispenseStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationDispenseStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $medication
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $whenPrepared
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $whenHandedOver
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $destination
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $receiver
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDosage> $dosage
      * @param null|string[] $fhirComments
@@ -329,8 +304,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Identifier assigned by the dispensing facility. This is an identifier assigned
      * outside FHIR.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -344,9 +317,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Identifier assigned by the dispensing facility. This is an identifier assigned
      * outside FHIR.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -363,8 +333,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationDispenseStatus
      */
     public function getStatus(): null|FHIRMedicationDispenseStatus
     {
@@ -376,9 +344,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationDispenseStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationDispenseStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRMedicationDispenseStatusList|FHIRMedicationDispenseStatus $status): self
     {
@@ -401,8 +366,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Indicates the type of dispensing event that is performed. Examples include:
      * Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -417,9 +380,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Indicates the type of dispensing event that is performed. Examples include:
      * Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -439,8 +399,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication that has been dispensed. Includes unit of measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -455,9 +413,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication that has been dispensed. Includes unit of measure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -477,8 +432,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getMedication(): null|FHIRResourceReference
     {
@@ -493,9 +446,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $medication
-     * @return static
      */
     public function setMedication(null|FHIRResourceReference $medication): self
     {
@@ -515,8 +465,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getWhenPrepared(): null|FHIRDateTime
     {
@@ -531,9 +479,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $whenPrepared
-     * @return static
      */
     public function setWhenPrepared(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenPrepared): self
     {
@@ -557,8 +502,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * The time the dispensed product was provided to the patient or their
      * representative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getWhenHandedOver(): null|FHIRDateTime
     {
@@ -574,9 +517,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * The time the dispensed product was provided to the patient or their
      * representative.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $whenHandedOver
-     * @return static
      */
     public function setWhenHandedOver(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenHandedOver): self
     {
@@ -598,8 +538,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Identification of the facility/location where the medication was shipped to, as
      * part of the dispense event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getDestination(): null|FHIRResourceReference
     {
@@ -613,9 +551,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Identification of the facility/location where the medication was shipped to, as
      * part of the dispense event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $destination
-     * @return static
      */
     public function setDestination(null|FHIRResourceReference $destination): self
     {
@@ -662,9 +597,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Identifies the person who picked up the medication. This will usually be a
      * patient or their carer, but some cases exist where it can be a healthcare
      * professional.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $receiver
-     * @return static
      */
     public function addReceiver(FHIRResourceReference $receiver): self
     {
@@ -683,9 +615,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Identifies the person who picked up the medication. This will usually be a
      * patient or their carer, but some cases exist where it can be a healthcare
      * professional.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$receiver
-     * @return static
      */
     public function setReceiver(FHIRResourceReference ...$receiver): self
     {
@@ -726,9 +655,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * supply provided and the instructions for administering the medication.
      *
      * Indicates how the medication is to be used by the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDosage $dosage
-     * @return static
      */
     public function addDosage(FHIRMedicationDispenseDosage $dosage): self
     {
@@ -744,9 +670,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * supply provided and the instructions for administering the medication.
      *
      * Indicates how the medication is to be used by the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDosage ...$dosage
-     * @return static
      */
     public function setDosage(FHIRMedicationDispenseDosage ...$dosage): self
     {
@@ -760,10 +683,7 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -849,10 +769,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -929,10 +845,7 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

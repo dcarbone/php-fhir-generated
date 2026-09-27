@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -80,16 +80,13 @@ class FHIRIntegerPrimitive implements PrimitiveTypeInterface
     private const _FHIR_VALIDATION_RULES = [];
 
     /* class_primitive.php:98 */
-    /** @var string */
     protected string $value;
 
-    /** @var bool */
     private bool $_jsonAsString;
 
     /* class_primitive.php:116 */
     /**
      * FHIRIntegerPrimitive Constructor
-     * @param null|string|float $value
      * @param bool $jsonAsString If true forces this value to string during JSON serialization.
      */
     public function __construct(null|string|float $value = null,
@@ -100,9 +97,6 @@ class FHIRIntegerPrimitive implements PrimitiveTypeInterface
     }
 
     /* class_primitive.php:134 */
-    /**
-     * @return string
-     */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
@@ -115,9 +109,6 @@ class FHIRIntegerPrimitive implements PrimitiveTypeInterface
     }
     /**
      * Specify whether this value must be represented as a string when serializing to JSON.
-     *
-     * @param bool $jsonAsString
-     * @return self
      */
     public function _setJSONAsString(bool $jsonAsString): self
     {
@@ -125,26 +116,16 @@ class FHIRIntegerPrimitive implements PrimitiveTypeInterface
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function _getJSONAsString(): bool
     {
         return $this->_jsonAsString;
     }
 
-    /**
-     * @return null|string
-     */
     public function getValue(): null|string
     {
         return $this->value ?? null;
     }
 
-    /**
-     * @param null|string|float $value
-     * @return static
-     */
     public function setValue(null|string|float $value): self
     {
         if (null === $value) {
@@ -168,9 +149,6 @@ class FHIRIntegerPrimitive implements PrimitiveTypeInterface
         return null;
     }
 
-    /**
-     * @return string
-     */
     public function _getValueAsString(): string
     {
         return $this->value ?? '';

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -131,8 +131,6 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The situation in which the undesirable effect may manifest.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $symptomConditionEffect;
@@ -143,8 +141,6 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * High level classification of the effect.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $classification;
@@ -155,8 +151,6 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the effect is seen.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $frequencyOfOccurrence;
@@ -165,11 +159,7 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
     /**
      * FHIRClinicalUseDefinitionUndesirableEffect Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $symptomConditionEffect
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $classification
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $frequencyOfOccurrence
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -209,8 +199,6 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The situation in which the undesirable effect may manifest.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getSymptomConditionEffect(): null|FHIRCodeableReference
     {
@@ -224,9 +212,6 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The situation in which the undesirable effect may manifest.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $symptomConditionEffect
-     * @return static
      */
     public function setSymptomConditionEffect(null|FHIRCodeableReference $symptomConditionEffect): self
     {
@@ -245,8 +230,6 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * High level classification of the effect.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getClassification(): null|FHIRCodeableConcept
     {
@@ -260,9 +243,6 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * High level classification of the effect.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $classification
-     * @return static
      */
     public function setClassification(null|FHIRCodeableConcept $classification): self
     {
@@ -281,8 +261,6 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the effect is seen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getFrequencyOfOccurrence(): null|FHIRCodeableConcept
     {
@@ -296,9 +274,6 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the effect is seen.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $frequencyOfOccurrence
-     * @return static
      */
     public function setFrequencyOfOccurrence(null|FHIRCodeableConcept $frequencyOfOccurrence): self
     {
@@ -312,10 +287,7 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -363,10 +335,6 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -389,10 +357,7 @@ class FHIRClinicalUseDefinitionUndesirableEffect extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

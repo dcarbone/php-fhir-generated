@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -127,8 +127,6 @@ class FHIRMeta extends FHIRElement
      *
      * The version specific identifier, as it appears in the version portion of the
      * URL. This values changes when the resource is created, updated, or deleted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $versionId;
@@ -140,8 +138,6 @@ class FHIRMeta extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the resource last changed - e.g. when the version changed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $lastUpdated;
@@ -187,9 +183,6 @@ class FHIRMeta extends FHIRElement
     /**
      * FHIRMeta Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $versionId
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $lastUpdated
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri> $profile
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $security
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $tag
@@ -241,8 +234,6 @@ class FHIRMeta extends FHIRElement
      *
      * The version specific identifier, as it appears in the version portion of the
      * URL. This values changes when the resource is created, updated, or deleted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId
      */
     public function getVersionId(): null|FHIRId
     {
@@ -259,9 +250,6 @@ class FHIRMeta extends FHIRElement
      *
      * The version specific identifier, as it appears in the version portion of the
      * URL. This values changes when the resource is created, updated, or deleted.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $versionId
-     * @return static
      */
     public function setVersionId(null|string|FHIRIdPrimitive|FHIRId $versionId): self
     {
@@ -284,8 +272,6 @@ class FHIRMeta extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the resource last changed - e.g. when the version changed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant
      */
     public function getLastUpdated(): null|FHIRInstant
     {
@@ -300,9 +286,6 @@ class FHIRMeta extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the resource last changed - e.g. when the version changed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $lastUpdated
-     * @return static
      */
     public function setLastUpdated(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastUpdated): self
     {
@@ -350,9 +333,6 @@ class FHIRMeta extends FHIRElement
      *
      * A list of profiles [[[StructureDefinition]]]s that this resource claims to
      * conform to. The URL is a reference to [[[StructureDefinition.url]]].
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $profile
-     * @return static
      */
     public function addProfile(string|FHIRUriPrimitive|FHIRUri $profile): self
     {
@@ -373,9 +353,6 @@ class FHIRMeta extends FHIRElement
      *
      * A list of profiles [[[StructureDefinition]]]s that this resource claims to
      * conform to. The URL is a reference to [[[StructureDefinition.url]]].
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri ...$profile
-     * @return static
      */
     public function setProfile(string|FHIRUriPrimitive|FHIRUri ...$profile): self
     {
@@ -427,9 +404,6 @@ class FHIRMeta extends FHIRElement
      *
      * Security labels applied to this resource. These tags connect specific resources
      * to the overall security policy and infrastructure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $security
-     * @return static
      */
     public function addSecurity(FHIRCoding $security): self
     {
@@ -447,9 +421,6 @@ class FHIRMeta extends FHIRElement
      *
      * Security labels applied to this resource. These tags connect specific resources
      * to the overall security policy and infrastructure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$security
-     * @return static
      */
     public function setSecurity(FHIRCoding ...$security): self
     {
@@ -496,9 +467,6 @@ class FHIRMeta extends FHIRElement
      * Tags applied to this resource. Tags are intended to be used to identify and
      * relate resources to process and workflow, and applications are not required to
      * consider the tags when interpreting the meaning of a resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $tag
-     * @return static
      */
     public function addTag(FHIRCoding $tag): self
     {
@@ -517,9 +485,6 @@ class FHIRMeta extends FHIRElement
      * Tags applied to this resource. Tags are intended to be used to identify and
      * relate resources to process and workflow, and applications are not required to
      * consider the tags when interpreting the meaning of a resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$tag
-     * @return static
      */
     public function setTag(FHIRCoding ...$tag): self
     {
@@ -533,10 +498,7 @@ class FHIRMeta extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -602,10 +564,6 @@ class FHIRMeta extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -654,10 +612,7 @@ class FHIRMeta extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

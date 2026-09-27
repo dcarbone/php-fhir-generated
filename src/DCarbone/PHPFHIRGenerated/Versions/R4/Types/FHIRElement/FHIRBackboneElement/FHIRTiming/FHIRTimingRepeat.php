@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -170,8 +170,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $boundsDuration;
@@ -182,8 +180,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $boundsRange;
@@ -194,8 +190,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $boundsPeriod;
@@ -207,8 +201,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * A total count of the desired number of repetitions across the duration of the
      * entire timing specification. If countMax is present, this element indicates the
      * lower bound of the allowed range of count values.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $count;
@@ -219,8 +211,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the count is a range - so to perform the action
      * between [count] and [countMax] times.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $countMax;
@@ -232,8 +222,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * How long this thing happens for when it happens. If durationMax is present, this
      * element indicates the lower bound of the allowed range of the duration.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $duration;
@@ -245,8 +233,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the duration is a range - so to perform the action
      * between [duration] and [durationMax] time length.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $durationMax;
@@ -255,8 +241,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration, in UCUM units.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnitsOfTime
      */
     #[FHIRUnitsOfTime]
     protected FHIRUnitsOfTime $durationUnit;
@@ -268,8 +252,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * The number of times to repeat the action within the specified period. If
      * frequencyMax is present, this element indicates the lower bound of the allowed
      * range of the frequency.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $frequency;
@@ -280,8 +262,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the frequency is a range - so to repeat between
      * [frequency] and [frequencyMax] times within the period or period range.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $frequencyMax;
@@ -295,8 +275,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * express "3 times per day", 3 would be the frequency and "1 day" would be the
      * period. If periodMax is present, this element indicates the lower bound of the
      * allowed range of the period length.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $period;
@@ -308,8 +286,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the period is a range from [period] to [periodMax],
      * allowing expressing concepts such as "do this once every 3-5 days.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $periodMax;
@@ -318,8 +294,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the period in UCUM units.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnitsOfTime
      */
     #[FHIRUnitsOfTime]
     protected FHIRUnitsOfTime $periodUnit;
@@ -365,8 +339,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * The number of minutes from the event. If the event code does not indicate
      * whether the minutes is before or after the event, then the offset is assumed to
      * be after the event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $offset;
@@ -375,25 +347,10 @@ class FHIRTimingRepeat extends FHIRBackboneElement
     /**
      * FHIRTimingRepeat Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $boundsRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $boundsPeriod
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $count
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $countMax
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $duration
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $durationMax
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRUnitsOfTimeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnitsOfTime $durationUnit
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $frequency
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $frequencyMax
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $period
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $periodMax
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRUnitsOfTimeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnitsOfTime $periodUnit
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode> $dayOfWeek
      * @param null|iterable<string>|iterable<\DateTimeInterface>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRTimePrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRTime> $timeOfDay
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIREventTimingList>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIREventTiming> $when
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt $offset
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -489,8 +446,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getBoundsDuration(): null|FHIRDuration
     {
@@ -504,9 +459,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
-     * @return static
      */
     public function setBoundsDuration(null|FHIRDuration $boundsDuration): self
     {
@@ -525,8 +477,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
      */
     public function getBoundsRange(): null|FHIRRange
     {
@@ -540,9 +490,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $boundsRange
-     * @return static
      */
     public function setBoundsRange(null|FHIRRange $boundsRange): self
     {
@@ -561,8 +508,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getBoundsPeriod(): null|FHIRPeriod
     {
@@ -576,9 +521,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $boundsPeriod
-     * @return static
      */
     public function setBoundsPeriod(null|FHIRPeriod $boundsPeriod): self
     {
@@ -598,8 +540,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * A total count of the desired number of repetitions across the duration of the
      * entire timing specification. If countMax is present, this element indicates the
      * lower bound of the allowed range of count values.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt
      */
     public function getCount(): null|FHIRPositiveInt
     {
@@ -614,9 +554,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * A total count of the desired number of repetitions across the duration of the
      * entire timing specification. If countMax is present, this element indicates the
      * lower bound of the allowed range of count values.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $count
-     * @return static
      */
     public function setCount(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $count): self
     {
@@ -638,8 +575,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the count is a range - so to perform the action
      * between [count] and [countMax] times.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt
      */
     public function getCountMax(): null|FHIRPositiveInt
     {
@@ -653,9 +588,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the count is a range - so to perform the action
      * between [count] and [countMax] times.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $countMax
-     * @return static
      */
     public function setCountMax(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $countMax): self
     {
@@ -678,8 +610,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * How long this thing happens for when it happens. If durationMax is present, this
      * element indicates the lower bound of the allowed range of the duration.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     public function getDuration(): null|FHIRDecimal
     {
@@ -694,9 +624,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * How long this thing happens for when it happens. If durationMax is present, this
      * element indicates the lower bound of the allowed range of the duration.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $duration
-     * @return static
      */
     public function setDuration(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $duration): self
     {
@@ -719,8 +646,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the duration is a range - so to perform the action
      * between [duration] and [durationMax] time length.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     public function getDurationMax(): null|FHIRDecimal
     {
@@ -735,9 +660,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the duration is a range - so to perform the action
      * between [duration] and [durationMax] time length.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $durationMax
-     * @return static
      */
     public function setDurationMax(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $durationMax): self
     {
@@ -757,8 +679,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration, in UCUM units.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnitsOfTime
      */
     public function getDurationUnit(): null|FHIRUnitsOfTime
     {
@@ -770,9 +690,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration, in UCUM units.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRUnitsOfTimeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnitsOfTime $durationUnit
-     * @return static
      */
     public function setDurationUnit(null|string|FHIRUnitsOfTimeList|FHIRUnitsOfTime $durationUnit): self
     {
@@ -795,8 +712,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * The number of times to repeat the action within the specified period. If
      * frequencyMax is present, this element indicates the lower bound of the allowed
      * range of the frequency.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt
      */
     public function getFrequency(): null|FHIRPositiveInt
     {
@@ -811,9 +726,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * The number of times to repeat the action within the specified period. If
      * frequencyMax is present, this element indicates the lower bound of the allowed
      * range of the frequency.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $frequency
-     * @return static
      */
     public function setFrequency(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $frequency): self
     {
@@ -835,8 +747,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the frequency is a range - so to repeat between
      * [frequency] and [frequencyMax] times within the period or period range.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt
      */
     public function getFrequencyMax(): null|FHIRPositiveInt
     {
@@ -850,9 +760,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the frequency is a range - so to repeat between
      * [frequency] and [frequencyMax] times within the period or period range.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPositiveInt $frequencyMax
-     * @return static
      */
     public function setFrequencyMax(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $frequencyMax): self
     {
@@ -877,8 +784,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * express "3 times per day", 3 would be the frequency and "1 day" would be the
      * period. If periodMax is present, this element indicates the lower bound of the
      * allowed range of the period length.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     public function getPeriod(): null|FHIRDecimal
     {
@@ -895,9 +800,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * express "3 times per day", 3 would be the frequency and "1 day" would be the
      * period. If periodMax is present, this element indicates the lower bound of the
      * allowed range of the period length.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $period
-     * @return static
      */
     public function setPeriod(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $period): self
     {
@@ -920,8 +822,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the period is a range from [period] to [periodMax],
      * allowing expressing concepts such as "do this once every 3-5 days.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal
      */
     public function getPeriodMax(): null|FHIRDecimal
     {
@@ -936,9 +836,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the period is a range from [period] to [periodMax],
      * allowing expressing concepts such as "do this once every 3-5 days.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $periodMax
-     * @return static
      */
     public function setPeriodMax(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $periodMax): self
     {
@@ -958,8 +855,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the period in UCUM units.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnitsOfTime
      */
     public function getPeriodUnit(): null|FHIRUnitsOfTime
     {
@@ -971,9 +866,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the period in UCUM units.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRUnitsOfTimeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnitsOfTime $periodUnit
-     * @return static
      */
     public function setPeriodUnit(null|string|FHIRUnitsOfTimeList|FHIRUnitsOfTime $periodUnit): self
     {
@@ -1023,9 +915,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If one or more days of week is provided, then the action happens only on the
      * specified day(s).
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $dayOfWeek
-     * @return static
      */
     public function addDayOfWeek(string|FHIRCodePrimitive|FHIRCode $dayOfWeek): self
     {
@@ -1047,9 +936,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If one or more days of week is provided, then the action happens only on the
      * specified day(s).
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode ...$dayOfWeek
-     * @return static
      */
     public function setDayOfWeek(string|FHIRCodePrimitive|FHIRCode ...$dayOfWeek): self
     {
@@ -1097,9 +983,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specified time of day for action to take place.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRTime $timeOfDay
-     * @return static
      */
     public function addTimeOfDay(string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $timeOfDay): self
     {
@@ -1118,9 +1001,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specified time of day for action to take place.
-     *
-     * @param string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRTime ...$timeOfDay
-     * @return static
      */
     public function setTimeOfDay(string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime ...$timeOfDay): self
     {
@@ -1170,9 +1050,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * An approximate time period during the day, potentially linked to an event of
      * daily living that indicates when the action should occur.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIREventTimingList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIREventTiming $when
-     * @return static
      */
     public function addWhen(string|FHIREventTimingList|FHIREventTiming $when): self
     {
@@ -1192,9 +1069,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * An approximate time period during the day, potentially linked to an event of
      * daily living that indicates when the action should occur.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIREventTimingList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIREventTiming ...$when
-     * @return static
      */
     public function setWhen(string|FHIREventTimingList|FHIREventTiming ...$when): self
     {
@@ -1221,8 +1095,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * The number of minutes from the event. If the event code does not indicate
      * whether the minutes is before or after the event, then the offset is assumed to
      * be after the event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt
      */
     public function getOffset(): null|FHIRUnsignedInt
     {
@@ -1237,9 +1109,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * The number of minutes from the event. If the event code does not indicate
      * whether the minutes is before or after the event, then the offset is assumed to
      * be after the event.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt $offset
-     * @return static
      */
     public function setOffset(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $offset): self
     {
@@ -1256,10 +1125,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming\FHIRTimingRepeat $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming\FHIRTimingRepeat
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1423,10 +1289,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1580,10 +1442,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming\FHIRTimingRepeat $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRTiming\FHIRTimingRepeat
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

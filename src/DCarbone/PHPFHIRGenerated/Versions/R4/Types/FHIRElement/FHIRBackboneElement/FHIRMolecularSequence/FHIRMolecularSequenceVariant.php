@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -125,8 +125,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      *
      * Start position of the variant on the reference sequence. If the coordinate
      * system is either 0-based or 1-based, then start position is inclusive.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $start;
@@ -139,8 +137,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * is 0-based then end is exclusive and does not include the last position. If the
      * coordinate system is 1-base, then end is inclusive and includes the last
      * position.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $end;
@@ -155,8 +151,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * sequence on the positive (+) strand of the observed sequence. When the sequence
      * type is DNA, it should be the sequence on the positive (+) strand. This will lay
      * in the range between variant.start and variant.end.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $observedAllele;
@@ -171,8 +165,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * sequence on the positive (+) strand of the reference sequence. When the sequence
      * type is DNA, it should be the sequence on the positive (+) strand. This will lay
      * in the range between variant.start and variant.end.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $referenceAllele;
@@ -184,8 +176,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * Extended CIGAR string for aligning the sequence with reference bases. See
      * detailed documentation
      * [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $cigar;
@@ -195,8 +185,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to an Observation containing variant information.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $variantPointer;
@@ -205,14 +193,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
     /**
      * FHIRMolecularSequenceVariant Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $start
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $end
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $observedAllele
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $referenceAllele
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $cigar
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $variantPointer
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -264,8 +245,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      *
      * Start position of the variant on the reference sequence. If the coordinate
      * system is either 0-based or 1-based, then start position is inclusive.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getStart(): null|FHIRInteger
     {
@@ -279,9 +258,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      *
      * Start position of the variant on the reference sequence. If the coordinate
      * system is either 0-based or 1-based, then start position is inclusive.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $start
-     * @return static
      */
     public function setStart(null|string|float|FHIRIntegerPrimitive|FHIRInteger $start): self
     {
@@ -305,8 +281,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * is 0-based then end is exclusive and does not include the last position. If the
      * coordinate system is 1-base, then end is inclusive and includes the last
      * position.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger
      */
     public function getEnd(): null|FHIRInteger
     {
@@ -322,9 +296,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * is 0-based then end is exclusive and does not include the last position. If the
      * coordinate system is 1-base, then end is inclusive and includes the last
      * position.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $end
-     * @return static
      */
     public function setEnd(null|string|float|FHIRIntegerPrimitive|FHIRInteger $end): self
     {
@@ -350,8 +321,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * sequence on the positive (+) strand of the observed sequence. When the sequence
      * type is DNA, it should be the sequence on the positive (+) strand. This will lay
      * in the range between variant.start and variant.end.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getObservedAllele(): null|FHIRString
     {
@@ -369,9 +338,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * sequence on the positive (+) strand of the observed sequence. When the sequence
      * type is DNA, it should be the sequence on the positive (+) strand. This will lay
      * in the range between variant.start and variant.end.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $observedAllele
-     * @return static
      */
     public function setObservedAllele(null|string|FHIRStringPrimitive|FHIRString $observedAllele): self
     {
@@ -397,8 +363,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * sequence on the positive (+) strand of the reference sequence. When the sequence
      * type is DNA, it should be the sequence on the positive (+) strand. This will lay
      * in the range between variant.start and variant.end.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getReferenceAllele(): null|FHIRString
     {
@@ -416,9 +380,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * sequence on the positive (+) strand of the reference sequence. When the sequence
      * type is DNA, it should be the sequence on the positive (+) strand. This will lay
      * in the range between variant.start and variant.end.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $referenceAllele
-     * @return static
      */
     public function setReferenceAllele(null|string|FHIRStringPrimitive|FHIRString $referenceAllele): self
     {
@@ -441,8 +402,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * Extended CIGAR string for aligning the sequence with reference bases. See
      * detailed documentation
      * [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getCigar(): null|FHIRString
     {
@@ -457,9 +416,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * Extended CIGAR string for aligning the sequence with reference bases. See
      * detailed documentation
      * [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $cigar
-     * @return static
      */
     public function setCigar(null|string|FHIRStringPrimitive|FHIRString $cigar): self
     {
@@ -480,8 +436,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to an Observation containing variant information.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getVariantPointer(): null|FHIRReference
     {
@@ -494,9 +448,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to an Observation containing variant information.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $variantPointer
-     * @return static
      */
     public function setVariantPointer(null|FHIRReference $variantPointer): self
     {
@@ -510,10 +461,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -607,10 +555,6 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -673,10 +617,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

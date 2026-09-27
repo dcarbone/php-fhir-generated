@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -140,8 +140,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      * The type of manufacturing operation e.g. manufacturing itself, re-packaging. For
      * the authorization of this, a RegulatedAuthorization would point to the same plan
      * or activity referenced here.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $type;
@@ -151,8 +149,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date range of applicability.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectiveDate;
@@ -176,8 +172,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      *
      * Specifies whether this particular business or manufacturing process is
      * considered proprietary or confidential.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $confidentialityIndicator;
@@ -186,12 +180,8 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
     /**
      * FHIRMedicinalProductDefinitionOperation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $effectiveDate
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $organization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $confidentialityIndicator
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -237,8 +227,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      * The type of manufacturing operation e.g. manufacturing itself, re-packaging. For
      * the authorization of this, a RegulatedAuthorization would point to the same plan
      * or activity referenced here.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference
      */
     public function getType(): null|FHIRCodeableReference
     {
@@ -254,9 +242,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      * The type of manufacturing operation e.g. manufacturing itself, re-packaging. For
      * the authorization of this, a RegulatedAuthorization would point to the same plan
      * or activity referenced here.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $type
-     * @return static
      */
     public function setType(null|FHIRCodeableReference $type): self
     {
@@ -274,8 +259,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date range of applicability.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getEffectiveDate(): null|FHIRPeriod
     {
@@ -288,9 +271,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Date range of applicability.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $effectiveDate
-     * @return static
      */
     public function setEffectiveDate(null|FHIRPeriod $effectiveDate): self
     {
@@ -335,9 +315,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      *
      * The organization or establishment responsible for (or associated with) the
      * particular process or step, examples include the manufacturer, importer, agent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $organization
-     * @return static
      */
     public function addOrganization(FHIRReference $organization): self
     {
@@ -355,9 +332,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      *
      * The organization or establishment responsible for (or associated with) the
      * particular process or step, examples include the manufacturer, importer, agent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$organization
-     * @return static
      */
     public function setOrganization(FHIRReference ...$organization): self
     {
@@ -377,8 +351,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      *
      * Specifies whether this particular business or manufacturing process is
      * considered proprietary or confidential.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getConfidentialityIndicator(): null|FHIRCodeableConcept
     {
@@ -393,9 +365,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
      *
      * Specifies whether this particular business or manufacturing process is
      * considered proprietary or confidential.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $confidentialityIndicator
-     * @return static
      */
     public function setConfidentialityIndicator(null|FHIRCodeableConcept $confidentialityIndicator): self
     {
@@ -409,10 +378,7 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionOperation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionOperation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -462,10 +428,6 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -495,10 +457,7 @@ class FHIRMedicinalProductDefinitionOperation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionOperation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionOperation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

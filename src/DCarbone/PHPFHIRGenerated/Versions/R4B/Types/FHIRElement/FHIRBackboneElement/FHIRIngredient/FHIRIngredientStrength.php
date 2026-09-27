@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -148,8 +148,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $presentationRatio;
@@ -163,8 +161,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $presentationRatioRange;
@@ -175,8 +171,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * A textual represention of either the whole of the presentation strength or a
      * part of it - with the rest being in Strength.presentation as a ratio.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $textPresentation;
@@ -187,8 +181,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $concentrationRatio;
@@ -198,8 +190,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange
      */
     #[FHIRRatioRange]
     protected FHIRRatioRange $concentrationRatioRange;
@@ -210,8 +200,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * A textual represention of either the whole of the concentration strength or a
      * part of it - with the rest being in Strength.concentration as a ratio.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $textConcentration;
@@ -224,8 +212,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * products where strength is measured at a particular point. For example, the
      * strength of the ingredient in some inhalers is measured at a particular position
      * relative to the point of aerosolization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $measurementPoint;
@@ -260,15 +246,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
     /**
      * FHIRIngredientStrength Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $presentationRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange $presentationRatioRange
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $textPresentation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $concentrationRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange $concentrationRatioRange
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $textConcentration
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $measurementPoint
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $country
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength> $referenceStrength
      * @param null|string[] $fhirComments
@@ -338,8 +316,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio
      */
     public function getPresentationRatio(): null|FHIRRatio
     {
@@ -357,9 +333,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $presentationRatio
-     * @return static
      */
     public function setPresentationRatio(null|FHIRRatio $presentationRatio): self
     {
@@ -381,8 +354,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange
      */
     public function getPresentationRatioRange(): null|FHIRRatioRange
     {
@@ -399,9 +370,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange $presentationRatioRange
-     * @return static
      */
     public function setPresentationRatioRange(null|FHIRRatioRange $presentationRatioRange): self
     {
@@ -420,8 +388,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * A textual represention of either the whole of the presentation strength or a
      * part of it - with the rest being in Strength.presentation as a ratio.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getTextPresentation(): null|FHIRString
     {
@@ -435,9 +401,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * A textual represention of either the whole of the presentation strength or a
      * part of it - with the rest being in Strength.presentation as a ratio.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $textPresentation
-     * @return static
      */
     public function setTextPresentation(null|string|FHIRStringPrimitive|FHIRString $textPresentation): self
     {
@@ -459,8 +422,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio
      */
     public function getConcentrationRatio(): null|FHIRRatio
     {
@@ -474,9 +435,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $concentrationRatio
-     * @return static
      */
     public function setConcentrationRatio(null|FHIRRatio $concentrationRatio): self
     {
@@ -494,8 +452,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange
      */
     public function getConcentrationRatioRange(): null|FHIRRatioRange
     {
@@ -508,9 +464,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatioRange $concentrationRatioRange
-     * @return static
      */
     public function setConcentrationRatioRange(null|FHIRRatioRange $concentrationRatioRange): self
     {
@@ -529,8 +482,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * A textual represention of either the whole of the concentration strength or a
      * part of it - with the rest being in Strength.concentration as a ratio.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getTextConcentration(): null|FHIRString
     {
@@ -544,9 +495,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * A textual represention of either the whole of the concentration strength or a
      * part of it - with the rest being in Strength.concentration as a ratio.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $textConcentration
-     * @return static
      */
     public function setTextConcentration(null|string|FHIRStringPrimitive|FHIRString $textConcentration): self
     {
@@ -570,8 +518,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * products where strength is measured at a particular point. For example, the
      * strength of the ingredient in some inhalers is measured at a particular position
      * relative to the point of aerosolization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getMeasurementPoint(): null|FHIRString
     {
@@ -587,9 +533,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * products where strength is measured at a particular point. For example, the
      * strength of the ingredient in some inhalers is measured at a particular position
      * relative to the point of aerosolization.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $measurementPoint
-     * @return static
      */
     public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint): self
     {
@@ -637,9 +580,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $country
-     * @return static
      */
     public function addCountry(FHIRCodeableConcept $country): self
     {
@@ -657,9 +597,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$country
-     * @return static
      */
     public function setCountry(FHIRCodeableConcept ...$country): self
     {
@@ -708,9 +645,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * the strength (quantitative composition) of the active moiety of the active
      * substance. There are situations when the active substance and active moiety are
      * different, therefore both a strength and a reference strength are needed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength $referenceStrength
-     * @return static
      */
     public function addReferenceStrength(FHIRIngredientReferenceStrength $referenceStrength): self
     {
@@ -730,9 +664,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * the strength (quantitative composition) of the active moiety of the active
      * substance. There are situations when the active substance and active moiety are
      * different, therefore both a strength and a reference strength are needed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength ...$referenceStrength
-     * @return static
      */
     public function setReferenceStrength(FHIRIngredientReferenceStrength ...$referenceStrength): self
     {
@@ -746,10 +677,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -833,10 +761,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -908,10 +832,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

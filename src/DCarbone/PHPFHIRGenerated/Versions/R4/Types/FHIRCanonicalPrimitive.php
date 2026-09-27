@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -92,13 +92,11 @@ class FHIRCanonicalPrimitive implements PrimitiveTypeInterface
     ];
 
     /* class_primitive.php:98 */
-    /** @var string */
     protected string $value;
 
     /* class_primitive.php:116 */
     /**
      * FHIRCanonicalPrimitive Constructor
-     * @param null|string $value
      */
     public function __construct(null|string $value = null)
     {
@@ -106,9 +104,6 @@ class FHIRCanonicalPrimitive implements PrimitiveTypeInterface
     }
 
     /* class_primitive.php:134 */
-    /**
-     * @return string
-     */
     public function _getFHIRTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
@@ -119,18 +114,11 @@ class FHIRCanonicalPrimitive implements PrimitiveTypeInterface
     {
         return Version::getFHIRVersion();
     }
-    /**
-     * @return null|string
-     */
     public function getValue(): null|string
     {
         return $this->value ?? null;
     }
 
-    /**
-     * @param null|string $value
-     * @return static
-     */
     public function setValue(null|string $value): self
     {
         if (null === $value) {
@@ -141,9 +129,6 @@ class FHIRCanonicalPrimitive implements PrimitiveTypeInterface
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function _getValueAsString(): string
     {
         return (string)$this->getValue();

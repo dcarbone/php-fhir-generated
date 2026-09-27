@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -128,8 +127,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Action to take - permit or deny - when the exception conditions are met.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConsentExceptType
      */
     #[FHIRConsentExceptType]
     protected FHIRConsentExceptType $type;
@@ -139,8 +136,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe in this exception is valid.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -224,8 +219,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this exception.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $dataPeriod;
@@ -246,17 +239,13 @@ class FHIRConsentExcept extends FHIRBackboneElement
     /**
      * FHIRConsentExcept Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConsentExceptTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConsentExceptType $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor1> $actor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept> $action
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding> $securityLabel
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding> $purpose
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding> $class
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding> $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $dataPeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData1> $data
      * @param null|string[] $fhirComments
      */
@@ -324,8 +313,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Action to take - permit or deny - when the exception conditions are met.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConsentExceptType
      */
     public function getType(): null|FHIRConsentExceptType
     {
@@ -338,9 +325,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Action to take - permit or deny - when the exception conditions are met.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConsentExceptTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConsentExceptType $type
-     * @return static
      */
     public function setType(null|string|FHIRConsentExceptTypeList|FHIRConsentExceptType $type): self
     {
@@ -361,8 +345,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe in this exception is valid.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -375,9 +357,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe in this exception is valid.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -422,9 +401,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * Who or what is controlled by this Exception. Use group to identify a set of
      * actors by some property they share (e.g. 'admitting officers').
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor1 $actor
-     * @return static
      */
     public function addActor(FHIRConsentActor1 $actor): self
     {
@@ -442,9 +418,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * Who or what is controlled by this Exception. Use group to identify a set of
      * actors by some property they share (e.g. 'admitting officers').
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor1 ...$actor
-     * @return static
      */
     public function setActor(FHIRConsentActor1 ...$actor): self
     {
@@ -489,9 +462,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this Exception.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $action
-     * @return static
      */
     public function addAction(FHIRCodeableConcept $action): self
     {
@@ -509,9 +479,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this Exception.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept ...$action
-     * @return static
      */
     public function setAction(FHIRCodeableConcept ...$action): self
     {
@@ -558,9 +525,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * A set of security labels that define which resources are controlled by this
      * exception. If more than one label is specified, all resources must have all the
      * specified labels.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $securityLabel
-     * @return static
      */
     public function addSecurityLabel(FHIRCoding $securityLabel): self
     {
@@ -579,9 +543,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * A set of security labels that define which resources are controlled by this
      * exception. If more than one label is specified, all resources must have all the
      * specified labels.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding ...$securityLabel
-     * @return static
      */
     public function setSecurityLabel(FHIRCoding ...$securityLabel): self
     {
@@ -626,9 +587,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this exception.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $purpose
-     * @return static
      */
     public function addPurpose(FHIRCoding $purpose): self
     {
@@ -646,9 +604,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this exception.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding ...$purpose
-     * @return static
      */
     public function setPurpose(FHIRCoding ...$purpose): self
     {
@@ -695,9 +650,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * The class of information covered by this exception. The type can be a FHIR
      * resource type, a profile on a type, or a CDA document, or some other type that
      * indicates what sort of information the consent relates to.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $class
-     * @return static
      */
     public function addClass(FHIRCoding $class): self
     {
@@ -716,9 +668,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * The class of information covered by this exception. The type can be a FHIR
      * resource type, a profile on a type, or a CDA document, or some other type that
      * indicates what sort of information the consent relates to.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding ...$class
-     * @return static
      */
     public function setClass(FHIRCoding ...$class): self
     {
@@ -761,9 +710,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the exception applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $code
-     * @return static
      */
     public function addCode(FHIRCoding $code): self
     {
@@ -780,9 +726,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the exception applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding ...$code
-     * @return static
      */
     public function setCode(FHIRCoding ...$code): self
     {
@@ -801,8 +744,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this exception.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getDataPeriod(): null|FHIRPeriod
     {
@@ -816,9 +757,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this exception.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $dataPeriod
-     * @return static
      */
     public function setDataPeriod(null|FHIRPeriod $dataPeriod): self
     {
@@ -863,9 +801,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * The resources controlled by this exception, if specific resources are
      * referenced.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData1 $data
-     * @return static
      */
     public function addData(FHIRConsentData1 $data): self
     {
@@ -883,9 +818,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * The resources controlled by this exception, if specific resources are
      * referenced.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData1 ...$data
-     * @return static
      */
     public function setData(FHIRConsentData1 ...$data): self
     {
@@ -899,10 +831,7 @@ class FHIRConsentExcept extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentExcept $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentExcept
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -972,10 +901,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1052,10 +977,7 @@ class FHIRConsentExcept extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentExcept $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentExcept
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

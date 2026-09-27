@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -136,8 +135,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * element in a FHIR resource, or a specific reference to a data element in a
      * different specification (e.g. HL7 v2) or a general reference to a kind of data
      * field, or a reference to a value set with an appropriately narrow definition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $element;
@@ -148,8 +145,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      *
      * An absolute URI that identifies the code system of the dependency code (if the
      * source/dependency is a value set that crosses code systems).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $codeSystem;
@@ -160,8 +155,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      *
      * Identity (code or path) or the element/item/ValueSet that the map depends on /
      * refers to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $code;
@@ -170,11 +163,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
     /**
      * FHIRConceptMapDependsOn Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $element
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $codeSystem
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $code
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -216,8 +205,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * element in a FHIR resource, or a specific reference to a data element in a
      * different specification (e.g. HL7 v2) or a general reference to a kind of data
      * field, or a reference to a value set with an appropriately narrow definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getElement(): null|FHIRUri
     {
@@ -233,9 +220,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * element in a FHIR resource, or a specific reference to a data element in a
      * different specification (e.g. HL7 v2) or a general reference to a kind of data
      * field, or a reference to a value set with an appropriately narrow definition.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $element
-     * @return static
      */
     public function setElement(null|string|FHIRUriPrimitive|FHIRUri $element): self
     {
@@ -257,8 +241,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      *
      * An absolute URI that identifies the code system of the dependency code (if the
      * source/dependency is a value set that crosses code systems).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getCodeSystem(): null|FHIRUri
     {
@@ -272,9 +254,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      *
      * An absolute URI that identifies the code system of the dependency code (if the
      * source/dependency is a value set that crosses code systems).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $codeSystem
-     * @return static
      */
     public function setCodeSystem(null|string|FHIRUriPrimitive|FHIRUri $codeSystem): self
     {
@@ -296,8 +275,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      *
      * Identity (code or path) or the element/item/ValueSet that the map depends on /
      * refers to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getCode(): null|FHIRString
     {
@@ -311,9 +288,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      *
      * Identity (code or path) or the element/item/ValueSet that the map depends on /
      * refers to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $code
-     * @return static
      */
     public function setCode(null|string|FHIRStringPrimitive|FHIRString $code): self
     {
@@ -330,10 +304,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -405,10 +376,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -446,10 +413,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

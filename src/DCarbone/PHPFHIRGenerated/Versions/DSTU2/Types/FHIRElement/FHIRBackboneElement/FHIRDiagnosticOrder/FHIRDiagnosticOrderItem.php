@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -126,8 +125,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * A code that identifies a particular diagnostic investigation, or panel of
      * investigations, that have been requested.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -150,8 +147,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * Anatomical location where the request test should be performed. This is the
      * target site.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $bodySite;
@@ -160,8 +155,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this individual item within the order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDiagnosticOrderStatus
      */
     #[FHIRDiagnosticOrderStatus]
     protected FHIRDiagnosticOrderStatus $status;
@@ -180,12 +173,8 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
     /**
      * FHIRDiagnosticOrderItem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference> $specimen
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $bodySite
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDiagnosticOrderStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDiagnosticOrderStatus $status
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent> $event
      * @param null|string[] $fhirComments
      */
@@ -235,8 +224,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * A code that identifies a particular diagnostic investigation, or panel of
      * investigations, that have been requested.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -251,9 +238,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * A code that identifies a particular diagnostic investigation, or panel of
      * investigations, that have been requested.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -296,9 +280,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the item is related to a specific specimen.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $specimen
-     * @return static
      */
     public function addSpecimen(FHIRReference $specimen): self
     {
@@ -315,9 +296,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the item is related to a specific specimen.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference ...$specimen
-     * @return static
      */
     public function setSpecimen(FHIRReference ...$specimen): self
     {
@@ -337,8 +315,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * Anatomical location where the request test should be performed. This is the
      * target site.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySite(): null|FHIRCodeableConcept
     {
@@ -353,9 +329,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * Anatomical location where the request test should be performed. This is the
      * target site.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $bodySite
-     * @return static
      */
     public function setBodySite(null|FHIRCodeableConcept $bodySite): self
     {
@@ -372,8 +345,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this individual item within the order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDiagnosticOrderStatus
      */
     public function getStatus(): null|FHIRDiagnosticOrderStatus
     {
@@ -385,9 +356,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this individual item within the order.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRDiagnosticOrderStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDiagnosticOrderStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRDiagnosticOrderStatusList|FHIRDiagnosticOrderStatus $status): self
     {
@@ -431,9 +399,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * A summary of the events of interest that have occurred as this item of the
      * request is processed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent $event
-     * @return static
      */
     public function addEvent(FHIRDiagnosticOrderEvent $event): self
     {
@@ -449,9 +414,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * A summary of the events of interest that have occurred as this item of the
      * request is processed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent ...$event
-     * @return static
      */
     public function setEvent(FHIRDiagnosticOrderEvent ...$event): self
     {
@@ -465,10 +427,7 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -528,10 +487,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -573,10 +528,7 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -83,9 +83,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDo
  */
 use DCarbone\PHPFHIRGenerated\Client\Client;
 use DCarbone\PHPFHIRGenerated\Client\Config;
-use DCarbone\PHPFHIRGenerated\Client\UnexpectedResponseCodeException;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRBundle;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRTestScript;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;

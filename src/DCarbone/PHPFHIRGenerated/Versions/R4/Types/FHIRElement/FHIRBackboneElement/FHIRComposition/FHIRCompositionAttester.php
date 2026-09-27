@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -128,8 +127,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of attestation the authenticator offers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCompositionAttestationMode
      */
     #[FHIRCompositionAttestationMode]
     protected FHIRCompositionAttestationMode $mode;
@@ -142,8 +139,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the composition was attested by the party.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $time;
@@ -153,8 +148,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who attested the composition in the specified way.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $party;
@@ -163,11 +156,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement
     /**
      * FHIRCompositionAttester Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCompositionAttestationModeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCompositionAttestationMode $mode
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $time
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $party
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -205,8 +194,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of attestation the authenticator offers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCompositionAttestationMode
      */
     public function getMode(): null|FHIRCompositionAttestationMode
     {
@@ -218,9 +205,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of attestation the authenticator offers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCompositionAttestationModeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCompositionAttestationMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRCompositionAttestationModeList|FHIRCompositionAttestationMode $mode): self
     {
@@ -244,8 +228,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the composition was attested by the party.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getTime(): null|FHIRDateTime
     {
@@ -261,9 +243,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the composition was attested by the party.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $time
-     * @return static
      */
     public function setTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $time): self
     {
@@ -284,8 +263,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who attested the composition in the specified way.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getParty(): null|FHIRReference
     {
@@ -298,9 +275,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who attested the composition in the specified way.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $party
-     * @return static
      */
     public function setParty(null|FHIRReference $party): self
     {
@@ -314,10 +288,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -381,10 +352,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -417,10 +384,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -101,7 +99,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
@@ -219,8 +216,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * synthesis is (or will be) published. This URL can be the target of a canonical
      * reference. It SHALL remain the same when the effect evidence synthesis is stored
      * on different servers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -249,8 +244,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * is not expected to be globally unique. For example, it might be a timestamp
      * (e.g. yyyymmdd) if a managed version is not available. There is also no
      * expectation that versions can be placed in a lexicographical sequence.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -262,8 +255,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * A natural language name identifying the effect evidence synthesis. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -273,8 +264,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the effect evidence synthesis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -283,8 +272,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The status of this effect evidence synthesis. Enables tracking the life-cycle of
      * the content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus
      */
     #[FHIRPublicationStatus]
     protected FHIRPublicationStatus $status;
@@ -300,8 +287,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the effect evidence synthesis changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -312,8 +297,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The name of the organization or individual that published the effect evidence
      * synthesis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -340,8 +323,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A free text natural language description of the effect evidence synthesis from a
      * consumer's perspective.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -400,8 +381,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * A copyright statement relating to the effect evidence synthesis and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the effect evidence synthesis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $copyright;
@@ -413,8 +392,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $approvalDate;
@@ -426,8 +403,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lastReviewDate;
@@ -438,8 +413,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The period during which the effect evidence synthesis content was or is planned
      * to be in active use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -525,8 +498,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of synthesis eg meta-analysis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $synthesisType;
@@ -537,8 +508,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of study eg randomized trial.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $studyType;
@@ -549,8 +518,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resource that defines the population for the
      * research.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $population;
@@ -561,8 +528,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resource that defines the exposure for the
      * research.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $exposure;
@@ -573,8 +538,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resource that defines the comparison exposure
      * for the research.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $exposureAlternative;
@@ -585,8 +548,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resomece that defines the outcome for the
      * research.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $outcome;
@@ -596,8 +557,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * from a combination of research studies.
      *
      * A description of the size of the sample involved in the synthesis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisSampleSize
      */
     #[FHIREffectEvidenceSynthesisSampleSize]
     protected FHIREffectEvidenceSynthesisSampleSize $sampleSize;
@@ -639,44 +598,20 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
     /* constructor.php:61 */
     /**
      * FHIREffectEvidenceSynthesis Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $url
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $contact
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext> $useContext
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $copyright
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $approvalDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $lastReviewDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $effectivePeriod
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $topic
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $author
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $editor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $reviewer
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail> $endorser
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact> $relatedArtifact
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $synthesisType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $studyType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $population
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $exposure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $exposureAlternative
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $outcome
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisSampleSize $sampleSize
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisResultsByExposure> $resultsByExposure
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate> $effectEstimate
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty> $certainty
@@ -860,8 +795,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * synthesis is (or will be) published. This URL can be the target of a canonical
      * reference. It SHALL remain the same when the effect evidence synthesis is stored
      * on different servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -880,9 +813,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * synthesis is (or will be) published. This URL can be the target of a canonical
      * reference. It SHALL remain the same when the effect evidence synthesis is stored
      * on different servers.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -934,9 +864,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * A formal identifier that is used to identify this effect evidence synthesis when
      * it is represented in other formats, or referenced in a specification, model,
      * design or an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -956,9 +883,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * A formal identifier that is used to identify this effect evidence synthesis when
      * it is represented in other formats, or referenced in a specification, model,
      * design or an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -981,8 +905,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * is not expected to be globally unique. For example, it might be a timestamp
      * (e.g. yyyymmdd) if a managed version is not available. There is also no
      * expectation that versions can be placed in a lexicographical sequence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -1000,9 +922,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * is not expected to be globally unique. For example, it might be a timestamp
      * (e.g. yyyymmdd) if a managed version is not available. There is also no
      * expectation that versions can be placed in a lexicographical sequence.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -1025,8 +944,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * A natural language name identifying the effect evidence synthesis. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -1041,9 +958,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * A natural language name identifying the effect evidence synthesis. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1064,8 +978,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the effect evidence synthesis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -1078,9 +990,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the effect evidence synthesis.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1100,8 +1009,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The status of this effect evidence synthesis. Enables tracking the life-cycle of
      * the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus(): null|FHIRPublicationStatus
     {
@@ -1113,9 +1020,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The status of this effect evidence synthesis. Enables tracking the life-cycle of
      * the content.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRPublicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPublicationStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRPublicationStatusList|FHIRPublicationStatus $status): self
     {
@@ -1142,8 +1046,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the effect evidence synthesis changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1162,9 +1064,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the effect evidence synthesis changes.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1186,8 +1085,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The name of the organization or individual that published the effect evidence
      * synthesis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -1201,9 +1098,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The name of the organization or individual that published the effect evidence
      * synthesis.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -1251,9 +1145,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $contact
-     * @return static
      */
     public function addContact(FHIRContactDetail $contact): self
     {
@@ -1271,9 +1162,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$contact
-     * @return static
      */
     public function setContact(FHIRContactDetail ...$contact): self
     {
@@ -1296,8 +1184,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A free text natural language description of the effect evidence synthesis from a
      * consumer's perspective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1315,9 +1201,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A free text natural language description of the effect evidence synthesis from a
      * consumer's perspective.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1365,9 +1248,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1385,9 +1265,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1444,9 +1321,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate effect evidence
      * synthesis instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext $useContext
-     * @return static
      */
     public function addUseContext(FHIRUsageContext $useContext): self
     {
@@ -1470,9 +1344,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate effect evidence
      * synthesis instances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUsageContext ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRUsageContext ...$useContext): self
     {
@@ -1519,9 +1390,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A legal or geographic region in which the effect evidence synthesis is intended
      * to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -1540,9 +1408,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A legal or geographic region in which the effect evidence synthesis is intended
      * to be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -1566,8 +1431,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * A copyright statement relating to the effect evidence synthesis and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the effect evidence synthesis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown
      */
     public function getCopyright(): null|FHIRMarkdown
     {
@@ -1586,9 +1449,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * A copyright statement relating to the effect evidence synthesis and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the effect evidence synthesis.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright): self
     {
@@ -1611,8 +1471,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     public function getApprovalDate(): null|FHIRDate
     {
@@ -1627,9 +1485,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $approvalDate
-     * @return static
      */
     public function setApprovalDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $approvalDate): self
     {
@@ -1652,8 +1507,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     public function getLastReviewDate(): null|FHIRDate
     {
@@ -1668,9 +1521,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $lastReviewDate
-     * @return static
      */
     public function setLastReviewDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastReviewDate): self
     {
@@ -1692,8 +1542,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The period during which the effect evidence synthesis content was or is planned
      * to be in active use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -1707,9 +1555,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * The period during which the effect evidence synthesis content was or is planned
      * to be in active use.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return static
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -1758,9 +1603,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * Descriptive topics related to the content of the EffectEvidenceSynthesis. Topics
      * provide a high-level categorization grouping types of EffectEvidenceSynthesiss
      * that can be useful for filtering and searching.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $topic
-     * @return static
      */
     public function addTopic(FHIRCodeableConcept $topic): self
     {
@@ -1780,9 +1622,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * Descriptive topics related to the content of the EffectEvidenceSynthesis. Topics
      * provide a high-level categorization grouping types of EffectEvidenceSynthesiss
      * that can be useful for filtering and searching.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$topic
-     * @return static
      */
     public function setTopic(FHIRCodeableConcept ...$topic): self
     {
@@ -1827,9 +1666,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $author
-     * @return static
      */
     public function addAuthor(FHIRContactDetail $author): self
     {
@@ -1847,9 +1683,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$author
-     * @return static
      */
     public function setAuthor(FHIRContactDetail ...$author): self
     {
@@ -1894,9 +1727,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $editor
-     * @return static
      */
     public function addEditor(FHIRContactDetail $editor): self
     {
@@ -1914,9 +1744,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$editor
-     * @return static
      */
     public function setEditor(FHIRContactDetail ...$editor): self
     {
@@ -1961,9 +1788,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $reviewer
-     * @return static
      */
     public function addReviewer(FHIRContactDetail $reviewer): self
     {
@@ -1981,9 +1805,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$reviewer
-     * @return static
      */
     public function setReviewer(FHIRContactDetail ...$reviewer): self
     {
@@ -2028,9 +1849,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail $endorser
-     * @return static
      */
     public function addEndorser(FHIRContactDetail $endorser): self
     {
@@ -2048,9 +1866,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRContactDetail ...$endorser
-     * @return static
      */
     public function setEndorser(FHIRContactDetail ...$endorser): self
     {
@@ -2097,9 +1912,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact $relatedArtifact
-     * @return static
      */
     public function addRelatedArtifact(FHIRRelatedArtifact $relatedArtifact): self
     {
@@ -2118,9 +1930,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRelatedArtifact ...$relatedArtifact
-     * @return static
      */
     public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
     {
@@ -2139,8 +1948,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of synthesis eg meta-analysis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSynthesisType(): null|FHIRCodeableConcept
     {
@@ -2154,9 +1961,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of synthesis eg meta-analysis.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $synthesisType
-     * @return static
      */
     public function setSynthesisType(null|FHIRCodeableConcept $synthesisType): self
     {
@@ -2175,8 +1979,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of study eg randomized trial.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStudyType(): null|FHIRCodeableConcept
     {
@@ -2190,9 +1992,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of study eg randomized trial.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $studyType
-     * @return static
      */
     public function setStudyType(null|FHIRCodeableConcept $studyType): self
     {
@@ -2211,8 +2010,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resource that defines the population for the
      * research.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getPopulation(): null|FHIRReference
     {
@@ -2226,9 +2023,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resource that defines the population for the
      * research.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $population
-     * @return static
      */
     public function setPopulation(null|FHIRReference $population): self
     {
@@ -2247,8 +2041,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resource that defines the exposure for the
      * research.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getExposure(): null|FHIRReference
     {
@@ -2262,9 +2054,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resource that defines the exposure for the
      * research.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $exposure
-     * @return static
      */
     public function setExposure(null|FHIRReference $exposure): self
     {
@@ -2283,8 +2072,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resource that defines the comparison exposure
      * for the research.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getExposureAlternative(): null|FHIRReference
     {
@@ -2298,9 +2085,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resource that defines the comparison exposure
      * for the research.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $exposureAlternative
-     * @return static
      */
     public function setExposureAlternative(null|FHIRReference $exposureAlternative): self
     {
@@ -2319,8 +2103,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resomece that defines the outcome for the
      * research.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getOutcome(): null|FHIRReference
     {
@@ -2334,9 +2116,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A reference to a EvidenceVariable resomece that defines the outcome for the
      * research.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $outcome
-     * @return static
      */
     public function setOutcome(null|FHIRReference $outcome): self
     {
@@ -2354,8 +2133,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * from a combination of research studies.
      *
      * A description of the size of the sample involved in the synthesis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisSampleSize
      */
     public function getSampleSize(): null|FHIREffectEvidenceSynthesisSampleSize
     {
@@ -2368,9 +2145,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * from a combination of research studies.
      *
      * A description of the size of the sample involved in the synthesis.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisSampleSize $sampleSize
-     * @return static
      */
     public function setSampleSize(null|FHIREffectEvidenceSynthesisSampleSize $sampleSize): self
     {
@@ -2415,9 +2189,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A description of the results for each exposure considered in the effect
      * estimate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisResultsByExposure $resultsByExposure
-     * @return static
      */
     public function addResultsByExposure(FHIREffectEvidenceSynthesisResultsByExposure $resultsByExposure): self
     {
@@ -2435,9 +2206,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      *
      * A description of the results for each exposure considered in the effect
      * estimate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisResultsByExposure ...$resultsByExposure
-     * @return static
      */
     public function setResultsByExposure(FHIREffectEvidenceSynthesisResultsByExposure ...$resultsByExposure): self
     {
@@ -2480,9 +2248,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * from a combination of research studies.
      *
      * The estimated effect of the exposure variant.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate $effectEstimate
-     * @return static
      */
     public function addEffectEstimate(FHIREffectEvidenceSynthesisEffectEstimate $effectEstimate): self
     {
@@ -2499,9 +2264,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * from a combination of research studies.
      *
      * The estimated effect of the exposure variant.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate ...$effectEstimate
-     * @return static
      */
     public function setEffectEstimate(FHIREffectEvidenceSynthesisEffectEstimate ...$effectEstimate): self
     {
@@ -2544,9 +2306,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * from a combination of research studies.
      *
      * A description of the certainty of the effect estimate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty $certainty
-     * @return static
      */
     public function addCertainty(FHIREffectEvidenceSynthesisCertainty $certainty): self
     {
@@ -2563,9 +2322,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
      * from a combination of research studies.
      *
      * A description of the certainty of the effect estimate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty ...$certainty
-     * @return static
      */
     public function setCertainty(FHIREffectEvidenceSynthesisCertainty ...$certainty): self
     {
@@ -2579,10 +2335,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2814,11 +2567,6 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -3098,10 +2846,7 @@ class FHIREffectEvidenceSynthesis extends FHIRDomainResource implements VersionC
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIREffectEvidenceSynthesis
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

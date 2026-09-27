@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -161,8 +160,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The name of the parameter used to allow access to the value of the parameter in
      * evaluation contexts.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $name;
@@ -173,8 +170,6 @@ class FHIRParameterDefinition extends FHIRElement
      * the Narrative, or extensions
      *
      * Whether the parameter is input or output for the module.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $use;
@@ -185,8 +180,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The minimum number of times this parameter SHALL appear in the request or
      * response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $min;
@@ -197,8 +190,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The maximum number of times this element is permitted to appear in the request
      * or response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $max;
@@ -209,8 +200,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * A brief discussion of what the parameter is for and how it is used by the
      * module.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $documentation;
@@ -221,8 +210,6 @@ class FHIRParameterDefinition extends FHIRElement
      * the Narrative, or extensions
      *
      * The type of the parameter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $type;
@@ -234,8 +221,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * If specified, this indicates a profile that the input data must conform to, or
      * that the output data will conform to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $profile;
@@ -244,14 +229,6 @@ class FHIRParameterDefinition extends FHIRElement
     /**
      * FHIRParameterDefinition Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $use
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $min
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $max
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $documentation
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $profile
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -306,8 +283,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The name of the parameter used to allow access to the value of the parameter in
      * evaluation contexts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     public function getName(): null|FHIRCode
     {
@@ -322,9 +297,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The name of the parameter used to allow access to the value of the parameter in
      * evaluation contexts.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $name
-     * @return static
      */
     public function setName(null|string|FHIRCodePrimitive|FHIRCode $name): self
     {
@@ -346,8 +318,6 @@ class FHIRParameterDefinition extends FHIRElement
      * the Narrative, or extensions
      *
      * Whether the parameter is input or output for the module.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     public function getUse(): null|FHIRCode
     {
@@ -361,9 +331,6 @@ class FHIRParameterDefinition extends FHIRElement
      * the Narrative, or extensions
      *
      * Whether the parameter is input or output for the module.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $use
-     * @return static
      */
     public function setUse(null|string|FHIRCodePrimitive|FHIRCode $use): self
     {
@@ -385,8 +352,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The minimum number of times this parameter SHALL appear in the request or
      * response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger
      */
     public function getMin(): null|FHIRInteger
     {
@@ -400,9 +365,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The minimum number of times this parameter SHALL appear in the request or
      * response.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $min
-     * @return static
      */
     public function setMin(null|string|float|FHIRIntegerPrimitive|FHIRInteger $min): self
     {
@@ -424,8 +386,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The maximum number of times this element is permitted to appear in the request
      * or response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getMax(): null|FHIRString
     {
@@ -439,9 +399,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The maximum number of times this element is permitted to appear in the request
      * or response.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $max
-     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
@@ -463,8 +420,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * A brief discussion of what the parameter is for and how it is used by the
      * module.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDocumentation(): null|FHIRString
     {
@@ -478,9 +433,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * A brief discussion of what the parameter is for and how it is used by the
      * module.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -502,8 +454,6 @@ class FHIRParameterDefinition extends FHIRElement
      * the Narrative, or extensions
      *
      * The type of the parameter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     public function getType(): null|FHIRCode
     {
@@ -517,9 +467,6 @@ class FHIRParameterDefinition extends FHIRElement
      * the Narrative, or extensions
      *
      * The type of the parameter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $type
-     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -542,8 +489,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * If specified, this indicates a profile that the input data must conform to, or
      * that the output data will conform to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical
      */
     public function getProfile(): null|FHIRCanonical
     {
@@ -558,9 +503,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * If specified, this indicates a profile that the input data must conform to, or
      * that the output data will conform to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $profile
-     * @return static
      */
     public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
     {
@@ -577,10 +519,7 @@ class FHIRParameterDefinition extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRParameterDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRParameterDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -690,10 +629,6 @@ class FHIRParameterDefinition extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -771,10 +706,7 @@ class FHIRParameterDefinition extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRParameterDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRParameterDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

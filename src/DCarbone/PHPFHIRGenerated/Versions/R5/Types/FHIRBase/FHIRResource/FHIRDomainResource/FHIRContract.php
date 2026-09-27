@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition;
@@ -116,7 +114,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRContractResourceStatusCodesEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -221,8 +218,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical identifier for this contract, represented as a URI (globally unique).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -233,8 +228,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An edition identifier used for business purposes to label business significant
      * variants.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -242,8 +235,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRContractResourceStatusCodes
      */
     #[FHIRContractResourceStatusCodes]
     protected FHIRContractResourceStatusCodes $status;
@@ -257,8 +248,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * executed written document that can be formally attributed to its author, records
      * and formally expresses a legally enforceable act, process, or contractual duty,
      * obligation, or right, and therefore evidences that act, process, or agreement.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $legalState;
@@ -269,8 +258,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The URL pointing to a FHIR-defined Contract Definition that is adhered to in
      * whole or part by this Contract.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $instantiatesCanonical;
@@ -281,8 +268,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The URL pointing to an externally maintained definition that is adhered to in
      * whole or in part by this Contract.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $instantiatesUri;
@@ -294,8 +279,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The minimal content derived from the basal information source at a specific
      * stage in its lifecycle.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $contentDerivative;
@@ -309,8 +292,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract was issued.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $issued;
@@ -320,8 +301,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract is applicable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $applies;
@@ -333,8 +312,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Event resulting in discontinuation or termination of this Contract instance by
      * one or more parties to the contract.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $expirationType;
@@ -397,8 +374,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * instance in any legal state. Provides additional information about its content.
      * This name should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -409,8 +384,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A short, descriptive, user-friendly title for this Contract definition,
      * derivative, or instance in any legal state.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -421,8 +394,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A more detailed or qualifying explanatory or alternate user-friendly title for
      * this Contract definition, derivative, or instance in any legal state.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subtitle;
@@ -446,8 +417,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The individual or organization that authored the Contract definition,
      * derivative, or instance in any legal state.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $author;
@@ -459,8 +428,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A selector of legal concerns for this Contract definition, derivative, or
      * instance in any legal state.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $scope;
@@ -471,9 +438,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives. (choose any one of topic*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * contractual objectives.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $topicCodeableConcept;
@@ -483,9 +448,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives. (choose any one of topic*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * contractual objectives.
      */
     #[FHIRReference]
     protected FHIRReference $topicReference;
@@ -500,8 +463,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * additional information about its content within the context of the Contract's
      * scope to distinguish the kinds of systems that would be interested in the
      * contract.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -525,8 +486,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Precusory content developed with a focus and intent of supporting the formation
      * a Contract instance, which may be associated with and transformable into a
      * Contract.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition
      */
     #[FHIRContractContentDefinition]
     protected FHIRContractContentDefinition $contentDefinition;
@@ -624,9 +583,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract. (choose any one of legallyBinding*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * Contract.
      */
     #[FHIRAttachment]
     protected FHIRAttachment $legallyBindingAttachment;
@@ -638,9 +595,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract. (choose any one of legallyBinding*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Contract.
      */
     #[FHIRReference]
     protected FHIRReference $legallyBindingReference;
@@ -648,40 +603,16 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
     /* constructor.php:61 */
     /**
      * FHIRContract Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRContractResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRContractResourceStatusCodes $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $legalState
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $instantiatesCanonical
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $instantiatesUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $contentDerivative
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $issued
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $applies
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $expirationType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $subject
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $authority
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $domain
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $site
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $subtitle
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString> $alias
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $author
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $scope
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $topicCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $topicReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $subType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition $contentDefinition
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm> $term
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $supportingInfo
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $relevantHistory
@@ -689,8 +620,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractFriendly> $friendly
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal> $legal
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule> $rule
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $legallyBindingAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $legallyBindingReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -902,9 +831,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Unique identifier for this Contract or a derivative that references a Source
      * Contract.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -923,9 +849,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Unique identifier for this Contract or a derivative that references a Source
      * Contract.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -943,8 +866,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical identifier for this contract, represented as a URI (globally unique).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -957,9 +878,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical identifier for this contract, represented as a URI (globally unique).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -981,8 +899,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An edition identifier used for business purposes to label business significant
      * variants.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -996,9 +912,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * An edition identifier used for business purposes to label business significant
      * variants.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -1017,8 +930,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRContractResourceStatusCodes
      */
     public function getStatus(): null|FHIRContractResourceStatusCodes
     {
@@ -1029,9 +940,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRContractResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRContractResourceStatusCodes $status
-     * @return static
      */
     public function setStatus(null|string|FHIRContractResourceStatusCodesEnum|FHIRContractResourceStatusCodes $status): self
     {
@@ -1056,8 +964,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * executed written document that can be formally attributed to its author, records
      * and formally expresses a legally enforceable act, process, or contractual duty,
      * obligation, or right, and therefore evidences that act, process, or agreement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getLegalState(): null|FHIRCodeableConcept
     {
@@ -1074,9 +980,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * executed written document that can be formally attributed to its author, records
      * and formally expresses a legally enforceable act, process, or contractual duty,
      * obligation, or right, and therefore evidences that act, process, or agreement.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $legalState
-     * @return static
      */
     public function setLegalState(null|FHIRCodeableConcept $legalState): self
     {
@@ -1095,8 +998,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The URL pointing to a FHIR-defined Contract Definition that is adhered to in
      * whole or part by this Contract.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getInstantiatesCanonical(): null|FHIRReference
     {
@@ -1110,9 +1011,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The URL pointing to a FHIR-defined Contract Definition that is adhered to in
      * whole or part by this Contract.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $instantiatesCanonical
-     * @return static
      */
     public function setInstantiatesCanonical(null|FHIRReference $instantiatesCanonical): self
     {
@@ -1131,8 +1029,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The URL pointing to an externally maintained definition that is adhered to in
      * whole or in part by this Contract.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getInstantiatesUri(): null|FHIRUri
     {
@@ -1146,9 +1042,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The URL pointing to an externally maintained definition that is adhered to in
      * whole or in part by this Contract.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $instantiatesUri
-     * @return static
      */
     public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -1171,8 +1064,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The minimal content derived from the basal information source at a specific
      * stage in its lifecycle.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getContentDerivative(): null|FHIRCodeableConcept
     {
@@ -1187,9 +1078,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The minimal content derived from the basal information source at a specific
      * stage in its lifecycle.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $contentDerivative
-     * @return static
      */
     public function setContentDerivative(null|FHIRCodeableConcept $contentDerivative): self
     {
@@ -1211,8 +1099,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract was issued.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getIssued(): null|FHIRDateTime
     {
@@ -1229,9 +1115,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract was issued.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $issued
-     * @return static
      */
     public function setIssued(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $issued): self
     {
@@ -1252,8 +1135,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract is applicable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getApplies(): null|FHIRPeriod
     {
@@ -1266,9 +1147,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract is applicable.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $applies
-     * @return static
      */
     public function setApplies(null|FHIRPeriod $applies): self
     {
@@ -1288,8 +1166,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Event resulting in discontinuation or termination of this Contract instance by
      * one or more parties to the contract.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getExpirationType(): null|FHIRCodeableConcept
     {
@@ -1304,9 +1180,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Event resulting in discontinuation or termination of this Contract instance by
      * one or more parties to the contract.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $expirationType
-     * @return static
      */
     public function setExpirationType(null|FHIRCodeableConcept $expirationType): self
     {
@@ -1349,9 +1222,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target entity impacted by or of interest to parties to the agreement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -1368,9 +1238,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target entity impacted by or of interest to parties to the agreement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$subject
-     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -1419,9 +1286,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * organizations, or jurisdictions formed for the purpose of achieving some form of
      * collective action such as the promulgation, administration and enforcement of
      * contracts and policies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $authority
-     * @return static
      */
     public function addAuthority(FHIRReference $authority): self
     {
@@ -1441,9 +1305,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * organizations, or jurisdictions formed for the purpose of achieving some form of
      * collective action such as the promulgation, administration and enforcement of
      * contracts and policies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$authority
-     * @return static
      */
     public function setAuthority(FHIRReference ...$authority): self
     {
@@ -1492,9 +1353,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * in accordance with specified principles, policies, processes or procedures for
      * managing rights, actions, or behaviors of parties or principals relative to
      * resources.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $domain
-     * @return static
      */
     public function addDomain(FHIRReference $domain): self
     {
@@ -1514,9 +1372,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * in accordance with specified principles, policies, processes or procedures for
      * managing rights, actions, or behaviors of parties or principals relative to
      * resources.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$domain
-     * @return static
      */
     public function setDomain(FHIRReference ...$domain): self
     {
@@ -1559,9 +1414,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Sites in which the contract is complied with, exercised, or in force.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $site
-     * @return static
      */
     public function addSite(FHIRReference $site): self
     {
@@ -1578,9 +1430,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Sites in which the contract is complied with, exercised, or in force.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$site
-     * @return static
      */
     public function setSite(FHIRReference ...$site): self
     {
@@ -1601,8 +1450,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * instance in any legal state. Provides additional information about its content.
      * This name should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -1618,9 +1465,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * instance in any legal state. Provides additional information about its content.
      * This name should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -1642,8 +1486,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A short, descriptive, user-friendly title for this Contract definition,
      * derivative, or instance in any legal state.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -1657,9 +1499,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A short, descriptive, user-friendly title for this Contract definition,
      * derivative, or instance in any legal state.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1681,8 +1520,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A more detailed or qualifying explanatory or alternate user-friendly title for
      * this Contract definition, derivative, or instance in any legal state.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSubtitle(): null|FHIRString
     {
@@ -1696,9 +1533,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A more detailed or qualifying explanatory or alternate user-friendly title for
      * this Contract definition, derivative, or instance in any legal state.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $subtitle
-     * @return static
      */
     public function setSubtitle(null|string|FHIRStringPrimitive|FHIRString $subtitle): self
     {
@@ -1748,9 +1582,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Alternative representation of the title for this Contract definition,
      * derivative, or instance in any legal state., e.g., a domain specific contract
      * number related to legislation.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $alias
-     * @return static
      */
     public function addAlias(string|FHIRStringPrimitive|FHIRString $alias): self
     {
@@ -1772,9 +1603,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Alternative representation of the title for this Contract definition,
      * derivative, or instance in any legal state., e.g., a domain specific contract
      * number related to legislation.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString ...$alias
-     * @return static
      */
     public function setAlias(string|FHIRStringPrimitive|FHIRString ...$alias): self
     {
@@ -1800,8 +1628,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The individual or organization that authored the Contract definition,
      * derivative, or instance in any legal state.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getAuthor(): null|FHIRReference
     {
@@ -1815,9 +1641,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The individual or organization that authored the Contract definition,
      * derivative, or instance in any legal state.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $author
-     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -1837,8 +1660,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A selector of legal concerns for this Contract definition, derivative, or
      * instance in any legal state.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getScope(): null|FHIRCodeableConcept
     {
@@ -1853,9 +1674,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A selector of legal concerns for this Contract definition, derivative, or
      * instance in any legal state.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $scope
-     * @return static
      */
     public function setScope(null|FHIRCodeableConcept $scope): self
     {
@@ -1874,9 +1692,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives. (choose any one of topic*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * contractual objectives.
      */
     public function getTopicCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1890,10 +1706,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives. (choose any one of topic*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $topicCodeableConcept
-     * @return static
+     * contractual objectives.
      */
     public function setTopicCodeableConcept(null|FHIRCodeableConcept $topicCodeableConcept): self
     {
@@ -1911,9 +1724,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives. (choose any one of topic*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * contractual objectives.
      */
     public function getTopicReference(): null|FHIRReference
     {
@@ -1926,10 +1737,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Narrows the range of legal concerns to focus on the achievement of specific
-     * contractual objectives. (choose any one of topic*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $topicReference
-     * @return static
+     * contractual objectives.
      */
     public function setTopicReference(null|FHIRReference $topicReference): self
     {
@@ -1952,8 +1760,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * additional information about its content within the context of the Contract's
      * scope to distinguish the kinds of systems that would be interested in the
      * contract.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -1971,9 +1777,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * additional information about its content within the context of the Contract's
      * scope to distinguish the kinds of systems that would be interested in the
      * contract.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -2020,9 +1823,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Sub-category for the Contract that distinguishes the kinds of systems that would
      * be interested in the Contract within the context of the Contract's scope.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subType
-     * @return static
      */
     public function addSubType(FHIRCodeableConcept $subType): self
     {
@@ -2041,9 +1841,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Sub-category for the Contract that distinguishes the kinds of systems that would
      * be interested in the Contract within the context of the Contract's scope.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$subType
-     * @return static
      */
     public function setSubType(FHIRCodeableConcept ...$subType): self
     {
@@ -2062,8 +1859,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Precusory content developed with a focus and intent of supporting the formation
      * a Contract instance, which may be associated with and transformable into a
      * Contract.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition
      */
     public function getContentDefinition(): null|FHIRContractContentDefinition
     {
@@ -2077,9 +1872,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Precusory content developed with a focus and intent of supporting the formation
      * a Contract instance, which may be associated with and transformable into a
      * Contract.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition $contentDefinition
-     * @return static
      */
     public function setContentDefinition(null|FHIRContractContentDefinition $contentDefinition): self
     {
@@ -2122,9 +1914,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * One or more Contract Provisions, which may be related and conveyed as a group,
      * and may contain nested groups.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm $term
-     * @return static
      */
     public function addTerm(FHIRContractTerm $term): self
     {
@@ -2141,9 +1930,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * One or more Contract Provisions, which may be related and conveyed as a group,
      * and may contain nested groups.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm ...$term
-     * @return static
      */
     public function setTerm(FHIRContractTerm ...$term): self
     {
@@ -2188,9 +1974,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Information that may be needed by/relevant to the performer in their execution
      * of this term action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $supportingInfo
-     * @return static
      */
     public function addSupportingInfo(FHIRReference $supportingInfo): self
     {
@@ -2208,9 +1991,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Information that may be needed by/relevant to the performer in their execution
      * of this term action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$supportingInfo
-     * @return static
      */
     public function setSupportingInfo(FHIRReference ...$supportingInfo): self
     {
@@ -2261,9 +2041,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * are likely to be relevant to a user looking at the current version of the
      * Contract. The Provenance.entity indicates the target that was changed in the
      * update (see [Provenance.entity](provenance-definitions.html#Provenance.entity)).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $relevantHistory
-     * @return static
      */
     public function addRelevantHistory(FHIRReference $relevantHistory): self
     {
@@ -2284,9 +2061,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * are likely to be relevant to a user looking at the current version of the
      * Contract. The Provenance.entity indicates the target that was changed in the
      * update (see [Provenance.entity](provenance-definitions.html#Provenance.entity)).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$relevantHistory
-     * @return static
      */
     public function setRelevantHistory(FHIRReference ...$relevantHistory): self
     {
@@ -2333,9 +2107,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * the grantor(s) and grantee(s), which are any person or organization bound by the
      * contract, and any ancillary parties, which facilitate the execution of the
      * contract such as a notary or witness.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner $signer
-     * @return static
      */
     public function addSigner(FHIRContractSigner $signer): self
     {
@@ -2354,9 +2125,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * the grantor(s) and grantee(s), which are any person or organization bound by the
      * contract, and any ancillary parties, which facilitate the execution of the
      * contract such as a notary or witness.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner ...$signer
-     * @return static
      */
     public function setSigner(FHIRContractSigner ...$signer): self
     {
@@ -2407,9 +2175,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * a layperson in accordance with best practices for communication styles that
      * ensure that those agreeing to or signing the Contract understand the roles,
      * actions, obligations, responsibilities, and implication of the agreement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractFriendly $friendly
-     * @return static
      */
     public function addFriendly(FHIRContractFriendly $friendly): self
     {
@@ -2430,9 +2195,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * a layperson in accordance with best practices for communication styles that
      * ensure that those agreeing to or signing the Contract understand the roles,
      * actions, obligations, responsibilities, and implication of the agreement.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractFriendly ...$friendly
-     * @return static
      */
     public function setFriendly(FHIRContractFriendly ...$friendly): self
     {
@@ -2473,9 +2235,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * policy or agreement.
      *
      * List of Legal expressions or representations of this Contract.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal $legal
-     * @return static
      */
     public function addLegal(FHIRContractLegal $legal): self
     {
@@ -2491,9 +2250,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * policy or agreement.
      *
      * List of Legal expressions or representations of this Contract.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal ...$legal
-     * @return static
      */
     public function setLegal(FHIRContractLegal ...$legal): self
     {
@@ -2534,9 +2290,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * policy or agreement.
      *
      * List of Computable Policy Rule Language Representations of this Contract.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule $rule
-     * @return static
      */
     public function addRule(FHIRContractRule $rule): self
     {
@@ -2552,9 +2305,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * policy or agreement.
      *
      * List of Computable Policy Rule Language Representations of this Contract.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule ...$rule
-     * @return static
      */
     public function setRule(FHIRContractRule ...$rule): self
     {
@@ -2574,9 +2324,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract. (choose any one of legallyBinding*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
+     * Contract.
      */
     public function getLegallyBindingAttachment(): null|FHIRAttachment
     {
@@ -2591,10 +2339,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract. (choose any one of legallyBinding*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $legallyBindingAttachment
-     * @return static
+     * Contract.
      */
     public function setLegallyBindingAttachment(null|FHIRAttachment $legallyBindingAttachment): self
     {
@@ -2614,9 +2359,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract. (choose any one of legallyBinding*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * Contract.
      */
     public function getLegallyBindingReference(): null|FHIRReference
     {
@@ -2631,10 +2374,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
      * Legally binding Contract: This is the signed and legally recognized
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
-     * Contract. (choose any one of legallyBinding*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $legallyBindingReference
-     * @return static
+     * Contract.
      */
     public function setLegallyBindingReference(null|FHIRReference $legallyBindingReference): self
     {
@@ -2648,10 +2388,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRContract $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRContract
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2863,11 +2600,6 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -3142,10 +2874,7 @@ class FHIRContract extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRContract $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRContract
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

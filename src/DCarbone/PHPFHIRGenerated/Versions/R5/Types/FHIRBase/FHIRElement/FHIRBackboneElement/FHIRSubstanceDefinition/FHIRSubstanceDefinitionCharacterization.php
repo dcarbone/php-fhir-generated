@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -137,8 +137,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * The method used to elucidate the characterization of the drug substance.
      * Example: HPLC.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $technique;
@@ -150,8 +148,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * Describes the nature of the chemical entity and explains, for instance, whether
      * this is a base or a salt form.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $form;
@@ -166,8 +162,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * The description or justification in support of the interpretation of the data
      * file.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -189,11 +183,7 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
     /**
      * FHIRSubstanceDefinitionCharacterization Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $technique
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $form
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment> $file
      * @param null|string[] $fhirComments
      */
@@ -239,8 +229,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * The method used to elucidate the characterization of the drug substance.
      * Example: HPLC.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getTechnique(): null|FHIRCodeableConcept
     {
@@ -255,9 +243,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * The method used to elucidate the characterization of the drug substance.
      * Example: HPLC.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $technique
-     * @return static
      */
     public function setTechnique(null|FHIRCodeableConcept $technique): self
     {
@@ -277,8 +262,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * Describes the nature of the chemical entity and explains, for instance, whether
      * this is a base or a salt form.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getForm(): null|FHIRCodeableConcept
     {
@@ -293,9 +276,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * Describes the nature of the chemical entity and explains, for instance, whether
      * this is a base or a salt form.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $form
-     * @return static
      */
     public function setForm(null|FHIRCodeableConcept $form): self
     {
@@ -318,8 +298,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * The description or justification in support of the interpretation of the data
      * file.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -337,9 +315,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * The description or justification in support of the interpretation of the data
      * file.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -389,9 +364,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      * The data produced by the analytical instrument or a pictorial representation of
      * that data. Examples: a JCAMP, JDX, or ADX file, or a chromatogram or spectrum
      * analysis.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $file
-     * @return static
      */
     public function addFile(FHIRAttachment $file): self
     {
@@ -410,9 +382,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      * The data produced by the analytical instrument or a pictorial representation of
      * that data. Examples: a JCAMP, JDX, or ADX file, or a chromatogram or spectrum
      * analysis.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment ...$file
-     * @return static
      */
     public function setFile(FHIRAttachment ...$file): self
     {
@@ -426,10 +395,7 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionCharacterization $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionCharacterization
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -487,10 +453,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -525,10 +487,7 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionCharacterization $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionCharacterization
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

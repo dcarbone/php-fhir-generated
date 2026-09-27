@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -128,8 +128,6 @@ class FHIRCodeableConcept extends FHIRElement
      * A human language representation of the concept as seen/selected/uttered by the
      * user who entered the data and/or which represents the intended meaning of the
      * user.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -138,9 +136,7 @@ class FHIRCodeableConcept extends FHIRElement
     /**
      * FHIRCodeableConcept Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $coding
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $text
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -198,9 +194,6 @@ class FHIRCodeableConcept extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a code defined by a terminology system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $coding
-     * @return static
      */
     public function addCoding(FHIRCoding $coding): self
     {
@@ -217,9 +210,6 @@ class FHIRCodeableConcept extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a code defined by a terminology system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$coding
-     * @return static
      */
     public function setCoding(FHIRCoding ...$coding): self
     {
@@ -239,8 +229,6 @@ class FHIRCodeableConcept extends FHIRElement
      * A human language representation of the concept as seen/selected/uttered by the
      * user who entered the data and/or which represents the intended meaning of the
      * user.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -255,9 +243,6 @@ class FHIRCodeableConcept extends FHIRElement
      * A human language representation of the concept as seen/selected/uttered by the
      * user who entered the data and/or which represents the intended meaning of the
      * user.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -274,10 +259,7 @@ class FHIRCodeableConcept extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -329,10 +311,6 @@ class FHIRCodeableConcept extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -357,10 +335,7 @@ class FHIRCodeableConcept extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

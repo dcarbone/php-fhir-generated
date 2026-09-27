@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
@@ -126,8 +124,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * Identifier assigned by the dispensing facility - this is an identifier assigned
      * outside FHIR.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -136,8 +132,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationDispenseStatus
      */
     #[FHIRMedicationDispenseStatus]
     protected FHIRMedicationDispenseStatus $status;
@@ -148,8 +142,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $patient;
@@ -159,8 +151,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $dispenser;
@@ -194,8 +184,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * cases substitution will be expected but doesn't happen, in other cases
      * substitution is not expected but does happen. This block explains what
      * substitition did or did not happen and why.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      */
     #[FHIRMedicationDispenseSubstitution]
     protected FHIRMedicationDispenseSubstitution $substitution;
@@ -203,19 +191,11 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
     /* constructor.php:61 */
     /**
      * FHIRMedicationDispense Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationDispenseStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationDispenseStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $patient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $dispenser
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $authorizingPrescription
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense> $dispense
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution $substitution
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRCodePrimitive|FHIRCode $language = null,
@@ -283,8 +263,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * Identifier assigned by the dispensing facility - this is an identifier assigned
      * outside FHIR.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -298,9 +276,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * Identifier assigned by the dispensing facility - this is an identifier assigned
      * outside FHIR.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -317,8 +292,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationDispenseStatus
      */
     public function getStatus(): null|FHIRMedicationDispenseStatus
     {
@@ -330,9 +303,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationDispenseStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationDispenseStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRMedicationDispenseStatusList|FHIRMedicationDispenseStatus $status): self
     {
@@ -354,8 +324,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getPatient(): null|FHIRResourceReference
     {
@@ -369,9 +337,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRResourceReference $patient): self
     {
@@ -389,8 +354,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getDispenser(): null|FHIRResourceReference
     {
@@ -403,9 +366,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $dispenser
-     * @return static
      */
     public function setDispenser(null|FHIRResourceReference $dispenser): self
     {
@@ -448,9 +408,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $authorizingPrescription
-     * @return static
      */
     public function addAuthorizingPrescription(FHIRResourceReference $authorizingPrescription): self
     {
@@ -467,9 +424,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$authorizingPrescription
-     * @return static
      */
     public function setAuthorizingPrescription(FHIRResourceReference ...$authorizingPrescription): self
     {
@@ -512,9 +466,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * Indicates the details of the dispense event such as the days supply and quantity
      * of medication dispensed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense $dispense
-     * @return static
      */
     public function addDispense(FHIRMedicationDispenseDispense $dispense): self
     {
@@ -531,9 +482,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      *
      * Indicates the details of the dispense event such as the days supply and quantity
      * of medication dispensed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense ...$dispense
-     * @return static
      */
     public function setDispense(FHIRMedicationDispenseDispense ...$dispense): self
     {
@@ -553,8 +501,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * cases substitution will be expected but doesn't happen, in other cases
      * substitution is not expected but does happen. This block explains what
      * substitition did or did not happen and why.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      */
     public function getSubstitution(): null|FHIRMedicationDispenseSubstitution
     {
@@ -569,9 +515,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
      * cases substitution will be expected but doesn't happen, in other cases
      * substitution is not expected but does happen. This block explains what
      * substitition did or did not happen and why.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution $substitution
-     * @return static
      */
     public function setSubstitution(null|FHIRMedicationDispenseSubstitution $substitution): self
     {
@@ -585,10 +528,7 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationDispense $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationDispense
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -676,11 +616,6 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -756,10 +691,7 @@ class FHIRMedicationDispense extends FHIRResource implements VersionContainedTyp
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationDispense $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationDispense
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

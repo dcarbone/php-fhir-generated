@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -149,8 +148,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the source system where the concepts to be
      * mapped are defined.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $source;
@@ -161,8 +158,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * The specific version of the code system, as determined by the code system
      * authority.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $sourceVersion;
@@ -173,8 +168,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the target system that the concepts will be
      * mapped to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $target;
@@ -185,8 +178,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * The specific version of the code system, as determined by the code system
      * authority.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $targetVersion;
@@ -210,8 +201,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      * What to do when there is no mapping for the source concept. "Unmapped" does not
      * include codes that are unmatched, and the unmapped element is ignored in a code
      * is specified to have equivalence = unmatched.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
      */
     #[FHIRConceptMapUnmapped]
     protected FHIRConceptMapUnmapped $unmapped;
@@ -220,14 +209,8 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
     /**
      * FHIRConceptMapGroup Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $source
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $sourceVersion
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $target
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $targetVersion
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement> $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped $unmapped
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -279,8 +262,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the source system where the concepts to be
      * mapped are defined.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getSource(): null|FHIRUri
     {
@@ -294,9 +275,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the source system where the concepts to be
      * mapped are defined.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $source
-     * @return static
      */
     public function setSource(null|string|FHIRUriPrimitive|FHIRUri $source): self
     {
@@ -318,8 +296,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * The specific version of the code system, as determined by the code system
      * authority.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getSourceVersion(): null|FHIRString
     {
@@ -333,9 +309,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * The specific version of the code system, as determined by the code system
      * authority.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $sourceVersion
-     * @return static
      */
     public function setSourceVersion(null|string|FHIRStringPrimitive|FHIRString $sourceVersion): self
     {
@@ -357,8 +330,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the target system that the concepts will be
      * mapped to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getTarget(): null|FHIRUri
     {
@@ -372,9 +343,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the target system that the concepts will be
      * mapped to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $target
-     * @return static
      */
     public function setTarget(null|string|FHIRUriPrimitive|FHIRUri $target): self
     {
@@ -396,8 +364,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * The specific version of the code system, as determined by the code system
      * authority.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getTargetVersion(): null|FHIRString
     {
@@ -411,9 +377,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * The specific version of the code system, as determined by the code system
      * authority.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $targetVersion
-     * @return static
      */
     public function setTargetVersion(null|string|FHIRStringPrimitive|FHIRString $targetVersion): self
     {
@@ -461,9 +424,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * Mappings for an individual concept in the source to one or more concepts in the
      * target.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement $element
-     * @return static
      */
     public function addElement(FHIRConceptMapElement $element): self
     {
@@ -481,9 +441,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * Mappings for an individual concept in the source to one or more concepts in the
      * target.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement ...$element
-     * @return static
      */
     public function setElement(FHIRConceptMapElement ...$element): self
     {
@@ -503,8 +460,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      * What to do when there is no mapping for the source concept. "Unmapped" does not
      * include codes that are unmatched, and the unmapped element is ignored in a code
      * is specified to have equivalence = unmatched.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
      */
     public function getUnmapped(): null|FHIRConceptMapUnmapped
     {
@@ -519,9 +474,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      * What to do when there is no mapping for the source concept. "Unmapped" does not
      * include codes that are unmatched, and the unmapped element is ignored in a code
      * is specified to have equivalence = unmatched.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped $unmapped
-     * @return static
      */
     public function setUnmapped(null|FHIRConceptMapUnmapped $unmapped): self
     {
@@ -535,10 +487,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -624,10 +573,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -687,10 +632,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

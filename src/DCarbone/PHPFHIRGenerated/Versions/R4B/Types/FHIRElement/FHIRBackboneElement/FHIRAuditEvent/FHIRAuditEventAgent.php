@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -159,8 +158,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Specification of the participation type the user plays when performing the
      * event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -184,8 +181,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to who this agent is that was involved in the event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $who;
@@ -197,8 +192,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * Alternative agent Identifier. For a human, this should be a user identifier text
      * string from authentication system. This identifier would be one known to a
      * common authentication system (e.g. single sign-on), if available.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $altId;
@@ -208,8 +201,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-meaningful name for the agent.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -219,8 +210,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Indicator that the user is or is not the requestor, or initiator, for the event
      * being audited.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $requestor;
@@ -230,8 +219,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the event occurred.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $location;
@@ -255,8 +242,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Type of media involved. Used when the event is about exporting/importing onto
      * media.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $media;
@@ -267,8 +252,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Logical network location for application activity, if the activity has a network
      * location.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork
      */
     #[FHIRAuditEventNetwork]
     protected FHIRAuditEventNetwork $network;
@@ -290,18 +273,9 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
     /**
      * FHIRAuditEventAgent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $who
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $altId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $requestor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $location
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri> $policy
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $media
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork $network
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $purposeOfUse
      * @param null|string[] $fhirComments
      */
@@ -375,8 +349,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Specification of the participation type the user plays when performing the
      * event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -391,9 +363,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Specification of the participation type the user plays when performing the
      * event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -442,9 +411,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * The security role that the user was acting under, that come from local codes
      * defined by the access control security system (e.g. RBAC, ABAC) used in the
      * local context.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function addRole(FHIRCodeableConcept $role): self
     {
@@ -464,9 +430,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * The security role that the user was acting under, that come from local codes
      * defined by the access control security system (e.g. RBAC, ABAC) used in the
      * local context.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$role
-     * @return static
      */
     public function setRole(FHIRCodeableConcept ...$role): self
     {
@@ -484,8 +447,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to who this agent is that was involved in the event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getWho(): null|FHIRReference
     {
@@ -498,9 +459,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to who this agent is that was involved in the event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $who
-     * @return static
      */
     public function setWho(null|FHIRReference $who): self
     {
@@ -520,8 +478,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * Alternative agent Identifier. For a human, this should be a user identifier text
      * string from authentication system. This identifier would be one known to a
      * common authentication system (e.g. single sign-on), if available.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getAltId(): null|FHIRString
     {
@@ -536,9 +492,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * Alternative agent Identifier. For a human, this should be a user identifier text
      * string from authentication system. This identifier would be one known to a
      * common authentication system (e.g. single sign-on), if available.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $altId
-     * @return static
      */
     public function setAltId(null|string|FHIRStringPrimitive|FHIRString $altId): self
     {
@@ -559,8 +512,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-meaningful name for the agent.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -573,9 +524,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-meaningful name for the agent.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -596,8 +544,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Indicator that the user is or is not the requestor, or initiator, for the event
      * being audited.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getRequestor(): null|FHIRBoolean
     {
@@ -610,9 +556,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Indicator that the user is or is not the requestor, or initiator, for the event
      * being audited.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $requestor
-     * @return static
      */
     public function setRequestor(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requestor): self
     {
@@ -633,8 +576,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the event occurred.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getLocation(): null|FHIRReference
     {
@@ -647,9 +588,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the event occurred.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $location
-     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -696,9 +634,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * The policy or plan that authorized the activity being recorded. Typically, a
      * single activity may have multiple applicable policies, such as patient consent,
      * guarantor funding, etc. The policy would also indicate the security token used.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $policy
-     * @return static
      */
     public function addPolicy(string|FHIRUriPrimitive|FHIRUri $policy): self
     {
@@ -720,9 +655,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      * The policy or plan that authorized the activity being recorded. Typically, a
      * single activity may have multiple applicable policies, such as patient consent,
      * guarantor funding, etc. The policy would also indicate the security token used.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri ...$policy
-     * @return static
      */
     public function setPolicy(string|FHIRUriPrimitive|FHIRUri ...$policy): self
     {
@@ -748,8 +680,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Type of media involved. Used when the event is about exporting/importing onto
      * media.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding
      */
     public function getMedia(): null|FHIRCoding
     {
@@ -763,9 +693,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Type of media involved. Used when the event is about exporting/importing onto
      * media.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $media
-     * @return static
      */
     public function setMedia(null|FHIRCoding $media): self
     {
@@ -784,8 +711,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Logical network location for application activity, if the activity has a network
      * location.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork
      */
     public function getNetwork(): null|FHIRAuditEventNetwork
     {
@@ -799,9 +724,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * Logical network location for application activity, if the activity has a network
      * location.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork $network
-     * @return static
      */
     public function setNetwork(null|FHIRAuditEventNetwork $network): self
     {
@@ -848,9 +770,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * The reason (purpose of use), specific to this agent, that was used during the
      * event being recorded.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $purposeOfUse
-     * @return static
      */
     public function addPurposeOfUse(FHIRCodeableConcept $purposeOfUse): self
     {
@@ -869,9 +788,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
      *
      * The reason (purpose of use), specific to this agent, that was used during the
      * event being recorded.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$purposeOfUse
-     * @return static
      */
     public function setPurposeOfUse(FHIRCodeableConcept ...$purposeOfUse): self
     {
@@ -885,10 +801,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -976,10 +889,6 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1063,10 +972,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

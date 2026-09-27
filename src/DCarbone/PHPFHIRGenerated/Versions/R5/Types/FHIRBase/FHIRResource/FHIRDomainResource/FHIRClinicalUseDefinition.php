@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -113,7 +111,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRClinicalUseDefinitionTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -180,8 +177,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * indication | contraindication | interaction | undesirable-effect | warning.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRClinicalUseDefinitionType
      */
     #[FHIRClinicalUseDefinitionType]
     protected FHIRClinicalUseDefinitionType $type;
@@ -218,8 +213,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this is a current issue or one that has been retired etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -228,8 +221,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is a contraindication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication
      */
     #[FHIRClinicalUseDefinitionContraindication]
     protected FHIRClinicalUseDefinitionContraindication $contraindication;
@@ -238,8 +229,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is an indication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionIndication
      */
     #[FHIRClinicalUseDefinitionIndication]
     protected FHIRClinicalUseDefinitionIndication $indication;
@@ -248,8 +237,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is an interaction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteraction
      */
     #[FHIRClinicalUseDefinitionInteraction]
     protected FHIRClinicalUseDefinitionInteraction $interaction;
@@ -282,8 +269,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      *
      * Describe the possible undesirable effects (negative outcomes) from the use of
      * the medicinal product as treatment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect
      */
     #[FHIRClinicalUseDefinitionUndesirableEffect]
     protected FHIRClinicalUseDefinitionUndesirableEffect $undesirableEffect;
@@ -295,8 +280,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * hazards that serve as caution to the user. For example 'Do not operate heavy
      * machinery', 'May cause drowsiness', or 'Get medical advice/attention if you feel
      * unwell'.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionWarning
      */
     #[FHIRClinicalUseDefinitionWarning]
     protected FHIRClinicalUseDefinitionWarning $warning;
@@ -304,26 +287,14 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
     /* constructor.php:61 */
     /**
      * FHIRClinicalUseDefinition Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRClinicalUseDefinitionTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRClinicalUseDefinitionType $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $category
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication $contraindication
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionIndication $indication
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteraction $interaction
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $population
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical> $library
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect $undesirableEffect
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionWarning $warning
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -441,9 +412,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this issue.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -461,9 +429,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this issue.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -479,8 +444,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * indication | contraindication | interaction | undesirable-effect | warning.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRClinicalUseDefinitionType
      */
     public function getType(): null|FHIRClinicalUseDefinitionType
     {
@@ -491,9 +454,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * indication | contraindication | interaction | undesirable-effect | warning.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRClinicalUseDefinitionTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRClinicalUseDefinitionType $type
-     * @return static
      */
     public function setType(null|string|FHIRClinicalUseDefinitionTypeEnum|FHIRClinicalUseDefinitionType $type): self
     {
@@ -545,9 +505,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * A categorisation of the issue, primarily for dividing warnings into subject
      * heading areas such as "Pregnancy and Lactation", "Overdose", "Effects on Ability
      * to Drive and Use Machines".
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -567,9 +524,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * A categorisation of the issue, primarily for dividing warnings into subject
      * heading areas such as "Pregnancy and Lactation", "Overdose", "Effects on Ability
      * to Drive and Use Machines".
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -614,9 +568,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      *
      * The medication, product, substance, device, procedure etc. for which this is an
      * indication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -634,9 +585,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      *
      * The medication, product, substance, device, procedure etc. for which this is an
      * indication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$subject
-     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -655,8 +603,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this is a current issue or one that has been retired etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -670,9 +616,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this is a current issue or one that has been retired etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -689,8 +632,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is a contraindication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication
      */
     public function getContraindication(): null|FHIRClinicalUseDefinitionContraindication
     {
@@ -702,9 +643,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is a contraindication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication $contraindication
-     * @return static
      */
     public function setContraindication(null|FHIRClinicalUseDefinitionContraindication $contraindication): self
     {
@@ -721,8 +659,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is an indication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionIndication
      */
     public function getIndication(): null|FHIRClinicalUseDefinitionIndication
     {
@@ -734,9 +670,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is an indication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionIndication $indication
-     * @return static
      */
     public function setIndication(null|FHIRClinicalUseDefinitionIndication $indication): self
     {
@@ -753,8 +686,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is an interaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteraction
      */
     public function getInteraction(): null|FHIRClinicalUseDefinitionInteraction
     {
@@ -766,9 +697,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is an interaction.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteraction $interaction
-     * @return static
      */
     public function setInteraction(null|FHIRClinicalUseDefinitionInteraction $interaction): self
     {
@@ -811,9 +739,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $population
-     * @return static
      */
     public function addPopulation(FHIRReference $population): self
     {
@@ -830,9 +755,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$population
-     * @return static
      */
     public function setPopulation(FHIRReference ...$population): self
     {
@@ -877,9 +799,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * the Narrative, or extensions
      *
      * Logic used by the clinical use definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $library
-     * @return static
      */
     public function addLibrary(string|FHIRCanonicalPrimitive|FHIRCanonical $library): self
     {
@@ -900,9 +819,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * the Narrative, or extensions
      *
      * Logic used by the clinical use definition.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical ...$library
-     * @return static
      */
     public function setLibrary(string|FHIRCanonicalPrimitive|FHIRCanonical ...$library): self
     {
@@ -927,8 +843,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      *
      * Describe the possible undesirable effects (negative outcomes) from the use of
      * the medicinal product as treatment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect
      */
     public function getUndesirableEffect(): null|FHIRClinicalUseDefinitionUndesirableEffect
     {
@@ -941,9 +855,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      *
      * Describe the possible undesirable effects (negative outcomes) from the use of
      * the medicinal product as treatment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect $undesirableEffect
-     * @return static
      */
     public function setUndesirableEffect(null|FHIRClinicalUseDefinitionUndesirableEffect $undesirableEffect): self
     {
@@ -963,8 +874,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * hazards that serve as caution to the user. For example 'Do not operate heavy
      * machinery', 'May cause drowsiness', or 'Get medical advice/attention if you feel
      * unwell'.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionWarning
      */
     public function getWarning(): null|FHIRClinicalUseDefinitionWarning
     {
@@ -979,9 +888,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * hazards that serve as caution to the user. For example 'Do not operate heavy
      * machinery', 'May cause drowsiness', or 'Get medical advice/attention if you feel
      * unwell'.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionWarning $warning
-     * @return static
      */
     public function setWarning(null|FHIRClinicalUseDefinitionWarning $warning): self
     {
@@ -995,10 +901,7 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRClinicalUseDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRClinicalUseDefinition
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1108,11 +1011,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1219,10 +1117,7 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRClinicalUseDefinition $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRClinicalUseDefinition
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

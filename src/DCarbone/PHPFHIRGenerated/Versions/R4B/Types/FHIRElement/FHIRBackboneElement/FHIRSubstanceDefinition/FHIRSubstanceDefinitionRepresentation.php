@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -135,8 +135,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of structural representation (e.g. full, partial).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -147,8 +145,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      *
      * The structural representation or characterization as a text string in a standard
      * format.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $representation;
@@ -161,8 +157,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      * The format of the representation e.g. InChI, SMILES, MOLFILE, CDX, SDF, PDB,
      * mmCIF. The logical content type rather than the physical file format of a
      * document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $format;
@@ -173,8 +167,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      *
      * An attached file with the structural representation or characterization e.g. a
      * molecular structure graphic of the substance, a JCAMP or AnIML file.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $document;
@@ -183,12 +175,7 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
     /**
      * FHIRSubstanceDefinitionRepresentation Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $representation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $format
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $document
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -232,8 +219,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of structural representation (e.g. full, partial).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -247,9 +232,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of structural representation (e.g. full, partial).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -268,8 +250,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      *
      * The structural representation or characterization as a text string in a standard
      * format.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getRepresentation(): null|FHIRString
     {
@@ -283,9 +263,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      *
      * The structural representation or characterization as a text string in a standard
      * format.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $representation
-     * @return static
      */
     public function setRepresentation(null|string|FHIRStringPrimitive|FHIRString $representation): self
     {
@@ -309,8 +286,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      * The format of the representation e.g. InChI, SMILES, MOLFILE, CDX, SDF, PDB,
      * mmCIF. The logical content type rather than the physical file format of a
      * document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getFormat(): null|FHIRCodeableConcept
     {
@@ -326,9 +301,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      * The format of the representation e.g. InChI, SMILES, MOLFILE, CDX, SDF, PDB,
      * mmCIF. The logical content type rather than the physical file format of a
      * document.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $format
-     * @return static
      */
     public function setFormat(null|FHIRCodeableConcept $format): self
     {
@@ -347,8 +319,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      *
      * An attached file with the structural representation or characterization e.g. a
      * molecular structure graphic of the substance, a JCAMP or AnIML file.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getDocument(): null|FHIRReference
     {
@@ -362,9 +332,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
      *
      * An attached file with the structural representation or characterization e.g. a
      * molecular structure graphic of the substance, a JCAMP or AnIML file.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $document
-     * @return static
      */
     public function setDocument(null|FHIRReference $document): self
     {
@@ -378,10 +345,7 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -439,10 +403,6 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -475,10 +435,7 @@ class FHIRSubstanceDefinitionRepresentation extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

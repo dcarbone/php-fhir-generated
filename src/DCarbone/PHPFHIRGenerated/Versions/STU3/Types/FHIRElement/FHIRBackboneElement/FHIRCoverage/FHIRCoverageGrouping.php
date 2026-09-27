@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -144,8 +144,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify an employer group. May also be referred to as a
      * Policy or Group ID.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $group;
@@ -155,8 +153,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the group.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $groupDisplay;
@@ -167,8 +163,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify a subset of an employer group.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subGroup;
@@ -178,8 +172,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subgroup.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subGroupDisplay;
@@ -191,8 +183,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify a collection of benefits provided to employees.
      * May be referred to as a Section or Division ID.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $plan;
@@ -202,8 +192,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the plan.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $planDisplay;
@@ -215,8 +203,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a sub-style or sub-collective of coverage issued by the underwriter,
      * for example may be used to identify a subset of a collection of benefits
      * provided to employees.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subPlan;
@@ -226,8 +212,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subplan.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subPlanDisplay;
@@ -239,8 +223,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issues by the underwriter, for
      * example may be used to identify a class of coverage such as a level of
      * deductables or co-payment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $class;
@@ -250,8 +232,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the class.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $classDisplay;
@@ -263,8 +243,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a sub-style or sub-collective of coverage issues by the underwriter,
      * for example may be used to identify a subclass of coverage such as a sub-level
      * of deductables or co-payment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subClass;
@@ -274,8 +252,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subclass.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $subClassDisplay;
@@ -284,20 +260,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
     /**
      * FHIRCoverageGrouping Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $group
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $groupDisplay
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subGroup
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subGroupDisplay
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $plan
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $planDisplay
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subPlan
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subPlanDisplay
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $class
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $classDisplay
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subClass
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subClassDisplay
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -374,8 +337,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify an employer group. May also be referred to as a
      * Policy or Group ID.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getGroup(): null|FHIRString
     {
@@ -390,9 +351,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify an employer group. May also be referred to as a
      * Policy or Group ID.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $group
-     * @return static
      */
     public function setGroup(null|string|FHIRStringPrimitive|FHIRString $group): self
     {
@@ -413,8 +371,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the group.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getGroupDisplay(): null|FHIRString
     {
@@ -427,9 +383,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the group.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $groupDisplay
-     * @return static
      */
     public function setGroupDisplay(null|string|FHIRStringPrimitive|FHIRString $groupDisplay): self
     {
@@ -451,8 +404,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify a subset of an employer group.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getSubGroup(): null|FHIRString
     {
@@ -466,9 +417,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify a subset of an employer group.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subGroup
-     * @return static
      */
     public function setSubGroup(null|string|FHIRStringPrimitive|FHIRString $subGroup): self
     {
@@ -489,8 +437,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subgroup.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getSubGroupDisplay(): null|FHIRString
     {
@@ -503,9 +449,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subgroup.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subGroupDisplay
-     * @return static
      */
     public function setSubGroupDisplay(null|string|FHIRStringPrimitive|FHIRString $subGroupDisplay): self
     {
@@ -528,8 +471,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify a collection of benefits provided to employees.
      * May be referred to as a Section or Division ID.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getPlan(): null|FHIRString
     {
@@ -544,9 +485,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify a collection of benefits provided to employees.
      * May be referred to as a Section or Division ID.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $plan
-     * @return static
      */
     public function setPlan(null|string|FHIRStringPrimitive|FHIRString $plan): self
     {
@@ -567,8 +505,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the plan.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getPlanDisplay(): null|FHIRString
     {
@@ -581,9 +517,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the plan.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $planDisplay
-     * @return static
      */
     public function setPlanDisplay(null|string|FHIRStringPrimitive|FHIRString $planDisplay): self
     {
@@ -606,8 +539,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a sub-style or sub-collective of coverage issued by the underwriter,
      * for example may be used to identify a subset of a collection of benefits
      * provided to employees.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getSubPlan(): null|FHIRString
     {
@@ -622,9 +553,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a sub-style or sub-collective of coverage issued by the underwriter,
      * for example may be used to identify a subset of a collection of benefits
      * provided to employees.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subPlan
-     * @return static
      */
     public function setSubPlan(null|string|FHIRStringPrimitive|FHIRString $subPlan): self
     {
@@ -645,8 +573,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subplan.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getSubPlanDisplay(): null|FHIRString
     {
@@ -659,9 +585,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subplan.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subPlanDisplay
-     * @return static
      */
     public function setSubPlanDisplay(null|string|FHIRStringPrimitive|FHIRString $subPlanDisplay): self
     {
@@ -684,8 +607,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issues by the underwriter, for
      * example may be used to identify a class of coverage such as a level of
      * deductables or co-payment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getClass(): null|FHIRString
     {
@@ -700,9 +621,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issues by the underwriter, for
      * example may be used to identify a class of coverage such as a level of
      * deductables or co-payment.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $class
-     * @return static
      */
     public function setClass(null|string|FHIRStringPrimitive|FHIRString $class): self
     {
@@ -723,8 +641,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the class.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getClassDisplay(): null|FHIRString
     {
@@ -737,9 +653,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the class.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $classDisplay
-     * @return static
      */
     public function setClassDisplay(null|string|FHIRStringPrimitive|FHIRString $classDisplay): self
     {
@@ -762,8 +675,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a sub-style or sub-collective of coverage issues by the underwriter,
      * for example may be used to identify a subclass of coverage such as a sub-level
      * of deductables or co-payment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getSubClass(): null|FHIRString
     {
@@ -778,9 +689,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a sub-style or sub-collective of coverage issues by the underwriter,
      * for example may be used to identify a subclass of coverage such as a sub-level
      * of deductables or co-payment.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subClass
-     * @return static
      */
     public function setSubClass(null|string|FHIRStringPrimitive|FHIRString $subClass): self
     {
@@ -801,8 +709,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subclass.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getSubClassDisplay(): null|FHIRString
     {
@@ -815,9 +721,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subclass.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subClassDisplay
-     * @return static
      */
     public function setSubClassDisplay(null|string|FHIRStringPrimitive|FHIRString $subClassDisplay): self
     {
@@ -834,10 +737,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -999,10 +899,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1130,10 +1026,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

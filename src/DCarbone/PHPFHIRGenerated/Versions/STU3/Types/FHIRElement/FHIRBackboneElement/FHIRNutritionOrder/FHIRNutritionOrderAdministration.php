@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -117,8 +117,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The time period and frequency at which the enteral formula should be delivered
      * to the patient.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming
      */
     #[FHIRTiming]
     protected FHIRTiming $schedule;
@@ -131,8 +129,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The volume of formula to provide to the patient per the specified administration
      * schedule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -145,8 +141,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $rateQuantity;
@@ -158,8 +152,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $rateRatio;
@@ -168,12 +160,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     /**
      * FHIRNutritionOrderAdministration Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $schedule
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $rateQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio $rateRatio
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -221,8 +208,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The time period and frequency at which the enteral formula should be delivered
      * to the patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming
      */
     public function getSchedule(): null|FHIRTiming
     {
@@ -240,9 +225,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The time period and frequency at which the enteral formula should be delivered
      * to the patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $schedule
-     * @return static
      */
     public function setSchedule(null|FHIRTiming $schedule): self
     {
@@ -263,8 +245,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The volume of formula to provide to the patient per the specified administration
      * schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -280,9 +260,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The volume of formula to provide to the patient per the specified administration
      * schedule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -303,8 +280,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     public function getRateQuantity(): null|FHIRQuantity
     {
@@ -320,9 +295,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $rateQuantity
-     * @return static
      */
     public function setRateQuantity(null|FHIRQuantity $rateQuantity): self
     {
@@ -342,8 +314,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio
      */
     public function getRateRatio(): null|FHIRRatio
     {
@@ -358,9 +328,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRatio $rateRatio
-     * @return static
      */
     public function setRateRatio(null|FHIRRatio $rateRatio): self
     {
@@ -374,10 +341,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -427,10 +391,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -458,10 +418,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

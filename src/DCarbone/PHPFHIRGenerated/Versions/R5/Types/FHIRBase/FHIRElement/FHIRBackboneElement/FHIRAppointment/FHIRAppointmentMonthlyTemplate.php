@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates that appointments in the series of recurring appointments should occur
      * on a specific day of the month.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $dayOfMonth;
@@ -155,8 +152,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates which week within a month the appointments in the series of recurring
      * appointments should occur on.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $nthWeekOfMonth;
@@ -167,8 +162,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates which day of the week the recurring appointments should occur each nth
      * week.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $dayOfWeek;
@@ -178,8 +171,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates that recurring appointments should occur every nth month.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $monthInterval;
@@ -188,12 +179,7 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
     /**
      * FHIRAppointmentMonthlyTemplate Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dayOfMonth
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $nthWeekOfMonth
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $dayOfWeek
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $monthInterval
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -237,8 +223,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates that appointments in the series of recurring appointments should occur
      * on a specific day of the month.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getDayOfMonth(): null|FHIRPositiveInt
     {
@@ -252,9 +236,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates that appointments in the series of recurring appointments should occur
      * on a specific day of the month.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dayOfMonth
-     * @return static
      */
     public function setDayOfMonth(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dayOfMonth): self
     {
@@ -276,8 +257,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates which week within a month the appointments in the series of recurring
      * appointments should occur on.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     public function getNthWeekOfMonth(): null|FHIRCoding
     {
@@ -291,9 +270,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates which week within a month the appointments in the series of recurring
      * appointments should occur on.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $nthWeekOfMonth
-     * @return static
      */
     public function setNthWeekOfMonth(null|FHIRCoding $nthWeekOfMonth): self
     {
@@ -312,8 +288,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates which day of the week the recurring appointments should occur each nth
      * week.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     public function getDayOfWeek(): null|FHIRCoding
     {
@@ -327,9 +301,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates which day of the week the recurring appointments should occur each nth
      * week.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $dayOfWeek
-     * @return static
      */
     public function setDayOfWeek(null|FHIRCoding $dayOfWeek): self
     {
@@ -347,8 +318,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates that recurring appointments should occur every nth month.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getMonthInterval(): null|FHIRPositiveInt
     {
@@ -361,9 +330,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates that recurring appointments should occur every nth month.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $monthInterval
-     * @return static
      */
     public function setMonthInterval(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $monthInterval): self
     {
@@ -380,10 +346,7 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -449,10 +412,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -490,10 +449,7 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

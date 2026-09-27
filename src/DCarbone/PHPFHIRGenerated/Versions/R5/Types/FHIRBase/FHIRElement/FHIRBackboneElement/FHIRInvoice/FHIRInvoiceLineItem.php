@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
@@ -128,6 +129,12 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_CHARGE_ITEM_REFERENCE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -143,8 +150,6 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence in which the items appear on the invoice.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequence;
@@ -154,10 +159,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * Date/time(s) range when this service was delivered or completed.
      */
     #[FHIRDate]
     protected FHIRDate $servicedDate;
@@ -166,10 +168,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * Date/time(s) range when this service was delivered or completed.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $servicedPeriod;
@@ -180,10 +179,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * added using the CodeableConcept data type instead of the Reference.
      */
     #[FHIRReference]
     protected FHIRReference $chargeItemReference;
@@ -195,10 +191,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * added using the CodeableConcept data type instead of the Reference.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $chargeItemCodeableConcept;
@@ -223,13 +216,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
     /**
      * FHIRInvoiceLineItem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $servicedDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $servicedPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $chargeItemReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $chargeItemCodeableConcept
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent> $priceComponent
      * @param null|string[] $fhirComments
      */
@@ -281,8 +268,6 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence in which the items appear on the invoice.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getSequence(): null|FHIRPositiveInt
     {
@@ -295,9 +280,6 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence in which the items appear on the invoice.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
      */
     public function setSequence(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
     {
@@ -318,10 +300,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * Date/time(s) range when this service was delivered or completed.
      */
     public function getServicedDate(): null|FHIRDate
     {
@@ -334,11 +313,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $servicedDate
-     * @return static
+     * Date/time(s) range when this service was delivered or completed.
      */
     public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate): self
     {
@@ -358,10 +333,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * Date/time(s) range when this service was delivered or completed.
      */
     public function getServicedPeriod(): null|FHIRPeriod
     {
@@ -373,11 +345,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Date/time(s) range when this service was delivered or completed. (choose any one
-     * of serviced*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $servicedPeriod
-     * @return static
+     * Date/time(s) range when this service was delivered or completed.
      */
     public function setServicedPeriod(null|FHIRPeriod $servicedPeriod): self
     {
@@ -396,10 +364,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * added using the CodeableConcept data type instead of the Reference.
      */
     public function getChargeItemReference(): null|FHIRReference
     {
@@ -413,11 +378,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $chargeItemReference
-     * @return static
+     * added using the CodeableConcept data type instead of the Reference.
      */
     public function setChargeItemReference(null|FHIRReference $chargeItemReference): self
     {
@@ -437,10 +398,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * added using the CodeableConcept data type instead of the Reference.
      */
     public function getChargeItemCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -455,11 +413,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $chargeItemCodeableConcept
-     * @return static
+     * added using the CodeableConcept data type instead of the Reference.
      */
     public function setChargeItemCodeableConcept(null|FHIRCodeableConcept $chargeItemCodeableConcept): self
     {
@@ -512,9 +466,6 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * code is currently under development. The priceComponent element can be used to
      * offer transparency to the recipient of the Invoice as to how the prices have
      * been calculated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent $priceComponent
-     * @return static
      */
     public function addPriceComponent(FHIRMonetaryComponent $priceComponent): self
     {
@@ -536,9 +487,6 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * code is currently under development. The priceComponent element can be used to
      * offer transparency to the recipient of the Invoice as to how the prices have
      * been calculated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent ...$priceComponent
-     * @return static
      */
     public function setPriceComponent(FHIRMonetaryComponent ...$priceComponent): self
     {
@@ -552,10 +500,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -625,10 +570,6 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -678,10 +619,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

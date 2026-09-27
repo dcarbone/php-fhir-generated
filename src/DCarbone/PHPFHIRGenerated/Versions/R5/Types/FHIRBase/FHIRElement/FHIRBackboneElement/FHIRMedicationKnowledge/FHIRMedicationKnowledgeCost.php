@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -126,6 +125,12 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
         self::FIELD_TYPE => [
             MinOccursRule::NAME => 1,
         ],
+        self::FIELD_COST_MONEY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_COST_CODEABLE_CONCEPT => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -153,8 +158,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      *
      * The category of the cost information. For example, manufacturers' cost, patient
      * cost, claim reimbursement cost, actual acquisition cost.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -164,8 +167,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source or owner that assigns the price to the medication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $source;
@@ -175,9 +176,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication. (choose any one of cost*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
+     * of the medication.
      */
     #[FHIRMoney]
     protected FHIRMoney $costMoney;
@@ -188,9 +187,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication. (choose any one of cost*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * of the medication.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $costCodeableConcept;
@@ -199,13 +196,8 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
     /**
      * FHIRMedicationKnowledgeCost Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod> $effectiveDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $source
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $costMoney
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $costCodeableConcept
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -277,9 +269,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date range for which the cost information of the medication is effective.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectiveDate
-     * @return static
      */
     public function addEffectiveDate(FHIRPeriod $effectiveDate): self
     {
@@ -296,9 +285,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date range for which the cost information of the medication is effective.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod ...$effectiveDate
-     * @return static
      */
     public function setEffectiveDate(FHIRPeriod ...$effectiveDate): self
     {
@@ -318,8 +304,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      *
      * The category of the cost information. For example, manufacturers' cost, patient
      * cost, claim reimbursement cost, actual acquisition cost.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -334,9 +318,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      *
      * The category of the cost information. For example, manufacturers' cost, patient
      * cost, claim reimbursement cost, actual acquisition cost.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -354,8 +335,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source or owner that assigns the price to the medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSource(): null|FHIRString
     {
@@ -368,9 +347,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source or owner that assigns the price to the medication.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $source
-     * @return static
      */
     public function setSource(null|string|FHIRStringPrimitive|FHIRString $source): self
     {
@@ -391,9 +367,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication. (choose any one of cost*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
+     * of the medication.
      */
     public function getCostMoney(): null|FHIRMoney
     {
@@ -406,10 +380,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication. (choose any one of cost*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $costMoney
-     * @return static
+     * of the medication.
      */
     public function setCostMoney(null|FHIRMoney $costMoney): self
     {
@@ -428,9 +399,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication. (choose any one of cost*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * of the medication.
      */
     public function getCostCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -444,10 +413,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
-     * of the medication. (choose any one of cost*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $costCodeableConcept
-     * @return static
+     * of the medication.
      */
     public function setCostCodeableConcept(null|FHIRCodeableConcept $costCodeableConcept): self
     {
@@ -461,10 +427,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -524,10 +487,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -567,10 +526,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

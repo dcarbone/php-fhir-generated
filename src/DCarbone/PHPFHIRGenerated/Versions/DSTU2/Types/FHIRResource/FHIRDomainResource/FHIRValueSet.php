@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -93,7 +91,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
@@ -184,8 +181,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * a specification, model, design or an instance. This SHALL be a URL, SHOULD be
      * globally unique, and SHOULD be an address at which this value set is (or will
      * be) published.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $url;
@@ -197,8 +192,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * Formal identifier that is used to identify this value set when it is represented
      * in other formats, or referenced in a specification, model, design or an
      * instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -210,8 +203,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * Used to identify this version of the value set when it is referenced in a
      * specification, model, design or instance. This is an arbitrary value managed by
      * the profile author manually and the value should be a timestamp.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -221,8 +212,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the value set.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -233,8 +222,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * The status of the value set.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $status;
@@ -245,8 +232,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * This valueset was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $experimental;
@@ -256,8 +241,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the value set.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $publisher;
@@ -282,8 +265,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * the business version changes, if it does, and it must change if the status code
      * changes. In addition, it should change when the substantive content of the
      * implementation guide changes (e.g. the 'content logical definition').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -296,8 +277,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If a locked date is defined, then the Content Logical Definition must be
      * evaluated using the current version of all referenced code system(s) and value
      * set instances as of the locked date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $lockedDate;
@@ -310,8 +289,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * for definition, "the semantic space" to be included in the value set, conditions
      * of use, etc. The description may include a list of expected usages for the value
      * set and can also describe the approach taken to build the value set.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -335,8 +312,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * If this is set to 'true', then no new versions of the content logical definition
      * can be created. Note: Other metadata might still change.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $immutable;
@@ -346,8 +321,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this value set is needed and why it has been constrained as it has.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $requirements;
@@ -359,8 +332,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A copyright statement relating to the value set and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * value set.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $copyright;
@@ -369,8 +340,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is intended to be used with an extensible binding or not.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $extensible;
@@ -380,8 +349,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A definition of a code system, inlined into the value set (as a packaging
      * convenience). Note that the inline code system may be used from other value sets
      * by referring to its (codeSystem.system) directly.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
      */
     #[FHIRValueSetCodeSystem]
     protected FHIRValueSetCodeSystem $codeSystem;
@@ -390,8 +357,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A set of criteria that provide the content logical definition of the value set
      * by including or excluding codes from outside this value set.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
      */
     #[FHIRValueSetCompose]
     protected FHIRValueSetCompose $compose;
@@ -401,8 +366,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A value set can also be "expanded", where the value set is turned into a simple
      * collection of enumerated codes. This element holds the expansion, if it has been
      * performed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
      */
     #[FHIRValueSetExpansion]
     protected FHIRValueSetExpansion $expansion;
@@ -410,33 +373,11 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
     /* constructor.php:61 */
     /**
      * FHIRValueSet Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $url
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $experimental
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $publisher
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContact> $contact
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $lockedDate
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept> $useContext
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $immutable
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $requirements
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $copyright
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $extensible
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem $codeSystem
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose $compose
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion $expansion
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -558,8 +499,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * a specification, model, design or an instance. This SHALL be a URL, SHOULD be
      * globally unique, and SHOULD be an address at which this value set is (or will
      * be) published.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getUrl(): null|FHIRUri
     {
@@ -575,9 +514,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * a specification, model, design or an instance. This SHALL be a URL, SHOULD be
      * globally unique, and SHOULD be an address at which this value set is (or will
      * be) published.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
     {
@@ -600,8 +536,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * Formal identifier that is used to identify this value set when it is represented
      * in other formats, or referenced in a specification, model, design or an
      * instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -616,9 +550,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * Formal identifier that is used to identify this value set when it is represented
      * in other formats, or referenced in a specification, model, design or an
      * instance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -638,8 +569,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * Used to identify this version of the value set when it is referenced in a
      * specification, model, design or instance. This is an arbitrary value managed by
      * the profile author manually and the value should be a timestamp.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -654,9 +583,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * Used to identify this version of the value set when it is referenced in a
      * specification, model, design or instance. This is an arbitrary value managed by
      * the profile author manually and the value should be a timestamp.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -677,8 +603,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the value set.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -691,9 +615,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the value set.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -715,8 +636,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * The status of the value set.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode
      */
     public function getStatus(): null|FHIRCode
     {
@@ -730,9 +649,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * the Narrative, or extensions
      *
      * The status of the value set.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $status
-     * @return static
      */
     public function setStatus(null|string|FHIRCodePrimitive|FHIRCode $status): self
     {
@@ -754,8 +670,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * This valueset was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     public function getExperimental(): null|FHIRBoolean
     {
@@ -769,9 +683,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * This valueset was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $experimental
-     * @return static
      */
     public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental): self
     {
@@ -792,8 +703,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the value set.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getPublisher(): null|FHIRString
     {
@@ -806,9 +715,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the value set.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $publisher
-     * @return static
      */
     public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher): self
     {
@@ -850,9 +756,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Contacts to assist a user in finding and communicating with the publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContact $contact
-     * @return static
      */
     public function addContact(FHIRValueSetContact $contact): self
     {
@@ -867,9 +770,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Contacts to assist a user in finding and communicating with the publisher.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContact ...$contact
-     * @return static
      */
     public function setContact(FHIRValueSetContact ...$contact): self
     {
@@ -893,8 +793,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * the business version changes, if it does, and it must change if the status code
      * changes. In addition, it should change when the substantive content of the
      * implementation guide changes (e.g. the 'content logical definition').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -913,9 +811,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * the business version changes, if it does, and it must change if the status code
      * changes. In addition, it should change when the substantive content of the
      * implementation guide changes (e.g. the 'content logical definition').
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -939,8 +834,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If a locked date is defined, then the Content Logical Definition must be
      * evaluated using the current version of all referenced code system(s) and value
      * set instances as of the locked date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate
      */
     public function getLockedDate(): null|FHIRDate
     {
@@ -956,9 +849,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If a locked date is defined, then the Content Logical Definition must be
      * evaluated using the current version of all referenced code system(s) and value
      * set instances as of the locked date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $lockedDate
-     * @return static
      */
     public function setLockedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lockedDate): self
     {
@@ -982,8 +872,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * for definition, "the semantic space" to be included in the value set, conditions
      * of use, etc. The description may include a list of expected usages for the value
      * set and can also describe the approach taken to build the value set.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -999,9 +887,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * for definition, "the semantic space" to be included in the value set, conditions
      * of use, etc. The description may include a list of expected usages for the value
      * set and can also describe the approach taken to build the value set.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1053,9 +938,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of value set definitions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $useContext
-     * @return static
      */
     public function addUseContext(FHIRCodeableConcept $useContext): self
     {
@@ -1075,9 +957,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of value set definitions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept ...$useContext
-     * @return static
      */
     public function setUseContext(FHIRCodeableConcept ...$useContext): self
     {
@@ -1095,8 +974,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * If this is set to 'true', then no new versions of the content logical definition
      * can be created. Note: Other metadata might still change.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     public function getImmutable(): null|FHIRBoolean
     {
@@ -1109,9 +986,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * If this is set to 'true', then no new versions of the content logical definition
      * can be created. Note: Other metadata might still change.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $immutable
-     * @return static
      */
     public function setImmutable(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $immutable): self
     {
@@ -1132,8 +1006,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this value set is needed and why it has been constrained as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getRequirements(): null|FHIRString
     {
@@ -1146,9 +1018,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this value set is needed and why it has been constrained as it has.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $requirements
-     * @return static
      */
     public function setRequirements(null|string|FHIRStringPrimitive|FHIRString $requirements): self
     {
@@ -1171,8 +1040,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A copyright statement relating to the value set and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * value set.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getCopyright(): null|FHIRString
     {
@@ -1187,9 +1054,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A copyright statement relating to the value set and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * value set.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $copyright
-     * @return static
      */
     public function setCopyright(null|string|FHIRStringPrimitive|FHIRString $copyright): self
     {
@@ -1209,8 +1073,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is intended to be used with an extensible binding or not.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean
      */
     public function getExtensible(): null|FHIRBoolean
     {
@@ -1222,9 +1084,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is intended to be used with an extensible binding or not.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $extensible
-     * @return static
      */
     public function setExtensible(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $extensible): self
     {
@@ -1245,8 +1104,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A definition of a code system, inlined into the value set (as a packaging
      * convenience). Note that the inline code system may be used from other value sets
      * by referring to its (codeSystem.system) directly.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
      */
     public function getCodeSystem(): null|FHIRValueSetCodeSystem
     {
@@ -1259,9 +1116,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A definition of a code system, inlined into the value set (as a packaging
      * convenience). Note that the inline code system may be used from other value sets
      * by referring to its (codeSystem.system) directly.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem $codeSystem
-     * @return static
      */
     public function setCodeSystem(null|FHIRValueSetCodeSystem $codeSystem): self
     {
@@ -1278,8 +1132,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A set of criteria that provide the content logical definition of the value set
      * by including or excluding codes from outside this value set.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
      */
     public function getCompose(): null|FHIRValueSetCompose
     {
@@ -1291,9 +1143,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * A set of criteria that provide the content logical definition of the value set
      * by including or excluding codes from outside this value set.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose $compose
-     * @return static
      */
     public function setCompose(null|FHIRValueSetCompose $compose): self
     {
@@ -1311,8 +1160,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A value set can also be "expanded", where the value set is turned into a simple
      * collection of enumerated codes. This element holds the expansion, if it has been
      * performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
      */
     public function getExpansion(): null|FHIRValueSetExpansion
     {
@@ -1325,9 +1172,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
      * A value set can also be "expanded", where the value set is turned into a simple
      * collection of enumerated codes. This element holds the expansion, if it has been
      * performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion $expansion
-     * @return static
      */
     public function setExpansion(null|FHIRValueSetExpansion $expansion): self
     {
@@ -1341,10 +1185,7 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRValueSet $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRValueSet
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1564,11 +1405,6 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1764,10 +1600,7 @@ class FHIRValueSet extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRValueSet $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRValueSet
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

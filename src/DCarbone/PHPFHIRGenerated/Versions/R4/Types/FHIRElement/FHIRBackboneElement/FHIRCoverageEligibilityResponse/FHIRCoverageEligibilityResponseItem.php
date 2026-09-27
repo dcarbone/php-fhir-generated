@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -138,8 +138,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -150,8 +148,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This contains the product, service, drug or other billing code for the item.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $productOrService;
@@ -174,8 +170,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is eligible for the provision of the product or service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $provider;
@@ -185,8 +179,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * True if the indicated class of service is excluded from the plan, missing or
      * False indicates the product or service is included in the coverage.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $excluded;
@@ -196,8 +188,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short name or tag for the benefit.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -207,8 +197,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A richer description of the benefit or services covered.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -220,8 +208,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Is a flag to indicate whether the benefits refer to in-network providers or
      * out-of-network providers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $network;
@@ -232,8 +218,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the benefits apply to an individual or to the family.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $unit;
@@ -245,8 +229,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual visits'.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $term;
@@ -266,8 +248,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * A boolean flag indicating whether a preauthorization is required prior to actual
      * service delivery.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $authorizationRequired;
@@ -291,8 +271,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * A web location for obtaining requirements or descriptive information regarding
      * the preauthorization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $authorizationUrl;
@@ -301,22 +279,10 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     /**
      * FHIRCoverageEligibilityResponseItem Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $productOrService
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $modifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $provider
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $excluded
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $network
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unit
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $term
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit> $benefit
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $authorizationRequired
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $authorizationSupporting
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $authorizationUrl
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -401,8 +367,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -417,9 +381,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -438,8 +399,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This contains the product, service, drug or other billing code for the item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getProductOrService(): null|FHIRCodeableConcept
     {
@@ -453,9 +412,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This contains the product, service, drug or other billing code for the item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $productOrService
-     * @return static
      */
     public function setProductOrService(null|FHIRCodeableConcept $productOrService): self
     {
@@ -502,9 +458,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $modifier
-     * @return static
      */
     public function addModifier(FHIRCodeableConcept $modifier): self
     {
@@ -523,9 +476,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$modifier
-     * @return static
      */
     public function setModifier(FHIRCodeableConcept ...$modifier): self
     {
@@ -543,8 +493,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is eligible for the provision of the product or service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getProvider(): null|FHIRReference
     {
@@ -557,9 +505,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is eligible for the provision of the product or service.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $provider
-     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -577,8 +522,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * True if the indicated class of service is excluded from the plan, missing or
      * False indicates the product or service is included in the coverage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getExcluded(): null|FHIRBoolean
     {
@@ -591,9 +534,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * True if the indicated class of service is excluded from the plan, missing or
      * False indicates the product or service is included in the coverage.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $excluded
-     * @return static
      */
     public function setExcluded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $excluded): self
     {
@@ -614,8 +554,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short name or tag for the benefit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -628,9 +566,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short name or tag for the benefit.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -651,8 +586,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A richer description of the benefit or services covered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -665,9 +598,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A richer description of the benefit or services covered.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -690,8 +620,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Is a flag to indicate whether the benefits refer to in-network providers or
      * out-of-network providers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getNetwork(): null|FHIRCodeableConcept
     {
@@ -706,9 +634,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Is a flag to indicate whether the benefits refer to in-network providers or
      * out-of-network providers.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $network
-     * @return static
      */
     public function setNetwork(null|FHIRCodeableConcept $network): self
     {
@@ -727,8 +652,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the benefits apply to an individual or to the family.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getUnit(): null|FHIRCodeableConcept
     {
@@ -742,9 +665,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the benefits apply to an individual or to the family.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unit
-     * @return static
      */
     public function setUnit(null|FHIRCodeableConcept $unit): self
     {
@@ -764,8 +684,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual visits'.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getTerm(): null|FHIRCodeableConcept
     {
@@ -780,9 +698,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual visits'.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $term
-     * @return static
      */
     public function setTerm(null|FHIRCodeableConcept $term): self
     {
@@ -823,9 +738,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * CoverageEligibilityRequest resource.
      *
      * Benefits used to date.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit $benefit
-     * @return static
      */
     public function addBenefit(FHIRCoverageEligibilityResponseBenefit $benefit): self
     {
@@ -841,9 +753,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * CoverageEligibilityRequest resource.
      *
      * Benefits used to date.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit ...$benefit
-     * @return static
      */
     public function setBenefit(FHIRCoverageEligibilityResponseBenefit ...$benefit): self
     {
@@ -861,8 +770,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * A boolean flag indicating whether a preauthorization is required prior to actual
      * service delivery.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean
      */
     public function getAuthorizationRequired(): null|FHIRBoolean
     {
@@ -875,9 +782,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * A boolean flag indicating whether a preauthorization is required prior to actual
      * service delivery.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $authorizationRequired
-     * @return static
      */
     public function setAuthorizationRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $authorizationRequired): self
     {
@@ -927,9 +831,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Codes or comments regarding information or actions associated with the
      * preauthorization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $authorizationSupporting
-     * @return static
      */
     public function addAuthorizationSupporting(FHIRCodeableConcept $authorizationSupporting): self
     {
@@ -948,9 +849,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * Codes or comments regarding information or actions associated with the
      * preauthorization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$authorizationSupporting
-     * @return static
      */
     public function setAuthorizationSupporting(FHIRCodeableConcept ...$authorizationSupporting): self
     {
@@ -969,8 +867,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * A web location for obtaining requirements or descriptive information regarding
      * the preauthorization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getAuthorizationUrl(): null|FHIRUri
     {
@@ -984,9 +880,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      *
      * A web location for obtaining requirements or descriptive information regarding
      * the preauthorization.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $authorizationUrl
-     * @return static
      */
     public function setAuthorizationUrl(null|string|FHIRUriPrimitive|FHIRUri $authorizationUrl): self
     {
@@ -1003,10 +896,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1116,10 +1006,6 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1228,10 +1114,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -141,8 +140,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      *
      * A list of conditions/problems/diagnoses that this episode of care is intended to
      * be providing care for.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $condition;
@@ -154,8 +151,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      *
      * Role that this diagnosis has within the episode of care (e.g. admission,
      * billing, discharge …).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $role;
@@ -165,8 +160,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $rank;
@@ -175,11 +168,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
     /**
      * FHIREpisodeOfCareDiagnosis Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $condition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $role
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $rank
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -219,8 +208,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      *
      * A list of conditions/problems/diagnoses that this episode of care is intended to
      * be providing care for.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getCondition(): null|FHIRReference
     {
@@ -234,9 +221,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      *
      * A list of conditions/problems/diagnoses that this episode of care is intended to
      * be providing care for.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $condition
-     * @return static
      */
     public function setCondition(null|FHIRReference $condition): self
     {
@@ -256,8 +240,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      *
      * Role that this diagnosis has within the episode of care (e.g. admission,
      * billing, discharge …).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getRole(): null|FHIRCodeableConcept
     {
@@ -272,9 +254,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      *
      * Role that this diagnosis has within the episode of care (e.g. admission,
      * billing, discharge …).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $role
-     * @return static
      */
     public function setRole(null|FHIRCodeableConcept $role): self
     {
@@ -292,8 +271,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt
      */
     public function getRank(): null|FHIRPositiveInt
     {
@@ -306,9 +283,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $rank
-     * @return static
      */
     public function setRank(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $rank): self
     {
@@ -325,10 +299,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -384,10 +355,6 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -415,10 +382,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementD
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -153,8 +152,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * Allows identification of which elements have their cardinalities impacted by the
      * constraint. Will not be referenced for constraints that do not affect
      * cardinality.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $key;
@@ -164,8 +161,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of why this constraint is necessary or appropriate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $requirements;
@@ -175,8 +170,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * Identifies the impact constraint violation has on the conformance of the
      * instance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConstraintSeverity
      */
     #[FHIRConstraintSeverity]
     protected FHIRConstraintSeverity $severity;
@@ -187,8 +180,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * Text that can be used to describe the constraint in messages identifying that
      * the constraint has been violated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $human;
@@ -199,8 +190,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * A [FHIRPath](http://hl7.org/fluentpath) expression of constraint that can be
      * executed to see if this constraint is met.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $expression;
@@ -211,8 +200,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * An XPath expression of constraint that can be executed to see if this constraint
      * is met.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $xpath;
@@ -222,8 +209,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to the original source of the constraint, for traceability purposes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $source;
@@ -232,14 +217,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
     /**
      * FHIRElementDefinitionConstraint Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $key
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $requirements
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConstraintSeverityList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConstraintSeverity $severity
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $human
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $expression
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $xpath
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $source
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -297,8 +274,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * Allows identification of which elements have their cardinalities impacted by the
      * constraint. Will not be referenced for constraints that do not affect
      * cardinality.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId
      */
     public function getKey(): null|FHIRId
     {
@@ -316,9 +291,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * Allows identification of which elements have their cardinalities impacted by the
      * constraint. Will not be referenced for constraints that do not affect
      * cardinality.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $key
-     * @return static
      */
     public function setKey(null|string|FHIRIdPrimitive|FHIRId $key): self
     {
@@ -339,8 +311,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of why this constraint is necessary or appropriate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getRequirements(): null|FHIRString
     {
@@ -353,9 +323,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of why this constraint is necessary or appropriate.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $requirements
-     * @return static
      */
     public function setRequirements(null|string|FHIRStringPrimitive|FHIRString $requirements): self
     {
@@ -376,8 +343,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * Identifies the impact constraint violation has on the conformance of the
      * instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConstraintSeverity
      */
     public function getSeverity(): null|FHIRConstraintSeverity
     {
@@ -390,9 +355,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * Identifies the impact constraint violation has on the conformance of the
      * instance.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConstraintSeverityList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConstraintSeverity $severity
-     * @return static
      */
     public function setSeverity(null|string|FHIRConstraintSeverityList|FHIRConstraintSeverity $severity): self
     {
@@ -414,8 +376,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * Text that can be used to describe the constraint in messages identifying that
      * the constraint has been violated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getHuman(): null|FHIRString
     {
@@ -429,9 +389,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * Text that can be used to describe the constraint in messages identifying that
      * the constraint has been violated.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $human
-     * @return static
      */
     public function setHuman(null|string|FHIRStringPrimitive|FHIRString $human): self
     {
@@ -453,8 +410,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * A [FHIRPath](http://hl7.org/fluentpath) expression of constraint that can be
      * executed to see if this constraint is met.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getExpression(): null|FHIRString
     {
@@ -468,9 +423,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * A [FHIRPath](http://hl7.org/fluentpath) expression of constraint that can be
      * executed to see if this constraint is met.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $expression
-     * @return static
      */
     public function setExpression(null|string|FHIRStringPrimitive|FHIRString $expression): self
     {
@@ -492,8 +444,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * An XPath expression of constraint that can be executed to see if this constraint
      * is met.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getXpath(): null|FHIRString
     {
@@ -507,9 +457,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * An XPath expression of constraint that can be executed to see if this constraint
      * is met.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $xpath
-     * @return static
      */
     public function setXpath(null|string|FHIRStringPrimitive|FHIRString $xpath): self
     {
@@ -530,8 +477,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to the original source of the constraint, for traceability purposes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getSource(): null|FHIRUri
     {
@@ -544,9 +489,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to the original source of the constraint, for traceability purposes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $source
-     * @return static
      */
     public function setSource(null|string|FHIRUriPrimitive|FHIRUri $source): self
     {
@@ -563,10 +505,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -676,10 +615,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -757,10 +692,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

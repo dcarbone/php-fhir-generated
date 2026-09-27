@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -142,8 +141,6 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country code for where this name applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $country;
@@ -155,8 +152,6 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
      *
      * Jurisdiction code for where this name applies. A jurisdiction may be a sub- or
      * supra-national entity (e.g. a state or a geographic region).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $jurisdiction;
@@ -167,8 +162,6 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language code for this name.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $language;
@@ -177,11 +170,7 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
     /**
      * FHIRMedicinalProductDefinitionUsage Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $country
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $jurisdiction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $language
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -221,8 +210,6 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country code for where this name applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCountry(): null|FHIRCodeableConcept
     {
@@ -236,9 +223,6 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country code for where this name applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $country
-     * @return static
      */
     public function setCountry(null|FHIRCodeableConcept $country): self
     {
@@ -258,8 +242,6 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
      *
      * Jurisdiction code for where this name applies. A jurisdiction may be a sub- or
      * supra-national entity (e.g. a state or a geographic region).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getJurisdiction(): null|FHIRCodeableConcept
     {
@@ -274,9 +256,6 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
      *
      * Jurisdiction code for where this name applies. A jurisdiction may be a sub- or
      * supra-national entity (e.g. a state or a geographic region).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function setJurisdiction(null|FHIRCodeableConcept $jurisdiction): self
     {
@@ -295,8 +274,6 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language code for this name.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getLanguage(): null|FHIRCodeableConcept
     {
@@ -310,9 +287,6 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Language code for this name.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $language
-     * @return static
      */
     public function setLanguage(null|FHIRCodeableConcept $language): self
     {
@@ -326,10 +300,7 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionUsage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionUsage
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -377,10 +348,6 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -403,10 +370,7 @@ class FHIRMedicinalProductDefinitionUsage extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionUsage $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionUsage
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -153,8 +153,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Mondays.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $monday;
@@ -163,8 +161,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Tuesdays.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $tuesday;
@@ -173,8 +169,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Wednesdays.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $wednesday;
@@ -183,8 +177,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Thursdays.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $thursday;
@@ -193,8 +185,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Fridays.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $friday;
@@ -203,8 +193,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Saturdays.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $saturday;
@@ -213,8 +201,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Sundays.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $sunday;
@@ -227,8 +213,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * week, so it is expected that this value will be 2 or more. e.g. For recurring
      * every second week this interval would be 2, or every third week the interval
      * would be 3.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $weekInterval;
@@ -237,16 +221,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
     /**
      * FHIRAppointmentWeeklyTemplate Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $monday
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $tuesday
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $wednesday
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $thursday
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $friday
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $saturday
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $sunday
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $weekInterval
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -304,8 +279,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Mondays.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getMonday(): null|FHIRBoolean
     {
@@ -317,9 +290,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Mondays.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $monday
-     * @return static
      */
     public function setMonday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $monday): self
     {
@@ -339,8 +309,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Tuesdays.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getTuesday(): null|FHIRBoolean
     {
@@ -352,9 +320,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Tuesdays.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $tuesday
-     * @return static
      */
     public function setTuesday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $tuesday): self
     {
@@ -374,8 +339,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Wednesdays.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getWednesday(): null|FHIRBoolean
     {
@@ -387,9 +350,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Wednesdays.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $wednesday
-     * @return static
      */
     public function setWednesday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wednesday): self
     {
@@ -409,8 +369,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Thursdays.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getThursday(): null|FHIRBoolean
     {
@@ -422,9 +380,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Thursdays.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $thursday
-     * @return static
      */
     public function setThursday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $thursday): self
     {
@@ -444,8 +399,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Fridays.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getFriday(): null|FHIRBoolean
     {
@@ -457,9 +410,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Fridays.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $friday
-     * @return static
      */
     public function setFriday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $friday): self
     {
@@ -479,8 +429,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Saturdays.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getSaturday(): null|FHIRBoolean
     {
@@ -492,9 +440,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Saturdays.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $saturday
-     * @return static
      */
     public function setSaturday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $saturday): self
     {
@@ -514,8 +459,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Sundays.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getSunday(): null|FHIRBoolean
     {
@@ -527,9 +470,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates that recurring appointments should occur on Sundays.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $sunday
-     * @return static
      */
     public function setSunday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $sunday): self
     {
@@ -553,8 +493,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * week, so it is expected that this value will be 2 or more. e.g. For recurring
      * every second week this interval would be 2, or every third week the interval
      * would be 3.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getWeekInterval(): null|FHIRPositiveInt
     {
@@ -570,9 +508,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * week, so it is expected that this value will be 2 or more. e.g. For recurring
      * every second week this interval would be 2, or every third week the interval
      * would be 3.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $weekInterval
-     * @return static
      */
     public function setWeekInterval(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $weekInterval): self
     {
@@ -589,10 +524,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentWeeklyTemplate $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentWeeklyTemplate
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -714,10 +646,6 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -805,10 +733,7 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentWeeklyTemplate $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentWeeklyTemplate
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

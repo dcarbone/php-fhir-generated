@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -119,8 +119,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      *
      * Date of an accident event related to the products and services contained in the
      * claim.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $date;
@@ -133,8 +131,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * The type or context of the accident event for the purposes of selection of
      * potential insurance coverages and determination of coordination between
      * insurers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -148,8 +144,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical location of the accident event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress
      */
     #[FHIRAddress]
     protected FHIRAddress $locationAddress;
@@ -159,8 +153,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical location of the accident event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $locationReference;
@@ -169,12 +161,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
     /**
      * FHIRExplanationOfBenefitAccident Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress $locationAddress
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $locationReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -219,8 +206,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      *
      * Date of an accident event related to the products and services contained in the
      * claim.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate
      */
     public function getDate(): null|FHIRDate
     {
@@ -235,9 +220,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      *
      * Date of an accident event related to the products and services contained in the
      * claim.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDate $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date): self
     {
@@ -261,8 +243,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * The type or context of the accident event for the purposes of selection of
      * potential insurance coverages and determination of coordination between
      * insurers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -278,9 +258,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * The type or context of the accident event for the purposes of selection of
      * potential insurance coverages and determination of coordination between
      * insurers.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -302,8 +279,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical location of the accident event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress
      */
     public function getLocationAddress(): null|FHIRAddress
     {
@@ -320,9 +295,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical location of the accident event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAddress $locationAddress
-     * @return static
      */
     public function setLocationAddress(null|FHIRAddress $locationAddress): self
     {
@@ -340,8 +312,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical location of the accident event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getLocationReference(): null|FHIRReference
     {
@@ -354,9 +324,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical location of the accident event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $locationReference
-     * @return static
      */
     public function setLocationReference(null|FHIRReference $locationReference): self
     {
@@ -370,10 +337,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAccident $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAccident
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -431,10 +395,6 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -467,10 +427,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAccident $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAccident
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

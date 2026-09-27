@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -130,8 +130,6 @@ class FHIRRatio extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the numerator.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $numerator;
@@ -143,8 +141,6 @@ class FHIRRatio extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the denominator.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $denominator;
@@ -153,9 +149,6 @@ class FHIRRatio extends FHIRElement
     /**
      * FHIRRatio Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $numerator
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $denominator
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -190,8 +183,6 @@ class FHIRRatio extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the numerator.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getNumerator(): null|FHIRQuantity
     {
@@ -206,9 +197,6 @@ class FHIRRatio extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the numerator.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $numerator
-     * @return static
      */
     public function setNumerator(null|FHIRQuantity $numerator): self
     {
@@ -228,8 +216,6 @@ class FHIRRatio extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the denominator.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getDenominator(): null|FHIRQuantity
     {
@@ -244,9 +230,6 @@ class FHIRRatio extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the denominator.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $denominator
-     * @return static
      */
     public function setDenominator(null|FHIRQuantity $denominator): self
     {
@@ -260,10 +243,7 @@ class FHIRRatio extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -307,10 +287,6 @@ class FHIRRatio extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -328,10 +304,7 @@ class FHIRRatio extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

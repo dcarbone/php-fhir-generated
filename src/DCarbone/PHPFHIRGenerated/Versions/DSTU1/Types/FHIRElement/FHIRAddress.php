@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -127,8 +127,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this address.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddressUse
      */
     #[FHIRAddressUse]
     protected FHIRAddressUse $use;
@@ -137,8 +135,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A full text representation of the address.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $text;
@@ -158,8 +154,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the city, town, village or other community or delivery center.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $city;
@@ -169,8 +163,6 @@ class FHIRAddress extends FHIRElement
      *
      * Sub-unit of a country with limited sovereignty in a federally organized country.
      * A code may be used if codes are in common use (i.e. US 2 letter state codes).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $state;
@@ -179,8 +171,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A postal code designating a region defined by the postal service.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $zip;
@@ -189,8 +179,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Country - a nation as commonly understood or generally accepted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $country;
@@ -200,8 +188,6 @@ class FHIRAddress extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when address was/is in use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -210,15 +196,7 @@ class FHIRAddress extends FHIRElement
     /**
      * FHIRAddress Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRAddressUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddressUse $use
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $text
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString> $line
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $city
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $state
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $zip
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $country
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -274,8 +252,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this address.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddressUse
      */
     public function getUse(): null|FHIRAddressUse
     {
@@ -287,9 +263,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this address.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRAddressUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddressUse $use
-     * @return static
      */
     public function setUse(null|string|FHIRAddressUseList|FHIRAddressUse $use): self
     {
@@ -309,8 +282,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A full text representation of the address.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getText(): null|FHIRString
     {
@@ -322,9 +293,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A full text representation of the address.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $text
-     * @return static
      */
     public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
     {
@@ -370,9 +338,6 @@ class FHIRAddress extends FHIRElement
      *
      * This component contains the house number, apartment number, street name, street
      * direction, P.O. Box number, delivery hints, and similar address information.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $line
-     * @return static
      */
     public function addLine(string|FHIRStringPrimitive|FHIRString $line): self
     {
@@ -392,9 +357,6 @@ class FHIRAddress extends FHIRElement
      *
      * This component contains the house number, apartment number, street name, street
      * direction, P.O. Box number, delivery hints, and similar address information.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString ...$line
-     * @return static
      */
     public function setLine(string|FHIRStringPrimitive|FHIRString ...$line): self
     {
@@ -418,8 +380,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the city, town, village or other community or delivery center.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getCity(): null|FHIRString
     {
@@ -431,9 +391,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the city, town, village or other community or delivery center.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $city
-     * @return static
      */
     public function setCity(null|string|FHIRStringPrimitive|FHIRString $city): self
     {
@@ -454,8 +411,6 @@ class FHIRAddress extends FHIRElement
      *
      * Sub-unit of a country with limited sovereignty in a federally organized country.
      * A code may be used if codes are in common use (i.e. US 2 letter state codes).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getState(): null|FHIRString
     {
@@ -468,9 +423,6 @@ class FHIRAddress extends FHIRElement
      *
      * Sub-unit of a country with limited sovereignty in a federally organized country.
      * A code may be used if codes are in common use (i.e. US 2 letter state codes).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $state
-     * @return static
      */
     public function setState(null|string|FHIRStringPrimitive|FHIRString $state): self
     {
@@ -490,8 +442,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A postal code designating a region defined by the postal service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getZip(): null|FHIRString
     {
@@ -503,9 +453,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A postal code designating a region defined by the postal service.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $zip
-     * @return static
      */
     public function setZip(null|string|FHIRStringPrimitive|FHIRString $zip): self
     {
@@ -525,8 +472,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Country - a nation as commonly understood or generally accepted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getCountry(): null|FHIRString
     {
@@ -538,9 +483,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Country - a nation as commonly understood or generally accepted.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $country
-     * @return static
      */
     public function setCountry(null|string|FHIRStringPrimitive|FHIRString $country): self
     {
@@ -561,8 +503,6 @@ class FHIRAddress extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when address was/is in use.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -575,9 +515,6 @@ class FHIRAddress extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when address was/is in use.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -591,10 +528,7 @@ class FHIRAddress extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -698,10 +632,6 @@ class FHIRAddress extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -781,10 +711,7 @@ class FHIRAddress extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -32,57 +32,41 @@ class Response
 {
     /**
      * HTTP request method.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Client\HTTPMethodEnum
      */
     public HTTPMethodEnum $method;
 
     /**
      * Request URL.
-     *
-     * @var string
      */
     public string $url;
 
     /**
      * The serialized format used to encode the request, if applicable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum
      */
     public SerializeFormatEnum $requestFormat;
 
     /**
      * HTTP response status code.
-     *
-     * @var int
      */
     public int $code;
 
     /**
      * HTTP response headers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Client\ResponseHeaders
      */
     public ResponseHeaders $headers;
 
     /**
      * HTTP response body.
-     *
-     * @var string
      */
     public string $resp;
 
     /**
      * Client error.
-     *
-     * @var string
      */
     public string $err;
 
     /**
      * Client error number.
-     *
-     * @var int
      */
     public int $errno;
 
@@ -96,8 +80,6 @@ class Response
 
     /**
      * Return the HTTP request method used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Client\HTTPMethodEnum
      */
     public function getMethod(): null|HTTPMethodEnum
     {
@@ -106,8 +88,6 @@ class Response
 
     /**
      * Return the full URL used.
-     *
-     * @return null|string
      */
     public function getURL(): null|string
     {
@@ -116,8 +96,6 @@ class Response
 
     /**
      * Return the HTTP response code seen.
-     *
-     * @return null|int
      */
     public function getCode(): null|int
     {
@@ -126,8 +104,6 @@ class Response
 
     /**
      * Return the HTTP response headers seen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Client\ResponseHeaders
      */
     public function getHeaders(): null|ResponseHeaders
     {
@@ -136,8 +112,6 @@ class Response
 
     /**
      * Return the full response seen, if there was one.
-     *
-     * @return null|string
      */
     public function getResp(): null|string
     {
@@ -146,8 +120,6 @@ class Response
 
     /**
      * Client error message, if there was one.
-     *
-     * @return null|string
      */
     public function getErr(): null|string
     {
@@ -156,8 +128,6 @@ class Response
 
     /**
      * Client error code, if there was one.
-     *
-     * @return null|int
      */
     public function getErrno(): null|int
     {
@@ -167,8 +137,6 @@ class Response
     /**
      * Attempts to extract the serialization format from the response Content-Type header.  Returns null if response
      * headers were not parsed, if the Content-Type header is not present or parseable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum
      */
     public function getResponseFormat(): null|SerializeFormatEnum
     {

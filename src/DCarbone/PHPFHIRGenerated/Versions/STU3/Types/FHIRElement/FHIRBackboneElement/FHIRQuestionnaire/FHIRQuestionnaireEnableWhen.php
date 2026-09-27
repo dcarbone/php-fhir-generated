@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -165,8 +164,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $question;
@@ -176,8 +173,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An indication that this item should be enabled only if the specified question is
      * answered (hasAnswer=true) or not answered (hasAnswer=false).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $hasAnswer;
@@ -187,8 +182,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $answerBoolean;
@@ -200,8 +193,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $answerDecimal;
@@ -212,8 +203,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $answerInteger;
@@ -225,8 +214,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $answerDate;
@@ -240,8 +227,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $answerDateTime;
@@ -251,8 +236,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime
      */
     #[FHIRTime]
     protected FHIRTime $answerTime;
@@ -263,8 +246,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $answerString;
@@ -275,8 +256,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $answerUri;
@@ -287,8 +266,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     #[FHIRAttachment]
     protected FHIRAttachment $answerAttachment;
@@ -299,8 +276,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $answerCoding;
@@ -313,8 +288,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $answerQuantity;
@@ -325,8 +298,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $answerReference;
@@ -335,22 +306,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     /**
      * FHIRQuestionnaireEnableWhen Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $question
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $hasAnswer
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $answerBoolean
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $answerDecimal
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $answerInteger
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $answerDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $answerDateTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime $answerTime
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $answerString
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $answerUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $answerAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $answerCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $answerQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $answerReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -434,8 +390,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getQuestion(): null|FHIRString
     {
@@ -449,9 +403,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $question
-     * @return static
      */
     public function setQuestion(null|string|FHIRStringPrimitive|FHIRString $question): self
     {
@@ -472,8 +423,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An indication that this item should be enabled only if the specified question is
      * answered (hasAnswer=true) or not answered (hasAnswer=false).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getHasAnswer(): null|FHIRBoolean
     {
@@ -486,9 +435,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An indication that this item should be enabled only if the specified question is
      * answered (hasAnswer=true) or not answered (hasAnswer=false).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $hasAnswer
-     * @return static
      */
     public function setHasAnswer(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $hasAnswer): self
     {
@@ -509,8 +455,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getAnswerBoolean(): null|FHIRBoolean
     {
@@ -523,9 +467,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $answerBoolean
-     * @return static
      */
     public function setAnswerBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $answerBoolean): self
     {
@@ -548,8 +489,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     public function getAnswerDecimal(): null|FHIRDecimal
     {
@@ -564,9 +503,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $answerDecimal
-     * @return static
      */
     public function setAnswerDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $answerDecimal): self
     {
@@ -588,8 +524,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     public function getAnswerInteger(): null|FHIRInteger
     {
@@ -603,9 +537,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $answerInteger
-     * @return static
      */
     public function setAnswerInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $answerInteger): self
     {
@@ -628,8 +559,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate
      */
     public function getAnswerDate(): null|FHIRDate
     {
@@ -644,9 +573,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $answerDate
-     * @return static
      */
     public function setAnswerDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $answerDate): self
     {
@@ -671,8 +597,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime
      */
     public function getAnswerDateTime(): null|FHIRDateTime
     {
@@ -689,9 +613,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $answerDateTime
-     * @return static
      */
     public function setAnswerDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $answerDateTime): self
     {
@@ -712,8 +633,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime
      */
     public function getAnswerTime(): null|FHIRTime
     {
@@ -726,9 +645,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTime $answerTime
-     * @return static
      */
     public function setAnswerTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $answerTime): self
     {
@@ -750,8 +666,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getAnswerString(): null|FHIRString
     {
@@ -765,9 +679,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $answerString
-     * @return static
      */
     public function setAnswerString(null|string|FHIRStringPrimitive|FHIRString $answerString): self
     {
@@ -789,8 +700,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri
      */
     public function getAnswerUri(): null|FHIRUri
     {
@@ -804,9 +713,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $answerUri
-     * @return static
      */
     public function setAnswerUri(null|string|FHIRUriPrimitive|FHIRUri $answerUri): self
     {
@@ -828,8 +734,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment
      */
     public function getAnswerAttachment(): null|FHIRAttachment
     {
@@ -843,9 +747,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $answerAttachment
-     * @return static
      */
     public function setAnswerAttachment(null|FHIRAttachment $answerAttachment): self
     {
@@ -864,8 +765,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding
      */
     public function getAnswerCoding(): null|FHIRCoding
     {
@@ -879,9 +778,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $answerCoding
-     * @return static
      */
     public function setAnswerCoding(null|FHIRCoding $answerCoding): self
     {
@@ -902,8 +798,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     public function getAnswerQuantity(): null|FHIRQuantity
     {
@@ -919,9 +813,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $answerQuantity
-     * @return static
      */
     public function setAnswerQuantity(null|FHIRQuantity $answerQuantity): self
     {
@@ -940,8 +831,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getAnswerReference(): null|FHIRReference
     {
@@ -955,9 +844,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * An answer that the referenced question must match in order for the item to be
      * enabled.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $answerReference
-     * @return static
      */
     public function setAnswerReference(null|FHIRReference $answerReference): self
     {
@@ -971,10 +857,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1124,10 +1007,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1255,10 +1134,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

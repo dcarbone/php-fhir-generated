@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -141,8 +140,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies what progress is being made for the specific activity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityStatus
      */
     #[FHIRCarePlanActivityStatus]
     protected FHIRCarePlanActivityStatus $status;
@@ -152,8 +149,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * If true, indicates that the described activity is one that must NOT be engaged
      * in when following the plan.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $prohibited;
@@ -174,8 +169,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes about the execution of the activity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $notes;
@@ -185,8 +178,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $detail;
@@ -197,8 +188,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * A simple summary of details suitable for a general care plan system (e.g. form
      * driven) that doesn't know about specific resources such as procedure etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple
      */
     #[FHIRCarePlanSimple]
     protected FHIRCarePlanSimple $simple;
@@ -207,15 +196,9 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * FHIRCarePlanActivity Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive\FHIRXmlIdRef> $goal
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanActivityStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityStatus $status
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $prohibited
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $actionResulting
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $notes
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $detail
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple $simple
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -289,9 +272,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * Internal reference that identifies the goals that this activity is intended to
      * contribute towards meeting.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive\FHIRXmlIdRef $goal
-     * @return static
      */
     public function addGoal(string|FHIRXmlIdRef $goal): self
     {
@@ -308,9 +288,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * Internal reference that identifies the goals that this activity is intended to
      * contribute towards meeting.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive\FHIRXmlIdRef ...$goal
-     * @return static
      */
     public function setGoal(string|FHIRXmlIdRef ...$goal): self
     {
@@ -327,8 +304,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies what progress is being made for the specific activity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityStatus
      */
     public function getStatus(): null|FHIRCarePlanActivityStatus
     {
@@ -340,9 +315,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies what progress is being made for the specific activity.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanActivityStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRCarePlanActivityStatusList|FHIRCarePlanActivityStatus $status): self
     {
@@ -363,8 +335,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * If true, indicates that the described activity is one that must NOT be engaged
      * in when following the plan.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getProhibited(): null|FHIRBoolean
     {
@@ -377,9 +347,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * If true, indicates that the described activity is one that must NOT be engaged
      * in when following the plan.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $prohibited
-     * @return static
      */
     public function setProhibited(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $prohibited): self
     {
@@ -427,9 +394,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * Resources that describe follow-on actions resulting from the plan, such as drug
      * prescriptions, encounter records, appointments, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $actionResulting
-     * @return static
      */
     public function addActionResulting(FHIRResourceReference $actionResulting): self
     {
@@ -447,9 +411,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * Resources that describe follow-on actions resulting from the plan, such as drug
      * prescriptions, encounter records, appointments, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$actionResulting
-     * @return static
      */
     public function setActionResulting(FHIRResourceReference ...$actionResulting): self
     {
@@ -466,8 +427,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes about the execution of the activity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getNotes(): null|FHIRString
     {
@@ -479,9 +438,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes about the execution of the activity.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $notes
-     * @return static
      */
     public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes): self
     {
@@ -502,8 +458,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getDetail(): null|FHIRResourceReference
     {
@@ -516,9 +470,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $detail
-     * @return static
      */
     public function setDetail(null|FHIRResourceReference $detail): self
     {
@@ -537,8 +488,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * A simple summary of details suitable for a general care plan system (e.g. form
      * driven) that doesn't know about specific resources such as procedure etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple
      */
     public function getSimple(): null|FHIRCarePlanSimple
     {
@@ -552,9 +501,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * A simple summary of details suitable for a general care plan system (e.g. form
      * driven) that doesn't know about specific resources such as procedure etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple $simple
-     * @return static
      */
     public function setSimple(null|FHIRCarePlanSimple $simple): self
     {
@@ -568,10 +514,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -658,10 +601,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -723,10 +662,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

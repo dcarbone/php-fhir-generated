@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -130,8 +130,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $medicationCodeableConcept;
@@ -144,8 +142,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $medicationReference;
@@ -156,8 +152,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      *
      * This indicates the validity period of a prescription (stale dating the
      * Prescription).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $validityPeriod;
@@ -171,23 +165,17 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * does NOT include the original order dispense. This means that if an order
      * indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed
      * a total of 4 times and the patient can receive a total of 120 tablets.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $numberOfRepeatsAllowed;
     /**
      * The amount that is to be dispensed for one fill.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     #[FHIRSimpleQuantity]
     protected FHIRSimpleQuantity $quantity;
     /**
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $expectedSupplyDuration;
@@ -196,14 +184,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
     /**
      * FHIRMedicationOrderDispenseRequest Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $medicationReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $validityPeriod
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $numberOfRepeatsAllowed
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -258,8 +239,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getMedicationCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -276,9 +255,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
-     * @return static
      */
     public function setMedicationCodeableConcept(null|FHIRCodeableConcept $medicationCodeableConcept): self
     {
@@ -299,8 +275,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getMedicationReference(): null|FHIRReference
     {
@@ -316,9 +290,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $medicationReference
-     * @return static
      */
     public function setMedicationReference(null|FHIRReference $medicationReference): self
     {
@@ -337,8 +308,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      *
      * This indicates the validity period of a prescription (stale dating the
      * Prescription).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod
      */
     public function getValidityPeriod(): null|FHIRPeriod
     {
@@ -352,9 +321,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      *
      * This indicates the validity period of a prescription (stale dating the
      * Prescription).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $validityPeriod
-     * @return static
      */
     public function setValidityPeriod(null|FHIRPeriod $validityPeriod): self
     {
@@ -376,8 +342,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * does NOT include the original order dispense. This means that if an order
      * indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed
      * a total of 4 times and the patient can receive a total of 120 tablets.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt
      */
     public function getNumberOfRepeatsAllowed(): null|FHIRPositiveInt
     {
@@ -394,9 +358,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * does NOT include the original order dispense. This means that if an order
      * indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed
      * a total of 4 times and the patient can receive a total of 120 tablets.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $numberOfRepeatsAllowed
-     * @return static
      */
     public function setNumberOfRepeatsAllowed(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $numberOfRepeatsAllowed): self
     {
@@ -413,8 +374,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
 
     /**
      * The amount that is to be dispensed for one fill.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getQuantity(): null|FHIRSimpleQuantity
     {
@@ -423,9 +382,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
 
     /**
      * The amount that is to be dispensed for one fill.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRSimpleQuantity $quantity): self
     {
@@ -440,8 +396,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
     /**
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getExpectedSupplyDuration(): null|FHIRDuration
     {
@@ -451,9 +405,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
     /**
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
-     * @return static
      */
     public function setExpectedSupplyDuration(null|FHIRDuration $expectedSupplyDuration): self
     {
@@ -467,10 +418,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationOrder\FHIRMedicationOrderDispenseRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationOrder\FHIRMedicationOrderDispenseRequest
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -532,10 +480,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -578,10 +522,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationOrder\FHIRMedicationOrderDispenseRequest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationOrder\FHIRMedicationOrderDispenseRequest
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

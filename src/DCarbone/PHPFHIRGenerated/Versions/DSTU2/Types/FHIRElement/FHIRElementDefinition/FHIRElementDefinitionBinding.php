@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElement
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -133,8 +132,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * Indicates the degree of conformance expectations associated with this binding -
      * that is, the degree to which the provided value set must be adhered to in the
      * instances.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBindingStrength
      */
     #[FHIRBindingStrength]
     protected FHIRBindingStrength $strength;
@@ -144,8 +141,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the intended use of this particular set of codes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -156,8 +151,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $valueSetUri;
@@ -168,8 +161,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $valueSetReference;
@@ -178,11 +169,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
     /**
      * FHIRElementDefinitionBinding Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRBindingStrengthList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBindingStrength $strength
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $valueSetUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $valueSetReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -224,8 +210,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * Indicates the degree of conformance expectations associated with this binding -
      * that is, the degree to which the provided value set must be adhered to in the
      * instances.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBindingStrength
      */
     public function getStrength(): null|FHIRBindingStrength
     {
@@ -239,9 +223,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * Indicates the degree of conformance expectations associated with this binding -
      * that is, the degree to which the provided value set must be adhered to in the
      * instances.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRBindingStrengthList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBindingStrength $strength
-     * @return static
      */
     public function setStrength(null|string|FHIRBindingStrengthList|FHIRBindingStrength $strength): self
     {
@@ -262,8 +243,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the intended use of this particular set of codes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -276,9 +255,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the intended use of this particular set of codes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -300,8 +276,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri
      */
     public function getValueSetUri(): null|FHIRUri
     {
@@ -315,9 +289,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $valueSetUri
-     * @return static
      */
     public function setValueSetUri(null|string|FHIRUriPrimitive|FHIRUri $valueSetUri): self
     {
@@ -339,8 +310,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getValueSetReference(): null|FHIRReference
     {
@@ -354,9 +323,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $valueSetReference
-     * @return static
      */
     public function setValueSetReference(null|FHIRReference $valueSetReference): self
     {
@@ -370,10 +336,7 @@ class FHIRElementDefinitionBinding extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -445,10 +408,6 @@ class FHIRElementDefinitionBinding extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -491,10 +450,7 @@ class FHIRElementDefinitionBinding extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionBinding
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

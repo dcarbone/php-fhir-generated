@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -155,8 +155,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of a type that is
      * comparable to the valueFilter.value[x] element for the filter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -168,8 +166,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * A search parameter defined on the specified type of the DataRequirement, and
      * which searches on elements of a type compatible with the type of the
      * valueFilter.value[x] for the filter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $searchParam;
@@ -180,8 +176,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * the Narrative, or extensions
      *
      * The comparator to be used to determine whether the value is matching.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $comparator;
@@ -194,9 +188,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the filter. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * The value of the filter.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -205,9 +197,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the filter. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * The value of the filter.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -216,9 +206,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the filter. (choose any one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * The value of the filter.
      */
     #[FHIRDuration]
     protected FHIRDuration $valueDuration;
@@ -227,13 +215,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
     /**
      * FHIRDataRequirementValueFilter Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $path
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $searchParam
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $comparator
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -289,8 +270,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of a type that is
      * comparable to the valueFilter.value[x] element for the filter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPath(): null|FHIRString
     {
@@ -310,9 +289,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of a type that is
      * comparable to the valueFilter.value[x] element for the filter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $path
-     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -335,8 +311,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * A search parameter defined on the specified type of the DataRequirement, and
      * which searches on elements of a type compatible with the type of the
      * valueFilter.value[x] for the filter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSearchParam(): null|FHIRString
     {
@@ -351,9 +325,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * A search parameter defined on the specified type of the DataRequirement, and
      * which searches on elements of a type compatible with the type of the
      * valueFilter.value[x] for the filter.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $searchParam
-     * @return static
      */
     public function setSearchParam(null|string|FHIRStringPrimitive|FHIRString $searchParam): self
     {
@@ -375,8 +346,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * the Narrative, or extensions
      *
      * The comparator to be used to determine whether the value is matching.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getComparator(): null|FHIRCode
     {
@@ -390,9 +359,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * the Narrative, or extensions
      *
      * The comparator to be used to determine whether the value is matching.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $comparator
-     * @return static
      */
     public function setComparator(null|string|FHIRCodePrimitive|FHIRCode $comparator): self
     {
@@ -416,9 +382,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the filter. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * The value of the filter.
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -434,10 +398,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The value of the filter. (choose any one of value*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
-     * @return static
+     * The value of the filter.
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -457,9 +418,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the filter. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * The value of the filter.
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -471,10 +430,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the filter. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $valuePeriod
-     * @return static
+     * The value of the filter.
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -491,9 +447,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the filter. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * The value of the filter.
      */
     public function getValueDuration(): null|FHIRDuration
     {
@@ -505,10 +459,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the filter. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $valueDuration
-     * @return static
+     * The value of the filter.
      */
     public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
@@ -522,10 +473,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementValueFilter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementValueFilter
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -609,10 +557,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -670,10 +614,7 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementValueFilter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementValueFilter
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

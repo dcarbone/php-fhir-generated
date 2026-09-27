@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -137,8 +137,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of dose or rate specified, for example, ordered or calculated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -148,8 +146,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $doseRange;
@@ -161,8 +157,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $doseQuantity;
@@ -173,8 +167,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio
      */
     #[FHIRRatio]
     protected FHIRRatio $rateRatio;
@@ -184,8 +176,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $rateRange;
@@ -197,8 +187,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $rateQuantity;
@@ -207,14 +195,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
     /**
      * FHIRDosageDoseAndRate Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $doseRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $doseQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $rateRatio
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $rateRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $rateQuantity
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -266,8 +247,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of dose or rate specified, for example, ordered or calculated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -281,9 +260,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of dose or rate specified, for example, ordered or calculated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -301,8 +277,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange
      */
     public function getDoseRange(): null|FHIRRange
     {
@@ -315,9 +289,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $doseRange
-     * @return static
      */
     public function setDoseRange(null|FHIRRange $doseRange): self
     {
@@ -337,8 +308,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getDoseQuantity(): null|FHIRQuantity
     {
@@ -353,9 +322,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $doseQuantity
-     * @return static
      */
     public function setDoseQuantity(null|FHIRQuantity $doseQuantity): self
     {
@@ -374,8 +340,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio
      */
     public function getRateRatio(): null|FHIRRatio
     {
@@ -389,9 +353,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRatio $rateRatio
-     * @return static
      */
     public function setRateRatio(null|FHIRRatio $rateRatio): self
     {
@@ -409,8 +370,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange
      */
     public function getRateRange(): null|FHIRRange
     {
@@ -423,9 +382,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange $rateRange
-     * @return static
      */
     public function setRateRange(null|FHIRRange $rateRange): self
     {
@@ -445,8 +401,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getRateQuantity(): null|FHIRQuantity
     {
@@ -461,9 +415,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $rateQuantity
-     * @return static
      */
     public function setRateQuantity(null|FHIRQuantity $rateQuantity): self
     {
@@ -477,10 +428,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -534,10 +482,6 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -575,10 +519,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

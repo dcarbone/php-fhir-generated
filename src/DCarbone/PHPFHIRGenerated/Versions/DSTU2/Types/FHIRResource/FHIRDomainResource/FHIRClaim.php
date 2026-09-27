@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -95,7 +93,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUse;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRClaimTypeList;
@@ -182,8 +179,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The category of claim this is.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRClaimType
      */
     #[FHIRClaimType]
     protected FHIRClaimType $type;
@@ -205,8 +200,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the specification on which this instance relies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $ruleset;
@@ -216,8 +209,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the specification from which the original instance was created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $originalRuleset;
@@ -230,8 +221,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $created;
@@ -241,8 +230,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Insurer Identifier, typical BIN number (6 digit).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $target;
@@ -253,8 +240,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The provider which is responsible for the bill, claim pre-determination,
      * pre-authorization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $provider;
@@ -265,8 +250,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The organization which is responsible for the bill, claim pre-determination,
      * pre-authorization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $organization;
@@ -276,8 +259,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Complete (Bill or Claim), Proposed (Pre-Authorization), Exploratory
      * (Pre-determination).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUse
      */
     #[FHIRUse]
     protected FHIRUse $use;
@@ -287,8 +268,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Immediate (stat), best effort (normal), deferred (deferred).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $priority;
@@ -301,8 +280,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * that funds in the amount of the expected Benefit be reserved ('Patient' or
      * 'Provider') to pay for the Benefits determined on the subsequent claim(s).
      * 'None' explicitly indicates no funds reserving is requested.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $fundsReserve;
@@ -312,8 +289,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the invoice/claim/pre-determination or pre-authorization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $enterer;
@@ -323,8 +298,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $facility;
@@ -334,8 +307,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prescription to support the dispensing of Pharmacy or Vision products.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $prescription;
@@ -346,8 +317,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Original prescription to support the dispensing of pharmacy services,
      * medications or products.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $originalPrescription;
@@ -356,8 +325,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * The party to be reimbursed for the services.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimPayee
      */
     #[FHIRClaimPayee]
     protected FHIRClaimPayee $payee;
@@ -368,8 +335,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The referral resource which lists the date, practitioner, reason and other
      * supporting information.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $referral;
@@ -400,8 +365,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient Resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -432,8 +395,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of school for over-aged dependents.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $school;
@@ -444,8 +405,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of an accident which these services are addressing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $accident;
@@ -455,8 +414,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of accident: work, auto, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $accidentType;
@@ -509,39 +466,14 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
     /* constructor.php:61 */
     /**
      * FHIRClaim Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRClaimTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRClaimType $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $ruleset
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $originalRuleset
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $created
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $target
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $provider
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $organization
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUse $use
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $priority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $fundsReserve
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $enterer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $facility
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $prescription
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $originalPrescription
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimPayee $payee
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $referral
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDiagnosis> $diagnosis
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $condition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $patient
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCoverage> $coverage
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $exception
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $school
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $accident
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $accidentType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $interventionException
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem> $item
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding> $additionalMaterials
@@ -703,8 +635,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The category of claim this is.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRClaimType
      */
     public function getType(): null|FHIRClaimType
     {
@@ -716,9 +646,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The category of claim this is.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRClaimTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRClaimType $type
-     * @return static
      */
     public function setType(null|string|FHIRClaimTypeList|FHIRClaimType $type): self
     {
@@ -766,9 +693,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The business identifier for the instance: invoice number, claim number,
      * pre-determination or pre-authorization number.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -786,9 +710,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The business identifier for the instance: invoice number, claim number,
      * pre-determination or pre-authorization number.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -806,8 +727,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the specification on which this instance relies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getRuleset(): null|FHIRCoding
     {
@@ -820,9 +739,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the specification on which this instance relies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $ruleset
-     * @return static
      */
     public function setRuleset(null|FHIRCoding $ruleset): self
     {
@@ -840,8 +756,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the specification from which the original instance was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getOriginalRuleset(): null|FHIRCoding
     {
@@ -854,9 +768,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The version of the specification from which the original instance was created.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $originalRuleset
-     * @return static
      */
     public function setOriginalRuleset(null|FHIRCoding $originalRuleset): self
     {
@@ -877,8 +788,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getCreated(): null|FHIRDateTime
     {
@@ -894,9 +803,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $created
-     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -917,8 +823,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Insurer Identifier, typical BIN number (6 digit).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getTarget(): null|FHIRReference
     {
@@ -931,9 +835,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Insurer Identifier, typical BIN number (6 digit).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $target
-     * @return static
      */
     public function setTarget(null|FHIRReference $target): self
     {
@@ -952,8 +853,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The provider which is responsible for the bill, claim pre-determination,
      * pre-authorization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getProvider(): null|FHIRReference
     {
@@ -967,9 +866,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The provider which is responsible for the bill, claim pre-determination,
      * pre-authorization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $provider
-     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -988,8 +884,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The organization which is responsible for the bill, claim pre-determination,
      * pre-authorization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getOrganization(): null|FHIRReference
     {
@@ -1003,9 +897,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The organization which is responsible for the bill, claim pre-determination,
      * pre-authorization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $organization
-     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -1023,8 +914,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Complete (Bill or Claim), Proposed (Pre-Authorization), Exploratory
      * (Pre-determination).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUse
      */
     public function getUse(): null|FHIRUse
     {
@@ -1037,9 +926,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Complete (Bill or Claim), Proposed (Pre-Authorization), Exploratory
      * (Pre-determination).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUse $use
-     * @return static
      */
     public function setUse(null|string|FHIRUseList|FHIRUse $use): self
     {
@@ -1060,8 +946,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Immediate (stat), best effort (normal), deferred (deferred).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getPriority(): null|FHIRCoding
     {
@@ -1074,9 +958,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Immediate (stat), best effort (normal), deferred (deferred).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $priority
-     * @return static
      */
     public function setPriority(null|FHIRCoding $priority): self
     {
@@ -1097,8 +978,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * that funds in the amount of the expected Benefit be reserved ('Patient' or
      * 'Provider') to pay for the Benefits determined on the subsequent claim(s).
      * 'None' explicitly indicates no funds reserving is requested.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getFundsReserve(): null|FHIRCoding
     {
@@ -1114,9 +993,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * that funds in the amount of the expected Benefit be reserved ('Patient' or
      * 'Provider') to pay for the Benefits determined on the subsequent claim(s).
      * 'None' explicitly indicates no funds reserving is requested.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $fundsReserve
-     * @return static
      */
     public function setFundsReserve(null|FHIRCoding $fundsReserve): self
     {
@@ -1134,8 +1010,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the invoice/claim/pre-determination or pre-authorization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getEnterer(): null|FHIRReference
     {
@@ -1148,9 +1022,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the invoice/claim/pre-determination or pre-authorization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $enterer
-     * @return static
      */
     public function setEnterer(null|FHIRReference $enterer): self
     {
@@ -1168,8 +1039,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getFacility(): null|FHIRReference
     {
@@ -1182,9 +1051,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $facility
-     * @return static
      */
     public function setFacility(null|FHIRReference $facility): self
     {
@@ -1202,8 +1068,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prescription to support the dispensing of Pharmacy or Vision products.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getPrescription(): null|FHIRReference
     {
@@ -1216,9 +1080,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prescription to support the dispensing of Pharmacy or Vision products.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $prescription
-     * @return static
      */
     public function setPrescription(null|FHIRReference $prescription): self
     {
@@ -1237,8 +1098,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Original prescription to support the dispensing of pharmacy services,
      * medications or products.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getOriginalPrescription(): null|FHIRReference
     {
@@ -1252,9 +1111,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Original prescription to support the dispensing of pharmacy services,
      * medications or products.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $originalPrescription
-     * @return static
      */
     public function setOriginalPrescription(null|FHIRReference $originalPrescription): self
     {
@@ -1271,8 +1127,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * The party to be reimbursed for the services.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimPayee
      */
     public function getPayee(): null|FHIRClaimPayee
     {
@@ -1284,9 +1138,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * The party to be reimbursed for the services.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimPayee $payee
-     * @return static
      */
     public function setPayee(null|FHIRClaimPayee $payee): self
     {
@@ -1305,8 +1156,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The referral resource which lists the date, practitioner, reason and other
      * supporting information.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getReferral(): null|FHIRReference
     {
@@ -1320,9 +1169,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * The referral resource which lists the date, practitioner, reason and other
      * supporting information.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $referral
-     * @return static
      */
     public function setReferral(null|FHIRReference $referral): self
     {
@@ -1363,9 +1209,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * Ordered list of patient diagnosis for which care is sought.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDiagnosis $diagnosis
-     * @return static
      */
     public function addDiagnosis(FHIRClaimDiagnosis $diagnosis): self
     {
@@ -1381,9 +1224,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * Ordered list of patient diagnosis for which care is sought.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDiagnosis ...$diagnosis
-     * @return static
      */
     public function setDiagnosis(FHIRClaimDiagnosis ...$diagnosis): self
     {
@@ -1426,9 +1266,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of patient conditions for which care is sought.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $condition
-     * @return static
      */
     public function addCondition(FHIRCoding $condition): self
     {
@@ -1445,9 +1282,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of patient conditions for which care is sought.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$condition
-     * @return static
      */
     public function setCondition(FHIRCoding ...$condition): self
     {
@@ -1465,8 +1299,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient Resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -1479,9 +1311,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient Resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -1522,9 +1351,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * Financial instrument by which payment information for health care.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCoverage $coverage
-     * @return static
      */
     public function addCoverage(FHIRClaimCoverage $coverage): self
     {
@@ -1540,9 +1366,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * Financial instrument by which payment information for health care.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCoverage ...$coverage
-     * @return static
      */
     public function setCoverage(FHIRClaimCoverage ...$coverage): self
     {
@@ -1585,9 +1408,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Factors which may influence the applicability of coverage.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $exception
-     * @return static
      */
     public function addException(FHIRCoding $exception): self
     {
@@ -1604,9 +1424,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Factors which may influence the applicability of coverage.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$exception
-     * @return static
      */
     public function setException(FHIRCoding ...$exception): self
     {
@@ -1624,8 +1441,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of school for over-aged dependents.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString
      */
     public function getSchool(): null|FHIRString
     {
@@ -1638,9 +1453,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of school for over-aged dependents.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $school
-     * @return static
      */
     public function setSchool(null|string|FHIRStringPrimitive|FHIRString $school): self
     {
@@ -1662,8 +1474,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of an accident which these services are addressing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate
      */
     public function getAccident(): null|FHIRDate
     {
@@ -1677,9 +1487,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of an accident which these services are addressing.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $accident
-     * @return static
      */
     public function setAccident(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $accident): self
     {
@@ -1700,8 +1507,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of accident: work, auto, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getAccidentType(): null|FHIRCoding
     {
@@ -1714,9 +1519,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of accident: work, auto, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $accidentType
-     * @return static
      */
     public function setAccidentType(null|FHIRCoding $accidentType): self
     {
@@ -1761,9 +1563,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * A list of intervention and exception codes which may influence the adjudication
      * of the claim.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $interventionException
-     * @return static
      */
     public function addInterventionException(FHIRCoding $interventionException): self
     {
@@ -1781,9 +1580,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * A list of intervention and exception codes which may influence the adjudication
      * of the claim.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$interventionException
-     * @return static
      */
     public function setInterventionException(FHIRCoding ...$interventionException): self
     {
@@ -1824,9 +1620,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * First tier of goods and services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem $item
-     * @return static
      */
     public function addItem(FHIRClaimItem $item): self
     {
@@ -1842,9 +1635,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      * a patient which is provided to an insurer for payment recovery.
      *
      * First tier of goods and services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem ...$item
-     * @return static
      */
     public function setItem(FHIRClaimItem ...$item): self
     {
@@ -1889,9 +1679,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Code to indicate that Xrays, images, emails, documents, models or attachments
      * are being sent in support of this submission.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $additionalMaterials
-     * @return static
      */
     public function addAdditionalMaterials(FHIRCoding $additionalMaterials): self
     {
@@ -1909,9 +1696,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * Code to indicate that Xrays, images, emails, documents, models or attachments
      * are being sent in support of this submission.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding ...$additionalMaterials
-     * @return static
      */
     public function setAdditionalMaterials(FHIRCoding ...$additionalMaterials): self
     {
@@ -1954,9 +1738,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * A list of teeth which would be expected but are not found due to having been
      * previously extracted or for other reasons.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimMissingTeeth $missingTeeth
-     * @return static
      */
     public function addMissingTeeth(FHIRClaimMissingTeeth $missingTeeth): self
     {
@@ -1973,9 +1754,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
      *
      * A list of teeth which would be expected but are not found due to having been
      * previously extracted or for other reasons.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimMissingTeeth ...$missingTeeth
-     * @return static
      */
     public function setMissingTeeth(FHIRClaimMissingTeeth ...$missingTeeth): self
     {
@@ -1989,10 +1767,7 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRClaim $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRClaim
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2168,11 +1943,6 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2392,10 +2162,7 @@ class FHIRClaim extends FHIRDomainResource implements VersionContainedTypeInterf
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRClaim $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRClaim
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

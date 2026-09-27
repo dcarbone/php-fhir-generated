@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -131,8 +131,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or
      * how long the cache length on the receiver should be (if a sender).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $reliableCache;
@@ -144,8 +142,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the capability statement. For example, the process for
      * becoming an authorized messaging exchange partner.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $documentation;
@@ -176,11 +172,8 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     /**
      * FHIRCapabilityStatementMessaging Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint> $endpoint
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $reliableCache
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $documentation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage> $supportedMessage
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEvent> $event
      * @param null|string[] $fhirComments
@@ -256,9 +249,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * An endpoint (network accessible address) to which messages and/or replies are to
      * be sent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint $endpoint
-     * @return static
      */
     public function addEndpoint(FHIRCapabilityStatementEndpoint $endpoint): self
     {
@@ -276,9 +266,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * An endpoint (network accessible address) to which messages and/or replies are to
      * be sent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint ...$endpoint
-     * @return static
      */
     public function setEndpoint(FHIRCapabilityStatementEndpoint ...$endpoint): self
     {
@@ -297,8 +284,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or
      * how long the cache length on the receiver should be (if a sender).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt
      */
     public function getReliableCache(): null|FHIRUnsignedInt
     {
@@ -312,9 +297,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or
      * how long the cache length on the receiver should be (if a sender).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $reliableCache
-     * @return static
      */
     public function setReliableCache(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $reliableCache): self
     {
@@ -337,8 +319,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the capability statement. For example, the process for
      * becoming an authorized messaging exchange partner.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDocumentation(): null|FHIRString
     {
@@ -353,9 +333,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the capability statement. For example, the process for
      * becoming an authorized messaging exchange partner.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -401,9 +378,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * statement of required or desired server implementation.
      *
      * References to message definitions for messages this system can send or receive.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage $supportedMessage
-     * @return static
      */
     public function addSupportedMessage(FHIRCapabilityStatementSupportedMessage $supportedMessage): self
     {
@@ -420,9 +394,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * statement of required or desired server implementation.
      *
      * References to message definitions for messages this system can send or receive.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage ...$supportedMessage
-     * @return static
      */
     public function setSupportedMessage(FHIRCapabilityStatementSupportedMessage ...$supportedMessage): self
     {
@@ -465,9 +436,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * statement of required or desired server implementation.
      *
      * A description of the solution's support for an event at this end-point.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEvent $event
-     * @return static
      */
     public function addEvent(FHIRCapabilityStatementEvent $event): self
     {
@@ -484,9 +452,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * statement of required or desired server implementation.
      *
      * A description of the solution's support for an event at this end-point.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEvent ...$event
-     * @return static
      */
     public function setEvent(FHIRCapabilityStatementEvent ...$event): self
     {
@@ -500,10 +465,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -571,10 +533,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -623,10 +581,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

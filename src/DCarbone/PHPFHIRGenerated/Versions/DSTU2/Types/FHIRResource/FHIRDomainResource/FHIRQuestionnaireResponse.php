@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -86,7 +84,6 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuestionnaire
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRQuestionnaireResponseStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
@@ -145,8 +142,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A business identifier assigned to a particular completed (or partially
      * completed) questionnaire.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     #[FHIRIdentifier]
     protected FHIRIdentifier $identifier;
@@ -157,8 +152,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * Indicates the Questionnaire resource that defines the form for which answers are
      * being provided.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $questionnaire;
@@ -167,8 +160,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire response as a whole.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuestionnaireResponseStatus
      */
     #[FHIRQuestionnaireResponseStatus]
     protected FHIRQuestionnaireResponseStatus $status;
@@ -180,8 +171,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * The subject of the questionnaire response. This could be a patient,
      * organization, practitioner, device, etc. This is who/what the answers apply to,
      * but is not necessarily the source of information.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -192,8 +181,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * Person who received the answers to the questions in the QuestionnaireResponse
      * and recorded them in the system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $author;
@@ -207,8 +194,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * The date and/or time that this version of the questionnaire response was
      * authored.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $authored;
@@ -218,8 +203,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who answered the questions about the subject.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $source;
@@ -231,8 +214,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * Encounter during which this set of questionnaire response were collected. When
      * there were multiple encounters, this is the one considered most relevant to the
      * context of the answers.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -243,8 +224,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A group of questions to a possibly similarly grouped set of questions in the
      * questionnaire response.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup
      */
     #[FHIRQuestionnaireResponseGroup]
     protected FHIRQuestionnaireResponseGroup $group;
@@ -252,23 +231,9 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
     /* constructor.php:61 */
     /**
      * FHIRQuestionnaireResponse Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $questionnaire
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRQuestionnaireResponseStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuestionnaireResponseStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $author
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $authored
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $source
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup $group
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -348,8 +313,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A business identifier assigned to a particular completed (or partially
      * completed) questionnaire.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier(): null|FHIRIdentifier
     {
@@ -363,9 +326,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A business identifier assigned to a particular completed (or partially
      * completed) questionnaire.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function setIdentifier(null|FHIRIdentifier $identifier): self
     {
@@ -384,8 +344,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * Indicates the Questionnaire resource that defines the form for which answers are
      * being provided.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getQuestionnaire(): null|FHIRReference
     {
@@ -399,9 +357,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * Indicates the Questionnaire resource that defines the form for which answers are
      * being provided.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $questionnaire
-     * @return static
      */
     public function setQuestionnaire(null|FHIRReference $questionnaire): self
     {
@@ -418,8 +373,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire response as a whole.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuestionnaireResponseStatus
      */
     public function getStatus(): null|FHIRQuestionnaireResponseStatus
     {
@@ -431,9 +384,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire response as a whole.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRQuestionnaireResponseStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuestionnaireResponseStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRQuestionnaireResponseStatusList|FHIRQuestionnaireResponseStatus $status): self
     {
@@ -456,8 +406,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * The subject of the questionnaire response. This could be a patient,
      * organization, practitioner, device, etc. This is who/what the answers apply to,
      * but is not necessarily the source of information.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -472,9 +420,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * The subject of the questionnaire response. This could be a patient,
      * organization, practitioner, device, etc. This is who/what the answers apply to,
      * but is not necessarily the source of information.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -493,8 +438,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * Person who received the answers to the questions in the QuestionnaireResponse
      * and recorded them in the system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getAuthor(): null|FHIRReference
     {
@@ -508,9 +451,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * Person who received the answers to the questions in the QuestionnaireResponse
      * and recorded them in the system.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $author
-     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -532,8 +472,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * The date and/or time that this version of the questionnaire response was
      * authored.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime
      */
     public function getAuthored(): null|FHIRDateTime
     {
@@ -550,9 +488,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * The date and/or time that this version of the questionnaire response was
      * authored.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $authored
-     * @return static
      */
     public function setAuthored(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authored): self
     {
@@ -573,8 +508,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who answered the questions about the subject.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getSource(): null|FHIRReference
     {
@@ -587,9 +520,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who answered the questions about the subject.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $source
-     * @return static
      */
     public function setSource(null|FHIRReference $source): self
     {
@@ -609,8 +539,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * Encounter during which this set of questionnaire response were collected. When
      * there were multiple encounters, this is the one considered most relevant to the
      * context of the answers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -625,9 +553,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      * Encounter during which this set of questionnaire response were collected. When
      * there were multiple encounters, this is the one considered most relevant to the
      * context of the answers.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -646,8 +571,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A group of questions to a possibly similarly grouped set of questions in the
      * questionnaire response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup
      */
     public function getGroup(): null|FHIRQuestionnaireResponseGroup
     {
@@ -661,9 +584,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
      *
      * A group of questions to a possibly similarly grouped set of questions in the
      * questionnaire response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup $group
-     * @return static
      */
     public function setGroup(null|FHIRQuestionnaireResponseGroup $group): self
     {
@@ -677,10 +597,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -792,11 +709,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -883,10 +795,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements VersionCon
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource\FHIRQuestionnaireResponse
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

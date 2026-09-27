@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -121,8 +121,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A category for this property, e.g. Physical, Chemical, Enzymatic.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $category;
@@ -133,8 +131,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Property type e.g. viscosity, pH, isoelectric point.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -145,8 +141,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * Parameters that were used in the measurement of a property (e.g. for viscosity:
      * measured at 20C with a pH of 7.1).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $parameters;
@@ -157,8 +151,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * A substance upon which a defining property depends (e.g. for solubility: in
      * water, in alcohol).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $definingSubstanceReference;
@@ -170,8 +162,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * A substance upon which a defining property depends (e.g. for solubility: in
      * water, in alcohol).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $definingSubstanceCodeableConcept;
@@ -183,8 +173,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantitative value for this property.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $amountQuantity;
@@ -194,8 +182,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Quantitative value for this property.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $amountString;
@@ -204,15 +190,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
     /**
      * FHIRSubstanceSpecificationProperty Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $parameters
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $definingSubstanceReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $definingSubstanceCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -268,8 +246,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A category for this property, e.g. Physical, Chemical, Enzymatic.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory(): null|FHIRCodeableConcept
     {
@@ -283,9 +259,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A category for this property, e.g. Physical, Chemical, Enzymatic.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function setCategory(null|FHIRCodeableConcept $category): self
     {
@@ -304,8 +277,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Property type e.g. viscosity, pH, isoelectric point.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -319,9 +290,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Property type e.g. viscosity, pH, isoelectric point.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -340,8 +308,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * Parameters that were used in the measurement of a property (e.g. for viscosity:
      * measured at 20C with a pH of 7.1).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getParameters(): null|FHIRString
     {
@@ -355,9 +321,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * Parameters that were used in the measurement of a property (e.g. for viscosity:
      * measured at 20C with a pH of 7.1).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $parameters
-     * @return static
      */
     public function setParameters(null|string|FHIRStringPrimitive|FHIRString $parameters): self
     {
@@ -379,8 +342,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * A substance upon which a defining property depends (e.g. for solubility: in
      * water, in alcohol).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getDefiningSubstanceReference(): null|FHIRReference
     {
@@ -394,9 +355,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * A substance upon which a defining property depends (e.g. for solubility: in
      * water, in alcohol).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $definingSubstanceReference
-     * @return static
      */
     public function setDefiningSubstanceReference(null|FHIRReference $definingSubstanceReference): self
     {
@@ -416,8 +374,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * A substance upon which a defining property depends (e.g. for solubility: in
      * water, in alcohol).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDefiningSubstanceCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -432,9 +388,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * A substance upon which a defining property depends (e.g. for solubility: in
      * water, in alcohol).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $definingSubstanceCodeableConcept
-     * @return static
      */
     public function setDefiningSubstanceCodeableConcept(null|FHIRCodeableConcept $definingSubstanceCodeableConcept): self
     {
@@ -454,8 +407,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantitative value for this property.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
      */
     public function getAmountQuantity(): null|FHIRQuantity
     {
@@ -470,9 +421,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantitative value for this property.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
-     * @return static
      */
     public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
     {
@@ -490,8 +438,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Quantitative value for this property.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getAmountString(): null|FHIRString
     {
@@ -504,9 +450,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Quantitative value for this property.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
-     * @return static
      */
     public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
     {
@@ -523,10 +466,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -598,10 +538,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -654,10 +590,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

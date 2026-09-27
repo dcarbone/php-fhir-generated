@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -76,7 +75,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionTypeMap;
@@ -134,16 +132,12 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * value except that: * fullUrl can be empty on a POST (although it does not need
      * to when specifying a temporary id for reference in the bundle) * Results from
      * operations might involve resources that are not identified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $fullUrl;
     /**
      * The Resource for the entry. The purpose/meaning of the resource is determined by
      * the Bundle.type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface
      */
     #[FHIRResourceContainer]
     protected VersionContainedTypeInterface $resource;
@@ -151,8 +145,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A container for a collection of resources.
      *
      * Information about the search process that lead to the creation of this entry.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
      */
     #[FHIRBundleSearch]
     protected FHIRBundleSearch $search;
@@ -162,8 +154,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * Additional information about how this entry should be processed as part of a
      * transaction or batch. For history, it shows how the entry was processed to
      * create the version contained in the entry.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
      */
     #[FHIRBundleRequest]
     protected FHIRBundleRequest $request;
@@ -173,8 +163,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * Indicates the results of processing the corresponding 'request' entry in the
      * batch or transaction being responded to or what the results of an operation
      * where when returning history.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
      */
     #[FHIRBundleResponse]
     protected FHIRBundleResponse $response;
@@ -183,14 +171,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
     /**
      * FHIRBundleEntry Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink> $link
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $fullUrl
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $resource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch $search
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest $request
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse $response
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -262,9 +244,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A container for a collection of resources.
      *
      * A series of links that provide context to this entry.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink $link
-     * @return static
      */
     public function addLink(FHIRBundleLink $link): self
     {
@@ -279,9 +258,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A container for a collection of resources.
      *
      * A series of links that provide context to this entry.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink ...$link
-     * @return static
      */
     public function setLink(FHIRBundleLink ...$link): self
     {
@@ -305,8 +281,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * value except that: * fullUrl can be empty on a POST (although it does not need
      * to when specifying a temporary id for reference in the bundle) * Results from
      * operations might involve resources that are not identified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri
      */
     public function getFullUrl(): null|FHIRUri
     {
@@ -325,9 +299,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * value except that: * fullUrl can be empty on a POST (although it does not need
      * to when specifying a temporary id for reference in the bundle) * Results from
      * operations might involve resources that are not identified.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $fullUrl
-     * @return static
      */
     public function setFullUrl(null|string|FHIRUriPrimitive|FHIRUri $fullUrl): self
     {
@@ -345,8 +316,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
     /**
      * The Resource for the entry. The purpose/meaning of the resource is determined by
      * the Bundle.type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface
      */
     public function getResource(): null|VersionContainedTypeInterface
     {
@@ -356,9 +325,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
     /**
      * The Resource for the entry. The purpose/meaning of the resource is determined by
      * the Bundle.type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface $resource
-     * @return static
      */
     public function setResource(null|FHIRResourceContainer|VersionContainedTypeInterface $resource): self
     {
@@ -377,8 +343,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A container for a collection of resources.
      *
      * Information about the search process that lead to the creation of this entry.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
      */
     public function getSearch(): null|FHIRBundleSearch
     {
@@ -389,9 +353,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A container for a collection of resources.
      *
      * Information about the search process that lead to the creation of this entry.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch $search
-     * @return static
      */
     public function setSearch(null|FHIRBundleSearch $search): self
     {
@@ -409,8 +370,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * Additional information about how this entry should be processed as part of a
      * transaction or batch. For history, it shows how the entry was processed to
      * create the version contained in the entry.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
      */
     public function getRequest(): null|FHIRBundleRequest
     {
@@ -423,9 +382,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * Additional information about how this entry should be processed as part of a
      * transaction or batch. For history, it shows how the entry was processed to
      * create the version contained in the entry.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest $request
-     * @return static
      */
     public function setRequest(null|FHIRBundleRequest $request): self
     {
@@ -443,8 +399,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * Indicates the results of processing the corresponding 'request' entry in the
      * batch or transaction being responded to or what the results of an operation
      * where when returning history.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
      */
     public function getResponse(): null|FHIRBundleResponse
     {
@@ -457,9 +411,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * Indicates the results of processing the corresponding 'request' entry in the
      * batch or transaction being responded to or what the results of an operation
      * where when returning history.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse $response
-     * @return static
      */
     public function setResponse(null|FHIRBundleResponse $response): self
     {
@@ -473,10 +424,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -542,10 +490,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -592,10 +536,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

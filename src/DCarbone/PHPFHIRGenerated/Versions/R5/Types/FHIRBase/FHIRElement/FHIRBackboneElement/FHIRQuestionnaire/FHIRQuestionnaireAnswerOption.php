@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -88,6 +88,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
@@ -136,6 +137,24 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
 
     /* class_default.php:75 */
     private const _FHIR_VALIDATION_RULES = [
+        self::FIELD_VALUE_INTEGER => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_DATE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_TIME => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_STRING => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_CODING => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_REFERENCE => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -153,10 +172,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * A potential answer that's allowed as the answer to this question.
      */
     #[FHIRInteger]
     protected FHIRInteger $valueInteger;
@@ -166,10 +182,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * A potential answer that's allowed as the answer to this question.
      */
     #[FHIRDate]
     protected FHIRDate $valueDate;
@@ -177,10 +190,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
+     * A potential answer that's allowed as the answer to this question.
      */
     #[FHIRTime]
     protected FHIRTime $valueTime;
@@ -189,10 +199,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * A potential answer that's allowed as the answer to this question.
      */
     #[FHIRString]
     protected FHIRString $valueString;
@@ -201,10 +208,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * A potential answer that's allowed as the answer to this question.
      */
     #[FHIRCoding]
     protected FHIRCoding $valueCoding;
@@ -213,10 +217,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * A potential answer that's allowed as the answer to this question.
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -226,8 +227,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      *
      * Indicates whether the answer value is selected when the list of possible answers
      * is initially shown.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $initialSelected;
@@ -236,15 +235,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
     /**
      * FHIRQuestionnaireAnswerOption Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $valueTime
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $initialSelected
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -298,10 +289,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
+     * A potential answer that's allowed as the answer to this question.
      */
     public function getValueInteger(): null|FHIRInteger
     {
@@ -313,11 +301,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
-     * @return static
+     * A potential answer that's allowed as the answer to this question.
      */
     public function setValueInteger(null|string|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
     {
@@ -338,10 +322,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
+     * A potential answer that's allowed as the answer to this question.
      */
     public function getValueDate(): null|FHIRDate
     {
@@ -354,11 +335,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
-     * @return static
+     * A potential answer that's allowed as the answer to this question.
      */
     public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
     {
@@ -377,10 +354,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime
+     * A potential answer that's allowed as the answer to this question.
      */
     public function getValueTime(): null|FHIRTime
     {
@@ -391,11 +365,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $valueTime
-     * @return static
+     * A potential answer that's allowed as the answer to this question.
      */
     public function setValueTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $valueTime): self
     {
@@ -415,10 +385,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * A potential answer that's allowed as the answer to this question.
      */
     public function getValueString(): null|FHIRString
     {
@@ -430,11 +397,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $valueString
-     * @return static
+     * A potential answer that's allowed as the answer to this question.
      */
     public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString): self
     {
@@ -454,10 +417,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
+     * A potential answer that's allowed as the answer to this question.
      */
     public function getValueCoding(): null|FHIRCoding
     {
@@ -469,11 +429,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $valueCoding
-     * @return static
+     * A potential answer that's allowed as the answer to this question.
      */
     public function setValueCoding(null|FHIRCoding $valueCoding): self
     {
@@ -490,10 +446,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * A potential answer that's allowed as the answer to this question.
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -505,11 +458,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A potential answer that's allowed as the answer to this question. (choose any
-     * one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @return static
+     * A potential answer that's allowed as the answer to this question.
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -527,8 +476,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      *
      * Indicates whether the answer value is selected when the list of possible answers
      * is initially shown.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getInitialSelected(): null|FHIRBoolean
     {
@@ -541,9 +488,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      *
      * Indicates whether the answer value is selected when the list of possible answers
      * is initially shown.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $initialSelected
-     * @return static
      */
     public function setInitialSelected(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $initialSelected): self
     {
@@ -560,10 +504,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -659,10 +600,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -730,10 +667,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

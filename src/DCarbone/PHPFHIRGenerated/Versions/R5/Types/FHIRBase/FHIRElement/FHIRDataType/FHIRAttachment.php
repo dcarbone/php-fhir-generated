@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -182,8 +182,6 @@ class FHIRAttachment extends FHIRDataType
      * Identifies the type of the data in the attachment and allows a method to be
      * chosen to interpret or render the data. Includes mime type parameters such as
      * charset where appropriate.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $contentType;
@@ -195,8 +193,6 @@ class FHIRAttachment extends FHIRDataType
      *
      * The human language of the content. The value can be any valid value according to
      * BCP 47.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $language;
@@ -206,8 +202,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual data of the attachment - a sequence of bytes, base64 encoded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $data;
@@ -217,8 +211,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * A location where the data can be accessed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
      */
     #[FHIRUrl]
     protected FHIRUrl $url;
@@ -229,8 +221,6 @@ class FHIRAttachment extends FHIRDataType
      *
      * The number of bytes of data that make up this attachment (before base64
      * encoding, if that is done).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
      */
     #[FHIRInteger64]
     protected FHIRInteger64 $size;
@@ -240,8 +230,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The calculated hash of the data using SHA-1. Represented using base64.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $hash;
@@ -251,8 +239,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label or set of text to display in place of the data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -266,8 +252,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the attachment was first created.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $creation;
@@ -277,8 +261,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * Height of the image in pixels (photo/video).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $height;
@@ -288,8 +270,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * Width of the image in pixels (photo/video).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $width;
@@ -303,8 +283,6 @@ class FHIRAttachment extends FHIRDataType
      * animated gif. If there is more than one frame, this SHALL have a value in order
      * to alert interface software that a multi-frame capable rendering widget is
      * required.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $frames;
@@ -315,8 +293,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The duration of the recording in seconds - for audio and video.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $duration;
@@ -326,8 +302,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * The number of pages when printed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $pages;
@@ -336,20 +310,6 @@ class FHIRAttachment extends FHIRDataType
     /**
      * FHIRAttachment Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $contentType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $data
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $url
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $size
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $hash
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $creation
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $height
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $width
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $frames
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $duration
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $pages
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -429,8 +389,6 @@ class FHIRAttachment extends FHIRDataType
      * Identifies the type of the data in the attachment and allows a method to be
      * chosen to interpret or render the data. Includes mime type parameters such as
      * charset where appropriate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getContentType(): null|FHIRCode
     {
@@ -446,9 +404,6 @@ class FHIRAttachment extends FHIRDataType
      * Identifies the type of the data in the attachment and allows a method to be
      * chosen to interpret or render the data. Includes mime type parameters such as
      * charset where appropriate.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $contentType
-     * @return static
      */
     public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
     {
@@ -471,8 +426,6 @@ class FHIRAttachment extends FHIRDataType
      *
      * The human language of the content. The value can be any valid value according to
      * BCP 47.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode
      */
     public function getLanguage(): null|FHIRCode
     {
@@ -487,9 +440,6 @@ class FHIRAttachment extends FHIRDataType
      *
      * The human language of the content. The value can be any valid value according to
      * BCP 47.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @return static
      */
     public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -510,8 +460,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual data of the attachment - a sequence of bytes, base64 encoded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     public function getData(): null|FHIRBase64Binary
     {
@@ -524,9 +472,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual data of the attachment - a sequence of bytes, base64 encoded.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $data
-     * @return static
      */
     public function setData(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $data): self
     {
@@ -547,8 +492,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * A location where the data can be accessed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl
      */
     public function getUrl(): null|FHIRUrl
     {
@@ -561,9 +504,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * A location where the data can be accessed.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $url
-     * @return static
      */
     public function setUrl(null|string|FHIRUrlPrimitive|FHIRUrl $url): self
     {
@@ -585,8 +525,6 @@ class FHIRAttachment extends FHIRDataType
      *
      * The number of bytes of data that make up this attachment (before base64
      * encoding, if that is done).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64
      */
     public function getSize(): null|FHIRInteger64
     {
@@ -600,9 +538,6 @@ class FHIRAttachment extends FHIRDataType
      *
      * The number of bytes of data that make up this attachment (before base64
      * encoding, if that is done).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $size
-     * @return static
      */
     public function setSize(null|string|float|FHIRInteger64Primitive|FHIRInteger64 $size): self
     {
@@ -623,8 +558,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The calculated hash of the data using SHA-1. Represented using base64.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     public function getHash(): null|FHIRBase64Binary
     {
@@ -637,9 +570,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The calculated hash of the data using SHA-1. Represented using base64.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBase64Binary $hash
-     * @return static
      */
     public function setHash(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $hash): self
     {
@@ -660,8 +590,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label or set of text to display in place of the data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -674,9 +602,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label or set of text to display in place of the data.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -701,8 +626,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the attachment was first created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getCreation(): null|FHIRDateTime
     {
@@ -719,9 +642,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the attachment was first created.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $creation
-     * @return static
      */
     public function setCreation(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $creation): self
     {
@@ -742,8 +662,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * Height of the image in pixels (photo/video).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getHeight(): null|FHIRPositiveInt
     {
@@ -756,9 +674,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * Height of the image in pixels (photo/video).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $height
-     * @return static
      */
     public function setHeight(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $height): self
     {
@@ -779,8 +694,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * Width of the image in pixels (photo/video).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getWidth(): null|FHIRPositiveInt
     {
@@ -793,9 +706,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * Width of the image in pixels (photo/video).
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $width
-     * @return static
      */
     public function setWidth(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $width): self
     {
@@ -820,8 +730,6 @@ class FHIRAttachment extends FHIRDataType
      * animated gif. If there is more than one frame, this SHALL have a value in order
      * to alert interface software that a multi-frame capable rendering widget is
      * required.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getFrames(): null|FHIRPositiveInt
     {
@@ -838,9 +746,6 @@ class FHIRAttachment extends FHIRDataType
      * animated gif. If there is more than one frame, this SHALL have a value in order
      * to alert interface software that a multi-frame capable rendering widget is
      * required.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $frames
-     * @return static
      */
     public function setFrames(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $frames): self
     {
@@ -862,8 +767,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The duration of the recording in seconds - for audio and video.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      */
     public function getDuration(): null|FHIRDecimal
     {
@@ -877,9 +780,6 @@ class FHIRAttachment extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The duration of the recording in seconds - for audio and video.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $duration
-     * @return static
      */
     public function setDuration(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $duration): self
     {
@@ -900,8 +800,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * The number of pages when printed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getPages(): null|FHIRPositiveInt
     {
@@ -914,9 +812,6 @@ class FHIRAttachment extends FHIRDataType
      * the Narrative, or extensions
      *
      * The number of pages when printed.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $pages
-     * @return static
      */
     public function setPages(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $pages): self
     {
@@ -933,10 +828,7 @@ class FHIRAttachment extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1106,10 +998,6 @@ class FHIRAttachment extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1247,10 +1135,7 @@ class FHIRAttachment extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -135,8 +134,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * High-level categorization of the type of activity in a care plan.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityCategory
      */
     #[FHIRCarePlanActivityCategory]
     protected FHIRCarePlanActivityCategory $category;
@@ -148,8 +145,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Detailed description of the type of activity. E.g. What lab test, what
      * procedure, what kind of encounter.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -160,8 +155,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule
      */
     #[FHIRSchedule]
     protected FHIRSchedule $timingSchedule;
@@ -171,8 +164,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $timingPeriod;
@@ -181,8 +172,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $timingString;
@@ -193,8 +182,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Identifies the facility where the activity will occur. E.g. home, hospital,
      * specific clinic, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $location;
@@ -216,8 +203,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $product;
@@ -229,8 +214,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be consumed in a given day.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $dailyAmount;
@@ -242,8 +225,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be supplied.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $quantity;
@@ -255,8 +236,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * including relation to other activities. It may also include objectives,
      * pre-conditions and end-conditions. Finally, it may convey specifics about the
      * activity such as body site, method, route, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $details;
@@ -265,19 +244,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
     /**
      * FHIRCarePlanSimple Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanActivityCategoryList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityCategory $category
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $timingSchedule
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $timingString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $location
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $performer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $product
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dailyAmount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $details
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -347,8 +315,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * High-level categorization of the type of activity in a care plan.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityCategory
      */
     public function getCategory(): null|FHIRCarePlanActivityCategory
     {
@@ -360,9 +326,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * High-level categorization of the type of activity in a care plan.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanActivityCategoryList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanActivityCategory $category
-     * @return static
      */
     public function setCategory(null|string|FHIRCarePlanActivityCategoryList|FHIRCarePlanActivityCategory $category): self
     {
@@ -385,8 +348,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Detailed description of the type of activity. E.g. What lab test, what
      * procedure, what kind of encounter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -401,9 +362,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Detailed description of the type of activity. E.g. What lab test, what
      * procedure, what kind of encounter.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -422,8 +380,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule
      */
     public function getTimingSchedule(): null|FHIRSchedule
     {
@@ -437,9 +393,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedule $timingSchedule
-     * @return static
      */
     public function setTimingSchedule(null|FHIRSchedule $timingSchedule): self
     {
@@ -457,8 +410,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod(): null|FHIRPeriod
     {
@@ -471,9 +422,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod $timingPeriod
-     * @return static
      */
     public function setTimingPeriod(null|FHIRPeriod $timingPeriod): self
     {
@@ -490,8 +438,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getTimingString(): null|FHIRString
     {
@@ -503,9 +449,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $timingString
-     * @return static
      */
     public function setTimingString(null|string|FHIRStringPrimitive|FHIRString $timingString): self
     {
@@ -527,8 +470,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Identifies the facility where the activity will occur. E.g. home, hospital,
      * specific clinic, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getLocation(): null|FHIRResourceReference
     {
@@ -542,9 +483,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Identifies the facility where the activity will occur. E.g. home, hospital,
      * specific clinic, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $location
-     * @return static
      */
     public function setLocation(null|FHIRResourceReference $location): self
     {
@@ -587,9 +525,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who's expected to be involved in the activity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $performer
-     * @return static
      */
     public function addPerformer(FHIRResourceReference $performer): self
     {
@@ -606,9 +541,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who's expected to be involved in the activity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$performer
-     * @return static
      */
     public function setPerformer(FHIRResourceReference ...$performer): self
     {
@@ -627,8 +559,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getProduct(): null|FHIRResourceReference
     {
@@ -642,9 +572,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $product
-     * @return static
      */
     public function setProduct(null|FHIRResourceReference $product): self
     {
@@ -664,8 +591,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be consumed in a given day.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     public function getDailyAmount(): null|FHIRQuantity
     {
@@ -680,9 +605,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be consumed in a given day.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $dailyAmount
-     * @return static
      */
     public function setDailyAmount(null|FHIRQuantity $dailyAmount): self
     {
@@ -702,8 +624,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be supplied.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity
      */
     public function getQuantity(): null|FHIRQuantity
     {
@@ -718,9 +638,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the quantity expected to be supplied.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity $quantity
-     * @return static
      */
     public function setQuantity(null|FHIRQuantity $quantity): self
     {
@@ -740,8 +657,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * including relation to other activities. It may also include objectives,
      * pre-conditions and end-conditions. Finally, it may convey specifics about the
      * activity such as body site, method, route, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDetails(): null|FHIRString
     {
@@ -756,9 +671,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * including relation to other activities. It may also include objectives,
      * pre-conditions and end-conditions. Finally, it may convey specifics about the
      * activity such as body site, method, route, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $details
-     * @return static
      */
     public function setDetails(null|string|FHIRStringPrimitive|FHIRString $details): self
     {
@@ -775,10 +687,7 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -866,10 +775,6 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -949,10 +854,7 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -125,8 +124,6 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      *
      * Mode of this document declaration - whether an application is a producer or
      * consumer.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentMode
      */
     #[FHIRDocumentMode]
     protected FHIRDocumentMode $mode;
@@ -138,8 +135,6 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * A description of how the application supports or uses the specified document
      * profile. For example, when documents are created, what action is taken with
      * consumed documents, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $documentation;
@@ -149,8 +144,6 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A constraint on a resource used in the document.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $profile;
@@ -159,11 +152,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
     /**
      * FHIRCapabilityStatementDocument Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRDocumentModeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentMode $mode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $documentation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $profile
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -202,8 +191,6 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      *
      * Mode of this document declaration - whether an application is a producer or
      * consumer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentMode
      */
     public function getMode(): null|FHIRDocumentMode
     {
@@ -216,9 +203,6 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      *
      * Mode of this document declaration - whether an application is a producer or
      * consumer.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRDocumentModeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRDocumentModeList|FHIRDocumentMode $mode): self
     {
@@ -241,8 +225,6 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * A description of how the application supports or uses the specified document
      * profile. For example, when documents are created, what action is taken with
      * consumed documents, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDocumentation(): null|FHIRString
     {
@@ -257,9 +239,6 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * A description of how the application supports or uses the specified document
      * profile. For example, when documents are created, what action is taken with
      * consumed documents, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -280,8 +259,6 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A constraint on a resource used in the document.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getProfile(): null|FHIRReference
     {
@@ -294,9 +271,6 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A constraint on a resource used in the document.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $profile
-     * @return static
      */
     public function setProfile(null|FHIRReference $profile): self
     {
@@ -310,10 +284,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -377,10 +348,6 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -413,10 +380,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

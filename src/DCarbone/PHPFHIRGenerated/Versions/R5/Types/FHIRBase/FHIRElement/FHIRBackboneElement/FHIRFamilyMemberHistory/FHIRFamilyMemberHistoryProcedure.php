@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -158,8 +157,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * The actual procedure specified. Could be a coded procedure or a less specific
      * string depending on how much is known about the procedure and the capabilities
      * of the creating system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -171,8 +168,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Indicates what happened following the procedure. If the procedure resulted in
      * death, deceased date is captured on the relation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $outcome;
@@ -182,8 +177,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * This procedure contributed to the cause of death of the related person. If
      * contributedToDeath is not populated, then it is unknown.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $contributedToDeath;
@@ -194,10 +187,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * date, and also allows for the length of the procedure to be captured.
      */
     #[FHIRAge]
     protected FHIRAge $performedAge;
@@ -208,10 +198,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * date, and also allows for the length of the procedure to be captured.
      */
     #[FHIRRange]
     protected FHIRRange $performedRange;
@@ -222,10 +209,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * date, and also allows for the length of the procedure to be captured.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $performedPeriod;
@@ -236,10 +220,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * date, and also allows for the length of the procedure to be captured.
      */
     #[FHIRString]
     protected FHIRString $performedString;
@@ -254,10 +235,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * date, and also allows for the length of the procedure to be captured.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $performedDateTime;
@@ -278,16 +256,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
     /**
      * FHIRFamilyMemberHistoryProcedure Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $outcome
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $contributedToDeath
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $performedAge
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $performedRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $performedPeriod
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $performedString
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $performedDateTime
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
      * @param null|string[] $fhirComments
      */
@@ -354,8 +323,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * The actual procedure specified. Could be a coded procedure or a less specific
      * string depending on how much is known about the procedure and the capabilities
      * of the creating system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -371,9 +338,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * The actual procedure specified. Could be a coded procedure or a less specific
      * string depending on how much is known about the procedure and the capabilities
      * of the creating system.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -393,8 +357,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Indicates what happened following the procedure. If the procedure resulted in
      * death, deceased date is captured on the relation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getOutcome(): null|FHIRCodeableConcept
     {
@@ -409,9 +371,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Indicates what happened following the procedure. If the procedure resulted in
      * death, deceased date is captured on the relation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $outcome
-     * @return static
      */
     public function setOutcome(null|FHIRCodeableConcept $outcome): self
     {
@@ -429,8 +388,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * This procedure contributed to the cause of death of the related person. If
      * contributedToDeath is not populated, then it is unknown.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getContributedToDeath(): null|FHIRBoolean
     {
@@ -443,9 +400,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * This procedure contributed to the cause of death of the related person. If
      * contributedToDeath is not populated, then it is unknown.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $contributedToDeath
-     * @return static
      */
     public function setContributedToDeath(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $contributedToDeath): self
     {
@@ -467,10 +421,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * date, and also allows for the length of the procedure to be captured.
      */
     public function getPerformedAge(): null|FHIRAge
     {
@@ -484,11 +435,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $performedAge
-     * @return static
+     * date, and also allows for the length of the procedure to be captured.
      */
     public function setPerformedAge(null|FHIRAge $performedAge): self
     {
@@ -507,10 +454,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * date, and also allows for the length of the procedure to be captured.
      */
     public function getPerformedRange(): null|FHIRRange
     {
@@ -524,11 +468,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $performedRange
-     * @return static
+     * date, and also allows for the length of the procedure to be captured.
      */
     public function setPerformedRange(null|FHIRRange $performedRange): self
     {
@@ -547,10 +487,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * date, and also allows for the length of the procedure to be captured.
      */
     public function getPerformedPeriod(): null|FHIRPeriod
     {
@@ -564,11 +501,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $performedPeriod
-     * @return static
+     * date, and also allows for the length of the procedure to be captured.
      */
     public function setPerformedPeriod(null|FHIRPeriod $performedPeriod): self
     {
@@ -587,10 +520,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * date, and also allows for the length of the procedure to be captured.
      */
     public function getPerformedString(): null|FHIRString
     {
@@ -604,11 +534,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $performedString
-     * @return static
+     * date, and also allows for the length of the procedure to be captured.
      */
     public function setPerformedString(null|string|FHIRStringPrimitive|FHIRString $performedString): self
     {
@@ -634,10 +560,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * date, and also allows for the length of the procedure to be captured.
      */
     public function getPerformedDateTime(): null|FHIRDateTime
     {
@@ -655,11 +578,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      *
      * Estimated or actual date, date-time, period, or age when the procedure was
      * performed. Allows a period to support complex procedures that span more than one
-     * date, and also allows for the length of the procedure to be captured. (choose
-     * any one of performed*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $performedDateTime
-     * @return static
+     * date, and also allows for the length of the procedure to be captured.
      */
     public function setPerformedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $performedDateTime): self
     {
@@ -707,9 +626,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An area where general notes can be placed about this specific procedure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -727,9 +643,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An area where general notes can be placed about this specific procedure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -743,10 +656,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryProcedure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryProcedure
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -830,10 +740,6 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -903,10 +809,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryProcedure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryProcedure
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

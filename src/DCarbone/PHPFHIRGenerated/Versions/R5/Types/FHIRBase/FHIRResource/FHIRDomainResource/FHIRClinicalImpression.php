@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -112,7 +110,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREventStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -206,8 +203,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the workflow status of the assessment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREventStatus
      */
     #[FHIREventStatus]
     protected FHIREventStatus $status;
@@ -218,8 +213,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the ClinicalImpression.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $statusReason;
@@ -230,8 +223,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * A summary of the context and/or cause of the assessment - why / where it was
      * performed, and what patient events/status prompted it.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -241,8 +232,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group of individuals assessed as part of this record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -253,8 +242,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * The Encounter during which this ClinicalImpression was created or to which the
      * creation of this record is tightly associated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -267,10 +254,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * The point in time or period over which the subject was assessed.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $effectiveDateTime;
@@ -279,10 +263,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * The point in time or period over which the subject was assessed.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $effectivePeriod;
@@ -296,8 +277,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the documentation of the assessment was complete.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -307,8 +286,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinician performing the assessment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $performer;
@@ -321,8 +298,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Assessments are often/usually ongoing in nature; a care provider (practitioner
      * or team) will make new assessments on an ongoing basis as new data arises or the
      * patient's conditions changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $previous;
@@ -346,8 +321,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Change in the status/pattern of a subject's condition since previously assessed,
      * such as worsening, improving, or no change. It is a subjective assessment of the
      * direction of the change.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $changePattern;
@@ -369,8 +342,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text summary of the investigations and the diagnosis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $summary;
@@ -442,29 +413,12 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
     /* constructor.php:61 */
     /**
      * FHIRClinicalImpression Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREventStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREventStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $statusReason
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $effectiveDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectivePeriod
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $performer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $previous
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $problem
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $changePattern
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri> $protocol
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $summary
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding> $finding
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $prognosisCodeableConcept
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $prognosisReference
@@ -623,9 +577,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Business identifiers assigned to this clinical impression by the performer or
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -645,9 +596,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Business identifiers assigned to this clinical impression by the performer or
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -663,8 +611,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the workflow status of the assessment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREventStatus
      */
     public function getStatus(): null|FHIREventStatus
     {
@@ -675,9 +621,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the workflow status of the assessment.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREventStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREventStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIREventStatusEnum|FHIREventStatus $status): self
     {
@@ -699,8 +642,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the ClinicalImpression.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getStatusReason(): null|FHIRCodeableConcept
     {
@@ -714,9 +655,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the ClinicalImpression.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $statusReason
-     * @return static
      */
     public function setStatusReason(null|FHIRCodeableConcept $statusReason): self
     {
@@ -735,8 +673,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * A summary of the context and/or cause of the assessment - why / where it was
      * performed, and what patient events/status prompted it.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -750,9 +686,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * A summary of the context and/or cause of the assessment - why / where it was
      * performed, and what patient events/status prompted it.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -773,8 +706,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group of individuals assessed as part of this record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -787,9 +718,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group of individuals assessed as part of this record.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -808,8 +736,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * The Encounter during which this ClinicalImpression was created or to which the
      * creation of this record is tightly associated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -823,9 +749,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * The Encounter during which this ClinicalImpression was created or to which the
      * creation of this record is tightly associated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -846,10 +769,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * The point in time or period over which the subject was assessed.
      */
     public function getEffectiveDateTime(): null|FHIRDateTime
     {
@@ -865,11 +785,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $effectiveDateTime
-     * @return static
+     * The point in time or period over which the subject was assessed.
      */
     public function setEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDateTime): self
     {
@@ -889,10 +805,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * The point in time or period over which the subject was assessed.
      */
     public function getEffectivePeriod(): null|FHIRPeriod
     {
@@ -904,11 +817,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The point in time or period over which the subject was assessed. (choose any one
-     * of effective*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $effectivePeriod
-     * @return static
+     * The point in time or period over which the subject was assessed.
      */
     public function setEffectivePeriod(null|FHIRPeriod $effectivePeriod): self
     {
@@ -930,8 +839,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the documentation of the assessment was complete.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -948,9 +855,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the documentation of the assessment was complete.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -971,8 +875,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinician performing the assessment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getPerformer(): null|FHIRReference
     {
@@ -985,9 +887,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinician performing the assessment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $performer
-     * @return static
      */
     public function setPerformer(null|FHIRReference $performer): self
     {
@@ -1008,8 +907,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Assessments are often/usually ongoing in nature; a care provider (practitioner
      * or team) will make new assessments on an ongoing basis as new data arises or the
      * patient's conditions changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getPrevious(): null|FHIRReference
     {
@@ -1025,9 +922,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Assessments are often/usually ongoing in nature; a care provider (practitioner
      * or team) will make new assessments on an ongoing basis as new data arises or the
      * patient's conditions changes.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $previous
-     * @return static
      */
     public function setPrevious(null|FHIRReference $previous): self
     {
@@ -1070,9 +964,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of the relevant problems/conditions for a patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $problem
-     * @return static
      */
     public function addProblem(FHIRReference $problem): self
     {
@@ -1089,9 +980,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A list of the relevant problems/conditions for a patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$problem
-     * @return static
      */
     public function setProblem(FHIRReference ...$problem): self
     {
@@ -1112,8 +1000,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Change in the status/pattern of a subject's condition since previously assessed,
      * such as worsening, improving, or no change. It is a subjective assessment of the
      * direction of the change.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getChangePattern(): null|FHIRCodeableConcept
     {
@@ -1129,9 +1015,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * Change in the status/pattern of a subject's condition since previously assessed,
      * such as worsening, improving, or no change. It is a subjective assessment of the
      * direction of the change.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $changePattern
-     * @return static
      */
     public function setChangePattern(null|FHIRCodeableConcept $changePattern): self
     {
@@ -1176,9 +1059,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Reference to a specific published clinical protocol that was followed during
      * this assessment, and/or that provides evidence in support of the diagnosis.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $protocol
-     * @return static
      */
     public function addProtocol(string|FHIRUriPrimitive|FHIRUri $protocol): self
     {
@@ -1199,9 +1079,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Reference to a specific published clinical protocol that was followed during
      * this assessment, and/or that provides evidence in support of the diagnosis.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri ...$protocol
-     * @return static
      */
     public function setProtocol(string|FHIRUriPrimitive|FHIRUri ...$protocol): self
     {
@@ -1226,8 +1103,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text summary of the investigations and the diagnosis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getSummary(): null|FHIRString
     {
@@ -1240,9 +1115,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text summary of the investigations and the diagnosis.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $summary
-     * @return static
      */
     public function setSummary(null|string|FHIRStringPrimitive|FHIRString $summary): self
     {
@@ -1298,9 +1170,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Specific findings or diagnoses that were considered likely or relevant to
      * ongoing treatment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding $finding
-     * @return static
      */
     public function addFinding(FHIRClinicalImpressionFinding $finding): self
     {
@@ -1322,9 +1191,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Specific findings or diagnoses that were considered likely or relevant to
      * ongoing treatment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding ...$finding
-     * @return static
      */
     public function setFinding(FHIRClinicalImpressionFinding ...$finding): self
     {
@@ -1369,9 +1235,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Estimate of likely outcome.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $prognosisCodeableConcept
-     * @return static
      */
     public function addPrognosisCodeableConcept(FHIRCodeableConcept $prognosisCodeableConcept): self
     {
@@ -1389,9 +1252,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Estimate of likely outcome.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$prognosisCodeableConcept
-     * @return static
      */
     public function setPrognosisCodeableConcept(FHIRCodeableConcept ...$prognosisCodeableConcept): self
     {
@@ -1434,9 +1294,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * RiskAssessment expressing likely outcome.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $prognosisReference
-     * @return static
      */
     public function addPrognosisReference(FHIRReference $prognosisReference): self
     {
@@ -1453,9 +1310,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * RiskAssessment expressing likely outcome.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$prognosisReference
-     * @return static
      */
     public function setPrognosisReference(FHIRReference ...$prognosisReference): self
     {
@@ -1500,9 +1354,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Information supporting the clinical impression, which can contain investigation
      * results.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $supportingInfo
-     * @return static
      */
     public function addSupportingInfo(FHIRReference $supportingInfo): self
     {
@@ -1520,9 +1371,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Information supporting the clinical impression, which can contain investigation
      * results.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$supportingInfo
-     * @return static
      */
     public function setSupportingInfo(FHIRReference ...$supportingInfo): self
     {
@@ -1569,9 +1417,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Commentary about the impression, typically recorded after the impression itself
      * was made, though supplemental notes by the original author could also appear.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1590,9 +1435,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
      *
      * Commentary about the impression, typically recorded after the impression itself
      * was made, though supplemental notes by the original author could also appear.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1606,10 +1448,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRClinicalImpression $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1767,11 +1606,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1944,10 +1778,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements VersionContai
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRClinicalImpression $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

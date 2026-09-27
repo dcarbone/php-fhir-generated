@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -116,7 +114,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -203,8 +200,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Appointment that this response is replying to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $appointment;
@@ -215,8 +210,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * Indicates that the response is proposing a different time that was initially
      * requested. The new proposed time will be indicated in the start and end
      * properties.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $proposedNewTime;
@@ -229,8 +222,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place, or requested new start time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $start;
@@ -245,8 +236,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * This may be either the same as the appointment request to confirm the details of
      * the appointment, or alternately a new time to request a re-negotiation of the
      * end time.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $end;
@@ -269,8 +258,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      *
      * A Person, Location, HealthcareService, or Device that is participating in the
      * appointment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $actor;
@@ -282,8 +269,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * times should be interpreted as a requested time change. When the status is
      * accepted, the times can either be the time of the appointment (as a confirmation
      * of the time) or can be empty.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAppointmentResponseStatus
      */
     #[FHIRAppointmentResponseStatus]
     protected FHIRAppointmentResponseStatus $participantStatus;
@@ -297,8 +282,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * the Narrative, or extensions
      *
      * Additional comments about the appointment.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $comment;
@@ -308,8 +291,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      *
      * Indicates that this AppointmentResponse applies to all occurrences in a
      * recurring request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $recurring;
@@ -322,8 +303,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * The original date within a recurring request. This could be used in place of the
      * recurrenceId to be more direct (or where the template is provided through the
      * simple list of dates in `Appointment.occurrenceDate`).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     #[FHIRDate]
     protected FHIRDate $occurrenceDate;
@@ -334,8 +313,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      *
      * The recurrence ID (sequence number) of the specific appointment when responding
      * to a recurring request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $recurrenceId;
@@ -343,26 +320,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
     /* constructor.php:61 */
     /**
      * FHIRAppointmentResponse Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $appointment
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $proposedNewTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $start
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $end
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $participantType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $actor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAppointmentResponseStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAppointmentResponseStatus $participantStatus
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $comment
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $recurring
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $occurrenceDate
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $recurrenceId
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -484,9 +446,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * This records identifiers associated with this appointment response concern that
      * are defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -506,9 +465,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * This records identifiers associated with this appointment response concern that
      * are defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -526,8 +482,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Appointment that this response is replying to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getAppointment(): null|FHIRReference
     {
@@ -540,9 +494,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Appointment that this response is replying to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $appointment
-     * @return static
      */
     public function setAppointment(null|FHIRReference $appointment): self
     {
@@ -561,8 +512,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * Indicates that the response is proposing a different time that was initially
      * requested. The new proposed time will be indicated in the start and end
      * properties.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getProposedNewTime(): null|FHIRBoolean
     {
@@ -576,9 +525,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * Indicates that the response is proposing a different time that was initially
      * requested. The new proposed time will be indicated in the start and end
      * properties.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $proposedNewTime
-     * @return static
      */
     public function setProposedNewTime(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $proposedNewTime): self
     {
@@ -602,8 +548,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place, or requested new start time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     public function getStart(): null|FHIRInstant
     {
@@ -619,9 +563,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place, or requested new start time.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $start
-     * @return static
      */
     public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start): self
     {
@@ -647,8 +588,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * This may be either the same as the appointment request to confirm the details of
      * the appointment, or alternately a new time to request a re-negotiation of the
      * end time.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     public function getEnd(): null|FHIRInstant
     {
@@ -666,9 +605,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * This may be either the same as the appointment request to confirm the details of
      * the appointment, or alternately a new time to request a re-negotiation of the
      * end time.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $end
-     * @return static
      */
     public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
     {
@@ -716,9 +652,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $participantType
-     * @return static
      */
     public function addParticipantType(FHIRCodeableConcept $participantType): self
     {
@@ -736,9 +669,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$participantType
-     * @return static
      */
     public function setParticipantType(FHIRCodeableConcept ...$participantType): self
     {
@@ -757,8 +687,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      *
      * A Person, Location, HealthcareService, or Device that is participating in the
      * appointment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getActor(): null|FHIRReference
     {
@@ -772,9 +700,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      *
      * A Person, Location, HealthcareService, or Device that is participating in the
      * appointment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $actor
-     * @return static
      */
     public function setActor(null|FHIRReference $actor): self
     {
@@ -794,8 +719,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * times should be interpreted as a requested time change. When the status is
      * accepted, the times can either be the time of the appointment (as a confirmation
      * of the time) or can be empty.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAppointmentResponseStatus
      */
     public function getParticipantStatus(): null|FHIRAppointmentResponseStatus
     {
@@ -810,9 +733,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * times should be interpreted as a requested time change. When the status is
      * accepted, the times can either be the time of the appointment (as a confirmation
      * of the time) or can be empty.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAppointmentResponseStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAppointmentResponseStatus $participantStatus
-     * @return static
      */
     public function setParticipantStatus(null|string|FHIRAppointmentResponseStatusEnum|FHIRAppointmentResponseStatus $participantStatus): self
     {
@@ -837,8 +757,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * the Narrative, or extensions
      *
      * Additional comments about the appointment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getComment(): null|FHIRMarkdown
     {
@@ -855,9 +773,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * the Narrative, or extensions
      *
      * Additional comments about the appointment.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $comment
-     * @return static
      */
     public function setComment(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $comment): self
     {
@@ -878,8 +793,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      *
      * Indicates that this AppointmentResponse applies to all occurrences in a
      * recurring request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
      */
     public function getRecurring(): null|FHIRBoolean
     {
@@ -892,9 +805,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      *
      * Indicates that this AppointmentResponse applies to all occurrences in a
      * recurring request.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $recurring
-     * @return static
      */
     public function setRecurring(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $recurring): self
     {
@@ -918,8 +828,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * The original date within a recurring request. This could be used in place of the
      * recurrenceId to be more direct (or where the template is provided through the
      * simple list of dates in `Appointment.occurrenceDate`).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate
      */
     public function getOccurrenceDate(): null|FHIRDate
     {
@@ -935,9 +843,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * The original date within a recurring request. This could be used in place of the
      * recurrenceId to be more direct (or where the template is provided through the
      * simple list of dates in `Appointment.occurrenceDate`).
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $occurrenceDate
-     * @return static
      */
     public function setOccurrenceDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $occurrenceDate): self
     {
@@ -959,8 +864,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      *
      * The recurrence ID (sequence number) of the specific appointment when responding
      * to a recurring request.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getRecurrenceId(): null|FHIRPositiveInt
     {
@@ -974,9 +877,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      *
      * The recurrence ID (sequence number) of the specific appointment when responding
      * to a recurring request.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $recurrenceId
-     * @return static
      */
     public function setRecurrenceId(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $recurrenceId): self
     {
@@ -993,10 +893,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1162,11 +1059,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1302,10 +1194,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRAppointmentResponse
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

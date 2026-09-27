@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -124,8 +123,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      * Indicates the degree of conformance expectations associated with this binding -
      * that is, the degree to which the provided value set must be adhered to in the
      * instances.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBindingStrength
      */
     #[FHIRBindingStrength]
     protected FHIRBindingStrength $strength;
@@ -137,8 +134,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $valueSet;
@@ -147,10 +142,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     /**
      * FHIROperationDefinitionBinding Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRBindingStrengthList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBindingStrength $strength
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $valueSet
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -186,8 +178,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      * Indicates the degree of conformance expectations associated with this binding -
      * that is, the degree to which the provided value set must be adhered to in the
      * instances.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBindingStrength
      */
     public function getStrength(): null|FHIRBindingStrength
     {
@@ -201,9 +191,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      * Indicates the degree of conformance expectations associated with this binding -
      * that is, the degree to which the provided value set must be adhered to in the
      * instances.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRBindingStrengthList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBindingStrength $strength
-     * @return static
      */
     public function setStrength(null|string|FHIRBindingStrengthList|FHIRBindingStrength $strength): self
     {
@@ -226,8 +213,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical
      */
     public function getValueSet(): null|FHIRCanonical
     {
@@ -242,9 +227,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $valueSet
-     * @return static
      */
     public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet): self
     {
@@ -261,10 +243,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -326,10 +305,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -357,10 +332,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

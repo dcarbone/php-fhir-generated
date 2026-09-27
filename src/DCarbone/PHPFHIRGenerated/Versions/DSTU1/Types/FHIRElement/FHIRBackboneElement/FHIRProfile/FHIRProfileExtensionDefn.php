@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -138,8 +137,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A unique code (within the profile) used to identify the extension.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -149,8 +146,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      *
      * Defined so that applications can use this name when displaying the value of the
      * extension to the user.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $display;
@@ -159,8 +154,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the type of context to which the extension applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtensionContext
      */
     #[FHIRExtensionContext]
     protected FHIRExtensionContext $contextType;
@@ -181,8 +174,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Definition of the extension and its content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
      */
     #[FHIRProfileDefinition]
     protected FHIRProfileDefinition $definition;
@@ -191,13 +182,8 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
     /**
      * FHIRProfileExtensionDefn Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $display
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRExtensionContextList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtensionContext $contextType
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString> $context
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition $definition
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -245,8 +231,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A unique code (within the profile) used to identify the extension.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -260,9 +244,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A unique code (within the profile) used to identify the extension.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -283,8 +264,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      *
      * Defined so that applications can use this name when displaying the value of the
      * extension to the user.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDisplay(): null|FHIRString
     {
@@ -297,9 +276,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      *
      * Defined so that applications can use this name when displaying the value of the
      * extension to the user.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $display
-     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -319,8 +295,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the type of context to which the extension applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtensionContext
      */
     public function getContextType(): null|FHIRExtensionContext
     {
@@ -332,9 +306,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the type of context to which the extension applies.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRExtensionContextList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtensionContext $contextType
-     * @return static
      */
     public function setContextType(null|string|FHIRExtensionContextList|FHIRExtensionContext $contextType): self
     {
@@ -380,9 +351,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $context
-     * @return static
      */
     public function addContext(string|FHIRStringPrimitive|FHIRString $context): self
     {
@@ -402,9 +370,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString ...$context
-     * @return static
      */
     public function setContext(string|FHIRStringPrimitive|FHIRString ...$context): self
     {
@@ -429,8 +394,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Definition of the extension and its content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
      */
     public function getDefinition(): null|FHIRProfileDefinition
     {
@@ -443,9 +406,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Definition of the extension and its content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition $definition
-     * @return static
      */
     public function setDefinition(null|FHIRProfileDefinition $definition): self
     {
@@ -459,10 +419,7 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileExtensionDefn $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileExtensionDefn
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -538,10 +495,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -591,10 +544,7 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileExtensionDefn $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileExtensionDefn
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

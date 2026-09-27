@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -172,8 +171,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Type or variable this rule applies to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $context;
@@ -184,8 +181,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified minimum cardinality for the element. This is optional; if present, it
      * acts an implicit check on the input content.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $min;
@@ -197,8 +192,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * Specified maximum cardinality for the element - a number or a "*". This is
      * optional; if present, it acts an implicit check on the input content (* just
      * serves as documentation; it's the default value).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $max;
@@ -209,8 +202,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified type for the element. This works as a condition on the mapping - use
      * for polymorphic elements.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $type;
@@ -220,8 +211,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $defaultValue;
@@ -231,8 +220,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Optional field for this source.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $element;
@@ -240,8 +227,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How to handle the list mode for this element.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapSourceListMode
      */
     #[FHIRStructureMapSourceListMode]
     protected FHIRStructureMapSourceListMode $listMode;
@@ -254,8 +239,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Named context for field, if a field is specified.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $variable;
@@ -265,8 +248,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * FHIRPath expression - must be true or the rule does not apply.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $condition;
@@ -277,8 +258,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * FHIRPath expression - must be true or the mapping engine throws an error instead
      * of completing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $check;
@@ -289,8 +268,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A FHIRPath expression which specifies a message to put in the transform log when
      * content matching the source rule is found.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $logMessage;
@@ -299,19 +276,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     /**
      * FHIRStructureMapSource Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $context
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $min
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $max
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $defaultValue
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $element
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStructureMapSourceListModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapSourceListMode $listMode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $variable
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $condition
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $check
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $logMessage
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -385,8 +350,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Type or variable this rule applies to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getContext(): null|FHIRId
     {
@@ -402,9 +365,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Type or variable this rule applies to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $context
-     * @return static
      */
     public function setContext(null|string|FHIRIdPrimitive|FHIRId $context): self
     {
@@ -426,8 +386,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified minimum cardinality for the element. This is optional; if present, it
      * acts an implicit check on the input content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     public function getMin(): null|FHIRInteger
     {
@@ -441,9 +399,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified minimum cardinality for the element. This is optional; if present, it
      * acts an implicit check on the input content.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $min
-     * @return static
      */
     public function setMin(null|string|float|FHIRIntegerPrimitive|FHIRInteger $min): self
     {
@@ -466,8 +421,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * Specified maximum cardinality for the element - a number or a "*". This is
      * optional; if present, it acts an implicit check on the input content (* just
      * serves as documentation; it's the default value).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getMax(): null|FHIRString
     {
@@ -482,9 +435,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * Specified maximum cardinality for the element - a number or a "*". This is
      * optional; if present, it acts an implicit check on the input content (* just
      * serves as documentation; it's the default value).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $max
-     * @return static
      */
     public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
     {
@@ -506,8 +456,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified type for the element. This works as a condition on the mapping - use
      * for polymorphic elements.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getType(): null|FHIRString
     {
@@ -521,9 +469,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * Specified type for the element. This works as a condition on the mapping - use
      * for polymorphic elements.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $type
-     * @return static
      */
     public function setType(null|string|FHIRStringPrimitive|FHIRString $type): self
     {
@@ -544,8 +489,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getDefaultValue(): null|FHIRString
     {
@@ -558,9 +501,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A value to use if there is no existing value in the source object.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $defaultValue
-     * @return static
      */
     public function setDefaultValue(null|string|FHIRStringPrimitive|FHIRString $defaultValue): self
     {
@@ -581,8 +521,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Optional field for this source.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getElement(): null|FHIRString
     {
@@ -595,9 +533,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Optional field for this source.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $element
-     * @return static
      */
     public function setElement(null|string|FHIRStringPrimitive|FHIRString $element): self
     {
@@ -616,8 +551,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How to handle the list mode for this element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapSourceListMode
      */
     public function getListMode(): null|FHIRStructureMapSourceListMode
     {
@@ -628,9 +561,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How to handle the list mode for this element.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStructureMapSourceListModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapSourceListMode $listMode
-     * @return static
      */
     public function setListMode(null|string|FHIRStructureMapSourceListModeEnum|FHIRStructureMapSourceListMode $listMode): self
     {
@@ -654,8 +584,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Named context for field, if a field is specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId
      */
     public function getVariable(): null|FHIRId
     {
@@ -671,9 +599,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Named context for field, if a field is specified.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $variable
-     * @return static
      */
     public function setVariable(null|string|FHIRIdPrimitive|FHIRId $variable): self
     {
@@ -694,8 +619,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * FHIRPath expression - must be true or the rule does not apply.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getCondition(): null|FHIRString
     {
@@ -708,9 +631,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * FHIRPath expression - must be true or the rule does not apply.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $condition
-     * @return static
      */
     public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition): self
     {
@@ -732,8 +652,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * FHIRPath expression - must be true or the mapping engine throws an error instead
      * of completing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getCheck(): null|FHIRString
     {
@@ -747,9 +665,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * FHIRPath expression - must be true or the mapping engine throws an error instead
      * of completing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $check
-     * @return static
      */
     public function setCheck(null|string|FHIRStringPrimitive|FHIRString $check): self
     {
@@ -771,8 +686,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A FHIRPath expression which specifies a message to put in the transform log when
      * content matching the source rule is found.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getLogMessage(): null|FHIRString
     {
@@ -786,9 +699,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      *
      * A FHIRPath expression which specifies a message to put in the transform log when
      * content matching the source rule is found.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $logMessage
-     * @return static
      */
     public function setLogMessage(null|string|FHIRStringPrimitive|FHIRString $logMessage): self
     {
@@ -805,10 +715,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -960,10 +867,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1081,10 +984,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -147,8 +147,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * The logical id of the resource, as used in the URL for the resource. Once
      * assigned, this value never changes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $id;
@@ -162,8 +160,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * The metadata about the resource. This is content that is maintained by the
      * infrastructure. Changes to the content might not always be associated with
      * version changes to the resource.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta
      */
     #[FHIRMeta]
     protected FHIRMeta $meta;
@@ -176,8 +172,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * constructed, and which must be understood when processing the content. Often,
      * this is a reference to an implementation guide that defines the special rules
      * along with other profiles etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $implicitRules;
@@ -188,8 +182,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * the Narrative, or extensions
      *
      * The base language in which the resource is written.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $language;
@@ -197,10 +189,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
     /* constructor.php:61 */
     /**
      * FHIRResource Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -249,8 +237,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * The logical id of the resource, as used in the URL for the resource. Once
      * assigned, this value never changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId
      */
     public function getId(): null|FHIRId
     {
@@ -267,9 +253,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      *
      * The logical id of the resource, as used in the URL for the resource. Once
      * assigned, this value never changes.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @return static
      */
     public function setId(null|string|FHIRIdPrimitive|FHIRId $id): self
     {
@@ -294,8 +277,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * The metadata about the resource. This is content that is maintained by the
      * infrastructure. Changes to the content might not always be associated with
      * version changes to the resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta
      */
     public function getMeta(): null|FHIRMeta
     {
@@ -312,9 +293,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * The metadata about the resource. This is content that is maintained by the
      * infrastructure. Changes to the content might not always be associated with
      * version changes to the resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @return static
      */
     public function setMeta(null|FHIRMeta $meta): self
     {
@@ -335,8 +313,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * constructed, and which must be understood when processing the content. Often,
      * this is a reference to an implementation guide that defines the special rules
      * along with other profiles etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getImplicitRules(): null|FHIRUri
     {
@@ -352,9 +328,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * constructed, and which must be understood when processing the content. Often,
      * this is a reference to an implementation guide that defines the special rules
      * along with other profiles etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @return static
      */
     public function setImplicitRules(null|string|FHIRUriPrimitive|FHIRUri $implicitRules): self
     {
@@ -376,8 +349,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * the Narrative, or extensions
      *
      * The base language in which the resource is written.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     public function getLanguage(): null|FHIRCode
     {
@@ -391,9 +362,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
      * the Narrative, or extensions
      *
      * The base language in which the resource is written.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @return static
      */
     public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
     {
@@ -410,10 +378,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -479,11 +444,6 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -549,10 +509,7 @@ class FHIRResource implements VersionResourceTypeInterface, CommentContainerInte
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

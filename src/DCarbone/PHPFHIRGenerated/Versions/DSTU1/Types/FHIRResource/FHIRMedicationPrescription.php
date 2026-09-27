@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive;
@@ -153,8 +151,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the prescription was written.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $dateWritten;
@@ -165,8 +161,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      *
      * A code specifying the state of the order. Generally this will be active or
      * completed state.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationPrescriptionStatus
      */
     #[FHIRMedicationPrescriptionStatus]
     protected FHIRMedicationPrescriptionStatus $status;
@@ -177,8 +171,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $patient;
@@ -188,8 +180,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for authorizing the prescription.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $prescriber;
@@ -200,8 +190,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      *
      * A link to a resource that identifies the particular occurrence of contact
      * between patient and health care provider.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $encounter;
@@ -212,8 +200,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $reasonCodeableConcept;
@@ -223,8 +209,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $reasonResource;
@@ -236,8 +220,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $medication;
@@ -256,8 +238,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * administration of the medicine to a patient.
      *
      * Deals with details of the dispense part of the order.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense
      */
     #[FHIRMedicationPrescriptionDispense]
     protected FHIRMedicationPrescriptionDispense $dispense;
@@ -269,8 +249,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * some cases substitution must happen, in other cases substitution must not
      * happen, and in others it does not matter. This block explains the prescriber's
      * intent. If nothing is specified substitution may be done.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionSubstitution
      */
     #[FHIRMedicationPrescriptionSubstitution]
     protected FHIRMedicationPrescriptionSubstitution $substitution;
@@ -278,24 +256,11 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
     /* constructor.php:61 */
     /**
      * FHIRMedicationPrescription Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $dateWritten
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationPrescriptionStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationPrescriptionStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $patient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $prescriber
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $encounter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $reasonResource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $medication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDosageInstruction> $dosageInstruction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense $dispense
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionSubstitution $substitution
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRCodePrimitive|FHIRCode $language = null,
@@ -415,9 +380,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * that is created. This is particularly important where FHIR only provides part of
      * an erntire workflow process where records have to be tracked through an entire
      * system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -438,9 +400,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * that is created. This is particularly important where FHIR only provides part of
      * an erntire workflow process where records have to be tracked through an entire
      * system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -460,8 +419,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the prescription was written.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getDateWritten(): null|FHIRDateTime
     {
@@ -476,9 +433,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the prescription was written.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $dateWritten
-     * @return static
      */
     public function setDateWritten(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateWritten): self
     {
@@ -500,8 +454,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      *
      * A code specifying the state of the order. Generally this will be active or
      * completed state.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationPrescriptionStatus
      */
     public function getStatus(): null|FHIRMedicationPrescriptionStatus
     {
@@ -515,9 +467,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      *
      * A code specifying the state of the order. Generally this will be active or
      * completed state.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationPrescriptionStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationPrescriptionStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRMedicationPrescriptionStatusList|FHIRMedicationPrescriptionStatus $status): self
     {
@@ -539,8 +488,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getPatient(): null|FHIRResourceReference
     {
@@ -554,9 +501,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRResourceReference $patient): self
     {
@@ -574,8 +518,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for authorizing the prescription.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getPrescriber(): null|FHIRResourceReference
     {
@@ -588,9 +530,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for authorizing the prescription.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $prescriber
-     * @return static
      */
     public function setPrescriber(null|FHIRResourceReference $prescriber): self
     {
@@ -609,8 +548,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      *
      * A link to a resource that identifies the particular occurrence of contact
      * between patient and health care provider.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getEncounter(): null|FHIRResourceReference
     {
@@ -624,9 +561,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      *
      * A link to a resource that identifies the particular occurrence of contact
      * between patient and health care provider.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRResourceReference $encounter): self
     {
@@ -645,8 +579,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -660,9 +592,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
-     * @return static
      */
     public function setReasonCodeableConcept(null|FHIRCodeableConcept $reasonCodeableConcept): self
     {
@@ -680,8 +609,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getReasonResource(): null|FHIRResourceReference
     {
@@ -694,9 +621,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $reasonResource
-     * @return static
      */
     public function setReasonResource(null|FHIRResourceReference $reasonResource): self
     {
@@ -716,8 +640,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getMedication(): null|FHIRResourceReference
     {
@@ -732,9 +654,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $medication
-     * @return static
      */
     public function setMedication(null|FHIRResourceReference $medication): self
     {
@@ -775,9 +694,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * administration of the medicine to a patient.
      *
      * Indicates how the medication is to be used by the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDosageInstruction $dosageInstruction
-     * @return static
      */
     public function addDosageInstruction(FHIRMedicationPrescriptionDosageInstruction $dosageInstruction): self
     {
@@ -793,9 +709,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * administration of the medicine to a patient.
      *
      * Indicates how the medication is to be used by the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDosageInstruction ...$dosageInstruction
-     * @return static
      */
     public function setDosageInstruction(FHIRMedicationPrescriptionDosageInstruction ...$dosageInstruction): self
     {
@@ -812,8 +725,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * administration of the medicine to a patient.
      *
      * Deals with details of the dispense part of the order.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense
      */
     public function getDispense(): null|FHIRMedicationPrescriptionDispense
     {
@@ -825,9 +736,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * administration of the medicine to a patient.
      *
      * Deals with details of the dispense part of the order.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense $dispense
-     * @return static
      */
     public function setDispense(null|FHIRMedicationPrescriptionDispense $dispense): self
     {
@@ -847,8 +755,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * some cases substitution must happen, in other cases substitution must not
      * happen, and in others it does not matter. This block explains the prescriber's
      * intent. If nothing is specified substitution may be done.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionSubstitution
      */
     public function getSubstitution(): null|FHIRMedicationPrescriptionSubstitution
     {
@@ -863,9 +769,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
      * some cases substitution must happen, in other cases substitution must not
      * happen, and in others it does not matter. This block explains the prescriber's
      * intent. If nothing is specified substitution may be done.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionSubstitution $substitution
-     * @return static
      */
     public function setSubstitution(null|FHIRMedicationPrescriptionSubstitution $substitution): self
     {
@@ -879,10 +782,7 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationPrescription $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationPrescription
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -988,11 +888,6 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1098,10 +993,7 @@ class FHIRMedicationPrescription extends FHIRResource implements VersionContaine
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationPrescription $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRMedicationPrescription
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

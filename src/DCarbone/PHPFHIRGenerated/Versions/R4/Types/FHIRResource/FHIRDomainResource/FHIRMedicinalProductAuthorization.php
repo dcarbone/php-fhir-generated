@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
@@ -87,7 +85,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
@@ -162,8 +159,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medicinal product that is being authorized.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -198,8 +193,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the marketing authorization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -212,8 +205,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status has become applicable.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $statusDate;
@@ -227,8 +218,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * The date when a suspended the marketing or the marketing authorization of the
      * product is anticipated to be restored.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $restoreDate;
@@ -240,8 +229,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * The beginning of the time period in which the marketing authorization is in the
      * specific status shall be specified A complete date consisting of day, month and
      * year shall be specified using the ISO 8601 date format.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $validityPeriod;
@@ -252,8 +239,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * A period of time after authorization before generic product applicatiosn can be
      * submitted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $dataExclusivityPeriod;
@@ -267,8 +252,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * The date when the first authorization was granted by a Medicines Regulatory
      * Agency.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $dateOfFirstAuthorization;
@@ -282,8 +265,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * Date of first marketing authorization for a company's new medicinal product in
      * any country in the World.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $internationalBirthDate;
@@ -294,8 +275,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The legal framework against which this authorization is granted.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $legalBasis;
@@ -314,8 +293,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Marketing Authorization Holder.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $holder;
@@ -325,8 +302,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Medicines Regulatory Agency.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $regulator;
@@ -334,8 +309,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * The regulatory authorization of a medicinal product.
      *
      * The regulatory procedure for granting or amending a marketing authorization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
      */
     #[FHIRMedicinalProductAuthorizationProcedure]
     protected FHIRMedicinalProductAuthorizationProcedure $procedure;
@@ -343,30 +316,13 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
     /* constructor.php:61 */
     /**
      * FHIRMedicinalProductAuthorization Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subject
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $country
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $statusDate
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $restoreDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $validityPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $dataExclusivityPeriod
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $dateOfFirstAuthorization
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $internationalBirthDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $legalBasis
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization> $jurisdictionalAuthorization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $holder
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $regulator
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $procedure
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -500,9 +456,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for the marketing authorization, as assigned by a regulator.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -520,9 +473,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for the marketing authorization, as assigned by a regulator.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -540,8 +490,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medicinal product that is being authorized.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -554,9 +502,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medicinal product that is being authorized.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -601,9 +546,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country in which the marketing authorization has been granted.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $country
-     * @return static
      */
     public function addCountry(FHIRCodeableConcept $country): self
     {
@@ -621,9 +563,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country in which the marketing authorization has been granted.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$country
-     * @return static
      */
     public function setCountry(FHIRCodeableConcept ...$country): self
     {
@@ -668,9 +607,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Jurisdiction within a country.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -688,9 +624,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Jurisdiction within a country.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -709,8 +642,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the marketing authorization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -724,9 +655,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the marketing authorization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -747,8 +675,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status has become applicable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getStatusDate(): null|FHIRDateTime
     {
@@ -764,9 +690,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status has become applicable.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $statusDate
-     * @return static
      */
     public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
     {
@@ -791,8 +714,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * The date when a suspended the marketing or the marketing authorization of the
      * product is anticipated to be restored.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getRestoreDate(): null|FHIRDateTime
     {
@@ -809,9 +730,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * The date when a suspended the marketing or the marketing authorization of the
      * product is anticipated to be restored.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $restoreDate
-     * @return static
      */
     public function setRestoreDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $restoreDate): self
     {
@@ -834,8 +752,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * The beginning of the time period in which the marketing authorization is in the
      * specific status shall be specified A complete date consisting of day, month and
      * year shall be specified using the ISO 8601 date format.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getValidityPeriod(): null|FHIRPeriod
     {
@@ -850,9 +766,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * The beginning of the time period in which the marketing authorization is in the
      * specific status shall be specified A complete date consisting of day, month and
      * year shall be specified using the ISO 8601 date format.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $validityPeriod
-     * @return static
      */
     public function setValidityPeriod(null|FHIRPeriod $validityPeriod): self
     {
@@ -871,8 +784,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * A period of time after authorization before generic product applicatiosn can be
      * submitted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getDataExclusivityPeriod(): null|FHIRPeriod
     {
@@ -886,9 +797,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * A period of time after authorization before generic product applicatiosn can be
      * submitted.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $dataExclusivityPeriod
-     * @return static
      */
     public function setDataExclusivityPeriod(null|FHIRPeriod $dataExclusivityPeriod): self
     {
@@ -910,8 +818,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * The date when the first authorization was granted by a Medicines Regulatory
      * Agency.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getDateOfFirstAuthorization(): null|FHIRDateTime
     {
@@ -928,9 +834,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * The date when the first authorization was granted by a Medicines Regulatory
      * Agency.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $dateOfFirstAuthorization
-     * @return static
      */
     public function setDateOfFirstAuthorization(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateOfFirstAuthorization): self
     {
@@ -955,8 +858,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * Date of first marketing authorization for a company's new medicinal product in
      * any country in the World.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getInternationalBirthDate(): null|FHIRDateTime
     {
@@ -973,9 +874,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * Date of first marketing authorization for a company's new medicinal product in
      * any country in the World.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $internationalBirthDate
-     * @return static
      */
     public function setInternationalBirthDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $internationalBirthDate): self
     {
@@ -997,8 +895,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The legal framework against which this authorization is granted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getLegalBasis(): null|FHIRCodeableConcept
     {
@@ -1012,9 +908,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The legal framework against which this authorization is granted.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $legalBasis
-     * @return static
      */
     public function setLegalBasis(null|FHIRCodeableConcept $legalBasis): self
     {
@@ -1053,9 +946,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * The regulatory authorization of a medicinal product.
      *
      * Authorization in areas within a country.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization $jurisdictionalAuthorization
-     * @return static
      */
     public function addJurisdictionalAuthorization(FHIRMedicinalProductAuthorizationJurisdictionalAuthorization $jurisdictionalAuthorization): self
     {
@@ -1070,9 +960,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * The regulatory authorization of a medicinal product.
      *
      * Authorization in areas within a country.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization ...$jurisdictionalAuthorization
-     * @return static
      */
     public function setJurisdictionalAuthorization(FHIRMedicinalProductAuthorizationJurisdictionalAuthorization ...$jurisdictionalAuthorization): self
     {
@@ -1090,8 +977,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Marketing Authorization Holder.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getHolder(): null|FHIRReference
     {
@@ -1104,9 +989,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Marketing Authorization Holder.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $holder
-     * @return static
      */
     public function setHolder(null|FHIRReference $holder): self
     {
@@ -1124,8 +1006,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Medicines Regulatory Agency.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getRegulator(): null|FHIRReference
     {
@@ -1138,9 +1018,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Medicines Regulatory Agency.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $regulator
-     * @return static
      */
     public function setRegulator(null|FHIRReference $regulator): self
     {
@@ -1156,8 +1033,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * The regulatory authorization of a medicinal product.
      *
      * The regulatory procedure for granting or amending a marketing authorization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
      */
     public function getProcedure(): null|FHIRMedicinalProductAuthorizationProcedure
     {
@@ -1168,9 +1043,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * The regulatory authorization of a medicinal product.
      *
      * The regulatory procedure for granting or amending a marketing authorization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $procedure
-     * @return static
      */
     public function setProcedure(null|FHIRMedicinalProductAuthorizationProcedure $procedure): self
     {
@@ -1184,10 +1056,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1329,11 +1198,6 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1473,10 +1337,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductAuthorization
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

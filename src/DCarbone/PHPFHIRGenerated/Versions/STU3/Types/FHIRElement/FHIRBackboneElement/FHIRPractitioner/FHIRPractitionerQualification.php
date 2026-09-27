@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -130,8 +129,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded representation of the qualification.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -141,8 +138,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Period during which the qualification is valid.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -152,8 +147,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that regulates and issues the qualification.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $issuer;
@@ -162,12 +155,8 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
     /**
      * FHIRPractitionerQualification Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $issuer
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -235,9 +224,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that applies to this person's qualification in this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -254,9 +240,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that applies to this person's qualification in this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -275,8 +258,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded representation of the qualification.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -290,9 +271,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Coded representation of the qualification.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -310,8 +288,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Period during which the qualification is valid.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -324,9 +300,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Period during which the qualification is valid.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -344,8 +317,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that regulates and issues the qualification.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getIssuer(): null|FHIRReference
     {
@@ -358,9 +329,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that regulates and issues the qualification.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $issuer
-     * @return static
      */
     public function setIssuer(null|FHIRReference $issuer): self
     {
@@ -374,10 +342,7 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -427,10 +392,6 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -460,10 +421,7 @@ class FHIRPractitionerQualification extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

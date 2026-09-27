@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -133,8 +133,6 @@ class FHIRTransportRestriction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates the number of times the requested action should occur.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $repetitions;
@@ -144,8 +142,6 @@ class FHIRTransportRestriction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Over what time-period is fulfillment sought.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -166,10 +162,7 @@ class FHIRTransportRestriction extends FHIRBackboneElement
     /**
      * FHIRTransportRestriction Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $repetitions
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $recipient
      * @param null|string[] $fhirComments
      */
@@ -209,8 +202,6 @@ class FHIRTransportRestriction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates the number of times the requested action should occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     public function getRepetitions(): null|FHIRPositiveInt
     {
@@ -223,9 +214,6 @@ class FHIRTransportRestriction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates the number of times the requested action should occur.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $repetitions
-     * @return static
      */
     public function setRepetitions(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $repetitions): self
     {
@@ -246,8 +234,6 @@ class FHIRTransportRestriction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Over what time-period is fulfillment sought.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -260,9 +246,6 @@ class FHIRTransportRestriction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Over what time-period is fulfillment sought.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -307,9 +290,6 @@ class FHIRTransportRestriction extends FHIRBackboneElement
      *
      * For requests that are targeted to more than one potential recipient/target, to
      * identify who is fulfillment is sought for.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $recipient
-     * @return static
      */
     public function addRecipient(FHIRReference $recipient): self
     {
@@ -327,9 +307,6 @@ class FHIRTransportRestriction extends FHIRBackboneElement
      *
      * For requests that are targeted to more than one potential recipient/target, to
      * identify who is fulfillment is sought for.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$recipient
-     * @return static
      */
     public function setRecipient(FHIRReference ...$recipient): self
     {
@@ -343,10 +320,7 @@ class FHIRTransportRestriction extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportRestriction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportRestriction
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -402,10 +376,6 @@ class FHIRTransportRestriction extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -435,10 +405,7 @@ class FHIRTransportRestriction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportRestriction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportRestriction
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

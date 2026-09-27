@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -131,8 +130,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Identifies whether this portion of the statement is describing ability to
      * initiate or receive restful operations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRestfulConformanceMode
      */
     #[FHIRRestfulConformanceMode]
     protected FHIRRestfulConformanceMode $mode;
@@ -142,8 +139,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $documentation;
@@ -153,8 +148,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * Information about security of implementation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity
      */
     #[FHIRConformanceSecurity]
     protected FHIRConformanceSecurity $security;
@@ -211,11 +204,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
     /**
      * FHIRConformanceRest Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRRestfulConformanceModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRestfulConformanceMode $mode
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $documentation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity $security
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource> $resource
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1> $operation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceQuery> $query
@@ -274,8 +263,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Identifies whether this portion of the statement is describing ability to
      * initiate or receive restful operations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRestfulConformanceMode
      */
     public function getMode(): null|FHIRRestfulConformanceMode
     {
@@ -288,9 +275,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Identifies whether this portion of the statement is describing ability to
      * initiate or receive restful operations.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRRestfulConformanceModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRestfulConformanceMode $mode
-     * @return static
      */
     public function setMode(null|string|FHIRRestfulConformanceModeList|FHIRRestfulConformanceMode $mode): self
     {
@@ -311,8 +295,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getDocumentation(): null|FHIRString
     {
@@ -325,9 +307,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $documentation
-     * @return static
      */
     public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
     {
@@ -348,8 +327,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * Information about security of implementation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity
      */
     public function getSecurity(): null|FHIRConformanceSecurity
     {
@@ -362,9 +339,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * Information about security of implementation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity $security
-     * @return static
      */
     public function setSecurity(null|FHIRConformanceSecurity $security): self
     {
@@ -409,9 +383,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource $resource
-     * @return static
      */
     public function addResource(FHIRConformanceResource $resource): self
     {
@@ -429,9 +400,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource ...$resource
-     * @return static
      */
     public function setResource(FHIRConformanceResource ...$resource): self
     {
@@ -474,9 +442,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * A specification of restful operations supported by the system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1 $operation
-     * @return static
      */
     public function addOperation(FHIRConformanceOperation1 $operation): self
     {
@@ -493,9 +458,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * A specification of restful operations supported by the system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1 ...$operation
-     * @return static
      */
     public function setOperation(FHIRConformanceOperation1 ...$operation): self
     {
@@ -538,9 +500,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * Definition of a named query and its parameters and their meaning.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceQuery $query
-     * @return static
      */
     public function addQuery(FHIRConformanceQuery $query): self
     {
@@ -557,9 +516,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * particular implementation.
      *
      * Definition of a named query and its parameters and their meaning.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceQuery ...$query
-     * @return static
      */
     public function setQuery(FHIRConformanceQuery ...$query): self
     {
@@ -608,9 +564,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * specification has the profile identifier
      * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
      * own identifier for this purpose.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $documentMailbox
-     * @return static
      */
     public function addDocumentMailbox(string|FHIRUriPrimitive|FHIRUri $documentMailbox): self
     {
@@ -633,9 +586,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * specification has the profile identifier
      * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
      * own identifier for this purpose.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri ...$documentMailbox
-     * @return static
      */
     public function setDocumentMailbox(string|FHIRUriPrimitive|FHIRUri ...$documentMailbox): self
     {
@@ -656,10 +606,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -731,10 +678,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -795,10 +738,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

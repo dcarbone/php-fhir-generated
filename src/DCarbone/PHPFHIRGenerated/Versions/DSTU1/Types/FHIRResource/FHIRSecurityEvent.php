@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -129,8 +127,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Identifies the name, action type, time, and disposition of the audited event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventEvent
      */
     #[FHIRSecurityEventEvent]
     protected FHIRSecurityEventEvent $event;
@@ -151,8 +147,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Application systems and processes.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventSource
      */
     #[FHIRSecurityEventSource]
     protected FHIRSecurityEventSource $source;
@@ -171,15 +165,10 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
     /* constructor.php:61 */
     /**
      * FHIRSecurityEvent Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventEvent $event
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventParticipant> $participant
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventSource $source
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventObject> $object
      * @param null|string[] $fhirComments
      */
@@ -235,8 +224,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Identifies the name, action type, time, and disposition of the audited event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventEvent
      */
     public function getEvent(): null|FHIRSecurityEventEvent
     {
@@ -249,9 +236,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Identifies the name, action type, time, and disposition of the audited event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventEvent $event
-     * @return static
      */
     public function setEvent(null|FHIRSecurityEventEvent $event): self
     {
@@ -294,9 +278,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * A person, a hardware device or software process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventParticipant $participant
-     * @return static
      */
     public function addParticipant(FHIRSecurityEventParticipant $participant): self
     {
@@ -313,9 +294,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * A person, a hardware device or software process.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventParticipant ...$participant
-     * @return static
      */
     public function setParticipant(FHIRSecurityEventParticipant ...$participant): self
     {
@@ -333,8 +311,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Application systems and processes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventSource
      */
     public function getSource(): null|FHIRSecurityEventSource
     {
@@ -347,9 +323,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Application systems and processes.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventSource $source
-     * @return static
      */
     public function setSource(null|FHIRSecurityEventSource $source): self
     {
@@ -392,9 +365,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Specific instances of data or objects that have been accessed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventObject $object
-     * @return static
      */
     public function addObject(FHIRSecurityEventObject $object): self
     {
@@ -411,9 +381,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
      * usage.
      *
      * Specific instances of data or objects that have been accessed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventObject ...$object
-     * @return static
      */
     public function setObject(FHIRSecurityEventObject ...$object): self
     {
@@ -427,10 +394,7 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRSecurityEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRSecurityEvent
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -504,11 +468,6 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -564,10 +523,7 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRSecurityEvent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRSecurityEvent
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

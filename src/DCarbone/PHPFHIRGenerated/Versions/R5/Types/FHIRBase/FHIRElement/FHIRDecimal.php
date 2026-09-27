@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -127,7 +127,6 @@ class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
     ];
 
     /* class_default.php:112 */
-    /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive */
     #[FHIRDecimalPrimitive]
     protected FHIRDecimalPrimitive $value;
 
@@ -135,8 +134,6 @@ class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
     /**
      * FHIRDecimal Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -159,18 +156,11 @@ class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
     }
 
     /* class_default.php:174 */
-    /**
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive
-     */
     public function getValue(): null|FHIRDecimalPrimitive
     {
         return $this->value ?? null;
     }
 
-    /**
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive $value
-     * @return static
-     */
     public function setValue(null|string|int|float|FHIRDecimalPrimitive $value): self
     {
         if (null === $value) {
@@ -193,10 +183,7 @@ class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -249,11 +236,6 @@ class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueLocation
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config,
                                  null|ValueXMLLocationEnum $valueLocation = null): void
@@ -277,10 +259,7 @@ class FHIRDecimal extends FHIRElement implements PrimitiveContainerTypeInterface
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

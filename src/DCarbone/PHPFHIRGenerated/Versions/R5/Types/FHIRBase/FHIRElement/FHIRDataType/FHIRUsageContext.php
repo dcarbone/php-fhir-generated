@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -125,6 +124,18 @@ class FHIRUsageContext extends FHIRDataType
         self::FIELD_CODE => [
             MinOccursRule::NAME => 1,
         ],
+        self::FIELD_VALUE_CODEABLE_CONCEPT => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_QUANTITY => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_RANGE => [
+            MinOccursRule::NAME => 1,
+        ],
+        self::FIELD_VALUE_REFERENCE => [
+            MinOccursRule::NAME => 1,
+        ],
     ];
 
     /* class_default.php:96 */
@@ -139,8 +150,6 @@ class FHIRUsageContext extends FHIRDataType
      *
      * A code that identifies the type of context being specified by this usage
      * context.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $code;
@@ -151,10 +160,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * interpretation of the value is defined by the code.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $valueCodeableConcept;
@@ -166,10 +172,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * interpretation of the value is defined by the code.
      */
     #[FHIRQuantity]
     protected FHIRQuantity $valueQuantity;
@@ -179,10 +182,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * interpretation of the value is defined by the code.
      */
     #[FHIRRange]
     protected FHIRRange $valueRange;
@@ -192,10 +192,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * interpretation of the value is defined by the code.
      */
     #[FHIRReference]
     protected FHIRReference $valueReference;
@@ -204,12 +201,6 @@ class FHIRUsageContext extends FHIRDataType
     /**
      * FHIRUsageContext Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -255,8 +246,6 @@ class FHIRUsageContext extends FHIRDataType
      *
      * A code that identifies the type of context being specified by this usage
      * context.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     public function getCode(): null|FHIRCoding
     {
@@ -270,9 +259,6 @@ class FHIRUsageContext extends FHIRDataType
      *
      * A code that identifies the type of context being specified by this usage
      * context.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $code
-     * @return static
      */
     public function setCode(null|FHIRCoding $code): self
     {
@@ -291,10 +277,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * interpretation of the value is defined by the code.
      */
     public function getValueCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -308,11 +291,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
+     * interpretation of the value is defined by the code.
      */
     public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept): self
     {
@@ -332,10 +311,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
+     * interpretation of the value is defined by the code.
      */
     public function getValueQuantity(): null|FHIRQuantity
     {
@@ -350,11 +326,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $valueQuantity
-     * @return static
+     * interpretation of the value is defined by the code.
      */
     public function setValueQuantity(null|FHIRQuantity $valueQuantity): self
     {
@@ -372,10 +344,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * interpretation of the value is defined by the code.
      */
     public function getValueRange(): null|FHIRRange
     {
@@ -388,11 +357,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $valueRange
-     * @return static
+     * interpretation of the value is defined by the code.
      */
     public function setValueRange(null|FHIRRange $valueRange): self
     {
@@ -410,10 +375,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * interpretation of the value is defined by the code.
      */
     public function getValueReference(): null|FHIRReference
     {
@@ -426,11 +388,7 @@ class FHIRUsageContext extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A value that defines the context specified in this context of use. The
-     * interpretation of the value is defined by the code. (choose any one of value*,
-     * but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $valueReference
-     * @return static
+     * interpretation of the value is defined by the code.
      */
     public function setValueReference(null|FHIRReference $valueReference): self
     {
@@ -444,10 +402,7 @@ class FHIRUsageContext extends FHIRDataType
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -497,10 +452,6 @@ class FHIRUsageContext extends FHIRDataType
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -533,10 +484,7 @@ class FHIRUsageContext extends FHIRDataType
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

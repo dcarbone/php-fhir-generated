@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -143,8 +142,6 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * The type of category for the medication (for example, therapeutic
      * classification, therapeutic sub-classification).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -154,9 +151,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * source.
      */
     #[FHIRString]
     protected FHIRString $sourceString;
@@ -166,9 +161,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * source.
      */
     #[FHIRUri]
     protected FHIRUri $sourceUri;
@@ -190,11 +183,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
     /**
      * FHIRMedicationKnowledgeMedicineClassification Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sourceString
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $sourceUri
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $classification
      * @param null|string[] $fhirComments
      */
@@ -240,8 +229,6 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * The type of category for the medication (for example, therapeutic
      * classification, therapeutic sub-classification).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -256,9 +243,6 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * The type of category for the medication (for example, therapeutic
      * classification, therapeutic sub-classification).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -276,9 +260,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     * source.
      */
     public function getSourceString(): null|FHIRString
     {
@@ -291,10 +273,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $sourceString
-     * @return static
+     * source.
      */
     public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString): self
     {
@@ -315,9 +294,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * source.
      */
     public function getSourceUri(): null|FHIRUri
     {
@@ -330,10 +307,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Either a textual source of the classification or a reference to an online
-     * source. (choose any one of source*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $sourceUri
-     * @return static
+     * source.
      */
     public function setSourceUri(null|string|FHIRUriPrimitive|FHIRUri $sourceUri): self
     {
@@ -383,9 +357,6 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * Specific category assigned to the medication (e.g. anti-infective,
      * anti-hypertensive, antibiotic, etc.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $classification
-     * @return static
      */
     public function addClassification(FHIRCodeableConcept $classification): self
     {
@@ -404,9 +375,6 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      *
      * Specific category assigned to the medication (e.g. anti-infective,
      * anti-hypertensive, antibiotic, etc.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$classification
-     * @return static
      */
     public function setClassification(FHIRCodeableConcept ...$classification): self
     {
@@ -420,10 +388,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -489,10 +454,6 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -532,10 +493,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

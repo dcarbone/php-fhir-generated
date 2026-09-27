@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -111,8 +111,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $domain;
@@ -123,8 +121,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $classification;
@@ -156,10 +152,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
     /**
      * FHIRSubstanceReferenceInformationClassification Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $domain
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $classification
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $subtype
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $source
      * @param null|string[] $fhirComments
@@ -205,8 +198,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDomain(): null|FHIRCodeableConcept
     {
@@ -220,9 +211,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $domain
-     * @return static
      */
     public function setDomain(null|FHIRCodeableConcept $domain): self
     {
@@ -241,8 +229,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getClassification(): null|FHIRCodeableConcept
     {
@@ -256,9 +242,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $classification
-     * @return static
      */
     public function setClassification(null|FHIRCodeableConcept $classification): self
     {
@@ -303,9 +286,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $subtype
-     * @return static
      */
     public function addSubtype(FHIRCodeableConcept $subtype): self
     {
@@ -323,9 +303,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$subtype
-     * @return static
      */
     public function setSubtype(FHIRCodeableConcept ...$subtype): self
     {
@@ -368,9 +345,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $source
-     * @return static
      */
     public function addSource(FHIRReference $source): self
     {
@@ -387,9 +361,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$source
-     * @return static
      */
     public function setSource(FHIRReference ...$source): self
     {
@@ -403,10 +374,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -456,10 +424,6 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -491,10 +455,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -148,7 +148,6 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
     /**
      * FHIRMedicationKnowledgeIndicationGuideline Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $indication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosingGuideline> $dosingGuideline
@@ -215,9 +214,6 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
      *
      * Indication or reason for use of the medication that applies to the specific
      * administration guideline.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $indication
-     * @return static
      */
     public function addIndication(FHIRCodeableReference $indication): self
     {
@@ -236,9 +232,6 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
      *
      * Indication or reason for use of the medication that applies to the specific
      * administration guideline.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$indication
-     * @return static
      */
     public function setIndication(FHIRCodeableReference ...$indication): self
     {
@@ -277,9 +270,6 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The guidelines for the dosage of the medication for the indication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosingGuideline $dosingGuideline
-     * @return static
      */
     public function addDosingGuideline(FHIRMedicationKnowledgeDosingGuideline $dosingGuideline): self
     {
@@ -294,9 +284,6 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The guidelines for the dosage of the medication for the indication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosingGuideline ...$dosingGuideline
-     * @return static
      */
     public function setDosingGuideline(FHIRMedicationKnowledgeDosingGuideline ...$dosingGuideline): self
     {
@@ -310,10 +297,7 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIndicationGuideline $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIndicationGuideline
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -359,10 +343,6 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -384,10 +364,7 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIndicationGuideline $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIndicationGuideline
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

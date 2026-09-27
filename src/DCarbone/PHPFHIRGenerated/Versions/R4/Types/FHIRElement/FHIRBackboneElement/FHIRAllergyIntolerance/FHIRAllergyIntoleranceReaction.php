@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -140,8 +139,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * to confirm that AllergyIntolerance.reaction.substance falls within the semantic
      * scope of AllergyIntolerance.code, then the receiving system should ignore
      * AllergyIntolerance.reaction.substance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $substance;
@@ -165,8 +162,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Text description about the reaction as a whole, including details of the
      * manifestation if required.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -179,8 +174,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Record of the date and/or time of the onset of the Reaction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $onset;
@@ -191,8 +184,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Clinical assessment of the severity of the reaction event as a whole,
      * potentially considering multiple different manifestations.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAllergyIntoleranceSeverity
      */
     #[FHIRAllergyIntoleranceSeverity]
     protected FHIRAllergyIntoleranceSeverity $severity;
@@ -203,8 +194,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the route by which the subject was exposed to the substance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $exposureRoute;
@@ -225,14 +214,8 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
     /**
      * FHIRAllergyIntoleranceReaction Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $substance
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $manifestation
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $onset
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceSeverityList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $exposureRoute
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation> $note
      * @param null|string[] $fhirComments
      */
@@ -298,8 +281,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * to confirm that AllergyIntolerance.reaction.substance falls within the semantic
      * scope of AllergyIntolerance.code, then the receiving system should ignore
      * AllergyIntolerance.reaction.substance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getSubstance(): null|FHIRCodeableConcept
     {
@@ -322,9 +303,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * to confirm that AllergyIntolerance.reaction.substance falls within the semantic
      * scope of AllergyIntolerance.code, then the receiving system should ignore
      * AllergyIntolerance.reaction.substance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $substance
-     * @return static
      */
     public function setSubstance(null|FHIRCodeableConcept $substance): self
     {
@@ -371,9 +349,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Clinical symptoms and/or signs that are observed or associated with the adverse
      * reaction event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $manifestation
-     * @return static
      */
     public function addManifestation(FHIRCodeableConcept $manifestation): self
     {
@@ -392,9 +367,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Clinical symptoms and/or signs that are observed or associated with the adverse
      * reaction event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$manifestation
-     * @return static
      */
     public function setManifestation(FHIRCodeableConcept ...$manifestation): self
     {
@@ -413,8 +385,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Text description about the reaction as a whole, including details of the
      * manifestation if required.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -428,9 +398,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Text description about the reaction as a whole, including details of the
      * manifestation if required.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -454,8 +421,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Record of the date and/or time of the onset of the Reaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getOnset(): null|FHIRDateTime
     {
@@ -471,9 +436,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Record of the date and/or time of the onset of the Reaction.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $onset
-     * @return static
      */
     public function setOnset(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $onset): self
     {
@@ -495,8 +457,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Clinical assessment of the severity of the reaction event as a whole,
      * potentially considering multiple different manifestations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAllergyIntoleranceSeverity
      */
     public function getSeverity(): null|FHIRAllergyIntoleranceSeverity
     {
@@ -510,9 +470,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Clinical assessment of the severity of the reaction event as a whole,
      * potentially considering multiple different manifestations.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAllergyIntoleranceSeverityList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
-     * @return static
      */
     public function setSeverity(null|string|FHIRAllergyIntoleranceSeverityList|FHIRAllergyIntoleranceSeverity $severity): self
     {
@@ -534,8 +491,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the route by which the subject was exposed to the substance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getExposureRoute(): null|FHIRCodeableConcept
     {
@@ -549,9 +504,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the route by which the subject was exposed to the substance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $exposureRoute
-     * @return static
      */
     public function setExposureRoute(null|FHIRCodeableConcept $exposureRoute): self
     {
@@ -596,9 +548,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional text about the adverse reaction event not captured in other fields.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -616,9 +565,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional text about the adverse reaction event not captured in other fields.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -632,10 +578,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -715,10 +658,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -780,10 +719,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

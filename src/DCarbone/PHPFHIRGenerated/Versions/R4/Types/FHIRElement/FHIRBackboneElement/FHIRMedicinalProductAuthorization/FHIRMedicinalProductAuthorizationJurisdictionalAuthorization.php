@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -125,8 +125,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country of authorization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $country;
@@ -149,8 +147,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The legal status of supply in a jurisdiction or region.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $legalStatusOfSupply;
@@ -160,8 +156,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and expected end date of the authorization.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $validityPeriod;
@@ -170,13 +164,9 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
     /**
      * FHIRMedicinalProductAuthorizationJurisdictionalAuthorization Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $country
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $jurisdiction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $validityPeriod
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -250,9 +240,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assigned number for the marketing authorization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -270,9 +257,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assigned number for the marketing authorization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -291,8 +275,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country of authorization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCountry(): null|FHIRCodeableConcept
     {
@@ -306,9 +288,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country of authorization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $country
-     * @return static
      */
     public function setCountry(null|FHIRCodeableConcept $country): self
     {
@@ -353,9 +332,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Jurisdiction within a country.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
      */
     public function addJurisdiction(FHIRCodeableConcept $jurisdiction): self
     {
@@ -373,9 +349,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Jurisdiction within a country.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$jurisdiction
-     * @return static
      */
     public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
     {
@@ -394,8 +367,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The legal status of supply in a jurisdiction or region.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getLegalStatusOfSupply(): null|FHIRCodeableConcept
     {
@@ -409,9 +380,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The legal status of supply in a jurisdiction or region.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
-     * @return static
      */
     public function setLegalStatusOfSupply(null|FHIRCodeableConcept $legalStatusOfSupply): self
     {
@@ -429,8 +397,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and expected end date of the authorization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getValidityPeriod(): null|FHIRPeriod
     {
@@ -443,9 +409,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and expected end date of the authorization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $validityPeriod
-     * @return static
      */
     public function setValidityPeriod(null|FHIRPeriod $validityPeriod): self
     {
@@ -459,10 +422,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -514,10 +474,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -554,10 +510,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

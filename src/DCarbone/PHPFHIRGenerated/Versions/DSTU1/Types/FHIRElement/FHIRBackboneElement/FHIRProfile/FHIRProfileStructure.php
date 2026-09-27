@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,7 +56,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -131,8 +130,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Resource or Data type being described.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $type;
@@ -142,8 +139,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      *
      * The name of this resource constraint statement (to refer to it from other
      * resource constraints - from Profile.structure.element.definition.type.profile).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $name;
@@ -154,8 +149,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * This definition of a profile on a structure is published as a formal statement.
      * Some structural definitions might be defined purely for internal use within the
      * profile, and not intended to be used outside that context.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $publish;
@@ -164,8 +157,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human summary: why describe this resource?.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $purpose;
@@ -196,12 +187,7 @@ class FHIRProfileStructure extends FHIRBackboneElement
     /**
      * FHIRProfileStructure Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $publish
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $purpose
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement> $element
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSearchParam> $searchParam
      * @param null|string[] $fhirComments
@@ -255,8 +241,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Resource or Data type being described.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode
      */
     public function getType(): null|FHIRCode
     {
@@ -270,9 +254,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Resource or Data type being described.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $type
-     * @return static
      */
     public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
     {
@@ -293,8 +274,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      *
      * The name of this resource constraint statement (to refer to it from other
      * resource constraints - from Profile.structure.element.definition.type.profile).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getName(): null|FHIRString
     {
@@ -307,9 +286,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      *
      * The name of this resource constraint statement (to refer to it from other
      * resource constraints - from Profile.structure.element.definition.type.profile).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
-     * @return static
      */
     public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
     {
@@ -331,8 +307,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * This definition of a profile on a structure is published as a formal statement.
      * Some structural definitions might be defined purely for internal use within the
      * profile, and not intended to be used outside that context.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean
      */
     public function getPublish(): null|FHIRBoolean
     {
@@ -346,9 +320,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * This definition of a profile on a structure is published as a formal statement.
      * Some structural definitions might be defined purely for internal use within the
      * profile, and not intended to be used outside that context.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $publish
-     * @return static
      */
     public function setPublish(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $publish): self
     {
@@ -368,8 +339,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human summary: why describe this resource?.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString
      */
     public function getPurpose(): null|FHIRString
     {
@@ -381,9 +350,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human summary: why describe this resource?.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $purpose
-     * @return static
      */
     public function setPurpose(null|string|FHIRStringPrimitive|FHIRString $purpose): self
     {
@@ -429,9 +395,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Captures constraints on each element within the resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement $element
-     * @return static
      */
     public function addElement(FHIRProfileElement $element): self
     {
@@ -448,9 +411,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Captures constraints on each element within the resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement ...$element
-     * @return static
      */
     public function setElement(FHIRProfileElement ...$element): self
     {
@@ -493,9 +453,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Additional search parameters for implementations to support and/or make use of.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSearchParam $searchParam
-     * @return static
      */
     public function addSearchParam(FHIRProfileSearchParam $searchParam): self
     {
@@ -512,9 +469,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Additional search parameters for implementations to support and/or make use of.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSearchParam ...$searchParam
-     * @return static
      */
     public function setSearchParam(FHIRProfileSearchParam ...$searchParam): self
     {
@@ -528,10 +482,7 @@ class FHIRProfileStructure extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileStructure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileStructure
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -617,10 +568,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -682,10 +629,7 @@ class FHIRProfileStructure extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileStructure $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileStructure
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

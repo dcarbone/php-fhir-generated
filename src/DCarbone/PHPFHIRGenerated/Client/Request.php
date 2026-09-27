@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -33,54 +33,38 @@ use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 
 class Request
 {
-    /** @var \DCarbone\PHPFHIRGenerated\Client\HTTPMethodEnum */
     public HTTPMethodEnum $method;
 
-    /** @var string */
     public string $path;
 
-    /** @var int */
     public int $count;
-    /** @var string */
     public string $since;
-    /** @var string */
     public string $at;
 
     /**
      * The serialization format to use.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Encoding\SerializeFormatEnum
      */
     public SerializeFormatEnum $format;
 
-    /** @var string */
     public string $sort;
 
     /**
      * FHIR version to set as the desired response version.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\FHIRVersion
      */
     public FHIRVersion $acceptVersion;
 
     /**
      * The resource to send as part of a write request.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface
      */
     public ResourceTypeInterface $resource;
 
     /**
      * If a resource is defined, the config to use when serializing its data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig
      */
     public SerializeConfig $resourceSerializeConfig;
 
     /**
      * Extra query parameters.
-     *
-     * @var array
      */
     public array $queryParams;
 
@@ -88,8 +72,6 @@ class Request
      * If true, headers from the response must be returned and defined in the response object.
      *
      * @see \DCarbone\PHPFHIRGenerated\Client\Response::$headers
-     *
-     * @var bool
      */
     public bool $parseResponseHeaders;
 

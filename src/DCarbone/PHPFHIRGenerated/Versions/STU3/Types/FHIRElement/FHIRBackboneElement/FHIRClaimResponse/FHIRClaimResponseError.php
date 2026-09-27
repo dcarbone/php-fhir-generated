@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -124,8 +123,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * The sequence number of the line item submitted which contains the error. This
      * value is omitted when the error is elsewhere.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $sequenceLinkId;
@@ -137,8 +134,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the addition within the line item submitted which
      * contains the error. This value is omitted when the error is not related to an
      * Addition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $detailSequenceLinkId;
@@ -150,8 +145,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the addition within the line item submitted which
      * contains the error. This value is omitted when the error is not related to an
      * Addition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     #[FHIRPositiveInt]
     protected FHIRPositiveInt $subdetailSequenceLinkId;
@@ -163,8 +156,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * An error code,from a specified code system, which details why the claim could
      * not be adjudicated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -173,12 +164,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
     /**
      * FHIRClaimResponseError Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequenceLinkId
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $detailSequenceLinkId
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $subdetailSequenceLinkId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -222,8 +208,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * The sequence number of the line item submitted which contains the error. This
      * value is omitted when the error is elsewhere.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     public function getSequenceLinkId(): null|FHIRPositiveInt
     {
@@ -237,9 +221,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * The sequence number of the line item submitted which contains the error. This
      * value is omitted when the error is elsewhere.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequenceLinkId
-     * @return static
      */
     public function setSequenceLinkId(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequenceLinkId): self
     {
@@ -262,8 +243,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the addition within the line item submitted which
      * contains the error. This value is omitted when the error is not related to an
      * Addition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     public function getDetailSequenceLinkId(): null|FHIRPositiveInt
     {
@@ -278,9 +257,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the addition within the line item submitted which
      * contains the error. This value is omitted when the error is not related to an
      * Addition.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $detailSequenceLinkId
-     * @return static
      */
     public function setDetailSequenceLinkId(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $detailSequenceLinkId): self
     {
@@ -303,8 +279,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the addition within the line item submitted which
      * contains the error. This value is omitted when the error is not related to an
      * Addition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt
      */
     public function getSubdetailSequenceLinkId(): null|FHIRPositiveInt
     {
@@ -319,9 +293,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the addition within the line item submitted which
      * contains the error. This value is omitted when the error is not related to an
      * Addition.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $subdetailSequenceLinkId
-     * @return static
      */
     public function setSubdetailSequenceLinkId(null|string|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $subdetailSequenceLinkId): self
     {
@@ -344,8 +315,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * An error code,from a specified code system, which details why the claim could
      * not be adjudicated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -360,9 +329,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * An error code,from a specified code system, which details why the claim could
      * not be adjudicated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -376,10 +342,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -453,10 +416,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -499,10 +458,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

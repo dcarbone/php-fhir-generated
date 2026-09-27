@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -129,8 +128,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A code that identifies a property defined in the code system.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $property;
@@ -139,8 +136,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The kind of operation to perform as a part of the filter criteria.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFilterOperator
      */
     #[FHIRFilterOperator]
     protected FHIRFilterOperator $op;
@@ -154,8 +149,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * which is a regex match on the literal string of the property value when the
      * operation is 'regex', or one of the values (true and false), when the operation
      * is 'exists'.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $value;
@@ -164,11 +157,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     /**
      * FHIRValueSetFilter Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $property
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRFilterOperatorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFilterOperator $op
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $value
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -208,8 +197,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A code that identifies a property defined in the code system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode
      */
     public function getProperty(): null|FHIRCode
     {
@@ -223,9 +210,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A code that identifies a property defined in the code system.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $property
-     * @return static
      */
     public function setProperty(null|string|FHIRCodePrimitive|FHIRCode $property): self
     {
@@ -245,8 +229,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The kind of operation to perform as a part of the filter criteria.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFilterOperator
      */
     public function getOp(): null|FHIRFilterOperator
     {
@@ -258,9 +240,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The kind of operation to perform as a part of the filter criteria.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRFilterOperatorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFilterOperator $op
-     * @return static
      */
     public function setOp(null|string|FHIRFilterOperatorList|FHIRFilterOperator $op): self
     {
@@ -285,8 +264,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * which is a regex match on the literal string of the property value when the
      * operation is 'regex', or one of the values (true and false), when the operation
      * is 'exists'.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode
      */
     public function getValue(): null|FHIRCode
     {
@@ -303,9 +280,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * which is a regex match on the literal string of the property value when the
      * operation is 'regex', or one of the values (true and false), when the operation
      * is 'exists'.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $value
-     * @return static
      */
     public function setValue(null|string|FHIRCodePrimitive|FHIRCode $value): self
     {
@@ -322,10 +296,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -397,10 +368,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -438,10 +405,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

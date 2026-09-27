@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -134,9 +134,7 @@ class FHIRTestReportRequirement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test. (choose any one of link*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * test.
      */
     #[FHIRUri]
     protected FHIRUri $linkUri;
@@ -147,9 +145,7 @@ class FHIRTestReportRequirement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test. (choose any one of link*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * test.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $linkCanonical;
@@ -158,10 +154,7 @@ class FHIRTestReportRequirement extends FHIRBackboneElement
     /**
      * FHIRTestReportRequirement Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $linkUri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $linkCanonical
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -196,9 +189,7 @@ class FHIRTestReportRequirement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test. (choose any one of link*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     * test.
      */
     public function getLinkUri(): null|FHIRUri
     {
@@ -211,10 +202,7 @@ class FHIRTestReportRequirement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test. (choose any one of link*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $linkUri
-     * @return static
+     * test.
      */
     public function setLinkUri(null|string|FHIRUriPrimitive|FHIRUri $linkUri): self
     {
@@ -236,9 +224,7 @@ class FHIRTestReportRequirement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test. (choose any one of link*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * test.
      */
     public function getLinkCanonical(): null|FHIRCanonical
     {
@@ -252,10 +238,7 @@ class FHIRTestReportRequirement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Link or reference providing traceability to the testing requirement for this
-     * test. (choose any one of link*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $linkCanonical
-     * @return static
+     * test.
      */
     public function setLinkCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $linkCanonical): self
     {
@@ -272,10 +255,7 @@ class FHIRTestReportRequirement extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportRequirement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportRequirement
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -337,10 +317,6 @@ class FHIRTestReportRequirement extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -368,10 +344,7 @@ class FHIRTestReportRequirement extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportRequirement $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportRequirement
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

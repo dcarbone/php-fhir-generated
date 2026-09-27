@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -139,8 +138,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defining type of the component e.g. shell, layer, ink.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -209,9 +206,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
     /**
      * FHIRManufacturedItemDefinitionComponent Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $function
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity> $amount
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionConstituent> $constituent
@@ -268,8 +263,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defining type of the component e.g. shell, layer, ink.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -283,9 +276,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defining type of the component e.g. shell, layer, ink.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -332,9 +322,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      *
      * The function of this component within the item e.g. delivers active ingredient,
      * masks taste.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $function
-     * @return static
      */
     public function addFunction(FHIRCodeableConcept $function): self
     {
@@ -353,9 +340,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      *
      * The function of this component within the item e.g. delivers active ingredient,
      * masks taste.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$function
-     * @return static
      */
     public function setFunction(FHIRCodeableConcept ...$function): self
     {
@@ -404,9 +388,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      *
      * The measurable amount of total quantity of all substances in the component,
      * expressable in different ways (e.g. by mass or volume).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity $amount
-     * @return static
      */
     public function addAmount(FHIRQuantity $amount): self
     {
@@ -426,9 +407,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      *
      * The measurable amount of total quantity of all substances in the component,
      * expressable in different ways (e.g. by mass or volume).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$amount
-     * @return static
      */
     public function setAmount(FHIRQuantity ...$amount): self
     {
@@ -475,9 +453,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * that its component location within the item can be indicated. This not where the
      * item's ingredient are primarily stated (for which see Ingredient.for or
      * ManufacturedItemDefinition.ingredient).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionConstituent $constituent
-     * @return static
      */
     public function addConstituent(FHIRManufacturedItemDefinitionConstituent $constituent): self
     {
@@ -496,9 +471,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * that its component location within the item can be indicated. This not where the
      * item's ingredient are primarily stated (for which see Ingredient.for or
      * ManufacturedItemDefinition.ingredient).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionConstituent ...$constituent
-     * @return static
      */
     public function setConstituent(FHIRManufacturedItemDefinitionConstituent ...$constituent): self
     {
@@ -539,9 +511,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this component.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionProperty $property
-     * @return static
      */
     public function addProperty(FHIRManufacturedItemDefinitionProperty $property): self
     {
@@ -557,9 +526,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this component.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionProperty ...$property
-     * @return static
      */
     public function setProperty(FHIRManufacturedItemDefinitionProperty ...$property): self
     {
@@ -600,9 +566,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * A component that this component contains or is made from.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent $component
-     * @return static
      */
     public function addComponent(FHIRManufacturedItemDefinitionComponent $component): self
     {
@@ -618,9 +581,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * A component that this component contains or is made from.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent ...$component
-     * @return static
      */
     public function setComponent(FHIRManufacturedItemDefinitionComponent ...$component): self
     {
@@ -634,10 +594,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -691,10 +648,6 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -742,10 +695,7 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

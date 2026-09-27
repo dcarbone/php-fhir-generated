@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -201,8 +201,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference genome build that is used in this analysis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $genomeBuild;
@@ -213,8 +211,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The defined protocol that describes the analysis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $instantiatesCanonical;
@@ -225,8 +221,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * The URL pointing to an externally maintained protocol that describes the
      * analysis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $instantiatesUri;
@@ -236,8 +230,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the analysis event (human friendly).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -277,8 +269,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of the analysis event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -300,8 +290,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The protocol that was performed for the analysis event.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $protocolPerformed;
@@ -373,20 +361,13 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
     /**
      * FHIRGenomicStudyAnalysis Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $methodType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $changeType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $genomeBuild
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $instantiatesCanonical
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $instantiatesUri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $focus
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $specimen
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation> $note
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $protocolPerformed
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $regionsStudied
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $regionsCalled
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput> $input
@@ -518,9 +499,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -538,9 +516,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -587,9 +562,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Type of the methods used in the analysis, e.g., Fluorescence in situ
      * hybridization (FISH), Karyotyping, or Microsatellite instability testing (MSI).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $methodType
-     * @return static
      */
     public function addMethodType(FHIRCodeableConcept $methodType): self
     {
@@ -608,9 +580,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Type of the methods used in the analysis, e.g., Fluorescence in situ
      * hybridization (FISH), Karyotyping, or Microsatellite instability testing (MSI).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$methodType
-     * @return static
      */
     public function setMethodType(FHIRCodeableConcept ...$methodType): self
     {
@@ -657,9 +626,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Type of the genomic changes studied in the analysis, e.g., DNA, RNA, or amino
      * acid change.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $changeType
-     * @return static
      */
     public function addChangeType(FHIRCodeableConcept $changeType): self
     {
@@ -678,9 +644,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Type of the genomic changes studied in the analysis, e.g., DNA, RNA, or amino
      * acid change.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$changeType
-     * @return static
      */
     public function setChangeType(FHIRCodeableConcept ...$changeType): self
     {
@@ -699,8 +662,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference genome build that is used in this analysis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getGenomeBuild(): null|FHIRCodeableConcept
     {
@@ -714,9 +675,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference genome build that is used in this analysis.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $genomeBuild
-     * @return static
      */
     public function setGenomeBuild(null|FHIRCodeableConcept $genomeBuild): self
     {
@@ -735,8 +693,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The defined protocol that describes the analysis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getInstantiatesCanonical(): null|FHIRCanonical
     {
@@ -750,9 +706,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The defined protocol that describes the analysis.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $instantiatesCanonical
-     * @return static
      */
     public function setInstantiatesCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -774,8 +727,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * The URL pointing to an externally maintained protocol that describes the
      * analysis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getInstantiatesUri(): null|FHIRUri
     {
@@ -789,9 +740,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * The URL pointing to an externally maintained protocol that describes the
      * analysis.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $instantiatesUri
-     * @return static
      */
     public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -812,8 +760,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the analysis event (human friendly).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -826,9 +772,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the analysis event (human friendly).
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -882,9 +825,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * parent, child, or sibling. For example, in trio testing, the
      * GenomicStudy.subject would be the child (proband) and the
      * GenomicStudy.analysis.focus of a specific analysis would be the parent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $focus
-     * @return static
      */
     public function addFocus(FHIRReference $focus): self
     {
@@ -905,9 +845,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * parent, child, or sibling. For example, in trio testing, the
      * GenomicStudy.subject would be the child (proband) and the
      * GenomicStudy.analysis.focus of a specific analysis would be the parent.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$focus
-     * @return static
      */
     public function setFocus(FHIRReference ...$focus): self
     {
@@ -950,9 +887,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen used in the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $specimen
-     * @return static
      */
     public function addSpecimen(FHIRReference $specimen): self
     {
@@ -969,9 +903,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen used in the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$specimen
-     * @return static
      */
     public function setSpecimen(FHIRReference ...$specimen): self
     {
@@ -993,8 +924,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of the analysis event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -1011,9 +940,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of the analysis event.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -1061,9 +987,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any notes capture with the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1081,9 +1004,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any notes capture with the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1101,8 +1021,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The protocol that was performed for the analysis event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getProtocolPerformed(): null|FHIRReference
     {
@@ -1115,9 +1033,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The protocol that was performed for the analysis event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $protocolPerformed
-     * @return static
      */
     public function setProtocolPerformed(null|FHIRReference $protocolPerformed): self
     {
@@ -1160,9 +1075,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The genomic regions to be studied in the analysis (BED file).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $regionsStudied
-     * @return static
      */
     public function addRegionsStudied(FHIRReference $regionsStudied): self
     {
@@ -1179,9 +1091,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The genomic regions to be studied in the analysis (BED file).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$regionsStudied
-     * @return static
      */
     public function setRegionsStudied(FHIRReference ...$regionsStudied): self
     {
@@ -1224,9 +1133,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Genomic regions actually called in the analysis event (BED file).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $regionsCalled
-     * @return static
      */
     public function addRegionsCalled(FHIRReference $regionsCalled): self
     {
@@ -1243,9 +1149,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Genomic regions actually called in the analysis event (BED file).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$regionsCalled
-     * @return static
      */
     public function setRegionsCalled(FHIRReference ...$regionsCalled): self
     {
@@ -1286,9 +1189,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Inputs for the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput $input
-     * @return static
      */
     public function addInput(FHIRGenomicStudyInput $input): self
     {
@@ -1304,9 +1204,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Inputs for the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput ...$input
-     * @return static
      */
     public function setInput(FHIRGenomicStudyInput ...$input): self
     {
@@ -1347,9 +1244,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Outputs for the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyOutput $output
-     * @return static
      */
     public function addOutput(FHIRGenomicStudyOutput $output): self
     {
@@ -1365,9 +1259,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Outputs for the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyOutput ...$output
-     * @return static
      */
     public function setOutput(FHIRGenomicStudyOutput ...$output): self
     {
@@ -1408,9 +1299,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Performer for the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyPerformer $performer
-     * @return static
      */
     public function addPerformer(FHIRGenomicStudyPerformer $performer): self
     {
@@ -1426,9 +1314,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Performer for the analysis event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyPerformer ...$performer
-     * @return static
      */
     public function setPerformer(FHIRGenomicStudyPerformer ...$performer): self
     {
@@ -1471,9 +1356,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Devices used for the analysis (e.g., instruments, software), with settings and
      * parameters.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyDevice $device
-     * @return static
      */
     public function addDevice(FHIRGenomicStudyDevice $device): self
     {
@@ -1490,9 +1372,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Devices used for the analysis (e.g., instruments, software), with settings and
      * parameters.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyDevice ...$device
-     * @return static
      */
     public function setDevice(FHIRGenomicStudyDevice ...$device): self
     {
@@ -1506,10 +1385,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyAnalysis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyAnalysis
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -1619,10 +1495,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -1764,10 +1636,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyAnalysis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyAnalysis
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

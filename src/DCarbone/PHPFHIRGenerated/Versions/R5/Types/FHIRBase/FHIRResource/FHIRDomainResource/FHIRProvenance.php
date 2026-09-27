@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -112,7 +110,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -195,10 +192,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * The period during which the activity occurred.
      */
     #[FHIRPeriod]
     protected FHIRPeriod $occurredPeriod;
@@ -211,10 +205,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * The period during which the activity occurred.
      */
     #[FHIRDateTime]
     protected FHIRDateTime $occurredDateTime;
@@ -227,8 +218,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The instant of time at which the activity was recorded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $recorded;
@@ -251,8 +240,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the activity occurred, if relevant.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $location;
@@ -278,8 +265,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * An activity is something that occurs over a period of time and acts upon or with
      * entities; it may include consuming, processing, transforming, modifying,
      * relocating, using, or generating entities.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $activity;
@@ -302,8 +287,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The patient element is available to enable deterministic tracking of activities
      * that involve the patient as the subject of the data used in an activity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $patient;
@@ -315,8 +298,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * This will typically be the encounter the event occurred, but some events may be
      * initiated prior to or after the official completion of an encounter but still be
      * tied to the context of the encounter (e.g. pre-admission lab tests).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -375,25 +356,13 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
     /* constructor.php:61 */
     /**
      * FHIRProvenance Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $target
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $occurredPeriod
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $occurredDateTime
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $recorded
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri> $policy
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $authorization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $activity
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $basedOn
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent> $agent
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity> $entity
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature> $signature
@@ -524,9 +493,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * The Reference(s) that were generated or updated by the activity described in
      * this resource. A provenance can point to more than one target if multiple
      * resources were created/updated by the same activity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $target
-     * @return static
      */
     public function addTarget(FHIRReference $target): self
     {
@@ -545,9 +511,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * The Reference(s) that were generated or updated by the activity described in
      * this resource. A provenance can point to more than one target if multiple
      * resources were created/updated by the same activity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$target
-     * @return static
      */
     public function setTarget(FHIRReference ...$target): self
     {
@@ -564,10 +527,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
+     * The period during which the activity occurred.
      */
     public function getOccurredPeriod(): null|FHIRPeriod
     {
@@ -579,11 +539,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $occurredPeriod
-     * @return static
+     * The period during which the activity occurred.
      */
     public function setOccurredPeriod(null|FHIRPeriod $occurredPeriod): self
     {
@@ -604,10 +560,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
+     * The period during which the activity occurred.
      */
     public function getOccurredDateTime(): null|FHIRDateTime
     {
@@ -623,11 +576,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * UTC offset is allowed for dates and partial dates
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The period during which the activity occurred. (choose any one of occurred*, but
-     * only one)
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $occurredDateTime
-     * @return static
+     * The period during which the activity occurred.
      */
     public function setOccurredDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurredDateTime): self
     {
@@ -651,8 +600,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The instant of time at which the activity was recorded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
      */
     public function getRecorded(): null|FHIRInstant
     {
@@ -668,9 +615,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The instant of time at which the activity was recorded.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $recorded
-     * @return static
      */
     public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded): self
     {
@@ -720,9 +664,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * Policy or plan the activity was defined by. Typically, a single activity may
      * have multiple applicable policy documents, such as patient consent, guarantor
      * funding, etc.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $policy
-     * @return static
      */
     public function addPolicy(string|FHIRUriPrimitive|FHIRUri $policy): self
     {
@@ -744,9 +685,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * Policy or plan the activity was defined by. Typically, a single activity may
      * have multiple applicable policy documents, such as patient consent, guarantor
      * funding, etc.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri ...$policy
-     * @return static
      */
     public function setPolicy(string|FHIRUriPrimitive|FHIRUri ...$policy): self
     {
@@ -771,8 +709,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the activity occurred, if relevant.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getLocation(): null|FHIRReference
     {
@@ -785,9 +721,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the activity occurred, if relevant.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
-     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -834,9 +767,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $authorization
-     * @return static
      */
     public function addAuthorization(FHIRCodeableReference $authorization): self
     {
@@ -855,9 +785,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$authorization
-     * @return static
      */
     public function setAuthorization(FHIRCodeableReference ...$authorization): self
     {
@@ -878,8 +805,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * An activity is something that occurs over a period of time and acts upon or with
      * entities; it may include consuming, processing, transforming, modifying,
      * relocating, using, or generating entities.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getActivity(): null|FHIRCodeableConcept
     {
@@ -895,9 +820,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * An activity is something that occurs over a period of time and acts upon or with
      * entities; it may include consuming, processing, transforming, modifying,
      * relocating, using, or generating entities.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $activity
-     * @return static
      */
     public function setActivity(null|FHIRCodeableConcept $activity): self
     {
@@ -942,9 +864,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Allows tracing of authorizatino for the events and tracking whether
      * proposals/recommendations were acted upon.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -962,9 +881,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Allows tracing of authorizatino for the events and tracking whether
      * proposals/recommendations were acted upon.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -983,8 +899,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The patient element is available to enable deterministic tracking of activities
      * that involve the patient as the subject of the data used in an activity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getPatient(): null|FHIRReference
     {
@@ -998,9 +912,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * The patient element is available to enable deterministic tracking of activities
      * that involve the patient as the subject of the data used in an activity.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
-     * @return static
      */
     public function setPatient(null|FHIRReference $patient): self
     {
@@ -1020,8 +931,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * This will typically be the encounter the event occurred, but some events may be
      * initiated prior to or after the official completion of an encounter but still be
      * tied to the context of the encounter (e.g. pre-admission lab tests).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -1036,9 +945,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * This will typically be the encounter the event occurred, but some events may be
      * initiated prior to or after the official completion of an encounter but still be
      * tied to the context of the encounter (e.g. pre-admission lab tests).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1095,9 +1001,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent $agent
-     * @return static
      */
     public function addAgent(FHIRProvenanceAgent $agent): self
     {
@@ -1121,9 +1024,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent ...$agent
-     * @return static
      */
     public function setAgent(FHIRProvenanceAgent ...$agent): self
     {
@@ -1178,9 +1078,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * authenticated), all of which may impact security, privacy, and trust policies.
      *
      * An entity used in this activity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity $entity
-     * @return static
      */
     public function addEntity(FHIRProvenanceEntity $entity): self
     {
@@ -1203,9 +1100,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      * authenticated), all of which may impact security, privacy, and trust policies.
      *
      * An entity used in this activity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity ...$entity
-     * @return static
      */
     public function setEntity(FHIRProvenanceEntity ...$entity): self
     {
@@ -1258,9 +1152,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A digital signature on the target Reference(s). The signer should match a
      * Provenance.agent. The purpose of the signature is indicated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature $signature
-     * @return static
      */
     public function addSignature(FHIRSignature $signature): self
     {
@@ -1282,9 +1173,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A digital signature on the target Reference(s). The signer should match a
      * Provenance.agent. The purpose of the signature is indicated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature ...$signature
-     * @return static
      */
     public function setSignature(FHIRSignature ...$signature): self
     {
@@ -1298,10 +1186,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRProvenance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRProvenance
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1423,11 +1308,6 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1553,10 +1433,7 @@ class FHIRProvenance extends FHIRDomainResource implements VersionContainedTypeI
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRProvenance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRProvenance
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

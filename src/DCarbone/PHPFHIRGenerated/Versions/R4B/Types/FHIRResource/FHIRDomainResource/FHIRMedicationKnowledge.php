@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
@@ -116,7 +114,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -187,8 +184,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * available. Usage note: This could be a standard medication code such as a code
      * from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary
      * code, optionally with translations to other code systems.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -201,8 +196,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * A code to indicate if the medication is in active use. The status refers to the
      * validity about the information of the medication and not to its medicinal
      * properties.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $status;
@@ -213,8 +206,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $manufacturer;
@@ -225,8 +216,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $doseForm;
@@ -241,8 +230,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * specifying a product that has the same strength (For example, Insulin glargine
      * 100 unit per mL solution for injection), this attribute provides additional
      * clarification of the package amount (For example, 3 mL, 10mL, etc.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $amount;
@@ -323,8 +310,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * the Narrative, or extensions
      *
      * The instructions for preparing the medication.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $preparationInstruction;
@@ -380,8 +365,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Information that only applies to packages (not products).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging
      */
     #[FHIRMedicationKnowledgePackaging]
     protected FHIRMedicationKnowledgePackaging $packaging;
@@ -430,32 +413,20 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
     /* constructor.php:61 */
     /**
      * FHIRMedicationKnowledge Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $manufacturer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $doseForm
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $amount
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString> $synonym
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge> $relatedMedicationKnowledge
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $associatedMedication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $productType
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph> $monograph
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient> $ingredient
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $preparationInstruction
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $intendedRoute
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost> $cost
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram> $monitoringProgram
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines> $administrationGuidelines
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification> $medicineClassification
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging $packaging
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic> $drugCharacteristic
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $contraindication
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory> $regulatory
@@ -594,8 +565,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * available. Usage note: This could be a standard medication code such as a code
      * from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary
      * code, optionally with translations to other code systems.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -612,9 +581,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * available. Usage note: This could be a standard medication code such as a code
      * from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary
      * code, optionally with translations to other code systems.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -635,8 +601,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * A code to indicate if the medication is in active use. The status refers to the
      * validity about the information of the medication and not to its medicinal
      * properties.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     public function getStatus(): null|FHIRCode
     {
@@ -652,9 +616,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * A code to indicate if the medication is in active use. The status refers to the
      * validity about the information of the medication and not to its medicinal
      * properties.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $status
-     * @return static
      */
     public function setStatus(null|string|FHIRCodePrimitive|FHIRCode $status): self
     {
@@ -676,8 +637,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getManufacturer(): null|FHIRReference
     {
@@ -691,9 +650,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $manufacturer
-     * @return static
      */
     public function setManufacturer(null|FHIRReference $manufacturer): self
     {
@@ -712,8 +668,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDoseForm(): null|FHIRCodeableConcept
     {
@@ -727,9 +681,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $doseForm
-     * @return static
      */
     public function setDoseForm(null|FHIRCodeableConcept $doseForm): self
     {
@@ -752,8 +703,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * specifying a product that has the same strength (For example, Insulin glargine
      * 100 unit per mL solution for injection), this attribute provides additional
      * clarification of the package amount (For example, 3 mL, 10mL, etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity
      */
     public function getAmount(): null|FHIRQuantity
     {
@@ -771,9 +720,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * specifying a product that has the same strength (For example, Insulin glargine
      * 100 unit per mL solution for injection), this attribute provides additional
      * clarification of the package amount (For example, 3 mL, 10mL, etc.).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity $amount
-     * @return static
      */
     public function setAmount(null|FHIRQuantity $amount): self
     {
@@ -820,9 +766,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Additional names for a medication, for example, the name(s) given to a
      * medication in different countries. For example, acetaminophen and paracetamol or
      * salbutamol and albuterol.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $synonym
-     * @return static
      */
     public function addSynonym(string|FHIRStringPrimitive|FHIRString $synonym): self
     {
@@ -844,9 +787,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Additional names for a medication, for example, the name(s) given to a
      * medication in different countries. For example, acetaminophen and paracetamol or
      * salbutamol and albuterol.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString ...$synonym
-     * @return static
      */
     public function setSynonym(string|FHIRStringPrimitive|FHIRString ...$synonym): self
     {
@@ -892,9 +832,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Associated or related knowledge about a medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge $relatedMedicationKnowledge
-     * @return static
      */
     public function addRelatedMedicationKnowledge(FHIRMedicationKnowledgeRelatedMedicationKnowledge $relatedMedicationKnowledge): self
     {
@@ -909,9 +846,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Associated or related knowledge about a medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge ...$relatedMedicationKnowledge
-     * @return static
      */
     public function setRelatedMedicationKnowledge(FHIRMedicationKnowledgeRelatedMedicationKnowledge ...$relatedMedicationKnowledge): self
     {
@@ -960,9 +894,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if
      * this is a generic medication (e.g. Rosuvastatin), this would link to a branded
      * product (e.g. Crestor).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $associatedMedication
-     * @return static
      */
     public function addAssociatedMedication(FHIRReference $associatedMedication): self
     {
@@ -982,9 +913,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if
      * this is a generic medication (e.g. Rosuvastatin), this would link to a branded
      * product (e.g. Crestor).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$associatedMedication
-     * @return static
      */
     public function setAssociatedMedication(FHIRReference ...$associatedMedication): self
     {
@@ -1031,9 +959,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * Category of the medication or product (e.g. branded product, therapeutic moeity,
      * generic product, innovator product, etc.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $productType
-     * @return static
      */
     public function addProductType(FHIRCodeableConcept $productType): self
     {
@@ -1052,9 +977,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * Category of the medication or product (e.g. branded product, therapeutic moeity,
      * generic product, innovator product, etc.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$productType
-     * @return static
      */
     public function setProductType(FHIRCodeableConcept ...$productType): self
     {
@@ -1093,9 +1015,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Associated documentation about the medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph $monograph
-     * @return static
      */
     public function addMonograph(FHIRMedicationKnowledgeMonograph $monograph): self
     {
@@ -1110,9 +1029,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Associated documentation about the medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph ...$monograph
-     * @return static
      */
     public function setMonograph(FHIRMedicationKnowledgeMonograph ...$monograph): self
     {
@@ -1151,9 +1067,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Identifies a particular constituent of interest in the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient $ingredient
-     * @return static
      */
     public function addIngredient(FHIRMedicationKnowledgeIngredient $ingredient): self
     {
@@ -1168,9 +1081,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Identifies a particular constituent of interest in the product.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient ...$ingredient
-     * @return static
      */
     public function setIngredient(FHIRMedicationKnowledgeIngredient ...$ingredient): self
     {
@@ -1192,8 +1102,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * the Narrative, or extensions
      *
      * The instructions for preparing the medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getPreparationInstruction(): null|FHIRMarkdown
     {
@@ -1210,9 +1118,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * the Narrative, or extensions
      *
      * The instructions for preparing the medication.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $preparationInstruction
-     * @return static
      */
     public function setPreparationInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $preparationInstruction): self
     {
@@ -1260,9 +1165,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $intendedRoute
-     * @return static
      */
     public function addIntendedRoute(FHIRCodeableConcept $intendedRoute): self
     {
@@ -1280,9 +1182,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$intendedRoute
-     * @return static
      */
     public function setIntendedRoute(FHIRCodeableConcept ...$intendedRoute): self
     {
@@ -1321,9 +1220,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * The price of the medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost $cost
-     * @return static
      */
     public function addCost(FHIRMedicationKnowledgeCost $cost): self
     {
@@ -1338,9 +1234,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * The price of the medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost ...$cost
-     * @return static
      */
     public function setCost(FHIRMedicationKnowledgeCost ...$cost): self
     {
@@ -1379,9 +1272,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * The program under which the medication is reviewed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram $monitoringProgram
-     * @return static
      */
     public function addMonitoringProgram(FHIRMedicationKnowledgeMonitoringProgram $monitoringProgram): self
     {
@@ -1396,9 +1286,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * The program under which the medication is reviewed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram ...$monitoringProgram
-     * @return static
      */
     public function setMonitoringProgram(FHIRMedicationKnowledgeMonitoringProgram ...$monitoringProgram): self
     {
@@ -1437,9 +1324,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Guidelines for the administration of the medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines $administrationGuidelines
-     * @return static
      */
     public function addAdministrationGuidelines(FHIRMedicationKnowledgeAdministrationGuidelines $administrationGuidelines): self
     {
@@ -1454,9 +1338,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Guidelines for the administration of the medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines ...$administrationGuidelines
-     * @return static
      */
     public function setAdministrationGuidelines(FHIRMedicationKnowledgeAdministrationGuidelines ...$administrationGuidelines): self
     {
@@ -1495,9 +1376,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Categorization of the medication within a formulary or classification system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification $medicineClassification
-     * @return static
      */
     public function addMedicineClassification(FHIRMedicationKnowledgeMedicineClassification $medicineClassification): self
     {
@@ -1512,9 +1390,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Categorization of the medication within a formulary or classification system.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification ...$medicineClassification
-     * @return static
      */
     public function setMedicineClassification(FHIRMedicationKnowledgeMedicineClassification ...$medicineClassification): self
     {
@@ -1530,8 +1405,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Information that only applies to packages (not products).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging
      */
     public function getPackaging(): null|FHIRMedicationKnowledgePackaging
     {
@@ -1542,9 +1415,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Information that only applies to packages (not products).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging $packaging
-     * @return static
      */
     public function setPackaging(null|FHIRMedicationKnowledgePackaging $packaging): self
     {
@@ -1585,9 +1455,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * Specifies descriptive properties of the medicine, such as color, shape,
      * imprints, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic $drugCharacteristic
-     * @return static
      */
     public function addDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic $drugCharacteristic): self
     {
@@ -1603,9 +1470,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * Specifies descriptive properties of the medicine, such as color, shape,
      * imprints, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic ...$drugCharacteristic
-     * @return static
      */
     public function setDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic ...$drugCharacteristic): self
     {
@@ -1650,9 +1514,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * Potential clinical issue with or between medication(s) (for example, drug-drug
      * interaction, drug-disease contraindication, drug-allergy interaction, etc.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $contraindication
-     * @return static
      */
     public function addContraindication(FHIRReference $contraindication): self
     {
@@ -1670,9 +1531,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * Potential clinical issue with or between medication(s) (for example, drug-drug
      * interaction, drug-disease contraindication, drug-allergy interaction, etc.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$contraindication
-     * @return static
      */
     public function setContraindication(FHIRReference ...$contraindication): self
     {
@@ -1711,9 +1569,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Regulatory information about a medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory $regulatory
-     * @return static
      */
     public function addRegulatory(FHIRMedicationKnowledgeRegulatory $regulatory): self
     {
@@ -1728,9 +1583,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      * Information about a medication that is used to support knowledge.
      *
      * Regulatory information about a medication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory ...$regulatory
-     * @return static
      */
     public function setRegulatory(FHIRMedicationKnowledgeRegulatory ...$regulatory): self
     {
@@ -1771,9 +1623,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * The time course of drug absorption, distribution, metabolism and excretion of a
      * medication from the body.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics $kinetics
-     * @return static
      */
     public function addKinetics(FHIRMedicationKnowledgeKinetics $kinetics): self
     {
@@ -1789,9 +1638,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
      *
      * The time course of drug absorption, distribution, metabolism and excretion of a
      * medication from the body.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics ...$kinetics
-     * @return static
      */
     public function setKinetics(FHIRMedicationKnowledgeKinetics ...$kinetics): self
     {
@@ -1805,10 +1651,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1946,11 +1789,6 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2132,10 +1970,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRMedicationKnowledge
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -135,8 +134,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Whether or not the test execution will require the given capabilities of the
      * server in order for this test script to execute.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $required;
@@ -146,8 +143,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Whether or not the test execution will validate the given capabilities of the
      * server in order for this test script to execute.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $validated;
@@ -158,8 +153,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Description of the capabilities that this test script is requiring the server to
      * support.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -180,8 +173,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which server these requirements apply to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $destination;
@@ -205,8 +196,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * Minimum capabilities required of server for test script to execute successfully.
      * If server does not meet at a minimum the referenced capability statement, then
      * all tests in this script are skipped.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $capabilities;
@@ -215,15 +204,9 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     /**
      * FHIRTestScriptCapability Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $required
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $validated
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
      * @param null|iterable<string>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger> $origin
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $destination
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri> $link
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $capabilities
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -278,8 +261,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Whether or not the test execution will require the given capabilities of the
      * server in order for this test script to execute.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getRequired(): null|FHIRBoolean
     {
@@ -292,9 +273,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Whether or not the test execution will require the given capabilities of the
      * server in order for this test script to execute.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $required
-     * @return static
      */
     public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required): self
     {
@@ -315,8 +293,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Whether or not the test execution will validate the given capabilities of the
      * server in order for this test script to execute.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean
      */
     public function getValidated(): null|FHIRBoolean
     {
@@ -329,9 +305,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Whether or not the test execution will validate the given capabilities of the
      * server in order for this test script to execute.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $validated
-     * @return static
      */
     public function setValidated(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $validated): self
     {
@@ -353,8 +326,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Description of the capabilities that this test script is requiring the server to
      * support.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -368,9 +339,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Description of the capabilities that this test script is requiring the server to
      * support.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -416,9 +384,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which origin server these requirements apply to.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $origin
-     * @return static
      */
     public function addOrigin(string|float|FHIRIntegerPrimitive|FHIRInteger $origin): self
     {
@@ -438,9 +403,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which origin server these requirements apply to.
-     *
-     * @param string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger ...$origin
-     * @return static
      */
     public function setOrigin(string|float|FHIRIntegerPrimitive|FHIRInteger ...$origin): self
     {
@@ -465,8 +427,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which server these requirements apply to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger
      */
     public function getDestination(): null|FHIRInteger
     {
@@ -479,9 +439,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which server these requirements apply to.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $destination
-     * @return static
      */
     public function setDestination(null|string|float|FHIRIntegerPrimitive|FHIRInteger $destination): self
     {
@@ -529,9 +486,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Links to the FHIR specification that describes this interaction and the
      * resources involved in more detail.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $link
-     * @return static
      */
     public function addLink(string|FHIRUriPrimitive|FHIRUri $link): self
     {
@@ -552,9 +506,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Links to the FHIR specification that describes this interaction and the
      * resources involved in more detail.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri ...$link
-     * @return static
      */
     public function setLink(string|FHIRUriPrimitive|FHIRUri ...$link): self
     {
@@ -581,8 +532,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * Minimum capabilities required of server for test script to execute successfully.
      * If server does not meet at a minimum the referenced capability statement, then
      * all tests in this script are skipped.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getCapabilities(): null|FHIRReference
     {
@@ -597,9 +546,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * Minimum capabilities required of server for test script to execute successfully.
      * If server does not meet at a minimum the referenced capability statement, then
      * all tests in this script are skipped.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $capabilities
-     * @return static
      */
     public function setCapabilities(null|FHIRReference $capabilities): self
     {
@@ -613,10 +559,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptCapability $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptCapability
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -704,10 +647,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -774,10 +713,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptCapability $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptCapability
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

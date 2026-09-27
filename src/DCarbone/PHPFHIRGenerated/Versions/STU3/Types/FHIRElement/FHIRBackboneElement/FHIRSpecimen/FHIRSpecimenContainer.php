@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -131,8 +131,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the container.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -143,8 +141,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -156,8 +152,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The capacity (volume or other measure) the container may contain.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $capacity;
@@ -170,8 +164,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * The quantity of specimen in the container; may be volume, dimensions, or other
      * appropriate measurements, depending on the specimen type.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     #[FHIRQuantity]
     protected FHIRQuantity $specimenQuantity;
@@ -183,8 +175,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * Introduced substance to preserve, maintain or enhance the specimen. Examples:
      * Formalin, Citrate, EDTA.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $additiveCodeableConcept;
@@ -195,8 +185,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * Introduced substance to preserve, maintain or enhance the specimen. Examples:
      * Formalin, Citrate, EDTA.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $additiveReference;
@@ -205,15 +193,8 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
     /**
      * FHIRSpecimenContainer Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $capacity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $specimenQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $additiveCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $additiveReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -297,9 +278,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned
      * identifier, etc. The container ID may differ from the specimen id in some
      * circumstances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -318,9 +296,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned
      * identifier, etc. The container ID may differ from the specimen id in some
      * circumstances.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -338,8 +313,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the container.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -352,9 +325,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the container.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -376,8 +346,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -391,9 +359,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -413,8 +378,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The capacity (volume or other measure) the container may contain.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     public function getCapacity(): null|FHIRQuantity
     {
@@ -429,9 +392,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The capacity (volume or other measure) the container may contain.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $capacity
-     * @return static
      */
     public function setCapacity(null|FHIRQuantity $capacity): self
     {
@@ -452,8 +412,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * The quantity of specimen in the container; may be volume, dimensions, or other
      * appropriate measurements, depending on the specimen type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity
      */
     public function getSpecimenQuantity(): null|FHIRQuantity
     {
@@ -469,9 +427,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * The quantity of specimen in the container; may be volume, dimensions, or other
      * appropriate measurements, depending on the specimen type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity $specimenQuantity
-     * @return static
      */
     public function setSpecimenQuantity(null|FHIRQuantity $specimenQuantity): self
     {
@@ -491,8 +446,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * Introduced substance to preserve, maintain or enhance the specimen. Examples:
      * Formalin, Citrate, EDTA.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getAdditiveCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -507,9 +460,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * Introduced substance to preserve, maintain or enhance the specimen. Examples:
      * Formalin, Citrate, EDTA.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $additiveCodeableConcept
-     * @return static
      */
     public function setAdditiveCodeableConcept(null|FHIRCodeableConcept $additiveCodeableConcept): self
     {
@@ -528,8 +478,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * Introduced substance to preserve, maintain or enhance the specimen. Examples:
      * Formalin, Citrate, EDTA.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference
      */
     public function getAdditiveReference(): null|FHIRReference
     {
@@ -543,9 +491,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * Introduced substance to preserve, maintain or enhance the specimen. Examples:
      * Formalin, Citrate, EDTA.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $additiveReference
-     * @return static
      */
     public function setAdditiveReference(null|FHIRReference $additiveReference): self
     {
@@ -559,10 +504,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -626,10 +568,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -679,10 +617,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

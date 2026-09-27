@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -95,7 +93,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRequestStatus;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
@@ -254,8 +251,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now a historical record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRequestStatus
      */
     #[FHIRRequestStatus]
     protected FHIRRequestStatus $status;
@@ -266,8 +261,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates the level of authority/intentionality associated with the care plan
      * and where the care plan fits into the workflow chain.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCarePlanIntent
      */
     #[FHIRCarePlanIntent]
     protected FHIRCarePlanIntent $intent;
@@ -291,8 +284,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-friendly name for the care plan.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -302,8 +293,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the scope and nature of the plan.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -313,8 +302,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient or group whose intended care is described by the plan.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -325,8 +312,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The Encounter during which this CarePlan was created or to which the creation of
      * this record is tightly associated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $encounter;
@@ -336,8 +321,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the plan did (or is intended to) come into effect and end.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -351,8 +334,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Represents when this particular CarePlan record was created in the system, which
      * is often a system-generated date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $created;
@@ -363,8 +344,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * When populated, the author is responsible for the care plan. The care plan is
      * attributed to the author.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $author;
@@ -456,11 +435,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
     /* constructor.php:61 */
     /**
      * FHIRCarePlan Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
@@ -470,16 +444,7 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $basedOn
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $replaces
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $partOf
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRRequestStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRequestStatus $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCarePlanIntentList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCarePlanIntent $intent
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept> $category
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $encounter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $created
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $author
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $contributor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $careTeam
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $addresses
@@ -652,9 +617,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * Business identifiers assigned to this care plan by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -674,9 +636,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * Business identifiers assigned to this care plan by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -723,9 +682,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other
      * definition that is adhered to in whole or in part by this CarePlan.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $instantiatesCanonical
-     * @return static
      */
     public function addInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical): self
     {
@@ -747,9 +703,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other
      * definition that is adhered to in whole or in part by this CarePlan.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical ...$instantiatesCanonical
-     * @return static
      */
     public function setInstantiatesCanonical(string|FHIRCanonicalPrimitive|FHIRCanonical ...$instantiatesCanonical): self
     {
@@ -801,9 +754,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The URL pointing to an externally maintained protocol, guideline, questionnaire
      * or other definition that is adhered to in whole or in part by this CarePlan.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $instantiatesUri
-     * @return static
      */
     public function addInstantiatesUri(string|FHIRUriPrimitive|FHIRUri $instantiatesUri): self
     {
@@ -824,9 +774,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The URL pointing to an externally maintained protocol, guideline, questionnaire
      * or other definition that is adhered to in whole or in part by this CarePlan.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri ...$instantiatesUri
-     * @return static
      */
     public function setInstantiatesUri(string|FHIRUriPrimitive|FHIRUri ...$instantiatesUri): self
     {
@@ -876,9 +823,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A care plan that is fulfilled in whole or in part by this care plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $basedOn
-     * @return static
      */
     public function addBasedOn(FHIRReference $basedOn): self
     {
@@ -895,9 +839,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A care plan that is fulfilled in whole or in part by this care plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$basedOn
-     * @return static
      */
     public function setBasedOn(FHIRReference ...$basedOn): self
     {
@@ -940,9 +881,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated care plan whose function is taken by this new care plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $replaces
-     * @return static
      */
     public function addReplaces(FHIRReference $replaces): self
     {
@@ -959,9 +897,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated care plan whose function is taken by this new care plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$replaces
-     * @return static
      */
     public function setReplaces(FHIRReference ...$replaces): self
     {
@@ -1004,9 +939,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger care plan of which this particular care plan is a component or step.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $partOf
-     * @return static
      */
     public function addPartOf(FHIRReference $partOf): self
     {
@@ -1023,9 +955,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger care plan of which this particular care plan is a component or step.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$partOf
-     * @return static
      */
     public function setPartOf(FHIRReference ...$partOf): self
     {
@@ -1044,8 +973,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now a historical record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRequestStatus
      */
     public function getStatus(): null|FHIRRequestStatus
     {
@@ -1059,9 +986,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now a historical record.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRRequestStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRequestStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRRequestStatusList|FHIRRequestStatus $status): self
     {
@@ -1083,8 +1007,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates the level of authority/intentionality associated with the care plan
      * and where the care plan fits into the workflow chain.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCarePlanIntent
      */
     public function getIntent(): null|FHIRCarePlanIntent
     {
@@ -1098,9 +1020,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Indicates the level of authority/intentionality associated with the care plan
      * and where the care plan fits into the workflow chain.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRCarePlanIntentList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCarePlanIntent $intent
-     * @return static
      */
     public function setIntent(null|string|FHIRCarePlanIntentList|FHIRCarePlanIntent $intent): self
     {
@@ -1152,9 +1071,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies what "kind" of plan this is to support differentiation between
      * multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma",
      * "disease management", "wellness plan", etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $category
-     * @return static
      */
     public function addCategory(FHIRCodeableConcept $category): self
     {
@@ -1174,9 +1090,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies what "kind" of plan this is to support differentiation between
      * multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma",
      * "disease management", "wellness plan", etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept ...$category
-     * @return static
      */
     public function setCategory(FHIRCodeableConcept ...$category): self
     {
@@ -1194,8 +1107,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-friendly name for the care plan.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -1208,9 +1119,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-friendly name for the care plan.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1231,8 +1139,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the scope and nature of the plan.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -1245,9 +1151,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the scope and nature of the plan.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -1268,8 +1171,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient or group whose intended care is described by the plan.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -1282,9 +1183,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient or group whose intended care is described by the plan.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -1303,8 +1201,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The Encounter during which this CarePlan was created or to which the creation of
      * this record is tightly associated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getEncounter(): null|FHIRReference
     {
@@ -1318,9 +1214,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The Encounter during which this CarePlan was created or to which the creation of
      * this record is tightly associated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $encounter
-     * @return static
      */
     public function setEncounter(null|FHIRReference $encounter): self
     {
@@ -1338,8 +1231,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the plan did (or is intended to) come into effect and end.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -1352,9 +1243,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the plan did (or is intended to) come into effect and end.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -1376,8 +1264,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Represents when this particular CarePlan record was created in the system, which
      * is often a system-generated date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
      */
     public function getCreated(): null|FHIRDateTime
     {
@@ -1394,9 +1280,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Represents when this particular CarePlan record was created in the system, which
      * is often a system-generated date.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $created
-     * @return static
      */
     public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
     {
@@ -1418,8 +1301,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * When populated, the author is responsible for the care plan. The care plan is
      * attributed to the author.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getAuthor(): null|FHIRReference
     {
@@ -1433,9 +1314,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * When populated, the author is responsible for the care plan. The care plan is
      * attributed to the author.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $author
-     * @return static
      */
     public function setAuthor(null|FHIRReference $author): self
     {
@@ -1480,9 +1358,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies the individual(s) or organization who provided the contents of the
      * care plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $contributor
-     * @return static
      */
     public function addContributor(FHIRReference $contributor): self
     {
@@ -1500,9 +1375,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies the individual(s) or organization who provided the contents of the
      * care plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$contributor
-     * @return static
      */
     public function setContributor(FHIRReference ...$contributor): self
     {
@@ -1547,9 +1419,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care envisioned by this plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $careTeam
-     * @return static
      */
     public function addCareTeam(FHIRReference $careTeam): self
     {
@@ -1567,9 +1436,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care envisioned by this plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$careTeam
-     * @return static
      */
     public function setCareTeam(FHIRReference ...$careTeam): self
     {
@@ -1614,9 +1480,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $addresses
-     * @return static
      */
     public function addAddresses(FHIRReference $addresses): self
     {
@@ -1634,9 +1497,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$addresses
-     * @return static
      */
     public function setAddresses(FHIRReference ...$addresses): self
     {
@@ -1683,9 +1543,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies portions of the patient's record that specifically influenced the
      * formation of the plan. These might include comorbidities, recent procedures,
      * limitations, recent assessments, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $supportingInfo
-     * @return static
      */
     public function addSupportingInfo(FHIRReference $supportingInfo): self
     {
@@ -1704,9 +1561,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * Identifies portions of the patient's record that specifically influenced the
      * formation of the plan. These might include comorbidities, recent procedures,
      * limitations, recent assessments, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$supportingInfo
-     * @return static
      */
     public function setSupportingInfo(FHIRReference ...$supportingInfo): self
     {
@@ -1749,9 +1603,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the intended objective(s) of carrying out the care plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $goal
-     * @return static
      */
     public function addGoal(FHIRReference $goal): self
     {
@@ -1768,9 +1619,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the intended objective(s) of carrying out the care plan.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$goal
-     * @return static
      */
     public function setGoal(FHIRReference ...$goal): self
     {
@@ -1815,9 +1663,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies a planned action to occur as part of the plan. For example, a
      * medication to be used, lab tests to perform, self-monitoring, education, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity $activity
-     * @return static
      */
     public function addActivity(FHIRCarePlanActivity $activity): self
     {
@@ -1835,9 +1680,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * Identifies a planned action to occur as part of the plan. For example, a
      * medication to be used, lab tests to perform, self-monitoring, education, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity ...$activity
-     * @return static
      */
     public function setActivity(FHIRCarePlanActivity ...$activity): self
     {
@@ -1882,9 +1724,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * General notes about the care plan not covered elsewhere.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation $note
-     * @return static
      */
     public function addNote(FHIRAnnotation $note): self
     {
@@ -1902,9 +1741,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * General notes about the care plan not covered elsewhere.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAnnotation ...$note
-     * @return static
      */
     public function setNote(FHIRAnnotation ...$note): self
     {
@@ -1918,10 +1754,7 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCarePlan $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCarePlan
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -2085,11 +1918,6 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -2289,10 +2117,7 @@ class FHIRCarePlan extends FHIRDomainResource implements VersionContainedTypeInt
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCarePlan $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRCarePlan
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

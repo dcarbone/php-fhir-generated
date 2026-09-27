@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -114,8 +114,6 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $diagnosisCodeableConcept;
@@ -126,8 +124,6 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $diagnosisReference;
@@ -136,10 +132,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
     /**
      * FHIRCoverageEligibilityRequestDiagnosis Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $diagnosisReference
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -176,8 +169,6 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getDiagnosisCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -192,9 +183,6 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
-     * @return static
      */
     public function setDiagnosisCodeableConcept(null|FHIRCodeableConcept $diagnosisCodeableConcept): self
     {
@@ -213,8 +201,6 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getDiagnosisReference(): null|FHIRReference
     {
@@ -228,9 +214,6 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $diagnosisReference
-     * @return static
      */
     public function setDiagnosisReference(null|FHIRReference $diagnosisReference): self
     {
@@ -244,10 +227,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -293,10 +273,6 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -314,10 +290,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

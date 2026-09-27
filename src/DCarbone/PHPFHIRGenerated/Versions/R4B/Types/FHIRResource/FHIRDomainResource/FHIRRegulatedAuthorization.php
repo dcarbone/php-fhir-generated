@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
@@ -109,7 +107,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Version;
@@ -195,8 +192,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * Overall type of this authorization, for example drug marketing approval, orphan
      * drug designation.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -210,8 +205,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * the Narrative, or extensions
      *
      * General textual supporting information.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -236,8 +229,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * The status that is authorised e.g. approved. Intermediate states and actions can
      * be tracked with cases and applications.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $status;
@@ -250,8 +241,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the current status was assigned.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $statusDate;
@@ -263,8 +252,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * The time period in which the regulatory approval, clearance or licencing is in
      * effect. As an example, a Marketing Authorization includes the date of
      * authorization and/or an expiration date.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $validityPeriod;
@@ -275,8 +262,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the use of the regulated product applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $indication;
@@ -287,8 +272,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended use of the product, e.g. prevention, treatment, diagnosis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $intendedUse;
@@ -312,8 +295,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * The organization that has been granted this authorization, by some authoritative
      * body (the 'regulator').
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $holder;
@@ -325,8 +306,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * The regulatory authority or authorizing body granting the authorization. For
      * example, European Medicines Agency (EMA), Food and Drug Administration (FDA),
      * Health Canada (HC), etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $regulator;
@@ -343,8 +322,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * and assesses them. Note: This area is subject to ongoing review and the
      * workgroup is seeking implementer feedback on its use (see link at bottom of
      * page).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase
      */
     #[FHIRRegulatedAuthorizationCase]
     protected FHIRRegulatedAuthorizationCase $case;
@@ -352,28 +329,13 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
     /* constructor.php:61 */
     /**
      * FHIRRegulatedAuthorization Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier> $identifier
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference> $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $region
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $status
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $statusDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $validityPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $indication
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $intendedUse
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept> $basis
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $holder
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $regulator
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase $case
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -501,9 +463,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * Business identifier for the authorization, typically assigned by the authorizing
      * body.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -522,9 +481,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * Business identifier for the authorization, typically assigned by the authorizing
      * body.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -567,9 +523,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product type, treatment, facility or activity that is being authorized.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -586,9 +539,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product type, treatment, facility or activity that is being authorized.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference ...$subject
-     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -608,8 +558,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * Overall type of this authorization, for example drug marketing approval, orphan
      * drug designation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -624,9 +572,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * Overall type of this authorization, for example drug marketing approval, orphan
      * drug designation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -648,8 +593,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * the Narrative, or extensions
      *
      * General textual supporting information.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -666,9 +609,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * the Narrative, or extensions
      *
      * General textual supporting information.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -718,9 +658,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * The territory (e.g., country, jurisdiction etc.) in which the authorization has
      * been granted.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $region
-     * @return static
      */
     public function addRegion(FHIRCodeableConcept $region): self
     {
@@ -739,9 +676,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * The territory (e.g., country, jurisdiction etc.) in which the authorization has
      * been granted.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$region
-     * @return static
      */
     public function setRegion(FHIRCodeableConcept ...$region): self
     {
@@ -761,8 +695,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * The status that is authorised e.g. approved. Intermediate states and actions can
      * be tracked with cases and applications.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus(): null|FHIRCodeableConcept
     {
@@ -777,9 +709,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * The status that is authorised e.g. approved. Intermediate states and actions can
      * be tracked with cases and applications.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $status
-     * @return static
      */
     public function setStatus(null|FHIRCodeableConcept $status): self
     {
@@ -800,8 +729,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the current status was assigned.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getStatusDate(): null|FHIRDateTime
     {
@@ -817,9 +744,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the current status was assigned.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $statusDate
-     * @return static
      */
     public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
     {
@@ -842,8 +766,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * The time period in which the regulatory approval, clearance or licencing is in
      * effect. As an example, a Marketing Authorization includes the date of
      * authorization and/or an expiration date.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getValidityPeriod(): null|FHIRPeriod
     {
@@ -858,9 +780,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * The time period in which the regulatory approval, clearance or licencing is in
      * effect. As an example, a Marketing Authorization includes the date of
      * authorization and/or an expiration date.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $validityPeriod
-     * @return static
      */
     public function setValidityPeriod(null|FHIRPeriod $validityPeriod): self
     {
@@ -879,8 +798,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the use of the regulated product applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference
      */
     public function getIndication(): null|FHIRCodeableReference
     {
@@ -894,9 +811,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the use of the regulated product applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableReference $indication
-     * @return static
      */
     public function setIndication(null|FHIRCodeableReference $indication): self
     {
@@ -915,8 +829,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended use of the product, e.g. prevention, treatment, diagnosis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getIntendedUse(): null|FHIRCodeableConcept
     {
@@ -930,9 +842,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended use of the product, e.g. prevention, treatment, diagnosis.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $intendedUse
-     * @return static
      */
     public function setIntendedUse(null|FHIRCodeableConcept $intendedUse): self
     {
@@ -979,9 +888,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * The legal or regulatory framework against which this authorization is granted,
      * or other reasons for it.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $basis
-     * @return static
      */
     public function addBasis(FHIRCodeableConcept $basis): self
     {
@@ -1000,9 +906,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * The legal or regulatory framework against which this authorization is granted,
      * or other reasons for it.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept ...$basis
-     * @return static
      */
     public function setBasis(FHIRCodeableConcept ...$basis): self
     {
@@ -1021,8 +924,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * The organization that has been granted this authorization, by some authoritative
      * body (the 'regulator').
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getHolder(): null|FHIRReference
     {
@@ -1036,9 +937,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      *
      * The organization that has been granted this authorization, by some authoritative
      * body (the 'regulator').
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $holder
-     * @return static
      */
     public function setHolder(null|FHIRReference $holder): self
     {
@@ -1058,8 +956,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * The regulatory authority or authorizing body granting the authorization. For
      * example, European Medicines Agency (EMA), Food and Drug Administration (FDA),
      * Health Canada (HC), etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getRegulator(): null|FHIRReference
     {
@@ -1074,9 +970,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * The regulatory authority or authorizing body granting the authorization. For
      * example, European Medicines Agency (EMA), Food and Drug Administration (FDA),
      * Health Canada (HC), etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $regulator
-     * @return static
      */
     public function setRegulator(null|FHIRReference $regulator): self
     {
@@ -1101,8 +994,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * and assesses them. Note: This area is subject to ongoing review and the
      * workgroup is seeking implementer feedback on its use (see link at bottom of
      * page).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase
      */
     public function getCase(): null|FHIRRegulatedAuthorizationCase
     {
@@ -1122,9 +1013,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
      * and assesses them. Note: This area is subject to ongoing review and the
      * workgroup is seeking implementer feedback on its use (see link at bottom of
      * page).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase $case
-     * @return static
      */
     public function setCase(null|FHIRRegulatedAuthorizationCase $case): self
     {
@@ -1138,10 +1026,7 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRRegulatedAuthorization $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRRegulatedAuthorization
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1263,11 +1148,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1387,10 +1267,7 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements VersionCo
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRRegulatedAuthorization $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource\FHIRRegulatedAuthorization
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

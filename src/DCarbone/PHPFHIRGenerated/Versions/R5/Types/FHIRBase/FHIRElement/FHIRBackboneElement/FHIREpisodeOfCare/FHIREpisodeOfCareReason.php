@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -132,8 +132,6 @@ class FHIREpisodeOfCareReason extends FHIRBackboneElement
      *
      * What the reason value should be used as e.g. Chief Complaint, Health Concern,
      * Health Maintenance (including screening).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $use;
@@ -155,9 +153,7 @@ class FHIREpisodeOfCareReason extends FHIRBackboneElement
     /**
      * FHIREpisodeOfCareReason Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $use
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference> $value
      * @param null|string[] $fhirComments
      */
@@ -195,8 +191,6 @@ class FHIREpisodeOfCareReason extends FHIRBackboneElement
      *
      * What the reason value should be used as e.g. Chief Complaint, Health Concern,
      * Health Maintenance (including screening).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getUse(): null|FHIRCodeableConcept
     {
@@ -211,9 +205,6 @@ class FHIREpisodeOfCareReason extends FHIRBackboneElement
      *
      * What the reason value should be used as e.g. Chief Complaint, Health Concern,
      * Health Maintenance (including screening).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $use
-     * @return static
      */
     public function setUse(null|FHIRCodeableConcept $use): self
     {
@@ -260,9 +251,6 @@ class FHIREpisodeOfCareReason extends FHIRBackboneElement
      *
      * The medical reason that is expected to be addressed during the episode of care,
      * expressed as a text, code or a reference to another resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $value
-     * @return static
      */
     public function addValue(FHIRCodeableReference $value): self
     {
@@ -281,9 +269,6 @@ class FHIREpisodeOfCareReason extends FHIRBackboneElement
      *
      * The medical reason that is expected to be addressed during the episode of care,
      * expressed as a text, code or a reference to another resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$value
-     * @return static
      */
     public function setValue(FHIRCodeableReference ...$value): self
     {
@@ -297,10 +282,7 @@ class FHIREpisodeOfCareReason extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -346,10 +328,6 @@ class FHIREpisodeOfCareReason extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -369,10 +347,7 @@ class FHIREpisodeOfCareReason extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

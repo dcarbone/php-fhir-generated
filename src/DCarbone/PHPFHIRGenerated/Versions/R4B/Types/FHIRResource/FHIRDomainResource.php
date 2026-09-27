@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
@@ -146,8 +144,6 @@ class FHIRDomainResource extends FHIRResource
      * make it "clinically safe" for a human to just read the narrative. Resource
      * definitions may define what content should be represented in the narrative to
      * ensure clinical safety.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative
      */
     #[FHIRNarrative]
     protected FHIRNarrative $text;
@@ -201,11 +197,6 @@ class FHIRDomainResource extends FHIRResource
     /* constructor.php:61 */
     /**
      * FHIRDomainResource Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
@@ -259,8 +250,6 @@ class FHIRDomainResource extends FHIRResource
      * make it "clinically safe" for a human to just read the narrative. Resource
      * definitions may define what content should be represented in the narrative to
      * ensure clinical safety.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative
      */
     public function getText(): null|FHIRNarrative
     {
@@ -279,9 +268,6 @@ class FHIRDomainResource extends FHIRResource
      * make it "clinically safe" for a human to just read the narrative. Resource
      * definitions may define what content should be represented in the narrative to
      * ensure clinical safety.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRNarrative $text
-     * @return static
      */
     public function setText(null|FHIRNarrative $text): self
     {
@@ -320,9 +306,6 @@ class FHIRDomainResource extends FHIRResource
      * These resources do not have an independent existence apart from the resource
      * that contains them - they cannot be identified independently, and nor can they
      * have their own independent transaction scope.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface $contained
-     * @return static
      */
     public function addContained(FHIRResourceContainer|VersionContainedTypeInterface $contained): self
     {
@@ -340,9 +323,6 @@ class FHIRDomainResource extends FHIRResource
      * These resources do not have an independent existence apart from the resource
      * that contains them - they cannot be identified independently, and nor can they
      * have their own independent transaction scope.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface ...$contained
-     * @return static
      */
     public function setContained(FHIRResourceContainer|VersionContainedTypeInterface ...$contained): self
     {
@@ -400,9 +380,6 @@ class FHIRDomainResource extends FHIRResource
      * there is a strict set of governance applied to the definition and use of
      * extensions. Though any implementer can define an extension, there is a set of
      * requirements that SHALL be met as part of the definition of the extension.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension $extension
-     * @return static
      */
     public function addExtension(FHIRExtension $extension): self
     {
@@ -423,9 +400,6 @@ class FHIRDomainResource extends FHIRResource
      * there is a strict set of governance applied to the definition and use of
      * extensions. Though any implementer can define an extension, there is a set of
      * requirements that SHALL be met as part of the definition of the extension.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension ...$extension
-     * @return static
      */
     public function setExtension(FHIRExtension ...$extension): self
     {
@@ -490,9 +464,6 @@ class FHIRDomainResource extends FHIRResource
      * extensions SHALL NOT change the meaning of any elements on Resource or
      * DomainResource (including cannot change the meaning of modifierExtension
      * itself).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension $modifierExtension
-     * @return static
      */
     public function addModifierExtension(FHIRExtension $modifierExtension): self
     {
@@ -520,9 +491,6 @@ class FHIRDomainResource extends FHIRResource
      * extensions SHALL NOT change the meaning of any elements on Resource or
      * DomainResource (including cannot change the meaning of modifierExtension
      * itself).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension ...$modifierExtension
-     * @return static
      */
     public function setModifierExtension(FHIRExtension ...$modifierExtension): self
     {
@@ -536,10 +504,7 @@ class FHIRDomainResource extends FHIRResource
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -617,11 +582,6 @@ class FHIRDomainResource extends FHIRResource
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -681,10 +641,7 @@ class FHIRDomainResource extends FHIRResource
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainResource
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -38,21 +38,16 @@ class FHIRXHTML implements TypeInterface
 
     private const _FHIR_VALIDATION_RULES = [];
 
-    /** @var string */
     protected string $value;
 
     /**
      * FHIRXHTML Constructor
-     * @param null|string|\DOMNode|\SimpleXMLElement $value
      */
     public function __construct(null|string|\DOMNode|\SimpleXmlElement $value = null)
     {
         $this->setValue($value);
     }
 
-    /**
-     * @return string
-     */
     public function _getFHIRTypeName(): string
     {
         return 'XHTML';
@@ -64,9 +59,6 @@ class FHIRXHTML implements TypeInterface
         return Version::getFHIRVersion();
     }
 
-    /**
-     * @return null|string
-     */
     public function getValue(): null|string
     {
         return $this->value ?? null;
@@ -74,9 +66,6 @@ class FHIRXHTML implements TypeInterface
 
     /**
      * Set the full XHTML content of this element.
-     *
-     * @param null|string|\DOMNode|\SimpleXmlElement $value
-     * @return static
      */
     public function setValue(null|string|\DOMNode|\SimpleXMLElement $value): self
     {
@@ -97,7 +86,6 @@ class FHIRXHTML implements TypeInterface
 
     /**
      * @param int $libxmlOpts libxml options mask
-     * @return null|\SimpleXMLElement
      * @throws \Exception
      */
     public function getSimpleXMLElement(int $libxmlOpts): null|\SimpleXMLElement
@@ -110,7 +98,6 @@ class FHIRXHTML implements TypeInterface
 
     /**
      * @param int $libxmlOpts libxml options mask
-     * @return null|\DOMDocument
      */
     public function getDOMDocument(int $libxmlOpts): null|\DOMDocument
     {
@@ -124,7 +111,6 @@ class FHIRXHTML implements TypeInterface
 
     /**
      * @param int $libxmlOpts libxml options mask
-     * @return null|\XMLReader
      */
     public function getXMLReader(int $libxmlOpts): null|\XMLReader
     {
@@ -136,9 +122,6 @@ class FHIRXHTML implements TypeInterface
         return $xr;
     }
 
-    /**
-     * @return null|string
-     */
     public function jsonSerialize(): null|string
     {
         if (!isset($this->value)) {
@@ -147,9 +130,6 @@ class FHIRXHTML implements TypeInterface
         return $this->value;
     }
 
-    /**
-     * @return string
-     */
     public function __toString(): string
     {
         return (string)$this->getValue();

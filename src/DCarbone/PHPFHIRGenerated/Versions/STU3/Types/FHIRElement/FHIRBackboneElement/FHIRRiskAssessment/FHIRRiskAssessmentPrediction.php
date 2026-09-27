@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -132,8 +131,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * One of the potential outcomes for the patient (e.g. remission, death, a
      * particular condition).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $outcome;
@@ -144,8 +141,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How likely is the outcome (in the specified timeframe).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $probabilityDecimal;
@@ -155,8 +150,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How likely is the outcome (in the specified timeframe).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $probabilityRange;
@@ -168,8 +161,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * How likely is the outcome (in the specified timeframe), expressed as a
      * qualitative value (e.g. low, medium, high).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $qualitativeRisk;
@@ -183,8 +174,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * characteristics) divided by the risk of the population in general. (Numbers
      * greater than 1 = higher risk than the population, numbers less than 1 = lower
      * risk.).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     #[FHIRDecimal]
     protected FHIRDecimal $relativeRisk;
@@ -195,8 +184,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $whenPeriod;
@@ -207,8 +194,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $whenRange;
@@ -218,8 +203,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information explaining the basis for the prediction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $rationale;
@@ -228,16 +211,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     /**
      * FHIRRiskAssessmentPrediction Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $outcome
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $probabilityDecimal
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $probabilityRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $qualitativeRisk
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $relativeRisk
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $whenPeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $whenRange
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $rationale
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -298,8 +272,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * One of the potential outcomes for the patient (e.g. remission, death, a
      * particular condition).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getOutcome(): null|FHIRCodeableConcept
     {
@@ -314,9 +286,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * One of the potential outcomes for the patient (e.g. remission, death, a
      * particular condition).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $outcome
-     * @return static
      */
     public function setOutcome(null|FHIRCodeableConcept $outcome): self
     {
@@ -335,8 +304,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How likely is the outcome (in the specified timeframe).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     public function getProbabilityDecimal(): null|FHIRDecimal
     {
@@ -350,9 +317,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How likely is the outcome (in the specified timeframe).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $probabilityDecimal
-     * @return static
      */
     public function setProbabilityDecimal(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $probabilityDecimal): self
     {
@@ -373,8 +337,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How likely is the outcome (in the specified timeframe).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange
      */
     public function getProbabilityRange(): null|FHIRRange
     {
@@ -387,9 +349,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How likely is the outcome (in the specified timeframe).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $probabilityRange
-     * @return static
      */
     public function setProbabilityRange(null|FHIRRange $probabilityRange): self
     {
@@ -409,8 +368,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * How likely is the outcome (in the specified timeframe), expressed as a
      * qualitative value (e.g. low, medium, high).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getQualitativeRisk(): null|FHIRCodeableConcept
     {
@@ -425,9 +382,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * How likely is the outcome (in the specified timeframe), expressed as a
      * qualitative value (e.g. low, medium, high).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $qualitativeRisk
-     * @return static
      */
     public function setQualitativeRisk(null|FHIRCodeableConcept $qualitativeRisk): self
     {
@@ -449,8 +403,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * characteristics) divided by the risk of the population in general. (Numbers
      * greater than 1 = higher risk than the population, numbers less than 1 = lower
      * risk.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal
      */
     public function getRelativeRisk(): null|FHIRDecimal
     {
@@ -467,9 +419,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * characteristics) divided by the risk of the population in general. (Numbers
      * greater than 1 = higher risk than the population, numbers less than 1 = lower
      * risk.).
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $relativeRisk
-     * @return static
      */
     public function setRelativeRisk(null|string|int|float|FHIRDecimalPrimitive|FHIRDecimal $relativeRisk): self
     {
@@ -491,8 +440,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod
      */
     public function getWhenPeriod(): null|FHIRPeriod
     {
@@ -506,9 +453,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $whenPeriod
-     * @return static
      */
     public function setWhenPeriod(null|FHIRPeriod $whenPeriod): self
     {
@@ -527,8 +471,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange
      */
     public function getWhenRange(): null|FHIRRange
     {
@@ -542,9 +484,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      *
      * Indicates the period of time or age range of the subject to which the specified
      * probability applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $whenRange
-     * @return static
      */
     public function setWhenRange(null|FHIRRange $whenRange): self
     {
@@ -562,8 +501,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information explaining the basis for the prediction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getRationale(): null|FHIRString
     {
@@ -576,9 +513,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information explaining the basis for the prediction.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $rationale
-     * @return static
      */
     public function setRationale(null|string|FHIRStringPrimitive|FHIRString $rationale): self
     {
@@ -595,10 +529,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -680,10 +611,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -746,10 +673,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

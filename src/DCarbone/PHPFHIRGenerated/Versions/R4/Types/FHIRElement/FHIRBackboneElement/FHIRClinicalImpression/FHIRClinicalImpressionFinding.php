@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -120,8 +120,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      *
      * Specific text or code for finding or diagnosis, which may include ruled-out or
      * resolved conditions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $itemCodeableConcept;
@@ -132,8 +130,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      *
      * Specific reference for finding or diagnosis, which may include ruled-out or
      * resolved conditions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $itemReference;
@@ -143,8 +139,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which investigations support finding or diagnosis.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $basis;
@@ -153,11 +147,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
     /**
      * FHIRClinicalImpressionFinding Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $itemReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $basis
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -198,8 +188,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      *
      * Specific text or code for finding or diagnosis, which may include ruled-out or
      * resolved conditions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getItemCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -214,9 +202,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      *
      * Specific text or code for finding or diagnosis, which may include ruled-out or
      * resolved conditions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
-     * @return static
      */
     public function setItemCodeableConcept(null|FHIRCodeableConcept $itemCodeableConcept): self
     {
@@ -235,8 +220,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      *
      * Specific reference for finding or diagnosis, which may include ruled-out or
      * resolved conditions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
      */
     public function getItemReference(): null|FHIRReference
     {
@@ -250,9 +233,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      *
      * Specific reference for finding or diagnosis, which may include ruled-out or
      * resolved conditions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $itemReference
-     * @return static
      */
     public function setItemReference(null|FHIRReference $itemReference): self
     {
@@ -270,8 +250,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which investigations support finding or diagnosis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getBasis(): null|FHIRString
     {
@@ -284,9 +262,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which investigations support finding or diagnosis.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $basis
-     * @return static
      */
     public function setBasis(null|string|FHIRStringPrimitive|FHIRString $basis): self
     {
@@ -303,10 +278,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -362,10 +334,6 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -393,10 +361,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

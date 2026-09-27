@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -155,8 +155,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * An absolute URI which is the code system in which the code for this item in the
      * expansion is defined.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $system;
@@ -166,8 +164,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * If true, this entry is included in the expansion for navigational purposes, and
      * the user cannot select the code directly as a proper value.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $abstract;
@@ -179,8 +175,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * are those that are no longer to be used, but are maintained by the code system
      * for understanding legacy data. It might not be known or specified whether an
      * concept is inactive (and it may depend on the context of use).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $inactive;
@@ -194,8 +188,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * meaning of codes is consistent across versions. However this cannot consistently
      * be assured, and when the meaning is not guaranteed to be consistent, the version
      * SHOULD be exchanged.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $version;
@@ -208,8 +200,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * The code for this item in the expansion hierarchy. If this code is missing the
      * entry in the hierarchy is a place holder (abstract) and does not represent a
      * valid code in the value set.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $code;
@@ -219,8 +209,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The recommended display for this item in the expansion.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $display;
@@ -255,14 +243,7 @@ class FHIRValueSetContains extends FHIRBackboneElement
     /**
      * FHIRValueSetContains Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $system
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $abstract
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $inactive
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $code
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $display
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation> $designation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains> $contains
      * @param null|string[] $fhirComments
@@ -324,8 +305,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * An absolute URI which is the code system in which the code for this item in the
      * expansion is defined.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri
      */
     public function getSystem(): null|FHIRUri
     {
@@ -339,9 +318,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * An absolute URI which is the code system in which the code for this item in the
      * expansion is defined.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $system
-     * @return static
      */
     public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system): self
     {
@@ -362,8 +338,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * If true, this entry is included in the expansion for navigational purposes, and
      * the user cannot select the code directly as a proper value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getAbstract(): null|FHIRBoolean
     {
@@ -376,9 +350,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * If true, this entry is included in the expansion for navigational purposes, and
      * the user cannot select the code directly as a proper value.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $abstract
-     * @return static
      */
     public function setAbstract(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $abstract): self
     {
@@ -401,8 +372,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * are those that are no longer to be used, but are maintained by the code system
      * for understanding legacy data. It might not be known or specified whether an
      * concept is inactive (and it may depend on the context of use).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getInactive(): null|FHIRBoolean
     {
@@ -417,9 +386,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * are those that are no longer to be used, but are maintained by the code system
      * for understanding legacy data. It might not be known or specified whether an
      * concept is inactive (and it may depend on the context of use).
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $inactive
-     * @return static
      */
     public function setInactive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inactive): self
     {
@@ -444,8 +410,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * meaning of codes is consistent across versions. However this cannot consistently
      * be assured, and when the meaning is not guaranteed to be consistent, the version
      * SHOULD be exchanged.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getVersion(): null|FHIRString
     {
@@ -462,9 +426,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * meaning of codes is consistent across versions. However this cannot consistently
      * be assured, and when the meaning is not guaranteed to be consistent, the version
      * SHOULD be exchanged.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $version
-     * @return static
      */
     public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
     {
@@ -488,8 +449,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * The code for this item in the expansion hierarchy. If this code is missing the
      * entry in the hierarchy is a place holder (abstract) and does not represent a
      * valid code in the value set.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     public function getCode(): null|FHIRCode
     {
@@ -505,9 +464,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * The code for this item in the expansion hierarchy. If this code is missing the
      * entry in the hierarchy is a place holder (abstract) and does not represent a
      * valid code in the value set.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $code
-     * @return static
      */
     public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code): self
     {
@@ -528,8 +484,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The recommended display for this item in the expansion.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getDisplay(): null|FHIRString
     {
@@ -542,9 +496,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The recommended display for this item in the expansion.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $display
-     * @return static
      */
     public function setDisplay(null|string|FHIRStringPrimitive|FHIRString $display): self
     {
@@ -596,9 +547,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * Additional representations for this item - other languages, aliases, specialized
      * purposes, used for particular purposes, etc. These are relevant when the
      * conditions of the expansion do not fix to a single correct representation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation $designation
-     * @return static
      */
     public function addDesignation(FHIRValueSetDesignation $designation): self
     {
@@ -618,9 +566,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * Additional representations for this item - other languages, aliases, specialized
      * purposes, used for particular purposes, etc. These are relevant when the
      * conditions of the expansion do not fix to a single correct representation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation ...$designation
-     * @return static
      */
     public function setDesignation(FHIRValueSetDesignation ...$designation): self
     {
@@ -665,9 +610,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * elements](terminologies.html).
      *
      * Other codes and entries contained under this entry in the hierarchy.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains $contains
-     * @return static
      */
     public function addContains(FHIRValueSetContains $contains): self
     {
@@ -685,9 +627,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * elements](terminologies.html).
      *
      * Other codes and entries contained under this entry in the hierarchy.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains ...$contains
-     * @return static
      */
     public function setContains(FHIRValueSetContains ...$contains): self
     {
@@ -701,10 +640,7 @@ class FHIRValueSetContains extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -810,10 +746,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -895,10 +827,7 @@ class FHIRValueSetContains extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

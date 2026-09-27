@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -130,8 +129,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The element id of the action this is related to.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId
      */
     #[FHIRId]
     protected FHIRId $actionId;
@@ -140,8 +137,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of this action to the related action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionRelationshipType
      */
     #[FHIRActionRelationshipType]
     protected FHIRActionRelationshipType $relationship;
@@ -152,8 +147,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $offsetDuration;
@@ -164,8 +157,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange
      */
     #[FHIRRange]
     protected FHIRRange $offsetRange;
@@ -174,12 +165,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
     /**
      * FHIRRequestGroupRelatedAction Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $actionId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionRelationshipType $relationship
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $offsetRange
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -225,8 +211,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The element id of the action this is related to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId
      */
     public function getActionId(): null|FHIRId
     {
@@ -242,9 +226,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The element id of the action this is related to.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $actionId
-     * @return static
      */
     public function setActionId(null|string|FHIRIdPrimitive|FHIRId $actionId): self
     {
@@ -264,8 +245,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of this action to the related action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionRelationshipType
      */
     public function getRelationship(): null|FHIRActionRelationshipType
     {
@@ -277,9 +256,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of this action to the related action.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionRelationshipType $relationship
-     * @return static
      */
     public function setRelationship(null|string|FHIRActionRelationshipTypeList|FHIRActionRelationshipType $relationship): self
     {
@@ -301,8 +277,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getOffsetDuration(): null|FHIRDuration
     {
@@ -316,9 +290,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
-     * @return static
      */
     public function setOffsetDuration(null|FHIRDuration $offsetDuration): self
     {
@@ -337,8 +308,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange
      */
     public function getOffsetRange(): null|FHIRRange
     {
@@ -352,9 +321,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRRange $offsetRange
-     * @return static
      */
     public function setOffsetRange(null|FHIRRange $offsetRange): self
     {
@@ -368,10 +334,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -437,10 +400,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -478,10 +437,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,7 +81,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement;
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -174,8 +173,6 @@ class FHIRSignature extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the digital signature was signed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant
      */
     #[FHIRInstant]
     protected FHIRInstant $when;
@@ -186,8 +183,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $who;
@@ -198,8 +193,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $onBehalfOf;
@@ -211,8 +204,6 @@ class FHIRSignature extends FHIRElement
      *
      * A mime type that indicates the technical format of the target resources signed
      * by the signature.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $targetFormat;
@@ -225,8 +216,6 @@ class FHIRSignature extends FHIRElement
      * A mime type that indicates the technical format of the signature. Important mime
      * types are application/signature+xml for X ML DigSig, application/jose for JWS,
      * and image/* for a graphical image of a signature, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     #[FHIRCode]
     protected FHIRCode $sigFormat;
@@ -237,8 +226,6 @@ class FHIRSignature extends FHIRElement
      *
      * The base64 encoding of the Signature content. When signature is not recorded
      * electronically this element would be empty.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary
      */
     #[FHIRBase64Binary]
     protected FHIRBase64Binary $data;
@@ -247,14 +234,7 @@ class FHIRSignature extends FHIRElement
     /**
      * FHIRSignature Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding> $type
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant $when
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $who
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $onBehalfOf
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $targetFormat
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $sigFormat
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary $data
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -336,9 +316,6 @@ class FHIRSignature extends FHIRElement
      * An indication of the reason that the entity signed this document. This may be
      * explicitly included as part of the signature information and can be used when
      * determining accountability for various actions concerning the document.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding $type
-     * @return static
      */
     public function addType(FHIRCoding $type): self
     {
@@ -357,9 +334,6 @@ class FHIRSignature extends FHIRElement
      * An indication of the reason that the entity signed this document. This may be
      * explicitly included as part of the signature information and can be used when
      * determining accountability for various actions concerning the document.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding ...$type
-     * @return static
      */
     public function setType(FHIRCoding ...$type): self
     {
@@ -380,8 +354,6 @@ class FHIRSignature extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the digital signature was signed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant
      */
     public function getWhen(): null|FHIRInstant
     {
@@ -397,9 +369,6 @@ class FHIRSignature extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the digital signature was signed.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant $when
-     * @return static
      */
     public function setWhen(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $when): self
     {
@@ -421,8 +390,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getWho(): null|FHIRReference
     {
@@ -436,9 +403,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that signed
      * (e.g. the signature used their private key).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $who
-     * @return static
      */
     public function setWho(null|FHIRReference $who): self
     {
@@ -457,8 +421,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference
      */
     public function getOnBehalfOf(): null|FHIRReference
     {
@@ -472,9 +434,6 @@ class FHIRSignature extends FHIRElement
      *
      * A reference to an application-usable description of the identity that is
      * represented by the signature.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $onBehalfOf
-     * @return static
      */
     public function setOnBehalfOf(null|FHIRReference $onBehalfOf): self
     {
@@ -494,8 +453,6 @@ class FHIRSignature extends FHIRElement
      *
      * A mime type that indicates the technical format of the target resources signed
      * by the signature.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     public function getTargetFormat(): null|FHIRCode
     {
@@ -510,9 +467,6 @@ class FHIRSignature extends FHIRElement
      *
      * A mime type that indicates the technical format of the target resources signed
      * by the signature.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $targetFormat
-     * @return static
      */
     public function setTargetFormat(null|string|FHIRCodePrimitive|FHIRCode $targetFormat): self
     {
@@ -536,8 +490,6 @@ class FHIRSignature extends FHIRElement
      * A mime type that indicates the technical format of the signature. Important mime
      * types are application/signature+xml for X ML DigSig, application/jose for JWS,
      * and image/* for a graphical image of a signature, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode
      */
     public function getSigFormat(): null|FHIRCode
     {
@@ -553,9 +505,6 @@ class FHIRSignature extends FHIRElement
      * A mime type that indicates the technical format of the signature. Important mime
      * types are application/signature+xml for X ML DigSig, application/jose for JWS,
      * and image/* for a graphical image of a signature, etc.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $sigFormat
-     * @return static
      */
     public function setSigFormat(null|string|FHIRCodePrimitive|FHIRCode $sigFormat): self
     {
@@ -577,8 +526,6 @@ class FHIRSignature extends FHIRElement
      *
      * The base64 encoding of the Signature content. When signature is not recorded
      * electronically this element would be empty.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary
      */
     public function getData(): null|FHIRBase64Binary
     {
@@ -592,9 +539,6 @@ class FHIRSignature extends FHIRElement
      *
      * The base64 encoding of the Signature content. When signature is not recorded
      * electronically this element would be empty.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary $data
-     * @return static
      */
     public function setData(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $data): self
     {
@@ -611,10 +555,7 @@ class FHIRSignature extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -700,10 +641,6 @@ class FHIRSignature extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -768,10 +705,7 @@ class FHIRSignature extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSignature
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

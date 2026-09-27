@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -56,14 +56,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource;
  *
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -164,8 +162,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Criticality of the sensitivity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCriticality
      */
     #[FHIRCriticality]
     protected FHIRCriticality $criticality;
@@ -174,8 +170,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of the sensitivity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityType
      */
     #[FHIRSensitivityType]
     protected FHIRSensitivityType $sensitivityType;
@@ -187,8 +181,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the sensitivity was recorded.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $recordedDate;
@@ -197,8 +189,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the sensitivity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityStatus
      */
     #[FHIRSensitivityStatus]
     protected FHIRSensitivityStatus $status;
@@ -208,8 +198,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $subject;
@@ -219,8 +207,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who has responsibility for the record.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $recorder;
@@ -230,8 +216,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The substance that causes the sensitivity.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     #[FHIRResourceReference]
     protected FHIRResourceReference $substance;
@@ -261,20 +245,10 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
     /* constructor.php:61 */
     /**
      * FHIRAllergyIntolerance Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline>|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCriticalityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCriticality $criticality
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSensitivityTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityType $sensitivityType
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $recordedDate
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSensitivityStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $recorder
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $substance
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $reaction
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference> $sensitivityTest
      * @param null|string[] $fhirComments
@@ -386,9 +360,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * are defined by business processed and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -408,9 +379,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * are defined by business processed and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -427,8 +395,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Criticality of the sensitivity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCriticality
      */
     public function getCriticality(): null|FHIRCriticality
     {
@@ -440,9 +406,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Criticality of the sensitivity.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCriticalityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCriticality $criticality
-     * @return static
      */
     public function setCriticality(null|string|FHIRCriticalityList|FHIRCriticality $criticality): self
     {
@@ -462,8 +425,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of the sensitivity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityType
      */
     public function getSensitivityType(): null|FHIRSensitivityType
     {
@@ -475,9 +436,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Type of the sensitivity.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSensitivityTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityType $sensitivityType
-     * @return static
      */
     public function setSensitivityType(null|string|FHIRSensitivityTypeList|FHIRSensitivityType $sensitivityType): self
     {
@@ -500,8 +458,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the sensitivity was recorded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime
      */
     public function getRecordedDate(): null|FHIRDateTime
     {
@@ -516,9 +472,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the sensitivity was recorded.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $recordedDate
-     * @return static
      */
     public function setRecordedDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedDate): self
     {
@@ -538,8 +491,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the sensitivity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityStatus
      */
     public function getStatus(): null|FHIRSensitivityStatus
     {
@@ -551,9 +502,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the sensitivity.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSensitivityStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRSensitivityStatusList|FHIRSensitivityStatus $status): self
     {
@@ -574,8 +522,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getSubject(): null|FHIRResourceReference
     {
@@ -588,9 +534,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRResourceReference $subject): self
     {
@@ -608,8 +551,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who has responsibility for the record.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getRecorder(): null|FHIRResourceReference
     {
@@ -622,9 +563,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who has responsibility for the record.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $recorder
-     * @return static
      */
     public function setRecorder(null|FHIRResourceReference $recorder): self
     {
@@ -642,8 +580,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The substance that causes the sensitivity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference
      */
     public function getSubstance(): null|FHIRResourceReference
     {
@@ -656,9 +592,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The substance that causes the sensitivity.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $substance
-     * @return static
      */
     public function setSubstance(null|FHIRResourceReference $substance): self
     {
@@ -701,9 +634,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reactions associated with the sensitivity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $reaction
-     * @return static
      */
     public function addReaction(FHIRResourceReference $reaction): self
     {
@@ -720,9 +650,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reactions associated with the sensitivity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$reaction
-     * @return static
      */
     public function setReaction(FHIRResourceReference ...$reaction): self
     {
@@ -765,9 +692,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Observations that confirm or refute the sensitivity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $sensitivityTest
-     * @return static
      */
     public function addSensitivityTest(FHIRResourceReference $sensitivityTest): self
     {
@@ -784,9 +708,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Observations that confirm or refute the sensitivity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference ...$sensitivityTest
-     * @return static
      */
     public function setSensitivityTest(FHIRResourceReference ...$sensitivityTest): self
     {
@@ -800,10 +721,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRAllergyIntolerance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRAllergyIntolerance
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -921,11 +839,6 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1033,10 +946,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRAllergyIntolerance $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRAllergyIntolerance
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

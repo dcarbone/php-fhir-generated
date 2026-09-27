@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -115,8 +115,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party to be reimbursed: Subscriber, provider, other.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $type;
@@ -127,8 +125,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The provider who is to be reimbursed for the claim (the party to whom any
      * benefit is assigned).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $provider;
@@ -139,8 +135,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The organization who is to be reimbursed for the claim (the party to whom any
      * benefit is assigned).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $organization;
@@ -151,8 +145,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The person other than the subscriber who is to be reimbursed for the claim (the
      * party to whom any benefit is assigned).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $person;
@@ -161,12 +153,7 @@ class FHIRClaimPayee extends FHIRBackboneElement
     /**
      * FHIRClaimPayee Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $provider
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $organization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $person
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -209,8 +196,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party to be reimbursed: Subscriber, provider, other.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding
      */
     public function getType(): null|FHIRCoding
     {
@@ -223,9 +208,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Party to be reimbursed: Subscriber, provider, other.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @return static
      */
     public function setType(null|FHIRCoding $type): self
     {
@@ -244,8 +226,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The provider who is to be reimbursed for the claim (the party to whom any
      * benefit is assigned).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getProvider(): null|FHIRReference
     {
@@ -259,9 +239,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The provider who is to be reimbursed for the claim (the party to whom any
      * benefit is assigned).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $provider
-     * @return static
      */
     public function setProvider(null|FHIRReference $provider): self
     {
@@ -280,8 +257,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The organization who is to be reimbursed for the claim (the party to whom any
      * benefit is assigned).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getOrganization(): null|FHIRReference
     {
@@ -295,9 +270,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The organization who is to be reimbursed for the claim (the party to whom any
      * benefit is assigned).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $organization
-     * @return static
      */
     public function setOrganization(null|FHIRReference $organization): self
     {
@@ -316,8 +288,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The person other than the subscriber who is to be reimbursed for the claim (the
      * party to whom any benefit is assigned).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference
      */
     public function getPerson(): null|FHIRReference
     {
@@ -331,9 +301,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
      *
      * The person other than the subscriber who is to be reimbursed for the claim (the
      * party to whom any benefit is assigned).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $person
-     * @return static
      */
     public function setPerson(null|FHIRReference $person): self
     {
@@ -347,10 +314,7 @@ class FHIRClaimPayee extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimPayee $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimPayee
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -400,10 +364,6 @@ class FHIRClaimPayee extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -431,10 +391,7 @@ class FHIRClaimPayee extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimPayee $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimPayee
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

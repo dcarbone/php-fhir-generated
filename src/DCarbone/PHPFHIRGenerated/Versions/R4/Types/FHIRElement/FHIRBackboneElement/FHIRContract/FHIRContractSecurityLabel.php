@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -130,8 +129,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the level of confidentiality protection
      * required for this term and/or term elements.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding
      */
     #[FHIRCoding]
     protected FHIRCoding $classification;
@@ -164,10 +161,8 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     /**
      * FHIRContractSecurityLabel Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<string>|iterable<int>|iterable<float>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUnsignedIntPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt> $number
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $classification
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding> $category
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding> $control
      * @param null|string[] $fhirComments
@@ -237,9 +232,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Number used to link this term or term element to the applicable Security Label.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt $number
-     * @return static
      */
     public function addNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number): self
     {
@@ -259,9 +251,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Number used to link this term or term element to the applicable Security Label.
-     *
-     * @param string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUnsignedInt ...$number
-     * @return static
      */
     public function setNumber(string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt ...$number): self
     {
@@ -287,8 +276,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the level of confidentiality protection
      * required for this term and/or term elements.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding
      */
     public function getClassification(): null|FHIRCoding
     {
@@ -302,9 +289,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the level of confidentiality protection
      * required for this term and/or term elements.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $classification
-     * @return static
      */
     public function setClassification(null|FHIRCoding $classification): self
     {
@@ -349,9 +333,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the applicable privacy and security
      * policies governing this term and/or term elements.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $category
-     * @return static
      */
     public function addCategory(FHIRCoding $category): self
     {
@@ -369,9 +350,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the applicable privacy and security
      * policies governing this term and/or term elements.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding ...$category
-     * @return static
      */
     public function setCategory(FHIRCoding ...$category): self
     {
@@ -416,9 +394,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the manner in which term and/or term
      * elements are to be protected.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $control
-     * @return static
      */
     public function addControl(FHIRCoding $control): self
     {
@@ -436,9 +411,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      *
      * Security label privacy tag that species the manner in which term and/or term
      * elements are to be protected.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding ...$control
-     * @return static
      */
     public function setControl(FHIRCoding ...$control): self
     {
@@ -452,10 +424,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -505,10 +474,6 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -542,10 +507,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -81,14 +81,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Rules\MinOccursRule;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
@@ -116,7 +114,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMeasureRep
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSubmitDataUpdateTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -205,8 +202,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      *
      * The MeasureReport status. No data will be available until the MeasureReport
      * status is complete.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMeasureReportStatus
      */
     #[FHIRMeasureReportStatus]
     protected FHIRMeasureReportStatus $status;
@@ -220,8 +215,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * criteria in the measure; a summary report, which returns a population count for
      * each of the criteria in the measure; or a data-collection, which enables the
      * MeasureReport to be used to exchange the data-of-interest for a quality measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMeasureReportType
      */
     #[FHIRMeasureReportType]
     protected FHIRMeasureReportType $type;
@@ -233,8 +226,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * submitted data for the receiver, whereas an incremental update represents only
      * updated and/or changed data and should be applied as a differential update to
      * the existing submitted data for the receiver.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSubmitDataUpdateType
      */
     #[FHIRSubmitDataUpdateType]
     protected FHIRSubmitDataUpdateType $dataUpdateType;
@@ -245,8 +236,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A reference to the Measure that was calculated to produce this report.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $measure;
@@ -256,8 +245,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optional subject identifying the individual or individuals the report is for.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $subject;
@@ -271,8 +258,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this measure was calculated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $date;
@@ -282,8 +267,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that is reporting the data.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $reporter;
@@ -297,8 +280,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * submitting entity when it is not the same as the reporting entity. This
      * extension is used when the Receiver is interested in getting vendor information
      * in the report.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $reportingVendor;
@@ -308,8 +289,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the location for which the data is being reported.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $location;
@@ -319,8 +298,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reporting period for which the report was calculated.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $period;
@@ -332,8 +309,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * A reference to a Parameters resource (typically represented using a contained
      * resource) that represents any input parameters that were provided to the
      * operation that generated the report.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     #[FHIRReference]
     protected FHIRReference $inputParameters;
@@ -347,8 +322,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * proportion, ratio, continuous-variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented. It is expected to
      * be the same as the scoring element on the referenced Measure.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $scoring;
@@ -360,8 +333,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      *
      * Whether improvement in the measure is noted by an increase or decrease in the
      * measure score.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $improvementNotation;
@@ -407,28 +378,10 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
     /* constructor.php:61 */
     /**
      * FHIRMeasureReport Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier> $identifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMeasureReportStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMeasureReportStatus $status
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMeasureReportTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMeasureReportType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSubmitDataUpdateTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSubmitDataUpdateType $dataUpdateType
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $measure
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $reporter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $reportingVendor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $inputParameters
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $scoring
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $improvementNotation
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup> $group
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $supplementalData
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $evaluatedResource
@@ -573,9 +526,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * A formal identifier that is used to identify this MeasureReport when it is
      * represented in other formats or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
-     * @return static
      */
     public function addIdentifier(FHIRIdentifier $identifier): self
     {
@@ -595,9 +545,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * A formal identifier that is used to identify this MeasureReport when it is
      * represented in other formats or referenced in a specification, model, design or
      * an instance.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
-     * @return static
      */
     public function setIdentifier(FHIRIdentifier ...$identifier): self
     {
@@ -615,8 +562,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      *
      * The MeasureReport status. No data will be available until the MeasureReport
      * status is complete.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMeasureReportStatus
      */
     public function getStatus(): null|FHIRMeasureReportStatus
     {
@@ -629,9 +574,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      *
      * The MeasureReport status. No data will be available until the MeasureReport
      * status is complete.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMeasureReportStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMeasureReportStatus $status
-     * @return static
      */
     public function setStatus(null|string|FHIRMeasureReportStatusEnum|FHIRMeasureReportStatus $status): self
     {
@@ -656,8 +598,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * criteria in the measure; a summary report, which returns a population count for
      * each of the criteria in the measure; or a data-collection, which enables the
      * MeasureReport to be used to exchange the data-of-interest for a quality measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMeasureReportType
      */
     public function getType(): null|FHIRMeasureReportType
     {
@@ -674,9 +614,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * criteria in the measure; a summary report, which returns a population count for
      * each of the criteria in the measure; or a data-collection, which enables the
      * MeasureReport to be used to exchange the data-of-interest for a quality measure.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRMeasureReportTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMeasureReportType $type
-     * @return static
      */
     public function setType(null|string|FHIRMeasureReportTypeEnum|FHIRMeasureReportType $type): self
     {
@@ -699,8 +636,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * submitted data for the receiver, whereas an incremental update represents only
      * updated and/or changed data and should be applied as a differential update to
      * the existing submitted data for the receiver.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSubmitDataUpdateType
      */
     public function getDataUpdateType(): null|FHIRSubmitDataUpdateType
     {
@@ -715,9 +650,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * submitted data for the receiver, whereas an incremental update represents only
      * updated and/or changed data and should be applied as a differential update to
      * the existing submitted data for the receiver.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSubmitDataUpdateTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSubmitDataUpdateType $dataUpdateType
-     * @return static
      */
     public function setDataUpdateType(null|string|FHIRSubmitDataUpdateTypeEnum|FHIRSubmitDataUpdateType $dataUpdateType): self
     {
@@ -739,8 +671,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A reference to the Measure that was calculated to produce this report.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getMeasure(): null|FHIRCanonical
     {
@@ -754,9 +684,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * the Narrative, or extensions
      *
      * A reference to the Measure that was calculated to produce this report.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $measure
-     * @return static
      */
     public function setMeasure(null|string|FHIRCanonicalPrimitive|FHIRCanonical $measure): self
     {
@@ -777,8 +704,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optional subject identifying the individual or individuals the report is for.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getSubject(): null|FHIRReference
     {
@@ -791,9 +716,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optional subject identifying the individual or individuals the report is for.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
-     * @return static
      */
     public function setSubject(null|FHIRReference $subject): self
     {
@@ -815,8 +737,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this measure was calculated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime
      */
     public function getDate(): null|FHIRDateTime
     {
@@ -833,9 +753,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this measure was calculated.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @return static
      */
     public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date): self
     {
@@ -856,8 +773,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that is reporting the data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getReporter(): null|FHIRReference
     {
@@ -870,9 +785,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that is reporting the data.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $reporter
-     * @return static
      */
     public function setReporter(null|FHIRReference $reporter): self
     {
@@ -894,8 +806,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * submitting entity when it is not the same as the reporting entity. This
      * extension is used when the Receiver is interested in getting vendor information
      * in the report.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getReportingVendor(): null|FHIRReference
     {
@@ -912,9 +822,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * submitting entity when it is not the same as the reporting entity. This
      * extension is used when the Receiver is interested in getting vendor information
      * in the report.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $reportingVendor
-     * @return static
      */
     public function setReportingVendor(null|FHIRReference $reportingVendor): self
     {
@@ -932,8 +839,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the location for which the data is being reported.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getLocation(): null|FHIRReference
     {
@@ -946,9 +851,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the location for which the data is being reported.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
-     * @return static
      */
     public function setLocation(null|FHIRReference $location): self
     {
@@ -966,8 +868,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reporting period for which the report was calculated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     public function getPeriod(): null|FHIRPeriod
     {
@@ -980,9 +880,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reporting period for which the report was calculated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
-     * @return static
      */
     public function setPeriod(null|FHIRPeriod $period): self
     {
@@ -1002,8 +899,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * A reference to a Parameters resource (typically represented using a contained
      * resource) that represents any input parameters that were provided to the
      * operation that generated the report.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     public function getInputParameters(): null|FHIRReference
     {
@@ -1018,9 +913,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * A reference to a Parameters resource (typically represented using a contained
      * resource) that represents any input parameters that were provided to the
      * operation that generated the report.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $inputParameters
-     * @return static
      */
     public function setInputParameters(null|FHIRReference $inputParameters): self
     {
@@ -1042,8 +934,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * proportion, ratio, continuous-variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented. It is expected to
      * be the same as the scoring element on the referenced Measure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getScoring(): null|FHIRCodeableConcept
     {
@@ -1060,9 +950,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * proportion, ratio, continuous-variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented. It is expected to
      * be the same as the scoring element on the referenced Measure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $scoring
-     * @return static
      */
     public function setScoring(null|FHIRCodeableConcept $scoring): self
     {
@@ -1082,8 +969,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      *
      * Whether improvement in the measure is noted by an increase or decrease in the
      * measure score.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getImprovementNotation(): null|FHIRCodeableConcept
     {
@@ -1098,9 +983,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      *
      * Whether improvement in the measure is noted by an increase or decrease in the
      * measure score.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $improvementNotation
-     * @return static
      */
     public function setImprovementNotation(null|FHIRCodeableConcept $improvementNotation): self
     {
@@ -1141,9 +1023,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * and optionally a reference to the resources involved in that calculation.
      *
      * The results of the calculation, one for each population group in the measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup $group
-     * @return static
      */
     public function addGroup(FHIRMeasureReportGroup $group): self
     {
@@ -1159,9 +1038,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * and optionally a reference to the resources involved in that calculation.
      *
      * The results of the calculation, one for each population group in the measure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup ...$group
-     * @return static
      */
     public function setGroup(FHIRMeasureReportGroup ...$group): self
     {
@@ -1212,9 +1088,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * evaluating the supplementalData expression for this case in the measure results
      * in a value that is not a FHIR Resource), it is reported as a reference to a
      * contained Observation resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $supplementalData
-     * @return static
      */
     public function addSupplementalData(FHIRReference $supplementalData): self
     {
@@ -1235,9 +1108,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * evaluating the supplementalData expression for this case in the measure results
      * in a value that is not a FHIR Resource), it is reported as a reference to a
      * contained Observation resource.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$supplementalData
-     * @return static
      */
     public function setSupplementalData(FHIRReference ...$supplementalData): self
     {
@@ -1284,9 +1154,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * Evaluated resources are used to capture what data was involved in the
      * calculation of a measure. This usage is only allowed for individual reports to
      * ensure that the size of the MeasureReport resource is bounded.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $evaluatedResource
-     * @return static
      */
     public function addEvaluatedResource(FHIRReference $evaluatedResource): self
     {
@@ -1305,9 +1172,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
      * Evaluated resources are used to capture what data was involved in the
      * calculation of a measure. This usage is only allowed for individual reports to
      * ensure that the size of the MeasureReport resource is bounded.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$evaluatedResource
-     * @return static
      */
     public function setEvaluatedResource(FHIRReference ...$evaluatedResource): self
     {
@@ -1321,10 +1185,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMeasureReport $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMeasureReport
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -1476,11 +1337,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -1630,10 +1486,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements VersionContainedTy
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMeasureReport $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRMeasureReport
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

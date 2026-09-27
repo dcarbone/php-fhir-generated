@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -225,8 +225,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * An identifier that is unique within the PlanDefinition to allow linkage within
      * the realized CarePlan and/or RequestOrchestration.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $linkId;
@@ -237,8 +235,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A user-visible prefix for the action. For example a section or item numbering
      * such as 1. or A.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $prefix;
@@ -250,8 +246,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * The textual description of the action displayed to a user. For example, when the
      * action is a test to be performed, the title would be the title of the test such
      * as Assay by HPLC.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $title;
@@ -266,8 +260,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A brief description of the action used to provide a summary to display to the
      * user.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $description;
@@ -283,8 +275,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A text equivalent of the action to be performed. This provides a
      * human-interpretable description of the action when the definition is consumed by
      * a system that might not be capable of interpreting it dynamically.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     #[FHIRMarkdown]
     protected FHIRMarkdown $textEquivalent;
@@ -293,8 +283,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Indicates how quickly the action should be addressed with respect to other
      * actions.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     #[FHIRRequestPriority]
     protected FHIRRequestPriority $priority;
@@ -308,8 +296,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * action group. For example, a section may have a LOINC code for the section of a
      * documentation template. In pharmaceutical quality, an action (Test) such as pH
      * could be classified as a physical property.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $code;
@@ -368,10 +354,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * or PackagedProductDefinition resource.
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $subjectCodeableConcept;
@@ -385,10 +368,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * or PackagedProductDefinition resource.
      */
     #[FHIRReference]
     protected FHIRReference $subjectReference;
@@ -403,10 +383,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * or PackagedProductDefinition resource.
      */
     #[FHIRCanonical]
     protected FHIRCanonical $subjectCanonical;
@@ -482,10 +459,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * An optional value describing when the action should be performed.
      */
     #[FHIRAge]
     protected FHIRAge $timingAge;
@@ -494,10 +468,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * An optional value describing when the action should be performed.
      */
     #[FHIRDuration]
     protected FHIRDuration $timingDuration;
@@ -506,10 +477,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * An optional value describing when the action should be performed.
      */
     #[FHIRRange]
     protected FHIRRange $timingRange;
@@ -522,10 +490,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * An optional value describing when the action should be performed.
      */
     #[FHIRTiming]
     protected FHIRTiming $timingTiming;
@@ -537,8 +502,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Identifies the facility where the action will occur; e.g. home, hospital,
      * specific clinic, etc.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     #[FHIRCodeableReference]
     protected FHIRCodeableReference $location;
@@ -562,8 +525,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of action to perform (create, update, remove).
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -571,8 +532,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the grouping behavior for the action and its children.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionGroupingBehavior
      */
     #[FHIRActionGroupingBehavior]
     protected FHIRActionGroupingBehavior $groupingBehavior;
@@ -580,8 +539,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the selection behavior for the action and its children.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionSelectionBehavior
      */
     #[FHIRActionSelectionBehavior]
     protected FHIRActionSelectionBehavior $selectionBehavior;
@@ -589,8 +546,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the required behavior for the action.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRequiredBehavior
      */
     #[FHIRActionRequiredBehavior]
     protected FHIRActionRequiredBehavior $requiredBehavior;
@@ -598,8 +553,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action should usually be preselected.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionPrecheckBehavior
      */
     #[FHIRActionPrecheckBehavior]
     protected FHIRActionPrecheckBehavior $precheckBehavior;
@@ -607,8 +560,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action can be selected multiple times.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionCardinalityBehavior
      */
     #[FHIRActionCardinalityBehavior]
     protected FHIRActionCardinalityBehavior $cardinalityBehavior;
@@ -623,9 +574,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
-     * (choose any one of definition*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $definitionCanonical;
@@ -639,9 +587,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
-     * (choose any one of definition*, but only one)
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     #[FHIRUri]
     protected FHIRUri $definitionUri;
@@ -654,8 +599,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     #[FHIRCanonical]
     protected FHIRCanonical $transform;
@@ -696,41 +639,16 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     /**
      * FHIRPlanDefinitionAction Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $prefix
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $textEquivalent
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestPriorityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority $priority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept> $reason
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact> $documentation
      * @param null|iterable<string>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId> $goalId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subjectCodeableConcept
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subjectReference
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $subjectCanonical
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition> $trigger
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition> $condition
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionInput> $input
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionOutput> $output
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction> $relatedAction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $timingAge
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $timingDuration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $timingRange
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $timingTiming
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $location
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant> $participant
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionGroupingBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionSelectionBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRequiredBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionPrecheckBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionCardinalityBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $definitionCanonical
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $definitionUri
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $transform
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue> $dynamicValue
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction> $action
      * @param null|string[] $fhirComments
@@ -900,8 +818,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * An identifier that is unique within the PlanDefinition to allow linkage within
      * the realized CarePlan and/or RequestOrchestration.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getLinkId(): null|FHIRString
     {
@@ -915,9 +831,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * An identifier that is unique within the PlanDefinition to allow linkage within
      * the realized CarePlan and/or RequestOrchestration.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $linkId
-     * @return static
      */
     public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId): self
     {
@@ -939,8 +852,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A user-visible prefix for the action. For example a section or item numbering
      * such as 1. or A.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getPrefix(): null|FHIRString
     {
@@ -954,9 +865,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A user-visible prefix for the action. For example a section or item numbering
      * such as 1. or A.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $prefix
-     * @return static
      */
     public function setPrefix(null|string|FHIRStringPrimitive|FHIRString $prefix): self
     {
@@ -979,8 +887,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * The textual description of the action displayed to a user. For example, when the
      * action is a test to be performed, the title would be the title of the test such
      * as Assay by HPLC.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
      */
     public function getTitle(): null|FHIRString
     {
@@ -995,9 +901,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * The textual description of the action displayed to a user. For example, when the
      * action is a test to be performed, the title would be the title of the test such
      * as Assay by HPLC.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @return static
      */
     public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title): self
     {
@@ -1023,8 +926,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A brief description of the action used to provide a summary to display to the
      * user.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getDescription(): null|FHIRMarkdown
     {
@@ -1042,9 +943,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A brief description of the action used to provide a summary to display to the
      * user.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
-     * @return static
      */
     public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
     {
@@ -1071,8 +969,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A text equivalent of the action to be performed. This provides a
      * human-interpretable description of the action when the definition is consumed by
      * a system that might not be capable of interpreting it dynamically.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown
      */
     public function getTextEquivalent(): null|FHIRMarkdown
     {
@@ -1091,9 +987,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A text equivalent of the action to be performed. This provides a
      * human-interpretable description of the action when the definition is consumed by
      * a system that might not be capable of interpreting it dynamically.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $textEquivalent
-     * @return static
      */
     public function setTextEquivalent(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $textEquivalent): self
     {
@@ -1113,8 +1006,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Indicates how quickly the action should be addressed with respect to other
      * actions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     public function getPriority(): null|FHIRRequestPriority
     {
@@ -1126,9 +1017,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Indicates how quickly the action should be addressed with respect to other
      * actions.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRRequestPriorityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRRequestPriority $priority
-     * @return static
      */
     public function setPriority(null|string|FHIRRequestPriorityEnum|FHIRRequestPriority $priority): self
     {
@@ -1153,8 +1041,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * action group. For example, a section may have a LOINC code for the section of a
      * documentation template. In pharmaceutical quality, an action (Test) such as pH
      * could be classified as a physical property.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getCode(): null|FHIRCodeableConcept
     {
@@ -1171,9 +1057,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * action group. For example, a section may have a LOINC code for the section of a
      * documentation template. In pharmaceutical quality, an action (Test) such as pH
      * could be classified as a physical property.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
-     * @return static
      */
     public function setCode(null|FHIRCodeableConcept $code): self
     {
@@ -1218,9 +1101,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description of why this action is necessary or appropriate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $reason
-     * @return static
      */
     public function addReason(FHIRCodeableConcept $reason): self
     {
@@ -1238,9 +1118,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description of why this action is necessary or appropriate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$reason
-     * @return static
      */
     public function setReason(FHIRCodeableConcept ...$reason): self
     {
@@ -1289,9 +1166,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact $documentation
-     * @return static
      */
     public function addDocumentation(FHIRRelatedArtifact $documentation): self
     {
@@ -1311,9 +1185,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$documentation
-     * @return static
      */
     public function setDocumentation(FHIRRelatedArtifact ...$documentation): self
     {
@@ -1370,9 +1241,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * represents acceptance criteria (Goal) for a given action (Test), so the goalId
      * would be the unique id of a defined goal element establishing the acceptance
      * criteria for the action.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $goalId
-     * @return static
      */
     public function addGoalId(string|FHIRIdPrimitive|FHIRId $goalId): self
     {
@@ -1399,9 +1267,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * represents acceptance criteria (Goal) for a given action (Test), so the goalId
      * would be the unique id of a defined goal element establishing the acceptance
      * criteria for the action.
-     *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId ...$goalId
-     * @return static
      */
     public function setGoalId(string|FHIRIdPrimitive|FHIRId ...$goalId): self
     {
@@ -1431,10 +1296,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     * or PackagedProductDefinition resource.
      */
     public function getSubjectCodeableConcept(): null|FHIRCodeableConcept
     {
@@ -1452,11 +1314,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $subjectCodeableConcept
-     * @return static
+     * or PackagedProductDefinition resource.
      */
     public function setSubjectCodeableConcept(null|FHIRCodeableConcept $subjectCodeableConcept): self
     {
@@ -1478,10 +1336,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     * or PackagedProductDefinition resource.
      */
     public function getSubjectReference(): null|FHIRReference
     {
@@ -1498,11 +1353,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subjectReference
-     * @return static
+     * or PackagedProductDefinition resource.
      */
     public function setSubjectReference(null|FHIRReference $subjectReference): self
     {
@@ -1525,10 +1376,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
+     * or PackagedProductDefinition resource.
      */
     public function getSubjectCanonical(): null|FHIRCanonical
     {
@@ -1546,11 +1394,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * to support the definition of protocols for drug and substance quality
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
-     * or PackagedProductDefinition resource. (choose any one of subject*, but only
-     * one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $subjectCanonical
-     * @return static
+     * or PackagedProductDefinition resource.
      */
     public function setSubjectCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $subjectCanonical): self
     {
@@ -1600,9 +1444,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A description of when the action should be triggered. When multiple triggers are
      * specified on an action, any triggering event invokes the action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition $trigger
-     * @return static
      */
     public function addTrigger(FHIRTriggerDefinition $trigger): self
     {
@@ -1621,9 +1462,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A description of when the action should be triggered. When multiple triggers are
      * specified on an action, any triggering event invokes the action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition ...$trigger
-     * @return static
      */
     public function setTrigger(FHIRTriggerDefinition ...$trigger): self
     {
@@ -1672,9 +1510,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * An expression that describes applicability criteria or start/stop conditions for
      * the action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition $condition
-     * @return static
      */
     public function addCondition(FHIRPlanDefinitionCondition $condition): self
     {
@@ -1694,9 +1529,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * An expression that describes applicability criteria or start/stop conditions for
      * the action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition ...$condition
-     * @return static
      */
     public function setCondition(FHIRPlanDefinitionCondition ...$condition): self
     {
@@ -1743,9 +1575,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * specifications.
      *
      * Defines input data requirements for the action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionInput $input
-     * @return static
      */
     public function addInput(FHIRPlanDefinitionInput $input): self
     {
@@ -1764,9 +1593,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * specifications.
      *
      * Defines input data requirements for the action.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionInput ...$input
-     * @return static
      */
     public function setInput(FHIRPlanDefinitionInput ...$input): self
     {
@@ -1813,9 +1639,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * specifications.
      *
      * Defines the outputs of the action, if any.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionOutput $output
-     * @return static
      */
     public function addOutput(FHIRPlanDefinitionOutput $output): self
     {
@@ -1834,9 +1657,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * specifications.
      *
      * Defines the outputs of the action, if any.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionOutput ...$output
-     * @return static
      */
     public function setOutput(FHIRPlanDefinitionOutput ...$output): self
     {
@@ -1885,9 +1705,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction $relatedAction
-     * @return static
      */
     public function addRelatedAction(FHIRPlanDefinitionRelatedAction $relatedAction): self
     {
@@ -1907,9 +1724,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction ...$relatedAction
-     * @return static
      */
     public function setRelatedAction(FHIRPlanDefinitionRelatedAction ...$relatedAction): self
     {
@@ -1926,10 +1740,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
+     * An optional value describing when the action should be performed.
      */
     public function getTimingAge(): null|FHIRAge
     {
@@ -1941,11 +1752,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge $timingAge
-     * @return static
+     * An optional value describing when the action should be performed.
      */
     public function setTimingAge(null|FHIRAge $timingAge): self
     {
@@ -1962,10 +1769,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
+     * An optional value describing when the action should be performed.
      */
     public function getTimingDuration(): null|FHIRDuration
     {
@@ -1977,11 +1781,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $timingDuration
-     * @return static
+     * An optional value describing when the action should be performed.
      */
     public function setTimingDuration(null|FHIRDuration $timingDuration): self
     {
@@ -1998,10 +1798,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
+     * An optional value describing when the action should be performed.
      */
     public function getTimingRange(): null|FHIRRange
     {
@@ -2013,11 +1810,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $timingRange
-     * @return static
+     * An optional value describing when the action should be performed.
      */
     public function setTimingRange(null|FHIRRange $timingRange): self
     {
@@ -2038,10 +1831,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
+     * An optional value describing when the action should be performed.
      */
     public function getTimingTiming(): null|FHIRTiming
     {
@@ -2057,11 +1847,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An optional value describing when the action should be performed. (choose any
-     * one of timing*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming $timingTiming
-     * @return static
+     * An optional value describing when the action should be performed.
      */
     public function setTimingTiming(null|FHIRTiming $timingTiming): self
     {
@@ -2081,8 +1867,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Identifies the facility where the action will occur; e.g. home, hospital,
      * specific clinic, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     public function getLocation(): null|FHIRCodeableReference
     {
@@ -2097,9 +1881,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Identifies the facility where the action will occur; e.g. home, hospital,
      * specific clinic, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $location
-     * @return static
      */
     public function setLocation(null|FHIRCodeableReference $location): self
     {
@@ -2146,9 +1927,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * specifications.
      *
      * Indicates who should participate in performing the action described.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant $participant
-     * @return static
      */
     public function addParticipant(FHIRPlanDefinitionParticipant $participant): self
     {
@@ -2167,9 +1945,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * specifications.
      *
      * Indicates who should participate in performing the action described.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant ...$participant
-     * @return static
      */
     public function setParticipant(FHIRPlanDefinitionParticipant ...$participant): self
     {
@@ -2188,8 +1963,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of action to perform (create, update, remove).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -2203,9 +1976,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of action to perform (create, update, remove).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -2221,8 +1991,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the grouping behavior for the action and its children.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionGroupingBehavior
      */
     public function getGroupingBehavior(): null|FHIRActionGroupingBehavior
     {
@@ -2233,9 +2001,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the grouping behavior for the action and its children.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionGroupingBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
-     * @return static
      */
     public function setGroupingBehavior(null|string|FHIRActionGroupingBehaviorEnum|FHIRActionGroupingBehavior $groupingBehavior): self
     {
@@ -2254,8 +2019,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the selection behavior for the action and its children.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionSelectionBehavior
      */
     public function getSelectionBehavior(): null|FHIRActionSelectionBehavior
     {
@@ -2266,9 +2029,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the selection behavior for the action and its children.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionSelectionBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
-     * @return static
      */
     public function setSelectionBehavior(null|string|FHIRActionSelectionBehaviorEnum|FHIRActionSelectionBehavior $selectionBehavior): self
     {
@@ -2287,8 +2047,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the required behavior for the action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRequiredBehavior
      */
     public function getRequiredBehavior(): null|FHIRActionRequiredBehavior
     {
@@ -2299,9 +2057,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the required behavior for the action.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRequiredBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
-     * @return static
      */
     public function setRequiredBehavior(null|string|FHIRActionRequiredBehaviorEnum|FHIRActionRequiredBehavior $requiredBehavior): self
     {
@@ -2320,8 +2075,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action should usually be preselected.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionPrecheckBehavior
      */
     public function getPrecheckBehavior(): null|FHIRActionPrecheckBehavior
     {
@@ -2332,9 +2085,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action should usually be preselected.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionPrecheckBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
-     * @return static
      */
     public function setPrecheckBehavior(null|string|FHIRActionPrecheckBehaviorEnum|FHIRActionPrecheckBehavior $precheckBehavior): self
     {
@@ -2353,8 +2103,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action can be selected multiple times.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionCardinalityBehavior
      */
     public function getCardinalityBehavior(): null|FHIRActionCardinalityBehavior
     {
@@ -2365,9 +2113,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action can be selected multiple times.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionCardinalityBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
-     * @return static
      */
     public function setCardinalityBehavior(null|string|FHIRActionCardinalityBehaviorEnum|FHIRActionCardinalityBehavior $cardinalityBehavior): self
     {
@@ -2393,9 +2138,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
-     * (choose any one of definition*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getDefinitionCanonical(): null|FHIRCanonical
     {
@@ -2413,10 +2155,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
-     * (choose any one of definition*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $definitionCanonical
-     * @return static
      */
     public function setDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical): self
     {
@@ -2441,9 +2179,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
-     * (choose any one of definition*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
      */
     public function getDefinitionUri(): null|FHIRUri
     {
@@ -2460,10 +2195,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * that describes a series of actions to be taken, a Questionnaire that should be
      * filled out, a SpecimenDefinition describing a specimen to be collected, or an
      * ObservationDefinition that specifies what observation should be captured.
-     * (choose any one of definition*, but only one)
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $definitionUri
-     * @return static
      */
     public function setDefinitionUri(null|string|FHIRUriPrimitive|FHIRUri $definitionUri): self
     {
@@ -2487,8 +2218,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical
      */
     public function getTransform(): null|FHIRCanonical
     {
@@ -2504,9 +2233,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $transform
-     * @return static
      */
     public function setTransform(null|string|FHIRCanonicalPrimitive|FHIRCanonical $transform): self
     {
@@ -2562,9 +2288,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * example, if the dosage of a medication must be computed based on the patient's
      * weight, a customization would be used to specify an expression that calculated
      * the weight, and the path on the resource that would contain the result.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue $dynamicValue
-     * @return static
      */
     public function addDynamicValue(FHIRPlanDefinitionDynamicValue $dynamicValue): self
     {
@@ -2586,9 +2309,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * example, if the dosage of a medication must be computed based on the patient's
      * weight, a customization would be used to specify an expression that calculated
      * the weight, and the path on the resource that would contain the result.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue ...$dynamicValue
-     * @return static
      */
     public function setDynamicValue(FHIRPlanDefinitionDynamicValue ...$dynamicValue): self
     {
@@ -2641,9 +2361,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * determines the functionality of the sub-actions. For example, a selection
      * behavior of at-most-one indicates that of the sub-actions, at most one may be
      * chosen as part of realizing the action definition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction $action
-     * @return static
      */
     public function addAction(FHIRPlanDefinitionAction $action): self
     {
@@ -2665,9 +2382,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * determines the functionality of the sub-actions. For example, a selection
      * behavior of at-most-one indicates that of the sub-actions, at most one may be
      * chosen as part of realizing the action definition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction ...$action
-     * @return static
      */
     public function setAction(FHIRPlanDefinitionAction ...$action): self
     {
@@ -2681,10 +2395,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -2916,10 +2627,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -3199,10 +2906,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -133,8 +133,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the list includes all authors and/or contributors.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     #[FHIRBoolean]
     protected FHIRBoolean $complete;
@@ -168,9 +166,7 @@ class FHIRCitationContributorship extends FHIRBackboneElement
     /**
      * FHIRCitationContributorship Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $complete
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry> $entry
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1> $summary
      * @param null|string[] $fhirComments
@@ -210,8 +206,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the list includes all authors and/or contributors.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean
      */
     public function getComplete(): null|FHIRBoolean
     {
@@ -223,9 +217,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the list includes all authors and/or contributors.
-     *
-     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $complete
-     * @return static
      */
     public function setComplete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $complete): self
     {
@@ -273,9 +264,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * An individual entity named in the author list or contributor list.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry $entry
-     * @return static
      */
     public function addEntry(FHIRCitationEntry $entry): self
     {
@@ -293,9 +281,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * An individual entity named in the author list or contributor list.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry ...$entry
-     * @return static
      */
     public function setEntry(FHIRCitationEntry ...$entry): self
     {
@@ -342,9 +327,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      *
      * Used to record a display of the author/contributor list without separate coding
      * for each list member.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1 $summary
-     * @return static
      */
     public function addSummary(FHIRCitationSummary1 $summary): self
     {
@@ -363,9 +345,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      *
      * Used to record a display of the author/contributor list without separate coding
      * for each list member.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1 ...$summary
-     * @return static
      */
     public function setSummary(FHIRCitationSummary1 ...$summary): self
     {
@@ -379,10 +358,7 @@ class FHIRCitationContributorship extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributorship $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributorship
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -438,10 +414,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -473,10 +445,7 @@ class FHIRCitationContributorship extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributorship $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributorship
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

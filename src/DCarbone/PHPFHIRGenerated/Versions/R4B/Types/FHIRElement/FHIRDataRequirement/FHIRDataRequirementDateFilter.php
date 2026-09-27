@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -150,8 +150,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $path;
@@ -163,8 +161,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * A date parameter that refers to a search parameter defined on the specified type
      * of the DataRequirement, and which searches on elements of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $searchParam;
@@ -182,8 +178,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     #[FHIRDateTime]
     protected FHIRDateTime $valueDateTime;
@@ -198,8 +192,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     #[FHIRPeriod]
     protected FHIRPeriod $valuePeriod;
@@ -214,8 +206,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     #[FHIRDuration]
     protected FHIRDuration $valueDuration;
@@ -224,12 +214,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
     /**
      * FHIRDataRequirementDateFilter Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $path
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $searchParam
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $valueDateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $valuePeriod
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -281,8 +265,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getPath(): null|FHIRString
     {
@@ -302,9 +284,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $path
-     * @return static
      */
     public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
     {
@@ -327,8 +306,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * A date parameter that refers to a search parameter defined on the specified type
      * of the DataRequirement, and which searches on elements of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString
      */
     public function getSearchParam(): null|FHIRString
     {
@@ -343,9 +320,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * A date parameter that refers to a search parameter defined on the specified type
      * of the DataRequirement, and which searches on elements of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $searchParam
-     * @return static
      */
     public function setSearchParam(null|string|FHIRStringPrimitive|FHIRString $searchParam): self
     {
@@ -374,8 +348,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime(): null|FHIRDateTime
     {
@@ -396,9 +368,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $valueDateTime
-     * @return static
      */
     public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
     {
@@ -424,8 +393,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod(): null|FHIRPeriod
     {
@@ -443,9 +410,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPeriod $valuePeriod
-     * @return static
      */
     public function setValuePeriod(null|FHIRPeriod $valuePeriod): self
     {
@@ -468,8 +432,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getValueDuration(): null|FHIRDuration
     {
@@ -487,9 +449,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
-     * @return static
      */
     public function setValueDuration(null|FHIRDuration $valueDuration): self
     {
@@ -503,10 +462,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -580,10 +536,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -631,10 +583,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

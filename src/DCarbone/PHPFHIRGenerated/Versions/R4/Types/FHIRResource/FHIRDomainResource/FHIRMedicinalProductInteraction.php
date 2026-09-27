@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,14 +61,12 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
-use DCarbone\PHPFHIRGenerated\FHIRVersion;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\TypeValidationsTrait;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
@@ -83,7 +81,6 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
-use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive;
@@ -144,8 +141,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interaction described.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $description;
@@ -167,8 +162,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      *
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction,
      * drug-lab test interaction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -180,8 +173,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      *
      * The effect of the interaction, for example "reduced gastric absorption of
      * primary medication".
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $effect;
@@ -192,8 +183,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The incidence of the interaction, e.g. theoretical, observed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $incidence;
@@ -204,8 +193,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions for managing the interaction.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $management;
@@ -213,21 +200,11 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
     /* constructor.php:61 */
     /**
      * FHIRMedicinalProductInteraction Constructor
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRId $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta $meta
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $implicitRules
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative $text
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer>|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface> $contained
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $extension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension> $modifierExtension
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference> $subject
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant> $interactant
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $effect
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $incidence
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $management
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -323,9 +300,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is a described interaction.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subject
-     * @return static
      */
     public function addSubject(FHIRReference $subject): self
     {
@@ -342,9 +316,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is a described interaction.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$subject
-     * @return static
      */
     public function setSubject(FHIRReference ...$subject): self
     {
@@ -362,8 +333,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interaction described.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
      */
     public function getDescription(): null|FHIRString
     {
@@ -376,9 +345,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interaction described.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @return static
      */
     public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
     {
@@ -422,9 +388,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * other forms of interactions.
      *
      * The specific medication, food or laboratory test that interacts.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant $interactant
-     * @return static
      */
     public function addInteractant(FHIRMedicinalProductInteractionInteractant $interactant): self
     {
@@ -440,9 +403,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * other forms of interactions.
      *
      * The specific medication, food or laboratory test that interacts.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant ...$interactant
-     * @return static
      */
     public function setInteractant(FHIRMedicinalProductInteractionInteractant ...$interactant): self
     {
@@ -462,8 +422,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      *
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction,
      * drug-lab test interaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -478,9 +436,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      *
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction,
      * drug-lab test interaction.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -500,8 +455,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      *
      * The effect of the interaction, for example "reduced gastric absorption of
      * primary medication".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getEffect(): null|FHIRCodeableConcept
     {
@@ -516,9 +469,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      *
      * The effect of the interaction, for example "reduced gastric absorption of
      * primary medication".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $effect
-     * @return static
      */
     public function setEffect(null|FHIRCodeableConcept $effect): self
     {
@@ -537,8 +487,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The incidence of the interaction, e.g. theoretical, observed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getIncidence(): null|FHIRCodeableConcept
     {
@@ -552,9 +500,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The incidence of the interaction, e.g. theoretical, observed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $incidence
-     * @return static
      */
     public function setIncidence(null|FHIRCodeableConcept $incidence): self
     {
@@ -573,8 +518,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions for managing the interaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getManagement(): null|FHIRCodeableConcept
     {
@@ -588,9 +531,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions for managing the interaction.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $management
-     * @return static
      */
     public function setManagement(null|FHIRCodeableConcept $management): self
     {
@@ -604,10 +544,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
 
     /* class_default.php:201 */
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction
      * @throws \Exception
      */
     public static function xmlUnserialize(string|\SimpleXMLElement $element,
@@ -707,11 +644,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
         return $type;
     }
 
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
     public function xmlSerialize(null|XMLWriter $xw = null,
                                  null|SerializeConfig $config = null): XMLWriter
     {
@@ -787,10 +719,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
     }
 
     /**
-     * @param string|\stdClass $decoded
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainResource\FHIRMedicinalProductInteraction
      * @throws \Exception
      */
     public static function jsonUnserialize(string|\stdClass $decoded,

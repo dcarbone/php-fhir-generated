@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -136,8 +136,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * Sequence of test case - an ordinal number that indicates the order for the
      * present test case in the test plan.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     #[FHIRInteger]
     protected FHIRInteger $sequence;
@@ -196,9 +194,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
     /**
      * FHIRTestPlanTestCase Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension> $modifierExtension
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $sequence
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference> $scope
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanDependency1> $dependency
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun> $testRun
@@ -255,8 +251,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * Sequence of test case - an ordinal number that indicates the order for the
      * present test case in the test plan.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger
      */
     public function getSequence(): null|FHIRInteger
     {
@@ -270,9 +264,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * Sequence of test case - an ordinal number that indicates the order for the
      * present test case in the test plan.
-     *
-     * @param null|string|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $sequence
-     * @return static
      */
     public function setSequence(null|string|float|FHIRIntegerPrimitive|FHIRInteger $sequence): self
     {
@@ -320,9 +311,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The scope or artifact covered by the case, when the individual test case is
      * associated with a testable artifact.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $scope
-     * @return static
      */
     public function addScope(FHIRReference $scope): self
     {
@@ -340,9 +328,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The scope or artifact covered by the case, when the individual test case is
      * associated with a testable artifact.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$scope
-     * @return static
      */
     public function setScope(FHIRReference ...$scope): self
     {
@@ -383,9 +368,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The required criteria to execute the test case - e.g. preconditions, previous
      * tests.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanDependency1 $dependency
-     * @return static
      */
     public function addDependency(FHIRTestPlanDependency1 $dependency): self
     {
@@ -401,9 +383,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The required criteria to execute the test case - e.g. preconditions, previous
      * tests.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanDependency1 ...$dependency
-     * @return static
      */
     public function setDependency(FHIRTestPlanDependency1 ...$dependency): self
     {
@@ -442,9 +421,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * A plan for executing testing on an artifact or specifications.
      *
      * The actual test to be executed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun $testRun
-     * @return static
      */
     public function addTestRun(FHIRTestPlanTestRun $testRun): self
     {
@@ -459,9 +435,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * A plan for executing testing on an artifact or specifications.
      *
      * The actual test to be executed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun ...$testRun
-     * @return static
      */
     public function setTestRun(FHIRTestPlanTestRun ...$testRun): self
     {
@@ -500,9 +473,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * A plan for executing testing on an artifact or specifications.
      *
      * The test data used in the test case.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestData $testData
-     * @return static
      */
     public function addTestData(FHIRTestPlanTestData $testData): self
     {
@@ -517,9 +487,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * A plan for executing testing on an artifact or specifications.
      *
      * The test data used in the test case.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestData ...$testData
-     * @return static
      */
     public function setTestData(FHIRTestPlanTestData ...$testData): self
     {
@@ -560,9 +527,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The test assertions - the expectations of test results from the execution of the
      * test case.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanAssertion $assertion
-     * @return static
      */
     public function addAssertion(FHIRTestPlanAssertion $assertion): self
     {
@@ -578,9 +542,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The test assertions - the expectations of test results from the execution of the
      * test case.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanAssertion ...$assertion
-     * @return static
      */
     public function setAssertion(FHIRTestPlanAssertion ...$assertion): self
     {
@@ -594,10 +555,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestCase $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestCase
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -659,10 +617,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -715,10 +669,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestCase $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestCase
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,

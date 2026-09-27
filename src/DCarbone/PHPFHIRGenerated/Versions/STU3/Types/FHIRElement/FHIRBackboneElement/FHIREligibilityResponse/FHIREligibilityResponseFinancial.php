@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  *
- * Class creation date: June 19th, 2026 14:32+0000
+ * Class creation date: September 27th, 2026 01:12+0000
  *
  * PHPFHIR Copyright:
  *
@@ -61,7 +61,6 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  *   any profiles that apply to the resources in order to make a conformant implementation.
  *
  */
-use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\JSONSerializationOptionsTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
@@ -128,8 +127,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deductable, visits, benefit amount.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     #[FHIRCodeableConcept]
     protected FHIRCodeableConcept $type;
@@ -139,8 +136,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Benefits allowed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $allowedUnsignedInt;
@@ -150,8 +145,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Benefits allowed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     #[FHIRString]
     protected FHIRString $allowedString;
@@ -161,8 +154,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Benefits allowed.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $allowedMoney;
@@ -172,8 +163,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Benefits used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt
      */
     #[FHIRUnsignedInt]
     protected FHIRUnsignedInt $usedUnsignedInt;
@@ -183,8 +172,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Benefits used.
-     *
-     * @var \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     #[FHIRMoney]
     protected FHIRMoney $usedMoney;
@@ -193,14 +180,7 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
     /**
      * FHIREligibilityResponseFinancial Constructor
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $extension
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|iterable<\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension> $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $allowedString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -252,8 +232,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deductable, visits, benefit amount.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept
      */
     public function getType(): null|FHIRCodeableConcept
     {
@@ -267,9 +245,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Deductable, visits, benefit amount.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
-     * @return static
      */
     public function setType(null|FHIRCodeableConcept $type): self
     {
@@ -287,8 +262,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Benefits allowed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt
      */
     public function getAllowedUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -301,9 +274,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Benefits allowed.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
-     * @return static
      */
     public function setAllowedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $allowedUnsignedInt): self
     {
@@ -324,8 +294,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Benefits allowed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString
      */
     public function getAllowedString(): null|FHIRString
     {
@@ -338,9 +306,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Benefits allowed.
-     *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $allowedString
-     * @return static
      */
     public function setAllowedString(null|string|FHIRStringPrimitive|FHIRString $allowedString): self
     {
@@ -361,8 +326,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Benefits allowed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAllowedMoney(): null|FHIRMoney
     {
@@ -375,9 +338,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Benefits allowed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
-     * @return static
      */
     public function setAllowedMoney(null|FHIRMoney $allowedMoney): self
     {
@@ -395,8 +355,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Benefits used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt
      */
     public function getUsedUnsignedInt(): null|FHIRUnsignedInt
     {
@@ -409,9 +367,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Benefits used.
-     *
-     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
-     * @return static
      */
     public function setUsedUnsignedInt(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $usedUnsignedInt): self
     {
@@ -432,8 +387,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Benefits used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getUsedMoney(): null|FHIRMoney
     {
@@ -446,9 +399,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Benefits used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
-     * @return static
      */
     public function setUsedMoney(null|FHIRMoney $usedMoney): self
     {
@@ -462,10 +412,7 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
 
     /* class_default.php:201 */
     /**
-     * @param \SimpleXMLElement $element
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial
      * @throws \Exception
      */
     public static function xmlUnserialize(\SimpleXMLElement $element,
@@ -543,10 +490,6 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
         return $type;
     }
 
-    /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     */
     public function xmlSerialize(XMLWriter $xw,
                                  SerializeConfig $config): void
     {
@@ -599,10 +542,7 @@ class FHIREligibilityResponseFinancial extends FHIRBackboneElement
     }
 
     /**
-     * @param \stdClass $decoded
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial $type
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial
      * @throws \Exception
      */
     public static function jsonUnserialize(\stdClass $decoded,
